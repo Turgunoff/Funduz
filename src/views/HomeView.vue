@@ -7,38 +7,38 @@ import CTASection from '@/components/CTASection.vue';
 <template>
   <div>
     <!-- Hero Section -->
-    <div class="bg-white">
-      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <div class="bg-white overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-20">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <!-- Left Content -->
-          <div class="order-2 lg:order-1">
+          <div class="order-2 lg:order-1 text-center lg:text-left">
             <!-- Label -->
-            <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#f0f9ff] mb-8">
-              <span class="text-[#1ba0f2] text-[15px] font-bold">
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#f0f9ff] mb-6 lg:mb-8">
+              <span class="text-[#1fb1f9] text-[13px] sm:text-[15px] font-bold">
                 {{ $t('hero.badge') }}
               </span>
             </div>
 
             <!-- Heading -->
-            <h1 class="text-[52px] sm:text-[64px] lg:text-[76px] font-bold text-gray-900 leading-[1.05] tracking-tight mb-8">
-              {{ $t('hero.title_1') }} <br />
-              {{ $t('hero.title_2') }} <br />
-              <span class="text-[#1ba0f2] italic">{{ $t('hero.title_3') }}</span>
+            <h1 class="text-[36px] sm:text-[52px] lg:text-[76px] font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 lg:mb-8">
+              {{ $t('hero.title_1') }} <br class="hidden sm:block" />
+              {{ $t('hero.title_2') }} <br class="hidden sm:block" />
+              <span class="text-[#1fb1f9] italic">{{ $t('hero.title_3') }}</span>
             </h1>
 
             <!-- Description -->
-            <p class="text-[17px] sm:text-[19px] text-gray-500 leading-relaxed mb-10 max-w-[500px]">
+            <p class="text-[16px] sm:text-[19px] text-gray-500 leading-relaxed mb-10 max-w-[500px] mx-auto lg:mx-0">
               {{ $t('hero.description') }}
             </p>
 
             <!-- Buttons -->
-            <div class="flex flex-wrap gap-4">
-              <button class="px-8 py-[18px] border border-gray-200 rounded-xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1ba0f2] hover:text-white hover:border-[#1ba0f2] transition-all shadow-sm hover:shadow-lg hover:shadow-blue-100/50 cursor-pointer">
+            <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4">
+              <button class="w-full sm:w-auto px-8 py-4 border border-gray-200 rounded-2xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1fb1f9] hover:text-white hover:border-[#1fb1f9] transition-all shadow-sm cursor-pointer">
                 {{ $t('hero.btn_contribute') }}
               </button>
-              <button class="px-8 py-[18px] border border-gray-200 rounded-xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1ba0f2] hover:text-white hover:border-[#1ba0f2] transition-all flex items-center justify-center gap-2 cursor-pointer">
+              <button class="w-full sm:w-auto px-8 py-4 border border-gray-200 rounded-2xl font-bold text-[16px] text-gray-800 bg-white hover:bg-gray-50 transition-all flex items-center justify-center gap-2 cursor-pointer">
                 {{ $t('hero.btn_create') }}
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
                 </svg>
               </button>
