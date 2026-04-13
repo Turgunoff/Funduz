@@ -6,16 +6,16 @@
         <div class="flex items-center gap-8">
           <!-- Logo -->
           <div class="flex-shrink-0 flex items-center">
-            <router-link to="/" class="text-[22px] lg:text-[24px] font-bold text-[#1fb1f9] tracking-wide cursor-pointer">
+            <router-link to="/" class="text-[22px] lg:text-[24px] font-bold text-[#1a946b] tracking-wide cursor-pointer">
               FUNDUZ
             </router-link>
           </div>
           
           <!-- Desktop Navigation -->
           <nav class="hidden lg:flex space-x-8 text-[15px] font-bold text-gray-800">
-            <a href="#" class="hover:text-[#1fb1f9] transition-colors">{{ $t('nav.view_projects') }}</a>
-            <a href="#" class="hover:text-[#1fb1f9] transition-colors">{{ $t('nav.how_it_works') }}</a>
-            <a href="#" class="hover:text-[#1fb1f9] transition-colors">{{ $t('nav.community') }}</a>
+            <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.view_projects') }}</a>
+            <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.how_it_works') }}</a>
+            <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.community') }}</a>
           </nav>
         </div>
 
@@ -31,15 +31,15 @@
             <input 
               type="text" 
               :placeholder="$t('nav.search_placeholder')" 
-              class="block w-[180px] xl:w-[240px] pl-9 pr-3 py-[10px] border border-gray-100 rounded-xl leading-5 bg-[#fafafa] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1fb1f9]/20 focus:border-[#1fb1f9] text-[14px] transition-all duration-200"
+              class="block w-[180px] xl:w-[240px] pl-9 pr-3 py-[10px] border border-gray-100 rounded-xl leading-5 bg-[#fafafa] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1a946b]/20 focus:border-[#1a946b] text-[14px] transition-all duration-200"
             />
           </div>
 
           <!-- Action Buttons (Login hidden on very small screens) -->
-          <a href="#" class="hidden sm:flex px-5 py-[11px] border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-gray-50 transition-colors cursor-pointer items-center justify-center">
+          <a href="#" class="hidden sm:flex px-5 py-[11px] border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all cursor-pointer items-center justify-center">
             {{ $t('nav.login') }}
           </a>
-          <a href="#" class="flex px-5 py-[11px] bg-[#1fb1f9] text-white rounded-xl text-[14px] font-bold hover:bg-[#19a1e3] transition-colors shadow-lg shadow-blue-100 cursor-pointer items-center justify-center">
+          <a href="#" class="flex px-5 py-[11px] border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all cursor-pointer items-center justify-center">
             {{ $t('nav.start_project') }}
           </a>
 
@@ -47,7 +47,7 @@
           <div class="hidden lg:flex items-center ml-2 pl-4 border-l border-gray-100 h-6">
             <button 
               @click="setLocale('uz')"
-              :class="locale === 'uz' ? 'text-[#1fb1f9]' : 'text-gray-400'"
+              :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'"
               class="text-[13px] font-bold hover:opacity-80 transition-all cursor-pointer uppercase"
             >
               Uz
@@ -55,8 +55,8 @@
             <span class="mx-2 text-gray-200 text-[12px]">|</span>
             <button 
               @click="setLocale('ru')"
-              :class="locale === 'ru' ? 'text-[#1fb1f9]' : 'text-gray-400'"
-              class="text-[13px] font-bold hover:text-[#1fb1f9] transition-all cursor-pointer uppercase"
+              :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'"
+              class="text-[13px] font-bold hover:text-[#1a946b] transition-all cursor-pointer uppercase"
             >
               Ru
             </button>
@@ -95,8 +95,8 @@
           <div class="pt-4 pb-2 px-4 flex items-center justify-between border-t border-gray-50 mt-2">
             <span class="text-gray-400 text-sm font-medium uppercase">Til / Язык</span>
             <div class="flex items-center gap-4">
-              <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1fb1f9]' : 'text-gray-400'" class="font-bold">UZ</button>
-              <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1fb1f9]' : 'text-gray-400'" class="font-bold">RU</button>
+              <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'" class="font-bold">UZ</button>
+              <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'" class="font-bold">RU</button>
             </div>
           </div>
           <div class="px-4 pt-4">

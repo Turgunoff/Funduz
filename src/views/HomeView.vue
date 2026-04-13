@@ -14,7 +14,7 @@ import CTASection from '@/components/CTASection.vue';
           <div class="order-2 lg:order-1 text-center lg:text-left">
             <!-- Label -->
             <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#f0f9ff] mb-6 lg:mb-8">
-              <span class="text-[#1fb1f9] text-[13px] sm:text-[15px] font-bold">
+              <span class="text-[#1a946b] text-[13px] sm:text-[15px] font-bold">
                 {{ $t('hero.badge') }}
               </span>
             </div>
@@ -23,7 +23,7 @@ import CTASection from '@/components/CTASection.vue';
             <h1 class="text-[36px] sm:text-[52px] lg:text-[76px] font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 lg:mb-8">
               {{ $t('hero.title_1') }} <br class="hidden sm:block" />
               {{ $t('hero.title_2') }} <br class="hidden sm:block" />
-              <span class="text-[#1fb1f9] italic">{{ $t('hero.title_3') }}</span>
+              <span class="text-[#1a946b] italic">{{ $t('hero.title_3') }}</span>
             </h1>
 
             <!-- Description -->
@@ -33,7 +33,7 @@ import CTASection from '@/components/CTASection.vue';
 
             <!-- Buttons as links -->
             <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4">
-              <a href="#" class="w-full sm:w-auto px-8 py-4 border border-gray-200 rounded-2xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1fb1f9] hover:text-white hover:border-[#1fb1f9] transition-all shadow-sm cursor-pointer flex items-center justify-center">
+              <a href="#" class="w-full sm:w-auto px-8 py-4 border border-gray-200 rounded-2xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm cursor-pointer flex items-center justify-center">
                 {{ $t('hero.btn_contribute') }}
               </a>
               <a href="#" class="w-full sm:w-auto px-8 py-4 border border-gray-200 rounded-2xl font-bold text-[16px] text-gray-800 bg-white hover:bg-gray-50 transition-all flex items-center justify-center gap-2 cursor-pointer">

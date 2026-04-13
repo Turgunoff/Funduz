@@ -1,7 +1,7 @@
 <template>
   <section class="bg-white py-20">
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-[#1fb1f9] rounded-[48px] p-12 lg:p-20 flex flex-col lg:flex-row items-center justify-between gap-16 overflow-hidden relative">
+      <div class="bg-[#1a946b] rounded-[48px] p-12 lg:p-20 flex flex-col lg:flex-row items-center justify-between gap-16 overflow-hidden relative">
         <!-- Decoration Circles -->
         <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
         <div class="absolute -top-20 -right-20 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl"></div>
@@ -17,10 +17,10 @@
 
           <!-- Buttons as links with specific hover behavior -->
           <div class="flex flex-wrap gap-5">
-            <a href="/project/1" class="px-10 py-[18px] bg-white text-gray-900 font-bold rounded-2xl text-[16px] transition-colors duration-300 hover:text-[#1fb1f9] cursor-pointer shadow-xl shadow-blue-900/10 flex items-center justify-center">
+            <a href="#" class="px-10 py-[18px] bg-white text-gray-900 font-bold rounded-2xl text-[16px] transition-colors duration-300 hover:text-[#1a946b] cursor-pointer shadow-xl shadow-blue-900/10 flex items-center justify-center">
               {{ $t('cta.btn_start') }}
             </a>
-            <a href="/project/1" class="px-10 py-[18px] bg-white text-gray-900 font-bold rounded-2xl text-[16px] transition-colors duration-300 hover:text-[#1fb1f9] cursor-pointer shadow-xl shadow-blue-900/10 flex items-center justify-center">
+            <a href="#" class="px-10 py-[18px] bg-white text-gray-900 font-bold rounded-2xl text-[16px] transition-colors duration-300 hover:text-[#1a946b] cursor-pointer shadow-xl shadow-blue-900/10 flex items-center justify-center">
               {{ $t('cta.btn_expert') }}
             </a>
           </div>

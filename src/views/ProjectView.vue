@@ -110,7 +110,7 @@
             </span>
             <span v-if="idx === 1" class="flex items-center gap-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" /></svg>
-              <span class="bg-[#1fb1f9] text-white text-[10px] px-1.5 py-0.5 rounded-full">3</span>
+              <span class="bg-[#1a946b] text-white text-[10px] px-1.5 py-0.5 rounded-full">3</span>
             </span>
             <span v-if="idx === 2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 00-2-2h14a2 2 0 00-2 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
@@ -159,9 +159,9 @@
             </div>
 
             <!-- Reward 1 -->
-            <div class="group bg-white border border-gray-100 rounded-[32px] p-8 hover:border-[#1fb1f9] hover:shadow-xl hover:shadow-blue-900/5 transition-all cursor-pointer">
+            <div class="group bg-white border border-gray-100 rounded-[32px] p-8 hover:border-[#1a946b] hover:shadow-xl hover:shadow-blue-900/5 transition-all cursor-pointer">
               <div class="flex justify-between items-start mb-6">
-                 <div class="text-[#1fb1f9] font-black text-xl">{{ $tm('project_view.reward_1_price') }}</div>
+                 <div class="text-[#1a946b] font-black text-xl">{{ $tm('project_view.reward_1_price') }}</div>
                  <div class="text-[11px] font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded">45 ta olindi</div>
               </div>
               <h4 class="text-gray-900 font-bold text-lg mb-4">{{ $tm('project_view.reward_1_title') }}</h4>
@@ -172,16 +172,16 @@
                  <span class="text-[11px] font-bold text-gray-500">{{ $t('project_view.delivery_label') }} {{ $t('project_view.reward_1_delivery') }}</span>
               </div>
 
-              <div class="flex items-center justify-between text-[#1fb1f9] font-bold text-sm">
+              <div class="flex items-center justify-between text-[#1a946b] font-bold text-sm">
                 {{ $t('project_view.reward_select') }}
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
               </div>
             </div>
 
             <!-- Reward 2 -->
-            <div class="group bg-white border border-gray-100 rounded-[32px] p-8 hover:border-[#1fb1f9] hover:shadow-xl hover:shadow-blue-900/5 transition-all cursor-pointer">
+            <div class="group bg-white border border-gray-100 rounded-[32px] p-8 hover:border-[#1a946b] hover:shadow-xl hover:shadow-blue-900/5 transition-all cursor-pointer">
               <div class="flex justify-between items-start mb-6">
-                 <div class="text-[#1fb1f9] font-black text-xl">{{ $tm('project_view.reward_2_price') }}</div>
+                 <div class="text-[#1a946b] font-black text-xl">{{ $tm('project_view.reward_2_price') }}</div>
                  <div class="text-[11px] font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded">28 ta olindi</div>
               </div>
               <h4 class="text-gray-900 font-bold text-lg mb-4">{{ $tm('project_view.reward_2_title') }}</h4>
@@ -192,16 +192,16 @@
                  <span class="text-[11px] font-bold text-gray-500">{{ $t('project_view.delivery_label') }} {{ $t('project_view.reward_2_delivery') }}</span>
               </div>
 
-              <div class="flex items-center justify-between text-[#1fb1f9] font-bold text-sm">
+              <div class="flex items-center justify-between text-[#1a946b] font-bold text-sm">
                 {{ $t('project_view.reward_select') }}
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
               </div>
             </div>
 
             <!-- Reward 3 -->
-            <div class="group bg-white border border-gray-100 rounded-[32px] p-8 hover:border-[#1fb1f9] hover:shadow-xl hover:shadow-blue-900/5 transition-all cursor-pointer">
+            <div class="group bg-white border border-gray-100 rounded-[32px] p-8 hover:border-[#1a946b] hover:shadow-xl hover:shadow-blue-900/5 transition-all cursor-pointer">
               <div class="flex justify-between items-start mb-6">
-                 <div class="text-[#1fb1f9] font-black text-xl">{{ $tm('project_view.reward_3_price') }}</div>
+                 <div class="text-[#1a946b] font-black text-xl">{{ $tm('project_view.reward_3_price') }}</div>
                  <div class="text-[11px] font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded">5 ta olindi</div>
               </div>
               <h4 class="text-gray-900 font-bold text-lg mb-4">{{ $tm('project_view.reward_3_title') }}</h4>
@@ -212,7 +212,7 @@
                  <span class="text-[11px] font-bold text-gray-500">{{ $t('project_view.delivery_label') }} {{ $t('project_view.reward_3_delivery') }}</span>
               </div>
 
-              <div class="flex items-center justify-between text-[#1fb1f9] font-bold text-sm">
+              <div class="flex items-center justify-between text-[#1a946b] font-bold text-sm">
                 {{ $t('project_view.reward_select') }}
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
               </div>

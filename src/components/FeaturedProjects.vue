@@ -7,7 +7,7 @@
           <h2 class="text-[32px] lg:text-[40px] font-bold text-gray-900 mb-4">{{ $t('projects.title') }}</h2>
           <p class="text-gray-500 text-[16px] lg:text-[18px] max-w-[600px] mx-auto md:mx-0">{{ $t('projects.subtitle') }}</p>
         </div>
-        <a href="#" class="mt-8 md:mt-0 flex items-center justify-center md:justify-start gap-2 text-[16px] font-bold text-gray-800 hover:text-[#1fb1f9] transition-colors group">
+        <a href="#" class="mt-8 md:mt-0 flex items-center justify-center md:justify-start gap-2 text-[16px] font-bold text-gray-800 hover:text-[#1a946b] transition-colors group">
           {{ $t('projects.view_all') }}
           <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -47,10 +47,10 @@
             <div class="mt-auto">
               <div class="flex justify-between items-end mb-3">
                 <span class="text-[17px] sm:text-[18px] font-bold text-gray-800">15,000,000 so'm</span>
-                <span class="text-[14px] font-bold text-[#1fb1f9]">60%</span>
+                <span class="text-[14px] font-bold text-[#1a946b]">60%</span>
               </div>
               <div class="w-full h-2 bg-gray-100 rounded-full mb-4 overflow-hidden">
-                <div class="h-full bg-[#1fb1f9] rounded-full" style="width: 60%"></div>
+                <div class="h-full bg-[#1a946b] rounded-full" style="width: 60%"></div>
               </div>
               <div class="flex flex-wrap justify-between gap-1 text-[13px] font-medium text-gray-400">
                 <span>{{ $t('projects.goal') }}: 25,000,000</span>
@@ -58,7 +58,7 @@
               </div>
             </div>
             
-            <a href="/project/1" class="mt-8 w-full py-4 bg-[#f0f9ff] text-[#1fb1f9] font-bold rounded-xl hover:bg-[#1fb1f9] hover:text-white transition-all cursor-pointer flex items-center justify-center">
+            <a href="/project/1" class="mt-8 w-full py-4 bg-[#f0fdf4] text-[#1a946b] font-bold rounded-xl hover:bg-[#1a946b] hover:text-white transition-all cursor-pointer flex items-center justify-center">
               {{ $t('projects.more') }}
             </a>
           </div>
@@ -88,17 +88,17 @@
             <div class="mt-auto">
               <div class="flex justify-between items-end mb-3">
                 <span class="text-[17px] sm:text-[18px] font-bold text-gray-800">8,400,000 so'm</span>
-                <span class="text-[14px] font-bold text-[#1fb1f9]">84%</span>
+                <span class="text-[14px] font-bold text-[#1a946b]">84%</span>
               </div>
               <div class="w-full h-2 bg-gray-100 rounded-full mb-4 overflow-hidden">
-                <div class="h-full bg-[#1fb1f9] rounded-full" style="width: 84%"></div>
+                <div class="h-full bg-[#1a946b] rounded-full" style="width: 84%"></div>
               </div>
               <div class="flex flex-wrap justify-between gap-1 text-[13px] font-medium text-gray-400">
                 <span>{{ $t('projects.goal') }}: 10,000,000</span>
                 <span>89 {{ $t('projects.donors') }}</span>
               </div>
             </div>
-            <a href="/project/1" class="mt-8 w-full py-4 bg-[#f0f9ff] text-[#1fb1f9] font-bold rounded-xl hover:bg-[#1fb1f9] hover:text-white transition-all cursor-pointer flex items-center justify-center">
+            <a href="/project/1" class="mt-8 w-full py-4 bg-[#f0fdf4] text-[#1a946b] font-bold rounded-xl hover:bg-[#1a946b] hover:text-white transition-all cursor-pointer flex items-center justify-center">
               {{ $t('projects.more') }}
             </a>
           </div>
@@ -128,17 +128,17 @@
             <div class="mt-auto">
               <div class="flex justify-between items-end mb-3">
                 <span class="text-[17px] sm:text-[18px] font-bold text-gray-800">45,000,000 so'm</span>
-                <span class="text-[14px] font-bold text-[#1fb1f9]">90%</span>
+                <span class="text-[14px] font-bold text-[#1a946b]">90%</span>
               </div>
               <div class="w-full h-2 bg-gray-100 rounded-full mb-4 overflow-hidden">
-                <div class="h-full bg-[#1fb1f9] rounded-full" style="width: 90%"></div>
+                <div class="h-full bg-[#1a946b] rounded-full" style="width: 90%"></div>
               </div>
               <div class="flex flex-wrap justify-between gap-1 text-[13px] font-medium text-gray-400">
                 <span>{{ $t('projects.goal') }}: 50,000,000</span>
                 <span>312 {{ $t('projects.donors') }}</span>
               </div>
             </div>
-            <a href="/project/1" class="mt-8 w-full py-4 bg-[#f0f9ff] text-[#1fb1f9] font-bold rounded-xl hover:bg-[#1fb1f9] hover:text-white transition-all cursor-pointer flex items-center justify-center">
+            <a href="/project/1" class="mt-8 w-full py-4 bg-[#f0fdf4] text-[#1a946b] font-bold rounded-xl hover:bg-[#1a946b] hover:text-white transition-all cursor-pointer flex items-center justify-center">
               {{ $t('projects.more') }}
             </a>
           </div>
