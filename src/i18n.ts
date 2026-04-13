@@ -49,6 +49,24 @@ const messages = {
       feature1_desc: "To'liq shaffof dashboard",
       feature2: "Katta auditoriya",
       feature2_desc: "Minglab potensial donorlar"
+    },
+    footer: {
+      description: "O'zbekistonning kelajagini birgalikda barpo etamiz. Har bir hissa muhim.",
+      projects_title: "Loyihalar",
+      p_tech: "Texnologiya",
+      p_art: "San'at",
+      p_social: "Ijtimoiy yordam",
+      company_title: "Kompaniya",
+      c_about: "Biz haqimizda",
+      c_contact: "Bog'lanish",
+      c_faq: "Savollar",
+      legal_title: "Yuridik",
+      l_terms: "Foydalanish shartlari",
+      l_privacy: "Maxfiylik siyosati",
+      copyright: "© 2024 Funduz. Barcha huquqlar himoyalangan.",
+      social_tg: "Telegram",
+      social_inst: "Instagram",
+      social_fb: "Facebook"
     }
   },
   ru: {
@@ -99,6 +117,24 @@ const messages = {
       feature1_desc: "Полностью прозрачный дашборд",
       feature2: "Большая аудитория",
       feature2_desc: "Тысячи потенциальных доноров"
+    },
+    footer: {
+      description: "Строим будущее Узбекистана вместе. Каждое вложение важно.",
+      projects_title: "Проекты",
+      p_tech: "Технологии",
+      p_art: "Искусство",
+      p_social: "Социальная помощь",
+      company_title: "Компания",
+      c_about: "О нас",
+      c_contact: "Контакты",
+      c_faq: "Вопросы",
+      legal_title: "Юридическая информация",
+      l_terms: "Условия использования",
+      l_privacy: "Политика конфиденциальности",
+      copyright: "© 2024 Funduz. Все права защищены.",
+      social_tg: "Telegram",
+      social_inst: "Instagram",
+      social_fb: "Facebook"
     }
   }
 }
