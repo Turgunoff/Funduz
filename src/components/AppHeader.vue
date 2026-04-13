@@ -13,13 +13,13 @@
           
           <!-- Desktop Navigation -->
           <nav class="hidden lg:flex space-x-6 text-[15px] font-bold text-gray-800">
-            <a href="#" class="hover:text-black transition-colors">Loyihalarni ko'rish</a>
-            <a href="#" class="hover:text-black transition-colors">Qanday ishlaydi?</a>
-            <a href="#" class="hover:text-black transition-colors">Jamiyat</a>
+            <a href="#" class="hover:text-black transition-colors">{{ $t('nav.view_projects') }}</a>
+            <a href="#" class="hover:text-black transition-colors">{{ $t('nav.how_it_works') }}</a>
+            <a href="#" class="hover:text-black transition-colors">{{ $t('nav.community') }}</a>
           </nav>
         </div>
 
-        <!-- Right side (Search and Buttons) -->
+        <!-- Right side (Search, Buttons and Lang) -->
         <div class="flex items-center space-x-3">
           <!-- Search Input -->
           <div class="relative hidden sm:block mr-2">
@@ -30,18 +30,37 @@
             </div>
             <input 
               type="text" 
-              placeholder="Loyiha qidirish..." 
+              :placeholder="$t('nav.search_placeholder')" 
               class="block w-[240px] pl-9 pr-3 py-[9px] border border-gray-200 rounded-md leading-5 bg-[#fafafa] placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#1ba0f2] focus:border-[#1ba0f2] sm:text-[14px] transition-colors duration-200"
             />
           </div>
 
           <!-- Action Buttons -->
           <button class="px-5 py-[9px] border border-gray-200 rounded-md text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1ba0f2] hover:text-white hover:border-[#1ba0f2] transition-colors">
-            Kirish
+            {{ $t('nav.login') }}
           </button>
           <button class="px-5 py-[9px] border border-gray-200 rounded-md text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1ba0f2] hover:text-white hover:border-[#1ba0f2] transition-colors">
-            Loyiha boshlash
+            {{ $t('nav.start_project') }}
           </button>
+
+          <!-- Language Switcher -->
+          <div class="flex items-center ml-3 pl-3 border-l border-gray-200 h-6">
+            <button 
+              @click="setLocale('uz')"
+              :class="locale === 'uz' ? 'text-[#1ba0f2]' : 'text-gray-400'"
+              class="text-[13px] font-bold hover:opacity-80 transition-all cursor-pointer"
+            >
+              UZ
+            </button>
+            <span class="mx-1.5 text-gray-300 text-[12px]">|</span>
+            <button 
+              @click="setLocale('ru')"
+              :class="locale === 'ru' ? 'text-[#1ba0f2]' : 'text-gray-400'"
+              class="text-[13px] font-bold hover:text-[#1ba0f2] transition-all cursor-pointer"
+            >
+              RU
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -49,4 +68,11 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+
+const setLocale = (lang: 'uz' | 'ru') => {
+  locale.value = lang
+}
 </script>
