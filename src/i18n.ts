@@ -15,6 +15,22 @@ const messages = {
     },
     explore: {
       title: "Barcha loyihalar",
+      hero_title: "O'zbekistonning eng yaxshi loyihalarini kashf eting",
+      search_placeholder: "Loyiha, toifa yoki muallifni qidiring...",
+      categories: {
+        all: "Barchasi",
+        tech: "Texnologiya",
+        art: "San'at",
+        social: "Jamiyat",
+        edu: "Ta'lim",
+        eco: "Eko"
+      },
+      sort: {
+        newest: "Eng yangi",
+        popular: "Mashhur",
+        ending: "Yaqinda tugaydi"
+      },
+      load_more: "Yana ko'rsatish",
       empty_title: "Hali loyihalar yo'q",
       empty_desc: "Tez orada bu yerda O'zbekistondagi eng qiziqarli va foydali loyihalar ro'yxati paydo bo'ladi.",
       projects_list: [
@@ -207,6 +223,22 @@ const messages = {
     },
     explore: {
       title: "Все проекты",
+      hero_title: "Откройте для себя лучшие проекты Узбекистана",
+      search_placeholder: "Ищите проект, категорию или автора...",
+      categories: {
+        all: "Все",
+        tech: "Технологии",
+        art: "Искусство",
+        social: "Общество",
+        edu: "Образование",
+        eco: "Эко"
+      },
+      sort: {
+        newest: "Самые новые",
+        popular: "Популярные",
+        ending: "Скоро заканчиваются"
+      },
+      load_more: "Показать еще",
       empty_title: "Проектов пока нет",
       empty_desc: "Скоро здесь появится список самых интересных и полезных проектов Узбекистана.",
       projects_list: [
