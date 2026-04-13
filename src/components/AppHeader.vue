@@ -1,125 +1,113 @@
 <template>
-  <header class="w-full border-b border-gray-200 bg-white sticky top-0 z-50">
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 lg:h-20">
-        <!-- Logo and Nav Links -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-50 h-20 flex items-center">
+    <div class="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-8">
+      
+      <!-- DESIGN 1: MODERN (ONLY for /explore - Exactly like your screenshot) -->
+      <div v-if="isExplorePage" class="flex justify-between items-center w-full">
+        <!-- Left: Logo -->
+        <div class="flex-shrink-0">
+          <router-link to="/" class="text-[26px] font-bold text-[#1a946b] tracking-tight">
+            Funduz
+          </router-link>
+        </div>
+
+        <!-- Center: Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-12 ml-12">
+          <router-link 
+            to="/explore" 
+            class="text-[17px] font-bold text-[#1a946b] py-1 border-b-2 border-[#1a946b]"
+          >
+            {{ $t('nav.projects') }}
+          </router-link>
+          <a href="#" class="text-[17px] font-semibold text-gray-300 hover:text-gray-900 transition-colors">
+            {{ $t('nav.about') }}
+          </a>
+          <a href="#" class="text-[17px] font-semibold text-gray-300 hover:text-gray-900 transition-colors">
+            {{ $t('nav.cooperation') }}
+          </a>
+        </nav>
+
+        <!-- Right: Actions -->
+        <div class="flex items-center gap-8 ml-auto">
+          <!-- Only Search Icon -->
+          <button class="text-gray-500 hover:text-gray-900 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+
+          <!-- Login Button (Modern style with hover) -->
+          <a href="#" class="px-8 py-2.5 border border-gray-200 bg-white text-gray-800 rounded-full text-[15px] font-bold hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm cursor-pointer">
+            {{ $t('nav.login') }}
+          </a>
+
+          <!-- Language Switcher (UZ | RU) -->
+          <div class="hidden sm:flex items-center gap-2 text-[13px] font-bold text-gray-400">
+            <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1a946b]' : ''" class="hover:text-gray-900 uppercase transition-colors cursor-pointer">Uz</button>
+            <span class="text-gray-200">|</span>
+            <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1a946b]' : ''" class="hover:text-gray-900 uppercase transition-colors cursor-pointer">Ru</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESIGN 2: CLASSIC (For Home and Project pages) -->
+      <div v-else class="flex justify-between items-center w-full">
         <div class="flex items-center gap-8">
-          <!-- Logo -->
           <div class="flex-shrink-0 flex items-center">
-            <router-link to="/" class="text-[22px] lg:text-[24px] font-bold text-[#1a946b] tracking-wide cursor-pointer">
+            <router-link to="/" class="text-[22px] lg:text-[24px] font-bold text-[#1a946b] tracking-wide">
               FUNDUZ
             </router-link>
           </div>
-          
-          <!-- Desktop Navigation -->
           <nav class="hidden lg:flex space-x-8 text-[15px] font-bold text-gray-800">
-            <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.view_projects') }}</a>
-            <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.how_it_works') }}</a>
-            <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.community') }}</a>
+            <router-link to="/explore" class="hover:text-[#1a946b] transition-colors">Loyihalarni ko'rish</router-link>
+            <a href="#" class="hover:text-[#1a946b] transition-colors">Qanday ishlaydi?</a>
+            <a href="#" class="hover:text-[#1a946b] transition-colors">Jamiyat</a>
           </nav>
         </div>
 
-        <!-- Right side -->
-        <div class="flex items-center gap-2 sm:gap-4">
-          <!-- Search Input (Hidden on mobile, visible from sm) -->
-          <div class="relative hidden md:block">
-            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <svg class="h-[18px] w-[18px] text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-              </svg>
-            </div>
-            <input 
-              type="text" 
-              :placeholder="$t('nav.search_placeholder')" 
-              class="block w-[180px] xl:w-[240px] pl-9 pr-3 py-[10px] border border-gray-100 rounded-xl leading-5 bg-[#fafafa] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1a946b]/20 focus:border-[#1a946b] text-[14px] transition-all duration-200"
-            />
+        <div class="flex items-center gap-3">
+          <div class="hidden md:block relative">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg class="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            </span>
+            <input type="text" placeholder="Loyiha qidirish..." class="block w-[200px] xl:w-[240px] pl-9 pr-3 py-[10px] border border-gray-100 rounded-xl bg-[#fafafa] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1a946b]/20 focus:border-[#1a946b] text-[14px]">
           </div>
 
-          <!-- Action Buttons (Login hidden on very small screens) -->
-          <a href="#" class="hidden sm:flex px-5 py-[11px] border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all cursor-pointer items-center justify-center">
-            {{ $t('nav.login') }}
+          <a href="#" class="hidden sm:flex px-5 py-[11px] border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all">
+            Kirish
           </a>
-          <a href="#" class="flex px-5 py-[11px] border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all cursor-pointer items-center justify-center">
-            {{ $t('nav.start_project') }}
+          <a href="#" class="flex px-5 py-[11px] border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all">
+            Loyiha boshlash
           </a>
 
-          <!-- Language Switcher (Desktop) -->
+          <!-- Language Switcher ONLY on Classic design -->
           <div class="hidden lg:flex items-center ml-2 pl-4 border-l border-gray-100 h-6">
-            <button 
-              @click="setLocale('uz')"
-              :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'"
-              class="text-[13px] font-bold hover:opacity-80 transition-all cursor-pointer uppercase"
-            >
-              Uz
-            </button>
+            <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase cursor-pointer">Uz</button>
             <span class="mx-2 text-gray-200 text-[12px]">|</span>
-            <button 
-              @click="setLocale('ru')"
-              :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'"
-              class="text-[13px] font-bold hover:text-[#1a946b] transition-all cursor-pointer uppercase"
-            >
-              Ru
-            </button>
+            <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase cursor-pointer">Ru</button>
           </div>
-
-          <!-- Mobile Menu Button -->
-          <button 
-            @click="isMenuOpen = !isMenuOpen"
-            class="lg:hidden p-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
-          >
-            <svg v-if="!isMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-            <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
         </div>
       </div>
+
     </div>
-
-    <!-- Mobile Navigation Drawer -->
-    <transition
-      enter-active-class="transition duration-200 ease-out"
-      enter-from-class="translate-y-[-10px] opacity-0"
-      enter-to-class="translate-y-0 opacity-100"
-      leave-active-class="transition duration-150 ease-in"
-      leave-from-class="translate-y-0 opacity-100"
-      leave-to-class="translate-y-[-10px] opacity-0"
-    >
-      <div v-if="isMenuOpen" class="lg:hidden bg-white border-b border-gray-100 shadow-xl overflow-hidden">
-        <div class="px-4 pt-2 pb-6 space-y-1">
-          <a href="#" class="block px-4 py-3 text-[16px] font-bold text-gray-800 hover:bg-gray-50 rounded-xl">{{ $t('nav.view_projects') }}</a>
-          <a href="#" class="block px-4 py-3 text-[16px] font-bold text-gray-800 hover:bg-gray-50 rounded-xl">{{ $t('nav.how_it_works') }}</a>
-          <a href="#" class="block px-4 py-3 text-[16px] font-bold text-gray-800 hover:bg-gray-50 rounded-xl">{{ $t('nav.community') }}</a>
-          <div class="pt-4 pb-2 px-4 flex items-center justify-between border-t border-gray-50 mt-2">
-            <span class="text-gray-400 text-sm font-medium uppercase">Til / Язык</span>
-            <div class="flex items-center gap-4">
-              <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'" class="font-bold">UZ</button>
-              <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'" class="font-bold">RU</button>
-            </div>
-          </div>
-          <div class="px-4 pt-4">
-             <button class="w-full py-4 bg-gray-50 text-gray-800 font-bold rounded-xl active:bg-gray-100 transition-colors">
-                {{ $t('nav.login') }}
-             </button>
-          </div>
-        </div>
-      </div>
-    </transition>
   </header>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
+const route = useRoute()
 const { locale } = useI18n()
-const isMenuOpen = ref(false)
 
-const setLocale = (lang: 'uz' | 'ru') => {
+const isExplorePage = computed(() => route.path === '/explore')
+
+const setLocale = (lang: string) => {
   locale.value = lang
-  // Close menu on language change if mobile
-  isMenuOpen.value = false
 }
 </script>
+
+<style scoped>
+/* No extra styles needed, Tailwind handles it */
+</style>

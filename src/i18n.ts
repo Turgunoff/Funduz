@@ -1,14 +1,96 @@
-import { createI18n } from 'vue-i18n'
+import { createI18n } from "vue-i18n";
 
 const messages = {
   uz: {
     nav: {
+      projects: "Loyihalar",
+      about: "Biz haqimizda",
+      cooperation: "Hamkorlik",
+      login: "Kirish",
       view_projects: "Loyihalarni ko'rish",
       how_it_works: "Qanday ishlaydi?",
       community: "Jamiyat",
       search_placeholder: "Loyiha qidirish...",
-      login: "Kirish",
-      start_project: "Loyiha boshlash"
+      start_project: "Loyiha boshlash",
+    },
+    explore: {
+      title: "Barcha loyihalar",
+      empty_title: "Hali loyihalar yo'q",
+      empty_desc: "Tez orada bu yerda O'zbekistondagi eng qiziqarli va foydali loyihalar ro'yxati paydo bo'ladi.",
+      projects_list: [
+        {
+          id: 1,
+          title: "Toshkent Yashil Bog'lari: Shahar Ichida Tabiat",
+          author: "Anvar Qosimov",
+          category: "Ekologiya",
+          raised: "120,000,000",
+          goal: "150,000,000",
+          progress: 80,
+          days: 12,
+          donors: 845,
+          img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+          id: 2,
+          title: "Bilim-AI: O'zbek Tili Uchun Sun'iy Intellekt",
+          author: "Malika Karimova",
+          category: "Ta'lim",
+          raised: "45,000,000",
+          goal: "100,000,000",
+          progress: 45,
+          days: 24,
+          donors: 312,
+          img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+          id: 3,
+          title: "Samarqand Keramikasi: Yangi Avlod Markazi",
+          author: "Umar Ali",
+          category: "San'at",
+          raised: "82,800,000",
+          goal: "90,000,000",
+          progress: 92,
+          days: 3,
+          donors: 156,
+          img: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+          id: 4,
+          title: "Agro-Dron: Paxta Dalalarini Monitoring Qilish",
+          author: "Jasur Olimov",
+          category: "Texnologiya",
+          raised: "30,000,000",
+          goal: "60,000,000",
+          progress: 50,
+          days: 15,
+          donors: 89,
+          img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+          id: 5,
+          title: "Kitobxon: Yoshlar Uchun Zamonaviy Kutubxona",
+          author: "Aziza Karimova",
+          category: "Jamiyat",
+          raised: "15,000,000",
+          goal: "25,000,000",
+          progress: 60,
+          days: 8,
+          donors: 124,
+          img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+          id: 6,
+          title: "Quyosh Panellari: Maktablarni Energiya Bilan Ta'minlash",
+          author: "Sardor Ahmedov",
+          category: "Ekologiya",
+          raised: "95,000,000",
+          goal: "120,000,000",
+          progress: 79,
+          days: 20,
+          donors: 432,
+          img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800"
+        }
+      ]
     },
     hero: {
       badge: "O'zbekistonning birinchi kraudfanding platformasi",
@@ -18,13 +100,13 @@ const messages = {
       description: "Funduz orqali ijtimoiy muhim loyihalarni qo'llab-quvvatlang yoki o'z g'oyangizni amalga oshirish uchun sarmoya to'plang.",
       btn_contribute: "Hozir hissa qo'shish",
       btn_create: "Loyiha yaratish",
-      success_title: "\"Oromgoh\" loyihasi 2 haftada kerakli summani to'pladi",
-      success_donors: "345 ta donor tomonidan qo'llab-quvvatlandi"
+      success_title: '"Oromgoh" loyihasi 2 haftada kerakli summani to\'pladi',
+      success_donors: "345 ta donor tomonidan qo'llab-quvvatlandi",
     },
     stats: {
       projects: "Muvaffaqiyatli loyihalar",
       donors: "Faol donorlar",
-      collected: "Yig'ilgan mablag'"
+      collected: "Yig'ilgan mablag'",
     },
     projects: {
       title: "Tanlangan loyihalar",
@@ -38,7 +120,7 @@ const messages = {
       cat_tech: "Texnologiya",
       p1_title: "Qishloq maktabi uchun zamonaviy kutubxona",
       p2_title: "Yashil shahar: 10,000 daraxt ekish aksiyasi",
-      p3_title: "Yosh IT mutaxassislar uchun bepul kurslar"
+      p3_title: "Yosh IT mutaxassislar uchun bepul kurslar",
     },
     cta: {
       title: "O'z g'oyangizni haqiqatga aylantiring",
@@ -48,7 +130,7 @@ const messages = {
       feature1: "Oson boshqaruv",
       feature1_desc: "To'liq shaffof dashboard",
       feature2: "Katta auditoriya",
-      feature2_desc: "Minglab potensial donorlar"
+      feature2_desc: "Minglab potensial donorlar",
     },
     footer: {
       description: "O'zbekistonning kelajagini birgalikda barpo etamiz. Har bir hissa muhim.",
@@ -66,7 +148,7 @@ const messages = {
       copyright: "© 2024 Funduz. Barcha huquqlar himoyalangan.",
       social_tg: "Telegram",
       social_inst: "Instagram",
-      social_fb: "Facebook"
+      social_fb: "Facebook",
     },
     project_view: {
       title: "Eco-Paket: O'zbekistonda birinchi marta bio-parchalanadigan qadoqlar ishlab chiqarish",
@@ -93,29 +175,114 @@ const messages = {
       reward_3_price: "2,000,000 UZS",
       reward_3_desc: "Sizning logotipingiz birinchi partiya qadoqlari ustida 'Hamkor' sifatida ko'rsatiladi.",
       delivery_label: "Kutilayotgan yetkazib berish:",
+      reward_1_delivery: "Sentyabr, 2024",
+      reward_2_delivery: "Oktyabr, 2024",
+      reward_3_delivery: "Oktyabr, 2024",
       special_title: "Maxsus yordam?",
       special_desc: "Agar siz yirik investor bo'lsangiz yoki maxsus hamkorlik shartlarini muhokama qilmoqchi bo'lsangiz, biz bilan bog'laning.",
       special_btn: "Aloqaga chiqish",
       detail_title: "Ekologiya uchun yangi davr",
-      detail_text_1: "O'zbekistonda har yili millionlab tonna plastik chiqindilar hosil bo'ladi. Ularning asosiy qismini bir marta ishlatiladigan paketlar tashkil etadi. Bizning Eco-Paket loyihamiz makkajo'xori kraxmalidan tayyorlangan, 6-12 oy ichida to'liq parchalanib ketadigan qadoqlarni ommalashtirishni maqsad qilgan.",
+      detail_text_1: "O'zbekistonda har yili millionlab tonna plastik chiqindilar hosil bo'ladi. Ularning asosiy qismini bir marta ishlatiladigan paketlar tashkil etadi. Bizning Eco-Paket loyihamiz makkajo'xori kraxmalidan tayyorlangan, 6-12 oy ichida to'liq parchalanib ketadigan qadoqlarni оmmalashtirishni maqsad qilgan.",
       detail_text_2: "Yig'ilgan mablag'lar Xitoydan yuqori texnologiyali uskunalarni sotib olish va dastlabki xom-ashyo zaxirasini shakllantirishga sarflanadi. Loyihamiz Toshkent shahrida o'z faoliyatini boshlaydi va keyinchalik butun respublika bo'ylab kengayadi.",
       image_caption: "Biz ishlab chiqaradigan bio-parchalanadigan paketlar namunalari",
       benefits_title: "Nima uchun bizni qo'llab-quvvatlashingiz kerak?",
       benefits: [
         "Tabiatni plastik ifloslanishidan asraysiz.",
         "Mahalliy ishlab chiqarishni rivojlantirishga hissa qo'shasiz.",
-        "Yuqori sifatli eko-mahsulotlarni birinchilardan bo'lib qo'lga kiritasiz."
-      ]
-    }
+        "Yuqori sifatli eko-mahsulotlarni birinchilardan bo'lib qo'lga kiritasiz.",
+      ],
+    },
   },
   ru: {
     nav: {
+      projects: "Проекты",
+      about: "О нас",
+      cooperation: "Сотрудничество",
+      login: "Войти",
       view_projects: "Просмотр проектов",
       how_it_works: "Как это работает?",
       community: "Сообщество",
       search_placeholder: "Поиск проекта...",
-      login: "Войти",
-      start_project: "Начать проект"
+      start_project: "Начать проект",
+    },
+    explore: {
+      title: "Все проекты",
+      empty_title: "Проектов пока нет",
+      empty_desc: "Скоро здесь появится список самых интересных и полезных проектов Узбекистана.",
+      projects_list: [
+        {
+          id: 1,
+          title: "Зеленые сады Ташкента: Природа внутри города",
+          author: "Анвар Касымов",
+          category: "Экология",
+          raised: "120,000,000",
+          goal: "150,000,000",
+          progress: 80,
+          days: 12,
+          donors: 845,
+          img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+          id: 2,
+          title: "Bilim-AI: Искусственный интеллект для узбекского языка",
+          author: "Малика Каримова",
+          category: "Образование",
+          raised: "45,000,000",
+          goal: "100,000,000",
+          progress: 45,
+          days: 24,
+          donors: 312,
+          img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+          id: 3,
+          title: "Самаркандская керамика: Центр нового поколения",
+          author: "Умар Али",
+          category: "Искусство",
+          raised: "82,800,000",
+          goal: "90,000,000",
+          progress: 92,
+          days: 3,
+          donors: 156,
+          img: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+          id: 4,
+          title: "Агро-Дрон: Мониторинг хлопковых полей",
+          author: "Жасур Олимов",
+          category: "Технологии",
+          raised: "30,000,000",
+          goal: "60,000,000",
+          progress: 50,
+          days: 15,
+          donors: 89,
+          img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+          id: 5,
+          title: "Книголюб: Современная библиотека для молодежи",
+          author: "Азиза Каримова",
+          category: "Общество",
+          raised: "15,000,000",
+          goal: "25,000,000",
+          progress: 60,
+          days: 8,
+          donors: 124,
+          img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+          id: 6,
+          title: "Солнечные панели: Энергия для сельских школ",
+          author: "Сардор Ахмедов",
+          category: "Экология",
+          raised: "95,000,000",
+          goal: "120,000,000",
+          progress: 79,
+          days: 20,
+          donors: 432,
+          img: "https://images.unsplash.com/photo-1509391366360-fe5ab404776a?auto=format&fit=crop&q=80&w=800"
+        }
+      ]
     },
     hero: {
       badge: "Первая краудфандинговая платформа Узбекистана",
@@ -126,12 +293,12 @@ const messages = {
       btn_contribute: "Сделать вклад сейчас",
       btn_create: "Создать проект",
       success_title: "Проект «Oromgoh» собрал нужную сумму за 2 недели",
-      success_donors: "Поддержано 345 донорами"
+      success_donors: "Поддержано 345 донорами",
     },
     stats: {
       projects: "Успешных проектов",
       donors: "Активных доноров",
-      collected: "Собрано средств"
+      collected: "Собрано средств",
     },
     projects: {
       title: "Избранные проекты",
@@ -145,7 +312,7 @@ const messages = {
       cat_tech: "Технологии",
       p1_title: "Современная библиотека для сельской школы",
       p2_title: "Зеленый город: акция по посадке 10,000 деревьев",
-      p3_title: "Бесплатные IT-курсы для молодых специалистов"
+      p3_title: "Бесплатные IT-курсы для молодых специалистов",
     },
     cta: {
       title: "Превратите свою идею в реальность",
@@ -155,7 +322,7 @@ const messages = {
       feature1: "Простое управление",
       feature1_desc: "Полностью прозрачный дашборд",
       feature2: "Большая аудитория",
-      feature2_desc: "Тысячи потенциальных доноров"
+      feature2_desc: "Тысячи потенциальных доноров",
     },
     footer: {
       description: "Строим будущее Узбекистана вместе. Каждое вложение важно.",
@@ -173,7 +340,7 @@ const messages = {
       copyright: "© 2024 Funduz. Все права защищены.",
       social_tg: "Telegram",
       social_inst: "Instagram",
-      social_fb: "Facebook"
+      social_fb: "Facebook",
     },
     project_view: {
       title: "Eco-Paket: Производство первой биоразлагаемой упаковки в Узбекистане",
@@ -207,31 +374,22 @@ const messages = {
       special_desc: "Если вы крупный инвестор или хотите обсудить особые условия партнерства, свяжитесь с нами.",
       special_btn: "Связаться",
       detail_title: "Новая эра для экологии",
-      detail_text_1: "В Узбекистане ежегодно образуются миллионы тонн пластиковых отходов. Основную их часть составляют одноразовые пакеты. Наш проект Eco-Paket направлен на популяризацию упаковки из кукурузного крахмала, которая полностью разлагается за 6-12 месяцев.",
+      detail_text_1: "В Узбекистане ежедневно образуются миллионы тонн пластиковых отходов. Основную их часть составляют одноразовые пакеты. Наш проект Eco-Paket направлен на популяризацию упаковки из кукурузного крахмала, которая полностью разлагается за 6-12 месяцев.",
       detail_text_2: "Собранные средства будут направлены на закупку высокотехнологичного оборудования из Китая и формирование первоначального запаса сырья. Наш проект начнет работу в Ташкенте и в дальнейшем расширится на всю республику.",
       image_caption: "Образцы биоразлагаемых пакетов нашего производства",
       benefits_title: "Почему вы должны нас поддержать?",
       benefits: [
         "Вы защищаете природу от пластикового загрязнения.",
         "Вы вносите вклад в развитие местного производства.",
-        "Вы станете одним из первых обладателей высококачественной эко-продукции."
-      ]
-    }
-  }
-}
-const uz_delivery = {
-  r1: "Sentyabr, 2024",
-  r2: "Oktyabr, 2024",
-  r3: "Oktyabr, 2024"
-}
-// Add delivery dates to UZ manually since they were missing
-messages.uz.project_view.reward_1_delivery = uz_delivery.r1
-messages.uz.project_view.reward_2_delivery = uz_delivery.r2
-messages.uz.project_view.reward_3_delivery = uz_delivery.r3
+        "Вы станете одним из первых обладателей высококачественной эко-продукции.",
+      ],
+    },
+  },
+};
 
 export const i18n = createI18n({
   legacy: false,
-  locale: 'uz',
-  fallbackLocale: 'ru',
+  locale: "uz",
+  fallbackLocale: "ru",
   messages,
-})
+});
