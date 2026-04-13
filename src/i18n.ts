@@ -20,6 +20,35 @@ const messages = {
       btn_create: "Loyiha yaratish",
       success_title: "\"Oromgoh\" loyihasi 2 haftada kerakli summani to'pladi",
       success_donors: "345 ta donor tomonidan qo'llab-quvvatlandi"
+    },
+    stats: {
+      projects: "Muvaffaqiyatli loyihalar",
+      donors: "Faol donorlar",
+      collected: "Yig'ilgan mablag'"
+    },
+    projects: {
+      title: "Tanlangan loyihalar",
+      subtitle: "O'zbekiston bo'ylab eng dolzarb va qiziqarli tashabbuslar",
+      view_all: "Barcha loyihalar",
+      more: "Batafsil ma'lumot",
+      goal: "Maqsad",
+      donors: "donor",
+      cat_education: "Ta'lim",
+      cat_ecology: "Ekologiya",
+      cat_tech: "Texnologiya",
+      p1_title: "Qishloq maktabi uchun zamonaviy kutubxona",
+      p2_title: "Yashil shahar: 10,000 daraxt ekish aksiyasi",
+      p3_title: "Yosh IT mutaxassislar uchun bepul kurslar"
+    },
+    cta: {
+      title: "O'z g'oyangizni haqiqatga aylantiring",
+      subtitle: "Biznesingiz, ijtimoiy loyihangiz yoki ijodingiz uchun kerakli sarmoyani Funduz hamjamiyati bilan birga to'plang.",
+      btn_start: "Loyiha boshlash",
+      btn_expert: "Mutaxassis bilan bog'lanish",
+      feature1: "Oson boshqaruv",
+      feature1_desc: "To'liq shaffof dashboard",
+      feature2: "Katta auditoriya",
+      feature2_desc: "Minglab potensial donorlar"
     }
   },
   ru: {
@@ -41,6 +70,35 @@ const messages = {
       btn_create: "Создать проект",
       success_title: "Проект «Oromgoh» собрал нужную сумму за 2 недели",
       success_donors: "Поддержано 345 донорами"
+    },
+    stats: {
+      projects: "Успешных проектов",
+      donors: "Активных доноров",
+      collected: "Собрано средств"
+    },
+    projects: {
+      title: "Избранные проекты",
+      subtitle: "Самые актуальные и интересные инициативы по всему Узбекистану",
+      view_all: "Все проекты",
+      more: "Подробнее",
+      goal: "Цель",
+      donors: "доноров",
+      cat_education: "Образование",
+      cat_ecology: "Экология",
+      cat_tech: "Технологии",
+      p1_title: "Современная библиотека для сельской школы",
+      p2_title: "Зеленый город: акция по посадке 10,000 деревьев",
+      p3_title: "Бесплатные IT-курсы для молодых специалистов"
+    },
+    cta: {
+      title: "Превратите свою идею в реальность",
+      subtitle: "Соберите необходимый капитал для вашего бизнеса, социального проекта или творчества вместе с сообществом Funduz.",
+      btn_start: "Начать проект",
+      btn_expert: "Связаться со специалистом",
+      feature1: "Простое управление",
+      feature1_desc: "Полностью прозрачный дашборд",
+      feature2: "Большая аудитория",
+      feature2_desc: "Тысячи потенциальных доноров"
     }
   }
 }

@@ -1,64 +1,81 @@
 <script setup lang="ts">
+import StatsSection from '@/components/StatsSection.vue';
+import FeaturedProjects from '@/components/FeaturedProjects.vue';
+import CTASection from '@/components/CTASection.vue';
 </script>
 
 <template>
-  <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-      <!-- Left Content -->
-      <div class="order-2 lg:order-1">
-        <!-- Label -->
-        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#f0f9ff] mb-8">
-          <span class="text-[#1ba0f2] text-[15px] font-bold">
-            {{ $t('hero.badge') }}
-          </span>
-        </div>
+  <div>
+    <!-- Hero Section -->
+    <div class="bg-white">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <!-- Left Content -->
+          <div class="order-2 lg:order-1">
+            <!-- Label -->
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#f0f9ff] mb-8">
+              <span class="text-[#1ba0f2] text-[15px] font-bold">
+                {{ $t('hero.badge') }}
+              </span>
+            </div>
 
-        <!-- Heading -->
-        <h1 class="text-[52px] sm:text-[64px] lg:text-[76px] font-bold text-gray-900 leading-[1.05] tracking-tight mb-8">
-          {{ $t('hero.title_1') }} <br />
-          {{ $t('hero.title_2') }} <br />
-          <span class="text-[#1ba0f2] italic">{{ $t('hero.title_3') }}</span>
-        </h1>
+            <!-- Heading -->
+            <h1 class="text-[52px] sm:text-[64px] lg:text-[76px] font-bold text-gray-900 leading-[1.05] tracking-tight mb-8">
+              {{ $t('hero.title_1') }} <br />
+              {{ $t('hero.title_2') }} <br />
+              <span class="text-[#1ba0f2] italic">{{ $t('hero.title_3') }}</span>
+            </h1>
 
-        <!-- Description -->
-        <p class="text-[17px] sm:text-[19px] text-gray-500 leading-relaxed mb-10 max-w-[500px]">
-          {{ $t('hero.description') }}
-        </p>
-
-        <!-- Buttons -->
-        <div class="flex flex-wrap gap-4">
-          <button class="px-8 py-[18px] border border-gray-200 rounded-xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1ba0f2] hover:text-white hover:border-[#1ba0f2] transition-all shadow-sm hover:shadow-lg hover:shadow-blue-100/50 cursor-pointer">
-            {{ $t('hero.btn_contribute') }}
-          </button>
-          <button class="px-8 py-[18px] border border-gray-200 rounded-xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1ba0f2] hover:text-white hover:border-[#1ba0f2] transition-all flex items-center justify-center gap-2 cursor-pointer">
-            {{ $t('hero.btn_create') }}
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Right Image Section -->
-      <div class="order-1 lg:order-2 relative">
-        <div class="rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] group">
-          <img 
-            src="/celebration_hero.png" 
-            alt="Crowdfunding success celebration" 
-            class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
-          />
-          <!-- Bottom Overlay Message -->
-          <div class="absolute bottom-0 left-0 right-0 p-8 lg:p-12 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-            <h3 class="text-white text-[24px] lg:text-[28px] font-bold leading-tight mb-3">
-              {{ $t('hero.success_title') }}
-            </h3>
-            <p class="text-white/90 text-[16px] lg:text-[18px] font-medium font-sans">
-              {{ $t('hero.success_donors') }}
+            <!-- Description -->
+            <p class="text-[17px] sm:text-[19px] text-gray-500 leading-relaxed mb-10 max-w-[500px]">
+              {{ $t('hero.description') }}
             </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-wrap gap-4">
+              <button class="px-8 py-[18px] border border-gray-200 rounded-xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1ba0f2] hover:text-white hover:border-[#1ba0f2] transition-all shadow-sm hover:shadow-lg hover:shadow-blue-100/50 cursor-pointer">
+                {{ $t('hero.btn_contribute') }}
+              </button>
+              <button class="px-8 py-[18px] border border-gray-200 rounded-xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1ba0f2] hover:text-white hover:border-[#1ba0f2] transition-all flex items-center justify-center gap-2 cursor-pointer">
+                {{ $t('hero.btn_create') }}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Image Section -->
+          <div class="order-1 lg:order-2 relative">
+            <div class="rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] group">
+              <img 
+                src="/celebration_hero.png" 
+                alt="Crowdfunding success celebration" 
+                class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+              />
+              <!-- Bottom Overlay Message -->
+              <div class="absolute bottom-0 left-0 right-0 p-8 lg:p-12 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                <h3 class="text-white text-[24px] lg:text-[28px] font-bold leading-tight mb-3">
+                  {{ $t('hero.success_title') }}
+                </h3>
+                <p class="text-white/90 text-[16px] lg:text-[18px] font-medium font-sans">
+                  {{ $t('hero.success_donors') }}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Stats Section -->
+    <StatsSection />
+
+    <!-- Featured Projects Section -->
+    <FeaturedProjects />
+
+    <!-- Call to Action Section -->
+    <CTASection />
   </div>
 </template>
 
