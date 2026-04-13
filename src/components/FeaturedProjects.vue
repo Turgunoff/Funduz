@@ -58,9 +58,9 @@
               </div>
             </div>
             
-            <button class="mt-8 w-full py-4 bg-[#f0f9ff] text-[#1fb1f9] font-bold rounded-xl hover:bg-[#1fb1f9] hover:text-white transition-all cursor-pointer">
+            <a href="/project/1" class="mt-8 w-full py-4 bg-[#f0f9ff] text-[#1fb1f9] font-bold rounded-xl hover:bg-[#1fb1f9] hover:text-white transition-all cursor-pointer flex items-center justify-center">
               {{ $t('projects.more') }}
-            </button>
+            </a>
           </div>
         </div>
 
@@ -98,9 +98,9 @@
                 <span>89 {{ $t('projects.donors') }}</span>
               </div>
             </div>
-            <button class="mt-8 w-full py-4 bg-[#f0f9ff] text-[#1fb1f9] font-bold rounded-xl hover:bg-[#1fb1f9] hover:text-white transition-all cursor-pointer">
+            <a href="/project/1" class="mt-8 w-full py-4 bg-[#f0f9ff] text-[#1fb1f9] font-bold rounded-xl hover:bg-[#1fb1f9] hover:text-white transition-all cursor-pointer flex items-center justify-center">
               {{ $t('projects.more') }}
-            </button>
+            </a>
           </div>
         </div>
 
@@ -138,9 +138,9 @@
                 <span>312 {{ $t('projects.donors') }}</span>
               </div>
             </div>
-            <button class="mt-8 w-full py-4 bg-[#f0f9ff] text-[#1fb1f9] font-bold rounded-xl hover:bg-[#1fb1f9] hover:text-white transition-all cursor-pointer">
+            <a href="/project/1" class="mt-8 w-full py-4 bg-[#f0f9ff] text-[#1fb1f9] font-bold rounded-xl hover:bg-[#1fb1f9] hover:text-white transition-all cursor-pointer flex items-center justify-center">
               {{ $t('projects.more') }}
-            </button>
+            </a>
           </div>
         </div>
       </div>

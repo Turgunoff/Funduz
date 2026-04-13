@@ -15,14 +15,14 @@
             {{ $t('cta.subtitle') }}
           </p>
 
-          <!-- Buttons with specific hover behavior -->
+          <!-- Buttons as links with specific hover behavior -->
           <div class="flex flex-wrap gap-5">
-            <button class="px-10 py-[18px] bg-white text-gray-900 font-bold rounded-2xl text-[16px] transition-colors duration-300 hover:text-[#1fb1f9] cursor-pointer shadow-xl shadow-blue-900/10">
+            <a href="/project/1" class="px-10 py-[18px] bg-white text-gray-900 font-bold rounded-2xl text-[16px] transition-colors duration-300 hover:text-[#1fb1f9] cursor-pointer shadow-xl shadow-blue-900/10 flex items-center justify-center">
               {{ $t('cta.btn_start') }}
-            </button>
-            <button class="px-10 py-[18px] bg-white text-gray-900 font-bold rounded-2xl text-[16px] transition-colors duration-300 hover:text-[#1fb1f9] cursor-pointer shadow-xl shadow-blue-900/10">
+            </a>
+            <a href="/project/1" class="px-10 py-[18px] bg-white text-gray-900 font-bold rounded-2xl text-[16px] transition-colors duration-300 hover:text-[#1fb1f9] cursor-pointer shadow-xl shadow-blue-900/10 flex items-center justify-center">
               {{ $t('cta.btn_expert') }}
-            </button>
+            </a>
           </div>
         </div>
 

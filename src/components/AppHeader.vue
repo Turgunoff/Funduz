@@ -6,9 +6,9 @@
         <div class="flex items-center gap-8">
           <!-- Logo -->
           <div class="flex-shrink-0 flex items-center">
-            <a href="#" class="text-[22px] lg:text-[24px] font-bold text-[#1fb1f9] tracking-wide">
+            <router-link to="/" class="text-[22px] lg:text-[24px] font-bold text-[#1fb1f9] tracking-wide cursor-pointer">
               FUNDUZ
-            </a>
+            </router-link>
           </div>
           
           <!-- Desktop Navigation -->
@@ -36,12 +36,12 @@
           </div>
 
           <!-- Action Buttons (Login hidden on very small screens) -->
-          <button class="hidden sm:block px-5 py-[11px] border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-gray-50 transition-colors cursor-pointer">
+          <a href="#" class="hidden sm:flex px-5 py-[11px] border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-gray-50 transition-colors cursor-pointer items-center justify-center">
             {{ $t('nav.login') }}
-          </button>
-          <button class="px-5 py-[11px] bg-[#1fb1f9] text-white rounded-xl text-[14px] font-bold hover:bg-[#19a1e3] transition-colors shadow-lg shadow-blue-100 cursor-pointer">
+          </a>
+          <a href="#" class="flex px-5 py-[11px] bg-[#1fb1f9] text-white rounded-xl text-[14px] font-bold hover:bg-[#19a1e3] transition-colors shadow-lg shadow-blue-100 cursor-pointer items-center justify-center">
             {{ $t('nav.start_project') }}
-          </button>
+          </a>
 
           <!-- Language Switcher (Desktop) -->
           <div class="hidden lg:flex items-center ml-2 pl-4 border-l border-gray-100 h-6">

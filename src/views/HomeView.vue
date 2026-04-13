@@ -31,17 +31,17 @@ import CTASection from '@/components/CTASection.vue';
               {{ $t('hero.description') }}
             </p>
 
-            <!-- Buttons -->
+            <!-- Buttons as links -->
             <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4">
-              <button class="w-full sm:w-auto px-8 py-4 border border-gray-200 rounded-2xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1fb1f9] hover:text-white hover:border-[#1fb1f9] transition-all shadow-sm cursor-pointer">
+              <a href="#" class="w-full sm:w-auto px-8 py-4 border border-gray-200 rounded-2xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1fb1f9] hover:text-white hover:border-[#1fb1f9] transition-all shadow-sm cursor-pointer flex items-center justify-center">
                 {{ $t('hero.btn_contribute') }}
-              </button>
-              <button class="w-full sm:w-auto px-8 py-4 border border-gray-200 rounded-2xl font-bold text-[16px] text-gray-800 bg-white hover:bg-gray-50 transition-all flex items-center justify-center gap-2 cursor-pointer">
+              </a>
+              <a href="#" class="w-full sm:w-auto px-8 py-4 border border-gray-200 rounded-2xl font-bold text-[16px] text-gray-800 bg-white hover:bg-gray-50 transition-all flex items-center justify-center gap-2 cursor-pointer">
                 {{ $t('hero.btn_create') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
 

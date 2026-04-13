@@ -67,6 +67,45 @@ const messages = {
       social_tg: "Telegram",
       social_inst: "Instagram",
       social_fb: "Facebook"
+    },
+    project_view: {
+      title: "Eco-Paket: O'zbekistonda birinchi marta bio-parchalanadigan qadoqlar ishlab chiqarish",
+      author_label: "Muallif",
+      author_success: "2 ta muvaffaqiyatli loyiha",
+      goal: "Maqsad",
+      raised: "yig'ildi",
+      donors_count: "ta donolar",
+      stat_donors: "Donolar",
+      stat_days: "Kun qoldi",
+      stat_done: "Bajarildi",
+      btn_support: "Loyihani qo'llab-quvvatlash",
+      tabs: ["Loyiha haqida", "Yangiliklar", "Fikrlar"],
+      reward_title: "Mukofotlar",
+      reward_count: "ta mavjud",
+      reward_select: "Tanlash",
+      reward_1_title: "Rahmatnoma",
+      reward_1_price: "100,000 UZS",
+      reward_1_desc: "Bizning loyihamizni qo'llab-quvvatlaganingiz uchun elektron rahmatnoma va loyiha saytida ismingiz chop etiladi.",
+      reward_2_title: "Eco-To'plam",
+      reward_2_price: "500,000 UZS",
+      reward_2_desc: "100 dona bio-paketlar to'plami va brendli eko-sumka (tote bag). O'zbekiston bo'ylab yetkazib berish bepul.",
+      reward_3_title: "Homiy Hamkor",
+      reward_3_price: "2,000,000 UZS",
+      reward_3_desc: "Sizning logotipingiz birinchi partiya qadoqlari ustida 'Hamkor' sifatida ko'rsatiladi.",
+      delivery_label: "Kutilayotgan yetkazib berish:",
+      special_title: "Maxsus yordam?",
+      special_desc: "Agar siz yirik investor bo'lsangiz yoki maxsus hamkorlik shartlarini muhokama qilmoqchi bo'lsangiz, biz bilan bog'laning.",
+      special_btn: "Aloqaga chiqish",
+      detail_title: "Ekologiya uchun yangi davr",
+      detail_text_1: "O'zbekistonda har yili millionlab tonna plastik chiqindilar hosil bo'ladi. Ularning asosiy qismini bir marta ishlatiladigan paketlar tashkil etadi. Bizning Eco-Paket loyihamiz makkajo'xori kraxmalidan tayyorlangan, 6-12 oy ichida to'liq parchalanib ketadigan qadoqlarni ommalashtirishni maqsad qilgan.",
+      detail_text_2: "Yig'ilgan mablag'lar Xitoydan yuqori texnologiyali uskunalarni sotib olish va dastlabki xom-ashyo zaxirasini shakllantirishga sarflanadi. Loyihamiz Toshkent shahrida o'z faoliyatini boshlaydi va keyinchalik butun respublika bo'ylab kengayadi.",
+      image_caption: "Biz ishlab chiqaradigan bio-parchalanadigan paketlar namunalari",
+      benefits_title: "Nima uchun bizni qo'llab-quvvatlashingiz kerak?",
+      benefits: [
+        "Tabiatni plastik ifloslanishidan asraysiz.",
+        "Mahalliy ishlab chiqarishni rivojlantirishga hissa qo'shasiz.",
+        "Yuqori sifatli eko-mahsulotlarni birinchilardan bo'lib qo'lga kiritasiz."
+      ]
     }
   },
   ru: {
@@ -135,9 +174,60 @@ const messages = {
       social_tg: "Telegram",
       social_inst: "Instagram",
       social_fb: "Facebook"
+    },
+    project_view: {
+      title: "Eco-Paket: Производство первой биоразлагаемой упаковки в Узбекистане",
+      author_label: "Автор",
+      author_success: "2 успешных проекта",
+      goal: "Цель",
+      raised: "собрано",
+      donors_count: "доноров",
+      stat_donors: "Доноры",
+      stat_days: "Дней осталось",
+      stat_done: "Выполнено",
+      btn_support: "Поддержать проект",
+      tabs: ["О проекте", "Новости", "Отзывы"],
+      reward_title: "Награды",
+      reward_count: "доступно",
+      reward_select: "Выбрать",
+      reward_1_title: "Благодарность",
+      reward_1_price: "100,000 UZS",
+      reward_1_desc: "Электронное благодарственное письмо и ваше имя в списке спонсоров на сайте проекта.",
+      reward_2_title: "Eco-Набор",
+      reward_2_price: "500,000 UZS",
+      reward_2_desc: "Набор из 100 био-пакетов и брендированная эко-сумка (tote bag). Бесплатная доставка по Узбекистану.",
+      reward_3_title: "Спонсор-Партнер",
+      reward_3_price: "2,000,000 UZS",
+      reward_3_desc: "Ваш логотип будет размещен на первой партии упаковки в качестве официального партнера.",
+      delivery_label: "Ожидаемая доставка:",
+      reward_1_delivery: "Сентябрь, 2024",
+      reward_2_delivery: "Октябрь, 2024",
+      reward_3_delivery: "Октябрь, 2024",
+      special_title: "Особая помощь?",
+      special_desc: "Если вы крупный инвестор или хотите обсудить особые условия партнерства, свяжитесь с нами.",
+      special_btn: "Связаться",
+      detail_title: "Новая эра для экологии",
+      detail_text_1: "В Узбекистане ежегодно образуются миллионы тонн пластиковых отходов. Основную их часть составляют одноразовые пакеты. Наш проект Eco-Paket направлен на популяризацию упаковки из кукурузного крахмала, которая полностью разлагается за 6-12 месяцев.",
+      detail_text_2: "Собранные средства будут направлены на закупку высокотехнологичного оборудования из Китая и формирование первоначального запаса сырья. Наш проект начнет работу в Ташкенте и в дальнейшем расширится на всю республику.",
+      image_caption: "Образцы биоразлагаемых пакетов нашего производства",
+      benefits_title: "Почему вы должны нас поддержать?",
+      benefits: [
+        "Вы защищаете природу от пластикового загрязнения.",
+        "Вы вносите вклад в развитие местного производства.",
+        "Вы станете одним из первых обладателей высококачественной эко-продукции."
+      ]
     }
   }
 }
+const uz_delivery = {
+  r1: "Sentyabr, 2024",
+  r2: "Oktyabr, 2024",
+  r3: "Oktyabr, 2024"
+}
+// Add delivery dates to UZ manually since they were missing
+messages.uz.project_view.reward_1_delivery = uz_delivery.r1
+messages.uz.project_view.reward_2_delivery = uz_delivery.r2
+messages.uz.project_view.reward_3_delivery = uz_delivery.r3
 
 export const i18n = createI18n({
   legacy: false,
