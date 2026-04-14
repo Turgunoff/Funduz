@@ -474,6 +474,125 @@ const messages = {
           cat: "general"
         }
       ]
+    },
+    terms: {
+      badge: "Yuridik ma'lumotlar",
+      title: "Foydalanish shartlari",
+      last_updated: "Oxirgi yangilanish",
+      footer_title: "Savollaringiz bormi?",
+      footer_desc: "Agar sizda ushbu shartlar bo'yicha tushunmovchiliklar bo'lsa, bizning qo'llab-quvvatlash jamoamizga murojaat qiling.",
+      footer_link: "Bog'lanish",
+      toc: "Mundarija",
+      download_pdf: "PDF yuklab olish",
+      important_note: "Muhim: 'Ro'yxatdan o'tish' tugmasini bosish yoki platformadan foydalanish orqali siz ushbu shartlarni o'qiganingizni, tushunganingizni va ularga rioya qilishga roziligingizni tasdiqlaysiz.",
+      sections: [
+        {
+          title: "Kirish",
+          summary: "Ushbu shartlar siz va Funduz o'rtasidagi kelishuvdir.",
+          content: [
+            "Funduz platformasiga xush kelibsiz. Bizning veb-saytimiz va xizmatlarimizdan foydalanish orqali siz Funduz bilan qonuniy shartnomaga kirishasiz. Ushbu foydalanish shartlari sizning bizning kroudfanding ekotizimimizga kirishingizni tartibga soladi.",
+            "Muhim: Ro'yxatdan o'tish yoki platformadan foydalanish orqali siz ushbu shartlarni o'qiganingizni, tushunganingizni va ularga rioya qilishga roziligingizni tasdiqlaysiz."
+          ]
+        },
+        {
+          title: "Ta'riflar",
+          summary: "Asosiy tushunchalar va atamalar izohi.",
+          content: [
+            "Ushbu hujjatda 'Funduz', 'Biz' va 'Bizning' deganda platforma kompaniyasi tushuniladi. 'Foydalanuvchi' deganda har qanday tashrif buyuruvchi yoki a'zo tushuniladi. 'Muallif' — mablag' yig'ish kampaniyasini boshlagan foydalanuvchi. 'Homiylar' — loyihalarni moliyaviy qo'llab-quvvatlovchi shaxslar."
+          ]
+        },
+        {
+          title: "Muvofiqlik",
+          summary: "Platformadan foydalanish uchun yosh chegarasi.",
+          content: [
+            "Funduzdan foydalanish uchun siz kamida 18 yoshga to'lgan bo'lishingiz kerak. Agar siz platformadan kompaniya nomidan foydalanayotgan bo'lsangiz, siz ushbu tashkilotni ushbu Shartlar bilan bog'lash vakolatiga ega ekanligingizni bildirasiz."
+          ]
+        },
+        {
+          title: "Foydalanuvchi hisoblari",
+          summary: "Hisobingiz xavfsizligi sizning javobgarligingizda.",
+          content: [
+            "Siz hisob ma'lumotlaringizning maxfiyligini saqlash uchun javobgarsiz. Hisobingiz ostidagi barcha harakatlar sizning javobgarligingizda bo'ladi. Biz hamjamiyat standartlarimizni buzgan hisoblarni to'xtatib turish yoki bekor qilish huquqini saqlab qolamiz."
+          ]
+        },
+        {
+          title: "Loyiha yaratish",
+          summary: "Mualliflar uchun asosiy qoidalar.",
+          content: [
+            "Loyiha mualliflari o'z maqsadlari haqida halol, aniq va to'liq ma'lumot berishlari shart. Chalg'ituvchi kampaniyalar qat'iyan man etiladi. Siz intellektual mulkingizga egalik huquqini saqlab qolasiz, ammo Funduzga loyihangizni reklama maqsadida namoyish etishga ruxsat berasiz."
+          ]
+        },
+        {
+          title: "Loyihani qo'llab-quvvatlash",
+          summary: "Homiylik va mukofotlar haqida.",
+          content: [
+            "Loyihani qo'llab-quvvatlash — bu yordam ifodasidir, ulush sotib olish yoki oddiy chakana savdo tranzaksiyasi emas. Mualliflar mukofotlarni yetkazib berish uchun barcha choralarni ko'rishlari shart bo'lsa-da, Funduz loyiha natijalarini kafolatlamaydi."
+          ]
+        },
+        {
+          title: "To'lovlar va komissiyalar",
+          summary: "Platforma va bank komissiyalari miqdori.",
+          content: [
+            "Hisob yaratish bepul. Funduz muvaffaqiyatli moliyalashtirilgan loyihalardan 5% miqdorida platforma komissiyasi oladi. To'lov provayderlari (Payme, Click) qo'shimcha tranzaksiya komissiyalarini olishlari mumkin."
+          ]
+        },
+        {
+          title: "Hammasi yoki hech narsa modeli",
+          summary: "Loyiha yig'ilmasa mablag'lar olinmaydi.",
+          content: [
+            "Funduz 'hammasi yoki hech narsa' modeli asosida ishlaydi. Homiylardan faqat loyiha belgilangan vaqt ichida 100% moliyaviy maqsadiga erishgandagina mablag' yechib olinadi. Maqsadga erishilmasa, hech qanday mablag' olinmaydi."
+          ]
+        },
+        {
+          title: "Qaytarishlar",
+          summary: "Mablag'larni qaytarish shartlari.",
+          content: [
+            "Loyiha muvaffaqiyatli moliyalashtirilib, mablag'lar Muallifga o'tkazilgandan so'ng, Funduz mablag'larni qaytarib bermaydi. Barcha qaytarib berish bo'yicha so'rovlar bevosita Loyiha Muallifiga yuborilishi kerak."
+          ]
+        },
+        {
+          title: "Taqiqlangan xatti-harakatlar",
+          summary: "Nimalar qilish qat'iyan man etiladi.",
+          content: [
+            "Foydalanuvchilar Funduzdan noqonuniy harakatlar, haqorat qilish, spam yuborish yoki boshqalarning intellektual mulkini buzish uchun foydalana olmaydilar. Ushbu qoidalarni buzish hisobingizning darhol to'xtatilishiga olib keladi."
+          ]
+        },
+        {
+          title: "Intellektual mulk",
+          summary: "Mualliflik huquqlarini himoya qilish.",
+          content: [
+            "Funduz nomi, logotipi va dizayn elementlari mualliflik huquqi va savdo belgisi qonunlari bilan himoyalangan. Siz bizning brendingizdan yozma ruxsatsiz foydalana olmaysiz."
+          ]
+        },
+        {
+          title: "Nizolar",
+          summary: "Muammolarni hal qilish tartibi.",
+          content: [
+            "Har qanday huquqiy nizolar O'zbekiston Respublikasi qonunchiligi asosida hal qilinadi. Biz sudga murojaat qilishdan oldin nizolarni muzokaralar yo'li bilan hal qilishni tavsiya etamiz."
+          ]
+        },
+        {
+          title: "Javobgarlik",
+          summary: "Funduz javobgarligining chegaralari.",
+          content: [
+            "Funduz platformadan foydalanish natijasida yuzaga keladigan har qanday zarar uchun javobgar emas. Biz xizmatni 'boricha' (as is) tamoyili asosida, hech qanday kafolatlarsiz taqdim etamiz."
+          ]
+        },
+        {
+          title: "O'zgarishlar",
+          summary: "Shartlarning yangilanishi haqida.",
+          content: [
+            "Biz ushbu shartlarni vaqti-vaqti bilan yangilab turishimiz mumkin. Muhim o'zgarishlar haqida foydalanuvchilarni bildirishnoma orqali xabardor qilamiz. O'zgarishlardan keyin foydalanishni davom ettirish — bu ularga rozilikni bildiradi."
+          ]
+        },
+        {
+          title: "Bog'lanish",
+          summary: "Biz bilan bog'lanish usullari.",
+          content: [
+            "Agar sizda ushbu Shartlar bo'yicha savollaringiz bo'lsa, iltimos, bizning yuridik jamoamizga legal@funduz.com manzili orqali murojaat qiling."
+          ]
+        }
+      ]
     }
   },
   ru: {
@@ -947,6 +1066,125 @@ const messages = {
           q: "Что происходит, если проект собирает больше запланированной суммы?",
           a: "Если проект собирает более 100%, все сверхплановые средства передаются автору для дальнейшего улучшения проекта или предоставления дополнительных бонусов спонсорам.",
           cat: "general"
+        }
+      ]
+    },
+    terms: {
+      badge: "Юридическая информация",
+      title: "Условия использования",
+      last_updated: "Последнее обновление",
+      footer_title: "Остались вопросы?",
+      footer_desc: "Если у вас возникли вопросы по поводу данных условий, пожалуйста, свяжитесь с нашей службой поддержки.",
+      footer_link: "Связаться с нами",
+      toc: "Содержание",
+      download_pdf: "Скачать PDF",
+      important_note: "Важно: Нажимая кнопку «Регистрация» или используя платформу, вы подтверждаете, что прочитали, поняли и согласны соблюдать данные условия.",
+      sections: [
+        {
+          title: "Введение",
+          summary: "Эти условия являются соглашением между вами и Funduz.",
+          content: [
+            "Добро пожаловать в Funduz. Используя наш веб-сайт и услуги, вы вступаете в юридически обязывающее соглашение с Funduz. Данные Условия использования регулируют ваш доступ к нашей экосистеме краудфандинга.",
+            "Важно: Регистрируясь или используя платформу, вы подтверждаете, что прочитали, поняли и согласны соблюдать данные условия."
+          ]
+        },
+        {
+          title: "Определения",
+          summary: "Объяснение ключевых понятий и терминов.",
+          content: [
+            "В этом документе 'Funduz', 'Мы' и 'Наши' относятся к компании-платформе. 'Пользователь' — любой посетитель или участник. 'Автор проекта' — пользователь, инициирующий кампанию по сбору средств. 'Спонсоры' — пользователи, оказывающие финансовую поддержку."
+          ]
+        },
+        {
+          title: "Требования к пользователям",
+          summary: "Возрастные ограничения для использования платформы.",
+          content: [
+            "Для использования Funduz вам должно быть не менее 18 лет. Если вы используете платформу от имени компании, вы подтверждаете, что у вас есть полномочия связывать эту организацию данными Условиями."
+          ]
+        },
+        {
+          title: "Учетные записи пользователей",
+          summary: "Безопасность вашего аккаунта — это ваша ответственность.",
+          content: [
+            "Вы несете ответственность за сохранение конфиденциальности ваших данных для входа. Вся деятельность под вашей учетной записью является вашей ответственностью. Мы оставляем за собой право приостановить или закрыть учетные записи, нарушающие стандарты нашего сообщества."
+          ]
+        },
+        {
+          title: "Создание проекта",
+          summary: "Основные правила для авторов проектов.",
+          content: [
+            "Авторы проектов обязаны предоставлять честную, ясную и полную информацию о своих целях. Вводящие в заблуждение кампании строго запрещены. Вы сохраняете право собственности на свою интеллектуальную собственность, но предоставляете Funduz лицензию на показ вашего проекта в рекламных целях."
+          ]
+        },
+        {
+          title: "Поддержка проекта",
+          summary: "О спонсорстве и вознаграждениях.",
+          content: [
+            "Поддержка проекта — это выражение поддержки, а не покупка доли или обычная розничная транзакция. Хотя Авторы обязаны приложить все усилия для предоставления вознаграждений, Funduz не гарантирует результаты проекта."
+          ]
+        },
+        {
+          title: "Сборы и платежи",
+          summary: "Размер комиссий платформы и банков.",
+          content: [
+            "Создание учетной записи бесплатно. Funduz взимает комиссию платформы в размере 5% только с успешно профинансированных проектов. Платежные партнеры (Payme, Click) могут взимать дополнительные комиссии за транзакции."
+          ]
+        },
+        {
+          title: "Модель 'Все или ничего'",
+          summary: "Если проект не собран, средства не списываются.",
+          content: [
+            "Funduz работает по модели 'все или ничего'. Со спонсоров списываются средства только в том случае, если проект достигает 100% своей финансовой цели в указанные сроки. Если цель не достигнута, средства не списываются."
+          ]
+        },
+        {
+          title: "Возвраты",
+          summary: "Условия возврата денежных средств.",
+          content: [
+            "Funduz не производит возврат средств после того, как проект был успешно профинансирован и деньги были переведены Автору. Все запросы на возврат должны направляться непосредственно Автору проекта."
+          ]
+        },
+        {
+          title: "Запрещенное поведение",
+          summary: "Что категорически запрещено делать на сайте.",
+          content: [
+            "Пользователи не могут использовать Funduz для незаконной деятельности, домогательств, спама или нарушения чужой интеллектуальной собственности. Нарушение этих правил приведет к немедленной блокировке учетной записи."
+          ]
+        },
+        {
+          title: "Интеллектуальная собственность",
+          summary: "Защита авторских прав и брендинга.",
+          content: [
+            "Название, логотип и элементы дизайна Funduz защищены законами об авторском праве и товарных знаках. Вы не можете использовать наш брендинг без предварительного письменного разрешения."
+          ]
+        },
+        {
+          title: "Споры",
+          summary: "Порядок разрешения проблемных ситуаций.",
+          content: [
+            "Любые юридические споры будут разрешаться в соответствии с законодательством Республики Узбекистан. Мы рекомендуем решать споры путем переговоров перед обращением в суд."
+          ]
+        },
+        {
+          title: "Ограничение ответственности",
+          summary: "Границы ответственности Funduz.",
+          content: [
+            "Funduz не несет ответственности за любые убытки, возникшие в результате использования платформы. Мы предоставляем услугу по принципу 'как есть' (as is), без каких-либо гарантий."
+          ]
+        },
+        {
+          title: "Изменения условий",
+          summary: "Об обновлении данных правил.",
+          content: [
+            "Мы можем периодически обновлять данные условия. Мы будем уведомлять пользователей о существенных изменениях. Продолжение использования платформы после изменений означает их принятие."
+          ]
+        },
+        {
+          title: "Контакты",
+          summary: "Способы связи с юридической службой.",
+          content: [
+            "Если у вас есть вопросы по поводу данных Условий, пожалуйста, свяжитесь с нашей юридической службой по адресу legal@funduz.com."
+          ]
         }
       ]
     }

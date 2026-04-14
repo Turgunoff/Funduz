@@ -122,20 +122,27 @@ const expandedIdx = ref<number | null>(2); // Start with third item open as per 
 const categories = computed(() => {
   const obj = tm('contact.cats') as Record<string, string>;
   const resolved: Record<string, string> = {};
-  for (const key in obj) {
-    resolved[key] = rt(obj[key]);
+  if (obj) {
+    for (const key in obj) {
+      if (obj[key]) {
+        resolved[key] = rt(obj[key]);
+      }
+    }
   }
   return resolved;
 });
 
 // Accessing the FAQ array from i18n
 const faqItems = computed(() => {
-  const items = tm('contact.faq') as Array<any>;
-  return items.map(item => ({
-    q: rt(item.q),
-    a: rt(item.a),
-    cat: rt(item.cat)
-  }));
+  const items = tm('contact.faq') as unknown[];
+  return items.map(item => {
+    const faq = item as Record<string, unknown>;
+    return {
+      q: rt(faq.q as string),
+      a: rt(faq.a as string),
+      cat: rt(faq.cat as string)
+    };
+  });
 });
 
 const filteredFaq = computed(() => {
