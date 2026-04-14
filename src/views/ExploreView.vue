@@ -122,8 +122,21 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+interface ExploreProject {
+  id: number
+  title: string
+  author: string
+  category: string
+  raised: string
+  goal: string
+  progress: number
+  days: number
+  donors: number
+  img: string
+}
+
 const { tm } = useI18n()
-const projects = computed(() => tm('explore.projects_list'))
+const projects = computed(() => tm('explore.projects_list') as unknown as ExploreProject[])
 </script>
 
 <style scoped>
