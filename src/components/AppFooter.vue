@@ -38,7 +38,7 @@
           <h4 class="text-gray-900 text-[18px] font-bold mb-6">{{ $t('footer.legal_title') }}</h4>
           <ul class="space-y-4">
             <li><router-link to="/terms" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('footer.l_terms') }}</router-link></li>
-            <li><a href="#" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('footer.l_privacy') }}</a></li>
+            <li><router-link to="/privacy" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('footer.l_privacy') }}</router-link></li>
           </ul>
         </div>
       </div>

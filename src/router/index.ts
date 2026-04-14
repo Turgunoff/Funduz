@@ -58,6 +58,11 @@ const router = createRouter({
       component: ContactView,
     },
     {
+      path: '/privacy',
+      name: 'privacy',
+      component: () => import('../views/PrivacyView.vue'),
+    },
+    {
       path: '/terms',
       name: 'terms',
       component: () => import('../views/TermsView.vue'),

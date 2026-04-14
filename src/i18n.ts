@@ -593,6 +593,111 @@ const messages = {
           ]
         }
       ]
+    },
+    privacy: {
+      badge: "Xavfsizlik va Maxfiylik",
+      title: "Maxfiylik siyosati",
+      desc: "Funduzda biz shaffoflik ishonch asosi ekanligiga ishonamiz. Ushbu siyosat sizning raqamli izingizni qanday himoya qilishimizni belgilaydi.",
+      last_updated: "Oxirgi yangilanis",
+      last_updated_date: "14-Aprel, 2024",
+      toc: "Mundarija",
+      footer_title: "Maxfiyligingiz bo'yicha savollar bormi?",
+      footer_desc: "Bizning maxfiylik bo'yicha maxsus jamoamiz sizga huquqlaringiz va ma'lumotlaringizni himoya qilishda yordam berishga tayyor.",
+      footer_link: "So'rov yuborish",
+      download_pdf: "PDF yuklab olish",
+      cards: [
+        { title: "Ma'lumotlarni sotmaymiz", icon: "shield" },
+        { title: "Xavfsiz to'lovlar", icon: "lock" },
+        { title: "Hisobni boshqarish", icon: "user" },
+        { title: "Qonuniy muvofiqlik", icon: "globe" }
+      ],
+      sections: [
+        {
+          title: "To'planadigan ma'lumotlar",
+          summary: "Profil yaratishda yig'iladigan shaxsiy ma'lumotlar.",
+          content: [
+            "Siz Funduz platformasida profil yaratganingizda, biz sizning ismingiz, elektron pochta manzilingiz va mukofotlarni yetkazib berish uchun pochta manzilingiz kabi shaxsiy identifikatsiya ma'lumotlarini to'playmiz.",
+            "Loyiha mualliflari uchun biz global KYC (Mijozingizni biling) qoidalariga muvofiq mablag' o'tkazmalarini amalga oshirish uchun shaxsni tasdiqlovchi hujjatlar va moliyaviy ma'lumotlarni ham yig'amiz."
+          ]
+        },
+        {
+          title: "Ulardan qanday foydalanamiz",
+          summary: "Ma'lumotlaringiz xizmat sifatini oshirish uchun yoqilg'idir.",
+          content: [
+            "Biz ma'lumotlardan quyidagilar uchun foydalanamiz:",
+            "• Hissalaringizni qayta ishlash va mukofotlarni ta'minlash.",
+            "• Siz qo'llab-quvvatlagan loyihalar asosida yangiliklar tasmasini shaxsiylashtirish.",
+            "• Kampaniya yangiliklari va xavfsizlik bildirishnomalarini yuborish."
+          ]
+        },
+        {
+          title: "Ma'lumotlarni almashish",
+          summary: "Uchinchi tomonlar bilan hamkorlik qoidalari.",
+          content: [
+            "Biz sizning ismingiz va elektron pochtangizni siz qo'llab-quvvatlagan loyiha mualliflariga, ular mukofotlarni yetkazib berishlari uchun taqdim etamiz. Biz hech qachon shaxsiy ma'lumotlaringizni uchinchi tomon reklama beruvchilariga sotmaymiz."
+          ]
+        },
+        {
+          title: "Cookie fayllari",
+          summary: "Brauzer tajribasini yaxshilash texnologiyalari.",
+          content: [
+            "Biz sizning tizimga kirganingizni saqlab qolish uchun texnik cookie-fayllardan va afzalliklaringizni eslab qolish uchun funksional cookie-fayllardan foydalanamiz. Analitik cookie-fayllar faqat sizning roziligingiz bilan faollashtiriladi."
+          ]
+        },
+        {
+          title: "Ma'lumotlarni saqlash",
+          summary: "Ma'lumotlar qancha muddat saqlanadi.",
+          content: [
+            "Biz sizning ma'lumotlaringizni hisobingiz faol bo'lgan muddatda saqlaymiz. Agar hisobingizni o'chirishga qaror qilsangiz, biz qonuniy yoki moliyaviy hisobot majburiyatlari uchun zarur bo'lgan ba'zi ma'lumotlarni saqlab qolishimiz mumkin."
+          ]
+        },
+        {
+          title: "Xavfsizlik",
+          summary: "Sanoat standartidagi himoya choralari.",
+          content: [
+            "Barcha tranzaksiya ma'lumotlari sanoat standarti bo'lgan TLS yordamida shifrlanadi. Biz shaxsiy ma'lumotlarni ruxsatsiz kirishdan himoyalangan xavfsiz serverlarda saqlaymiz."
+          ]
+        },
+        {
+          title: "Sizning huquqlaringiz",
+          summary: "Ma'lumotlaringiz ustidan to'liq nazorat.",
+          content: [
+            "Siz o'z ma'lumotlaringizga egalik qilasiz. Global maxfiylik qoidalariga (GDPR va CCPA) muvofiq, siz quyidagi huquqlarga egasiz:",
+            "• Ma'lumotlarga kirish va ularni ko'chirish huquqi.",
+            "• Unutilish (o'chirish) huquqi.",
+            "• Xatolarni tuzatish huquqi.",
+            "• Qayta ishlashga e'tiroz bildirish huquqi."
+          ]
+        },
+        {
+          title: "Bolalar maxfiyligi",
+          summary: "Voyaga yetmaganlar ma'lumotlarini himoya qilish.",
+          content: [
+            "Bizning xizmatlarimiz 18 yoshdan kichik shaxslar uchun mo'ljallanmagan. Biz bila turib voyaga yetmaganlardan ma'lumot to'plamaymiz."
+          ]
+        },
+        {
+          title: "Xalqaro o'tkazmalar",
+          summary: "Ma'lumotlarning chegarasiz himoyasi.",
+          content: [
+            "Platformadan foydalanish orqali siz ma'lumotlaringiz biz faoliyat yuritadigan mamlakatlar o'rtasida o'tkazilishiga rozilik berasiz, bunda himoya darajasi bir xil darajada saqlanadi."
+          ]
+        },
+        {
+          title: "O'zgarishlar",
+          summary: "Siyosat yangilanishi haqida ogohlantirishlar.",
+          content: [
+            "Biz ushbu siyosatni vaqti-vaqti bilan yangilab turamiz. Muhim o'zgarishlar haqida ro'yxatdan o'tgan foydalanuvchilarga elektron pochta orqali xabar beriladi."
+          ]
+        },
+        {
+          title: "Bog'lanish",
+          summary: "Biz bilan muloqot qilish usullari.",
+          content: [
+            "Maxfiylik bo'yicha har qanday savollar uchun privacy@funduz.com manzili orqali biz bilan bog'laning."
+          ]
+        }
+      ]
     }
   },
   ru: {
@@ -1184,6 +1289,111 @@ const messages = {
           summary: "Способы связи с юридической службой.",
           content: [
             "Если у вас есть вопросы по поводу данных Условий, пожалуйста, свяжитесь с нашей юридической службой по адресу legal@funduz.com."
+          ]
+        }
+      ]
+    },
+    privacy: {
+      badge: "Безопасность и Конфиденциальность",
+      title: "Политика конфиденциальности",
+      desc: "В Funduz мы верим, что прозрачность является основой доверия. Эта политика определяет то, как мы защищаем ваш цифровой след.",
+      last_updated: "Последнее обновление",
+      last_updated_date: "14 Апреля, 2024",
+      toc: "Содержание",
+      footer_title: "Вопросы по вашей конфиденциальности?",
+      footer_desc: "Наша специальная команда по вопросам приватности готова помочь вам понять ваши права и защитить ваши данные.",
+      footer_link: "Отправить запрос",
+      download_pdf: "Скачать PDF",
+      cards: [
+        { title: "Не продаем данные", icon: "shield" },
+        { title: "Защищенные платежи", icon: "lock" },
+        { title: "Контроль аккаунта", icon: "user" },
+        { title: "Соблюдение законов", icon: "globe" }
+      ],
+      sections: [
+        {
+          title: "Информация, которую мы собираем",
+          summary: "Личные данные, собираемые при создании профиля.",
+          content: [
+            "Когда вы создаете профиль на платформе Funduz, мы собираем личную идентификационную информацию, включая ваше имя, адрес электронной почты и почтовый адрес для доставки вознаграждений.",
+            "Для авторов проектов мы также собираем идентификационные документы и финансовые реквизиты для содействия выплатам в соответствии с глобальными правилами KYC (Know Your Customer)."
+          ]
+        },
+        {
+          title: "Как мы это используем",
+          summary: "Ваши данные — это топливо для нашей экосистемы.",
+          content: [
+            "Мы используем информацию для:",
+            "• Обработки ваших вкладов и обеспечения вознаграждений.",
+            "• Персонализации ленты на основе проектов, которые вы поддержали.",
+            "• Отправки обновлений кампаний и оповещений о безопасности."
+          ]
+        },
+        {
+          title: "Передача данных",
+          summary: "Правила сотрудничества с третьими лицами.",
+          content: [
+            "Мы передаем ваше имя и email авторам проектов, которые вы поддерживаете, чтобы они могли доставить вознаграждения. Мы никогда не продаем ваши личные данные сторонним рекламодателям."
+          ]
+        },
+        {
+          title: "Файлы Cookies",
+          summary: "Технологии улучшения опыта в браузере.",
+          content: [
+            "Мы используем технические куки, чтобы вы оставались в системе, и функциональные куки, чтобы помнить ваши предпочтения. Аналитические куки активируются только с вашего согласия."
+          ]
+        },
+        {
+          title: "Хранение данных",
+          summary: "Сроки хранения информации.",
+          content: [
+            "Мы храним ваши данные до тех пор, пока ваш аккаунт активен. Если вы решите удалить аккаунт, мы можем сохранить некоторую информацию, необходимую для юридических или финансовых отчетных обязательств."
+          ]
+        },
+        {
+          title: "Безопасность",
+          summary: "Меры защиты промышленного стандарта.",
+          content: [
+            "Все данные о транзакциях шифруются с использованием отраслевого стандарта TLS. Мы храним личные данные на защищенных серверах с ограниченным доступом."
+          ]
+        },
+        {
+          title: "Ваши права",
+          summary: "Полный контроль над своими данными.",
+          content: [
+            "Вы владеете своими данными. В соответствии с глобальными правилами (GDPR и CCPA) у вас есть следующие права:",
+            "• Право на доступ и переносимость данных.",
+            "• Право быть забытым (удаление).",
+            "• Право на исправление ошибок.",
+            "• Право на возражение против обработки."
+          ]
+        },
+        {
+          title: "Конфиденциальность детей",
+          summary: "Защита данных несовершеннолетних.",
+          content: [
+            "Наши услуги не предназначены для лиц младше 18 лет. Мы намеренно не собираем информацию о несовершеннолетних."
+          ]
+        },
+        {
+          title: "Международные переводы",
+          summary: "Трансграничная защита информации.",
+          content: [
+            "Используя платформу, вы соглашаетесь на передачу ваших данных между странами, в которых мы работаем, при этом уровень защиты остается неизменным."
+          ]
+        },
+        {
+          title: "Изменения",
+          summary: "Оповещения об обновлении политики.",
+          content: [
+            "Мы периодически обновляем эту политику. О существенных изменениях зарегистрированные пользователи будут уведомлены по электронной почте."
+          ]
+        },
+        {
+          title: "Контактная информация",
+          summary: "Способы связи с нами.",
+          content: [
+            "По любым вопросам конфиденциальности пишите нам на privacy@funduz.com."
           ]
         }
       ]
