@@ -473,7 +473,34 @@ const messages = {
           a: "Agar loyiha 100% dan ko'p mablag' to'plasa, barcha qo'shimcha mablag'lar muallifga loyihani yanada yaxshilash yoki qo'shimcha mukofotlar taqdim etish uchun beriladi.",
           cat: "general"
         }
-      ]
+      ],
+      form: {
+        title: "Bizga xabar qoldiring",
+        subtitle: "Savollaringiz bormi yoki hamkorlik qilmoqchimisiz? Bizning jamoamiz sizga yordam berishdan xursand bo'ladi.",
+        name: "Ismingiz",
+        email: "Email manzilingiz",
+        subject: "Mavzu",
+        message: "Xabaringiz",
+        send: "Xabarni yuborish",
+        success: "Rahmat! Xabangiz yuborildi. Tez orada siz bilan bog'lanamiz.",
+        subjects: {
+          general: "Umumiy savollar",
+          support: "Texnik yordam",
+          partnership: "Hamkorlik",
+          legal: "Huquqiy masalalar"
+        }
+      },
+      info: {
+        title: "Aloqa ma'lumotlari",
+        email_label: "Email",
+        email_val: "support@funduz.uz",
+        phone_label: "Telefon",
+        phone_val: "+998 71 200-00-00",
+        address_label: "Manzil",
+        address_val: "Toshkent shahri, Yunusobod tumani, Amir Temur ko'chasi, 19-uy",
+        hours_label: "Ish vaqti",
+        hours_val: "Dush - Juma: 09:00 - 18:00"
+      }
     },
     terms: {
       badge: "Yuridik ma'lumotlar",
@@ -796,7 +823,7 @@ const messages = {
             a: "После успешного завершения кампании и прохождения финальной проверки, средства переводятся на ваш верифицированный банковский счет за вычетом комиссии платформы (5%)."
           },
           {
-            q: "Безопасно ли это?",
+            q: "Безопасность ли это?",
             a: "Да, мы используем современные методы шифрования и проверенные платежные системы. Все аккаунты проходят процедуру KYC для предотвращения мошенничества."
           }
         ]
@@ -1182,7 +1209,34 @@ const messages = {
           a: "Если проект собирает более 100%, все сверхплановые средства передаются автору для дальнейшего улучшения проекта или предоставления дополнительных бонусов спонсорам.",
           cat: "general"
         }
-      ]
+      ],
+      form: {
+        title: "Оставьте нам сообщение",
+        subtitle: "Есть вопросы или хотите сотрудничать? Наша команда будет рада помочь вам.",
+        name: "Ваше имя",
+        email: "Ваш Email",
+        subject: "Тема",
+        message: "Ваше сообщение",
+        send: "Отправить сообщение",
+        success: "Спасибо! Ваше сообщение отправлено. Мы скоро свяжемся с вами.",
+        subjects: {
+          general: "Общие вопросы",
+          support: "Техподдержка",
+          partnership: "Сотрудничество",
+          legal: "Юридические вопросы"
+        }
+      },
+      info: {
+        title: "Контактная информация",
+        email_label: "Email",
+        email_val: "support@funduz.uz",
+        phone_label: "Телефон",
+        phone_val: "+998 71 200-00-00",
+        address_label: "Адрес",
+        address_val: "г. Ташкент, Юнусабадский район, ул. Амира Темура, 19",
+        hours_label: "Часы работы",
+        hours_val: "Пн - Пт: 09:00 - 18:00"
+      }
     },
     terms: {
       badge: "Юридическая информация",
