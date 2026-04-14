@@ -3,61 +3,23 @@
     <header class="fixed top-0 left-0 right-0 z-[100] bg-white border-b border-gray-50 h-16 lg:h-20 flex items-center shadow-sm">
       <div class="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-8">
         
-        <!-- DESIGN 1: MODERN (FOR /explore) -->
-        <div v-if="isExplorePage" class="flex justify-between items-center w-full">
-          <div class="flex-shrink-0">
-            <router-link to="/" class="text-[22px] lg:text-[26px] font-bold text-[#1a946b] tracking-wide">FUNDUZ</router-link>
-          </div>
-
-          <nav class="hidden lg:flex items-center gap-10 ml-12">
-            <router-link to="/explore" class="text-[16px] font-bold text-[#1a946b] py-1 border-b-2 border-[#1a946b]">
-              {{ $t('nav.projects') }}
-            </router-link>
-            <a href="#" class="text-[16px] font-bold text-gray-400 hover:text-gray-900 transition-colors">{{ $t('nav.about') }}</a>
-            <a href="#" class="text-[16px] font-bold text-gray-400 hover:text-gray-900 transition-colors">{{ $t('nav.cooperation') }}</a>
-          </nav>
-
-          <div class="flex items-center gap-4 lg:gap-6 ml-auto">
-            <button class="hidden md:block text-gray-500 hover:text-gray-900 transition-colors">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-            </button>
-            <a href="#" class="hidden lg:block px-6 py-2.5 border border-gray-200 bg-white text-gray-800 rounded-xl text-[14px] font-bold hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm">
-              {{ $t('nav.login') }}
-            </a>
-            
-            <!-- Lang Switcher -->
-            <div class="hidden lg:flex items-center ml-2 pl-4 border-l border-gray-100 h-6 gap-3">
-              <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase transition-colors">Uz</button>
-              <span class="text-gray-200">|</span>
-              <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase transition-colors">Ru</button>
-            </div>
-
-            <!-- Mobile Menu -->
-            <button @click="isMenuOpen = !isMenuOpen" class="lg:hidden text-gray-800 p-1">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path v-if="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- DESIGN 2: CLASSIC (Home and Others) -->
-        <div v-else class="flex justify-between items-center w-full">
+        <!-- UNIFIED CLASSIC DESIGN (For All Pages) -->
+        <div class="flex justify-between items-center w-full">
           <div class="flex items-center gap-8">
             <router-link to="/" class="text-[22px] lg:text-[26px] font-bold text-[#1a946b] tracking-wide">FUNDUZ</router-link>
+            
             <nav class="hidden lg:flex items-center space-x-10 text-[16px] font-bold text-gray-800">
-              <router-link to="/explore" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.projects') }}</router-link>
+              <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.projects') }}</a>
               <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.about') }}</a>
               <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.cooperation') }}</a>
             </nav>
           </div>
 
           <div class="flex items-center gap-3">
-            <a href="#" class="hidden sm:flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all">
+            <a href="#" class="hidden sm:flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white transition-all">
               {{ $t('nav.login') }}
             </a>
-            <a href="#" class="flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm">
+            <a href="#" class="flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white transition-all shadow-sm">
               Loyiha boshlash
             </a>
 
@@ -68,6 +30,7 @@
               <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase transition-colors cursor-pointer">Ru</button>
             </div>
 
+            <!-- Hamburger Button -->
             <button @click="isMenuOpen = !isMenuOpen" class="lg:hidden text-gray-800 ml-2">
               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path v-if="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -86,10 +49,10 @@
     >
       <div class="p-6 pt-10 flex flex-col gap-10">
         <nav class="flex flex-col gap-6">
-          <router-link @click="isMenuOpen = false" to="/explore" class="text-[20px] font-black text-gray-900 border-b border-gray-50 pb-5 flex justify-between items-center">
+          <a href="#" class="text-[20px] font-black text-gray-900 border-b border-gray-50 pb-5 flex justify-between items-center">
             {{ $t('nav.projects') }}
             <svg class="w-4 h-4 text-[#1a946b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
-          </router-link>
+          </a>
           <a href="#" class="text-[20px] font-black text-gray-900 border-b border-gray-50 pb-5 flex justify-between items-center">
             {{ $t('nav.about') }}
             <svg class="w-4 h-4 text-[#1a946b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
@@ -118,24 +81,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const route = useRoute()
 const { locale } = useI18n()
 const isMenuOpen = ref(false)
-
-const isExplorePage = computed(() => route.path === '/explore')
 
 const setLocale = (lang: string) => {
   locale.value = lang
 }
 
-watch(() => route.path, () => {
-  isMenuOpen.value = false
-})
-
+// Prevent scroll when menu is open
 watch(isMenuOpen, (val) => {
   if (val) document.body.style.overflow = 'hidden'
   else document.body.style.overflow = ''
