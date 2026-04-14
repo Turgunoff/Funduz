@@ -7,7 +7,6 @@
 > Stack: Vue 3 + TypeScript + Pinia + Vue Router + Vue I18n + Tailwind CSS
 
 > 🇷🇺 Русская версия: [../docs-ru/](../docs-ru/README.md)
-
 ---
 
 ## Tarkibi
