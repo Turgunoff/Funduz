@@ -77,8 +77,8 @@
         <!-- Main Form Card -->
         <div class="bg-white rounded-[40px] p-8 lg:p-10 shadow-xl shadow-gray-200/50 border border-gray-100">
           
-          <!-- Social Login Buttons -->
-          <div class="grid grid-cols-2 gap-4 mb-8">
+          <!-- Social Login Buttons (Only show in login mode) -->
+          <div v-if="authMode === 'login'" class="grid grid-cols-2 gap-4 mb-8">
             <button class="flex items-center justify-center gap-3 py-4 border border-gray-100 rounded-2xl hover:bg-gray-50 transition-all group">
               <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
               <span class="text-[14px] font-bold text-gray-700">{{ $t('login.social_google') }}</span>
@@ -91,16 +91,26 @@
             </button>
           </div>
 
-          <!-- Divider -->
-          <div class="relative flex items-center justify-center mb-8">
+          <!-- Divider (Only show in login mode) -->
+          <div v-if="authMode === 'login'" class="relative flex items-center justify-center mb-8">
             <div class="absolute inset-0 flex items-center">
               <div class="w-full border-t border-gray-100"></div>
             </div>
             <span class="relative bg-white px-4 text-[11px] font-black text-gray-300 uppercase tracking-[0.2em]">{{ $t('login.or') }}</span>
           </div>
 
-          <!-- Login Form Items -->
+          <!-- Login/Register Form Items -->
           <form @submit.prevent class="space-y-6">
+            <!-- Name (Only in Register mode) -->
+            <div v-if="authMode === 'register'">
+              <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_name') }}</label>
+              <input 
+                type="text" 
+                :placeholder="$t('login.placeholder_name')"
+                class="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:border-[#1e5c43] focus:ring-4 focus:ring-green-500/5 outline-none transition-all font-medium"
+              >
+            </div>
+
             <div>
               <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_email') }}</label>
               <input 
@@ -112,8 +122,8 @@
 
             <div>
               <div class="flex justify-between items-center mb-3 px-1">
-                <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ $t('login.label_password') }}</label>
-                <a href="#" class="text-[11px] font-black text-[#1e5c43] hover:underline">{{ $t('login.forgot_password') }}</a>
+                <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ authMode === 'login' ? $t('login.label_password') : $t('login.label_password_reg') }}</label>
+                <a v-if="authMode === 'login'" href="#" class="text-[11px] font-black text-[#1e5c43] hover:underline">{{ $t('login.forgot_password') }}</a>
               </div>
               <div class="relative">
                 <input 
@@ -133,7 +143,7 @@
             </div>
 
             <button class="w-full py-5 bg-[#1e5c43] text-white rounded-3xl font-black flex items-center justify-center gap-3 hover:bg-[#144230] hover:translate-y-[-4px] transition-all shadow-xl shadow-green-900/10">
-              {{ $t('login.btn_submit') }}
+              {{ authMode === 'login' ? $t('login.btn_submit') : $t('login.btn_register') }}
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </button>
           </form>
