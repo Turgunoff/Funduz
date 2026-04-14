@@ -18,13 +18,17 @@
 
           <!-- Right: Content Section -->
           <div class="flex flex-col h-full">
-            <h1 class="text-[26px] md:text-[32px] lg:text-[44px] font-bold text-gray-900 leading-[1.2] lg:leading-[1.1] mb-6 lg:mb-8">
+            <h1
+              class="text-[26px] md:text-[32px] lg:text-[44px] font-bold text-gray-900 leading-[1.2] lg:leading-[1.1] mb-6 lg:mb-8"
+            >
               {{ $t("project_view.title") }}
             </h1>
 
             <!-- Author Info -->
             <div class="flex items-center gap-3 lg:gap-4 mb-6 lg:mb-8">
-              <div class="w-10 h-10 lg:w-12 lg:h-12 rounded-full overflow-hidden flex-shrink-0 bg-gray-100">
+              <div
+                class="w-10 h-10 lg:w-12 lg:h-12 rounded-full overflow-hidden flex-shrink-0 bg-gray-100"
+              >
                 <img
                   src="https://ui-avatars.com/api/?name=Alisher+Usmonov&background=random"
                   alt="Author"
@@ -35,7 +39,9 @@
                   <span class="text-gray-500 text-[13px] lg:text-sm font-medium"
                     >{{ $t("project_view.author_label") }}:</span
                   >
-                  <span class="text-[#326b4d] font-bold text-[13px] lg:text-sm">Alisher Usmonov</span>
+                  <span class="text-[#326b4d] font-bold text-[13px] lg:text-sm"
+                    >Alisher Usmonov</span
+                  >
                 </div>
                 <p class="text-gray-400 text-[11px] lg:text-xs font-medium">
                   {{ $t("project_view.author_success") }}
@@ -44,10 +50,15 @@
             </div>
 
             <!-- Stats Card -->
-            <div class="bg-[#f0fdf4] border border-[#dcfce7] rounded-[32px] lg:rounded-[40px] p-6 lg:p-10 mb-8">
-              <div class="flex flex-col sm:flex-row justify-between items-start lg:items-center mb-6 gap-2">
+            <div
+              class="bg-[#f0fdf4] border border-[#dcfce7] rounded-[32px] lg:rounded-[40px] p-6 lg:p-10 mb-8"
+            >
+              <div
+                class="flex flex-col sm:flex-row justify-between items-start lg:items-center mb-6 gap-2"
+              >
                 <h2 class="text-[24px] lg:text-[32px] font-black text-[#14532d]">25,000,000 UZS</h2>
-                <span class="text-gray-400 text-[10px] lg:text-xs font-bold uppercase tracking-wider"
+                <span
+                  class="text-gray-400 text-[10px] lg:text-xs font-bold uppercase tracking-wider"
                   >{{ $t("project_view.goal") }}: 100,000,000 UZS</span
                 >
               </div>
@@ -56,7 +67,10 @@
               <div
                 class="w-full h-2.5 lg:h-3 bg-white rounded-full mb-4 overflow-hidden border border-[#dcfce7]"
               >
-                <div class="h-full bg-[#326b4d] rounded-full transition-all duration-1000" style="width: 25%"></div>
+                <div
+                  class="h-full bg-[#326b4d] rounded-full transition-all duration-1000"
+                  style="width: 25%"
+                ></div>
               </div>
 
               <div class="flex justify-between text-[13px] lg:text-sm font-bold mb-8 lg:mb-10">
@@ -82,14 +96,23 @@
                       />
                     </svg>
                   </div>
-                  <div class="text-[15px] lg:text-[18px] font-bold text-gray-900 leading-none mb-1">124</div>
-                  <div class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">
+                  <div class="text-[15px] lg:text-[18px] font-bold text-gray-900 leading-none mb-1">
+                    124
+                  </div>
+                  <div
+                    class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none"
+                  >
                     {{ $t("project_view.stat_donors") }}
                   </div>
                 </div>
                 <div class="text-center border-x border-[#dcfce7]">
                   <div class="flex justify-center mb-1.5 lg:mb-2 text-orange-500">
-                    <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      class="w-5 h-5 lg:w-6 lg:h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -98,14 +121,23 @@
                       />
                     </svg>
                   </div>
-                  <div class="text-[15px] lg:text-[18px] font-bold text-gray-900 leading-none mb-1">15</div>
-                  <div class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">
+                  <div class="text-[15px] lg:text-[18px] font-bold text-gray-900 leading-none mb-1">
+                    15
+                  </div>
+                  <div
+                    class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none"
+                  >
                     {{ $t("project_view.stat_days") }}
                   </div>
                 </div>
                 <div class="text-center">
                   <div class="flex justify-center mb-1.5 lg:mb-2 text-orange-500">
-                    <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      class="w-5 h-5 lg:w-6 lg:h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -114,8 +146,12 @@
                       />
                     </svg>
                   </div>
-                  <div class="text-[15px] lg:text-[18px] font-bold text-gray-900 leading-none mb-1">25%</div>
-                  <div class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">
+                  <div class="text-[15px] lg:text-[18px] font-bold text-gray-900 leading-none mb-1">
+                    25%
+                  </div>
+                  <div
+                    class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none"
+                  >
                     {{ $t("project_view.stat_done") }}
                   </div>
                 </div>
@@ -134,7 +170,12 @@
                 <button
                   class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border border-gray-100 rounded-2xl text-gray-400 hover:text-gray-900 transition-all cursor-pointer"
                 >
-                  <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    class="w-5 h-5 lg:w-6 lg:h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -146,7 +187,12 @@
                 <button
                   class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border border-gray-100 rounded-2xl text-gray-400 hover:text-red-500 transition-all cursor-pointer"
                 >
-                  <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    class="w-5 h-5 lg:w-6 lg:h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -181,7 +227,12 @@
             class="pb-4 border-b-2 text-[15px] lg:text-[17px] transition-all cursor-pointer flex items-center gap-2.5 whitespace-nowrap"
           >
             <span v-if="idx === 0">
-              <svg class="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                class="w-4 h-4 lg:w-5 lg:h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -191,7 +242,12 @@
               </svg>
             </span>
             <span v-if="idx === 1" class="flex items-center gap-2">
-              <svg class="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                class="w-4 h-4 lg:w-5 lg:h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -199,10 +255,18 @@
                   d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
                 />
               </svg>
-              <span class="bg-[#0f5238] text-white text-[9px] lg:text-[10px] px-1.5 py-0.5 rounded-full">3</span>
+              <span
+                class="bg-[#0f5238] text-white text-[9px] lg:text-[10px] px-1.5 py-0.5 rounded-full"
+                >3</span
+              >
             </span>
             <span v-if="idx === 2">
-              <svg class="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                class="w-4 h-4 lg:w-5 lg:h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -219,10 +283,14 @@
         <div class="grid lg:grid-cols-3 gap-12 lg:gap-24">
           <!-- Left Content Area -->
           <div class="lg:col-span-2">
-            <h2 class="text-[24px] lg:text-[32px] font-bold text-gray-900 mb-6 lg:mb-8 leading-snug">
+            <h2
+              class="text-[24px] lg:text-[32px] font-bold text-gray-900 mb-6 lg:mb-8 leading-snug"
+            >
               {{ $t("project_view.detail_title") }}
             </h2>
-            <div class="prose prose-sm md:prose-lg max-w-none text-gray-500 leading-relaxed space-y-6">
+            <div
+              class="prose prose-sm md:prose-lg max-w-none text-gray-500 leading-relaxed space-y-6"
+            >
               <p>{{ $t("project_view.detail_text_1") }}</p>
 
               <figure class="my-8 lg:my-12">
@@ -299,7 +367,7 @@
                     {{ $tm(`project_view.reward_${rIdx}_price`) }}
                   </div>
                   <div class="text-[10px] font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded">
-                    {{ rIdx === 1 ? '45' : rIdx === 2 ? '28' : '5' }} ta olindi
+                    {{ rIdx === 1 ? "45" : rIdx === 2 ? "28" : "5" }} ta olindi
                   </div>
                 </div>
                 <h4 class="text-gray-900 font-bold text-base lg:text-lg mb-3 lg:mb-4">
@@ -309,9 +377,21 @@
                   {{ $tm(`project_view.reward_${rIdx}_desc`) }}
                 </p>
 
-                <div class="flex items-center gap-3 mb-6 lg:mb-8 bg-gray-50 p-2.5 lg:p-3 rounded-xl border border-gray-100/50">
-                  <svg class="w-3.5 h-3.5 lg:w-4 lg:h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 00-2 2z" />
+                <div
+                  class="flex items-center gap-3 mb-6 lg:mb-8 bg-gray-50 p-2.5 lg:p-3 rounded-xl border border-gray-100/50"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 lg:w-4 lg:h-4 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 00-2 2z"
+                    />
                   </svg>
                   <span class="text-[10px] lg:text-[11px] font-bold text-gray-500">
                     {{ $t("project_view.delivery_label") }}
@@ -319,17 +399,31 @@
                   </span>
                 </div>
 
-                <div class="flex items-center justify-between text-[#0f5238] font-bold text-[13px] lg:text-sm">
+                <div
+                  class="flex items-center justify-between text-[#0f5238] font-bold text-[13px] lg:text-sm"
+                >
                   {{ $t("project_view.reward_select") }}
-                  <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </div>
             </div>
 
             <!-- Special Help Box -->
-            <div class="bg-[#fdf2f2] rounded-[24px] lg:rounded-[32px] p-6 lg:p-8 border border-[#feeded] shadow-sm">
+            <div
+              class="bg-[#fdf2f2] rounded-[24px] lg:rounded-[32px] p-6 lg:p-8 border border-[#feeded] shadow-sm"
+            >
               <h4 class="text-gray-900 font-bold text-base lg:text-lg mb-3 lg:mb-4">
                 {{ $t("project_view.special_title") }}
               </h4>
