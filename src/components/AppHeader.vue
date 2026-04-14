@@ -13,7 +13,13 @@
             <router-link to="/explore" class="text-[16px] font-bold text-[#1a946b] py-1 border-b-2 border-[#1a946b]">
               {{ $t('nav.projects_short') }}
             </router-link>
-            <a href="#" class="text-[16px] font-bold text-gray-400 hover:text-gray-900 transition-colors">{{ $t('nav.about_short') }}</a>
+            <router-link 
+              to="/how-it-works" 
+              :class="isHowItWorksPage ? 'text-[#1a946b] border-b-2 border-[#1a946b]' : 'text-gray-400 hover:text-gray-900'"
+              class="text-[16px] font-bold transition-colors py-1"
+            >
+              {{ $t('nav.about_short') }}
+            </router-link>
             <a href="#" class="text-[16px] font-bold text-gray-400 hover:text-gray-900 transition-colors">{{ $t('nav.cooperation_short') }}</a>
           </nav>
 
@@ -46,7 +52,13 @@
             <router-link to="/" class="text-[22px] lg:text-[26px] font-bold text-[#1a946b] tracking-wide">FUNDUZ</router-link>
             <nav class="hidden lg:flex items-center space-x-10 text-[16px] font-bold text-gray-800">
               <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.projects') }}</a>
-              <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.about') }}</a>
+              <router-link 
+                to="/how-it-works" 
+                :class="isHowItWorksPage ? 'text-[#1a946b]' : 'text-gray-800 hover:text-[#1a946b]'"
+                class="transition-colors"
+              >
+                {{ $t('nav.about') }}
+              </router-link>
               <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.cooperation') }}</a>
             </nav>
           </div>
@@ -59,10 +71,11 @@
               Loyiha boshlash
             </a>
 
+            <!-- Desktop Language Switcher -->
             <div class="hidden lg:flex items-center ml-2 pl-4 border-l border-gray-100 h-6 gap-3">
-              <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase transition-colors pointer-cursor">Uz</button>
+              <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase transition-colors cursor-pointer">Uz</button>
               <span class="text-gray-200">|</span>
-              <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase transition-colors pointer-cursor">Ru</button>
+              <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase transition-colors cursor-pointer">Ru</button>
             </div>
 
             <button @click="isMenuOpen = !isMenuOpen" class="lg:hidden text-gray-800 ml-2">
@@ -85,10 +98,10 @@
               {{ $t('nav.projects_short') }}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
             </router-link>
-            <a href="#" class="text-[20px] font-black text-gray-900 border-b border-gray-50 pb-5 flex justify-between items-center">
+            <router-link @click="isMenuOpen = false" to="/how-it-works" class="text-[20px] font-black border-b border-gray-50 pb-5 flex justify-between items-center" :class="isHowItWorksPage ? 'text-[#1a946b]' : 'text-gray-900'">
               {{ $t('nav.about_short') }}
-              <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
-            </a>
+              <svg class="w-4 h-4" :class="isHowItWorksPage ? 'text-[#1a946b]' : 'text-gray-300'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
+            </router-link>
             <a href="#" class="text-[20px] font-black text-gray-900 border-b border-gray-50 pb-5 flex justify-between items-center">
               {{ $t('nav.cooperation_short') }}
               <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
@@ -99,10 +112,10 @@
               {{ $t('nav.projects') }}
               <svg class="w-4 h-4 text-[#1a946b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
             </a>
-            <a href="#" class="text-[20px] font-black text-gray-900 border-b border-gray-50 pb-5 flex justify-between items-center">
+            <router-link @click="isMenuOpen = false" to="/how-it-works" class="text-[20px] font-black border-b border-gray-50 pb-5 flex justify-between items-center" :class="isHowItWorksPage ? 'text-[#1a946b]' : 'text-gray-900'">
               {{ $t('nav.about') }}
               <svg class="w-4 h-4 text-[#1a946b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
-            </a>
+            </router-link>
             <a href="#" class="text-[20px] font-black text-gray-900 border-b border-gray-50 pb-5 flex justify-between items-center">
               {{ $t('nav.cooperation') }}
               <svg class="w-4 h-4 text-[#1a946b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
@@ -137,6 +150,7 @@ const { locale } = useI18n()
 const isMenuOpen = ref(false)
 
 const isExplorePage = computed(() => route.path === '/explore')
+const isHowItWorksPage = computed(() => route.path === '/how-it-works')
 
 const setLocale = (lang: string) => {
   locale.value = lang

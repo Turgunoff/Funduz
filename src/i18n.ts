@@ -16,6 +16,65 @@ const messages = {
       search_placeholder: "Loyiha qidirish...",
       start_project: "Loyiha boshlash",
     },
+    how_it_works: {
+      badge: "PLATFORMA BO'YICHA QO'LLANMA",
+      title_start: "Funduz qanday",
+      title_end: "ishlaydi?",
+      subtitle: "G'oyalarni haqiqatga aylantiring yoki o'zingizga befarq bo'lmagan loyihalarni qo'llab-quvvatlang. Biz innovatsiyalar o'sishi uchun maydon yaratdik.",
+      btn_authors: "Mualliflar uchun",
+      btn_sponsors: "Sponsorlar uchun",
+      steps_prefix: "QADAM",
+      steps: [
+        {
+          title: "Loyiha yarating",
+          desc: "O'z tarixingizni so'zlab bering, prototiplarni ko'rsating va amalga oshirish uchun moliyaviy maqsadni belgilang."
+        },
+        {
+          title: "Ulashing",
+          desc: "Ijtimoiy tarmoqlar orqali do'stlaringiz, oilangiz va hamjamiyatingiz o'rtasida ma'lumot tarqating."
+        },
+        {
+          title: "Mablag' yig'ing",
+          desc: "Sizning g'oyangizga ishonadigan butun dunyo bo'ylab homiylardan yordam oling."
+        },
+        {
+          title: "G'oyani amalga oshiring",
+          desc: "Loyihani amalga oshiring, homiylarni xabardor qilib turing va ularga munosib mukofotlarni yuboring."
+        }
+      ],
+      features: {
+        transparency: {
+          title: "Shaffoflik har bir bosqichda",
+          desc: "Biz ishonch — kroudfandingning asosi ekanligiga ishonamiz. Funduz tranzaksiyalar xavfsizligi va muloqot shaffofligini ta'minlaydi."
+        },
+        security: {
+          title: "Xavfsizlik",
+          desc: "Sizning mablag'laringiz va ma'lumotlaringiz bank darajasidagi shifrlash protokollari bilan himoyalangan."
+        },
+        community: {
+          title: "Kuchli hamjamiyat",
+          desc: "Innovatsion g'oyalarni qo'llab-quvvatlashga tayyor minglab faol homiylardan foydalanish imkoniyati."
+        }
+      },
+      faq: {
+        title: "Tez-tez beriladigan savollar",
+        subtitle: "Ishonch bilan boshlash uchun bilishingiz kerak bo'lgan hamma narsa.",
+        items: [
+          {
+            q: "Agar kerakli summani yig'a olmasam-chi?",
+            a: "Biz 'Hammasi yoki hech narsa' modelidan foydalanamiz. Agar maqsad belgilangan muddatda amalga oshmasa, mablag'lar homiylarga to'liq hajmda avtomatik ravishda qaytariladi."
+          },
+          {
+            q: "Pullarimni qanday qabul qilaman?",
+            a: "Kampaniya muvaffaqiyatli yakunlangach va yakuniy tekshiruvdan o'tgach, mablag'lar platforma komissiyasi (5%) chegirib tashlangan holda sizning tasdiqlangan bank hisobingizga o'tkaziladi."
+          },
+          {
+            q: "Bu xavfsizmi?",
+            a: "Ha, biz zamonaviy shifrlash usullari va tekshirilgan to'lov tizimlaridan foydalanamiz. Barcha akkauntlar firibgarlikning oldini olish uchun KYC jarayonidan o'tadi."
+          }
+        ]
+      }
+    },
     explore: {
       title: "Barcha loyihalar",
       hero_title: "O'zbekistonning eng yaxshi loyihalarini kashf eting",
@@ -226,6 +285,65 @@ const messages = {
       community: "Сообщество",
       search_placeholder: "Поиск проекта...",
       start_project: "Начать проект",
+    },
+    how_it_works: {
+      badge: "ПУТЕВОДИТЕЛЬ ПО ПЛАТФОРМЕ",
+      title_start: "Как работает",
+      title_end: "Funduz?",
+      subtitle: "Воплощайте идеи в реальность или поддерживайте проекты, которые вам небезразличны. Мы создали пространство для роста инноваций.",
+      btn_authors: "Для авторов",
+      btn_sponsors: "Для спонсоров",
+      steps_prefix: "ШАГ",
+      steps: [
+        {
+          title: "Создайте проект",
+          desc: "Расскажите свою историю, покажите прототипы и установите финансовую цель для реализации."
+        },
+        {
+          title: "Поделитесь",
+          desc: "Распространите информацию среди друзей, семьи и вашего сообщества через соцсети."
+        },
+        {
+          title: "Соберите средства",
+          desc: "Получайте поддержку от спонсоров со всего мира, которые верят в вашу идею."
+        },
+        {
+          title: "Воплотите идею",
+          desc: "Реализуйте проект, держите спонсоров в курсе и отправьте им заслуженные вознаграждения."
+        }
+      ],
+      features: {
+        transparency: {
+          title: "Прозрачность на каждом этапе",
+          desc: "Мы верим, что доверие — это фундамент краудфандинга. Funduz обеспечивает безопасность транзакций и прозрачность коммуникации."
+        },
+        security: {
+          title: "Безопасность",
+          desc: "Ваши средства и данные защищены банковскими протоколами шифрования."
+        },
+        community: {
+          title: "Сильное сообщество",
+          desc: "Доступ к тысячам активных спонсоров, готовых поддержать инновационные идеи."
+        }
+      },
+      faq: {
+        title: "Часто задаваемые вопросы",
+        subtitle: "Все, что вам нужно знать, чтобы начать уверенно.",
+        items: [
+          {
+            q: "Что если я не соберу нужную сумму?",
+            a: "Мы используем модель 'Всё или ничего'. Если цель не достигнута в срок, средства в полном объеме возвращаются спонсорам автоматически."
+          },
+          {
+            q: "Как я получу свои деньги?",
+            a: "После успешного завершения кампании и прохождения финальной проверки, средства переводятся на ваш верифицированный банковский счет за вычетом комиссии платформы (5%)."
+          },
+          {
+            q: "Безопасно ли это?",
+            a: "Да, мы используем современные методы шифрования и проверенные платежные системы. Все аккаунты проходят процедуру KYC для предотвращения мошенничества."
+          }
+        ]
+      }
     },
     explore: {
       title: "Все проекты",
