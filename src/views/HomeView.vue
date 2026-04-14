@@ -31,17 +31,17 @@ import CTASection from '@/components/CTASection.vue';
               {{ $t('hero.description') }}
             </p>
 
-            <!-- Buttons as links -->
-            <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4">
-              <a href="#" class="w-full sm:w-auto px-8 py-4 border border-gray-200 rounded-2xl font-bold text-[16px] text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm cursor-pointer flex items-center justify-center">
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-5">
+              <router-link to="/explore" class="w-full sm:w-auto px-11 py-5 border border-gray-100 rounded-[20px] font-bold text-[15px] text-gray-900 bg-white hover:!bg-[#1a946b] hover:!text-white hover:!border-[#1a946b] transition-all shadow-sm cursor-pointer flex items-center justify-center">
                 {{ $t('hero.btn_contribute') }}
-              </a>
-              <a href="#" class="w-full sm:w-auto px-8 py-4 border border-gray-200 rounded-2xl font-bold text-[16px] text-gray-800 bg-white hover:bg-gray-50 transition-all flex items-center justify-center gap-2 cursor-pointer">
+              </router-link>
+              <router-link to="/explore" class="w-full sm:w-auto px-11 py-5 border border-gray-100 rounded-[20px] font-bold text-[15px] text-gray-900 bg-white hover:!bg-[#1a946b] hover:!text-white hover:!border-[#1a946b] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm group">
                 {{ $t('hero.btn_create') }}
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 stroke-current group-hover:!text-white transition-colors" fill="none" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
                 </svg>
-              </a>
+              </router-link>
             </div>
           </div>
 
