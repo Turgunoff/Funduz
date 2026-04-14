@@ -29,7 +29,7 @@
           <ul class="space-y-4">
             <li><router-link to="/how-it-works" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('footer.c_about') }}</router-link></li>
             <li><router-link to="/community" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('nav.cooperation') }}</router-link></li>
-            <li><a href="#" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('footer.c_faq') }}</a></li>
+            <li><router-link to="/contact" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('footer.c_faq') }}</router-link></li>
           </ul>
         </div>
 

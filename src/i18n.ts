@@ -383,6 +383,97 @@ const messages = {
       tab_media: "Media",
       tab_rewards: "Mukofotlar",
       media_placeholder: "Rasm yoki videoni ushbu yerga sudrab o'tkazing yoki bosing"
+    },
+    story: {
+      back: "Orqaga qaytish",
+      badge: "Muvaffaqiyat tarixi",
+      title: "Kelajak Eko-fermasi: Orzuning Ro'yobi",
+      author: "Aziz Karimov",
+      date: "Sentyabr 2024",
+      history_title: "Loyiha tarixi",
+      history_p1: "Barchasi Toshkent chekkasidagi tashlandiq yer uchastkasidan boshlandi. Mening g'oyam qishloq xo'jaligini hatto kichik maydonlarda ham texnologik va ekologik toza bo'lishini isbotlash edi.",
+      history_p2: "Dastlabki oylar eng qiyini bo'ldi. Tuproqning sho'rlanishi va barqaror sug'orish yo'qligiga duch keldik. Ammo Funduz platformasidagi 450 homiy yordami tufayli qisqa fursatda tomchilatib sug'orish tizimini o'rnatdik.",
+      history_p3: "Bugungi kunda fermamiz oyiga 2 tonnadan ortiq organik sabzavot yetishtirmoqda. Bu shunchaki biznes emas, bu hamjamiyat kuchining isboti.",
+      funds_title: "Mablag'lar nimaga sarflandi",
+      funds_equip: "Uskunalar",
+      funds_equip_desc: "Aqlli datchiklar va avtomatika",
+      funds_seeds: "Urug'lar",
+      funds_seeds_desc: "Saralangan organik navlar",
+      funds_water: "Sug'orish",
+      funds_water_desc: "Tomchilatib sug'orish tizimi",
+      gallery: "Amalga oshirish galereyasi",
+      stats_title: "Yig'im natijalari",
+      stats_collected: "Yig'ildi",
+      stats_goal: "Maqsad",
+      stats_percent: "Foiz",
+      stats_sponsors: "Homiylar qo'llab-quvvatladi",
+      quote: "\"Funduz bizga nafaqat pul, balki g'oyamiz odamlar uchun muhim ekanligiga ishonch berdi. Bu ongli iste'molning yangi davri boshlanishidir.\"",
+      similar_title: "O'xshash tarixlar"
+    },
+    contact: {
+      badge: "Qo'llab-quvvatlash markazi",
+      title: "Sizga qanday yordam bera olamiz?",
+      search_placeholder: "Savollar, kalit so'zlar yoki mavzular bo'yicha qidirish...",
+      cats: {
+        all: "Barchasi",
+        general: "Umumiy",
+        creators: "Mualliflar uchun",
+        backers: "Homiylar uchun",
+        payments: "To'lovlar va Qaytarishlar",
+        security: "Xavfsizlik va Ishonch"
+      },
+      faq: [
+        {
+          q: "Funduzda loyihani qanday qo'llab-quvvatlash mumkin?",
+          a: "Loyihani qo'llab-quvvatlash uchun loyiha sahifasiga o'ting, 'Hissa qo'shish' tugmasini bosing, mukofotni tanlang va qulay to'lov usuli (Payme, Click yoki karta) orqali to'lovni amalga oshiring.",
+          cat: "backers"
+        },
+        {
+          q: "Loyiha amalga oshmasa, pullar qaytariladimi?",
+          a: "Ha, Funduz 'Hammasi yoki hech narsa' tamoyili asosida ishlaydi. Agar loyiha belgilangan muddatda o'z maqsadiga erisha olmasa, barcha mablag'lar homiylarga komissiyasiz to'liq qaytariladi.",
+          cat: "payments"
+        },
+        {
+          q: "Payme qanday to'lov usullarini qo'llab-quvvatlaydi?",
+          a: "Payme orqali siz Uzcard, Humo kartalari, shuningdek, Payme balansidagi mablag'lar orqali loyihalarni qo'llab-quvvatlashingiz mumkin.",
+          cat: "payments"
+        },
+        {
+          q: "Mening shaxsiy ma'lumotlarim va karta ma'lumotlarim qanday himoyalangan?",
+          a: "Xavfsizlik — bizning birinchi darajali vazifamizdir. Funduz barcha ma'lumotlarni saqlash uchun AES-256 shifrlash usulidan foydalanadi. To'lovlar uchun biz Payme va Click kabi jahon darajasidagi provayderlar bilan hamkorlik qilamiz, karta ma'lumotlari to'g'ridan-to'g'ri bizning serverlarimizga tegmaydi.",
+          cat: "security"
+        },
+        {
+          q: "Mualliflar uchun platforma komissiyasi qancha?",
+          a: "Mualliflar uchun komissiya faqat loyiha muvaffaqiyatli yakunlanganda olinadi va u yig'ilgan summaning 5% ini tashkil qiladi. Agar loyiha yig'ilmasa, hech qanday komissiya olinmaydi.",
+          cat: "creators"
+        },
+        {
+          q: "Mukofotlarimni qanday kuzatib borishim mumkin?",
+          a: "Siz o'z shaxsiy kabinetingizda 'Mening yordamlarim' bo'limida barcha qo'llab-quvvatlagan loyihalaringiz va ularning holatini kuzatib borishingiz mumkin. Shuningdek, loyiha muallifi yangiliklar yuborganda sizga bildirishnoma keladi.",
+          cat: "backers"
+        },
+        {
+          q: "Loyiha boshlangandan keyin o'z hissamni (pledge) o'zgartira olamanmi?",
+          a: "Ha, loyiha yig'ish muddati yakunlanmaguncha siz o'z hissangizni oshirishingiz yoki boshqa mukofotni tanlashingiz mumkin.",
+          cat: "backers"
+        },
+        {
+          q: "Muallifning shaxsini qanday tasdiqlash mumkin?",
+          a: "Platformamizdagi barcha mualliflar majburiy KYC (shaxsni tasdiqlash) jarayonidan o'tadilar. Tasdiqlangan mualliflar sahifasida maxsus belgi (check-mark) bo'ladi.",
+          cat: "security"
+        },
+        {
+          q: "Click xalqaro kredit kartalarini qo'llab-quvvatlaydimi?",
+          a: "Hozirgi vaqtda Click orqali O'zbekistonning barcha mahalliy kartalari (Uzcard, Humo) orqali to'lov qilish mumkin. Xalqaro kartalar (Visa, Mastercard) bo'yicha imkoniyatlarni kengaytirish ustida ishlayapmiz.",
+          cat: "payments"
+        },
+        {
+          q: "Agar loyiha maqsad qilinganidan ko'proq mablag' yig'sa nima bo'ladi?",
+          a: "Agar loyiha 100% dan ko'p mablag' to'plasa, barcha qo'shimcha mablag'lar muallifga loyihani yanada yaxshilash yoki qo'shimcha mukofotlar taqdim etish uchun beriladi.",
+          cat: "general"
+        }
+      ]
     }
   },
   ru: {
@@ -767,6 +858,97 @@ const messages = {
       tab_media: "Медиа",
       tab_rewards: "Награды",
       media_placeholder: "Перетащите сюда фото или видео или нажмите для выбора"
+    },
+    story: {
+      back: "Назад",
+      badge: "История успеха",
+      title: "Эко-ферма Будущего: Как мы вырастили мечту",
+      author: "Азиз Каримов",
+      date: "Сентябрь 2024",
+      history_title: "История проекта",
+      history_p1: "Всё началось с заброшенного участка земли на окраине Ташкента. Моя идея заключалась в том, чтобы доказать: сельское хозяйство может быть технологичным, экологически чистым и экономически выгодным даже на небольших площадях.",
+      history_p2: "Первые месяцы были самыми сложными. Мы столкнулись с проблемой засоленности почвы и отсутствием стабильного полива. Но благодаря поддержке 450 спонсоров на платформе Funduz, мы смогли внедрить систему капельного орошения и восстановить плодородие земли за рекордные сроки.",
+      history_p3: "Сегодня наша ферма производит более 2 тонн органических овощей в месяц, обеспечивая свежими продуктами три района города. Это не просто бизнес — это живое доказательство силы сообщества.",
+      funds_title: "На что пошли средства",
+      funds_equip: "Оборудование",
+      funds_equip_desc: "Умные датчики и автоматика",
+      funds_seeds: "Семена",
+      funds_seeds_desc: "Селекционные органические сорта",
+      funds_water: "Полив",
+      funds_water_desc: "Система капельного орошения",
+      gallery: "Галерея реализации",
+      stats_title: "Итоги сборов",
+      stats_collected: "Собрано",
+      stats_goal: "Цель",
+      stats_percent: "Процент",
+      stats_sponsors: "Спонсоров поддержали",
+      quote: "\"Funduz дал нам не просто деньги, а веру в то, что наша идея важна для людей. Это начало новой эры осознанного потребления.\"",
+      similar_title: "Похожие истории"
+    },
+    contact: {
+      badge: "Центр поддержки",
+      title: "Чем мы можем вам помочь?",
+      search_placeholder: "Поиск по вопросам, ключевым словам или темам...",
+      cats: {
+        all: "Все",
+        general: "Общие",
+        creators: "Для авторов",
+        backers: "Для спонсоров",
+        payments: "Платежи и Возвраты",
+        security: "Безопасность и Доверие"
+      },
+      faq: [
+        {
+          q: "Как я могу поддержать проект на Funduz?",
+          a: "Чтобы поддержать проект, перейдите на страницу проекта, нажмите кнопку 'Внести вклад', выберите вознаграждение и произведите оплату удобным способом (Payme, Click или карта).",
+          cat: "backers"
+        },
+        {
+          q: "Доступны ли возвраты, если проект не наберет сумму?",
+          a: "Да, Funduz работает по принципу 'Все или ничего'. Если проект не достигает цели к установленному дедлайну, все средства автоматически возвращаются спонсорам в полном объеме без комиссий.",
+          cat: "payments"
+        },
+        {
+          q: "Какие способы оплаты поддерживает Payme?",
+          a: "Через Payme вы можете поддерживать проекты с помощью карт Uzcard, Humo, а также средствами с баланса вашего кошелька Payme.",
+          cat: "payments"
+        },
+        {
+          q: "Как защищены мои персональные данные и информация о карте?",
+          a: "Безопасность — наш главный приоритет. Funduz использует шифрование AES-256 для хранения всех данных. Для платежей мы работаем с провайдерами мирового уровня, такими как Payme и Click, чтобы ваши финансовые данные никогда не попадали на наши серверы напрямую.",
+          cat: "security"
+        },
+        {
+          q: "Какова комиссия платформы для авторов?",
+          a: "Комиссия для авторов взимается только в случае успешного завершения проекта и составляет 5% от собранной суммы. Если проект не собрал средства, никакие комиссии не взимаются.",
+          cat: "creators"
+        },
+        {
+          q: "Как я могу отслеживать свои вознаграждения?",
+          a: "Вы можете следить за всеми поддержанными проектами и их статусом в личном кабинете в разделе 'Мои участия'. Также вы будете получать уведомления, когда автор проекта публикует обновления.",
+          cat: "backers"
+        },
+        {
+          q: "Могу ли я изменить свой взнос (pledge) после начала проекта?",
+          a: "Да, пока срок сбора средств не истек, вы можете увеличить сумму своего взноса или выбрать другое доступное вознаграждение.",
+          cat: "backers"
+        },
+        {
+          q: "Как проверить личность автора?",
+          a: "Все авторы на нашей платформе проходят обязательную процедуру KYC (проверка личности). У проверенных авторов на странице проекта отображается специальный знак верификации.",
+          cat: "security"
+        },
+        {
+          q: "Поддерживает ли Click международные кредитные карты?",
+          a: "На данный момент через Click возможна оплата всеми местными картами Узбекистана (Uzcard, Humo). Мы работаем над расширением возможностей для международных карт (Visa, Mastercard).",
+          cat: "payments"
+        },
+        {
+          q: "Что происходит, если проект собирает больше запланированной суммы?",
+          a: "Если проект собирает более 100%, все сверхплановые средства передаются автору для дальнейшего улучшения проекта или предоставления дополнительных бонусов спонсорам.",
+          cat: "general"
+        }
+      ]
     }
   },
 };

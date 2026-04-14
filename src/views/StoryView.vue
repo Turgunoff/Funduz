@@ -5,7 +5,7 @@
     <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mb-8">
       <router-link to="/community" class="inline-flex items-center gap-2 text-[13px] font-bold text-gray-500 hover:text-[#1e5c43] transition-colors uppercase tracking-widest">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" /></svg>
-        Назад
+        {{ t('story.back') }}
       </router-link>
     </div>
 
@@ -29,12 +29,12 @@
           
           <!-- Badge -->
           <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#fde1d3] text-[#8b3d1b] text-[10px] lg:text-[11px] font-black tracking-[0.1em] uppercase mb-6 shadow-sm">
-            100% Успешно
+            {{ t('story.badge') }}
           </div>
           
           <!-- Title -->
           <h1 class="text-[32px] md:text-[44px] lg:text-[56px] font-bold text-white leading-[1.15] tracking-tight mb-10">
-            Эко-ферма Будущего: Как мы вырастили мечту
+            {{ t('story.title') }}
           </h1>
 
           <!-- Author Info -->
@@ -46,10 +46,10 @@
             >
             <div>
               <div class="text-[15px] lg:text-[16px] font-bold text-white leading-tight mb-1">
-                Азиз Каримов
+                {{ t('story.author') }}
               </div>
               <div class="text-[10px] lg:text-[11px] font-black text-white/50 uppercase tracking-widest">
-                Сентябрь 2024
+                {{ t('story.date') }}
               </div>
             </div>
           </div>
@@ -67,23 +67,23 @@
           
           <!-- History of the project -->
           <div class="bg-[#f0f2f0] rounded-[48px] p-8 lg:p-12">
-            <h2 class="text-[24px] lg:text-[28px] font-bold text-[#1e5c43] mb-6 tracking-tight">История проекта</h2>
+            <h2 class="text-[24px] lg:text-[28px] font-bold text-[#1e5c43] mb-6 tracking-tight">{{ t('story.history_title') }}</h2>
             <div class="space-y-6 text-gray-600 text-[15px] lg:text-[16px] leading-relaxed font-medium">
               <p>
-                Всё началось с заброшенного участка земли на окраине Ташкента. Моя идея заключалась в том, чтобы доказать: сельское хозяйство может быть технологичным, экологически чистым и экономически выгодным даже на небольших площадях.
+                {{ t('story.history_p1') }}
               </p>
               <p>
-                Первые месяцы были самыми сложными. Мы столкнулись с проблемой засоленности почвы и отсутствием стабильного полива. Но благодаря поддержке 450 спонсоров на платформе Funduz, мы смогли внедрить систему капельного орошения и восстановить плодородие земли за рекордные сроки.
+                {{ t('story.history_p2') }}
               </p>
               <p>
-                Сегодня наша ферма производит более 2 тонн органических овощей в месяц, обеспечивая свежими продуктами три района города. Это не просто бизнес — это живое доказательство силы сообщества.
+                {{ t('story.history_p3') }}
               </p>
             </div>
           </div>
 
           <!-- Where the funds went -->
           <div>
-            <h2 class="text-[24px] lg:text-[28px] font-bold text-[#1e5c43] mb-8 tracking-tight">На что пошли средства</h2>
+            <h2 class="text-[24px] lg:text-[28px] font-bold text-[#1e5c43] mb-8 tracking-tight">{{ t('story.funds_title') }}</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
               
               <!-- Fund Card 1 -->
@@ -91,8 +91,8 @@
                 <div class="w-14 h-14 rounded-full bg-[#d7f1e6] flex items-center justify-center text-[#1e5c43] mb-5">
                   <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
-                <h3 class="font-bold text-gray-900 mb-2 leading-tight">Оборудование</h3>
-                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-relaxed">Умные датчики и автоматика</p>
+                <h3 class="font-bold text-gray-900 mb-2 leading-tight">{{ t('story.funds_equip') }}</h3>
+                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-relaxed">{{ t('story.funds_equip_desc') }}</p>
               </div>
 
               <!-- Fund Card 2 -->
@@ -100,8 +100,8 @@
                 <div class="w-14 h-14 rounded-full bg-[#d7f1e6] flex items-center justify-center text-[#1e5c43] mb-5">
                   <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                 </div>
-                <h3 class="font-bold text-gray-900 mb-2 leading-tight">Семена</h3>
-                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-relaxed">Селекционные органические сорта</p>
+                <h3 class="font-bold text-gray-900 mb-2 leading-tight">{{ t('story.funds_seeds') }}</h3>
+                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-relaxed">{{ t('story.funds_seeds_desc') }}</p>
               </div>
 
               <!-- Fund Card 3 -->
@@ -109,8 +109,8 @@
                 <div class="w-14 h-14 rounded-full bg-[#d7f1e6] flex items-center justify-center text-[#1e5c43] mb-5">
                   <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                 </div>
-                <h3 class="font-bold text-gray-900 mb-2 leading-tight">Полив</h3>
-                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-relaxed">Система капельного орошения</p>
+                <h3 class="font-bold text-gray-900 mb-2 leading-tight">{{ t('story.funds_water') }}</h3>
+                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-relaxed">{{ t('story.funds_water_desc') }}</p>
               </div>
 
             </div>
@@ -118,7 +118,7 @@
 
           <!-- Gallery -->
           <div>
-            <h2 class="text-[24px] lg:text-[28px] font-bold text-[#1e5c43] mb-8 tracking-tight">Галерея реализации</h2>
+            <h2 class="text-[24px] lg:text-[28px] font-bold text-[#1e5c43] mb-8 tracking-tight">{{ t('story.gallery') }}</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div class="aspect-square rounded-[32px] overflow-hidden group shadow-md">
                 <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery">
@@ -144,11 +144,11 @@
           <div class="bg-[#e9e6e4] rounded-[40px] p-8 lg:p-10 shadow-sm border border-white">
             <div class="flex items-center gap-3 mb-8">
               <svg class="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 24 24"><path d="M5 3v18H3V3h2zm16 11V5h-2v9h2zM15 7v14h-2V7h2zm-6 4v10H7V11h2z"/></svg>
-              <span class="text-[16px] font-bold text-gray-900 tracking-tight">Итоги сборов</span>
+              <span class="text-[16px] font-bold text-gray-900 tracking-tight">{{ t('story.stats_title') }}</span>
             </div>
             
             <div class="mb-6">
-              <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">СОБРАНО</div>
+              <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">{{ t('story.stats_collected') }}</div>
               <div class="text-[32px] font-bold text-[#1e5c43] leading-none tracking-tight">150 000 000 сум</div>
             </div>
 
@@ -159,11 +159,11 @@
 
             <div class="flex justify-between items-center mb-10 pb-10 border-b border-[#d4cbc7]">
               <div>
-                <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">ЦЕЛЬ</div>
+                <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{{ t('story.stats_goal') }}</div>
                 <div class="text-[15px] font-bold text-gray-900">120 000 000 сум</div>
               </div>
               <div class="text-right">
-                <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">ПРОЦЕНТ</div>
+                <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{{ t('story.stats_percent') }}</div>
                 <div class="text-[15px] font-bold text-[#8b3d1b]">125%</div>
               </div>
             </div>
@@ -174,7 +174,7 @@
               </div>
               <div class="leading-tight">
                 <div class="text-[20px] font-bold text-gray-900">450</div>
-                <div class="text-[10px] font-black text-gray-500 uppercase tracking-widest">СПОНСОРОВ ПОДДЕРЖАЛИ</div>
+                <div class="text-[10px] font-black text-gray-500 uppercase tracking-widest">{{ t('story.stats_sponsors') }}</div>
               </div>
             </div>
           </div>
@@ -185,17 +185,17 @@
             <svg class="absolute top-4 right-4 w-28 h-28 text-green-900/40 transform rotate-180 pointer-events-none" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
             
             <p class="relative z-10 text-[16px] lg:text-[18px] text-[#e0f1e7] italic font-medium leading-relaxed mb-8">
-              "Funduz дал нам не просто деньги, а веру в то, что наша идея важна для людей. Это начало новой эры осознанного потребления."
+              {{ t('story.quote') }}
             </p>
             <div class="relative z-10 text-[14px] font-bold text-[#8ec8a6] flex items-center gap-2">
               <div class="w-4 h-[2px] bg-[#8ec8a6]"></div>
-              Азиз Каримов
+              {{ t('story.author') }}
             </div>
           </div>
 
           <!-- Similar Stories -->
           <div class="pt-4">
-            <h3 class="text-[18px] font-bold text-gray-900 mb-6">Похожие истории</h3>
+            <h3 class="text-[18px] font-bold text-gray-900 mb-6">{{ t('story.similar_title') }}</h3>
             <div class="space-y-6">
               
               <!-- Story Link 1 -->
@@ -237,7 +237,9 @@
 </template>
 
 <script setup lang="ts">
-/* Minimal static component based on the reference design */
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 </script>
 
 <style scoped>
