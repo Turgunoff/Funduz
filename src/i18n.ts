@@ -3,9 +3,9 @@ import { createI18n } from "vue-i18n";
 const messages = {
   uz: {
     nav: {
-      projects: "Loyihalar",
-      about: "Biz haqimizda",
-      cooperation: "Hamkorlik",
+      projects: "Loyihalarni ko'rish",
+      about: "Qanday ishlaydi?",
+      cooperation: "Jamiyat",
       login: "Kirish",
       view_projects: "Loyihalarni ko'rish",
       how_it_works: "Qanday ishlaydi?",
@@ -211,9 +211,9 @@ const messages = {
   },
   ru: {
     nav: {
-      projects: "Проекты",
-      about: "О нас",
-      cooperation: "Сотрудничество",
+      projects: "Просмотр проектов",
+      about: "Как это работает?",
+      cooperation: "Сообщество",
       login: "Войти",
       view_projects: "Просмотр проектов",
       how_it_works: "Как это работает?",
