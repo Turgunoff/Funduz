@@ -698,6 +698,16 @@ const messages = {
           ]
         }
       ]
+    },
+    error404: {
+      badge: "Xatolik 404",
+      title: "Biz bu sahifani topa olmadik",
+      desc: "Siz qidirayotgan sahifa mavjud emas yoki boshqa joyga ko'chirilgan. Lekin xavotir olmang — sizni juda ko'p qiziqarli loyihalar kutmoqda.",
+      back_home: "Bosh sahifaga",
+      explore: "Loyihalarni ko'rish",
+      contact: "Yordam xizmati",
+      trending_title: "Buning o'rniga ushbu trenddagi loyihalarni ko'ring",
+      view_all: "Barchasini ko'rish"
     }
   },
   ru: {
@@ -1397,6 +1407,16 @@ const messages = {
           ]
         }
       ]
+    },
+    error404: {
+      badge: "Ошибка 404",
+      title: "Мы не нашли эту страницу",
+      desc: "Страница, которую вы ищете, не существует или была перемещена. Но не волнуйтесь — вас ждет множество потрясающих проектов.",
+      back_home: "На главную",
+      explore: "Смотреть проекты",
+      contact: "Служба поддержки",
+      trending_title: "Вместо этого посмотрите эти трендовые проекты",
+      view_all: "Смотреть все"
     }
   },
 };
