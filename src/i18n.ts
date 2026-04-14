@@ -42,6 +42,24 @@ const messages = {
           desc: "Loyihani amalga oshiring, homiylarni xabardor qilib turing va ularga munosib mukofotlarni yuboring."
         }
       ],
+      steps_sponsors: [
+        {
+          title: "Loyihani tanlang",
+          desc: "O'zingizga yoqqan va jamiyat uchun foydali deb hisoblagan innovatsion g'oyalarni toping."
+        },
+        {
+          title: "Mukofotni belgilang",
+          desc: "Loyihani shunchaki qo'llab-quvvatlang yoki mualliflar tomonidan tayyorlangan qiziqarli sovg'alarni tanlang."
+        },
+        {
+          title: "Xavfsiz hissa qo'shing",
+          desc: "Zamonaviy to'lov tizimlari orqali xavfsiz va tezkor ravishda mablag' o'tkazing."
+        },
+        {
+          title: "Natijani kuzating",
+          desc: "Loyiha rivojlanishini kuzatib boring, yangiliklardan xabardor bo'ling va mukofotingizni oling."
+        }
+      ],
       features: {
         transparency: {
           title: "Shaffoflik har bir bosqichda",
@@ -382,6 +400,24 @@ const messages = {
         {
           title: "Воплотите идею",
           desc: "Реализуйте проект, держите спонсоров в курсе и отправьте им заслуженные вознаграждения."
+        }
+      ],
+      steps_sponsors: [
+        {
+          title: "Выберите проект",
+          desc: "Найдите инновационные идеи, которые вам откликаются и которые вы считаете полезными для общества."
+        },
+        {
+          title: "Выберите награду",
+          desc: "Поддержите проект просто так или выберите один из интересных подарков, подготовленных авторами."
+        },
+        {
+          title: "Сделайте вклад",
+          desc: "Безопасно и быстро переведите средства через современные платежные системы."
+        },
+        {
+          title: "Следите за ростом",
+          desc: "Наблюдайте за реализацией проекта, получайте новости и заберите свою заслуженную награду."
         }
       ],
       features: {
