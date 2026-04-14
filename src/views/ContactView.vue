@@ -19,7 +19,7 @@ const handleSubmit = () => {
     <div class="h-20 sm:h-24"></div>
 
     <div class="max-w-[1240px] mx-auto px-4 sm:px-6 py-12 lg:py-16">
-      <!-- Header -->
+      <!-- Header Section -->
       <div class="mb-12 lg:mb-16">
         <h1 class="text-[48px] sm:text-[64px] font-bold text-black leading-tight tracking-[-0.04em] mb-4">
           {{ t('contact.title') }}
@@ -29,27 +29,27 @@ const handleSubmit = () => {
         </p>
       </div>
 
-      <!-- Main Grid -->
+      <!-- Main Interaction Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
         
-        <!-- Left: Form Card -->
+        <!-- Left Column: Contact Form -->
         <div class="lg:col-span-7 bg-white rounded-[32px] p-8 lg:p-12 shadow-[0_32px_80px_-16px_rgba(0,0,0,0.06)] border border-gray-50">
           <h2 class="text-[24px] font-bold text-gray-900 mb-10">{{ t('contact.form.title') }}</h2>
           
           <form @submit.prevent="handleSubmit" class="space-y-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <!-- Full Name -->
+              <!-- Full Name Field -->
               <div class="space-y-3">
-                <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.name') }}</label>
+                <label class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.name') }}</label>
                 <input 
                   type="text" 
                   placeholder="John Doe"
                   class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all placeholder:text-gray-400 font-medium"
                 >
               </div>
-              <!-- Email Address -->
+              <!-- Email Address Field -->
               <div class="space-y-3">
-                <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.email') }}</label>
+                <label class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.email') }}</label>
                 <input 
                   type="email" 
                   placeholder="john@example.com"
@@ -58,9 +58,9 @@ const handleSubmit = () => {
               </div>
             </div>
 
-            <!-- Subject -->
+            <!-- Subject Selection -->
             <div class="space-y-3">
-              <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.subject') }}</label>
+              <label class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.subject') }}</label>
               <div class="relative">
                 <select 
                   class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all appearance-none cursor-pointer font-medium"
@@ -68,6 +68,7 @@ const handleSubmit = () => {
                   <option>{{ t('contact.form.subjects.general') }}</option>
                   <option>{{ t('contact.form.subjects.support') }}</option>
                   <option>{{ t('contact.form.subjects.partnership') }}</option>
+                  <option>{{ t('contact.form.subjects.legal') }}</option>
                 </select>
                 <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
@@ -75,9 +76,9 @@ const handleSubmit = () => {
               </div>
             </div>
 
-            <!-- Message -->
+            <!-- Message Textarea -->
             <div class="space-y-3">
-              <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.message') }}</label>
+              <label class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.message') }}</label>
               <textarea 
                 rows="6"
                 placeholder="..."
@@ -85,7 +86,7 @@ const handleSubmit = () => {
               ></textarea>
             </div>
 
-            <!-- Checkbox & Submit -->
+            <!-- Policy & Submit -->
             <div class="space-y-6">
               <label class="flex items-center gap-3 cursor-pointer group">
                 <input type="checkbox" class="w-5 h-5 rounded border-gray-200 text-[#0b422a] focus:ring-[#0b422a]">
@@ -102,53 +103,53 @@ const handleSubmit = () => {
           </form>
         </div>
 
-        <!-- Right: Info Cards -->
+        <!-- Right Column: Contact Cards -->
         <div class="lg:col-span-5 space-y-4">
-          <!-- Email Card -->
+          <!-- Email -->
           <div class="bg-[#f9fafb] rounded-[24px] p-6 flex items-center gap-5 group hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300 border border-transparent hover:border-gray-100">
             <div class="w-12 h-12 shrink-0 rounded-full bg-[#dcfce7] flex items-center justify-center text-[#1a946b]">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
             </div>
             <div>
-              <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.email_label') }}</div>
+              <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.email_label') }}</div>
               <div class="text-[16px] font-bold text-gray-900">{{ t('contact.info.email_val') }}</div>
             </div>
           </div>
 
-          <!-- Phone Card -->
+          <!-- Phone -->
           <div class="bg-[#f9fafb] rounded-[24px] p-6 flex items-center gap-5 group hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300 border border-transparent hover:border-gray-100">
             <div class="w-12 h-12 shrink-0 rounded-full bg-[#dcfce7] flex items-center justify-center text-[#1a946b]">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.87 4.87l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-1C7.82 18 2 12.18 2 5V3z" /></svg>
             </div>
             <div>
-              <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.phone_label') }}</div>
+              <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.phone_label') }}</div>
               <div class="text-[16px] font-bold text-gray-900">{{ t('contact.info.phone_val') }}</div>
             </div>
           </div>
 
-          <!-- Office Card -->
+          <!-- Office -->
           <div class="bg-[#f9fafb] rounded-[24px] p-6 flex items-center gap-5 group hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300 border border-transparent hover:border-gray-100">
             <div class="w-12 h-12 shrink-0 rounded-full bg-[#ffedd5] flex items-center justify-center text-[#9a3412]">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
             </div>
             <div>
-              <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.address_label') }}</div>
+              <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.address_label') }}</div>
               <div class="text-[16px] font-bold text-gray-900">{{ t('contact.info.address_val') }}</div>
             </div>
           </div>
 
-          <!-- Telegram Card -->
+          <!-- Telegram -->
           <div class="bg-[#f9fafb] rounded-[24px] p-6 flex items-center gap-5 group hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300 border border-transparent hover:border-gray-100">
             <div class="w-12 h-12 shrink-0 rounded-full bg-[#dcfce7] flex items-center justify-center text-[#1a946b]">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
             </div>
             <div>
-              <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">Telegram</div>
+              <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Telegram</div>
               <div class="text-[16px] font-bold text-gray-900">@funduz_uz</div>
             </div>
           </div>
 
-          <!-- Bottom Links -->
+          <!-- Social Connect -->
           <div class="pt-10 flex items-center justify-between">
             <span class="text-[13px] font-bold text-gray-900 uppercase tracking-widest">Connect with us</span>
             <div class="flex gap-3">
@@ -164,7 +165,59 @@ const handleSubmit = () => {
             </div>
           </div>
         </div>
+      </div>
 
+      <!-- Quick Answers / FAQ CTA Section -->
+      <div class="mt-20 lg:mt-32">
+        <div class="bg-[#c6f6d5]/50 rounded-[28px] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 border border-[#c6f6d5]">
+          <div class="flex items-center gap-5">
+            <div class="w-12 h-12 shrink-0 rounded-full bg-white flex items-center justify-center text-[#1a946b] shadow-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <div>
+              <h3 class="text-[18px] sm:text-[20px] font-bold text-gray-900 mb-1 leading-tight">Looking for quick answers?</h3>
+              <p class="text-[14px] sm:text-[15px] text-gray-600 font-medium">Our comprehensive help center might already have what you need.</p>
+            </div>
+          </div>
+          <router-link 
+            to="/faq" 
+            class="px-8 py-3.5 bg-white hover:bg-gray-50 text-gray-900 font-bold rounded-full text-[15px] shadow-sm transition-all duration-300 active:scale-95 whitespace-nowrap"
+          >
+            Visit FAQ
+          </router-link>
+        </div>
+      </div>
+
+      <!-- Map Display Section -->
+      <div class="mt-10 mb-10">
+        <div class="relative w-full aspect-[21/9] sm:aspect-[3/1] rounded-[32px] overflow-hidden bg-[#e2e8f0] border border-gray-100 shadow-xl">
+          <!-- Stylized Map Background -->
+          <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 800 400" preserveAspectRatio="none">
+              <path d="M0 50 L800 50 M0 150 L800 150 M0 250 L800 250 M0 350 L800 350 M100 0 L100 400 M300 0 L300 400 M500 0 L500 400 M700 0 L700 400" stroke="#94a3b8" stroke-width="1" />
+            </svg>
+          </div>
+
+          <!-- HQ Location Marker -->
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-[#0b422a] flex items-center justify-center shadow-2xl animate-bounce-slow">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+            </div>
+            <div class="px-6 py-2 bg-white rounded-full shadow-xl shadow-black/10 border border-gray-50 transition-transform hover:scale-105">
+              <span class="text-[13px] font-black text-gray-900 tracking-tight whitespace-nowrap">Funduz HQ - Tashkent</span>
+            </div>
+          </div>
+
+          <!-- Interface Controls -->
+          <div class="absolute bottom-8 right-8 flex flex-col gap-2">
+            <button class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-900 shadow-lg hover:bg-gray-50 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4" /></svg>
+            </button>
+            <button class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-900 shadow-lg hover:bg-gray-50 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M20 12H4" /></svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -193,5 +246,13 @@ select {
 /* Custom Checkbox Styling */
 input[type="checkbox"] {
   accent-color: #0b422a;
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite ease-in-out;
 }
 </style>
