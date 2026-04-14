@@ -5,7 +5,7 @@ import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
 
 const route = useRoute()
-const isAuthPage = computed(() => route.path === '/login')
+const isAuthPage = computed(() => route.path === '/login' || route.path === '/create-project')
 </script>
 
 <template>

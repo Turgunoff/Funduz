@@ -17,9 +17,9 @@
 
           <!-- Buttons as links with specific hover behavior -->
           <div class="flex flex-wrap gap-5">
-            <a href="#" class="px-10 py-[18px] bg-white text-gray-900 font-bold rounded-2xl text-[16px] transition-colors duration-300 hover:text-[#1a946b] cursor-pointer shadow-xl shadow-blue-900/10 flex items-center justify-center">
+            <router-link to="/login" class="px-10 py-[18px] bg-white text-gray-900 font-bold rounded-2xl text-[16px] transition-colors duration-300 hover:text-[#1a946b] cursor-pointer shadow-xl shadow-blue-900/10 flex items-center justify-center">
               {{ $t('cta.btn_start') }}
-            </a>
+            </router-link>
             <a href="#" class="px-10 py-[18px] bg-white text-gray-900 font-bold rounded-2xl text-[16px] transition-colors duration-300 hover:text-[#1a946b] cursor-pointer shadow-xl shadow-blue-900/10 flex items-center justify-center">
               {{ $t('cta.btn_expert') }}
             </a>

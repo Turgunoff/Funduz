@@ -5,6 +5,7 @@ import ExploreView from '../views/ExploreView.vue'
 import HowItWorksView from '../views/HowItWorksView.vue'
 import CommunityView from '../views/CommunityView.vue'
 import LoginView from '../views/LoginView.vue'
+import CreateProjectView from '../views/CreateProjectView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LoginView,
+    },
+    {
+      path: '/create-project',
+      name: 'create-project',
+      component: CreateProjectView,
     }
   ],
 })

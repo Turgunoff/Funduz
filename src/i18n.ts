@@ -363,6 +363,26 @@ const messages = {
       footer_text_end: "ga rozilik bildirasiz.",
       hero_title: "Yaxshilikni birgalikda moliyalashtiramiz",
       hero_subtitle: "Kichik hissa — katta o'zgarishlar asosi. Loyihalarni qo'llab-quvvatlang yoki o'z g'oyangizni hayotga tadbiq eting."
+    },
+    create: {
+      header_title: "Yangi loyiha boshlash",
+      cancel: "Bekor qilish",
+      step_prefix: "QADAM",
+      step1_title: "Asosiy ma'lumotlar",
+      name_label: "Loyiha nomi",
+      name_help: "O'z loyihangizga kishini jalb qiladigan, qisqa va mazmunli nom bering.",
+      name_placeholder: "Masalan: Yashil shahar bog'dorchiligi",
+      category_label: "Kategoriya",
+      duration_label: "Davomiyligi (kun)",
+      goal_label: "Kerakli mablag' miqdori",
+      tax_info: "Platforma komissiyasi va soliqlar haqida unutmang.",
+      media_title: "Media va Hikoya",
+      back: "Orqaga",
+      next: "Keyingi qadam",
+      tab_info: "Ma'lumotlar",
+      tab_media: "Media",
+      tab_rewards: "Mukofotlar",
+      media_placeholder: "Rasm yoki videoni ushbu yerga sudrab o'tkazing yoki bosing"
     }
   },
   ru: {
@@ -727,6 +747,26 @@ const messages = {
       footer_text_end: " Funduz.",
       hero_title: "Финансируем добро вместе",
       hero_subtitle: "Маленький вклад — основа больших перемен. Поддерживайте проекты или воплощайте свои идеи в жизнь."
+    },
+    create: {
+      header_title: "Запуск нового проекта",
+      cancel: "Отмена",
+      step_prefix: "ШАГ",
+      step1_title: "Основная информация",
+      name_label: "Название проекта",
+      name_help: "Дайте своему проекту краткое и содержательное название, которое привлечет людей.",
+      name_placeholder: "Например: Городское садоводство",
+      category_label: "Категория",
+      duration_label: "Продолжительность (в днях)",
+      goal_label: "Необходимая сумма",
+      tax_info: "Не забывайте о комиссии платформы и налогах.",
+      media_title: "Медиа и История",
+      back: "Назад",
+      next: "Следующий шаг",
+      tab_info: "Информация",
+      tab_media: "Медиа",
+      tab_rewards: "Награды",
+      media_placeholder: "Перетащите сюда фото или видео или нажмите для выбора"
     }
   },
 };
