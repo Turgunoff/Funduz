@@ -64,7 +64,7 @@
             </li>
             <li>
               <router-link
-                to="/contact"
+                to="/faq"
                 class="text-gray-500 hover:text-[#0f5238] transition-colors"
                 >{{ $t("footer.c_faq") }}</router-link
               >

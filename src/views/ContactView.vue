@@ -1,171 +1,3 @@
-<template>
-  <div class="min-h-screen bg-white">
-    <!-- Navbar Spacer -->
-    <div class="h-20"></div>
-
-    <!-- Hero Section -->
-    <div class="relative py-20 lg:py-32 overflow-hidden">
-      <!-- Ambient Background Elements -->
-      <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-green-50 rounded-full blur-[120px] opacity-60"></div>
-      <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-50 rounded-full blur-[120px] opacity-60"></div>
-
-      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="max-w-[800px] mx-auto text-center mb-20 lg:mb-24">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 text-[#1a946b] text-[13px] font-bold tracking-wider uppercase mb-6 animate-fade-in-down">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
-            {{ t('contact.badge') }}
-          </div>
-          <h1 class="text-[40px] sm:text-[56px] lg:text-[72px] font-bold text-gray-900 leading-[1.1] tracking-tight mb-8">
-            {{ t('contact.title') }}
-          </h1>
-          <p class="text-gray-500 text-[18px] lg:text-[20px] leading-relaxed max-w-[600px] mx-auto">
-            {{ t('contact.form.subtitle') }}
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-          <!-- Left Side: Contact Info -->
-          <div class="lg:col-span-5 space-y-10">
-            <div>
-              <h2 class="text-[28px] font-bold text-gray-900 mb-8">{{ t('contact.info.title') }}</h2>
-              <div class="space-y-6">
-                <!-- Email -->
-                <div class="flex gap-6 group">
-                  <div class="w-14 h-14 shrink-0 rounded-2xl bg-[#fafaf9] border border-gray-100 flex items-center justify-center text-[#1a946b] group-hover:bg-[#1a946b] group-hover:text-white transition-all duration-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                  </div>
-                  <div>
-                    <div class="text-[13px] font-bold text-gray-400 uppercase tracking-widest mb-1">{{ t('contact.info.email_label') }}</div>
-                    <a :href="'mailto:' + t('contact.info.email_val')" class="text-[18px] font-bold text-gray-900 hover:text-[#1a946b] transition-colors">{{ t('contact.info.email_val') }}</a>
-                  </div>
-                </div>
-
-                <!-- Phone -->
-                <div class="flex gap-6 group">
-                  <div class="w-14 h-14 shrink-0 rounded-2xl bg-[#fafaf9] border border-gray-100 flex items-center justify-center text-[#1a946b] group-hover:bg-[#1a946b] group-hover:text-white transition-all duration-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                  </div>
-                  <div>
-                    <div class="text-[13px] font-bold text-gray-400 uppercase tracking-widest mb-1">{{ t('contact.info.phone_label') }}</div>
-                    <a :href="'tel:' + t('contact.info.phone_val')" class="text-[18px] font-bold text-gray-900 hover:text-[#1a946b] transition-colors">{{ t('contact.info.phone_val') }}</a>
-                  </div>
-                </div>
-
-                <!-- Address -->
-                <div class="flex gap-6 group">
-                  <div class="w-14 h-14 shrink-0 rounded-2xl bg-[#fafaf9] border border-gray-100 flex items-center justify-center text-[#1a946b] group-hover:bg-[#1a946b] group-hover:text-white transition-all duration-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                  </div>
-                  <div>
-                    <div class="text-[13px] font-bold text-gray-400 uppercase tracking-widest mb-1">{{ t('contact.info.address_label') }}</div>
-                    <div class="text-[18px] font-bold text-gray-900 leading-tight">{{ t('contact.info.address_val') }}</div>
-                    <div class="mt-2 text-[14px] text-gray-500 font-medium">{{ t('contact.info.hours_val') }}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Map Placeholder -->
-            <div class="relative w-full aspect-[16/9] rounded-[32px] overflow-hidden border border-gray-100 shadow-2xl shadow-black/5 bg-gray-50 group">
-               <div class="absolute inset-0 bg-[#f1f5f9] flex items-center justify-center">
-                  <div class="text-center group-hover:scale-105 transition-transform duration-500">
-                    <div class="text-4xl mb-4">📍</div>
-                    <div class="text-[14px] font-bold text-gray-400 uppercase tracking-widest">Tashkent, Uzbekistan</div>
-                  </div>
-               </div>
-               <!-- Real map would go here -->
-               <div class="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent pointer-events-none"></div>
-            </div>
-          </div>
-
-          <!-- Right Side: Contact Form -->
-          <div class="lg:col-span-7 relative">
-            <div class="bg-white rounded-[40px] p-8 lg:p-12 border border-gray-100 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)] relative z-10">
-              <form @submit.prevent="handleSubmit" class="space-y-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <!-- Name -->
-                  <div class="space-y-2">
-                    <label class="text-[14px] font-bold text-gray-900 ml-1">{{ t('contact.form.name') }}</label>
-                    <input 
-                      type="text" 
-                      required
-                      class="w-full h-14 px-6 bg-[#fafaf9] border border-gray-100 rounded-2xl text-[16px] focus:bg-white focus:border-[#1a946b] focus:ring-4 focus:ring-[#1a946b]/5 outline-none transition-all"
-                      :placeholder="t('contact.form.name')"
-                    >
-                  </div>
-                  <!-- Email -->
-                  <div class="space-y-2">
-                    <label class="text-[14px] font-bold text-gray-900 ml-1">{{ t('contact.form.email') }}</label>
-                    <input 
-                      type="email" 
-                      required
-                      class="w-full h-14 px-6 bg-[#fafaf9] border border-gray-100 rounded-2xl text-[16px] focus:bg-white focus:border-[#1a946b] focus:ring-4 focus:ring-[#1a946b]/5 outline-none transition-all"
-                      :placeholder="t('contact.form.email')"
-                    >
-                  </div>
-                </div>
-
-                <!-- Subject -->
-                <div class="space-y-2">
-                  <label class="text-[14px] font-bold text-gray-900 ml-1">{{ t('contact.form.subject') }}</label>
-                  <select 
-                    class="w-full h-14 px-6 bg-[#fafaf9] border border-gray-100 rounded-2xl text-[16px] focus:bg-white focus:border-[#1a946b] outline-none transition-all appearance-none cursor-pointer"
-                  >
-                    <option value="general">{{ t('contact.form.subjects.general') }}</option>
-                    <option value="support">{{ t('contact.form.subjects.support') }}</option>
-                    <option value="partnership">{{ t('contact.form.subjects.partnership') }}</option>
-                    <option value="legal">{{ t('contact.form.subjects.legal') }}</option>
-                  </select>
-                </div>
-
-                <!-- Message -->
-                <div class="space-y-2">
-                  <label class="text-[14px] font-bold text-gray-900 ml-1">{{ t('contact.form.message') }}</label>
-                  <textarea 
-                    rows="6"
-                    required
-                    class="w-full p-6 bg-[#fafaf9] border border-gray-100 rounded-2xl text-[16px] focus:bg-white focus:border-[#1a946b] focus:ring-4 focus:ring-[#1a946b]/5 outline-none transition-all resize-none"
-                    :placeholder="t('contact.form.message')"
-                  ></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <button 
-                  type="submit" 
-                  class="w-full py-5 bg-[#1a946b] hover:bg-[#157a58] text-white font-bold rounded-2xl text-[17px] shadow-xl shadow-green-900/10 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3"
-                >
-                  <span>{{ t('contact.form.send') }}</span>
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-                </button>
-
-                <!-- Success Message (hidden) -->
-                <p v-if="submitted" class="text-center text-[#1a946b] font-bold animate-fade-in">
-                  {{ t('contact.form.success') }}
-                </p>
-              </form>
-            </div>
-
-            <!-- Background Decoration for Form -->
-            <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-yellow-100 rounded-full blur-[80px] opacity-30 -z-0"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom FAQ Link -->
-    <div class="bg-[#fafaf9] py-24 border-t border-gray-100">
-      <div class="max-w-[1440px] mx-auto px-4 text-center">
-        <h3 class="text-[24px] font-bold text-gray-900 mb-6">Still have questions?</h3>
-        <p class="text-gray-500 mb-10 max-w-[500px] mx-auto">Check out our frequently asked questions to find answers to common queries about starting or supporting projects.</p>
-        <router-link to="/faq" class="inline-flex items-center gap-2 text-[#1a946b] font-bold hover:gap-3 transition-all">
-          Visit FAQ Center
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-        </router-link>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -181,22 +13,185 @@ const handleSubmit = () => {
 };
 </script>
 
+<template>
+  <div class="min-h-screen bg-white">
+    <!-- Navbar Spacer -->
+    <div class="h-20 sm:h-24"></div>
+
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 py-12 lg:py-16">
+      <!-- Header -->
+      <div class="mb-12 lg:mb-16">
+        <h1 class="text-[48px] sm:text-[64px] font-bold text-black leading-tight tracking-[-0.04em] mb-4">
+          {{ t('contact.title') }}
+        </h1>
+        <p class="text-[16px] sm:text-[18px] text-gray-500 max-w-[600px] leading-relaxed font-medium">
+          {{ t('contact.subtitle') }}
+        </p>
+      </div>
+
+      <!-- Main Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        
+        <!-- Left: Form Card -->
+        <div class="lg:col-span-7 bg-white rounded-[32px] p-8 lg:p-12 shadow-[0_32px_80px_-16px_rgba(0,0,0,0.06)] border border-gray-50">
+          <h2 class="text-[24px] font-bold text-gray-900 mb-10">{{ t('contact.form.title') }}</h2>
+          
+          <form @submit.prevent="handleSubmit" class="space-y-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Full Name -->
+              <div class="space-y-3">
+                <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.name') }}</label>
+                <input 
+                  type="text" 
+                  placeholder="John Doe"
+                  class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all placeholder:text-gray-400 font-medium"
+                >
+              </div>
+              <!-- Email Address -->
+              <div class="space-y-3">
+                <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.email') }}</label>
+                <input 
+                  type="email" 
+                  placeholder="john@example.com"
+                  class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all placeholder:text-gray-400 font-medium"
+                >
+              </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="space-y-3">
+              <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.subject') }}</label>
+              <div class="relative">
+                <select 
+                  class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all appearance-none cursor-pointer font-medium"
+                >
+                  <option>{{ t('contact.form.subjects.general') }}</option>
+                  <option>{{ t('contact.form.subjects.support') }}</option>
+                  <option>{{ t('contact.form.subjects.partnership') }}</option>
+                </select>
+                <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="space-y-3">
+              <label class="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.message') }}</label>
+              <textarea 
+                rows="6"
+                placeholder="..."
+                class="w-full p-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all resize-none placeholder:text-gray-400 font-medium"
+              ></textarea>
+            </div>
+
+            <!-- Checkbox & Submit -->
+            <div class="space-y-6">
+              <label class="flex items-center gap-3 cursor-pointer group">
+                <input type="checkbox" class="w-5 h-5 rounded border-gray-200 text-[#0b422a] focus:ring-[#0b422a]">
+                <span class="text-[13px] text-gray-500 font-medium">I agree to the <router-link to="/privacy" class="text-[#1a946b] underline hover:text-[#0b422a]">Privacy Policy</router-link></span>
+              </label>
+
+              <button 
+                type="submit" 
+                class="w-full py-5 bg-[#0b422a] hover:bg-[#072a1b] text-white font-bold rounded-full text-[16px] transition-all duration-300 transform active:scale-[0.98]"
+              >
+                {{ t('contact.form.send') }}
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Info Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          <!-- Email Card -->
+          <div class="bg-[#f9fafb] rounded-[24px] p-6 flex items-center gap-5 group hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300 border border-transparent hover:border-gray-100">
+            <div class="w-12 h-12 shrink-0 rounded-full bg-[#dcfce7] flex items-center justify-center text-[#1a946b]">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+            </div>
+            <div>
+              <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.email_label') }}</div>
+              <div class="text-[16px] font-bold text-gray-900">{{ t('contact.info.email_val') }}</div>
+            </div>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="bg-[#f9fafb] rounded-[24px] p-6 flex items-center gap-5 group hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300 border border-transparent hover:border-gray-100">
+            <div class="w-12 h-12 shrink-0 rounded-full bg-[#dcfce7] flex items-center justify-center text-[#1a946b]">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.87 4.87l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-1C7.82 18 2 12.18 2 5V3z" /></svg>
+            </div>
+            <div>
+              <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.phone_label') }}</div>
+              <div class="text-[16px] font-bold text-gray-900">{{ t('contact.info.phone_val') }}</div>
+            </div>
+          </div>
+
+          <!-- Office Card -->
+          <div class="bg-[#f9fafb] rounded-[24px] p-6 flex items-center gap-5 group hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300 border border-transparent hover:border-gray-100">
+            <div class="w-12 h-12 shrink-0 rounded-full bg-[#ffedd5] flex items-center justify-center text-[#9a3412]">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+            </div>
+            <div>
+              <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.address_label') }}</div>
+              <div class="text-[16px] font-bold text-gray-900">{{ t('contact.info.address_val') }}</div>
+            </div>
+          </div>
+
+          <!-- Telegram Card -->
+          <div class="bg-[#f9fafb] rounded-[24px] p-6 flex items-center gap-5 group hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300 border border-transparent hover:border-gray-100">
+            <div class="w-12 h-12 shrink-0 rounded-full bg-[#dcfce7] flex items-center justify-center text-[#1a946b]">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+            </div>
+            <div>
+              <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">Telegram</div>
+              <div class="text-[16px] font-bold text-gray-900">@funduz_uz</div>
+            </div>
+          </div>
+
+          <!-- Bottom Links -->
+          <div class="pt-10 flex items-center justify-between">
+            <span class="text-[13px] font-bold text-gray-900 uppercase tracking-widest">Connect with us</span>
+            <div class="flex gap-3">
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#0b422a] hover:text-white transition-all duration-300">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#0b422a] hover:text-white transition-all duration-300">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.247 2.242 1.31 3.608.058 1.266.07 1.646.07 4.849 0 3.205-.012 3.584-.069 4.849-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.241 1.247-3.608 1.31-1.265.057-1.645.07-4.849.07-3.205 0-3.584-.012-4.849-.07-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.247-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.849 0-3.204.012-3.584.068-4.849.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.247 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-4.717 2.232-4.717 6.075 0 3.205.012 3.584.069 4.849.191 4.218 2.087 4.602 6.075 4.602 3.205 0 3.584-.012 4.849-.069 4.218-.191 4.602-2.087 4.602-6.075 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.217-4.717-6.075-4.717zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#0b422a] hover:text-white transition-all duration-300">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>
+
 <style scoped>
-h1, h2 {
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+.min-h-screen {
+  font-family: 'Outfit', sans-serif;
+}
+
+h1 {
   letter-spacing: -0.04em;
 }
-@keyframes fade-in-down {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+
+input::placeholder, textarea::placeholder {
+  font-weight: 500;
+  color: #9ca3af;
 }
-.animate-fade-in-down {
-  animation: fade-in-down 0.8s ease-out forwards;
+
+select {
+  background-image: none;
 }
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-.animate-fade-in {
-  animation: fade-in 0.5s ease-out forwards;
+
+/* Custom Checkbox Styling */
+input[type="checkbox"] {
+  accent-color: #0b422a;
 }
 </style>

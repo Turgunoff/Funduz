@@ -412,7 +412,8 @@ const messages = {
     },
     contact: {
       badge: "Qo'llab-quvvatlash markazi",
-      title: "Sizga qanday yordam bera olamiz?",
+      title: "Bog'lanish",
+      subtitle: "Savolingiz bormi yoki katalizatorga muhtoj loyihangiz? Bizning jamoamiz sizga kuratorlik kroudfanding olamida harakat qilishingizga yordam beradi.",
       search_placeholder: "Savollar, kalit so'zlar yoki mavzular bo'yicha qidirish...",
       cats: {
         all: "Barchasi",
@@ -1148,7 +1149,8 @@ const messages = {
     },
     contact: {
       badge: "Центр поддержки",
-      title: "Чем мы можем вам помочь?",
+      title: "Свяжитесь с нами",
+      subtitle: "Есть вопрос или проект, которому нужен импульс? Наша команда здесь, чтобы помочь вам ориентироваться в мире кураторского краудфандинга.",
       search_placeholder: "Поиск по вопросам, ключевым словам или темам...",
       cats: {
         all: "Все",

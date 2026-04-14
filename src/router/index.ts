@@ -7,6 +7,7 @@ import CommunityView from '../views/CommunityView.vue'
 import LoginView from '../views/LoginView.vue'
 import CreateProjectView from '../views/CreateProjectView.vue'
 import StoryView from '../views/StoryView.vue'
+import FaqView from '../views/FaqView.vue'
 import ContactView from '../views/ContactView.vue'
 
 const router = createRouter({
@@ -60,7 +61,7 @@ const router = createRouter({
     {
       path: '/faq',
       name: 'faq',
-      component: () => import('../views/FaqView.vue'),
+      component: FaqView,
     },
     {
       path: '/privacy',
