@@ -218,15 +218,15 @@
           <button
             v-for="(tab, idx) in $tm('project_view.tabs')"
             :key="idx"
-            @click="activeTab = idx"
+            @click="activeTab = Number(idx)"
             :class="
-              activeTab === idx
+              activeTab === Number(idx)
                 ? 'border-[#326b4d] text-gray-900 font-bold'
                 : 'border-transparent text-gray-400 font-medium'
             "
             class="pb-4 border-b-2 text-[15px] lg:text-[17px] transition-all cursor-pointer flex items-center gap-2.5 whitespace-nowrap"
           >
-            <span v-if="idx === 0">
+            <span v-if="Number(idx) === 0">
               <svg
                 class="w-4 h-4 lg:w-5 lg:h-5"
                 fill="none"
@@ -241,7 +241,7 @@
                 />
               </svg>
             </span>
-            <span v-if="idx === 1" class="flex items-center gap-2">
+            <span v-if="Number(idx) === 1" class="flex items-center gap-2">
               <svg
                 class="w-4 h-4 lg:w-5 lg:h-5"
                 fill="none"
@@ -260,7 +260,7 @@
                 >3</span
               >
             </span>
-            <span v-if="idx === 2">
+            <span v-if="Number(idx) === 2">
               <svg
                 class="w-4 h-4 lg:w-5 lg:h-5"
                 fill="none"

@@ -132,10 +132,10 @@
               {{ $t("how_it_works.steps_prefix") }} 0{{ Number(idx) + 1 }}
             </div>
             <h3 class="text-[18px] lg:text-[22px] font-bold text-gray-900 mb-5 leading-tight">
-              {{ (step as any).title }}
+              {{ step.title }}
             </h3>
             <p class="text-[13px] lg:text-[14px] text-gray-500 leading-relaxed font-medium">
-              {{ (step as any).desc }}
+              {{ step.desc }}
             </p>
           </div>
         </div>
@@ -258,7 +258,7 @@
             >
               <span
                 class="text-[18px] lg:text-[20px] font-bold text-gray-900 group-hover:text-[#0f4a36] transition-colors"
-                >{{ (item as any).q }}</span
+                >{{ item.q }}</span
               >
               <div
                 :class="
@@ -283,7 +283,7 @@
               class="px-8 lg:px-10 pb-8 transition-all duration-300"
             >
               <p class="text-[15px] lg:text-[16px] text-gray-500 leading-relaxed max-w-3xl">
-                {{ (item as any).a }}
+                {{ item.a }}
               </p>
             </div>
           </div>
@@ -337,13 +337,24 @@ import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { useRouter } from "vue-router";
 
+// Defined interfaces to satisfy the linter without changing logic
+interface Step {
+  title: string;
+  desc: string;
+}
+
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
 const { tm } = useI18n();
 const router = useRouter();
 const userType = ref("author");
 const activeFaq = ref<number | null>(0);
 
-const steps = computed(() => tm("how_it_works.steps") as any[]);
-const faqItems = computed(() => tm("how_it_works.faq.items") as any[]);
+const steps = computed(() => tm("how_it_works.steps") as unknown as Step[]);
+const faqItems = computed(() => tm("how_it_works.faq.items") as unknown as FaqItem[]);
 
 const toggleFaq = (idx: number) => {
   activeFaq.value = activeFaq.value === idx ? null : idx;
