@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen relative overflow-hidden">
     
-    <!-- TOP SECTION: Hero & Steps (Background #f8f6f5) -->
+    <!-- TOP SECTION: Hero & Steps -->
     <div class="bg-[#f8f6f5] pb-[100px] lg:pb-[180px]">
       <!-- Hero Section -->
       <div class="relative z-10 pt-16 lg:pt-20">
@@ -46,25 +46,22 @@
       </div>
     </div>
 
-    <!-- Features SECTION (Background restored to #f8f6f5) -->
+    <!-- Features SECTION -->
     <div class="bg-[#f8f6f5] pt-10 pb-20 relative z-20">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative py-12">
           <div class="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-            <!-- Big Card Left (Restored Image) -->
-            <div class="lg:col-span-2 relative bg-[#0f4a36] rounded-[40px] p-8 lg:p-14 overflow-hidden min-h-[400px] lg:min-h-[500px] flex flex-col justify-end group shadow-2xl shadow-green-900/10 transition-all duration-500">
+            <div class="lg:col-span-2 relative bg-[#0f4a36] rounded-[40px] p-8 lg:p-14 overflow-hidden min-h-[400px] lg:min-h-[500px] flex flex-col justify-end group shadow-2xl shadow-green-900/10">
               <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0">
                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" alt="Collaboration" class="w-full h-full object-cover">
               </div>
               <div class="absolute inset-0 bg-gradient-to-t from-[#0f4a36] via-[#0f4a36]/40 to-transparent"></div>
-              
               <div class="relative z-10 w-full lg:w-3/4">
                 <h2 class="text-[28px] lg:text-[44px] font-bold text-white mb-6 leading-tight">{{ $t('how_it_works.features.transparency.title') }}</h2>
                 <p class="text-[14px] lg:text-[17px] text-green-50/80 leading-relaxed font-medium">{{ $t('how_it_works.features.transparency.desc') }}</p>
               </div>
             </div>
 
-            <!-- Small Cards Right -->
             <div class="flex flex-col gap-6 lg:gap-8">
               <div class="bg-[#e9e7e6]/60 backdrop-blur-sm rounded-[40px] p-8 lg:p-10 flex flex-col h-[48%] group hover:bg-[#e9e7e6] transition-all duration-500">
                 <div class="w-12 h-12 bg-[#94654c] rounded-xl flex items-center justify-center mb-8 shadow-lg shadow-orange-900/10">
@@ -73,7 +70,6 @@
                 <h3 class="text-[20px] lg:text-[26px] font-bold text-gray-900 mb-4">{{ $t('how_it_works.features.security.title') }}</h3>
                 <p class="text-[13px] lg:text-[15px] text-gray-600 leading-relaxed font-medium">{{ $t('how_it_works.features.security.desc') }}</p>
               </div>
-
               <div class="bg-[#d2ede0]/60 backdrop-blur-sm rounded-[40px] p-8 lg:p-10 flex flex-col h-[48%] group hover:bg-[#d2ede0] transition-all duration-500">
                 <div class="w-12 h-12 bg-[#0f4a36] rounded-xl flex items-center justify-center mb-8 shadow-lg shadow-green-900/10">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
@@ -87,8 +83,8 @@
       </div>
     </div>
 
-    <!-- FAQ SECTION (Background #f6f3f2) -->
-    <div class="bg-[#f6f3f2] pt-24 pb-32 relative z-30 shadow-[0_-30px_60px_-15px_rgba(0,0,0,0.01)]">
+    <!-- FAQ SECTION -->
+    <div class="bg-[#f6f3f2] pt-24 pb-24 relative z-30 shadow-[0_-30px_60px_-15px_rgba(0,0,0,0.01)]">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16 lg:mb-20">
           <h2 class="text-[32px] md:text-[48px] font-bold text-gray-900 mb-6 tracking-tight">{{ $t('how_it_works.faq.title') }}</h2>
@@ -108,13 +104,46 @@
       </div>
     </div>
 
+    <!-- CTA SECTION -->
+    <div class="bg-[#f6f3f2] pb-32 pt-10">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative bg-[#0f4a36] rounded-[40px] p-12 lg:p-24 overflow-hidden text-center shadow-2xl shadow-green-900/20">
+          <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 24px 24px;"></div>
+          
+          <div class="relative z-10">
+            <h2 class="text-[32px] md:text-[48px] lg:text-[60px] font-bold text-white mb-12 tracking-tight">
+              {{ $t('how_it_works.cta.title') }}
+            </h2>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <!-- PRIMARY BUTTON -->
+              <button 
+                @click="$router.push('/create')"
+                class="bg-white text-[#0f4a36] px-10 py-5 rounded-3xl font-black text-lg transition-all duration-500 shadow-xl shadow-black/10 hover:shadow-white/20 hover:scale-105 active:scale-95"
+              >
+                {{ $t('how_it_works.cta.btn_create') }}
+              </button>
+              <!-- SECONDARY BUTTON (NOW MATCHES PRIMARY) -->
+              <button 
+                @click="$router.push('/explore')"
+                class="bg-white text-[#0f4a36] px-10 py-5 rounded-3xl font-black text-lg transition-all duration-500 shadow-xl shadow-black/10 hover:shadow-white/20 hover:scale-105 active:scale-95"
+              >
+                {{ $t('how_it_works.cta.btn_projects') }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
+import { useRouter } from "vue-router";
 const { locale } = useI18n();
+const router = useRouter();
 const userType = ref("author");
 const activeFaq = ref<number | null>(0);
 const toggleFaq = (idx: number) => { activeFaq.value = activeFaq.value === idx ? null : idx; };

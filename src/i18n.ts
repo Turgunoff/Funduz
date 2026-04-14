@@ -73,6 +73,11 @@ const messages = {
             a: "Ha, biz zamonaviy shifrlash usullari va tekshirilgan to'lov tizimlaridan foydalanamiz. Barcha akkauntlar firibgarlikning oldini olish uchun KYC jarayonidan o'tadi."
           }
         ]
+      },
+      cta: {
+        title: "O'z yo'lingizni boshlashga tayyormisiz?",
+        btn_create: "Loyiha yaratish",
+        btn_projects: "Loyihalarni ko'rish"
       }
     },
     explore: {
@@ -343,6 +348,11 @@ const messages = {
             a: "Да, мы используем современные методы шифрования и проверенные платежные системы. Все аккаунты проходят процедуру KYC для предотвращения мошенничества."
           }
         ]
+      },
+      cta: {
+        title: "Готовы начать свой путь?",
+        btn_create: "Создать проект",
+        btn_projects: "Смотреть проекты"
       }
     },
     explore: {
