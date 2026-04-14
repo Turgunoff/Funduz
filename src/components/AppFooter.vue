@@ -27,8 +27,8 @@
         <div>
           <h4 class="text-gray-900 text-[18px] font-bold mb-6">{{ $t('footer.company_title') }}</h4>
           <ul class="space-y-4">
-            <li><a href="#" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('footer.c_about') }}</a></li>
-            <li><a href="#" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('footer.c_contact') }}</a></li>
+            <li><router-link to="/how-it-works" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('footer.c_about') }}</router-link></li>
+            <li><router-link to="/community" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('nav.cooperation') }}</router-link></li>
             <li><a href="#" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{ $t('footer.c_faq') }}</a></li>
           </ul>
         </div>

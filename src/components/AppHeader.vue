@@ -20,7 +20,13 @@
             >
               {{ $t('nav.about_short') }}
             </router-link>
-            <a href="#" class="text-[16px] font-bold text-gray-400 hover:text-gray-900 transition-colors">{{ $t('nav.cooperation_short') }}</a>
+            <router-link 
+              to="/community" 
+              :class="isCommunityPage ? 'text-[#1a946b] border-b-2 border-[#1a946b]' : 'text-gray-400 hover:text-gray-900'"
+              class="text-[16px] font-bold transition-colors py-1"
+            >
+              {{ $t('nav.cooperation_short') }}
+            </router-link>
           </nav>
 
           <div class="flex items-center gap-4 lg:gap-6 ml-auto">
@@ -59,7 +65,13 @@
               >
                 {{ $t('nav.about') }}
               </router-link>
-              <a href="#" class="hover:text-[#1a946b] transition-colors">{{ $t('nav.cooperation') }}</a>
+              <router-link 
+                to="/community" 
+                :class="isCommunityPage ? 'text-[#1a946b]' : 'text-gray-800 hover:text-[#1a946b]'"
+                class="transition-colors"
+              >
+                {{ $t('nav.cooperation') }}
+              </router-link>
             </nav>
           </div>
 
@@ -68,7 +80,7 @@
               {{ $t('nav.login') }}
             </a>
             <a href="#" class="flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm">
-              Loyiha boshlash
+              {{ $t('nav.start_project') }}
             </a>
 
             <!-- Desktop Language Switcher -->
@@ -102,10 +114,10 @@
               {{ $t('nav.about_short') }}
               <svg class="w-4 h-4" :class="isHowItWorksPage ? 'text-[#1a946b]' : 'text-gray-300'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
             </router-link>
-            <a href="#" class="text-[20px] font-black text-gray-900 border-b border-gray-50 pb-5 flex justify-between items-center">
+            <router-link @click="isMenuOpen = false" to="/community" class="text-[20px] font-black border-b border-gray-50 pb-5 flex justify-between items-center" :class="isCommunityPage ? 'text-[#1a946b]' : 'text-gray-900'">
               {{ $t('nav.cooperation_short') }}
-              <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
-            </a>
+              <svg class="w-4 h-4" :class="isCommunityPage ? 'text-[#1a946b]' : 'text-gray-300'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
+            </router-link>
           </template>
           <template v-else>
             <a href="#" class="text-[20px] font-black text-gray-900 border-b border-gray-50 pb-5 flex justify-between items-center">
@@ -116,10 +128,10 @@
               {{ $t('nav.about') }}
               <svg class="w-4 h-4 text-[#1a946b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
             </router-link>
-            <a href="#" class="text-[20px] font-black text-gray-900 border-b border-gray-50 pb-5 flex justify-between items-center">
+            <router-link @click="isMenuOpen = false" to="/community" class="text-[20px] font-black border-b border-gray-50 pb-5 flex justify-between items-center" :class="isCommunityPage ? 'text-[#1a946b]' : 'text-gray-900'">
               {{ $t('nav.cooperation') }}
-              <svg class="w-4 h-4 text-[#1a946b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
-            </a>
+              <svg class="w-4 h-4" :class="isCommunityPage ? 'text-[#1a946b]' : 'text-[#1a946b]'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
+            </router-link>
           </template>
         </nav>
 
@@ -151,6 +163,7 @@ const isMenuOpen = ref(false)
 
 const isExplorePage = computed(() => route.path === '/explore')
 const isHowItWorksPage = computed(() => route.path === '/how-it-works')
+const isCommunityPage = computed(() => route.path === '/community')
 
 const setLocale = (lang: string) => {
   locale.value = lang

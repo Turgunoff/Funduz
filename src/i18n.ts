@@ -275,6 +275,40 @@ const messages = {
         "Yuqori sifatli eko-mahsulotlarni birinchilardan bo'lib qo'lga kiritasiz.",
       ],
     },
+    community: {
+      badge: "FUNDUZ HAMJAMIYATI",
+      title: "Platformamizning yuragi — bu odamlar",
+      subtitle: "Muvaffaqiyat hikoyalari bilan tanishing va bizning o'sib borayotgan innovatorlar hamjamiyatimizga qo'shiling. Birgalikda g'oyalarni haqiqatga aylantiramiz.",
+      stats: {
+        collected_val: "12+ Mlrd so'm",
+        collected_label: "YIG'ILGAN MABLAG'LAR",
+        sponsors_val: "45,000+",
+        sponsors_label: "FAOL HOMIYLAR",
+        projects_val: "1,200+",
+        projects_label: "MUVAFFAQIYATLI LOYIHALAR"
+      },
+      stories: {
+        title: "Muvaffaqiyat hikoyalari",
+        subtitle: "Hozirgi vaqtda dunyoni o'zgartirayotgan haqiqiy insonlar.",
+        view_all: "Barchasini ko'rish",
+        read_story: "Hikoyani o'qish",
+        badge: "100% MUVAFFAQIYATLI",
+        items: [
+          {
+            title: "Kelajak eko-fermasi",
+            desc: "Funduz hamjamiyatining qo'llab-quvvatlashi tufayli biz mamlakatdagi birinchi vertikal fermani ishga tushirishga muvaffaq bo'ldik."
+          },
+          {
+            title: "Hamma uchun IT-ta'lim",
+            desc: "Bizning vazifamiz — 10,000 nafar o'smirga dasturlashni o'rgatish va biz allaqachon yo'lning yarmidamiz."
+          },
+          {
+            title: "'Talant' hunarmandchilik markazi",
+            desc: "Biz unutilgan an'analarni tiklamoqdamiz va butun mamlakat bo'ylab yuzlab ustalar uchun ish o'rinlari yaratmoqdamiz."
+          }
+        ]
+      }
+    },
   },
   ru: {
     nav: {
@@ -549,6 +583,40 @@ const messages = {
         "Вы вносите вклад в развитие местного производства.",
         "Вы станете одним из первых обладателей высококачественной эко-продукции.",
       ],
+    },
+    community: {
+      badge: "СООБЩЕСТВО FUNDUZ",
+      title: "Сердце нашей платформы — это люди",
+      subtitle: "Узнайте истории успеха и присоединяйтесь к нашему растущему сообществу новаторов. Вместе мы превращаем идеи в реальность.",
+      stats: {
+        collected_val: "12+ Млрд сум",
+        collected_label: "СОБРАНО СРЕДСТВ",
+        sponsors_val: "45,000+",
+        sponsors_label: "АКТИВНЫХ СПОНСОРОВ",
+        projects_val: "1,200+",
+        projects_label: "УСПЕШНЫХ ПРОЕКТОВ"
+      },
+      stories: {
+        title: "Истории Успеха",
+        subtitle: "Реальные люди, меняющие мир прямо сейчас.",
+        view_all: "Смотреть все",
+        read_story: "Читать историю",
+        badge: "100% УСПЕШНО",
+        items: [
+          {
+            title: "Эко-ферма Будущего",
+            desc: "Благодаря поддержке сообщества Funduz мы смогли запустить первую в стране вертикальную ферму."
+          },
+          {
+            title: "IT-Образование для всех",
+            desc: "Наша миссия — обучить 10,000 подростков программированию, и мы уже на полпути."
+          },
+          {
+            title: "Центр Ремесел 'Талант'",
+            desc: "Мы восстанавливаем забытые традиции и даем работу сотням мастеров по всей стране."
+          }
+        ]
+      }
     },
   },
 };
