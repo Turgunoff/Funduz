@@ -33,9 +33,9 @@
             <button class="hidden md:block text-gray-500 hover:text-gray-900 transition-colors">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
             </button>
-            <a href="#" class="hidden lg:block px-6 py-2.5 border border-gray-200 bg-white text-gray-800 rounded-xl text-[14px] font-bold hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm">
+            <router-link to="/login" class="hidden lg:block px-6 py-2.5 border border-gray-200 bg-white text-gray-800 rounded-xl text-[14px] font-bold hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm">
               {{ $t('nav.login') }}
-            </a>
+            </router-link>
             
             <div class="hidden lg:flex items-center ml-2 pl-4 border-l border-gray-100 h-6 gap-3">
               <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase transition-colors">Uz</button>
@@ -76,12 +76,12 @@
           </div>
 
           <div class="flex items-center gap-3">
-            <a href="#" class="hidden sm:flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all">
+            <router-link to="/login" class="hidden sm:flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all">
               {{ $t('nav.login') }}
-            </a>
-            <a href="#" class="flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm">
+            </router-link>
+            <router-link to="/login" class="flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm">
               {{ $t('nav.start_project') }}
-            </a>
+            </router-link>
 
             <!-- Desktop Language Switcher -->
             <div class="hidden lg:flex items-center ml-2 pl-4 border-l border-gray-100 h-6 gap-3">
@@ -136,7 +136,7 @@
         </nav>
 
         <div class="flex flex-col gap-5">
-          <button class="w-full py-5 border-2 border-gray-100 rounded-2xl font-black text-gray-900 bg-white shadow-sm">{{ $t('nav.login') }}</button>
+          <router-link @click="isMenuOpen = false" to="/login" class="w-full py-5 border-2 border-gray-100 rounded-2xl font-black text-gray-900 bg-white shadow-sm flex justify-center">{{ $t('nav.login') }}</router-link>
           <div class="bg-gray-50 p-6 rounded-[32px] border border-gray-100 text-center">
             <p class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-4">
               {{ locale === 'uz' ? 'TILNI TANLASH' : 'ВЫБОР ЯЗЫКА' }}

@@ -307,8 +307,41 @@ const messages = {
             desc: "Biz unutilgan an'analarni tiklamoqdamiz va butun mamlakat bo'ylab yuzlab ustalar uchun ish o'rinlari yaratmoqdamiz."
           }
         ]
+      },
+      sponsors_section: {
+        title: "Bizning Super-Homiylarimiz",
+        label: "SUPER-HOMIY",
+        items: [
+          "Aziz Karimov",
+          "Madina Aliyeva",
+          "Rustam Saidov",
+          "Yelena Kim",
+          "Sardor Umarov"
+        ]
+      },
+      telegram: {
+        title: "Telegram-kanalimizga qo'shiling",
+        desc: "Barcha yangi loyihalar, eksklyuziv intervyular va platforma yangiliklaridan xabardor bo'ling.",
+        btn: "Telegramga o'tish"
       }
     },
+    login: {
+      title: "Xush kelibsiz!",
+      subtitle: "Platformaga kirish uchun ma'lumotlaringizni kiritng",
+      tab_login: "Kirish",
+      tab_register: "Ro'yxatdan o'tish",
+      social_google: "Google orqali",
+      or: "Yoki",
+      label_email: "Elektron pochta",
+      label_password: "Parol",
+      forgot_password: "Parolni unutdingizmi?",
+      btn_submit: "Tizimga kirish",
+      footer_text_start: "Kirish yoki ro'yxatdan o'tish orqali siz Funduz'ning ",
+      footer_text_and: " va ",
+      footer_text_end: "ga rozilik bildirasiz.",
+      hero_title: "Yaxshilikni birgalikda moliyalashtiramiz",
+      hero_subtitle: "Kichik hissa — katta o'zgarishlar asosi. Loyihalarni qo'llab-quvvatlang yoki o'z g'oyangizni hayotga tadbiq eting."
+    }
   },
   ru: {
     nav: {
@@ -616,8 +649,41 @@ const messages = {
             desc: "Мы восстанавливаем забытые традиции и даем работу сотням мастеров по всей стране."
           }
         ]
+      },
+      sponsors_section: {
+        title: "Наши Супер-Спонсоры",
+        label: "СУПЕР-СПОНСОР",
+        items: [
+          "Азиз Каримов",
+          "Мадина Алиева",
+          "Рустам Саидов",
+          "Елена Ким",
+          "Сардор Умаров"
+        ]
+      },
+      telegram: {
+        title: "Присоединяйтесь к нашему Telegram-каналу",
+        desc: "Будьте в курсе всех новых проектов, эксклюзивных интервью и новостей платформы.",
+        btn: "Перейти в Telegram"
       }
     },
+    login: {
+      title: "Добро пожаловать!",
+      subtitle: "Введите свои данные для входа на платформу",
+      tab_login: "Вход",
+      tab_register: "Регистрация",
+      social_google: "Через Google",
+      or: "ИЛИ",
+      label_email: "ЭЛЕКТРОННАЯ ПОЧТА",
+      label_password: "ПАРОЛЬ",
+      forgot_password: "Забыли пароль?",
+      btn_submit: "Войти в систему",
+      footer_text_start: "Входя или регистрируясь, вы соглашаетесь с ",
+      footer_text_and: " и ",
+      footer_text_end: " Funduz.",
+      hero_title: "Финансируем добро вместе",
+      hero_subtitle: "Маленький вклад — основа больших перемен. Поддерживайте проекты или воплощайте свои идеи в жизнь."
+    }
   },
 };
 

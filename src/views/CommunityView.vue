@@ -120,6 +120,52 @@
         </div>
       </div>
 
+      <!-- Super Sponsors Section -->
+      <div class="mt-24 lg:mt-32 text-center">
+        <h2 class="text-[28px] lg:text-[36px] font-bold text-gray-900 mb-12">
+          {{ $t('community.sponsors_section.title') }}
+        </h2>
+        
+        <div class="flex flex-wrap justify-center gap-8 lg:gap-12">
+          <div v-for="(name, idx) in ($tm('community.sponsors_section.items') as string[])" :key="idx" class="flex flex-col items-center">
+            <div class="relative w-24 h-24 lg:w-32 lg:h-32 mb-6">
+              <div class="absolute inset-0 rounded-full border-2 border-[#1e5c43] p-1">
+                <img 
+                  :src="`https://i.pravatar.cc/150?u=${idx + 10}`" 
+                  class="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  alt="Sponsor"
+                >
+              </div>
+            </div>
+            <div class="text-[15px] lg:text-[17px] font-bold text-gray-900 mb-1">{{ name }}</div>
+            <div class="text-[10px] lg:text-[11px] font-black text-[#1e5c43] uppercase tracking-widest">
+              {{ $t('community.sponsors_section.label') }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Telegram Section -->
+      <div class="mt-24 lg:mt-32">
+        <div class="bg-[#1e5c43] rounded-[50px] lg:rounded-[60px] p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div class="max-w-2xl text-center lg:text-left">
+            <h2 class="text-[28px] lg:text-[40px] font-bold text-white mb-6 leading-tight">
+              {{ $t('community.telegram.title') }}
+            </h2>
+            <p class="text-[16px] lg:text-[18px] text-white/70 font-medium">
+              {{ $t('community.telegram.desc') }}
+            </p>
+          </div>
+          
+          <a href="#" class="px-10 py-5 bg-white rounded-full flex items-center gap-3 text-[15px] lg:text-[16px] font-bold text-gray-900 hover:bg-gray-50 hover:translate-y-[-4px] transition-all shadow-xl shadow-black/10">
+            <svg class="w-6 h-6 text-[#24A1DE]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M11.944 0C5.347 0 0 5.347 0 11.944c0 6.594 5.347 11.944 11.944 11.944 6.594 0 11.944-5.35 11.944-11.944C23.888 5.347 18.538 0 11.944 0zm5.54 8.017l-1.92 9.043c-.144.643-.523.801-.1.066l-2.924-2.155-1.41 1.358c-.156.156-.287.287-.588.287l.21-2.977 5.418-4.895c.235-.21-.052-.326-.364-.12l-6.696 4.215-2.883-.9c-.626-.196-.64-.626.13-.923l11.266-4.346c.523-.196.98.117.784.793z"/>
+            </svg>
+            {{ $t('community.telegram.btn') }}
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
