@@ -167,3 +167,5 @@
 3. **R-02 Firibgarlik** — KYC qattiq bo'lsin
 4. **R-04 To'lov nosozligi** — 2 provider va monitoring
 5. **R-09 UZS inflyatsiyasi** — qisqa kampaniya, buffer
+
+8pX-jNg-mxR-kns
