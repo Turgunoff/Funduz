@@ -20,12 +20,12 @@
           </p>
           
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-4">
-            <router-link to="/" class="bg-[#1e5c43] hover:bg-[#15412f] text-white px-10 py-5 rounded-2xl font-bold transition-all text-[17px] shadow-xl shadow-green-900/10">
+            <router-link to="/" class="w-full sm:w-auto px-10 py-5 border border-gray-100 bg-white text-gray-900 hover:!bg-[#1a946b] hover:!text-white hover:!border-[#1a946b] rounded-2xl font-bold transition-all text-[17px] shadow-sm flex items-center justify-center">
               {{ t('error404.back_home') }}
             </router-link>
-            <router-link to="/explore" class="bg-white border-2 border-gray-100 hover:border-[#1e5c43] text-gray-900 px-10 py-5 rounded-2xl font-bold transition-all text-[17px] flex items-center gap-2">
+            <router-link to="/explore" class="w-full sm:w-auto px-10 py-5 border border-gray-100 bg-white text-gray-900 hover:!bg-[#1a946b] hover:!text-white hover:!border-[#1a946b] rounded-2xl font-bold transition-all text-[17px] flex items-center justify-center gap-2 shadow-sm group">
               {{ t('error404.explore') }}
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              <svg class="w-5 h-5 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </router-link>
           </div>
           <router-link to="/contact" class="text-gray-400 hover:text-[#1e5c43] font-bold text-[15px] underline underline-offset-4 transition-colors">

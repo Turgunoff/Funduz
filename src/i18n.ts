@@ -98,6 +98,35 @@ const messages = {
         btn_projects: "Loyihalarni ko'rish"
       }
     },
+    search: {
+      results_overline: "QIDIRUV NATIJALARI",
+      results_count: "natija",
+      for_query: "so'rovi bo'yicha",
+      featured_projects: "Aralash loyihalar",
+      recent_searches: "Oxirgi qidiruvlar",
+      popular_tags: "Mashhur teglar",
+      tabs: {
+        all: "Barchasi",
+        projects: "Loyihalar",
+        creators: "Mualliflar",
+        categories: "Toifalar"
+      },
+      sort_by: "Saralash:",
+      sort: {
+        relevant: "Eng moslari",
+        newest: "Eng yangi",
+        popular: "Mashhur"
+      },
+      cat_all: "Barcha toifalar",
+      cats: {
+        tech: "Texnologiya",
+        art: "San'at",
+        eco: "Ekologiya",
+        innovation: "Innovatsiya",
+        urbanism: "Urbanistika",
+        education: "Ta'lim"
+      }
+    },
     explore: {
       title: "Barcha loyihalar",
       hero_title: "O'zbekistonning eng yaxshi loyihalarini kashf eting",
@@ -108,7 +137,7 @@ const messages = {
         art: "San'at",
         social: "Jamiyat",
         edu: "Ta'lim",
-        eco: "Eko"
+        eco: "Ekologiya"
       },
       sort: {
         newest: "Eng yangi",
@@ -835,6 +864,35 @@ const messages = {
         btn_projects: "Смотреть проекты"
       }
     },
+    search: {
+      results_overline: "РЕЗУЛЬТАТЫ ПОИСКА",
+      results_count: "результатов",
+      for_query: "по запросу",
+      featured_projects: "Рекомендуемые проекты",
+      recent_searches: "Вы недавно искали",
+      popular_tags: "Популярные теги",
+      tabs: {
+        all: "Все",
+        projects: "Проекты",
+        creators: "Авторы",
+        categories: "Категории"
+      },
+      sort_by: "Сортировка:",
+      sort: {
+        relevant: "По релевантности",
+        newest: "Сначала новые",
+        popular: "Сначала популярные"
+      },
+      cat_all: "Все категории",
+      cats: {
+        tech: "Технологии",
+        art: "Искусство",
+        eco: "Экология",
+        innovation: "Инновации",
+        urbanism: "Урбанистика",
+        education: "Образование"
+      }
+    },
     explore: {
       title: "Все проекты",
       hero_title: "Откройте для себя лучшие проекты Узбекистана",
@@ -845,7 +903,7 @@ const messages = {
         art: "Искусство",
         social: "Общество",
         edu: "Образование",
-        eco: "Эко"
+        eco: "Экология"
       },
       sort: {
         newest: "Самые новые",

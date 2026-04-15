@@ -1,25 +1,12 @@
 <template>
   <div class="pt-16 lg:pt-20 bg-[#fcfcfc] min-h-screen">
     
-    <!-- Hero Search Section -->
+    <!-- Hero Section -->
     <div class="pt-12 pb-10 lg:pt-20 lg:pb-16 bg-white border-b border-gray-50">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-[28px] md:text-[44px] lg:text-[56px] font-black text-gray-900 leading-[1.2] lg:leading-[1.1] mb-6 lg:mb-10 max-w-4xl mx-auto tracking-tight">
+        <h1 class="text-[28px] md:text-[44px] lg:text-[56px] font-black text-gray-900 leading-[1.2] lg:leading-[1.1] max-w-4xl mx-auto tracking-tight">
           {{ $t('explore.hero_title') }}
         </h1>
-        
-        <div class="relative max-w-2xl mx-auto group">
-          <div class="absolute inset-y-0 left-5 lg:left-6 flex items-center pointer-events-none">
-            <svg class="h-5 w-5 text-gray-400 group-focus-within:text-[#1a946b] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
-          <input 
-            type="text" 
-            :placeholder="$t('explore.search_placeholder')"
-            class="block w-full pl-12 lg:pl-14 pr-6 lg:pr-8 py-4 lg:py-5 bg-white border border-gray-100 rounded-[20px] lg:rounded-[24px] shadow-[0_15px_40px_-10px_rgba(0,0,0,0.05)] text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-[#1a946b]/10 focus:border-[#1a946b] transition-all text-base lg:text-lg font-medium"
-          >
-        </div>
       </div>
     </div>
 
@@ -30,11 +17,16 @@
       <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 lg:mb-12 gap-4 lg:gap-6 bg-white p-1.5 lg:p-2 rounded-[24px] lg:rounded-full border border-gray-50 shadow-sm">
         <!-- Horizontal Scrollable Categories -->
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar px-2 py-1 lg:py-0">
-          <button class="px-5 lg:px-6 py-2.5 lg:py-3 bg-[#0f5238] text-white rounded-full font-bold text-[13px] lg:text-[14px] whitespace-nowrap shadow-md shadow-green-900/10">{{ $t('explore.categories.all') }}</button>
           <button 
-            v-for="cat in ['tech', 'art', 'social', 'edu', 'eco']" 
+            v-for="cat in ['all', 'tech', 'art', 'social', 'edu', 'eco']" 
             :key="cat"
-            class="px-5 lg:px-6 py-2.5 lg:py-3 bg-gray-50 lg:bg-gray-100 text-gray-500 rounded-full font-bold text-[13px] lg:text-[14px] hover:bg-gray-200 transition-colors whitespace-nowrap"
+            @click="activeCategory = cat"
+            :class="[
+              'px-5 lg:px-6 py-2.5 lg:py-3 rounded-full font-bold text-[13px] lg:text-[14px] whitespace-nowrap transition-all duration-300',
+              activeCategory === cat 
+                ? 'bg-[#0f5238] text-white shadow-md shadow-green-900/10' 
+                : 'bg-gray-50 lg:bg-gray-100 text-gray-500 hover:bg-gray-200'
+            ]"
           >
             {{ $t(`explore.categories.${cat}`) }}
           </button>
@@ -43,10 +35,10 @@
         <!-- Sort Select -->
         <div class="px-2 lg:px-4 mb-1 lg:mb-0">
           <div class="relative w-full md:min-w-[160px]">
-            <select class="appearance-none w-full bg-gray-50 lg:bg-gray-100 border-none rounded-full px-5 lg:px-6 py-2.5 lg:py-3 pr-10 text-[13px] lg:text-[14px] font-bold text-gray-700 focus:ring-2 focus:ring-[#1a946b]/20 cursor-pointer">
-              <option>{{ $t('explore.sort.newest') }}</option>
-              <option>{{ $t('explore.sort.popular') }}</option>
-              <option>{{ $t('explore.sort.ending') }}</option>
+            <select v-model="activeSort" class="appearance-none w-full bg-gray-50 lg:bg-gray-100 border-none rounded-full px-5 lg:px-6 py-2.5 lg:py-3 pr-10 text-[13px] lg:text-[14px] font-bold text-gray-700 focus:ring-2 focus:ring-[#1a946b]/20 cursor-pointer">
+              <option value="newest">{{ $t('explore.sort.newest') }}</option>
+              <option value="popular">{{ $t('explore.sort.popular') }}</option>
+              <option value="ending">{{ $t('explore.sort.ending') }}</option>
             </select>
             <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
               <svg class="w-3.5 h-3.5 lg:w-4 lg:h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
@@ -119,7 +111,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 interface ExploreProject {
@@ -135,8 +127,29 @@ interface ExploreProject {
   img: string
 }
 
-const { tm } = useI18n()
-const projects = computed(() => tm('explore.projects_list') as unknown as ExploreProject[])
+const { tm, t } = useI18n()
+const activeCategory = ref('all')
+const activeSort = ref('newest')
+const allProjects = computed(() => tm('explore.projects_list') as unknown as ExploreProject[])
+
+const projects = computed(() => {
+  let result = [...allProjects.value]
+
+  if (activeCategory.value !== 'all') {
+    const targetCategoryLabel = t(`explore.categories.${activeCategory.value}`)
+    result = result.filter(p => p.category === targetCategoryLabel)
+  }
+
+  if (activeSort.value === 'newest') {
+    result.sort((a, b) => b.id - a.id)
+  } else if (activeSort.value === 'popular') {
+    result.sort((a, b) => b.donors - a.donors)
+  } else if (activeSort.value === 'ending') {
+    result.sort((a, b) => a.days - b.days)
+  }
+
+  return result
+})
 </script>
 
 <style scoped>
