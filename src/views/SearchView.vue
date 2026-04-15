@@ -88,7 +88,8 @@
     <!-- Main Content -->
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
       
-      <div v-if="filteredProjects.length > 0" class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+      <template v-if="filteredProjects.length > 0">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
         
         <!-- Left Column: Featured Projects -->
         <div class="lg:col-span-2">
@@ -224,11 +225,11 @@
                     </button>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
-
         </div>
+
+        </div> <!-- Close Left Column -->
 
         <!-- Right Column: Sidebar -->
         <div class="space-y-6">
@@ -265,11 +266,38 @@
               <span class="px-3.5 py-1.5 bg-[#8de1b9] text-[#064e3b] font-bold text-[12px] rounded-full hover:bg-[#6dd3a2] cursor-pointer transition-colors shadow-sm shadow-[#064e3b]/5">#zerowaste</span>
             </div>
           </div>
+        </div> <!-- Close Sidebar -->
+      </div> <!-- Close Grid -->
+
+      <!-- End of Results Marker -->
+        <div class="text-center py-12 lg:py-16 bg-[#fafafa] border-2 border-dashed border-gray-200 rounded-[32px] px-6 mt-12 mb-4 flex flex-col items-center justify-center">
+          <!-- Custom Search Icon with Cross -->
+          <div class="relative w-12 h-12 lg:w-14 lg:h-14 mb-5 text-[#bdc3c7]">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            <div class="absolute bottom-0.5 lg:bottom-1 left-0.5 lg:left-1 w-5 h-5 lg:w-6 lg:h-6 bg-[#bdc3c7] rounded-full flex items-center justify-center border-4 border-[#fafafa]">
+              <svg class="w-2.5 h-2.5 text-[#fafafa]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </div>
+          </div>
+          <h2 class="text-[20px] lg:text-[22px] font-bold text-[#1a1a1a] mb-3">{{ $t('search.empty_filter_title') }}</h2>
+          <p class="text-gray-500 font-medium max-w-lg mx-auto mb-6 lg:mb-8 text-[13.5px] lg:text-[14.5px] leading-relaxed">{{ $t('search.empty_filter_desc') }}</p>
+          <!-- Fallback Category Chips -->
+          <div class="flex flex-wrap justify-center gap-2.5">
+            <button @click="updateSearchQuery($t('search.empty_chips.ai'))" class="px-5 py-2 bg-gray-200/80 text-[#1a1a1a] font-bold text-[13px] rounded-full hover:bg-gray-300 cursor-pointer transition-colors shadow-sm shadow-gray-200/20">
+              {{ $t('search.empty_chips.ai') }}
+            </button>
+            <button @click="updateSearchQuery($t('search.empty_chips.digital_art'))" class="px-5 py-2 bg-gray-200/80 text-[#1a1a1a] font-bold text-[13px] rounded-full hover:bg-gray-300 cursor-pointer transition-colors shadow-sm shadow-gray-200/20">
+              {{ $t('search.empty_chips.digital_art') }}
+            </button>
+            <button @click="updateSearchQuery($t('search.empty_chips.micro_finance'))" class="px-5 py-2 bg-gray-200/80 text-[#1a1a1a] font-bold text-[13px] rounded-full hover:bg-gray-300 cursor-pointer transition-colors shadow-sm shadow-gray-200/20">
+              {{ $t('search.empty_chips.micro_finance') }}
+            </button>
+          </div>
         </div>
-      </div>
+      </template>
 
       <!-- Empty State -->
-      <div v-else class="text-center py-16 lg:py-24 bg-[#fafafa] border-2 border-dashed border-gray-200 rounded-[32px] lg:rounded-[48px] px-6 mt-8 flex flex-col items-center justify-center min-h-[400px]">
+      <template v-else>
+        <div class="text-center py-16 lg:py-24 bg-[#fafafa] border-2 border-dashed border-gray-200 rounded-[32px] lg:rounded-[48px] px-6 mt-8 flex flex-col items-center justify-center min-h-[400px]">
         
         <!-- Custom Search Icon with Cross -->
         <div class="relative w-14 h-14 lg:w-16 lg:h-16 mb-6 text-[#bdc3c7]">
@@ -294,7 +322,7 @@
             {{ $t('search.empty_chips.micro_finance') }}
           </button>
         </div>
-      </div>
+      </template>
 
     </div>
   </div>
