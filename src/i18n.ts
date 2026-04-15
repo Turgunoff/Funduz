@@ -125,6 +125,23 @@ const messages = {
         innovation: "Innovatsiya",
         urbanism: "Urbanistika",
         education: "Ta'lim"
+      },
+      matched_categories: "Mos toifalar",
+      projects_found: "loyihalar topildi",
+      influential_creators: "Nufuzli mualliflar",
+      top_creator: "Top muallif",
+      view_profile: "Profilni ko'rish",
+      stats: {
+        projects: "LOYIHALAR",
+        raised: "TO'PLANGAN",
+        backers: "HOMIYLAR"
+      },
+      empty_filter_title: "Filtringiz bo'yicha boshqa natija yo'q",
+      empty_filter_desc: "Kiritilgan toifa filtri bo'yicha boshqa loyihalar topilmadi. Qidiruvingizni kengaytiring yoki mashhur toifalarni ko'rib chiqing.",
+      empty_chips: {
+        ai: "Sun'iy intellekt",
+        digital_art: "Raqamli san'at",
+        micro_finance: "Mikromoliya"
       }
     },
     explore: {
@@ -891,6 +908,23 @@ const messages = {
         innovation: "Инновации",
         urbanism: "Урбанистика",
         education: "Образование"
+      },
+      matched_categories: "Подходящие категории",
+      projects_found: "проектов найдено",
+      influential_creators: "Влиятельные авторы",
+      top_creator: "Топ автор",
+      view_profile: "Смотреть профиль",
+      stats: {
+        projects: "ПРОЕКТЫ",
+        raised: "СОБРАНО",
+        backers: "СПОНСОРЫ"
+      },
+      empty_filter_title: "Нет результатов по вашему фильтру",
+      empty_filter_desc: "Мы не смогли найти дополнительные проекты, соответствующие вашему запросу. Попробуйте расширить поиск или изучить популярные темы ниже.",
+      empty_chips: {
+        ai: "Искусственный интеллект",
+        digital_art: "Цифровое искусство",
+        micro_finance: "Микрофинансирование"
       }
     },
     explore: {

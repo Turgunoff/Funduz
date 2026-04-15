@@ -149,6 +149,85 @@
               </div>
             </div>
           </div>
+
+          <!-- Matched Categories -->
+          <div class="mt-12 lg:mt-16">
+            <div class="flex items-center gap-4 mb-8">
+              <h2 class="text-[22px] lg:text-[24px] font-bold text-[#1a1a1a] whitespace-nowrap">{{ $t('search.matched_categories') }}</h2>
+              <div class="h-px bg-gray-100 flex-grow mt-1"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+              <div v-for="(cat, idx) in matchedCategories" :key="idx" class="bg-[#f7f7f7] rounded-[24px] p-6 lg:p-7 hover:bg-[#f0f0f0] transition-colors cursor-pointer group flex flex-col justify-center min-h-[140px] shadow-sm shadow-gray-100/50 border border-transparent hover:border-[#21815f]/10">
+                <div class="w-10 h-10 mb-4 bg-white rounded-full flex items-center justify-center text-[#0f5238] shadow-sm transform group-hover:-translate-y-1 transition-transform">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" :d="cat.icon" /></svg>
+                </div>
+                <h4 class="text-[16px] lg:text-[17px] font-bold text-gray-900 mb-1 leading-tight"><span v-html="highlightText(cat.title)"></span></h4>
+                <p class="text-[13px] font-medium text-gray-500">{{ cat.count }} {{ $t('search.projects_found') }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Influential Creators -->
+          <div class="mt-12 lg:mt-16 mb-4 lg:mb-8">
+            <div class="flex items-center gap-4 mb-8">
+              <h2 class="text-[22px] lg:text-[24px] font-bold text-[#1a1a1a] whitespace-nowrap">{{ $t('search.influential_creators') }}</h2>
+              <div class="h-px bg-gray-100 flex-grow mt-1"></div>
+            </div>
+
+            <div class="flex flex-col gap-4 lg:gap-5">
+              <div v-for="(creator, i) in influentialCreators" :key="i" class="bg-white border border-gray-100 rounded-[28px] p-6 lg:p-7 flex flex-col sm:flex-row sm:items-center gap-5 lg:gap-8 hover:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.04)] hover:border-[#1a946b]/20 transition-all">
+                
+                <!-- Avatar -->
+                <div class="w-[72px] h-[72px] lg:w-[84px] lg:h-[84px] rounded-full overflow-hidden bg-gray-100 flex-shrink-0 shadow-sm border border-gray-50">
+                  <img :src="creator.avatar" :alt="creator.name" class="w-full h-full object-cover" />
+                </div>
+
+                <!-- Info -->
+                <div class="flex-grow">
+                  <div class="flex items-start justify-between gap-4 mb-3">
+                    <div>
+                      <h4 class="text-[17px] lg:text-[19px] font-bold text-gray-900 leading-tight mb-1">
+                        <span v-html="highlightText(creator.name)"></span>
+                      </h4>
+                      <p class="text-[13px] text-gray-500 font-medium leading-relaxed max-w-xl pr-4">
+                        <span v-html="highlightText(creator.bio)"></span>
+                      </p>
+                    </div>
+                    <!-- Tag -->
+                    <div v-if="creator.isTop" class="hidden sm:block bg-[#bbf7d0] text-[#0f5238] font-bold text-[10px] tracking-widest uppercase px-3.5 py-1.5 rounded-full flex-shrink-0 mt-1">
+                      {{ $t('search.top_creator') }}
+                    </div>
+                  </div>
+
+                  <!-- Bottom Stats & Button -->
+                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 sm:mt-5 mt-6">
+                    <!-- Stats Grid -->
+                    <div class="flex items-center gap-8 lg:gap-10">
+                      <div class="flex flex-col gap-1">
+                        <span class="text-[9px] lg:text-[10px] font-black tracking-widest text-[#1a1a1a] uppercase">{{ $t('search.stats.projects') }}</span>
+                        <span class="text-[15px] lg:text-[16px] font-black text-gray-900">{{ creator.stats.projects }}</span>
+                      </div>
+                      <div class="flex flex-col gap-1">
+                        <span class="text-[9px] lg:text-[10px] font-black tracking-widest text-[#1a1a1a] uppercase">{{ $t('search.stats.raised') }}</span>
+                        <span class="text-[15px] lg:text-[16px] font-black text-gray-900">{{ creator.stats.raised }}</span>
+                      </div>
+                      <div class="flex flex-col gap-1">
+                        <span class="text-[9px] lg:text-[10px] font-black tracking-widest text-[#1a1a1a] uppercase">{{ $t('search.stats.backers') }}</span>
+                        <span class="text-[15px] lg:text-[16px] font-black text-gray-900">{{ creator.stats.backers }}</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Button -->
+                    <button class="px-6 py-2.5 bg-white border-2 border-[#0f5238] text-[#0f5238] hover:bg-[#0f5238] hover:text-white rounded-full font-bold text-[13px] transition-colors w-full sm:w-auto shadow-sm tracking-wide whitespace-nowrap">
+                      {{ $t('search.view_profile') }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <!-- Right Column: Sidebar -->
@@ -190,10 +269,31 @@
       </div>
 
       <!-- Empty State -->
-      <div v-else class="text-center py-20 bg-[#f5f5f5] rounded-[32px] px-6 mt-4">
-        <div class="text-[60px] mb-6 opacity-30 drop-shadow-sm">🔍</div>
-        <h2 class="text-[28px] font-bold text-gray-900 mb-4">{{ $t('explore.empty_title') }}</h2>
-        <p class="text-gray-500 font-medium max-w-md mx-auto">{{ $t('explore.empty_desc') }}</p>
+      <div v-else class="text-center py-16 lg:py-24 bg-[#fafafa] border-2 border-dashed border-gray-200 rounded-[32px] lg:rounded-[48px] px-6 mt-8 flex flex-col items-center justify-center min-h-[400px]">
+        
+        <!-- Custom Search Icon with Cross -->
+        <div class="relative w-14 h-14 lg:w-16 lg:h-16 mb-6 text-[#bdc3c7]">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <div class="absolute bottom-1 lg:bottom-1.5 left-1 lg:left-1.5 w-6 h-6 lg:w-7 lg:h-7 bg-[#bdc3c7] rounded-full flex items-center justify-center border-4 border-[#fafafa]">
+            <svg class="w-3 h-3 text-[#fafafa]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          </div>
+        </div>
+        
+        <h2 class="text-[22px] lg:text-[24px] font-bold text-[#1a1a1a] mb-4">{{ $t('search.empty_filter_title') }}</h2>
+        <p class="text-gray-500 font-medium max-w-lg mx-auto mb-8 lg:mb-10 text-[14px] lg:text-[15px] leading-relaxed">{{ $t('search.empty_filter_desc') }}</p>
+
+        <!-- Fallback Category Chips -->
+        <div class="flex flex-wrap justify-center gap-3">
+          <button @click="updateSearchQuery($t('search.empty_chips.ai'))" class="px-5 py-2.5 bg-gray-200/80 text-[#1a1a1a] font-bold text-[13.5px] rounded-full hover:bg-gray-300 cursor-pointer transition-colors shadow-sm shadow-gray-200/20">
+            {{ $t('search.empty_chips.ai') }}
+          </button>
+          <button @click="updateSearchQuery($t('search.empty_chips.digital_art'))" class="px-5 py-2.5 bg-gray-200/80 text-[#1a1a1a] font-bold text-[13.5px] rounded-full hover:bg-gray-300 cursor-pointer transition-colors shadow-sm shadow-gray-200/20">
+            {{ $t('search.empty_chips.digital_art') }}
+          </button>
+          <button @click="updateSearchQuery($t('search.empty_chips.micro_finance'))" class="px-5 py-2.5 bg-gray-200/80 text-[#1a1a1a] font-bold text-[13.5px] rounded-full hover:bg-gray-300 cursor-pointer transition-colors shadow-sm shadow-gray-200/20">
+            {{ $t('search.empty_chips.micro_finance') }}
+          </button>
+        </div>
       </div>
 
     </div>
@@ -202,7 +302,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
 interface ExploreProject {
@@ -219,6 +319,7 @@ interface ExploreProject {
 }
 
 const route = useRoute()
+const router = useRouter()
 const { tm, t } = useI18n()
 
 const allProjects = computed(() => tm('explore.projects_list') as unknown as ExploreProject[])
@@ -226,6 +327,29 @@ const allProjects = computed(() => tm('explore.projects_list') as unknown as Exp
 const activeTab = ref('all')
 const activeCat = ref('all')
 const activeSort = ref('relevant')
+
+const matchedCategories = ref([
+  { title: 'Renewable Energy', count: 42, icon: 'M5 13l4 4L19 7' },
+  { title: 'Green Tech', count: 38, icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+  { title: 'Urban Ecology', count: 18, icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' }
+])
+
+const influentialCreators = ref([
+  {
+    name: 'Jasur Energiya-zoda',
+    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=256',
+    isTop: true,
+    bio: 'Expert in yashil architectural solutions and vertical gardening for urban communities.',
+    stats: { projects: 12, raised: '$2.4M', backers: '15.4k' }
+  },
+  {
+    name: 'Malika Yashil Labs',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=256',
+    isTop: false,
+    bio: 'Pioneering clean energiya storage technologies for remote villages across the region.',
+    stats: { projects: 4, raised: '$840k', backers: '4.2k' }
+  }
+])
 
 const filteredProjects = computed(() => {
   let result = [...allProjects.value]
@@ -249,6 +373,10 @@ const filteredProjects = computed(() => {
 
   return result
 })
+
+const updateSearchQuery = (query: string) => {
+  router.push({ path: '/search', query: { q: query } })
+}
 
 const highlightText = (text: string) => {
   const q = route.query.q as string || ''
