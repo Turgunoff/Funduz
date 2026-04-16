@@ -256,6 +256,71 @@ const messages = {
       donors: "Faol donorlar",
       collected: "Yig'ilgan mablag'",
     },
+    about: {
+      hero_title: "Biz innovatsiyalarni birgalikda yaratamiz",
+      hero_desc: "Funduz — bu g'oyalar hayotga tatbiq etiladigan va jamiyat taraqqiyoti uchun muhim bo'lgan loyihalar qo'llab-quvvatlanadigan platforma.",
+      mission_label: "Bizning missiya",
+      mission_text: "O'zbekistondagi har bir xayolparast uchun sarmoyadan foydalanish imkoniyatini demokratlashtirish. Samarqandning gavjum ustaxonalaridan tortib Toshkentning texnoparklarigacha, biz mahalliy g'oyalarni global haqiqatga aylantirish uchun zarur bo'lgan platforma, vositalar va hamjamiyatni taqdim etamiz.",
+      mission_quote: "Har bir buyuk loyiha unga ishonadigan kishidan boshlanadi.",
+      story_title: "Bizning tariximiz",
+      timeline: [
+        {
+          date: "Yanvar 2024",
+          title: "G'oya tug'ilishi",
+          desc: "Funduz Toshkentda mahalliy kreativ iqtisodiyotdagi bo'shliqni ko'rgan dizaynerlar va tadbirkorlar guruhi tomonidan tashkil etilgan."
+        },
+        {
+          date: "Mart 2025",
+          title: "Milliy kengayish",
+          desc: "Mahalliy hunarmandlar va madaniy meros loyihalarini qo'llab-quvvatlash uchun Samarqand, Buxoro va Xivada mintaqaviy ofislar ochildi."
+        },
+        {
+          date: "Vision 2026",
+          title: "Markaziy Osiyo xabi",
+          desc: "Butun Markaziy Osiyo mintaqasida innovatsiyalar uchun asosiy katalizatorga aylanishni maqsad qilganmiz."
+        }
+      ],
+      stats: [
+        { value: "250+", label: "Muvaffaqiyatli loyihalar" },
+        { value: "12,500+", label: "Homiylar" },
+        { value: "15B", label: "UZS to'plandi" },
+        { value: "14", label: "Shahar" }
+      ],
+      believes_title: "Biz nimalarga ishonamiz",
+      believes: [
+        {
+          title: "Ishonch",
+          desc: "Biz ham ijodkorlar, ham homiylar uchun shaffoflik va javobgarlikni birinchi o'ringa qo'yamiz.",
+          icon: "🛡️"
+        },
+        {
+          title: "Hamjamiyat",
+          desc: "Muvaffaqiyat nafaqat pul bilan bog'liq; bu sayohatga qo'shilgan insonlar haqida.",
+          icon: "👥"
+        },
+        {
+          title: "Innovatsiya",
+          desc: "Chegaralarni kengaytiradigan va mahalliy muammolarni hal qiladigan g'oyalarni qo'llab-quvvatlash.",
+          icon: "💡"
+        },
+        {
+          title: "Birinchi navbatda mahalliy",
+          desc: "O'zbekistondagi o'ziga xos madaniy o'ziga xoslik va iste'dodni tarannum etish.",
+          icon: "📍"
+        }
+      ],
+      cta_title: "G'oyangizni hayotga tatbiq etishga tayyormisiz?",
+      cta_btn_start: "Loyiha boshlash",
+      cta_btn_explore: "Loyihalarni ko'rish",
+      team_title: "Jamoamiz bilan tanishing",
+      team: [
+        { name: "Baxtiyor Aliyev", role: "Asoschi va CEO" },
+        { name: "Nigora Jo'rayeva", role: "Loyihalar rahbari" },
+        { name: "Azizbek Qodirov", role: "CTO" },
+        { name: "Zulayxo Saidova", role: "Hamjamiyat rahbari" }
+      ],
+      partners_title: "Bizning hamkorlarimiz"
+    },
     projects: {
       title: "Tanlangan loyihalar",
       subtitle: "O'zbekiston bo'ylab eng dolzarb va qiziqarli tashabbuslar",
@@ -1068,6 +1133,71 @@ const messages = {
       projects: "Успешных проектов",
       donors: "Активных доноров",
       collected: "Собрано средств",
+    },
+    about: {
+      hero_title: "Мы строим будущее вместе",
+      hero_desc: "Funduz — это платформа, где смелые идеи находят поддержку, а инновации становятся реальностью благодаря силе сообщества.",
+      mission_label: "Наша миссия",
+      mission_text: "Демократизировать доступ к капиталу для каждого мечтателя в Узбекистане. От шумных мастерских Самарканда до технопарков Ташкента — мы предоставляем платформу, инструменты и сообщество, необходимые для превращения местного видения в глобальную реальность.",
+      mission_quote: "Каждый великий проект начинается с того, кто в него верит.",
+      story_title: "Наша история",
+      timeline: [
+        {
+          date: "Январь 2024",
+          title: "Зарождение идеи",
+          desc: "Funduz был основан в Ташкенте группой дизайнеров и предпринимателей, которые увидели пробел в местной креативной экономике."
+        },
+        {
+          date: "Март 2025",
+          title: "Национальное расширение",
+          desc: "Открытие региональных офисов в Самарканде, Бухаре и Хиве для поддержки традиционных ремесленников и проектов местного наследия."
+        },
+        {
+          date: "Vision 2026",
+          title: "Центральноазиатский хаб",
+          desc: "Стремление стать основным катализатором инноваций во всем центральноазиатском регионе."
+        }
+      ],
+      stats: [
+        { value: "250+", label: "Завершено проектов" },
+        { value: "12,500+", label: "Бэкеров" },
+        { value: "15B", label: "UZS собрано" },
+        { value: "14", label: "Городов" }
+      ],
+      believes_title: "Во что мы верим",
+      believes: [
+        {
+          title: "Доверие",
+          desc: "Мы ставим прозрачность и подотчетность во главу угла как для авторов, так и для бэкеров.",
+          icon: "🛡️"
+        },
+        {
+          title: "Сообщество",
+          desc: "Успех — это не только деньги; это люди, которые присоединяются к вашему пути.",
+          icon: "👥"
+        },
+        {
+          title: "Инновации",
+          desc: "Поддержка идей, которые расширяют границы и решают местные проблемы.",
+          icon: "💡"
+        },
+        {
+          title: "Сначала местное",
+          desc: "Празднование уникальной культурной самобытности и талантов Узбекистана.",
+          icon: "📍"
+        }
+      ],
+      cta_title: "Готовы воплотить свою идею в жизнь?",
+      cta_btn_start: "Начать проект",
+      cta_btn_explore: "Смотреть проекты",
+      team_title: "Познакомьтесь с командой",
+      team: [
+        { name: "Бахтиёр Алиев", role: "Основатель и CEO" },
+        { name: "Нигора Жураева", role: "Руководитель проектов" },
+        { name: "Азизбек Кадиров", role: "CTO" },
+        { name: "Зулайхо Саидова", role: "Community Lead" }
+      ],
+      partners_title: "Наши партнеры"
     },
     projects: {
       title: "Избранные проекты",

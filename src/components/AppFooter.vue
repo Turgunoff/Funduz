@@ -43,7 +43,7 @@
           <ul class="space-y-4">
             <li>
               <router-link
-                to="/how-it-works"
+                to="/about"
                 class="text-gray-500 hover:text-[#0f5238] transition-colors"
                 >{{ $t("footer.c_about") }}</router-link
               >
