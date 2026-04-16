@@ -4,9 +4,23 @@
     <!-- Hero Section -->
     <div class="pt-12 pb-10 lg:pt-20 lg:pb-16 bg-white border-b border-gray-50">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-[28px] md:text-[44px] lg:text-[56px] font-black text-gray-900 leading-[1.2] lg:leading-[1.1] max-w-4xl mx-auto tracking-tight">
+        <h1 class="text-[28px] md:text-[44px] lg:text-[56px] font-black text-gray-900 leading-[1.2] lg:leading-[1.1] max-w-4xl mx-auto tracking-tight mb-10 lg:mb-12">
           {{ $t('explore.hero_title') }}
         </h1>
+        
+        <!-- Local Search Input -->
+        <div class="relative max-w-xl mx-auto px-4 sm:px-0">
+          <input 
+            v-model="searchQuery"
+            @keyup.enter="handleLocalSearch"
+            type="text" 
+            :placeholder="$t('explore.search_placeholder')"
+            class="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 lg:py-5 pl-14 pr-6 text-[15px] lg:text-[16px] font-bold text-gray-900 shadow-sm focus:ring-2 focus:ring-[#1a946b]/20 focus:border-[#1a946b] transition-all outline-none"
+          />
+          <div class="absolute left-9 sm:left-5 top-1/2 -translate-y-1/2 text-gray-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -16,16 +30,23 @@
       <!-- Filter & Sort Bar -->
       <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 lg:mb-12 gap-4 lg:gap-6 bg-white p-1.5 lg:p-2 rounded-[24px] lg:rounded-full border border-gray-50 shadow-sm">
         <!-- Horizontal Scrollable Categories -->
-        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar px-2 py-1 lg:py-0">
+        <div class="relative flex items-center overflow-x-auto no-scrollbar px-2 py-1 lg:py-0" ref="pillContainer">
+          <!-- Animated Background Pill -->
+          <div 
+            class="absolute bg-[#1a946b] rounded-full transition-all duration-300 ease-out shadow-md"
+            :style="pillStyle"
+          ></div>
+
           <button 
             v-for="cat in ['all', 'tech', 'art', 'social', 'edu', 'eco']" 
             :key="cat"
+            ref="pillButtons"
             @click="activeCategory = cat"
             :class="[
-              'px-5 lg:px-6 py-2.5 lg:py-3 rounded-full font-bold text-[13px] lg:text-[14px] whitespace-nowrap transition-all duration-300',
+              'relative z-10 px-5 lg:px-6 py-2.5 lg:py-3 rounded-full font-bold text-[13px] lg:text-[14px] whitespace-nowrap transition-all duration-300',
               activeCategory === cat 
-                ? 'bg-[#0f5238] text-white shadow-md shadow-green-900/10' 
-                : 'bg-gray-50 lg:bg-gray-100 text-gray-500 hover:bg-gray-200'
+                ? 'text-white' 
+                : 'text-gray-500 hover:text-gray-900'
             ]"
           >
             {{ $t(`explore.categories.${cat}`) }}
@@ -111,7 +132,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, watch, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
 interface ExploreProject {
@@ -127,9 +149,40 @@ interface ExploreProject {
   img: string
 }
 
-const { tm, t } = useI18n()
-const activeCategory = ref('all')
-const activeSort = ref('newest')
+const { tm, t, locale } = useI18n()
+const router = useRouter()
+const activeCategory = ref("all");
+const activeSort = ref("newest");
+const searchQuery = ref("");
+
+const pillButtons = ref<HTMLElement[]>([]);
+const pillStyle = ref({
+  left: '0px',
+  width: '0px',
+  height: '0px'
+});
+
+const updatePill = async () => {
+  await nextTick();
+  const index = ['all', 'tech', 'art', 'social', 'edu', 'eco'].indexOf(activeCategory.value);
+  const activeBtn = pillButtons.value[index];
+  if (activeBtn) {
+    pillStyle.value = {
+      left: `${activeBtn.offsetLeft}px`,
+      width: `${activeBtn.offsetWidth}px`,
+      height: `${activeBtn.offsetHeight}px`
+    };
+  }
+};
+
+onMounted(updatePill);
+watch([activeCategory, locale], updatePill);
+
+const handleLocalSearch = () => {
+  if (searchQuery.value.trim()) {
+    router.push({ path: '/search', query: { q: searchQuery.value.trim() } });
+  }
+};
 const allProjects = computed(() => tm('explore.projects_list') as unknown as ExploreProject[])
 
 const projects = computed(() => {

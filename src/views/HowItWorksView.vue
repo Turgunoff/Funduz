@@ -29,29 +29,23 @@
           </p>
 
           <div
-            class="bg-gray-200/50 backdrop-blur-sm p-1 rounded-full flex items-center shadow-inner group"
+            class="relative bg-gray-200/50 backdrop-blur-sm p-1 rounded-full flex items-center shadow-inner"
           >
+            <!-- Animated Background Pill -->
+            <div 
+              class="absolute bg-[#1a946b] rounded-full transition-all duration-300 ease-out shadow-lg"
+              :style="pillStyle"
+            ></div>
+
             <button
-              @click="userType = 'author'"
-              :class="
-                userType === 'author'
-                  ? 'bg-[#0f4a36] text-white shadow-xl shadow-green-900/20'
-                  : 'text-[#4b4b4b] hover:text-black'
-              "
-              class="px-8 lg:px-12 py-3 lg:py-4 rounded-full text-[14px] lg:text-[16px] font-black transition-all duration-300"
+              v-for="(type, idx) in ['author', 'sponsor']"
+              :key="type"
+              @click="userType = type"
+              ref="pillButtons"
+              :class="userType === type ? 'text-white' : 'text-[#4b4b4b] hover:text-black'"
+              class="relative z-10 px-8 lg:px-12 py-3 lg:py-4 rounded-full text-[14px] lg:text-[16px] font-black transition-all duration-300"
             >
-              {{ $t("how_it_works.btn_authors") }}
-            </button>
-            <button
-              @click="userType = 'sponsor'"
-              :class="
-                userType === 'sponsor'
-                  ? 'bg-[#0f4a36] text-white shadow-xl shadow-green-900/20'
-                  : 'text-[#4b4b4b] hover:text-black'
-              "
-              class="px-8 lg:px-12 py-3 lg:py-4 rounded-full text-[14px] lg:text-[16px] font-black transition-all duration-300"
-            >
-              {{ $t("how_it_works.btn_sponsors") }}
+              {{ $t(type === 'author' ? "how_it_works.btn_authors" : "how_it_works.btn_sponsors") }}
             </button>
           </div>
         </div>
@@ -316,9 +310,36 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import { useI18n } from "vue-i18n";
+import { ref, onMounted, watch, nextTick, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useRouter } from "vue-router";
+
+const { locale, tm } = useI18n()
+const router = useRouter()
+const userType = ref('author')
+
+const pillButtons = ref<HTMLElement[]>([])
+const pillStyle = ref({
+  left: '0px',
+  width: '0px',
+  height: '0px'
+})
+
+const updatePill = async () => {
+  await nextTick()
+  const index = userType.value === 'author' ? 0 : 1
+  const activeBtn = pillButtons.value[index]
+  if (activeBtn) {
+    pillStyle.value = {
+      left: `${activeBtn.offsetLeft}px`,
+      width: `${activeBtn.offsetWidth}px`,
+      height: `${activeBtn.offsetHeight}px`
+    }
+  }
+}
+
+onMounted(updatePill)
+watch([userType, locale], updatePill)
 
 // Defined interfaces to satisfy the linter without changing logic
 interface Step {
@@ -331,9 +352,6 @@ interface FaqItem {
   a: string;
 }
 
-const { tm } = useI18n();
-const router = useRouter();
-const userType = ref("author");
 const activeFaq = ref<number | null>(0);
 
 const steps = computed(() => {

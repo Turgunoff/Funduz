@@ -10,6 +10,7 @@ import StoryView from '../views/StoryView.vue'
 import FaqView from '../views/FaqView.vue'
 import ContactView from '../views/ContactView.vue'
 import SearchView from '../views/SearchView.vue'
+import TrendsView from '../views/TrendsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -68,6 +69,11 @@ const router = createRouter({
       path: '/search',
       name: 'search',
       component: SearchView,
+    },
+    {
+      path: '/trends',
+      name: 'trends',
+      component: TrendsView,
     },
     {
       path: '/privacy',

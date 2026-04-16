@@ -10,38 +10,43 @@
         </p>
         
         <!-- Main Title -->
-        <h1 class="text-[36px] md:text-[48px] lg:text-[56px] font-black text-gray-900 leading-[1.1] mb-10 lg:mb-12">
+        <h1 class="text-[36px] md:text-[48px] lg:text-[56px] font-black text-gray-900 leading-[1.1] mb-8 lg:mb-10">
           <span class="tracking-tight">{{ filteredProjects.length }} {{ $t('search.results_count') }} {{ $t('search.for_query') }}</span> 
           <span class="text-[#21815f] italic tracking-tight relative pr-2">"{{ route.query.q }}"</span>
         </h1>
+
+        <!-- Local Search Input -->
+        <div class="relative max-w-xl mb-12">
+          <input 
+            v-model="searchQuery"
+            @keyup.enter="handleLocalSearch"
+            type="text" 
+            :placeholder="$t('explore.search_placeholder')"
+            class="w-full bg-white border border-gray-100 rounded-2xl py-4 lg:py-5 pl-14 pr-6 text-[15px] lg:text-[16px] font-bold text-gray-900 shadow-sm focus:ring-2 focus:ring-[#1a946b]/20 focus:border-[#1a946b] transition-all outline-none"
+          />
+          <div class="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          </div>
+        </div>
         
         <!-- Filter Tabs & Sort Row -->
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-6">
           <!-- Main Group Tabs -->
-          <div class="flex items-center gap-1 bg-[#f5f5f5] p-1.5 rounded-[20px] overflow-x-auto no-scrollbar">
+          <div class="relative flex items-center bg-[#f5f5f5] p-1.5 rounded-[20px] overflow-x-auto no-scrollbar" ref="pillContainer">
+            <!-- Animated Background Pill -->
+            <div 
+              class="absolute bg-[#1a946b] rounded-full transition-all duration-300 ease-out shadow-md"
+              :style="pillStyle"
+            ></div>
+
             <button 
-              @click="activeTab = 'all'"
-              :class="activeTab === 'all' ? 'bg-white text-[#115e41] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.1)]' : 'text-gray-600 hover:text-gray-900'"
-              class="px-5 lg:px-6 py-2 lg:py-2.5 rounded-full font-bold text-[13px] lg:text-[14px] transition-colors whitespace-nowrap">
-              {{ $t('search.tabs.all') }} ({{ filteredProjects.length }})
-            </button>
-            <button 
-              @click="activeTab = 'projects'"
-              :class="activeTab === 'projects' ? 'bg-white text-[#115e41] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.1)]' : 'text-gray-600 hover:text-gray-900'"
-              class="px-5 lg:px-6 py-2 lg:py-2.5 rounded-full font-bold text-[13px] lg:text-[14px] transition-colors whitespace-nowrap">
-              {{ $t('search.tabs.projects') }} ({{ filteredProjects.length }})
-            </button>
-            <button 
-              @click="activeTab = 'creators'"
-              :class="activeTab === 'creators' ? 'bg-white text-[#115e41] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.1)]' : 'text-gray-600 hover:text-gray-900'"
-              class="px-5 lg:px-6 py-2 lg:py-2.5 rounded-full font-bold text-[13px] lg:text-[14px] transition-colors whitespace-nowrap">
-              {{ $t('search.tabs.creators') }} (0)
-            </button>
-            <button 
-              @click="activeTab = 'categories'"
-              :class="activeTab === 'categories' ? 'bg-white text-[#115e41] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.1)]' : 'text-gray-600 hover:text-gray-900'"
-              class="px-5 lg:px-6 py-2 lg:py-2.5 rounded-full font-bold text-[13px] lg:text-[14px] transition-colors whitespace-nowrap">
-              {{ $t('search.tabs.categories') }} (0)
+              v-for="tab in ['all', 'projects', 'creators', 'categories']"
+              :key="tab"
+              @click="activeTab = tab"
+              ref="pillButtons"
+              :class="activeTab === tab ? 'text-white' : 'text-gray-600 hover:text-gray-900'"
+              class="relative z-10 px-5 lg:px-6 py-2 lg:py-2.5 rounded-full font-bold text-[13px] lg:text-[14px] transition-colors whitespace-nowrap">
+              {{ $t(`search.tabs.${tab}`) }} {{ tab === 'all' || tab === 'projects' ? `(${filteredProjects.length})` : '(0)' }}
             </button>
           </div>
           
@@ -329,7 +334,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onMounted, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
@@ -348,13 +353,47 @@ interface ExploreProject {
 
 const route = useRoute()
 const router = useRouter()
-const { tm, t } = useI18n()
+const { tm, t, locale } = useI18n()
 
 const allProjects = computed(() => tm('explore.projects_list') as unknown as ExploreProject[])
 
 const activeTab = ref('all')
 const activeCat = ref('all')
-const activeSort = ref('relevant')
+const activeSort = ref("relevant");
+const searchQuery = ref(route.query.q as string || "");
+
+const pillButtons = ref<HTMLElement[]>([]);
+const pillStyle = ref({
+  left: '0px',
+  width: '0px',
+  height: '0px'
+});
+
+const updatePill = async () => {
+  await nextTick();
+  const index = ['all', 'projects', 'creators', 'categories'].indexOf(activeTab.value);
+  const activeBtn = pillButtons.value[index];
+  if (activeBtn) {
+    pillStyle.value = {
+      left: `${activeBtn.offsetLeft}px`,
+      width: `${activeBtn.offsetWidth}px`,
+      height: `${activeBtn.offsetHeight}px`
+    };
+  }
+};
+
+onMounted(updatePill);
+watch([activeTab, locale], updatePill);
+
+const handleLocalSearch = () => {
+  if (searchQuery.value.trim()) {
+    router.push({ path: '/search', query: { q: searchQuery.value.trim() } });
+  }
+};
+
+watch(() => route.query.q, (newQ) => {
+  searchQuery.value = newQ as string || "";
+});
 
 const matchedCategories = ref([
   { title: 'Renewable Energy', count: 42, icon: 'M5 13l4 4L19 7' },

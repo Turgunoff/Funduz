@@ -6,6 +6,7 @@ const messages = {
       projects: "Loyihalarni ko'rish",
       about: "Qanday ishlaydi?",
       cooperation: "Jamiyat",
+      trends: "Texnologik tendensiyalar",
       projects_short: "Loyihalar",
       about_short: "Biz haqimizda",
       cooperation_short: "Hamkorlik",
@@ -264,7 +265,9 @@ const messages = {
       donors: "donor",
       cat_education: "Ta'lim",
       cat_ecology: "Ekologiya",
-      cat_tech: "Texnologiya",
+      cat_art: "San'at",
+      cat_music: "Musiqa",
+      project_count: "{count} loyiha",
       p1_title: "Qishloq maktabi uchun zamonaviy kutubxona",
       p2_title: "Yashil shahar: 10,000 daraxt ekish aksiyasi",
       p3_title: "Yosh IT mutaxassislar uchun bepul kurslar",
@@ -782,6 +785,33 @@ const messages = {
       contact: "Yordam xizmati",
       trending_title: "Buning o'rniga ushbu trenddagi loyihalarni ko'ring",
       view_all: "Barchasini ko'rish"
+    },
+    trends: {
+      title: "Texnologiya",
+      desc: "Ertangi kun me'morlarini qo'llab-quvvatlash. Yashil energiya yutuqlaridan innovatsion dasturiy ta'minotgacha — raqamli va jismoniy kelajagimizni shakllantiradigan loyihalarni o'rganing.",
+      stats: {
+        active: "faol loyiha",
+        backers: "homiylar",
+        funded: "jami to'plandi"
+      },
+      chips: ["AI & Robototexnika", "CleanTech", "SaaS", "Hardware"],
+      filters: ["Barchasi", "Trenddagilar", "Yangi", "Deyarli to'plandi", "Yaqinda tugaydi"],
+      sort_label: "Saralash:",
+      sort_recent: "Eng so'nggi",
+      featured: {
+        editors_pick: "MUHARRIR TANLOVI",
+        category: "SUN'IY INTELLEKT",
+        title: "NeuralLink: Inson-mashina interfeysining yangi bosqichi",
+        desc: "Insonlarga kelajakdagi AI yutuqlari bilan raqobatlashishga yordam beruvchi past kechikishli va yuqori o'tkazuvchanlikka ega miya-kompyuter interfeyslarini ishlab chiqish.",
+        back_btn: "Loyihani qo'llab-quvvatlash"
+      },
+      upcoming_title: "Kelajak trendlari",
+      explore_worlds: "Boshqa dunyolarni kashf eting",
+      cta: {
+        title: "Texnologiya sohasida g'oyangiz bormi?",
+        desc: "Loyihangizni Funduz-da ishga tushiring va innovatsiyalar kuchiga ishonadigan hamjamiyatning bir qismiga aylaning.",
+        btn: "Loyiha boshlash"
+      }
     }
   },
   ru: {
@@ -789,6 +819,7 @@ const messages = {
       projects: "Просмотр проектов",
       about: "Как это работает?",
       cooperation: "Сообщество",
+      trends: "Технологические тенденции",
       projects_short: "Проекты",
       about_short: "О нас",
       cooperation_short: "Сотрудничество",
@@ -1048,6 +1079,9 @@ const messages = {
       cat_education: "Образование",
       cat_ecology: "Экология",
       cat_tech: "Технологии",
+      cat_art: "Искусство",
+      cat_music: "Музыка",
+      project_count: "{count} проектов",
       p1_title: "Современная библиотека для сельской школы",
       p2_title: "Зеленый город: акция по посадке 10,000 деревьев",
       p3_title: "Бесплатные IT-курсы для молодых специалистов",
@@ -1565,6 +1599,33 @@ const messages = {
       contact: "Служба поддержки",
       trending_title: "Вместо этого посмотрите эти трендовые проекты",
       view_all: "Смотреть все"
+    },
+    trends: {
+      title: "Технологии",
+      desc: "Поддержка архитекторов завтрашнего дня. От прорывов в чистой энергетике до революционного софта — изучайте проекты, формирующие наше цифровое и физическое будущее.",
+      stats: {
+        active: "активных проектов",
+        backers: "спонсоров",
+        funded: "всего собрано"
+      },
+      chips: ["AI & Robotics", "CleanTech", "SaaS", "Hardware"],
+      filters: ["Все", "В тренде", "Новые", "Почти собрано", "Скоро закончатся"],
+      sort_label: "Сортировка:",
+      sort_recent: "Самые свежие",
+      featured: {
+        editors_pick: "ВЫБОР РЕДАКЦИИ",
+        category: "ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ",
+        title: "NeuralLink: Следующий этап интерфейса человек-машина",
+        desc: "Разработка интерфейсов мозг-компьютер с низкой задержкой и высокой пропускной способностью, помогающих людям конкурировать с будущими достижениями ИИ.",
+        back_btn: "Поддержать проект"
+      },
+      upcoming_title: "Грядущие тенденции",
+      explore_worlds: "Исследуйте другие миры",
+      cta: {
+        title: "Есть идея в сфере технологий?",
+        desc: "Запустите свой проект на Funduz и станьте частью сообщества, которое верит в силу инноваций.",
+        btn: "Начать проект"
+      }
     }
   },
 };

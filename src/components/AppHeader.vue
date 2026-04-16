@@ -6,14 +6,14 @@
       <div class="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center w-full">
           <!-- Logo & Links -->
-          <div class="flex items-center gap-8 lg:gap-12">
+          <div class="flex items-center gap-4 lg:gap-10">
             <router-link
               to="/"
               class="text-[22px] lg:text-[26px] font-bold text-[#1a946b] tracking-wide"
               >FUNDUZ</router-link
             >
 
-            <nav class="hidden lg:flex items-center space-x-8 text-[16px] font-bold text-gray-800">
+            <nav class="hidden lg:flex items-center space-x-6 text-[16px] font-bold text-gray-800">
               <router-link
                 to="/explore"
                 :class="isExplorePage ? 'text-[#1a946b]' : 'hover:text-[#1a946b]'"
@@ -34,6 +34,13 @@
                 class="transition-colors"
               >
                 {{ $t("nav.cooperation") }}
+              </router-link>
+              <router-link
+                to="/trends"
+                :class="isTrendsPage ? 'text-[#1a946b]' : 'hover:text-[#1a946b]'"
+                class="transition-colors whitespace-nowrap"
+              >
+                {{ $t("nav.trends") }}
               </router-link>
             </nav>
           </div>
@@ -220,6 +227,27 @@
               />
             </svg>
           </router-link>
+          <router-link
+            @click="isMenuOpen = false"
+            to="/trends"
+            class="text-[20px] font-black border-b border-gray-50 pb-5 flex justify-between items-center"
+            :class="isTrendsPage ? 'text-[#1a946b]' : 'text-gray-900'"
+          >
+            {{ $t("nav.trends") }}
+            <svg
+              class="w-4 h-4 text-[#1a946b]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </router-link>
         </nav>
 
         <div class="flex flex-col gap-5">
@@ -305,6 +333,7 @@ const performSearch = () => {
 const isExplorePage = computed(() => route.path === "/explore");
 const isHowItWorksPage = computed(() => route.path === "/how-it-works");
 const isCommunityPage = computed(() => route.path === "/community");
+const isTrendsPage = computed(() => route.path === "/trends");
 
 const setLocale = (lang: string) => {
   locale.value = lang;
