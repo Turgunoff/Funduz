@@ -6,12 +6,11 @@
         <!-- Left Side: Content -->
         <div class="order-2 lg:order-1">
           <h1 class="text-[36px] md:text-[48px] lg:text-[72px] font-black text-gray-900 leading-[1] mb-8 lg:mb-10 tracking-tight">
-            We're building the <br class="hidden lg:block" />
-            future of <br class="hidden lg:block" />
-            <span class="text-[#1a946b]">crowdfunding in Uzbekistan</span>
+            {{ $t('about.hero_title_start') }} <br class="hidden lg:block" />
+            <span class="text-[#1a946b]">{{ $t('about.hero_title_highlight') }}</span>
           </h1>
           <p class="text-[16px] lg:text-[20px] text-gray-500 font-medium leading-relaxed max-w-[540px]">
-            Funduz helps Uzbek creators bring ideas to life by connecting them with a community that believes in local innovation and cultural preservation.
+            {{ $t('about.hero_desc') }}
           </p>
         </div>
 

@@ -38,7 +38,7 @@
             ></div>
 
             <button
-              v-for="(type, idx) in ['author', 'sponsor']"
+              v-for="type in ['author', 'sponsor']"
               :key="type"
               @click="userType = type"
               ref="pillButtons"

@@ -257,8 +257,9 @@ const messages = {
       collected: "Yig'ilgan mablag'",
     },
     about: {
-      hero_title: "Biz innovatsiyalarni birgalikda yaratamiz",
-      hero_desc: "Funduz — bu g'oyalar hayotga tatbiq etiladigan va jamiyat taraqqiyoti uchun muhim bo'lgan loyihalar qo'llab-quvvatlanadigan platforma.",
+      hero_title_start: "Biz O'zbekistonda",
+      hero_title_highlight: "kraudfanding kelajagini quryapmiz",
+      hero_desc: "Funduz o'zbek ijodkorlariga mahalliy innovatsiyalar va madaniy merosni saqlashga ishonadigan hamjamiyat bilan bog'lash orqali g'oyalarini hayotga tatbiq etishga yordam beradi.",
       mission_label: "Bizning missiya",
       mission_text: "O'zbekistondagi har bir xayolparast uchun sarmoyadan foydalanish imkoniyatini demokratlashtirish. Samarqandning gavjum ustaxonalaridan tortib Toshkentning texnoparklarigacha, biz mahalliy g'oyalarni global haqiqatga aylantirish uchun zarur bo'lgan platforma, vositalar va hamjamiyatni taqdim etamiz.",
       mission_quote: "Har bir buyuk loyiha unga ishonadigan kishidan boshlanadi.",
@@ -1135,8 +1136,9 @@ const messages = {
       collected: "Собрано средств",
     },
     about: {
-      hero_title: "Мы строим будущее вместе",
-      hero_desc: "Funduz — это платформа, где смелые идеи находят поддержку, а инновации становятся реальностью благодаря силе сообщества.",
+      hero_title_start: "Мы строим будущее",
+      hero_title_highlight: "краудфандинга в Узбекистане",
+      hero_desc: "Funduz помогает узбекским авторам воплощать идеи в жизнь, объединяя их с сообществом, которое верит в местные инновации и сохранение культурного наследия.",
       mission_label: "Наша миссия",
       mission_text: "Демократизировать доступ к капиталу для каждого мечтателя в Узбекистане. От шумных мастерских Самарканда до технопарков Ташкента — мы предоставляем платформу, инструменты и сообщество, необходимые для превращения местного видения в глобальную реальность.",
       mission_quote: "Каждый великий проект начинается с того, кто в него верит.",
