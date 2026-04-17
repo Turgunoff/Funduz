@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kraуdfanding Platforma — Biznes Tahlil</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --card: #FFFFFF;
+    --text: #1A1A1A;
+    --text-secondary: #5A5A5A;
+    --accent: #2D6A4F;
+    --accent-light: #E8F5EE;
+    --accent-dark: #1B4332;
+    --warning: #E07A3A;
+    --warning-light: #FFF3EB;
+    --danger: #C0392B;
+    --danger-light: #FDECEC;
+    --blue: #2563EB;
+    --blue-light: #EFF6FF;
+    --gold: #D4A017;
+    --gold-light: #FFF9E6;
+    --border: #E8E8E4;
+    --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+    --shadow-lg: 0 4px 6px rgba(0,0,0,0.04), 0 12px 30px rgba(0,0,0,0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(165deg, #1B4332 0%, #2D6A4F 40%, #40916C 100%);
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9);
+    padding: 6px 18px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    backdrop-filter: blur(4px);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 6vw, 54px);
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .hero p {
+    color: rgba(255,255,255,0.75);
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── Verdict Banner ── */
+  .verdict {
+    max-width: 880px;
+    margin: -32px auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .verdict-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border: 1px solid var(--border);
+  }
+  .verdict-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 28px;
+  }
+  .verdict-text h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin-bottom: 4px;
+  }
+  .verdict-text p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── Container ── */
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ── Section ── */
+  .section {
+    margin-top: 56px;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 4vw, 32px);
+    color: var(--text);
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  .section-desc {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  /* ── Stats Grid ── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+  }
+  .stat-card:hover { transform: translateY(-2px); }
+  .stat-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent-dark);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  .stat-card.gold { border-left: 3px solid var(--gold); }
+  .stat-card.blue { border-left: 3px solid var(--blue); }
+  .stat-card.green { border-left: 3px solid var(--accent); }
+  .stat-card.orange { border-left: 3px solid var(--warning); }
+
+  /* ── SWOT / Cards ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 740px) {
+    .card-grid { grid-template-columns: 1fr; }
+  }
+  .analysis-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+  }
+  .analysis-card.strength { border-top: 3px solid var(--accent); }
+  .analysis-card.weakness { border-top: 3px solid var(--danger); }
+  .analysis-card.opportunity { border-top: 3px solid var(--blue); }
+  .analysis-card.threat { border-top: 3px solid var(--warning); }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .strength .card-icon { background: var(--accent-light); }
+  .weakness .card-icon { background: var(--danger-light); }
+  .opportunity .card-icon { background: var(--blue-light); }
+  .threat .card-icon { background: var(--warning-light); }
+
+  .card-header h4 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .card-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-list li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding-left: 20px;
+    position: relative;
+  }
+  .card-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .strength .card-list li::before { background: var(--accent); }
+  .weakness .card-list li::before { background: var(--danger); }
+  .opportunity .card-list li::before { background: var(--blue); }
+  .threat .card-list li::before { background: var(--warning); }
+
+  /* ── Revenue Table ── */
+  .table-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 28px;
+  }
+  .table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .table-wrap thead {
+    background: #F5F5F2;
+  }
+  .table-wrap th {
+    padding: 14px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .table-wrap td {
+    padding: 14px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .table-wrap tr:last-child td { border-bottom: none; }
+  .table-wrap tr:last-child {
+    background: var(--accent-light);
+    font-weight: 700;
+  }
+  .table-wrap .highlight {
+    color: var(--accent-dark);
+    font-weight: 700;
+  }
+
+  /* ── Progress bars ── */
+  .metric-row {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+  }
+  .metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .metric-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .metric-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-dark);
+  }
+  .metric-bar {
+    height: 8px;
+    background: #EDEDED;
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  .metric-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, var(--accent), #52B788);
+    transition: width 1s ease;
+  }
+  .metric-note {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 6px;
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 28px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: var(--border);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+  }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-dot {
+    position: absolute;
+    left: -32px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 3px solid var(--accent);
+  }
+  .timeline-phase {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .timeline-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .timeline-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* ── Callout ── */
+  .callout {
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 28px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .callout.info {
+    background: var(--blue-light);
+    border: 1px solid #DBEAFE;
+  }
+  .callout.warn {
+    background: var(--warning-light);
+    border: 1px solid #FDDCB5;
+  }
+  .callout.success {
+    background: var(--accent-light);
+    border: 1px solid #B7E4C7;
+  }
+  .callout-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .callout-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .callout-text strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+
+  /* ── Competitors ── */
+  .comp-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .comp-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .comp-info h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .comp-info p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+  .comp-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  .tag-indirect { background: var(--gold-light); color: #9A7611; }
+  .tag-direct { background: var(--danger-light); color: var(--danger); }
+  .tag-potential { background: var(--blue-light); color: var(--blue); }
+
+  /* ── Score ── */
+  .score-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .score-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .score-ring {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 24px;
+    font-weight: 800;
+  }
+  .score-ring.high { background: var(--accent-light); color: var(--accent-dark); border: 3px solid var(--accent); }
+  .score-ring.medium { background: var(--gold-light); color: #7A5E0F; border: 3px solid var(--gold); }
+  .score-ring.low { background: var(--danger-light); color: var(--danger); border: 3px solid var(--danger); }
+  .score-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 64px;
+    padding: 32px 20px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer p {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .verdict-card { flex-direction: column; text-align: center; gap: 16px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .comp-card { flex-direction: column; align-items: flex-start; }
+    .score-grid { grid-template-columns: 1fr 1fr; }
+    .table-wrap { overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-badge">Biznes Tahlil — 2026</div>
+  <h1>O'zbekiston uchun<br>Kraudfanding Platformasi</h1>
+  <p>Reward-based kraudfanding platformasi loyihasining bozor salohiyati, moliyaviy prognozlari va risklar tahlili</p>
+</section>
+
+<!-- ═══════ VERDICT ═══════ -->
+<div class="verdict">
+  <div class="verdict-card">
+    <div class="verdict-icon">✅</div>
+    <div class="verdict-text">
+      <h3>Xulosа: Ha, loyiha foyda keltirishi mumkin</h3>
+      <p>O'zbekistonda reward-based kraudfanding uchun <strong>bo'sh nisha</strong> mavjud. Yosh aholisi, rivojlanayotgan raqamli iqtisodiyot va to'lov infratuzilmasining etuklik darajasi — barchasi bu platformani muvaffaqiyatli qilish uchun qulay zamin yaratadi. Lekin risklar ham bor.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ MARKET OVERVIEW ═══════ -->
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">01 — Bozor Tahlili</div>
+    <div class="section-title">O'zbekiston raqamli bozori tez o'smoqda</div>
+    <div class="section-desc">O'zbekiston Markaziy Osiyodagi eng dinamik rivojlanayotgan raqamli bozorlardan biri hisoblanadi. Aholi yosh, internet penetratsiyasi yuqori va e-commerce yildan-yilga rekord tezlikda o'sib bormoqda.</div>
+
+    <div class="stats-grid">
+      <div class="stat-card green">
+        <div class="stat-number">32.7M</div>
+        <div class="stat-label">Internet foydalanuvchilari (2025)</div>
+      </div>
+      <div class="stat-card blue">
+        <div class="stat-number">89%</div>
+        <div class="stat-label">Internet penetratsiyasi</div>
+      </div>
+      <div class="stat-card gold">
+        <div class="stat-number">28.5</div>
+        <div class="stat-label">Aholining o'rtacha yoshi</div>
+      </div>
+      <div class="stat-card orange">
+        <div class="stat-number">~47%</div>
+        <div class="stat-label">E-commerce o'sish tezligi (yillik)</div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-icon">📱</div>
+      <div class="callout-text">
+        <strong>Mobile-first bozor</strong>
+        33.9 million aktiv mobil aloqa mavjud, 95.6% ulardan 3G/4G/5G tarmoqlarga ulangan. Trafikning 80%+ smartfonlardan keladi — bu TZ'dagi mobile-first yondashuv to'g'ri qaror.
+      </div>
+    </div>
+
+    <div class="callout success">
+      <div class="callout-icon">💳</div>
+      <div class="callout-text">
+        <strong>To'lov infratuzilmasi tayyor</strong>
+        Payme va Click birgalikda 20 million+ foydalanuvchiga ega. Uzcard va Humo kartalari keng tarqalgan. Payme, Click va Uzum Pay integratsiyasi texnik jihatdan muammo emas — tayyor API va SDK'lar mavjud.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ COMPETITION ═══════ -->
+  <div class="section">
+    <div class="section-label">02 — Raqobat muhiti</div>
+    <div class="section-title">Bevosita raqobatchi yo'q — bu imkoniyat</div>
+    <div class="section-desc">O'zbekistonda Kickstarter yoki Indiegogo tipidagi reward-based kraudfanding platformasi hozircha mavjud emas. Bu — "birinchi bo'lish" (first-mover advantage) imkoniyati.</div>
+
+    <div class="comp-card">
+      <div class="comp-logo" style="background: #EFF6FF;">🏛️</div>
+      <div class="comp-info">
+        <h4>Imkon VC</h4>
+        <p>2026 yanvarda ishga tushgan vencher kapital va equity crowdfunding platformasi. Startaplarga investitsiya jalb qilishga yo'naltirilgan — reward-based model emas.</p>
+        <span class="comp-tag tag-indirect">Bilvosita raqobatchi</span>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-logo" style="background: #FFF9E6;">🏫</div>
+      <div class="comp-info">
+        <h4>MFond.uz</h4>
+        <p>Maktablar uchun xayriya-kraudfanding platformasi. Donation model asosida ishlaydi — boshqa segment.</p>
+        <span class="comp-tag tag-indirect">Bilvosita raqobatchi</span>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-logo" style="background: #FDECEC;">🌍</div>
+      <div class="comp-info">
+        <h4>Kickstarter / Indiegogo</h4>
+        <p>Global platformalar. O'zbekistondan foydalanish qiyin: Uzcard/Humo qabul qilmaydi, o'zbek tilida emas, mahalliy to'lov tizimlariga integratsiya yo'q.</p>
+        <span class="comp-tag tag-potential">Potensial raqobatchi</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ SWOT ═══════ -->
+  <div class="section">
+    <div class="section-label">03 — SWOT Tahlil</div>
+    <div class="section-title">Kuchli va zaif tomonlar</div>
+
+    <div class="card-grid">
+      <div class="analysis-card strength">
+        <div class="card-header">
+          <div class="card-icon">💪</div>
+          <h4>Kuchli tomonlar</h4>
+        </div>
+        <ul class="card-list">
+          <li>O'zbekistonda birinchi reward-based platforma — first-mover advantage</li>
+          <li>Mahalliy to'lov tizimlari (Payme, Click) integratsiyasi — foydalanuvchilar uchun qulay</li>
+          <li>O'zbek va rus tillarida — mahalliy auditoriyaga mos</li>
+          <li>"All-or-Nothing" modeli — ishonch darajasini oshiradi</li>
+          <li>Mahalliy startap ekotizimi rivojlanmoqda — kontentga talab bor</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card weakness">
+        <div class="card-header">
+          <div class="card-icon">⚠️</div>
+          <h4>Zaif tomonlar</h4>
+        </div>
+        <ul class="card-list">
+          <li>Kraudfanding madaniyati hali shakllanmagan — auditoriyani o'rgatish kerak</li>
+          <li>Refund mexanizmi murakkab — texnik va yuridik jihatdan</li>
+          <li>Dastlabki bosqichda kontent (loyihalar) kam bo'lishi mumkin — "tovuq va tuxum" muammosi</li>
+          <li>Foydalanuvchilar orasida onlayn pre-order'ga ishonch past</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card opportunity">
+        <div class="card-header">
+          <div class="card-icon">🚀</div>
+          <h4>Imkoniyatlar</h4>
+        </div>
+        <ul class="card-list">
+          <li>Hukumat raqamli iqtisodiyotni qo'llab-quvvatlamoqda — "Digital Uzbekistan 2030" strategiyasi</li>
+          <li>$50M "Digital Startups" davlat dasturi mavjud — hamkorlik mumkin</li>
+          <li>E-commerce yillik 41-47% o'sib bormoqda — onlayn to'lov odati shakllanmoqda</li>
+          <li>Markaziy Osiyo bozorlariga kengayish imkoniyati (Qozog'iston, Qirg'iziston)</li>
+          <li>IT Park Tashkentda 1,500+ kompaniya — potensial loyiha manbasi</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card threat">
+        <div class="card-header">
+          <div class="card-icon">🛡️</div>
+          <h4>Tahdidlar</h4>
+        </div>
+        <ul class="card-list">
+          <li>Global platformalar (Kickstarter) O'zbekistonga kirib kelishi mumkin</li>
+          <li>Firibgarlik risklari — platforma obro'sini bir necha muvaffaqiyatsiz loyiha buzishi mumkin</li>
+          <li>Regulyativ noaniqliklar — kraudfanding bo'yicha maxsus qonun hali yo'q</li>
+          <li>Iqtisodiy beqarorlik va valyuta risklari (UZS inflyatsiyasi)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ REVENUE MODEL ═══════ -->
+  <div class="section">
+    <div class="section-label">04 — Daromad Modeli</div>
+    <div class="section-title">Moliyaviy prognoz: 3 yillik stsenariy</div>
+    <div class="section-desc">Platforma asosiy daromadni muvaffaqiyatli loyihalardan olinadigan 7% komissiyadan oladi. Quyida konservativ va o'rtacha stsenariy keltirilgan.</div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Ko'rsatkich</th>
+            <th>1-yil</th>
+            <th>2-yil</th>
+            <th>3-yil</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jami loyihalar soni</td>
+            <td>30–50</td>
+            <td>100–180</td>
+            <td>250–400</td>
+          </tr>
+          <tr>
+            <td>Muvaffaqiyat darajasi</td>
+            <td>35%</td>
+            <td>40%</td>
+            <td>45%</td>
+          </tr>
+          <tr>
+            <td>O'rtacha loyiha maqsadi</td>
+            <td>50M UZS</td>
+            <td>70M UZS</td>
+            <td>80M UZS</td>
+          </tr>
+          <tr>
+            <td>Jami muvaffaqiyatli yig'im</td>
+            <td>~700M UZS</td>
+            <td>~4.5 mlrd UZS</td>
+            <td>~12 mlrd UZS</td>
+          </tr>
+          <tr>
+            <td>Komissiya (7%)</td>
+            <td class="highlight">~49M UZS</td>
+            <td class="highlight">~315M UZS</td>
+            <td class="highlight">~840M UZS</td>
+          </tr>
+          <tr>
+            <td><strong>Taxminiy yillik daromad ($)</strong></td>
+            <td class="highlight"><strong>~$3,800</strong></td>
+            <td class="highlight"><strong>~$24,500</strong></td>
+            <td class="highlight"><strong>~$65,000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-icon">📊</div>
+      <div class="callout-text">
+        <strong>Muhim eslatma</strong>
+        1-yildagi daromad xarajatlarni qoplamaydi — bu tabiiy holat. Platforma biznesida daromad 2–3 yilda oshadi. Qo'shimcha daromad manbalari: featured loyiha joylashuvi (reklama), premium analytics, hamkorlik komissiyalari.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ BUDGET ESTIMATION ═══════ -->
+  <div class="section">
+    <div class="section-label">05 — Xarajatlar va Investitsiya</div>
+    <div class="section-title">Taxminiy boshlang'ich xarajatlar</div>
+
+    <div class="metric-row">
+      <div class="metric-header">
+        <span class="metric-label">MVP Dasturlash (3–4 oy)</span>
+        <span class="metric-value">$15,000 – $25,000</span>
+      </div>
+      <div class="metric-bar"><div class="metric-fill" style="width: 60%;"></div></div>
+      <div class="metric-note">Frontend + Backend + Admin panel + to'lov integratsiyasi</div>
+    </div>
+
+    <div class="metric-row">
+      <div class="metric-header">
+        <span class="metric-label">UI/UX Dizayn</span>
+        <span class="metric-value">$3,000 – $5,000</span>
+      </div>
+      <div class="metric-bar"><div class="metric-fill" style="width: 20%;"></div></div>
+      <div class="metric-note">Mobile-first dizayn, prototiplaysh, branding</div>
+    </div>
+
+    <div class="metric-row">
+      <div class="metric-header">
+        <span class="metric-label">Marketing va PR (1-yil)</span>
+        <span class="metric-value">$5,000 – $10,000</span>
+      </div>
+      <div class="metric-bar"><div class="metric-fill" style="width: 30%;"></div></div>
+      <div class="metric-note">SMM, influencer marketing, media, eventlar</div>
+    </div>
+
+    <div class="metric-row">
+      <div class="metric-header">
+        <span class="metric-label">Server va infratuzilma (yillik)</span>
+        <span class="metric-value">$1,500 – $3,000</span>
+      </div>
+      <div class="metric-bar"><div class="metric-fill" style="width: 12%;"></div></div>
+      <div class="metric-note">Cloud hosting, SSL, CDN, monitoring</div>
+    </div>
+
+    <div class="metric-row">
+      <div class="metric-header">
+        <span class="metric-label">Yuridik va litsenziya</span>
+        <span class="metric-value">$2,000 – $4,000</span>
+      </div>
+      <div class="metric-bar"><div class="metric-fill" style="width: 15%;"></div></div>
+      <div class="metric-note">Kompaniya ro'yxatga olish, to'lov operatori kelishuvi, huquqiy maslahat</div>
+    </div>
+
+    <div class="callout success">
+      <div class="callout-icon">💰</div>
+      <div class="callout-text">
+        <strong>Jami boshlang'ich investitsiya: $26,500 – $47,000</strong>
+        Bu — MVP versiya uchun. Agar IT Park rezidenti bo'lsangiz, korporativ soliq imtiyozlaridan foydalanish va $50M "Digital Startups" dasturiga murojaat qilish mumkin.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ FEASIBILITY SCORES ═══════ -->
+  <div class="section">
+    <div class="section-label">06 — Baholash</div>
+    <div class="section-title">Asosiy mezonlar bo'yicha baho</div>
+
+    <div class="score-grid">
+      <div class="score-item">
+        <div class="score-ring high">9/10</div>
+        <div class="score-label">Bozor salohiyati</div>
+      </div>
+      <div class="score-item">
+        <div class="score-ring high">8/10</div>
+        <div class="score-label">Nishaning bo'shligi</div>
+      </div>
+      <div class="score-item">
+        <div class="score-ring medium">6/10</div>
+        <div class="score-label">Tezkor foyda</div>
+      </div>
+      <div class="score-item">
+        <div class="score-ring high">8/10</div>
+        <div class="score-label">Texnik amalga oshirilishi</div>
+      </div>
+      <div class="score-item">
+        <div class="score-ring medium">7/10</div>
+        <div class="score-label">Kengayish imkoniyati</div>
+      </div>
+      <div class="score-item">
+        <div class="score-ring medium">5/10</div>
+        <div class="score-label">Risk darajasi</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ ROADMAP ═══════ -->
+  <div class="section">
+    <div class="section-label">07 — Yo'l Xaritasi</div>
+    <div class="section-title">Amalga oshirish bosqichlari</div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">0–3 oy</div>
+        <div class="timeline-title">MVP Yaratish</div>
+        <div class="timeline-desc">Asosiy funksionallik: loyiha yaratish, to'lov qabul qilish (Payme/Click), backer profili. Minimal dizayn, tezkor ishga tushirish. 5–10 ta "seed" loyiha topib, platformani test qilish.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">3–6 oy</div>
+        <div class="timeline-title">Ishga Tushirish va Marketing</div>
+        <div class="timeline-desc">PR kampaniya, IT Park va startap hamjamiyatlari bilan hamkorlik. Birinchi 20–30 ta loyiha jalb qilish. Telegram kanal va ijtimoiy tarmoqlarda faol promoshun.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">6–12 oy</div>
+        <div class="timeline-title">O'sish va Optimizatsiya</div>
+        <div class="timeline-desc">Foydalanuvchi tajribasini takomillashtirish, refund mexanizmini ishlab chiqish, admin panelni kuchaytirish. Muvaffaqiyatli loyihalar case-study sifatida targ'ib qilish.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">12–24 oy</div>
+        <div class="timeline-title">Monetizatsiya va Kengayish</div>
+        <div class="timeline-desc">Qo'shimcha daromad manbalari: featured listing, premium statistika. Qozog'iston va Qirg'iziston bozorlariga kengayish rejasi. Mobile app (iOS/Android) ishlab chiqish.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ KEY RECOMMENDATIONS ═══════ -->
+  <div class="section">
+    <div class="section-label">08 — Tavsiyalar</div>
+    <div class="section-title">Muvaffaqiyat uchun muhim qadamlar</div>
+
+    <div class="callout success">
+      <div class="callout-icon">1️⃣</div>
+      <div class="callout-text">
+        <strong>"Seed" loyihalar bilan boshlang</strong>
+        Platformani ishga tushirishdan oldin 5–10 ta sifatli loyiha (dizaynerlar, muhandislar, kreativchilar) topib, ularni "launch partner" sifatida jalb qiling. Bo'sh platforma hech kimni qiziqtirmaydi.
+      </div>
+    </div>
+
+    <div class="callout success">
+      <div class="callout-icon">2️⃣</div>
+      <div class="callout-text">
+        <strong>Ishonch — asosiy valyutangiz</strong>
+        Har bir loyiha moderatsiyadan o'tsin. Muvaffaqiyatsiz loyihalardan qaytim (refund) 100% ishlasin. Bitta firibgarlik butun platformani halok qilishi mumkin.
+      </div>
+    </div>
+
+    <div class="callout success">
+      <div class="callout-icon">3️⃣</div>
+      <div class="callout-text">
+        <strong>Telegram integratsiyasi — majburiy</strong>
+        O'zbekistonda aholining 70%+ Telegram ishlatadi. Loyiha yangilanishlari, to'lov bildirihnomalari va bot orqali interaktiv funksiyalar — Telegram orqali bo'lishi shart.
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-icon">4️⃣</div>
+      <div class="callout-text">
+        <strong>Kategoriyalarni torayting</strong>
+        Birdaniga barcha kategoriyalarga kirmang. Dastlab texnologiya + dizayn segmentiga fokus qiling — bu yerda eng ko'p auditoriya va eng yaxshi case-studylar paydo bo'ladi.
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-icon">5️⃣</div>
+      <div class="callout-text">
+        <strong>Yuridik bazani mustahkamlang</strong>
+        Kraudfanding bo'yicha O'zbekistonda maxsus qonun yo'q. Yurist bilan ishlang: foydalanuvchi shartnomasi, mualliflik huquqi, moliyaviy risklarni hisobga oling. IT Park rezidentligi soliq imtiyozlarini beradi.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ FINAL VERDICT ═══════ -->
+  <div class="section">
+    <div class="section-label">Yakuniy Xulosa</div>
+    <div class="section-title">Loyiha qilish kerakmi?</div>
+    <div class="section-desc" style="font-size: 16px; line-height: 1.9;">
+      <strong style="color: var(--accent-dark);">Ha, lekin realistik kutishlar bilan.</strong> O'zbekistondagi reward-based kraudfanding platformasi — bu bo'sh nishada birinchi bo'lish imkoniyati. Bozor ko'rsatkichlari (32.7M internet foydalanuvchi, 20M+ to'lov ilova foydalanuvchilari, yillik 47% e-commerce o'sishi) juda qulay.
+      <br><br>
+      Ammo bu — "tez boyish" loyihasi emas. Birinchi yilda zarar ko'rish tabiiy. Foyda 2–3 yilda sezilarli bo'ladi. Eng muhimi — <em>sifatli loyihalar jalb qilish</em> va <em>foydalanuvchilar ishonchini qozonish</em>. Agar bu ikki narsani hal qila olsangiz — platforma O'zbekiston startup ekotizimining muhim bir qismiga aylanadi.
+      <br><br>
+      <strong>Boshlang'ich investitsiya:</strong> ~$30,000–$45,000 &nbsp;|&nbsp; <strong>Break-even:</strong> ~18–24 oy &nbsp;|&nbsp; <strong>3-yil daromad potensiali:</strong> $65,000+/yil
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Tayyorlangan: 2026-yil, aprel &nbsp;·&nbsp; Manbalar: DataReportal, KPMG, UNDP, ITA.gov, Daryo.uz, Pivot.uz</p>
+</div>
+
+</body>
+</html>
