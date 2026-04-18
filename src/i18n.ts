@@ -21,59 +21,60 @@ const messages = {
       badge: "PLATFORMA BO'YICHA QO'LLANMA",
       title_start: "Funduz qanday",
       title_end: "ishlaydi?",
-      subtitle: "G'oyalarni haqiqatga aylantiring yoki o'zingizga befarq bo'lmagan loyihalarni qo'llab-quvvatlang. Biz innovatsiyalar o'sishi uchun maydon yaratdik.",
+      subtitle:
+        "G'oyalarni haqiqatga aylantiring yoki o'zingizga befarq bo'lmagan loyihalarni qo'llab-quvvatlang. Biz innovatsiyalar o'sishi uchun maydon yaratdik.",
       btn_authors: "Mualliflar uchun",
       btn_sponsors: "Sponsorlar uchun",
       steps_prefix: "QADAM",
       steps: [
         {
           title: "Loyiha yarating",
-          desc: "O'z tarixingizni so'zlab bering, prototiplarni ko'rsating va amalga oshirish uchun moliyaviy maqsadni belgilang."
+          desc: "O'z tarixingizni so'zlab bering, prototiplarni ko'rsating va amalga oshirish uchun moliyaviy maqsadni belgilang.",
         },
         {
           title: "Ulashing",
-          desc: "Ijtimoiy tarmoqlar orqali do'stlaringiz, oilangiz va hamjamiyatingiz o'rtasida ma'lumot tarqating."
+          desc: "Ijtimoiy tarmoqlar orqali do'stlaringiz, oilangiz va hamjamiyatingiz o'rtasida ma'lumot tarqating.",
         },
         {
           title: "Mablag' yig'ing",
-          desc: "Sizning g'oyangizga ishonadigan butun dunyo bo'ylab homiylardan yordam oling."
+          desc: "Sizning g'oyangizga ishonadigan butun dunyo bo'ylab homiylardan yordam oling.",
         },
         {
           title: "G'oyani amalga oshiring",
-          desc: "Loyihani amalga oshiring, homiylarni xabardor qilib turing va ularga munosib mukofotlarni yuboring."
-        }
+          desc: "Loyihani amalga oshiring, homiylarni xabardor qilib turing va ularga munosib mukofotlarni yuboring.",
+        },
       ],
       steps_sponsors: [
         {
           title: "Loyihani tanlang",
-          desc: "O'zingizga yoqqan va jamiyat uchun foydali deb hisoblagan innovatsion g'oyalarni toping."
+          desc: "O'zingizga yoqqan va jamiyat uchun foydali deb hisoblagan innovatsion g'oyalarni toping.",
         },
         {
           title: "Mukofotni belgilang",
-          desc: "Loyihani shunchaki qo'llab-quvvatlang yoki mualliflar tomonidan tayyorlangan qiziqarli sovg'alarni tanlang."
+          desc: "Loyihani shunchaki qo'llab-quvvatlang yoki mualliflar tomonidan tayyorlangan qiziqarli sovg'alarni tanlang.",
         },
         {
           title: "Xavfsiz hissa qo'shing",
-          desc: "Zamonaviy to'lov tizimlari orqali xavfsiz va tezkor ravishda mablag' o'tkazing."
+          desc: "Zamonaviy to'lov tizimlari orqali xavfsiz va tezkor ravishda mablag' o'tkazing.",
         },
         {
           title: "Natijani kuzating",
-          desc: "Loyiha rivojlanishini kuzatib boring, yangiliklardan xabardor bo'ling va mukofotingizni oling."
-        }
+          desc: "Loyiha rivojlanishini kuzatib boring, yangiliklardan xabardor bo'ling va mukofotingizni oling.",
+        },
       ],
       features: {
         transparency: {
           title: "Shaffoflik har bir bosqichda",
-          desc: "Biz ishonch — kroudfandingning asosi ekanligiga ishonamiz. Funduz tranzaksiyalar xavfsizligi va muloqot shaffofligini ta'minlaydi."
+          desc: "Biz ishonch — kroudfandingning asosi ekanligiga ishonamiz. Funduz tranzaksiyalar xavfsizligi va muloqot shaffofligini ta'minlaydi.",
         },
         security: {
           title: "Xavfsizlik",
-          desc: "Sizning mablag'laringiz va ma'lumotlaringiz bank darajasidagi shifrlash protokollari bilan himoyalangan."
+          desc: "Sizning mablag'laringiz va ma'lumotlaringiz bank darajasidagi shifrlash protokollari bilan himoyalangan.",
         },
         community: {
           title: "Kuchli hamjamiyat",
-          desc: "Innovatsion g'oyalarni qo'llab-quvvatlashga tayyor minglab faol homiylardan foydalanish imkoniyati."
-        }
+          desc: "Innovatsion g'oyalarni qo'llab-quvvatlashga tayyor minglab faol homiylardan foydalanish imkoniyati.",
+        },
       },
       faq: {
         title: "Tez-tez beriladigan savollar",
@@ -81,23 +82,23 @@ const messages = {
         items: [
           {
             q: "Agar kerakli summani yig'a olmasam-chi?",
-            a: "Biz 'Hammasi yoki hech narsa' modelidan foydalanamiz. Agar maqsad belgilangan muddatda amalga oshmasa, mablag'lar homiylarga to'liq hajmda avtomatik ravishda qaytariladi."
+            a: "Biz 'Hammasi yoki hech narsa' modelidan foydalanamiz. Agar maqsad belgilangan muddatda amalga oshmasa, mablag'lar homiylarga to'liq hajmda avtomatik ravishda qaytariladi.",
           },
           {
             q: "Pullarimni qanday qabul qilaman?",
-            a: "Kampaniya muvaffaqiyatli yakunlangach va yakuniy tekshiruvdan o'tgach, mablag'lar platforma komissiyasi (5%) chegirib tashlangan holda sizning tasdiqlangan bank hisobingizga o'tkaziladi."
+            a: "Kampaniya muvaffaqiyatli yakunlangach va yakuniy tekshiruvdan o'tgach, mablag'lar platforma komissiyasi (5%) chegirib tashlangan holda sizning tasdiqlangan bank hisobingizga o'tkaziladi.",
           },
           {
             q: "Bu xavfsizmi?",
-            a: "Ha, biz zamonaviy shifrlash usullari va tekshirilgan to'lov tizimlaridan foydalanamiz. Barcha akkauntlar firibgarlikning oldini olish uchun KYC jarayonidan o'tadi."
-          }
-        ]
+            a: "Ha, biz zamonaviy shifrlash usullari va tekshirilgan to'lov tizimlaridan foydalanamiz. Barcha akkauntlar firibgarlikning oldini olish uchun KYC jarayonidan o'tadi.",
+          },
+        ],
       },
       cta: {
         title: "O'z yo'lingizni boshlashga tayyormisiz?",
         btn_create: "Loyiha yaratish",
-        btn_projects: "Loyihalarni ko'rish"
-      }
+        btn_projects: "Loyihalarni ko'rish",
+      },
     },
     search: {
       results_overline: "QIDIRUV NATIJALARI",
@@ -110,13 +111,13 @@ const messages = {
         all: "Barchasi",
         projects: "Loyihalar",
         creators: "Mualliflar",
-        categories: "Toifalar"
+        categories: "Toifalar",
       },
       sort_by: "Saralash:",
       sort: {
         relevant: "Eng moslari",
         newest: "Eng yangi",
-        popular: "Mashhur"
+        popular: "Mashhur",
       },
       cat_all: "Barcha toifalar",
       cats: {
@@ -125,7 +126,7 @@ const messages = {
         eco: "Ekologiya",
         innovation: "Innovatsiya",
         urbanism: "Urbanistika",
-        education: "Ta'lim"
+        education: "Ta'lim",
       },
       matched_categories: "Mos toifalar",
       projects_found: "loyihalar topildi",
@@ -135,15 +136,16 @@ const messages = {
       stats: {
         projects: "LOYIHALAR",
         raised: "TO'PLANGAN",
-        backers: "HOMIYLAR"
+        backers: "HOMIYLAR",
       },
       empty_filter_title: "Filtringiz bo'yicha boshqa natija yo'q",
-      empty_filter_desc: "Kiritilgan toifa filtri bo'yicha boshqa loyihalar topilmadi. Qidiruvingizni kengaytiring yoki mashhur toifalarni ko'rib chiqing.",
+      empty_filter_desc:
+        "Kiritilgan toifa filtri bo'yicha boshqa loyihalar topilmadi. Qidiruvingizni kengaytiring yoki mashhur toifalarni ko'rib chiqing.",
       empty_chips: {
         ai: "Sun'iy intellekt",
         digital_art: "Raqamli san'at",
-        micro_finance: "Mikromoliya"
-      }
+        micro_finance: "Mikromoliya",
+      },
     },
     explore: {
       title: "Barcha loyihalar",
@@ -155,16 +157,17 @@ const messages = {
         art: "San'at",
         social: "Jamiyat",
         edu: "Ta'lim",
-        eco: "Ekologiya"
+        eco: "Ekologiya",
       },
       sort: {
         newest: "Eng yangi",
         popular: "Mashhur",
-        ending: "Yaqinda tugaydi"
+        ending: "Yaqinda tugaydi",
       },
       load_more: "Yana ko'rsatish",
       empty_title: "Hali loyihalar yo'q",
-      empty_desc: "Tez orada bu yerda O'zbekistondagi eng qiziqarli va foydali loyihalar ro'yxati paydo bo'ladi.",
+      empty_desc:
+        "Tez orada bu yerda O'zbekistondagi eng qiziqarli va foydali loyihalar ro'yxati paydo bo'ladi.",
       projects_list: [
         {
           id: 1,
@@ -176,7 +179,7 @@ const messages = {
           progress: 80,
           days: 12,
           donors: 845,
-          img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
+          img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800",
         },
         {
           id: 2,
@@ -188,7 +191,7 @@ const messages = {
           progress: 45,
           days: 24,
           donors: 312,
-          img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800"
+          img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
         },
         {
           id: 3,
@@ -200,7 +203,7 @@ const messages = {
           progress: 92,
           days: 3,
           donors: 156,
-          img: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=800"
+          img: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=800",
         },
         {
           id: 4,
@@ -212,7 +215,7 @@ const messages = {
           progress: 50,
           days: 15,
           donors: 89,
-          img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800"
+          img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800",
         },
         {
           id: 5,
@@ -224,7 +227,7 @@ const messages = {
           progress: 60,
           days: 8,
           donors: 124,
-          img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800"
+          img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800",
         },
         {
           id: 6,
@@ -236,16 +239,17 @@ const messages = {
           progress: 79,
           days: 20,
           donors: 432,
-          img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800"
-        }
-      ]
+          img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800",
+        },
+      ],
     },
     hero: {
       badge: "O'zbekistonning birinchi kraudfanding platformasi",
       title_1: "Yaxshilikni",
       title_2: "birgalikda",
       title_3: "moliyalashtiramiz",
-      description: "Funduz orqali ijtimoiy muhim loyihalarni qo'llab-quvvatlang yoki o'z g'oyangizni amalga oshirish uchun sarmoya to'plang.",
+      description:
+        "Funduz orqali ijtimoiy muhim loyihalarni qo'llab-quvvatlang yoki o'z g'oyangizni amalga oshirish uchun sarmoya to'plang.",
       btn_contribute: "Hozir hissa qo'shish",
       btn_create: "Loyiha yaratish",
       success_title: '"Oromgoh" loyihasi 2 haftada kerakli summani to\'pladi',
@@ -259,56 +263,58 @@ const messages = {
     about: {
       hero_title_start: "Biz O'zbekistonda",
       hero_title_highlight: "kraudfanding kelajagini quryapmiz",
-      hero_desc: "Funduz o'zbek ijodkorlariga mahalliy innovatsiyalar va madaniy merosni saqlashga ishonadigan hamjamiyat bilan bog'lash orqali g'oyalarini hayotga tatbiq etishga yordam beradi.",
+      hero_desc:
+        "Funduz o'zbek ijodkorlariga mahalliy innovatsiyalar va madaniy merosni saqlashga ishonadigan hamjamiyat bilan bog'lash orqali g'oyalarini hayotga tatbiq etishga yordam beradi.",
       mission_label: "Bizning missiya",
-      mission_text: "O'zbekistondagi har bir xayolparast uchun sarmoyadan foydalanish imkoniyatini demokratlashtirish. Samarqandning gavjum ustaxonalaridan tortib Toshkentning texnoparklarigacha, biz mahalliy g'oyalarni global haqiqatga aylantirish uchun zarur bo'lgan platforma, vositalar va hamjamiyatni taqdim etamiz.",
+      mission_text:
+        "O'zbekistondagi har bir xayolparast uchun sarmoyadan foydalanish imkoniyatini demokratlashtirish. Samarqandning gavjum ustaxonalaridan tortib Toshkentning texnoparklarigacha, biz mahalliy g'oyalarni global haqiqatga aylantirish uchun zarur bo'lgan platforma, vositalar va hamjamiyatni taqdim etamiz.",
       mission_quote: "Har bir buyuk loyiha unga ishonadigan kishidan boshlanadi.",
       story_title: "Bizning tariximiz",
       timeline: [
         {
           date: "Yanvar 2024",
           title: "G'oya tug'ilishi",
-          desc: "Funduz Toshkentda mahalliy kreativ iqtisodiyotdagi bo'shliqni ko'rgan dizaynerlar va tadbirkorlar guruhi tomonidan tashkil etilgan."
+          desc: "Funduz Toshkentda mahalliy kreativ iqtisodiyotdagi bo'shliqni ko'rgan dizaynerlar va tadbirkorlar guruhi tomonidan tashkil etilgan.",
         },
         {
           date: "Mart 2025",
           title: "Milliy kengayish",
-          desc: "Mahalliy hunarmandlar va madaniy meros loyihalarini qo'llab-quvvatlash uchun Samarqand, Buxoro va Xivada mintaqaviy ofislar ochildi."
+          desc: "Mahalliy hunarmandlar va madaniy meros loyihalarini qo'llab-quvvatlash uchun Samarqand, Buxoro va Xivada mintaqaviy ofislar ochildi.",
         },
         {
           date: "Vision 2026",
           title: "Markaziy Osiyo xabi",
-          desc: "Butun Markaziy Osiyo mintaqasida innovatsiyalar uchun asosiy katalizatorga aylanishni maqsad qilganmiz."
-        }
+          desc: "Butun Markaziy Osiyo mintaqasida innovatsiyalar uchun asosiy katalizatorga aylanishni maqsad qilganmiz.",
+        },
       ],
       stats: [
         { value: "250+", label: "Muvaffaqiyatli loyihalar" },
         { value: "12,500+", label: "Homiylar" },
         { value: "15B", label: "UZS to'plandi" },
-        { value: "14", label: "Shahar" }
+        { value: "14", label: "Shahar" },
       ],
       believes_title: "Biz nimalarga ishonamiz",
       believes: [
         {
           title: "Ishonch",
           desc: "Biz ham ijodkorlar, ham homiylar uchun shaffoflik va javobgarlikni birinchi o'ringa qo'yamiz.",
-          icon: "🛡️"
+          icon: "🛡️",
         },
         {
           title: "Hamjamiyat",
           desc: "Muvaffaqiyat nafaqat pul bilan bog'liq; bu sayohatga qo'shilgan insonlar haqida.",
-          icon: "👥"
+          icon: "👥",
         },
         {
           title: "Innovatsiya",
           desc: "Chegaralarni kengaytiradigan va mahalliy muammolarni hal qiladigan g'oyalarni qo'llab-quvvatlash.",
-          icon: "💡"
+          icon: "💡",
         },
         {
           title: "Birinchi navbatda mahalliy",
           desc: "O'zbekistondagi o'ziga xos madaniy o'ziga xoslik va iste'dodni tarannum etish.",
-          icon: "📍"
-        }
+          icon: "📍",
+        },
       ],
       cta_title: "G'oyangizni hayotga tatbiq etishga tayyormisiz?",
       cta_btn_start: "Loyiha boshlash",
@@ -318,9 +324,9 @@ const messages = {
         { name: "Baxtiyor Aliyev", role: "Asoschi va CEO" },
         { name: "Nigora Jo'rayeva", role: "Loyihalar rahbari" },
         { name: "Azizbek Qodirov", role: "CTO" },
-        { name: "Zulayxo Saidova", role: "Hamjamiyat rahbari" }
+        { name: "Zulayxo Saidova", role: "Hamjamiyat rahbari" },
       ],
-      partners_title: "Bizning hamkorlarimiz"
+      partners_title: "Bizning hamkorlarimiz",
     },
     projects: {
       title: "Tanlangan loyihalar",
@@ -340,7 +346,8 @@ const messages = {
     },
     cta: {
       title: "O'z g'oyangizni haqiqatga aylantiring",
-      subtitle: "Biznesingiz, ijtimoiy loyihangiz yoki ijodingiz uchun kerakli sarmoyani Funduz hamjamiyati bilan birga to'plang.",
+      subtitle:
+        "Biznesingiz, ijtimoiy loyihangiz yoki ijodingiz uchun kerakli sarmoyani Funduz hamjamiyati bilan birga to'plang.",
       btn_start: "Loyiha boshlash",
       btn_expert: "Mutaxassis bilan bog'lanish",
       feature1: "Oson boshqaruv",
@@ -354,6 +361,7 @@ const messages = {
       p_tech: "Texnologiya",
       p_art: "San'at",
       p_social: "Ijtimoiy yordam",
+      p_articles: "Maqolalar",
       company_title: "Kompaniya",
       c_about: "Biz haqimizda",
       c_contact: "Bog'lanish",
@@ -361,13 +369,284 @@ const messages = {
       legal_title: "Yuridik",
       l_terms: "Foydalanish shartlari",
       l_privacy: "Maxfiylik siyosati",
-      copyright: "© 2024 Funduz. Barcha huquqlar himoyalangan.",
-      social_tg: "Telegram",
-      social_inst: "Instagram",
       social_fb: "Facebook",
     },
+    articles: {
+      title: "Funduz hamjamiyatidan hikoyalar, maslahatlar va yangiliklar",
+      subtitle: "O'zbekistonda kraudfanding haqida bilishingiz kerak bo'lgan hamma narsa",
+      search_placeholder: "Maqolalarni qidirish...",
+      read_more: "Batafsil o'qish",
+      featured: {
+        badge1: "TAVSIYA ETILGAN",
+        badge2: "MUVAFFAQIYAT HIKOYASI",
+        title:
+          "'Zamon' 30 kunda qayta tiklanuvchi energiya ta'limi uchun qanday qilib 50,000 dollar to'pladi?",
+        desc: "Zamon jamoasining Samarqand va Buxoro bo'ylab mahalliy jamoalarni safarbar qilish uchun qo'llagan strategiyasini bilib oling...",
+        author: "Rustam Alimov",
+        read_time: "5 daqiqa o'qish",
+        btn: "Hikoyani o'qish",
+      },
+      categories: {
+        all: "Barcha maqolalar",
+        tips: "Mualliflar uchun",
+        success: "Muvaffaqiyatlar",
+        news: "Yangiliklar",
+        updates: "Yangilanishlar",
+      },
+      list: [
+        {
+          id: 1,
+          slug: "pitch_video",
+          category: "tips",
+          category_label: "MUALLIFLAR UCHUN",
+          title: "Mukkammal pitch-video tayyorlashning 10 ta siri",
+          desc: "Kampaniyangiz videosining dastlabki 15 soniyasida auditoriyangiz e'tiborini qanday jalb qilishni o'rganing...",
+          author: "Malika Saidova",
+          date: "12 Oktabr, 2024",
+          image:
+            "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&q=80&w=800",
+        },
+        {
+          id: 2,
+          slug: "campaign_story",
+          category: "news",
+          category_label: "HAMJAMIYAT YANGILIKLARI",
+          title: "Ijtimoiy tadbirkorlikning yangi qiyofasi",
+          desc: "O'zbekistondagi mahalliy startaplar jamoaviy moliyalashtirish orqali foyda va ijtimoiy maqsadni qanday muvozanatlashtirmoqda...",
+          author: "Bekzod Umarov",
+          date: "09 Oktabr, 2024",
+          image:
+            "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
+        },
+        {
+          id: 3,
+          slug: "updates",
+          category: "updates",
+          category_label: "PLATFORMA YANGILANISHLARI",
+          title: "Funduz Guilds bilan tanishing",
+          desc: "Loyihalar muvaffaqiyatini oshirish uchun tajribali mentorlarni yangi mualliflar bilan bog'lash...",
+          author: "Elena Kim",
+          date: "05 Oktabr, 2024",
+          image:
+            "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800",
+        },
+      ],
+    },
+    newsletter: {
+      title: "Funduz yangiliklaridan xabardor bo'ling",
+      subtitle:
+        "Har payshanba kuni muvaffaqiyatli hikoyalar, mualliflar uchun tavsiyalar va yangi loyihalarga erta kirish imkoniyatini oling.",
+      placeholder: "Sizning email manzilingiz",
+      btn: "Obuna bo'lish",
+    },
+    campaign_story: {
+      badge: "STRATEGIYA",
+      title: "Million Dollarlik Kraudfanding Kampaniyasi Arxitekturasi",
+      subtitle:
+        "Har bir rekord darajadagi start ortida hamjamiyatni shakllantirish, storytelling va taktik tanqislikning puxta ishlab chiqilgan tizimi yotadi. Biz ushbu loyihani tahlil qilamiz.",
+      author: {
+        name: "Julian Thorne",
+        role: "Bosh strateg",
+        read_time: "12 daqiqa mutolaa",
+        date: "24 Iyun, 2024",
+      },
+      content_p1:
+        "Zamonaviy loyihalarni moliyalashtirish sohasida 20% darajasida to'xtab qolgan loyiha bilan bir necha soat ichida maqsadidan o'tib ketgan loyiha o'rtasidagi farq faqat mahsulotda emas. Bu birinchi 'Qo'llab-quvvatlash' tugmasi bosilishidan bir necha oy oldin qurilgan hikoya infratuzilmasidadir.",
+      h1: "Ishga tushirishdan oldingi 'Issiqxona'",
+      p2: "Muvaffaqiyatli mualliflar auditoriyani qidirmaydilar; uni tarbiyalaydilar. Kampaniyangizni issiqxona deb tasavvur qiling. Qo'llab-quvvatlashni yig'ib olishdan oldin tuproqni tayyorlashingiz kerak. Bu 'Super-Backers' — platforma algoritmlarini ishga tushirish uchun zarur bo'lgan boshlang'ich tezlikni ta'minlaydigan asosiy 5% hamjamiyatni aniqlashni o'z ichiga oladi.",
+      pro_tip: {
+        title: "Pro Maslahat: 30% Qoidasi",
+        text: "Maqsadingizning 30 foizi shaxsiy email ro'yxatlari yoki oldindan band qilish orqali kafolatlanmaguncha ochiqdan-ochiq kampaniyani boshlamang. Ijtimoiy ishonch — sizning eng kuchli valyutangizdir.",
+      },
+      h2: "Vizual identifikatsiyani aniqlash",
+      p3: "Kraudfanding — bu vizual vositadir. Loyihangiz sahifasi nafas olishi kerak. Ko'p bo'sh joy, yuqori darajadagi renderlar va 'Sahna ortida' olingan lavhalardan foydalanish shaffoflikni yaratadi. Donolar endi faqat mahsulot sotib olishmayapti; ular sizning jarayoningizga sarmoya kiritishmoqda.",
+      quote:
+        "Muvaffaqiyatli kampaniyalar mahsulot xususiyatlarini sotmaydi; ular mahsulotga egalik qiluvchi dononing kelajakdagi qiyofasini sotadi.",
+      sidebar: {
+        about: "MUALLIF HAQIDA",
+        bio: "Julian mustaqil mualliflar uchun 12 million dollardan ortiq mablag' yig'ishga yordam bergan. U apparat vositalarini ishga tushirish strategiyasi va hamjamiyatni barqaror rivojlantirish bo'yicha mutaxassis.",
+        follow: "Julianni kuzatish",
+        in_article: "USHBU MAQOLADA",
+        sections: [
+          "Issiqxona",
+          "Vizual identifikatsiya",
+          "Taktik tanqislik",
+          "Kampaniyadan keyingi puls",
+        ],
+        newsletter_title: "Haftalik Katalizator",
+        newsletter_desc: "Har seshanba kuni ertalab strategiya bo'yicha chuqur tahlillar.",
+        newsletter_btn: "Hoziroq obuna bo'lish",
+      },
+      h3: "Taktik tanqislik",
+      p4: "Nima uchun kimdir chakana savdoda chiqishini kutmasdan, aynan hozir sizni qo'llab-quvvatlashi kerak? Siz darhol harakat qilish uchun asosli sabablar yaratishingiz kerak.",
+      list1: [
+        {
+          bold: "Cheklangan Early Bird bosqichlari",
+          text: "Sizga birinchi bo'lib ishonganlar uchun haqiqiy mukofot yarating.",
+        },
+        {
+          bold: "Kampaniya eksklyuzivlari",
+          text: "Hech qachon qayta mavjud bo'lmaydigan ranglar yoki xususiyatlar.",
+        },
+        {
+          bold: "Bosqichli mukofotlar",
+          text: "Hamjamiyat maqsadlari orqali moliyalashtirish jarayonini o'yin ko'rinishiga keltiring.",
+        },
+      ],
+      discussion: {
+        title: "Muhokama",
+        join_title: "Suhbatga qo'shiling",
+        join_subtitle:
+          "Fikrlaringizni hamjamiyat bilan baham ko'rish uchun Funduz platformasiga kiring.",
+        sign_in: "Kirish",
+        create_account: "Hisob yaratish",
+        reply: "Javob berish",
+        comments: [
+          {
+            author: "Marko Vancic",
+            date: "2 kun oldin",
+            text: "Bu aynan menga kerak bo'lgan narsa. Biz sentabr oyida ishga tushirishga tayyorlanmoqdamiz va 'Super-Backer' tushunchasi bizda qiyinchilik tug'dirayotgan edi. Ularni topish bo'yicha maslahatlar bormi?",
+          },
+          {
+            author: "Elena Rodriguez",
+            date: "5 kun oldin",
+            text: "Ajoyib tahlil. Vizual identifikatsiya bo'limi menga juda yoqdi. Ko'plab loyihalar faqat fotosuratlari havaskorlarcha ko'ringani uchun muvaffaqiyatsizlikka uchraydi.",
+          },
+        ],
+      },
+      keep_reading: {
+        title: "Mutolaani davom ettiring",
+        subtitle: "Intiluvchan mualliflar uchun tanlangan strategiyalar",
+        view_all: "Barcha maqolalarni ko'rish",
+        articles: [
+          {
+            category: "TAHLILOT",
+            title: "2024-yilgi Donolar psixologiyasini tushunish",
+            desc: "Auditoriya xatti-harakatlarini tahlil qilish va moliyalashtirish muvaffaqiyatini bashorat qilish bo'yicha chuqur tadqiqot.",
+            author: "Sarah Chen",
+            image:
+              "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
+          },
+          {
+            category: "HAMJAMIYAT",
+            title: "Ishga tushirishdan oldin Discord hamjamiyatini qurish",
+            desc: "Loyiha ishga tushishidan oldin sodiq tarafdorlar bazasini qanday shakllantirish bo'yicha qo'llanma.",
+            author: "Alex River",
+            image:
+              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800",
+          },
+          {
+            category: "ISHLAB CHIQARISH",
+            title: "Prototiplan ishlab chiqarishgacha: Uskunalar xronologiyasi",
+            desc: "G'oyani real mahsulotga aylantirishning barcha texnik va logistik bosqichlari tahlili.",
+            author: "Julian Thorne",
+            image:
+              "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+          },
+        ],
+      },
+    },
+    pitch_video: {
+      badge: "KREATIV",
+      title: "Mukammal Pitch-Video tayyorlashning 10 ta siri",
+      subtitle:
+        "Sizning videongiz — bu loyihangizning qalbi. Birinchi 10 soniya dononi jalb qilish yoki yo'qotish uchun kifoya. Mana buni qanday qilib to'g'ri qilish kerak.",
+      author: {
+        name: "Malika Saidova",
+        role: "Kreativ Direktor",
+        read_time: "8 minut o'qish",
+        date: "15-Oktyabr, 2024",
+      },
+      content_p1:
+        "Kraudfanding dunyosida video minglab so'zlardan ustunroqdir. Bu sizning auditoriya bilan emotsional aloqa o'rnatish, ishonch yaratish va mahsulotingizni real hayotda ko'rsatish uchun yagona imkoniyatingizdir. Ko'pgina mualliflar videoga oxirgi daqiqada e'tibor qaratishadi, ammo bu sizning kampaniyangizning eng muhim elementi bo'lishi kerak.",
+      h1: "Hikoyani birinchi o'ringa qo'ying",
+      p2: "Tehnik xususiyatlar haqida gapirishdan oldin, loyihangiz nima uchun mavjudligini tushuntiring. Odamlar 'nima'ni emas, 'nega'ni sotib olishadi. Videongizning birinchi 10 soniyasi muammoni ko'rsatishi va tomoshabinni keyingi daqiqalarni ko'rishga majbur qilishi kerak.",
+      pro_tip: {
+        title: "Pro Maslahat: Yoritish — hammasi!",
+        text: "Qimmat kameraga ega bo'lish shart emas, lekin yoritish mukammal bo'lishi kerak. Derazadan tushayotgan tabiiy yorug'likdan foydalanish usullarini o'rganing.",
+      },
+      h2: "Ovoz sifati — bu tasvir sifatidan muhimroq",
+      p3: "Tomoshabinlar past sifatli videoni kechirishi mumkin, ammo yomon ovozni hech qachon. Tashqi mikrofondan foydalaning yoki tinch joyda yozib oling.",
+      quote:
+        "Agar siz 2 daqiqada tomoshabinni hayajonlantira olmasangiz, ehtimol siz o'zingiz ham loyihangizga yetarlicha ishonmaysiz.",
+      sidebar: {
+        about: "MUALLIF HAQIDA",
+        bio: "Malika 50 dan ortiq muvaffaqiyatli kraudfanding kampaniyalari uchun video-kontent yaratgan.",
+        follow: "Malikani kuzatish",
+        in_article: "USHBU MAQOLADA",
+        sections: [
+          "Hikoya shakli",
+          "Ovoz va Yorug'lik",
+          "Scenariyni tayyorlash",
+          "Call-to-Action san'ati",
+        ],
+        newsletter_title: "Kreativ Fokus",
+        newsletter_desc: "Har juma kuni vizual kontent bo'yicha maslahatlar.",
+        newsletter_btn: "Obuna bo'lish",
+      },
+      h3: "Aniq harakatga chaqiruv (CTA)",
+      p4: "Videoni shunchaki tugatmang. Tomoshabinga nima qilish kerakligini aniq ayting.",
+      list1: [
+        {
+          bold: "Scenariyni yozing",
+          text: "Gaplashayotganingizda adashib ketmaslik uchun har bir so'zni rejalashtiring.",
+        },
+        {
+          bold: "Haqiqiy bo'ling",
+          text: "Aktyorlik qilmang, o'z ishtiyoqingizni ko'rsating.",
+        },
+        {
+          bold: "Qisqa tuting",
+          text: "Ideal pitch-video 2-3 daqiqadan oshmasligi kerak.",
+        },
+      ],
+      discussion: {
+        title: "Muhokama",
+        join_title: "Sizning videongiz tayyormi?",
+        join_subtitle: "O'z g'oyalaringizni Malika va hamjamiyat bilan muhokama qiling.",
+        sign_in: "Kirish",
+        create_account: "Hisob yaratish",
+        reply: "Javob berish",
+        comments: [
+          {
+            author: "Azamat Akromov",
+            date: "1 kun oldin",
+            text: "Mikrofon bo'yicha maslahat uchun rahmat. Qaysi modelni tavsiya qilasiz?",
+          },
+        ],
+      },
+      keep_reading: {
+        title: "Mutolaani davom ettiring",
+        subtitle: "Muvaffaqiyatli startaplar uchun qo'llanmalar",
+        view_all: "Barcha maqolalar",
+        articles: [
+          {
+            category: "STRATEGIYA",
+            title: "Kampaniya arxitekturasi: Millionlik strategiya",
+            desc: "Qanday qilib noldan boshlab loyihani yirik moliyalashtirishga tayyorlash mumkin.",
+            author: "Julian Thorne",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+          },
+          {
+            category: "DIZAYN",
+            title: "Mijozlarni hayratga soladigan UI/UX sirlari",
+            desc: "Mahsulotingiz dizayni kraudfanding muvaffaqiyatiga qanday ta'sir qiladi.",
+            author: "Sardor Umidov",
+            image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=800"
+          },
+          {
+            category: "PSIXOLOGIYA",
+            title: "Donolar nega sarmoya kiritadilar?",
+            desc: "Kraudfanding ishtirokchilarining qaror qabul qilish jarayoni tahlili.",
+            author: "Elena Rodriguez",
+            image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800"
+          }
+        ]
+      }
+    },
     project_view: {
-      title: "Eco-Paket: O'zbekistonda birinchi marta bio-parchalanadigan qadoqlar ishlab chiqarish",
+      title:
+        "Eco-Paket: O'zbekistonda birinchi marta bio-parchalanadigan qadoqlar ishlab chiqarish",
       author_label: "Muallif",
       author_success: "2 ta muvaffaqiyatli loyiha",
       goal: "Maqsad",
@@ -383,23 +662,29 @@ const messages = {
       reward_select: "Tanlash",
       reward_1_title: "Rahmatnoma",
       reward_1_price: "100,000 UZS",
-      reward_1_desc: "Bizning loyihamizni qo'llab-quvvatlaganingiz uchun elektron rahmatnoma va loyiha saytida ismingiz chop etiladi.",
+      reward_1_desc:
+        "Bizning loyihamizni qo'llab-quvvatlaganingiz uchun elektron rahmatnoma va loyiha saytida ismingiz chop etiladi.",
       reward_2_title: "Eco-To'plam",
       reward_2_price: "500,000 UZS",
-      reward_2_desc: "100 dona bio-paketlar to'plami va brendli eko-sumka (tote bag). O'zbekiston bo'ylab yetkazib berish bepul.",
+      reward_2_desc:
+        "100 dona bio-paketlar to'plami va brendli eko-sumka (tote bag). O'zbekiston bo'ylab yetkazib berish bepul.",
       reward_3_title: "Homiy Hamkor",
       reward_3_price: "2,000,000 UZS",
-      reward_3_desc: "Sizning logotipingiz birinchi partiya qadoqlari ustida 'Hamkor' sifatida ko'rsatiladi.",
+      reward_3_desc:
+        "Sizning logotipingiz birinchi partiya qadoqlari ustida 'Hamkor' sifatida ko'rsatiladi.",
       delivery_label: "Kutilayotgan yetkazib berish:",
       reward_1_delivery: "Sentyabr, 2024",
       reward_2_delivery: "Oktyabr, 2024",
       reward_3_delivery: "Oktyabr, 2024",
       special_title: "Maxsus yordam?",
-      special_desc: "Agar siz yirik investor bo'lsangiz yoki maxsus hamkorlik shartlarini muhokama qilmoqchi bo'lsangiz, biz bilan bog'laning.",
+      special_desc:
+        "Agar siz yirik investor bo'lsangiz yoki maxsus hamkorlik shartlarini muhokama qilmoqchi bo'lsangiz, biz bilan bog'laning.",
       special_btn: "Aloqaga chiqish",
       detail_title: "Ekologiya uchun yangi davr",
-      detail_text_1: "O'zbekistonda har yili millionlab tonna plastik chiqindilar hosil bo'ladi. Ularning asosiy qismini bir marta ishlatiladigan paketlar tashkil etadi. Bizning Eco-Paket loyihamiz makkajo'xori kraxmalidan tayyorlangan, 6-12 oy ichida to'liq parchalanib ketadigan qadoqlarni оmmalashtirishni maqsad qilgan.",
-      detail_text_2: "Yig'ilgan mablag'lar Xitoydan yuqori texnologiyali uskunalarni sotib olish va dastlabki xom-ashyo zaxirasini shakllantirishga sarflanadi. Loyihamiz Toshkent shahrida o'z faoliyatini boshlaydi va keyinchalik butun respublika bo'ylab kengayadi.",
+      detail_text_1:
+        "O'zbekistonda har yili millionlab tonna plastik chiqindilar hosil bo'ladi. Ularning asosiy qismini bir marta ishlatiladigan paketlar tashkil etadi. Bizning Eco-Paket loyihamiz makkajo'xori kraxmalidan tayyorlangan, 6-12 oy ichida to'liq parchalanib ketadigan qadoqlarni оmmalashtirishni maqsad qilgan.",
+      detail_text_2:
+        "Yig'ilgan mablag'lar Xitoydan yuqori texnologiyali uskunalarni sotib olish va dastlabki xom-ashyo zaxirasini shakllantirishga sarflanadi. Loyihamiz Toshkent shahrida o'z faoliyatini boshlaydi va keyinchalik butun respublika bo'ylab kengayadi.",
       image_caption: "Biz ishlab chiqaradigan bio-parchalanadigan paketlar namunalari",
       benefits_title: "Nima uchun bizni qo'llab-quvvatlashingiz kerak?",
       benefits: [
@@ -411,14 +696,15 @@ const messages = {
     community: {
       badge: "FUNDUZ HAMJAMIYATI",
       title: "Platformamizning yuragi — bu odamlar",
-      subtitle: "Muvaffaqiyat hikoyalari bilan tanishing va bizning o'sib borayotgan innovatorlar hamjamiyatimizga qo'shiling. Birgalikda g'oyalarni haqiqatga aylantiramiz.",
+      subtitle:
+        "Muvaffaqiyat hikoyalari bilan tanishing va bizning o'sib borayotgan innovatorlar hamjamiyatimizga qo'shiling. Birgalikda g'oyalarni haqiqatga aylantiramiz.",
       stats: {
         collected_val: "12+ Mlrd so'm",
         collected_label: "YIG'ILGAN MABLAG'LAR",
         sponsors_val: "45,000+",
         sponsors_label: "FAOL HOMIYLAR",
         projects_val: "1,200+",
-        projects_label: "MUVAFFAQIYATLI LOYIHALAR"
+        projects_label: "MUVAFFAQIYATLI LOYIHALAR",
       },
       stories: {
         title: "Muvaffaqiyat hikoyalari",
@@ -429,34 +715,28 @@ const messages = {
         items: [
           {
             title: "Kelajak eko-fermasi",
-            desc: "Funduz hamjamiyatining qo'llab-quvvatlashi tufayli biz mamlakatdagi birinchi vertikal fermani ishga tushirishga muvaffaq bo'ldik."
+            desc: "Funduz hamjamiyatining qo'llab-quvvatlashi tufayli biz mamlakatdagi birinchi vertikal fermani ishga tushirishga muvaffaq bo'ldik.",
           },
           {
             title: "Hamma uchun IT-ta'lim",
-            desc: "Bizning vazifamiz — 10,000 nafar o'smirga dasturlashni o'rgatish va biz allaqachon yo'lning yarmidamiz."
+            desc: "Bizning vazifamiz — 10,000 nafar o'smirga dasturlashni o'rgatish va biz allaqachon yo'lning yarmidamiz.",
           },
           {
             title: "'Talant' hunarmandchilik markazi",
-            desc: "Biz unutilgan an'analarni tiklamoqdamiz va butun mamlakat bo'ylab yuzlab ustalar uchun ish o'rinlari yaratmoqdamiz."
-          }
-        ]
+            desc: "Biz unutilgan an'analarni tiklamoqdamiz va butun mamlakat bo'ylab yuzlab ustalar uchun ish o'rinlari yaratmoqdamiz.",
+          },
+        ],
       },
       sponsors_section: {
         title: "Bizning Super-Homiylarimiz",
         label: "SUPER-HOMIY",
-        items: [
-          "Aziz Karimov",
-          "Madina Aliyeva",
-          "Rustam Saidov",
-          "Yelena Kim",
-          "Sardor Umarov"
-        ]
+        items: ["Aziz Karimov", "Madina Aliyeva", "Rustam Saidov", "Yelena Kim", "Sardor Umarov"],
       },
       telegram: {
         title: "Telegram-kanalimizga qo'shiling",
         desc: "Barcha yangi loyihalar, eksklyuziv intervyular va platforma yangiliklaridan xabardor bo'ling.",
-        btn: "Telegramga o'tish"
-      }
+        btn: "Telegramga o'tish",
+      },
     },
     login: {
       title: "Xush kelibsiz!",
@@ -477,7 +757,8 @@ const messages = {
       footer_text_and: " va ",
       footer_text_end: "ga rozilik bildirasiz.",
       hero_title: "Yaxshilikni birgalikda moliyalashtiramiz",
-      hero_subtitle: "Kichik hissa — katta o'zgarishlar asosi. Loyihalarni qo'llab-quvvatlang yoki o'z g'oyangizni hayotga tadbiq eting."
+      hero_subtitle:
+        "Kichik hissa — katta o'zgarishlar asosi. Loyihalarni qo'llab-quvvatlang yoki o'z g'oyangizni hayotga tadbiq eting.",
     },
     create: {
       header_title: "Yangi loyiha boshlash",
@@ -497,7 +778,7 @@ const messages = {
       tab_info: "Ma'lumotlar",
       tab_media: "Media",
       tab_rewards: "Mukofotlar",
-      media_placeholder: "Rasm yoki videoni ushbu yerga sudrab o'tkazing yoki bosing"
+      media_placeholder: "Rasm yoki videoni ushbu yerga sudrab o'tkazing yoki bosing",
     },
     story: {
       back: "Orqaga qaytish",
@@ -506,9 +787,12 @@ const messages = {
       author: "Aziz Karimov",
       date: "Sentyabr 2024",
       history_title: "Loyiha tarixi",
-      history_p1: "Barchasi Toshkent chekkasidagi tashlandiq yer uchastkasidan boshlandi. Mening g'oyam qishloq xo'jaligini hatto kichik maydonlarda ham texnologik va ekologik toza bo'lishini isbotlash edi.",
-      history_p2: "Dastlabki oylar eng qiyini bo'ldi. Tuproqning sho'rlanishi va barqaror sug'orish yo'qligiga duch keldik. Ammo Funduz platformasidagi 450 homiy yordami tufayli qisqa fursatda tomchilatib sug'orish tizimini o'rnatdik.",
-      history_p3: "Bugungi kunda fermamiz oyiga 2 tonnadan ortiq organik sabzavot yetishtirmoqda. Bu shunchaki biznes emas, bu hamjamiyat kuchining isboti.",
+      history_p1:
+        "Barchasi Toshkent chekkasidagi tashlandiq yer uchastkasidan boshlandi. Mening g'oyam qishloq xo'jaligini hatto kichik maydonlarda ham texnologik va ekologik toza bo'lishini isbotlash edi.",
+      history_p2:
+        "Dastlabki oylar eng qiyini bo'ldi. Tuproqning sho'rlanishi va barqaror sug'orish yo'qligiga duch keldik. Ammo Funduz platformasidagi 450 homiy yordami tufayli qisqa fursatda tomchilatib sug'orish tizimini o'rnatdik.",
+      history_p3:
+        "Bugungi kunda fermamiz oyiga 2 tonnadan ortiq organik sabzavot yetishtirmoqda. Bu shunchaki biznes emas, bu hamjamiyat kuchining isboti.",
       funds_title: "Mablag'lar nimaga sarflandi",
       funds_equip: "Uskunalar",
       funds_equip_desc: "Aqlli datchiklar va avtomatika",
@@ -522,13 +806,15 @@ const messages = {
       stats_goal: "Maqsad",
       stats_percent: "Foiz",
       stats_sponsors: "Homiylar qo'llab-quvvatladi",
-      quote: "\"Funduz bizga nafaqat pul, balki g'oyamiz odamlar uchun muhim ekanligiga ishonch berdi. Bu ongli iste'molning yangi davri boshlanishidir.\"",
-      similar_title: "O'xshash tarixlar"
+      quote:
+        "\"Funduz bizga nafaqat pul, balki g'oyamiz odamlar uchun muhim ekanligiga ishonch berdi. Bu ongli iste'molning yangi davri boshlanishidir.\"",
+      similar_title: "O'xshash tarixlar",
     },
     contact: {
       badge: "Qo'llab-quvvatlash markazi",
       title: "Bog'lanish",
-      subtitle: "Savolingiz bormi yoki katalizatorga muhtoj loyihangiz? Bizning jamoamiz sizga kuratorlik kroudfanding olamida harakat qilishingizga yordam beradi.",
+      subtitle:
+        "Savolingiz bormi yoki katalizatorga muhtoj loyihangiz? Bizning jamoamiz sizga kuratorlik kroudfanding olamida harakat qilishingizga yordam beradi.",
       search_placeholder: "Savollar, kalit so'zlar yoki mavzular bo'yicha qidirish...",
       cats: {
         all: "Barchasi",
@@ -536,63 +822,64 @@ const messages = {
         creators: "Mualliflar uchun",
         backers: "Homiylar uchun",
         payments: "To'lovlar va Qaytarishlar",
-        security: "Xavfsizlik va Ishonch"
+        security: "Xavfsizlik va Ishonch",
       },
       faq: [
         {
           q: "Funduzda loyihani qanday qo'llab-quvvatlash mumkin?",
           a: "Loyihani qo'llab-quvvatlash uchun loyiha sahifasiga o'ting, 'Hissa qo'shish' tugmasini bosing, mukofotni tanlang va qulay to'lov usuli (Payme, Click yoki karta) orqali to'lovni amalga oshiring.",
-          cat: "backers"
+          cat: "backers",
         },
         {
           q: "Loyiha amalga oshmasa, pullar qaytariladimi?",
           a: "Ha, Funduz 'Hammasi yoki hech narsa' tamoyili asosida ishlaydi. Agar loyiha belgilangan muddatda o'z maqsadiga erisha olmasa, barcha mablag'lar homiylarga komissiyasiz to'liq qaytariladi.",
-          cat: "payments"
+          cat: "payments",
         },
         {
           q: "Payme qanday to'lov usullarini qo'llab-quvvatlaydi?",
           a: "Payme orqali siz Uzcard, Humo kartalari, shuningdek, Payme balansidagi mablag'lar orqali loyihalarni qo'llab-quvvatlashingiz mumkin.",
-          cat: "payments"
+          cat: "payments",
         },
         {
           q: "Mening shaxsiy ma'lumotlarim va karta ma'lumotlarim qanday himoyalangan?",
           a: "Xavfsizlik — bizning birinchi darajali vazifamizdir. Funduz barcha ma'lumotlarni saqlash uchun AES-256 shifrlash usulidan foydalanadi. To'lovlar uchun biz Payme va Click kabi jahon darajasidagi provayderlar bilan hamkorlik qilamiz, karta ma'lumotlari to'g'ridan-to'g'ri bizning serverlarimizga tegmaydi.",
-          cat: "security"
+          cat: "security",
         },
         {
           q: "Mualliflar uchun platforma komissiyasi qancha?",
           a: "Mualliflar uchun komissiya faqat loyiha muvaffaqiyatli yakunlanganda olinadi va u yig'ilgan summaning 5% ini tashkil qiladi. Agar loyiha yig'ilmasa, hech qanday komissiya olinmaydi.",
-          cat: "creators"
+          cat: "creators",
         },
         {
           q: "Mukofotlarimni qanday kuzatib borishim mumkin?",
           a: "Siz o'z shaxsiy kabinetingizda 'Mening yordamlarim' bo'limida barcha qo'llab-quvvatlagan loyihalaringiz va ularning holatini kuzatib borishingiz mumkin. Shuningdek, loyiha muallifi yangiliklar yuborganda sizga bildirishnoma keladi.",
-          cat: "backers"
+          cat: "backers",
         },
         {
           q: "Loyiha boshlangandan keyin o'z hissamni (pledge) o'zgartira olamanmi?",
           a: "Ha, loyiha yig'ish muddati yakunlanmaguncha siz o'z hissangizni oshirishingiz yoki boshqa mukofotni tanlashingiz mumkin.",
-          cat: "backers"
+          cat: "backers",
         },
         {
           q: "Muallifning shaxsini qanday tasdiqlash mumkin?",
           a: "Platformamizdagi barcha mualliflar majburiy KYC (shaxsni tasdiqlash) jarayonidan o'tadilar. Tasdiqlangan mualliflar sahifasida maxsus belgi (check-mark) bo'ladi.",
-          cat: "security"
+          cat: "security",
         },
         {
           q: "Click xalqaro kredit kartalarini qo'llab-quvvatlaydimi?",
           a: "Hozirgi vaqtda Click orqali O'zbekistonning barcha mahalliy kartalari (Uzcard, Humo) orqali to'lov qilish mumkin. Xalqaro kartalar (Visa, Mastercard) bo'yicha imkoniyatlarni kengaytirish ustida ishlayapmiz.",
-          cat: "payments"
+          cat: "payments",
         },
         {
           q: "Agar loyiha maqsad qilinganidan ko'proq mablag' yig'sa nima bo'ladi?",
           a: "Agar loyiha 100% dan ko'p mablag' to'plasa, barcha qo'shimcha mablag'lar muallifga loyihani yanada yaxshilash yoki qo'shimcha mukofotlar taqdim etish uchun beriladi.",
-          cat: "general"
-        }
+          cat: "general",
+        },
       ],
       form: {
         title: "Bizga xabar qoldiring",
-        subtitle: "Savollaringiz bormi yoki hamkorlik qilmoqchimisiz? Bizning jamoamiz sizga yordam berishdan xursand bo'ladi.",
+        subtitle:
+          "Savollaringiz bormi yoki hamkorlik qilmoqchimisiz? Bizning jamoamiz sizga yordam berishdan xursand bo'ladi.",
         name: "Ismingiz",
         email: "Email manzilingiz",
         subject: "Mavzu",
@@ -603,8 +890,8 @@ const messages = {
           general: "Umumiy savollar",
           support: "Texnik yordam",
           partnership: "Hamkorlik",
-          legal: "Huquqiy masalalar"
-        }
+          legal: "Huquqiy masalalar",
+        },
       },
       info: {
         title: "Aloqa ma'lumotlari",
@@ -615,127 +902,129 @@ const messages = {
         address_label: "Manzil",
         address_val: "Toshkent shahri, Yunusobod tumani, Amir Temur ko'chasi, 19-uy",
         hours_label: "Ish vaqti",
-        hours_val: "Dush - Juma: 09:00 - 18:00"
-      }
+        hours_val: "Dush - Juma: 09:00 - 18:00",
+      },
     },
     terms: {
       badge: "Yuridik ma'lumotlar",
       title: "Foydalanish shartlari",
       last_updated: "Oxirgi yangilanish",
       footer_title: "Savollaringiz bormi?",
-      footer_desc: "Agar sizda ushbu shartlar bo'yicha tushunmovchiliklar bo'lsa, bizning qo'llab-quvvatlash jamoamizga murojaat qiling.",
+      footer_desc:
+        "Agar sizda ushbu shartlar bo'yicha tushunmovchiliklar bo'lsa, bizning qo'llab-quvvatlash jamoamizga murojaat qiling.",
       footer_link: "Bog'lanish",
       toc: "Mundarija",
       download_pdf: "PDF yuklab olish",
-      important_note: "Muhim: 'Ro'yxatdan o'tish' tugmasini bosish yoki platformadan foydalanish orqali siz ushbu shartlarni o'qiganingizni, tushunganingizni va ularga rioya qilishga roziligingizni tasdiqlaysiz.",
+      important_note:
+        "Muhim: 'Ro'yxatdan o'tish' tugmasini bosish yoki platformadan foydalanish orqali siz ushbu shartlarni o'qiganingizni, tushunganingizni va ularga rioya qilishga roziligingizni tasdiqlaysiz.",
       sections: [
         {
           title: "Kirish",
           summary: "Ushbu shartlar siz va Funduz o'rtasidagi kelishuvdir.",
           content: [
             "Funduz platformasiga xush kelibsiz. Bizning veb-saytimiz va xizmatlarimizdan foydalanish orqali siz Funduz bilan qonuniy shartnomaga kirishasiz. Ushbu foydalanish shartlari sizning bizning kroudfanding ekotizimimizga kirishingizni tartibga soladi.",
-            "Muhim: Ro'yxatdan o'tish yoki platformadan foydalanish orqali siz ushbu shartlarni o'qiganingizni, tushunganingizni va ularga rioya qilishga roziligingizni tasdiqlaysiz."
-          ]
+            "Muhim: Ro'yxatdan o'tish yoki platformadan foydalanish orqali siz ushbu shartlarni o'qiganingizni, tushunganingizni va ularga rioya qilishga roziligingizni tasdiqlaysiz.",
+          ],
         },
         {
           title: "Ta'riflar",
           summary: "Asosiy tushunchalar va atamalar izohi.",
           content: [
-            "Ushbu hujjatda 'Funduz', 'Biz' va 'Bizning' deganda platforma kompaniyasi tushuniladi. 'Foydalanuvchi' deganda har qanday tashrif buyuruvchi yoki a'zo tushuniladi. 'Muallif' — mablag' yig'ish kampaniyasini boshlagan foydalanuvchi. 'Homiylar' — loyihalarni moliyaviy qo'llab-quvvatlovchi shaxslar."
-          ]
+            "Ushbu hujjatda 'Funduz', 'Biz' va 'Bizning' deganda platforma kompaniyasi tushuniladi. 'Foydalanuvchi' deganda har qanday tashrif buyuruvchi yoki a'zo tushuniladi. 'Muallif' — mablag' yig'ish kampaniyasini boshlagan foydalanuvchi. 'Homiylar' — loyihalarni moliyaviy qo'llab-quvvatlovchi shaxslar.",
+          ],
         },
         {
           title: "Muvofiqlik",
           summary: "Platformadan foydalanish uchun yosh chegarasi.",
           content: [
-            "Funduzdan foydalanish uchun siz kamida 18 yoshga to'lgan bo'lishingiz kerak. Agar siz platformadan kompaniya nomidan foydalanayotgan bo'lsangiz, siz ushbu tashkilotni ushbu Shartlar bilan bog'lash vakolatiga ega ekanligingizni bildirasiz."
-          ]
+            "Funduzdan foydalanish uchun siz kamida 18 yoshga to'lgan bo'lishingiz kerak. Agar siz platformadan kompaniya nomidan foydalanayotgan bo'lsangiz, siz ushbu tashkilotni ushbu Shartlar bilan bog'lash vakolatiga ega ekanligingizni bildirasiz.",
+          ],
         },
         {
           title: "Foydalanuvchi hisoblari",
           summary: "Hisobingiz xavfsizligi sizning javobgarligingizda.",
           content: [
-            "Siz hisob ma'lumotlaringizning maxfiyligini saqlash uchun javobgarsiz. Hisobingiz ostidagi barcha harakatlar sizning javobgarligingizda bo'ladi. Biz hamjamiyat standartlarimizni buzgan hisoblarni to'xtatib turish yoki bekor qilish huquqini saqlab qolamiz."
-          ]
+            "Siz hisob ma'lumotlaringizning maxfiyligini saqlash uchun javobgarsiz. Hisobingiz ostidagi barcha harakatlar sizning javobgarligingizda bo'ladi. Biz hamjamiyat standartlarimizni buzgan hisoblarni to'xtatib turish yoki bekor qilish huquqini saqlab qolamiz.",
+          ],
         },
         {
           title: "Loyiha yaratish",
           summary: "Mualliflar uchun asosiy qoidalar.",
           content: [
-            "Loyiha mualliflari o'z maqsadlari haqida halol, aniq va to'liq ma'lumot berishlari shart. Chalg'ituvchi kampaniyalar qat'iyan man etiladi. Siz intellektual mulkingizga egalik huquqini saqlab qolasiz, ammo Funduzga loyihangizni reklama maqsadida namoyish etishga ruxsat berasiz."
-          ]
+            "Loyiha mualliflari o'z maqsadlari haqida halol, aniq va to'liq ma'lumot berishlari shart. Chalg'ituvchi kampaniyalar qat'iyan man etiladi. Siz intellektual mulkingizga egalik huquqini saqlab qolasiz, ammo Funduzga loyihangizni reklama maqsadida namoyish etishga ruxsat berasiz.",
+          ],
         },
         {
           title: "Loyihani qo'llab-quvvatlash",
           summary: "Homiylik va mukofotlar haqida.",
           content: [
-            "Loyihani qo'llab-quvvatlash — bu yordam ifodasidir, ulush sotib olish yoki oddiy chakana savdo tranzaksiyasi emas. Mualliflar mukofotlarni yetkazib berish uchun barcha choralarni ko'rishlari shart bo'lsa-da, Funduz loyiha natijalarini kafolatlamaydi."
-          ]
+            "Loyihani qo'llab-quvvatlash — bu yordam ifodasidir, ulush sotib olish yoki oddiy chakana savdo tranzaksiyasi emas. Mualliflar mukofotlarni yetkazib berish uchun barcha choralarni ko'rishlari shart bo'lsa-da, Funduz loyiha natijalarini kafolatlamaydi.",
+          ],
         },
         {
           title: "To'lovlar va komissiyalar",
           summary: "Platforma va bank komissiyalari miqdori.",
           content: [
-            "Hisob yaratish bepul. Funduz muvaffaqiyatli moliyalashtirilgan loyihalardan 5% miqdorida platforma komissiyasi oladi. To'lov provayderlari (Payme, Click) qo'shimcha tranzaksiya komissiyalarini olishlari mumkin."
-          ]
+            "Hisob yaratish bepul. Funduz muvaffaqiyatli moliyalashtirilgan loyihalardan 5% miqdorida platforma komissiyasi oladi. To'lov provayderlari (Payme, Click) qo'shimcha tranzaksiya komissiyalarini olishlari mumkin.",
+          ],
         },
         {
           title: "Hammasi yoki hech narsa modeli",
           summary: "Loyiha yig'ilmasa mablag'lar olinmaydi.",
           content: [
-            "Funduz 'hammasi yoki hech narsa' modeli asosida ishlaydi. Homiylardan faqat loyiha belgilangan vaqt ichida 100% moliyaviy maqsadiga erishgandagina mablag' yechib olinadi. Maqsadga erishilmasa, hech qanday mablag' olinmaydi."
-          ]
+            "Funduz 'hammasi yoki hech narsa' modeli asosida ishlaydi. Homiylardan faqat loyiha belgilangan vaqt ichida 100% moliyaviy maqsadiga erishgandagina mablag' yechib olinadi. Maqsadga erishilmasa, hech qanday mablag' olinmaydi.",
+          ],
         },
         {
           title: "Qaytarishlar",
           summary: "Mablag'larni qaytarish shartlari.",
           content: [
-            "Loyiha muvaffaqiyatli moliyalashtirilib, mablag'lar Muallifga o'tkazilgandan so'ng, Funduz mablag'larni qaytarib bermaydi. Barcha qaytarib berish bo'yicha so'rovlar bevosita Loyiha Muallifiga yuborilishi kerak."
-          ]
+            "Loyiha muvaffaqiyatli moliyalashtirilib, mablag'lar Muallifga o'tkazilgandan so'ng, Funduz mablag'larni qaytarib bermaydi. Barcha qaytarib berish bo'yicha so'rovlar bevosita Loyiha Muallifiga yuborilishi kerak.",
+          ],
         },
         {
           title: "Taqiqlangan xatti-harakatlar",
           summary: "Nimalar qilish qat'iyan man etiladi.",
           content: [
-            "Foydalanuvchilar Funduzdan noqonuniy harakatlar, haqorat qilish, spam yuborish yoki boshqalarning intellektual mulkini buzish uchun foydalana olmaydilar. Ushbu qoidalarni buzish hisobingizning darhol to'xtatilishiga olib keladi."
-          ]
+            "Foydalanuvchilar Funduzdan noqonuniy harakatlar, haqorat qilish, spam yuborish yoki boshqalarning intellektual mulkini buzish uchun foydalana olmaydilar. Ushbu qoidalarni buzish hisobingizning darhol to'xtatilishiga olib keladi.",
+          ],
         },
         {
           title: "Intellektual mulk",
           summary: "Mualliflik huquqlarini himoya qilish.",
           content: [
-            "Funduz nomi, logotipi va dizayn elementlari mualliflik huquqi va savdo belgisi qonunlari bilan himoyalangan. Siz bizning brendingizdan yozma ruxsatsiz foydalana olmaysiz."
-          ]
+            "Funduz nomi, logotipi va dizayn elementlari mualliflik huquqi va savdo belgisi qonunlari bilan himoyalangan. Siz bizning brendingizdan yozma ruxsatsiz foydalana olmaysiz.",
+          ],
         },
         {
           title: "Nizolar",
           summary: "Muammolarni hal qilish tartibi.",
           content: [
-            "Har qanday huquqiy nizolar O'zbekiston Respublikasi qonunchiligi asosida hal qilinadi. Biz sudga murojaat qilishdan oldin nizolarni muzokaralar yo'li bilan hal qilishni tavsiya etamiz."
-          ]
+            "Har qanday huquqiy nizolar O'zbekiston Respublikasi qonunchiligi asosida hal qilinadi. Biz sudga murojaat qilishdan oldin nizolarni muzokaralar yo'li bilan hal qilishni tavsiya etamiz.",
+          ],
         },
         {
           title: "Javobgarlik",
           summary: "Funduz javobgarligining chegaralari.",
           content: [
-            "Funduz platformadan foydalanish natijasida yuzaga keladigan har qanday zarar uchun javobgar emas. Biz xizmatni 'boricha' (as is) tamoyili asosida, hech qanday kafolatlarsiz taqdim etamiz."
-          ]
+            "Funduz platformadan foydalanish natijasida yuzaga keladigan har qanday zarar uchun javobgar emas. Biz xizmatni 'boricha' (as is) tamoyili asosida, hech qanday kafolatlarsiz taqdim etamiz.",
+          ],
         },
         {
           title: "O'zgarishlar",
           summary: "Shartlarning yangilanishi haqida.",
           content: [
-            "Biz ushbu shartlarni vaqti-vaqti bilan yangilab turishimiz mumkin. Muhim o'zgarishlar haqida foydalanuvchilarni bildirishnoma orqali xabardor qilamiz. O'zgarishlardan keyin foydalanishni davom ettirish — bu ularga rozilikni bildiradi."
-          ]
+            "Biz ushbu shartlarni vaqti-vaqti bilan yangilab turishimiz mumkin. Muhim o'zgarishlar haqida foydalanuvchilarni bildirishnoma orqali xabardor qilamiz. O'zgarishlardan keyin foydalanishni davom ettirish — bu ularga rozilikni bildiradi.",
+          ],
         },
         {
           title: "Bog'lanish",
           summary: "Biz bilan bog'lanish usullari.",
           content: [
-            "Agar sizda ushbu Shartlar bo'yicha savollaringiz bo'lsa, iltimos, bizning yuridik jamoamizga legal@funduz.com manzili orqali murojaat qiling."
-          ]
-        }
-      ]
+            "Agar sizda ushbu Shartlar bo'yicha savollaringiz bo'lsa, iltimos, bizning yuridik jamoamizga legal@funduz.com manzili orqali murojaat qiling.",
+          ],
+        },
+      ],
     },
     privacy: {
       badge: "Xavfsizlik va Maxfiylik",
@@ -745,14 +1034,15 @@ const messages = {
       last_updated_date: "14-Aprel, 2024",
       toc: "Mundarija",
       footer_title: "Maxfiyligingiz bo'yicha savollar bormi?",
-      footer_desc: "Bizning maxfiylik bo'yicha maxsus jamoamiz sizga huquqlaringiz va ma'lumotlaringizni himoya qilishda yordam berishga tayyor.",
+      footer_desc:
+        "Bizning maxfiylik bo'yicha maxsus jamoamiz sizga huquqlaringiz va ma'lumotlaringizni himoya qilishda yordam berishga tayyor.",
       footer_link: "So'rov yuborish",
       download_pdf: "PDF yuklab olish",
       cards: [
         { title: "Ma'lumotlarni sotmaymiz", icon: "shield" },
         { title: "Xavfsiz to'lovlar", icon: "lock" },
         { title: "Hisobni boshqarish", icon: "user" },
-        { title: "Qonuniy muvofiqlik", icon: "globe" }
+        { title: "Qonuniy muvofiqlik", icon: "globe" },
       ],
       sections: [
         {
@@ -760,8 +1050,8 @@ const messages = {
           summary: "Profil yaratishda yig'iladigan shaxsiy ma'lumotlar.",
           content: [
             "Siz Funduz platformasida profil yaratganingizda, biz sizning ismingiz, elektron pochta manzilingiz va mukofotlarni yetkazib berish uchun pochta manzilingiz kabi shaxsiy identifikatsiya ma'lumotlarini to'playmiz.",
-            "Loyiha mualliflari uchun biz global KYC (Mijozingizni biling) qoidalariga muvofiq mablag' o'tkazmalarini amalga oshirish uchun shaxsni tasdiqlovchi hujjatlar va moliyaviy ma'lumotlarni ham yig'amiz."
-          ]
+            "Loyiha mualliflari uchun biz global KYC (Mijozingizni biling) qoidalariga muvofiq mablag' o'tkazmalarini amalga oshirish uchun shaxsni tasdiqlovchi hujjatlar va moliyaviy ma'lumotlarni ham yig'amiz.",
+          ],
         },
         {
           title: "Ulardan qanday foydalanamiz",
@@ -770,36 +1060,36 @@ const messages = {
             "Biz ma'lumotlardan quyidagilar uchun foydalanamiz:",
             "• Hissalaringizni qayta ishlash va mukofotlarni ta'minlash.",
             "• Siz qo'llab-quvvatlagan loyihalar asosida yangiliklar tasmasini shaxsiylashtirish.",
-            "• Kampaniya yangiliklari va xavfsizlik bildirishnomalarini yuborish."
-          ]
+            "• Kampaniya yangiliklari va xavfsizlik bildirishnomalarini yuborish.",
+          ],
         },
         {
           title: "Ma'lumotlarni almashish",
           summary: "Uchinchi tomonlar bilan hamkorlik qoidalari.",
           content: [
-            "Biz sizning ismingiz va elektron pochtangizni siz qo'llab-quvvatlagan loyiha mualliflariga, ular mukofotlarni yetkazib berishlari uchun taqdim etamiz. Biz hech qachon shaxsiy ma'lumotlaringizni uchinchi tomon reklama beruvchilariga sotmaymiz."
-          ]
+            "Biz sizning ismingiz va elektron pochtangizni siz qo'llab-quvvatlagan loyiha mualliflariga, ular mukofotlarni yetkazib berishlari uchun taqdim etamiz. Biz hech qachon shaxsiy ma'lumotlaringizni uchinchi tomon reklama beruvchilariga sotmaymiz.",
+          ],
         },
         {
           title: "Cookie fayllari",
           summary: "Brauzer tajribasini yaxshilash texnologiyalari.",
           content: [
-            "Biz sizning tizimga kirganingizni saqlab qolish uchun texnik cookie-fayllardan va afzalliklaringizni eslab qolish uchun funksional cookie-fayllardan foydalanamiz. Analitik cookie-fayllar faqat sizning roziligingiz bilan faollashtiriladi."
-          ]
+            "Biz sizning tizimga kirganingizni saqlab qolish uchun texnik cookie-fayllardan va afzalliklaringizni eslab qolish uchun funksional cookie-fayllardan foydalanamiz. Analitik cookie-fayllar faqat sizning roziligingiz bilan faollashtiriladi.",
+          ],
         },
         {
           title: "Ma'lumotlarni saqlash",
           summary: "Ma'lumotlar qancha muddat saqlanadi.",
           content: [
-            "Biz sizning ma'lumotlaringizni hisobingiz faol bo'lgan muddatda saqlaymiz. Agar hisobingizni o'chirishga qaror qilsangiz, biz qonuniy yoki moliyaviy hisobot majburiyatlari uchun zarur bo'lgan ba'zi ma'lumotlarni saqlab qolishimiz mumkin."
-          ]
+            "Biz sizning ma'lumotlaringizni hisobingiz faol bo'lgan muddatda saqlaymiz. Agar hisobingizni o'chirishga qaror qilsangiz, biz qonuniy yoki moliyaviy hisobot majburiyatlari uchun zarur bo'lgan ba'zi ma'lumotlarni saqlab qolishimiz mumkin.",
+          ],
         },
         {
           title: "Xavfsizlik",
           summary: "Sanoat standartidagi himoya choralari.",
           content: [
-            "Barcha tranzaksiya ma'lumotlari sanoat standarti bo'lgan TLS yordamida shifrlanadi. Biz shaxsiy ma'lumotlarni ruxsatsiz kirishdan himoyalangan xavfsiz serverlarda saqlaymiz."
-          ]
+            "Barcha tranzaksiya ma'lumotlari sanoat standarti bo'lgan TLS yordamida shifrlanadi. Biz shaxsiy ma'lumotlarni ruxsatsiz kirishdan himoyalangan xavfsiz serverlarda saqlaymiz.",
+          ],
         },
         {
           title: "Sizning huquqlaringiz",
@@ -809,38 +1099,38 @@ const messages = {
             "• Ma'lumotlarga kirish va ularni ko'chirish huquqi.",
             "• Unutilish (o'chirish) huquqi.",
             "• Xatolarni tuzatish huquqi.",
-            "• Qayta ishlashga e'tiroz bildirish huquqi."
-          ]
+            "• Qayta ishlashga e'tiroz bildirish huquqi.",
+          ],
         },
         {
           title: "Bolalar maxfiyligi",
           summary: "Voyaga yetmaganlar ma'lumotlarini himoya qilish.",
           content: [
-            "Bizning xizmatlarimiz 18 yoshdan kichik shaxslar uchun mo'ljallanmagan. Biz bila turib voyaga yetmaganlardan ma'lumot to'plamaymiz."
-          ]
+            "Bizning xizmatlarimiz 18 yoshdan kichik shaxslar uchun mo'ljallanmagan. Biz bila turib voyaga yetmaganlardan ma'lumot to'plamaymiz.",
+          ],
         },
         {
           title: "Xalqaro o'tkazmalar",
           summary: "Ma'lumotlarning chegarasiz himoyasi.",
           content: [
-            "Platformadan foydalanish orqali siz ma'lumotlaringiz biz faoliyat yuritadigan mamlakatlar o'rtasida o'tkazilishiga rozilik berasiz, bunda himoya darajasi bir xil darajada saqlanadi."
-          ]
+            "Platformadan foydalanish orqali siz ma'lumotlaringiz biz faoliyat yuritadigan mamlakatlar o'rtasida o'tkazilishiga rozilik berasiz, bunda himoya darajasi bir xil darajada saqlanadi.",
+          ],
         },
         {
           title: "O'zgarishlar",
           summary: "Siyosat yangilanishi haqida ogohlantirishlar.",
           content: [
-            "Biz ushbu siyosatni vaqti-vaqti bilan yangilab turamiz. Muhim o'zgarishlar haqida ro'yxatdan o'tgan foydalanuvchilarga elektron pochta orqali xabar beriladi."
-          ]
+            "Biz ushbu siyosatni vaqti-vaqti bilan yangilab turamiz. Muhim o'zgarishlar haqida ro'yxatdan o'tgan foydalanuvchilarga elektron pochta orqali xabar beriladi.",
+          ],
         },
         {
           title: "Bog'lanish",
           summary: "Biz bilan muloqot qilish usullari.",
           content: [
-            "Maxfiylik bo'yicha har qanday savollar uchun privacy@funduz.com manzili orqali biz bilan bog'laning."
-          ]
-        }
-      ]
+            "Maxfiylik bo'yicha har qanday savollar uchun privacy@funduz.com manzili orqali biz bilan bog'laning.",
+          ],
+        },
+      ],
     },
     error404: {
       badge: "Xatolik 404",
@@ -850,7 +1140,7 @@ const messages = {
       explore: "Loyihalarni ko'rish",
       contact: "Yordam xizmati",
       trending_title: "Buning o'rniga ushbu trenddagi loyihalarni ko'ring",
-      view_all: "Barchasini ko'rish"
+      view_all: "Barchasini ko'rish",
     },
     trends: {
       title: "Texnologiya",
@@ -858,7 +1148,7 @@ const messages = {
       stats: {
         active: "faol loyiha",
         backers: "homiylar",
-        funded: "jami to'plandi"
+        funded: "jami to'plandi",
       },
       chips: ["AI & Robototexnika", "CleanTech", "SaaS", "Hardware"],
       filters: ["Barchasi", "Trenddagilar", "Yangi", "Deyarli to'plandi", "Yaqinda tugaydi"],
@@ -869,16 +1159,16 @@ const messages = {
         category: "SUN'IY INTELLEKT",
         title: "NeuralLink: Inson-mashina interfeysining yangi bosqichi",
         desc: "Insonlarga kelajakdagi AI yutuqlari bilan raqobatlashishga yordam beruvchi past kechikishli va yuqori o'tkazuvchanlikka ega miya-kompyuter interfeyslarini ishlab chiqish.",
-        back_btn: "Loyihani qo'llab-quvvatlash"
+        back_btn: "Loyihani qo'llab-quvvatlash",
       },
       upcoming_title: "Kelajak trendlari",
       explore_worlds: "Boshqa dunyolarni kashf eting",
       cta: {
         title: "Texnologiya sohasida g'oyangiz bormi?",
         desc: "Loyihangizni Funduz-da ishga tushiring va innovatsiyalar kuchiga ishonadigan hamjamiyatning bir qismiga aylaning.",
-        btn: "Loyiha boshlash"
-      }
-    }
+        btn: "Loyiha boshlash",
+      },
+    },
   },
   ru: {
     nav: {
@@ -900,59 +1190,60 @@ const messages = {
       badge: "ПУТЕВОДИТЕЛЬ ПО ПЛАТФОРМЕ",
       title_start: "Как работает",
       title_end: "Funduz?",
-      subtitle: "Воплощайте идеи в реальность или поддерживайте проекты, которые вам небезразличны. Мы создали пространство для роста инноваций.",
+      subtitle:
+        "Воплощайте идеи в реальность или поддерживайте проекты, которые вам небезразличны. Мы создали пространство для роста инноваций.",
       btn_authors: "Для авторов",
       btn_sponsors: "Для спонсоров",
       steps_prefix: "ШАГ",
       steps: [
         {
           title: "Создайте проект",
-          desc: "Расскажите свою историю, покажите прототипы и установите финансовую цель для реализации."
+          desc: "Расскажите свою историю, покажите прототипы и установите финансовую цель для реализации.",
         },
         {
           title: "Поделитесь",
-          desc: "Распространите информацию среди друзей, семьи и вашего сообщества через соцсети."
+          desc: "Распространите информацию среди друзей, семьи и вашего сообщества через соцсети.",
         },
         {
           title: "Соберите средства",
-          desc: "Получайте поддержку от спонсоров со всего мира, которые верят в вашу идею."
+          desc: "Получайте поддержку от спонсоров со всего мира, которые верят в вашу идею.",
         },
         {
           title: "Воплотите идею",
-          desc: "Реализуйте проект, держите спонсоров в курсе и отправьте им заслуженные вознаграждения."
-        }
+          desc: "Реализуйте проект, держите спонсоров в курсе и отправьте им заслуженные вознаграждения.",
+        },
       ],
       steps_sponsors: [
         {
           title: "Выберите проект",
-          desc: "Найдите инновационные идеи, которые вам откликаются и которые вы считаете полезными для общества."
+          desc: "Найдите инновационные идеи, которые вам откликаются и которые вы считаете полезными для общества.",
         },
         {
           title: "Выберите награду",
-          desc: "Поддержите проект просто так или выберите один из интересных подарков, подготовленных авторами."
+          desc: "Поддержите проект просто так или выберите один из интересных подарков, подготовленных авторами.",
         },
         {
           title: "Сделайте вклад",
-          desc: "Безопасно и быстро переведите средства через современные платежные системы."
+          desc: "Безопасно и быстро переведите средства через современные платежные системы.",
         },
         {
           title: "Следите за ростом",
-          desc: "Наблюдайте за реализацией проекта, получайте новости и заберите свою заслуженную награду."
-        }
+          desc: "Наблюдайте за реализацией проекта, получайте новости и заберите свою заслуженную награду.",
+        },
       ],
       features: {
         transparency: {
           title: "Прозрачность на каждом этапе",
-          desc: "Мы верим, что доверие — это фундамент краудфандинга. Funduz обеспечивает безопасность транзакций и прозрачность коммуникации."
+          desc: "Мы верим, что доверие — это фундамент краудфандинга. Funduz обеспечивает безопасность транзакций и прозрачность коммуникации.",
         },
         security: {
           title: "Безопасность",
-          desc: "Ваши средства и данные защищены банковскими протоколами шифрования."
+          desc: "Ваши средства и данные защищены банковскими протоколами шифрования.",
         },
         community: {
           title: "Сильное сообщество",
-          desc: "Доступ к тысячам активных спонсоров, готовых поддержать инновационные идеи."
-        }
+          desc: "Доступ к тысячам активных спонсоров, готовых поддержать инновационные идеи.",
+        },
       },
       faq: {
         title: "Часто задаваемые вопросы",
@@ -960,23 +1251,23 @@ const messages = {
         items: [
           {
             q: "Что если я не соберу нужную сумму?",
-            a: "Мы используем модель 'Всё или ничего'. Если цель не достигнута в срок, средства в полном объеме возвращаются спонсорам автоматически."
+            a: "Мы используем модель 'Всё или ничего'. Если цель не достигнута в срок, средства в полном объеме возвращаются спонсорам автоматически.",
           },
           {
             q: "Как я получу свои деньги?",
-            a: "После успешного завершения кампании и прохождения финальной проверки, средства переводятся на ваш верифицированный банковский счет за вычетом комиссии платформы (5%)."
+            a: "После успешного завершения кампании и прохождения финальной проверки, средства переводятся на ваш верифицированный банковский счет за вычетом комиссии платформы (5%).",
           },
           {
             q: "Безопасность ли это?",
-            a: "Да, мы используем современные методы шифрования и проверенные платежные системы. Все аккаунты проходят процедуру KYC для предотвращения мошенничества."
-          }
-        ]
+            a: "Да, мы используем современные методы шифрования и проверенные платежные системы. Все аккаунты проходят процедуру KYC для предотвращения мошенничества.",
+          },
+        ],
       },
       cta: {
         title: "Готовы начать свой путь?",
         btn_create: "Создать проект",
-        btn_projects: "Смотреть проекты"
-      }
+        btn_projects: "Смотреть проекты",
+      },
     },
     search: {
       results_overline: "РЕЗУЛЬТАТЫ ПОИСКА",
@@ -989,13 +1280,13 @@ const messages = {
         all: "Все",
         projects: "Проекты",
         creators: "Авторы",
-        categories: "Категории"
+        categories: "Категории",
       },
       sort_by: "Сортировка:",
       sort: {
         relevant: "По релевантности",
         newest: "Сначала новые",
-        popular: "Сначала популярные"
+        popular: "Сначала популярные",
       },
       cat_all: "Все категории",
       cats: {
@@ -1004,7 +1295,7 @@ const messages = {
         eco: "Экология",
         innovation: "Инновации",
         urbanism: "Урбанистика",
-        education: "Образование"
+        education: "Образование",
       },
       matched_categories: "Подходящие категории",
       projects_found: "проектов найдено",
@@ -1014,15 +1305,16 @@ const messages = {
       stats: {
         projects: "ПРОЕКТЫ",
         raised: "СОБРАНО",
-        backers: "СПОНСОРЫ"
+        backers: "СПОНСОРЫ",
       },
       empty_filter_title: "Нет результатов по вашему фильтру",
-      empty_filter_desc: "Мы не смогли найти дополнительные проекты, соответствующие вашему запросу. Попробуйте расширить поиск или изучить популярные темы ниже.",
+      empty_filter_desc:
+        "Мы не смогли найти дополнительные проекты, соответствующие вашему запросу. Попробуйте расширить поиск или изучить популярные темы ниже.",
       empty_chips: {
         ai: "Искусственный интеллект",
         digital_art: "Цифровое искусство",
-        micro_finance: "Микрофинансирование"
-      }
+        micro_finance: "Микрофинансирование",
+      },
     },
     explore: {
       title: "Все проекты",
@@ -1034,12 +1326,12 @@ const messages = {
         art: "Искусство",
         social: "Общество",
         edu: "Образование",
-        eco: "Экология"
+        eco: "Экология",
       },
       sort: {
         newest: "Самые новые",
         popular: "Популярные",
-        ending: "Скоро заканчиваются"
+        ending: "Скоро заканчиваются",
       },
       load_more: "Показать еще",
       empty_title: "Проектов пока нет",
@@ -1055,7 +1347,7 @@ const messages = {
           progress: 80,
           days: 12,
           donors: 845,
-          img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
+          img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800",
         },
         {
           id: 2,
@@ -1067,7 +1359,7 @@ const messages = {
           progress: 45,
           days: 24,
           donors: 312,
-          img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800"
+          img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
         },
         {
           id: 3,
@@ -1079,7 +1371,7 @@ const messages = {
           progress: 92,
           days: 3,
           donors: 156,
-          img: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=800"
+          img: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=800",
         },
         {
           id: 4,
@@ -1091,7 +1383,7 @@ const messages = {
           progress: 50,
           days: 15,
           donors: 89,
-          img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800"
+          img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800",
         },
         {
           id: 5,
@@ -1103,7 +1395,7 @@ const messages = {
           progress: 60,
           days: 8,
           donors: 124,
-          img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800"
+          img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800",
         },
         {
           id: 6,
@@ -1115,16 +1407,17 @@ const messages = {
           progress: 79,
           days: 20,
           donors: 432,
-          img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800"
-        }
-      ]
+          img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800",
+        },
+      ],
     },
     hero: {
       badge: "Первая краудфандинговая платформа Узбекистана",
       title_1: "Финансируем",
       title_2: "добро",
       title_3: "вместе",
-      description: "Поддерживайте социально значимые проекты через Funduz или собирайте инвестиции для реализации своей идеи.",
+      description:
+        "Поддерживайте социально значимые проекты через Funduz или собирайте инвестиции для реализации своей идеи.",
       btn_contribute: "Сделать вклад сейчас",
       btn_create: "Создать проект",
       success_title: "Проект «Oromgoh» собрал нужную сумму за 2 недели",
@@ -1138,56 +1431,58 @@ const messages = {
     about: {
       hero_title_start: "Мы строим будущее",
       hero_title_highlight: "краудфандинга в Узбекистане",
-      hero_desc: "Funduz помогает узбекским авторам воплощать идеи в жизнь, объединяя их с сообществом, которое верит в местные инновации и сохранение культурного наследия.",
+      hero_desc:
+        "Funduz помогает узбекским авторам воплощать идеи в жизнь, объединяя их с сообществом, которое верит в местные инновации и сохранение культурного наследия.",
       mission_label: "Наша миссия",
-      mission_text: "Демократизировать доступ к капиталу для каждого мечтателя в Узбекистане. От шумных мастерских Самарканда до технопарков Ташкента — мы предоставляем платформу, инструменты и сообщество, необходимые для превращения местного видения в глобальную реальность.",
+      mission_text:
+        "Демократизировать доступ к капиталу для каждого мечтателя в Узбекистане. От шумных мастерских Самарканда до технопарков Ташкента — мы предоставляем платформу, инструменты и сообщество, необходимые для превращения местного видения в глобальную реальность.",
       mission_quote: "Каждый великий проект начинается с того, кто в него верит.",
       story_title: "Наша история",
       timeline: [
         {
           date: "Январь 2024",
           title: "Зарождение идеи",
-          desc: "Funduz был основан в Ташкенте группой дизайнеров и предпринимателей, которые увидели пробел в местной креативной экономике."
+          desc: "Funduz был основан в Ташкенте группой дизайнеров и предпринимателей, которые увидели пробел в местной креативной экономике.",
         },
         {
           date: "Март 2025",
           title: "Национальное расширение",
-          desc: "Открытие региональных офисов в Самарканде, Бухаре и Хиве для поддержки традиционных ремесленников и проектов местного наследия."
+          desc: "Открытие региональных офисов в Самарканде, Бухаре и Хиве для поддержки традиционных ремесленников и проектов местного наследия.",
         },
         {
           date: "Vision 2026",
           title: "Центральноазиатский хаб",
-          desc: "Стремление стать основным катализатором инноваций во всем центральноазиатском регионе."
-        }
+          desc: "Стремление стать основным катализатором инноваций во всем центральноазиатском регионе.",
+        },
       ],
       stats: [
         { value: "250+", label: "Завершено проектов" },
         { value: "12,500+", label: "Бэкеров" },
         { value: "15B", label: "UZS собрано" },
-        { value: "14", label: "Городов" }
+        { value: "14", label: "Городов" },
       ],
       believes_title: "Во что мы верим",
       believes: [
         {
           title: "Доверие",
           desc: "Мы ставим прозрачность и подотчетность во главу угла как для авторов, так и для бэкеров.",
-          icon: "🛡️"
+          icon: "🛡️",
         },
         {
           title: "Сообщество",
           desc: "Успех — это не только деньги; это люди, которые присоединяются к вашему пути.",
-          icon: "👥"
+          icon: "👥",
         },
         {
           title: "Инновации",
           desc: "Поддержка идей, которые расширяют границы и решают местные проблемы.",
-          icon: "💡"
+          icon: "💡",
         },
         {
           title: "Сначала местное",
           desc: "Празднование уникальной культурной самобытности и талантов Узбекистана.",
-          icon: "📍"
-        }
+          icon: "📍",
+        },
       ],
       cta_title: "Готовы воплотить свою идею в жизнь?",
       cta_btn_start: "Начать проект",
@@ -1197,9 +1492,9 @@ const messages = {
         { name: "Бахтиёр Алиев", role: "Основатель и CEO" },
         { name: "Нигора Жураева", role: "Руководитель проектов" },
         { name: "Азизбек Кадиров", role: "CTO" },
-        { name: "Зулайхо Саидова", role: "Community Lead" }
+        { name: "Зулайхо Саидова", role: "Community Lead" },
       ],
-      partners_title: "Наши партнеры"
+      partners_title: "Наши партнеры",
     },
     projects: {
       title: "Избранные проекты",
@@ -1220,7 +1515,8 @@ const messages = {
     },
     cta: {
       title: "Превратите свою идею в реальность",
-      subtitle: "Соберите необходимый капитал для вашего бизнеса, социального проекта или творчества вместе с сообществом Funduz.",
+      subtitle:
+        "Соберите необходимый капитал для вашего бизнеса, социального проекта или творчества вместе с сообществом Funduz.",
       btn_start: "Начать проект",
       btn_expert: "Связаться со специалистом",
       feature1: "Простое управление",
@@ -1234,6 +1530,7 @@ const messages = {
       p_tech: "Технологии",
       p_art: "Искусство",
       p_social: "Социальная помощь",
+      p_articles: "Статьи",
       company_title: "Компания",
       c_about: "О нас",
       c_contact: "Контакты",
@@ -1245,6 +1542,175 @@ const messages = {
       social_tg: "Telegram",
       social_inst: "Instagram",
       social_fb: "Facebook",
+    },
+    articles: {
+      title: "Истории, советы и новости от сообщества Funduz",
+      subtitle: "Все, что вам нужно знать о краудфандинге в Узбекистане",
+      search_placeholder: "Поиск статей...",
+      read_more: "Читать далее",
+      featured: {
+        badge1: "РЕКОМЕНДУЕМОЕ",
+        badge2: "ИСТОРИЯ УСПЕХА",
+        title:
+          "Как 'Zamon' собрал $50,000 на образование в сфере возобновляемой энергии за 30 дней",
+        desc: "Узнайте о низовой стратегии, использованной командой Zamon для мобилизации местных сообществ в Самарканде и Бухаре...",
+        author: "Рустам Алимов",
+        read_time: "5 минут чтения",
+        btn: "Читать историю",
+      },
+      categories: {
+        all: "Все статьи",
+        tips: "Советы авторам",
+        success: "Истории успеха",
+        news: "Новости сообщества",
+        updates: "Обновления",
+      },
+      list: [
+        {
+          id: 1,
+          slug: "pitch_video",
+          category: "tips",
+          category_label: "СОВЕТЫ АВТОРАМ",
+          title: "10 секретов идеального питч-видео",
+          desc: "Узнайте, как захватить внимание аудитории в первые 15 секунд видео вашей кампании...",
+          author: "Малика Саидова",
+          date: "12 Октября, 2024",
+          image:
+            "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&q=80&w=800",
+        },
+        {
+          id: 2,
+          slug: "campaign_story",
+          category: "news",
+          category_label: "НОВОСТИ СООБЩЕСТВА",
+          title: "Новое лицо социального предпринимательства",
+          desc: "Как местные стартапы в Узбекистане балансируют прибыль и социальную миссию...",
+          author: "Бекзод Умаров",
+          date: "09 Октября, 2024",
+          image:
+            "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
+        },
+        {
+          id: 3,
+          slug: "updates",
+          category: "updates",
+          category_label: "ОБНОВЛЕНИЯ ПЛАТФОРМЫ",
+          title: "Представляем Funduz Guilds",
+          desc: "Связь опытных менторов с начинающими авторами для повышения успеха проектов...",
+          author: "Елена Ким",
+          date: "05 Октября, 2024",
+          image:
+            "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800",
+        },
+      ],
+    },
+    newsletter: {
+      title: "Оставайтесь в курсе новостей Funduz",
+      subtitle:
+        "Каждый четверг получайте подборку историй успеха, советы для авторов и ранний доступ к новым проектам.",
+      placeholder: "Ваш email адрес",
+      btn: "Подписаться",
+    },
+    campaign_story: {
+      // ... (existing ru campaign_story)
+    },
+    pitch_video: {
+      badge: "КРЕАТИВ",
+      title: "10 Секретов Идеального Питч-Видео",
+      subtitle:
+        "Ваше видео — это сердце вашего проекта. Первых 10 секунд достаточно, чтобы привлечь донора или потерять его. Вот как сделать это правильно.",
+      author: {
+        name: "Малика Саидова",
+        role: "Креативный директор",
+        read_time: "8 минут чтения",
+        date: "15 Октября, 2024",
+      },
+      content_p1:
+        "В мире краудфандинга видео стоит тысячи слов. Это ваша единственная возможность установить эмоциональную связь с аудиторией, построить доверие и показать ваш продукт в реальной жизни. Многие авторы уделяют видео внимание в последний момент, но оно должно быть самым важным элементом вашей кампании.",
+      h1: "Ставьте историю на первое место",
+      p2: "Прежде чем говорить о технических характеристиках, объясните, почему ваш проект существует. Люди покупают не 'что', а 'почему'. Первые 10 секунд вашего видео должны показать проблему и заставить зрителя остаться на следующие минуты.",
+      pro_tip: {
+        title: "Pro Совет: Освещение — это всё!",
+        text: "Вам не обязательно иметь дорогую камеру, но освещение должно быть идеальным. Используйте естественный свет из окна и убедитесь, что на вашем лице нет теней.",
+      },
+      h2: "Качество звука важнее качества изображения",
+      p3: "Зрители могут простить видео низкого качества, но плохой звук — никогда. Используйте внешний микрофон или записывайтесь в очень тихом месте. Шумное видео — первый признак непрофессионального подхода.",
+      quote:
+        "Если вы не можете зажечь зрителя за 2 минуты, скорее всего, вы сами недостаточно верите в свой проект.",
+      sidebar: {
+        about: "ОБ АВТОРЕ",
+        bio: "Малика создала видео-контент для более чем 50 успешных краудфандинговых кампаний. Она эксперт в визуальном сторителлинге и психологии аудитории.",
+        follow: "Подписаться на Малику",
+        in_article: "В ЭТОЙ СТАТЬЕ",
+        sections: [
+          "Форма истории",
+          "Звук и Свет",
+          "Подготовка сценария",
+          "Искусство Call-to-Action",
+        ],
+        newsletter_title: "Креативный Фокус",
+        newsletter_desc: "Советы по визуальному контенту каждую пятницу.",
+        newsletter_btn: "Подписаться",
+      },
+      h3: "Четкий призыв к действию (CTA)",
+      p4: "Не заканчивайте видео просто так. Четко скажите зрителю, что ему нужно сделать. 'Поддержите нас сегодня' или 'Расскажите о проекте друзьям'. Видео без ясного CTA — это упущенная возможность.",
+      list1: [
+        {
+          bold: "Напишите сценарий",
+          text: "Спланируйте каждое слово, чтобы не сбиваться во время речи.",
+        },
+        {
+          bold: "Будьте настоящими",
+          text: "Не играйте роль, покажите свою истинную страсть.",
+        },
+        {
+          bold: "Будьте краткими",
+          text: "Идеальное питч-видео не должно превышать 2-3 минут.",
+        },
+      ],
+      discussion: {
+        title: "Обсуждение",
+        join_title: "Ваше видео готово?",
+        join_subtitle: "Обсудите свои идеи с Маликой и сообществом.",
+        sign_in: "Войти",
+        create_account: "Создать аккаунт",
+        reply: "Ответить",
+        comments: [
+          {
+            author: "Азамат Акромов",
+            date: "1 день назад",
+            text: "Спасибо за совет по микрофону. Какую модель порекомендуете?",
+          },
+        ],
+      },
+      keep_reading: {
+        title: "Продолжайте чтение",
+        subtitle: "Руководства для успешных стартапов",
+        view_all: "Все статьи",
+        articles: [
+          {
+            category: "СТРАТЕГИЯ",
+            title: "Архитектура кампании: Стратегия на миллион",
+            desc: "Как подготовить проект к крупному финансированию с нуля.",
+            author: "Julian Thorne",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+          },
+          {
+            category: "ДИЗАЙН",
+            title: "Секреты UI/UX, которые восхищают клиентов",
+            desc: "Как дизайн вашего продукта влияет на успех краудфандинга.",
+            author: "Сардор Умидов",
+            image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=800"
+          },
+          {
+            category: "ПСИХОЛОГИЯ",
+            title: "Почему доноры инвестируют?",
+            desc: "Анализ процесса принятия решений участниками краудфандинга.",
+            author: "Elena Rodriguez",
+            image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800"
+          }
+        ]
+      }
     },
     project_view: {
       title: "Eco-Paket: Производство первой биоразлагаемой упаковки в Узбекистане",
@@ -1263,23 +1729,29 @@ const messages = {
       reward_select: "Выбрать",
       reward_1_title: "Благодарность",
       reward_1_price: "100,000 UZS",
-      reward_1_desc: "Электронное благодарственное письмо и ваше имя в списке спонсоров на сайте проекта.",
+      reward_1_desc:
+        "Электронное благодарственное письмо и ваше имя в списке спонсоров на сайте проекта.",
       reward_2_title: "Eco-Набор",
       reward_2_price: "500,000 UZS",
-      reward_2_desc: "Набор из 100 био-пакетов и брендированная эко-сумка (tote bag). Бесплатная доставка по Узбекистану.",
+      reward_2_desc:
+        "Набор из 100 био-пакетов и брендированная эко-сумка (tote bag). Бесплатная доставка по Узбекистану.",
       reward_3_title: "Спонсор-Партнер",
       reward_3_price: "2,000,000 UZS",
-      reward_3_desc: "Ваш логотип будет размещен на первой партии упаковки в качестве официального партнера.",
+      reward_3_desc:
+        "Ваш логотип будет размещен на первой партии упаковки в качестве официального партнера.",
       delivery_label: "Ожидаемая доставка:",
       reward_1_delivery: "Сентябрь, 2024",
       reward_2_delivery: "Октябрь, 2024",
       reward_3_delivery: "Октябрь, 2024",
       special_title: "Особая помощь?",
-      special_desc: "Если вы крупный инвестор или хотите обсудить особые условия партнерства, свяжитесь с нами.",
+      special_desc:
+        "Если вы крупный инвестор или хотите обсудить особые условия партнерства, свяжитесь с нами.",
       special_btn: "Связаться",
       detail_title: "Новая эра для экологии",
-      detail_text_1: "В Узбекистане ежедневно образуются миллионы тонн пластиковых отходов. Основную их часть составляют одноразовые пакеты. Наш проект Eco-Paket направлен на популяризацию упаковки из кукурузного крахмала, которая полностью разлагается за 6-12 месяцев.",
-      detail_text_2: "Собранные средства будут направлены на закупку высокотехнологичного оборудования из Китая и формирование первоначального запаса сырья. Наш проект начнет работу в Ташкенте и в дальнейшем расширится на всю республику.",
+      detail_text_1:
+        "В Узбекистане ежедневно образуются миллионы тонн пластиковых отходов. Основную их часть составляют одноразовые пакеты. Наш проект Eco-Paket направлен на популяризацию упаковки из кукурузного крахмала, которая полностью разлагается за 6-12 месяцев.",
+      detail_text_2:
+        "Собранные средства будут направлены на закупку высокотехнологичного оборудования из Китая и формирование первоначального запаса сырья. Наш проект начнет работу в Ташкенте и в дальнейшем расширится на всю республику.",
       image_caption: "Образцы биоразлагаемых пакетов нашего производства",
       benefits_title: "Почему вы должны нас поддержать?",
       benefits: [
@@ -1291,14 +1763,15 @@ const messages = {
     community: {
       badge: "СООБЩЕСТВО FUNDUZ",
       title: "Сердце нашей платформы — это люди",
-      subtitle: "Узнайте истории успеха и присоединяйтесь к нашему растущему сообществу новаторов. Вместе мы превращаем идеи в реальность.",
+      subtitle:
+        "Узнайте истории успеха и присоединяйтесь к нашему растущему сообществу новаторов. Вместе мы превращаем идеи в реальность.",
       stats: {
         collected_val: "12+ Млрд сум",
         collected_label: "СОБРАНО СРЕДСТВ",
         sponsors_val: "45,000+",
         sponsors_label: "АКТИВНЫХ СПОНСОРОВ",
         projects_val: "1,200+",
-        projects_label: "УСПЕШНЫХ ПРОЕКТОВ"
+        projects_label: "УСПЕШНЫХ ПРОЕКТОВ",
       },
       stories: {
         title: "Истории Успеха",
@@ -1309,34 +1782,28 @@ const messages = {
         items: [
           {
             title: "Эко-ферма Будущего",
-            desc: "Благодаря поддержке сообщества Funduz мы смогли запустить первую в стране вертикальную ферму."
+            desc: "Благодаря поддержке сообщества Funduz мы смогли запустить первую в стране вертикальную ферму.",
           },
           {
             title: "IT-Образование для всех",
-            desc: "Наша миссия — обучить 10,000 подростков программированию, и мы уже на полпути."
+            desc: "Наша миссия — обучить 10,000 подростков программированию, и мы уже на полпути.",
           },
           {
             title: "Центр Ремесел 'Талант'",
-            desc: "Мы восстанавливаем забытые традиции и даем работу сотням мастеров по всей стране."
-          }
-        ]
+            desc: "Мы восстанавливаем забытые традиции и даем работу сотням мастеров по всей стране.",
+          },
+        ],
       },
       sponsors_section: {
         title: "Наши Супер-Спонсоры",
         label: "СУПЕР-СПОНСОР",
-        items: [
-          "Азиз Каримов",
-          "Мадина Алиева",
-          "Рустам Саидов",
-          "Елена Ким",
-          "Сардор Умаров"
-        ]
+        items: ["Азиз Каримов", "Мадина Алиева", "Рустам Саидов", "Елена Ким", "Сардор Умаров"],
       },
       telegram: {
         title: "Присоединяйтесь к нашему Telegram-каналу",
         desc: "Будьте в курсе всех новых проектов, эксклюзивных интервью и новостей платформы.",
-        btn: "Перейти в Telegram"
-      }
+        btn: "Перейти в Telegram",
+      },
     },
     login: {
       title: "Добро пожаловать!",
@@ -1357,7 +1824,8 @@ const messages = {
       footer_text_and: " и ",
       footer_text_end: " Funduz.",
       hero_title: "Финансируем добро вместе",
-      hero_subtitle: "Маленький вклад — основа больших перемен. Поддерживайте проекты или воплощайте свои идеи в жизнь."
+      hero_subtitle:
+        "Маленький вклад — основа больших перемен. Поддерживайте проекты или воплощайте свои идеи в жизнь.",
     },
     create: {
       header_title: "Запуск нового проекта",
@@ -1377,7 +1845,7 @@ const messages = {
       tab_info: "Информация",
       tab_media: "Медиа",
       tab_rewards: "Награды",
-      media_placeholder: "Перетащите сюда фото или видео или нажмите для выбора"
+      media_placeholder: "Перетащите сюда фото или видео или нажмите для выбора",
     },
     story: {
       back: "Назад",
@@ -1386,9 +1854,12 @@ const messages = {
       author: "Азиз Каримов",
       date: "Сентябрь 2024",
       history_title: "История проекта",
-      history_p1: "Всё началось с заброшенного участка земли на окраине Ташкента. Моя идея заключалась в том, чтобы доказать: сельское хозяйство может быть технологичным, экологически чистым и экономически выгодным даже на небольших площадях.",
-      history_p2: "Первые месяцы были самыми сложными. Мы столкнулись с проблемой засоленности почвы и отсутствием стабильного полива. Но благодаря поддержке 450 спонсоров на платформе Funduz, мы смогли внедрить систему капельного орошения и восстановить плодородие земли за рекордные сроки.",
-      history_p3: "Сегодня наша ферма производит более 2 тонн органических овощей в месяц, обеспечивая свежими продуктами три района города. Это не просто бизнес — это живое доказательство силы сообщества.",
+      history_p1:
+        "Всё началось с заброшенного участка земли на окраине Ташкента. Моя идея заключалась в том, чтобы доказать: сельское хозяйство может быть технологичным, экологически чистым и экономически выгодным даже на небольших площадях.",
+      history_p2:
+        "Первые месяцы были самыми сложными. Мы столкнулись с проблемой засоленности почвы и отсутствием стабильного полива. Но благодаря поддержке 450 спонсоров на платформе Funduz, мы смогли внедрить систему капельного орошения и восстановить плодородие земли за рекордные сроки.",
+      history_p3:
+        "Сегодня наша ферма производит более 2 тонн органических овощей в месяц, обеспечивая свежими продуктами три района города. Это не просто бизнес — это живое доказательство силы сообщества.",
       funds_title: "На что пошли средства",
       funds_equip: "Оборудование",
       funds_equip_desc: "Умные датчики и автоматика",
@@ -1402,13 +1873,15 @@ const messages = {
       stats_goal: "Цель",
       stats_percent: "Процент",
       stats_sponsors: "Спонсоров поддержали",
-      quote: "\"Funduz дал нам не просто деньги, а веру в то, что наша идея важна для людей. Это начало новой эры осознанного потребления.\"",
-      similar_title: "Похожие истории"
+      quote:
+        '"Funduz дал нам не просто деньги, а веру в то, что наша идея важна для людей. Это начало новой эры осознанного потребления."',
+      similar_title: "Похожие истории",
     },
     contact: {
       badge: "Центр поддержки",
       title: "Свяжитесь с нами",
-      subtitle: "Есть вопрос или проект, которому нужен импульс? Наша команда здесь, чтобы помочь вам ориентироваться в мире кураторского краудфандинга.",
+      subtitle:
+        "Есть вопрос или проект, которому нужен импульс? Наша команда здесь, чтобы помочь вам ориентироваться в мире кураторского краудфандинга.",
       search_placeholder: "Поиск по вопросам, ключевым словам или темам...",
       cats: {
         all: "Все",
@@ -1416,59 +1889,59 @@ const messages = {
         creators: "Для авторов",
         backers: "Для спонсоров",
         payments: "Платежи и Возвраты",
-        security: "Безопасность и Доверие"
+        security: "Безопасность и Доверие",
       },
       faq: [
         {
           q: "Как я могу поддержать проект на Funduz?",
           a: "Чтобы поддержать проект, перейдите на страницу проекта, нажмите кнопку 'Внести вклад', выберите вознаграждение и произведите оплату удобным способом (Payme, Click или карта).",
-          cat: "backers"
+          cat: "backers",
         },
         {
           q: "Доступны ли возвраты, если проект не наберет сумму?",
           a: "Да, Funduz работает по принципу 'Все или ничего'. Если проект не достигает цели к установленному дедлайну, все средства автоматически возвращаются спонсорам в полном объеме без комиссий.",
-          cat: "payments"
+          cat: "payments",
         },
         {
           q: "Какие способы оплаты поддерживает Payme?",
           a: "Через Payme вы можете поддерживать проекты с помощью карт Uzcard, Humo, а также средствами с баланса вашего кошелька Payme.",
-          cat: "payments"
+          cat: "payments",
         },
         {
           q: "Как защищены мои персональные данные и информация о карте?",
           a: "Безопасность — наш главный приоритет. Funduz использует шифрование AES-256 для хранения всех данных. Для платежей мы работаем с провайдерами мирового уровня, такими как Payme и Click, чтобы ваши финансовые данные никогда не попадали на наши серверы напрямую.",
-          cat: "security"
+          cat: "security",
         },
         {
           q: "Какова комиссия платформы для авторов?",
           a: "Комиссия для авторов взимается только в случае успешного завершения проекта и составляет 5% от собранной суммы. Если проект не собрал средства, никакие комиссии не взимаются.",
-          cat: "creators"
+          cat: "creators",
         },
         {
           q: "Как я могу отслеживать свои вознаграждения?",
           a: "Вы можете следить за всеми поддержанными проектами и их статусом в личном кабинете в разделе 'Мои участия'. Также вы будете получать уведомления, когда автор проекта публикует обновления.",
-          cat: "backers"
+          cat: "backers",
         },
         {
           q: "Могу ли я изменить свой взнос (pledge) после начала проекта?",
           a: "Да, пока срок сбора средств не истек, вы можете увеличить сумму своего взноса или выбрать другое доступное вознаграждение.",
-          cat: "backers"
+          cat: "backers",
         },
         {
           q: "Как проверить личность автора?",
           a: "Все авторы на нашей платформе проходят обязательную процедуру KYC (проверка личности). У проверенных авторов на странице проекта отображается специальный знак верификации.",
-          cat: "security"
+          cat: "security",
         },
         {
           q: "Поддерживает ли Click международные кредитные карты?",
           a: "На данный момент через Click возможна оплата всеми местными картами Узбекистана (Uzcard, Humo). Мы работаем над расширением возможностей для международных карт (Visa, Mastercard).",
-          cat: "payments"
+          cat: "payments",
         },
         {
           q: "Что происходит, если проект собирает больше запланированной суммы?",
           a: "Если проект собирает более 100%, все сверхплановые средства передаются автору для дальнейшего улучшения проекта или предоставления дополнительных бонусов спонсорам.",
-          cat: "general"
-        }
+          cat: "general",
+        },
       ],
       form: {
         title: "Оставьте нам сообщение",
@@ -1483,8 +1956,8 @@ const messages = {
           general: "Общие вопросы",
           support: "Техподдержка",
           partnership: "Сотрудничество",
-          legal: "Юридические вопросы"
-        }
+          legal: "Юридические вопросы",
+        },
       },
       info: {
         title: "Контактная информация",
@@ -1495,127 +1968,129 @@ const messages = {
         address_label: "Адрес",
         address_val: "г. Ташкент, Юнусабадский район, ул. Амира Темура, 19",
         hours_label: "Часы работы",
-        hours_val: "Пн - Пт: 09:00 - 18:00"
-      }
+        hours_val: "Пн - Пт: 09:00 - 18:00",
+      },
     },
     terms: {
       badge: "Юридическая информация",
       title: "Условия использования",
       last_updated: "Последнее обновление",
       footer_title: "Остались вопросы?",
-      footer_desc: "Если у вас возникли вопросы по поводу данных условий, пожалуйста, свяжитесь с нашей службой поддержки.",
+      footer_desc:
+        "Если у вас возникли вопросы по поводу данных условий, пожалуйста, свяжитесь с нашей службой поддержки.",
       footer_link: "Связаться с нами",
       toc: "Содержание",
       download_pdf: "Скачать PDF",
-      important_note: "Важно: Нажимая кнопку «Регистрация» или используя платформу, вы подтверждаете, что прочитали, поняли и согласны соблюдать данные условия.",
+      important_note:
+        "Важно: Нажимая кнопку «Регистрация» или используя платформу, вы подтверждаете, что прочитали, поняли и согласны соблюдать данные условия.",
       sections: [
         {
           title: "Введение",
           summary: "Эти условия являются соглашением между вами и Funduz.",
           content: [
             "Добро пожаловать в Funduz. Используя наш веб-сайт и услуги, вы вступаете в юридически обязывающее соглашение с Funduz. Данные Условия использования регулируют ваш доступ к нашей экосистеме краудфандинга.",
-            "Важно: Регистрируясь или используя платформу, вы подтверждаете, что прочитали, поняли и согласны соблюдать данные условия."
-          ]
+            "Важно: Регистрируясь или используя платформу, вы подтверждаете, что прочитали, поняли и согласны соблюдать данные условия.",
+          ],
         },
         {
           title: "Определения",
           summary: "Объяснение ключевых понятий и терминов.",
           content: [
-            "В этом документе 'Funduz', 'Мы' и 'Наши' относятся к компании-платформе. 'Пользователь' — любой посетитель или участник. 'Автор проекта' — пользователь, инициирующий кампанию по сбору средств. 'Спонсоры' — пользователи, оказывающие финансовую поддержку."
-          ]
+            "В этом документе 'Funduz', 'Мы' и 'Наши' относятся к компании-платформе. 'Пользователь' — любой посетитель или участник. 'Автор проекта' — пользователь, инициирующий кампанию по сбору средств. 'Спонсоры' — пользователи, оказывающие финансовую поддержку.",
+          ],
         },
         {
           title: "Требования к пользователям",
           summary: "Возрастные ограничения для использования платформы.",
           content: [
-            "Для использования Funduz вам должно быть не менее 18 лет. Если вы используете платформу от имени компании, вы подтверждаете, что у вас есть полномочия связывать эту организацию данными Условиями."
-          ]
+            "Для использования Funduz вам должно быть не менее 18 лет. Если вы используете платформу от имени компании, вы подтверждаете, что у вас есть полномочия связывать эту организацию данными Условиями.",
+          ],
         },
         {
           title: "Учетные записи пользователей",
           summary: "Безопасность вашего аккаунта — это ваша ответственность.",
           content: [
-            "Вы несете ответственность за сохранение конфиденциальности ваших данных для входа. Вся деятельность под вашей учетной записью является вашей ответственностью. Мы оставляем за собой право приостановить или закрыть учетные записи, нарушающие стандарты нашего сообщества."
-          ]
+            "Вы несете ответственность за сохранение конфиденциальности ваших данных для входа. Вся деятельность под вашей учетной записью является вашей ответственностью. Мы оставляем за собой право приостановить или закрыть учетные записи, нарушающие стандарты нашего сообщества.",
+          ],
         },
         {
           title: "Создание проекта",
           summary: "Основные правила для авторов проектов.",
           content: [
-            "Авторы проектов обязаны предоставлять честную, ясную и полную информацию о своих целях. Вводящие в заблуждение кампании строго запрещены. Вы сохраняете право собственности на свою интеллектуальную собственность, но предоставляете Funduz лицензию на показ вашего проекта в рекламных целях."
-          ]
+            "Авторы проектов обязаны предоставлять честную, ясную и полную информацию о своих целях. Вводящие в заблуждение кампании строго запрещены. Вы сохраняете право собственности на свою интеллектуальную собственность, но предоставляете Funduz лицензию на показ вашего проекта в рекламных целях.",
+          ],
         },
         {
           title: "Поддержка проекта",
           summary: "О спонсорстве и вознаграждениях.",
           content: [
-            "Поддержка проекта — это выражение поддержки, а не покупка доли или обычная розничная транзакция. Хотя Авторы обязаны приложить все усилия для предоставления вознаграждений, Funduz не гарантирует результаты проекта."
-          ]
+            "Поддержка проекта — это выражение поддержки, а не покупка доли или обычная розничная транзакция. Хотя Авторы обязаны приложить все усилия для предоставления вознаграждений, Funduz не гарантирует результаты проекта.",
+          ],
         },
         {
           title: "Сборы и платежи",
           summary: "Размер комиссий платформы и банков.",
           content: [
-            "Создание учетной записи бесплатно. Funduz взимает комиссию платформы в размере 5% только с успешно профинансированных проектов. Платежные партнеры (Payme, Click) могут взимать дополнительные комиссии за транзакции."
-          ]
+            "Создание учетной записи бесплатно. Funduz взимает комиссию платформы в размере 5% только с успешно профинансированных проектов. Платежные партнеры (Payme, Click) могут взимать дополнительные комиссии за транзакции.",
+          ],
         },
         {
           title: "Модель 'Все или ничего'",
           summary: "Если проект не собран, средства не списываются.",
           content: [
-            "Funduz работает по модели 'все или ничего'. Со спонсоров списываются средства только в том случае, если проект достигает 100% своей финансовой цели в указанные сроки. Если цель не достигнута, средства не списываются."
-          ]
+            "Funduz работает по модели 'все или ничего'. Со спонсоров списываются средства только в том случае, если проект достигает 100% своей финансовой цели в указанные сроки. Если цель не достигнута, средства не списываются.",
+          ],
         },
         {
           title: "Возвраты",
           summary: "Условия возврата денежных средств.",
           content: [
-            "Funduz не производит возврат средств после того, как проект был успешно профинансирован и деньги были переведены Автору. Все запросы на возврат должны направляться непосредственно Автору проекта."
-          ]
+            "Funduz не производит возврат средств после того, как проект был успешно профинансирован и деньги были переведены Автору. Все запросы на возврат должны направляться непосредственно Автору проекта.",
+          ],
         },
         {
           title: "Запрещенное поведение",
           summary: "Что категорически запрещено делать на сайте.",
           content: [
-            "Пользователи не могут использовать Funduz для незаконной деятельности, домогательств, спама или нарушения чужой интеллектуальной собственности. Нарушение этих правил приведет к немедленной блокировке учетной записи."
-          ]
+            "Пользователи не могут использовать Funduz для незаконной деятельности, домогательств, спама или нарушения чужой интеллектуальной собственности. Нарушение этих правил приведет к немедленной блокировке учетной записи.",
+          ],
         },
         {
           title: "Интеллектуальная собственность",
           summary: "Защита авторских прав и брендинга.",
           content: [
-            "Название, логотип и элементы дизайна Funduz защищены законами об авторском праве и товарных знаках. Вы не можете использовать наш брендинг без предварительного письменного разрешения."
-          ]
+            "Название, логотип и элементы дизайна Funduz защищены законами об авторском праве и товарных знаках. Вы не можете использовать наш брендинг без предварительного письменного разрешения.",
+          ],
         },
         {
           title: "Споры",
           summary: "Порядок разрешения проблемных ситуаций.",
           content: [
-            "Любые юридические споры будут разрешаться в соответствии с законодательством Республики Узбекистан. Мы рекомендуем решать споры путем переговоров перед обращением в суд."
-          ]
+            "Любые юридические споры будут разрешаться в соответствии с законодательством Республики Узбекистан. Мы рекомендуем решать споры путем переговоров перед обращением в суд.",
+          ],
         },
         {
           title: "Ограничение ответственности",
           summary: "Границы ответственности Funduz.",
           content: [
-            "Funduz не несет ответственности за любые убытки, возникшие в результате использования платформы. Мы предоставляем услугу по принципу 'как есть' (as is), без каких-либо гарантий."
-          ]
+            "Funduz не несет ответственности за любые убытки, возникшие в результате использования платформы. Мы предоставляем услугу по принципу 'как есть' (as is), без каких-либо гарантий.",
+          ],
         },
         {
           title: "Изменения условий",
           summary: "Об обновлении данных правил.",
           content: [
-            "Мы можем периодически обновлять данные условия. Мы будем уведомлять пользователей о существенных изменениях. Продолжение использования платформы после изменений означает их принятие."
-          ]
+            "Мы можем периодически обновлять данные условия. Мы будем уведомлять пользователей о существенных изменениях. Продолжение использования платформы после изменений означает их принятие.",
+          ],
         },
         {
           title: "Контакты",
           summary: "Способы связи с юридической службой.",
           content: [
-            "Если у вас есть вопросы по поводу данных Условий, пожалуйста, свяжитесь с нашей юридической службой по адресу legal@funduz.com."
-          ]
-        }
-      ]
+            "Если у вас есть вопросы по поводу данных Условий, пожалуйста, свяжитесь с нашей юридической службой по адресу legal@funduz.com.",
+          ],
+        },
+      ],
     },
     privacy: {
       badge: "Безопасность и Конфиденциальность",
@@ -1625,14 +2100,15 @@ const messages = {
       last_updated_date: "14 Апреля, 2024",
       toc: "Содержание",
       footer_title: "Вопросы по вашей конфиденциальности?",
-      footer_desc: "Наша специальная команда по вопросам приватности готова помочь вам понять ваши права и защитить ваши данные.",
+      footer_desc:
+        "Наша специальная команда по вопросам приватности готова помочь вам понять ваши права и защитить ваши данные.",
       footer_link: "Отправить запрос",
       download_pdf: "Скачать PDF",
       cards: [
         { title: "Не продаем данные", icon: "shield" },
         { title: "Защищенные платежи", icon: "lock" },
         { title: "Контроль аккаунта", icon: "user" },
-        { title: "Соблюдение законов", icon: "globe" }
+        { title: "Соблюдение законов", icon: "globe" },
       ],
       sections: [
         {
@@ -1640,8 +2116,8 @@ const messages = {
           summary: "Личные данные, собираемые при создании профиля.",
           content: [
             "Когда вы создаете профиль на платформе Funduz, мы собираем личную идентификационную информацию, включая ваше имя, адрес электронной почты и почтовый адрес для доставки вознаграждений.",
-            "Для авторов проектов мы также собираем идентификационные документы и финансовые реквизиты для содействия выплатам в соответствии с глобальными правилами KYC (Know Your Customer)."
-          ]
+            "Для авторов проектов мы также собираем идентификационные документы и финансовые реквизиты для содействия выплатам в соответствии с глобальными правилами KYC (Know Your Customer).",
+          ],
         },
         {
           title: "Как мы это используем",
@@ -1650,36 +2126,36 @@ const messages = {
             "Мы используем информацию для:",
             "• Обработки ваших вкладов и обеспечения вознаграждений.",
             "• Персонализации ленты на основе проектов, которые вы поддержали.",
-            "• Отправки обновлений кампаний и оповещений о безопасности."
-          ]
+            "• Отправки обновлений кампаний и оповещений о безопасности.",
+          ],
         },
         {
           title: "Передача данных",
           summary: "Правила сотрудничества с третьими лицами.",
           content: [
-            "Мы передаем ваше имя и email авторам проектов, которые вы поддерживаете, чтобы они могли доставить вознаграждения. Мы никогда не продаем ваши личные данные сторонним рекламодателям."
-          ]
+            "Мы передаем ваше имя и email авторам проектов, которые вы поддерживаете, чтобы они могли доставить вознаграждения. Мы никогда не продаем ваши личные данные сторонним рекламодателям.",
+          ],
         },
         {
           title: "Файлы Cookies",
           summary: "Технологии улучшения опыта в браузере.",
           content: [
-            "Мы используем технические куки, чтобы вы оставались в системе, и функциональные куки, чтобы помнить ваши предпочтения. Аналитические куки активируются только с вашего согласия."
-          ]
+            "Мы используем технические куки, чтобы вы оставались в системе, и функциональные куки, чтобы помнить ваши предпочтения. Аналитические куки активируются только с вашего согласия.",
+          ],
         },
         {
           title: "Хранение данных",
           summary: "Сроки хранения информации.",
           content: [
-            "Мы храним ваши данные до тех пор, пока ваш аккаунт активен. Если вы решите удалить аккаунт, мы можем сохранить некоторую информацию, необходимую для юридических или финансовых отчетных обязательств."
-          ]
+            "Мы храним ваши данные до тех пор, пока ваш аккаунт активен. Если вы решите удалить аккаунт, мы можем сохранить некоторую информацию, необходимую для юридических или финансовых отчетных обязательств.",
+          ],
         },
         {
           title: "Безопасность",
           summary: "Меры защиты промышленного стандарта.",
           content: [
-            "Все данные о транзакциях шифруются с использованием отраслевого стандарта TLS. Мы храним личные данные на защищенных серверах с ограниченным доступом."
-          ]
+            "Все данные о транзакциях шифруются с использованием отраслевого стандарта TLS. Мы храним личные данные на защищенных серверах с ограниченным доступом.",
+          ],
         },
         {
           title: "Ваши права",
@@ -1689,38 +2165,36 @@ const messages = {
             "• Право на доступ и переносимость данных.",
             "• Право быть забытым (удаление).",
             "• Право на исправление ошибок.",
-            "• Право на возражение против обработки."
-          ]
+            "• Право на возражение против обработки.",
+          ],
         },
         {
           title: "Конфиденциальность детей",
           summary: "Защита данных несовершеннолетних.",
           content: [
-            "Наши услуги не предназначены для лиц младше 18 лет. Мы намеренно не собираем информацию о несовершеннолетних."
-          ]
+            "Наши услуги не предназначены для лиц младше 18 лет. Мы намеренно не собираем информацию о несовершеннолетних.",
+          ],
         },
         {
           title: "Международные переводы",
           summary: "Трансграничная защита информации.",
           content: [
-            "Используя платформу, вы соглашаетесь на передачу ваших данных между странами, в которых мы работаем, при этом уровень защиты остается неизменным."
-          ]
+            "Используя платформу, вы соглашаетесь на передачу ваших данных между странами, в которых мы работаем, при этом уровень защиты остается неизменным.",
+          ],
         },
         {
           title: "Изменения",
           summary: "Оповещения об обновлении политики.",
           content: [
-            "Мы периодически обновляем эту политику. О существенных изменениях зарегистрированные пользователи будут уведомлены по электронной почте."
-          ]
+            "Мы периодически обновляем эту политику. О существенных изменениях зарегистрированные пользователи будут уведомлены по электронной почте.",
+          ],
         },
         {
           title: "Контактная информация",
           summary: "Способы связи с нами.",
-          content: [
-            "По любым вопросам конфиденциальности пишите нам на privacy@funduz.com."
-          ]
-        }
-      ]
+          content: ["По любым вопросам конфиденциальности пишите нам на privacy@funduz.com."],
+        },
+      ],
     },
     error404: {
       badge: "Ошибка 404",
@@ -1730,7 +2204,7 @@ const messages = {
       explore: "Смотреть проекты",
       contact: "Служба поддержки",
       trending_title: "Вместо этого посмотрите эти трендовые проекты",
-      view_all: "Смотреть все"
+      view_all: "Смотреть все",
     },
     trends: {
       title: "Технологии",
@@ -1738,7 +2212,7 @@ const messages = {
       stats: {
         active: "активных проектов",
         backers: "спонсоров",
-        funded: "всего собрано"
+        funded: "всего собрано",
       },
       chips: ["AI & Robotics", "CleanTech", "SaaS", "Hardware"],
       filters: ["Все", "В тренде", "Новые", "Почти собрано", "Скоро закончатся"],
@@ -1749,16 +2223,16 @@ const messages = {
         category: "ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ",
         title: "NeuralLink: Следующий этап интерфейса человек-машина",
         desc: "Разработка интерфейсов мозг-компьютер с низкой задержкой и высокой пропускной способностью, помогающих людям конкурировать с будущими достижениями ИИ.",
-        back_btn: "Поддержать проект"
+        back_btn: "Поддержать проект",
       },
       upcoming_title: "Грядущие тенденции",
       explore_worlds: "Исследуйте другие миры",
       cta: {
         title: "Есть идея в сфере технологий?",
         desc: "Запустите свой проект на Funduz и станьте частью сообщества, которое верит в силу инноваций.",
-        btn: "Начать проект"
-      }
-    }
+        btn: "Начать проект",
+      },
+    },
   },
 };
 

@@ -34,6 +34,11 @@
                 $t("footer.p_social")
               }}</a>
             </li>
+            <li>
+              <router-link to="/articles" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{
+                $t("footer.p_articles")
+              }}</router-link>
+            </li>
           </ul>
         </div>
 
