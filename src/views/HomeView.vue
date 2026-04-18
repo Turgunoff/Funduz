@@ -33,7 +33,7 @@ import CTASection from '@/components/CTASection.vue';
 
             <!-- Buttons -->
             <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-5">
-              <router-link to="/explore" class="w-full sm:w-auto px-11 py-5 border-2 border-transparent rounded-[20px] font-bold text-[15px] text-white bg-[#1a946b] hover:bg-white hover:text-[#1a946b] hover:border-[#1a946b] transition-all shadow-xl shadow-green-900/10 cursor-pointer flex items-center justify-center transform hover:-translate-y-1">
+              <router-link to="/explore" class="w-full sm:w-auto px-11 py-5 border-2 border-[#1a946b] rounded-[20px] font-bold text-[15px] text-[#1a946b] bg-white hover:bg-[#1a946b] hover:text-white transition-all shadow-xl shadow-green-900/10 cursor-pointer flex items-center justify-center transform hover:-translate-y-1">
                 {{ $t('hero.btn_contribute') }}
               </router-link>
               <router-link to="/explore" class="w-full sm:w-auto px-11 py-5 border-2 border-[#1a946b] rounded-[20px] font-bold text-[15px] text-[#1a946b] bg-white hover:bg-[#1a946b] hover:text-white transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm transform hover:-translate-y-1 group">
