@@ -148,7 +148,7 @@
                 <div class="w-6 h-6 rounded-full bg-[#0f4a36] flex items-center justify-center flex-shrink-0">
                   <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </div>
-                <span class="text-[16px] text-gray-700 font-semibold">{{ t(`security.all_or_nothing.features[${i}]`) }}</span>
+                <span class="text-[16px] text-gray-700 font-semibold">{{ t(feat) }}</span>
               </div>
             </div>
           </div>
@@ -193,10 +193,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-const { t, tm } = useI18n();
+const { t } = useI18n();
 
 const features = [
   { key: 'feat1', icon: 'shield' },
@@ -218,10 +217,11 @@ const escrowSteps = [
   { titleKey: 'security.escrow_process.step4_title', descKey: 'security.escrow_process.step4_desc' }
 ];
 
-const aonFeatures = computed(() => {
-  const f = tm('security.all_or_nothing.features');
-  return Array.isArray(f) ? f : Object.values(f || {});
-});
+const aonFeatures = [
+  'security.all_or_nothing.features[0]',
+  'security.all_or_nothing.features[1]',
+  'security.all_or_nothing.features[2]'
+];
 </script>
 
 <style scoped>
