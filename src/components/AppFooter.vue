@@ -95,6 +95,13 @@
                 >{{ $t("footer.l_privacy") }}</router-link
               >
             </li>
+            <li>
+              <router-link
+                to="/security"
+                class="text-gray-500 hover:text-[#0f5238] transition-colors"
+                >{{ $t("footer.l_security") }}</router-link
+              >
+            </li>
           </ul>
         </div>
       </div>

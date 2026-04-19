@@ -91,6 +91,11 @@ const router = createRouter({
       component: () => import("../views/TermsView.vue"),
     },
     {
+      path: "/security",
+      name: "security",
+      component: () => import("../views/SecurityView.vue"),
+    },
+    {
       path: "/articles",
       name: "articles",
       component: () => import("../views/ArticlesView.vue"),

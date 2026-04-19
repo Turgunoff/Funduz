@@ -369,6 +369,7 @@ const messages = {
       legal_title: "Yuridik",
       l_terms: "Foydalanish shartlari",
       l_privacy: "Maxfiylik siyosati",
+      l_security: "Xavfsizlik",
       social_fb: "Facebook",
     },
     articles: {
@@ -1169,6 +1170,102 @@ const messages = {
         btn: "Loyiha boshlash",
       },
     },
+    security: {
+      badge: "TRUST & SAFETY",
+      hero_title: "Pullaringiz Funduz bilan xavfsiz bo'lsin",
+      hero_desc: "Biz 'hamma narsa yoki hech narsa' modeli asosida ishlaymiz. Agar loyiha maqsadiga erishmasa, har bir so'mingizni qaytarib olasiz. Istisnolarsiz.",
+      escrow_process: {
+        title: "Eskrou jarayoni",
+        step1_title: "Hissa qo'shish",
+        step1_desc: "Homiylar loyiha uchun mablag' ajratadilar.",
+        step2_title: "Eskrouda saqlash",
+        step2_desc: "Mablag'lar xavfsiz bank hisobida ishonchli saqlanadi.",
+        step3_title: "Maqsadga erishildimi?",
+        step3_desc: "Mablag' yig'ish maqsadi yakunlanganligini tekshirish.",
+        step4_title: "Himoyalangan yetkazib berish",
+        step4_desc: "Mablag'lar muallifga o'tkaziladi yoki homiylarga qaytariladi.",
+        note: "Barcha moliyaviy operatsiyalar O'zbekiston Respublikasi Markaziy banki tomonidan tartibga solinadigan litsenziyalangan to'lov tizimlari orqali amalga oshiriladi, bu esa xavfsizlik va qonunchilikka muvofiqlikni kafolatlaydi.",
+      },
+      all_or_nothing: {
+        title: "«Hammasi yoki hech narsa» modeli",
+        desc: "Mualliflarning o'z va'dalarini bajarishlari uchun etarli kapitalga ega bo'lishini ta'minlash maqsadida Funduz «hammasi yoki hech narsa» moliyalashtirish modelidan foydalanadi. Agar loyiha o'z maqsadiga erishmasa, mablag'lar hech qachon muallifga o'tkazilmaydi.",
+        features: [
+          "Homiylar uchun xavfni kamaytiradi",
+          "Mualliflarning mukofotlarni taqdim eta olishini kafolatlaydi",
+          "Muvaffaqiyatsiz loyihalar uchun yashirin platforma komissiyalari yo'q",
+        ],
+        goal_reached: {
+          title: "Maqsadga erishildi",
+          desc: "Mablag'lar o'tkaziladi, loyiha ishlab chiqarishni boshlaydi.",
+        },
+        not_reached: {
+          title: "Erishilmadi",
+          desc: "Mablag'larning 100% homiylarga avtomatik ravishda qaytariladi.",
+        },
+      },
+      features: {
+        feat1: { label: "Escrow himoyasi" },
+        feat2: { label: "Tasdiqlangan mualliflar" },
+        feat3: { label: "Qaytarish kafolati" },
+      },
+      info_cards: {
+        card1: {
+          title: "Eskrou",
+          desc: "Mablag'lar loyiha maqsadiga erishilgunga qadar litsenziyalangan uchinchi tomon kuryerida saqlanadi.",
+        },
+        card2: {
+          title: "Tasdiqlangan mualliflar",
+          desc: "Har bir loyiha rahbari uchun qat'iy fon tekshiruvi va shaxsni tasdiqlash jarayoni.",
+        },
+        card3: {
+          title: "Qaytarish kafolati",
+          desc: "Loyiha maqsadiga erisha olmasa, mablag'lar avtomatik va zudlik bilan qaytariladi.",
+        },
+        card4: {
+          title: "Xavfsiz to'lovlar",
+          desc: "Har bir tranzaksiya uchun bank darajasidagi shifrlash va PCI-ga mos ishlov berish.",
+        },
+      },
+      title: "Xavfsizlik markazi",
+      desc: "Sizning ishonchingiz — bizning eng qimmatli boyligimiz. Funduz sizning ma'lumotlaringiz va mablag'laringizni qanday himoya qilishini bilib oling.",
+      last_updated: "Oxirgi yangilanish",
+      last_updated_date: "19-Aprel, 2024",
+      toc: "Mundarija",
+      footer_title: "Xavfsizlik bo'yicha savollaringiz bormi?",
+      footer_desc: "Bizning xavfsizlik jamoamiz platformadamizda o'zingizni xavfsiz his qilishingizni ta'minlash uchun tunu-kun ishlaydi.",
+      footer_link: "Xavfsizlik markazi bilan bog'lanish",
+      cards: [
+        { title: "256-bitli shifrlash", icon: "lock" },
+        { title: "Xavfsiz to'lovlar", icon: "shield" },
+        { title: "Ikki faktorli autentifikatsiya", icon: "user" },
+        { title: "Muntazam auditlar", icon: "globe" },
+      ],
+      sections: [
+        {
+          title: "Moliyaviy xavfsizlik",
+          summary: "Sizning mablag'laringiz xavfsiz qo'llarda.",
+          content: [
+            "Barcha moliyaviy tranzaksiyalar Payme va Click kabi litsenziyalangan to'lov tizimlari orqali amalga oshiriladi. Funduz sizning karta ma'lumotlaringizni o'z serverlarida saqlamaydi.",
+            "Biz 'Hammasi yoki hech narsa' modelidan foydalanamiz, bu degani agar loyiha maqsadiga erishmasa, donorlarning mablag'lari avtomatik ravishda qaytarib beriladi.",
+          ],
+        },
+        {
+          title: "Hisobni himoya qilish",
+          summary: "Profilingiz xavfsizligini ta'minlash choralari.",
+          content: [
+            "Biz barcha foydalanuvchalarga kuchli parollardan foydalanishni va ikki faktorli autentifikatsiyani (2FA) yoqishni tavsiya qilamiz.",
+            "Shubhali harakatlar sezilganda, tizim avtomatik ravishda hisobingizni bloklaydi va sizni darhol elektron pochta orqali xabardor qiladi.",
+          ],
+        },
+        {
+          title: "Ma'lumotlarni shifrlash",
+          summary: "Raqamli maxfiylikni ta'minlash.",
+          content: [
+            "Platformamizdagi barcha ma'lumotlar almashinuvi SSL/TLS bayonnomalari orqali shifrlangan. Bu sizning ma'lumotlaringiz uchinchi shaxslar qo'liga tushmasligini kafolatlaydi.",
+          ],
+        },
+      ],
+    },
   },
   ru: {
     nav: {
@@ -1538,6 +1635,7 @@ const messages = {
       legal_title: "Юридическая информация",
       l_terms: "Условия использования",
       l_privacy: "Политика конфиденциальности",
+      l_security: "Безопасность",
       copyright: "© 2024 Funduz. Все права защищены.",
       social_tg: "Telegram",
       social_inst: "Instagram",
@@ -2232,6 +2330,102 @@ const messages = {
         desc: "Запустите свой проект на Funduz и станьте частью сообщества, которое верит в силу инноваций.",
         btn: "Начать проект",
       },
+    },
+    security: {
+      badge: "TRUST & SAFETY",
+      hero_title: "Пусть ваши деньги будут в безопасности с Funduz",
+      hero_desc: "Мы работаем по модели эскроу «все или ничего». Если проект не достигает цели финансирования, вы получаете каждый сум обратно. Без исключений.",
+      escrow_process: {
+        title: "Процесс эскроу",
+        step1_title: "Вклад",
+        step1_desc: "Спонсор перечисляет средства на проект.",
+        step2_title: "Хранение в эскроу",
+        step2_desc: "Деньги надежно хранятся на защищенном банковском счете.",
+        step3_title: "Цель достигнута?",
+        step3_desc: "Проверка завершения сбора средств.",
+        step4_title: "Защищенная передача",
+        step4_desc: "Средства передаются автору или возвращаются спонсорам.",
+        note: "Все финансовые операции обрабатываются лицензированными платежными системами, регулируемыми Центральным банком Республики Узбекистан, что гарантирует локальную безопасность и соответствие законодательству.",
+      },
+      all_or_nothing: {
+        title: "Модель «Все или ничего»",
+        desc: "Чтобы у авторов было достаточно капитала для выполнения своих обещаний, Funduz использует модель финансирования «все или ничего». Если проект не достигает цели финансирования, средства никогда не передаются автору.",
+        features: [
+          "Снижает риски для спонсоров",
+          "Гарантирует, что авторы смогут выполнить награды",
+          "Нет скрытых комиссий платформы за неудавшиеся проекты",
+        ],
+        goal_reached: {
+          title: "Цель достигнута",
+          desc: "Средства передаются, проект начинает производство.",
+        },
+        not_reached: {
+          title: "Не достигнута",
+          desc: "100% средств возвращаются спонсорам автоматически.",
+        },
+      },
+      features: {
+        feat1: { label: "Защита Escrow" },
+        feat2: { label: "Проверенные авторы" },
+        feat3: { label: "Гарантия возврата" },
+      },
+      info_cards: {
+        card1: {
+          title: "Эскроу",
+          desc: "Средства хранятся у лицензированного стороннего хранителя до тех пор, пока цель проекта не будет достигнута.",
+        },
+        card2: {
+          title: "Проверенные авторы",
+          desc: "Строгая проверка биографических данных и удостоверения личности для каждого руководителя проекта.",
+        },
+        card3: {
+          title: "Гарантия возврата",
+          desc: "Автоматический и немедленный возврат средств, если проект не достигнет своей цели.",
+        },
+        card4: {
+          title: "Безопасные платежи",
+          desc: "Шифрование банковского уровня и обработка в соответствии со стандартами PCI для каждой транзакции.",
+        },
+      },
+      title: "Центр безопасности",
+      desc: "Ваше доверие — наш главный актив. Узнайте о том, как Funduz защищает ваши данные и средства.",
+      last_updated: "Последнее обновление",
+      last_updated_date: "19 Апреля, 2024",
+      toc: "Содержание",
+      footer_title: "Вопросы по безопасности?",
+      footer_desc: "Наша команда безопасности работает круглосуточно, чтобы вы чувствовали себя защищенно на нашей платформе.",
+      footer_link: "Связаться с отделом безопасности",
+      cards: [
+        { title: "256-битное шифрование", icon: "lock" },
+        { title: "Безопасные платежи", icon: "shield" },
+        { title: "Двухфакторная аутентификация", icon: "user" },
+        { title: "Регулярные аудиты", icon: "globe" },
+      ],
+      sections: [
+        {
+          title: "Финансовая безопасность",
+          summary: "Ваши средства в надежных руках.",
+          content: [
+            "Все финансовые транзакции проводятся через лицензированные платежные системы, такие как Payme и Click. Funduz не хранит данные ваших карт на своих серверах.",
+            "Мы используем модель 'Все или ничего', что гарантирует автоматический возврат средств спонсорам, если проект не достигает своей цели.",
+          ],
+        },
+        {
+          title: "Защита аккаунта",
+          summary: "Меры по обеспечению безопасности вашего профиля.",
+          content: [
+            "Мы рекомендуем всем пользователям использовать сложные пароли и включать двухфакторную аутентификацию (2FA).",
+            "При обнаружении подозрительной активности система автоматически блокирует аккаунт и немедленно уведомляет вас по электронной почте.",
+          ],
+        },
+        {
+          title: "Шифрование данных",
+          summary: "Обеспечение цифровой приватности.",
+          content: [
+            "Весь обмен данными на платформе зашифрован с использованием протоколов SSL/TLS. Это исключает возможность перехвата вашей информации третьими лицами.",
+          ],
+        },
+      ],
     },
   },
 };
