@@ -11,7 +11,7 @@
         <!-- Local Search Input -->
         <div class="relative max-w-xl mx-auto px-4 sm:px-0">
           <input 
-            v-model="searchQuery"
+            v-model="projectStore.searchQuery"
             @keyup.enter="handleLocalSearch"
             type="text" 
             :placeholder="$t('explore.search_placeholder')"
@@ -41,10 +41,10 @@
             v-for="cat in ['all', 'tech', 'art', 'social', 'edu', 'eco']" 
             :key="cat"
             ref="pillButtons"
-            @click="activeCategory = cat"
+            @click="projectStore.setFilter(cat)"
             :class="[
               'relative z-10 px-5 lg:px-6 py-2.5 lg:py-3 rounded-full font-bold text-[13px] lg:text-[14px] whitespace-nowrap transition-all duration-300',
-              activeCategory === cat 
+              projectStore.filterCategory === cat 
                 ? 'text-white' 
                 : 'text-gray-500 hover:text-gray-900'
             ]"
@@ -56,7 +56,7 @@
         <!-- Sort Select -->
         <div class="px-2 lg:px-4 mb-1 lg:mb-0">
           <div class="relative w-full md:min-w-[160px]">
-            <select v-model="activeSort" class="appearance-none w-full bg-gray-50 lg:bg-gray-100 border-none rounded-full px-5 lg:px-6 py-2.5 lg:py-3 pr-10 text-[13px] lg:text-[14px] font-bold text-gray-700 focus:ring-2 focus:ring-[#1a946b]/20 cursor-pointer">
+            <select v-model="projectStore.sortBy" class="appearance-none w-full bg-gray-50 lg:bg-gray-100 border-none rounded-full px-5 lg:px-6 py-2.5 lg:py-3 pr-10 text-[13px] lg:text-[14px] font-bold text-gray-700 focus:ring-2 focus:ring-[#1a946b]/20 cursor-pointer">
               <option value="newest">{{ $t('explore.sort.newest') }}</option>
               <option value="popular">{{ $t('explore.sort.popular') }}</option>
               <option value="ending">{{ $t('explore.sort.ending') }}</option>
@@ -69,9 +69,9 @@
       </div>
 
       <!-- Projects Grid -->
-      <div v-if="!isLoading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 mb-12 lg:mb-16">
+      <div v-if="!projectStore.isLoading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 mb-12 lg:mb-16">
         <div 
-          v-for="project in projects" 
+          v-for="project in projectStore.paginatedItems" 
           :key="project.id"
           class="group bg-white rounded-[32px] lg:rounded-[40px] p-5 lg:p-6 border border-gray-100/50 hover:border-[#1a946b]/30 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 flex flex-col h-full"
         >
@@ -127,8 +127,11 @@
       </div>
 
       <!-- Load More -->
-      <div class="flex justify-center pt-4 pb-10 lg:pt-8 lg:pb-12">
-        <button class="w-full sm:w-auto px-8 lg:px-14 py-4 bg-white border-2 border-[#0f5238] text-[#0f5238] rounded-full font-black text-[14px] lg:text-[15px] hover:bg-[#0f5238] hover:text-white transition-all duration-300 shadow-sm uppercase tracking-wide">
+      <div v-if="projectStore.hasMore" class="flex justify-center pt-4 pb-10 lg:pt-8 lg:pb-12">
+        <button 
+          @click="projectStore.loadMore"
+          class="w-full sm:w-auto px-8 lg:px-14 py-4 bg-white border-2 border-[#0f5238] text-[#0f5238] rounded-full font-black text-[14px] lg:text-[15px] hover:bg-[#0f5238] hover:text-white transition-all duration-300 shadow-sm uppercase tracking-wide"
+        >
           {{ $t('explore.load_more') }}
         </button>
       </div>
@@ -141,17 +144,12 @@
 import { ref, onMounted, watch, nextTick } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
-import { projectService } from '../services/projectService';
+import { useProjectStore } from '../stores/projects';
 import type { Project } from '../types/Project';
 
-const { t, locale } = useI18n();
+const { locale } = useI18n();
 const router = useRouter();
-
-const activeCategory = ref('all');
-const activeSort = ref('newest');
-const searchQuery = ref('');
-const projects = ref<Project[]>([]);
-const isLoading = ref(true);
+const projectStore = useProjectStore();
 
 const formatCurrency = (val: number) => {
   return new Intl.NumberFormat('uz-UZ').format(val);
@@ -161,26 +159,9 @@ const getProgress = (p: Project) => {
   return Math.round((p.raised / p.goal) * 100);
 };
 
-const fetchProjects = async () => {
-  isLoading.value = true;
-  try {
-    let result = await projectService.getAll();
-    
-    if (activeCategory.value !== 'all') {
-      result = result.filter(p => p.categoryKey === activeCategory.value);
-    }
-    
-    result = await projectService.sort(result, activeSort.value);
-    projects.value = result;
-  } catch (error) {
-    console.error('Failed to fetch projects:', error);
-  } finally {
-    isLoading.value = false;
-  }
-};
-
-onMounted(fetchProjects);
-watch([activeCategory, activeSort, locale], fetchProjects);
+onMounted(() => {
+  projectStore.fetchAll();
+});
 
 const pillButtons = ref<HTMLElement[]>([]);
 const pillStyle = ref({
@@ -191,7 +172,7 @@ const pillStyle = ref({
 
 const updatePill = async () => {
   await nextTick();
-  const index = ['all', 'tech', 'art', 'social', 'edu', 'eco'].indexOf(activeCategory.value);
+  const index = ['all', 'tech', 'art', 'social', 'edu', 'eco'].indexOf(projectStore.filterCategory);
   const activeBtn = pillButtons.value[index];
   if (activeBtn) {
     pillStyle.value = {
@@ -203,11 +184,12 @@ const updatePill = async () => {
 };
 
 onMounted(updatePill);
-watch([activeCategory, locale], updatePill);
+watch(() => projectStore.filterCategory, updatePill);
+watch(locale, updatePill);
 
 const handleLocalSearch = () => {
-  if (searchQuery.value.trim()) {
-    router.push({ path: '/search', query: { q: searchQuery.value.trim() } });
+  if (projectStore.searchQuery.trim()) {
+    router.push({ path: '/search', query: { q: projectStore.searchQuery.trim() } });
   }
 };
 </script>

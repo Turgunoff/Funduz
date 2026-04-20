@@ -37,11 +37,11 @@
 
 ## Этап 2 — Pinia store (1 день)
 
-- [ ] `stores/auth.ts` — `user`, `isLoggedIn`, `login()`, `register()`, `logout()`. Хранение в `localStorage`.
-- [ ] `stores/projects.ts` — список, фильтры, сортировка, пагинация.
-- [ ] `stores/favorites.ts` — избранные проекты (localStorage).
-- [ ] `stores/locale.ts` — сохранение выбранного языка в `localStorage` и восстановление при загрузке.
-- [ ] `stores/cart.ts` (или `donation.ts`) — выбранная награда и сумма пожертвования.
+- [x] `stores/auth.ts` — `user`, `isLoggedIn`, `login()`, `register()`, `logout()`. Хранение в `localStorage`.
+- [x] `stores/projects.ts` — список, фильтры, сортировка, пагинация.
+- [x] `stores/favorites.ts` — избранные проекты (localStorage).
+- [x] `stores/locale.ts` — сохранение выбранного языка в `localStorage` и восстановление при загрузке.
+- [x] `stores/donation.ts` — выбранная награда и сумма пожертвования.
 
 ## Этап 3 — Router и guards (0.5 дня)
 

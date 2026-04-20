@@ -74,13 +74,24 @@
               </div>
             </div>
 
+            <!-- User Auth Profile -->
+            <div v-if="authStore.isLoggedIn" class="flex items-center gap-2 pr-2">
+              <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-[11px] font-black text-orange-600 border border-orange-200 overflow-hidden">
+                <img v-if="authStore.user?.avatar" :src="authStore.user.avatar" class="w-full h-full object-cover" />
+                <span v-else>{{ authStore.user?.name?.charAt(0) || 'U' }}</span>
+              </div>
+              <span class="hidden lg:block text-[14px] font-bold text-gray-800">{{ authStore.user?.name }}</span>
+            </div>
+
             <!-- Auth & CTA Buttons -->
             <router-link
+              v-if="!authStore.isLoggedIn"
               to="/login"
               class="hidden md:flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm"
             >
               {{ $t("nav.login") }}
             </router-link>
+            
             <router-link
               to="/login"
               class="hidden sm:flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm"
@@ -92,7 +103,7 @@
             <div class="hidden lg:flex items-center pl-4 border-l border-gray-100 h-6 gap-3">
               <button
                 @click="setLocale('uz')"
-                :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'"
+                :class="localeStore.currentLocale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'"
                 class="text-[13px] font-bold uppercase transition-colors cursor-pointer"
               >
                 Uz
@@ -100,7 +111,7 @@
               <span class="text-gray-200">|</span>
               <button
                 @click="setLocale('ru')"
-                :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'"
+                :class="localeStore.currentLocale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'"
                 class="text-[13px] font-bold uppercase transition-colors cursor-pointer"
               >
                 Ru
@@ -264,13 +275,13 @@
 
           <div class="bg-gray-50 p-6 rounded-[24px] border border-gray-100 text-center mt-2">
             <p class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-4">
-              {{ locale === "uz" ? "TILNI TANLASH" : "ВЫБОР ЯЗЫКА" }}
+              {{ localeStore.currentLocale === "uz" ? "TILNI TANLASH" : "ВЫБОР ЯЗЫКА" }}
             </p>
             <div class="grid grid-cols-2 gap-3">
               <button
                 @click="setLocale('uz')"
                 :class="
-                  locale === 'uz'
+                  localeStore.currentLocale === 'uz'
                     ? 'bg-[#1a946b] text-white shadow-lg shadow-green-900/10'
                     : 'bg-white text-gray-400'
                 "
@@ -281,7 +292,7 @@
               <button
                 @click="setLocale('ru')"
                 :class="
-                  locale === 'ru'
+                  localeStore.currentLocale === 'ru'
                     ? 'bg-[#1a946b] text-white shadow-lg shadow-green-900/10'
                     : 'bg-white text-gray-400'
                 "
@@ -300,11 +311,15 @@
 <script setup lang="ts">
 import { ref, computed, watch, nextTick } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { useI18n } from "vue-i18n";
+import { useLocaleStore } from "../stores/locale";
+import { useAuthStore } from "../stores/auth";
 
 const route = useRoute();
 const router = useRouter();
-const { locale } = useI18n();
+const localeStore = useLocaleStore();
+const authStore = useAuthStore();
+// i18n is used in template via global $t, mutations go through localeStore
+
 const isMenuOpen = ref(false);
 
 const isSearchExpanded = ref(false);
@@ -335,8 +350,8 @@ const isHowItWorksPage = computed(() => route.path === "/how-it-works");
 const isSuccessStoriesPage = computed(() => route.path === "/success-stories");
 const isTrendsPage = computed(() => route.path === "/trends");
 
-const setLocale = (lang: string) => {
-  locale.value = lang;
+const setLocale = (lang: 'uz' | 'ru') => {
+  localeStore.setLocale(lang);
 };
 
 watch(

@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import { projectService } from '../services/projectService';
+import { onMounted, computed } from 'vue';
+import { useProjectStore } from '../stores/projects';
 import type { Project } from '../types/Project';
 
-const projects = ref<Project[]>([]);
-const isLoading = ref(true);
+const projectStore = useProjectStore();
+
+const projects = computed(() => projectStore.allItems.slice(0, 3));
+const isLoading = computed(() => projectStore.isLoading);
 
 const formatCurrency = (val: number) => {
   return new Intl.NumberFormat('uz-UZ').format(val);
@@ -14,15 +16,8 @@ const getProgress = (p: Project) => {
   return Math.min(Math.round((p.raised / p.goal) * 100), 100);
 };
 
-onMounted(async () => {
-  try {
-    const all = await projectService.getAll();
-    projects.value = all.slice(0, 3);
-  } catch (err) {
-    console.error(err);
-  } finally {
-    isLoading.value = false;
-  }
+onMounted(() => {
+  projectStore.fetchAll();
 });
 </script>
 

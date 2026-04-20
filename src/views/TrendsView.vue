@@ -34,7 +34,7 @@
           <!-- Chips Area -->
           <div class="flex flex-wrap gap-3 lg:gap-4">
             <div 
-              v-for="(chip, i) in tm('trends.chips')" 
+              v-for="(chip, i) in trendChips" 
               :key="i"
               class="px-5 py-2.5 bg-[#f0f0f0] rounded-full text-[13px] lg:text-[14px] font-bold text-gray-900 transition-colors hover:bg-gray-200 cursor-default"
             >
@@ -166,18 +166,18 @@
         >
           <!-- Project Image -->
           <div class="relative rounded-[24px] lg:rounded-[32px] overflow-hidden aspect-[4/3] mb-5 lg:mb-6 bg-gray-50 border border-gray-50 shadow-sm">
-            <img :src="project.img" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <img :src="project.mainImage" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
             <div class="absolute top-3 left-3 lg:top-4 lg:left-4 px-3 lg:px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] lg:text-[11px] font-black uppercase tracking-wider text-gray-800">
-              {{ project.category }}
+              {{ $t(`explore.categories.${project.categoryKey}`) }}
             </div>
           </div>
 
           <!-- Content Meta -->
           <div class="flex items-center gap-2 mb-4">
-            <div class="w-6 h-6 lg:w-7 lg:h-7 rounded-sm bg-gray-100 flex items-center justify-center overflow-hidden">
-              <img :src="project.authorAvatar" class="w-full h-full object-cover" />
+            <div class="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-orange-100 flex items-center justify-center text-[10px] font-bold text-orange-600">
+              U
             </div>
-            <span class="text-[11px] lg:text-xs font-semibold text-gray-400">{{ project.author }}</span>
+            <span class="text-[11px] lg:text-xs font-semibold text-gray-400">User #{{ project.authorId }}</span>
           </div>
 
           <!-- Title -->
@@ -189,18 +189,18 @@
           <div class="mt-auto">
             <div class="flex justify-between items-end mb-2.5 lg:mb-3">
               <div class="text-[16px] lg:text-[17px] font-black text-gray-900">
-                {{ project.raised }} <span class="text-[11px] lg:text-[13px] font-bold text-gray-400 uppercase">{{ locale === 'uz' ? "so'm" : "сумов" }}</span>
+                {{ formatCurrency(project.raised) }} <span class="text-[11px] lg:text-[13px] font-bold text-gray-400 uppercase">so'm</span>
               </div>
               <div class="text-[13px] lg:text-[14px] font-black text-[#1a946b]">
-                {{ project.progress }}%
+                {{ getProgress(project) }}%
               </div>
             </div>
             <div class="w-full h-2 bg-gray-50 rounded-full mb-4 overflow-hidden">
-              <div class="h-full bg-[#1a946b] rounded-full transition-all duration-1000" :style="{ width: project.progress + '%' }"></div>
+              <div class="h-full bg-[#1a946b] rounded-full transition-all duration-1000" :style="{ width: getProgress(project) + '%' }"></div>
             </div>
             <div class="flex justify-between items-center text-[11px] lg:text-[12px] font-bold text-gray-400 mb-6 lg:mb-8">
-              <span>{{ $t('projects.goal') }}: {{ project.goal }}</span>
-              <span>{{ project.donors }} {{ $t('projects.donors') }}</span>
+              <span>{{ $t('projects.goal') }}: {{ formatCurrency(project.goal) }}</span>
+              <span>{{ project.donorsCount }} {{ $t('projects.donors') }}</span>
             </div>
             <router-link to="/project/1" class="block w-full py-3.5 lg:py-4 bg-[#f0fdf4] text-[#1a946b] font-black text-center rounded-xl lg:rounded-2xl hover:bg-[#1a946b] hover:text-white transition-all duration-300">
               {{ $t('projects.more') }}
@@ -265,10 +265,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch, nextTick, computed } from 'vue';
+import { ref, computed, onMounted, watch, nextTick } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useProjectStore } from '../stores/projects';
+import type { Project } from '../types/Project';
 
 const { locale, tm, t } = useI18n();
+const projectStore = useProjectStore();
 
 const activeFilter = ref(0);
 const filterButtons = ref<HTMLElement[]>([]);
@@ -279,8 +282,17 @@ const pillStyle = ref({
 });
 
 const filters = computed(() => tm('trends.filters') as string[]);
+const trendChips = computed(() => tm('trends.chips') as string[]);
 const raisedLabel = computed(() => (t('search.stats.raised') as string).toLowerCase());
 const fundingLabel = computed(() => t('error404.view_all').toLowerCase().includes('все') ? 'собрано' : 'to\'plandi');
+
+const formatCurrency = (val: number) => {
+  return new Intl.NumberFormat('uz-UZ').format(val);
+};
+
+const getProgress = (p: Project) => {
+  return Math.min(Math.round((p.raised / p.goal) * 100), 100);
+};
 
 const updatePill = async () => {
   await nextTick();
@@ -294,50 +306,16 @@ const updatePill = async () => {
   }
 };
 
-onMounted(updatePill);
+onMounted(() => {
+  projectStore.fetchAll();
+  updatePill();
+});
+
 watch([activeFilter, locale], updatePill);
 
-const trendProjects = ref([
-  {
-    id: 1,
-    title: 'VoltHub: Ultra-Fast Universal EV Chargers',
-    author: 'Alex Volkov',
-    authorAvatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=128',
-    category: 'CLEANTECH',
-    progress: 65,
-    raised: '120.5M',
-    goal: '180M',
-    donors: 1420,
-    days: 12,
-    img: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 2,
-    title: 'Dexter: Affordable Prosthetic Solutions',
-    author: 'Sarah Chen',
-    authorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=128',
-    category: 'ROBOTICS',
-    progress: 110,
-    raised: '45.2M',
-    goal: '40M',
-    donors: 850,
-    days: 4,
-    img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 3,
-    title: 'Orbital: decentralized cloud storage',
-    author: 'Marc Andre',
-    authorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=128',
-    category: 'SAAS',
-    progress: 32,
-    raised: '890.1M',
-    goal: '2.5B',
-    donors: 4200,
-    days: 28,
-    img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800'
-  }
-]);
+const trendProjects = computed(() => {
+  return projectStore.allItems.slice(0, 3);
+});
 
 const otherWorlds = ref([
   { id: 1, key: 'art', icon: '🎨', count: 124 },
