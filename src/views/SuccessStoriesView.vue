@@ -59,7 +59,14 @@ const stats = ref([
   { value: "12,500+", label: t('success_stories.stats.backers') }
 ]);
 
-const testimonials = computed(() => tm('success_stories.testimonials') as any[]);
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  image: string;
+}
+
+const testimonials = computed(() => tm('success_stories.testimonials') as unknown as Testimonial[]);
 </script>
 
 <template>
