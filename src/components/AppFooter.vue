@@ -30,6 +30,11 @@
               }}</router-link>
             </li>
             <li>
+              <router-link to="/success-stories" class="text-gray-500 hover:text-[#1a946b] transition-colors">{{
+                $t("footer.p_stories")
+              }}</router-link>
+            </li>
+            <li>
               <router-link
                 to="/security"
                 class="text-gray-500 hover:text-[#1a946b] transition-colors"

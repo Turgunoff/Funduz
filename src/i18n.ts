@@ -362,6 +362,7 @@ const messages = {
       p_art: "San'at",
       p_social: "Ijtimoiy yordam",
       p_articles: "Maqolalar",
+      p_stories: "Muvaffaqiyat hikoyalari",
       company_title: "Kompaniya",
       c_about: "Biz haqimizda",
       c_contact: "Bog'lanish",
@@ -371,6 +372,72 @@ const messages = {
       l_privacy: "Maxfiylik siyosati",
       l_security: "Xavfsizlik",
       social_fb: "Facebook",
+      copyright: "© 2024 Funduz. Barcha huquqlar himoyalangan.",
+      social_tg: "Telegram",
+      social_inst: "Instagram",
+    },
+    success_stories: {
+      title: "Muvaffaqiyatga aylangan g'oyalar",
+      subtitle: "Funduz-da o'z orzularini amalga oshirgan o'zbekistonlik mualliflar bilan tanishing.",
+      stats: {
+        projects: "MOLIYALASHTIRILGAN LOYIHALAR",
+        raised: "TO'PLANGAN MABLAG'",
+        backers: "BAXTLI HOMIYLAR"
+      },
+      featured: {
+        badge: "ASOSIY HIKOYA",
+        title: "Samarqand ipak qog'ozi an'anasini qayta tiklash",
+        desc: "Anora Karimov 450 ta mahalliy homiy ko'magi bilan qadimiy hunarmandchilikni qanday qilib barqaror global brendga aylantirgani haqida.",
+        metrics: "14 kunda maqsadning 180 foizi to'plandi",
+        cta: "To'liq o'qish"
+      },
+      milestones_title: "Yana ko'p yutuqlarni kashf eting",
+      milestones_desc: "O'zbekistonning turli burchaklaridagi hamjamiyatimizning real hikoyalari.",
+      read_more: "To'liq o'qish",
+      filters: {
+        all: "BARCHASI",
+        tech: "TEXNO",
+        eco: "EKO",
+        art: "ART",
+        social: "IJTIMOIY"
+      },
+      items: [
+        {
+          id: 1,
+          title: "EcoBottle: Qayta ishlash kelajagini qayta tasavvur qilish",
+          quote: "Bizning texnologiyamiz suv iste'molini 60% gacha kamaytiradi, bu mahalliy zavodlar uchun katta yutuqdir.",
+          author: "Zebo Ahmedova",
+          raised: "115% to'plandi",
+          cat: "eco"
+        },
+        {
+          id: 2,
+          title: "NeuroLink: Ko'zi ojizlar uchun AI yordamchi",
+          quote: "Ko'zi ojiz insonlarga dunyoni tovush orqali idrok etishga yordam berish Funduz hamjamiyati amalga oshirgan orzu edi.",
+          author: "Azamat Sattorov",
+          raised: "102% to'plandi",
+          cat: "tech"
+        },
+        {
+          id: 3,
+          title: "SolarKids: Chekka qishloqlardagi maktablarni energiya bilan ta'minlash",
+          quote: "Endi qishlog'imizdagi har bir bolaning tunda dars qilish uchun chirog'i bor. Bu kraudfandingning haqiqiy kuchi.",
+          author: "Anvar Kasimov",
+          raised: "110% to'plandi",
+          cat: "social"
+        }
+      ],
+      reach_section: {
+        title: "Milliy qamrov, mahalliy ta'sir",
+        desc: "Jamiyatimiz butun respublika bo'ylab, Buxoroning tarixiy ko'chalaridan tortib Toshkentning zamonaviy markazlarigacha yoyilgan.",
+        btn: "Tarmoqqa qo'shiling",
+        stats: {
+          regions: "12 VILOYAT QAMROVI",
+          success: "94% LOYIHA MUVAFFAQIYATI",
+          visitors: "4.2M FAOL TASHRIF BUYURUVCHILAR",
+          creators: "3.5K FAOL MUALLIFLAR"
+        }
+      }
     },
     articles: {
       title: "Funduz hamjamiyatidan hikoyalar, maslahatlar va yangiliklar",
@@ -1702,6 +1769,7 @@ const messages = {
       p_art: "Искусство",
       p_social: "Социальная помощь",
       p_articles: "Статьи",
+      p_stories: "Истории успеха",
       company_title: "Компания",
       c_about: "О нас",
       c_contact: "Контакты",
@@ -1714,6 +1782,69 @@ const messages = {
       social_tg: "Telegram",
       social_inst: "Instagram",
       social_fb: "Facebook",
+    },
+    success_stories: {
+      title: "Идеи, ставшие реальностью",
+      subtitle: "Познакомьтесь с узбекскими создателями, которые превратили свои мечты в финансируемые проекты на Funduz.",
+      stats: {
+        projects: "ПРОФИНАНСИРОВАНО",
+        raised: "СОБРАНО",
+        backers: "СЧАСТЛИВЫХ ДОНОРОВ"
+      },
+      featured: {
+        badge: "ГЛАВНАЯ ИСТОРИЯ",
+        title: "Возрождение традиционной самаркандской шелковой бумаги",
+        desc: "Как Анора Каримова превратила древнее ремесло в устойчивый глобальный бренд при поддержке 450 местных доноров.",
+        metrics: "Собрано 180% цели за 14 дней",
+        cta: "Читать историю"
+      },
+      milestones_title: "Откройте для себя больше достижений",
+      milestones_desc: "Реальные истории нашего разнообразного сообщества по всему Узбекистану.",
+      read_more: "Читать полностью",
+      filters: {
+        all: "ВСЕ",
+        tech: "ТЕХНО",
+        eco: "ЭКО",
+        art: "АРТ",
+        social: "СОЦ"
+      },
+      items: [
+        {
+          id: 1,
+          title: "EcoBottle: Переосмысление будущего переработки",
+          quote: "Наша технология снижает потребление воды на 60%, что меняет правила игры для местных заводов.",
+          author: "Зебо Ахмедова",
+          raised: "115% собрано",
+          cat: "eco"
+        },
+        {
+          id: 2,
+          title: "NeuroLink: ИИ-помощник для слабовидящих",
+          quote: "Помочь слепым людям воспринимать мир через звук было мечтой, которую сообщество Funduz сделало реальностью.",
+          author: "Азамат Сатторов",
+          raised: "102% собрано",
+          cat: "tech"
+        },
+        {
+          id: 3,
+          title: "SolarKids: Энергия для школ в отдаленных селах",
+          quote: "Теперь у каждого ребенка в нашем селе есть свет для учебы по ночам. В этом истинная сила краудфандинга.",
+          author: "Анвар Касимов",
+          raised: "110% собрано",
+          cat: "social"
+        }
+      ],
+      reach_section: {
+        title: "Национальный охват, локальное влияние",
+        desc: "Наше сообщество охватывает всю республику, от исторических улиц Бухары до современных центров Ташкента.",
+        btn: "Присоединиться к сети",
+        stats: {
+          regions: "ОХВАТ 12 РЕГИОНОВ",
+          success: "94% УСПЕШНОСТЬ ПРОЕКТОВ",
+          visitors: "4.2М АКТИВНЫХ ПОСЕТИТЕЛЕЙ",
+          creators: "3.5К АКТИВНЫХ СОЗДАТЕЛЕЙ"
+        }
+      }
     },
     articles: {
       title: "Истории, советы и новости от сообщества Funduz",

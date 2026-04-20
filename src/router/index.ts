@@ -101,6 +101,11 @@ const router = createRouter({
       component: () => import("../views/ArticlesView.vue"),
     },
     {
+      path: "/success-stories",
+      name: "success-stories",
+      component: () => import("../views/SuccessStoriesView.vue"),
+    },
+    {
       path: "/article/:slug",
       name: "article-detail",
       component: () => import("../views/ArticleDetailView.vue"),
