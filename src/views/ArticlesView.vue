@@ -132,7 +132,7 @@
           ></div>
 
           <button
-            v-for="(label, key) in categories"
+            v-for="(label, key) in categoriesList"
             :key="key"
             @click="activeCategory = key"
             ref="categoryButtons"
@@ -148,16 +148,13 @@
       <div class="md:hidden relative">
         <button
           @click="isMobileMenuOpen = !isMobileMenuOpen"
-          class="w-full bg-white border border-gray-100 rounded-[24px] p-5 flex items-center justify-between shadow-sm active:scale-[0.98] transition-all"
+          class="w-full bg-white flex items-center justify-between p-5 rounded-3xl shadow-sm border border-gray-100"
         >
-          <div class="flex items-center gap-3">
-            <div class="w-2 h-2 rounded-full bg-[#1a946b]"></div>
-            <span class="text-[16px] font-black text-gray-900 uppercase tracking-wide">
-              {{ categories[activeCategory] }}
-            </span>
-          </div>
+          <span class="text-[15px] font-black text-gray-900">{{
+            categoriesList[activeCategory]
+          }}</span>
           <svg
-            class="w-6 h-6 text-gray-400 transition-transform duration-300"
+            class="w-5 h-5 text-[#1a946b] transition-transform duration-300"
             :class="{ 'rotate-180': isMobileMenuOpen }"
             fill="none"
             viewBox="0 0 24 24"
@@ -172,87 +169,74 @@
           </svg>
         </button>
 
-        <!-- Dropdown Menu -->
-        <transition
+        <Transition
           enter-active-class="transition duration-200 ease-out"
-          enter-from-class="transform scale-95 opacity-0"
-          enter-to-class="transform scale-100 opacity-100"
+          enter-from-class="transform -translate-y-4 opacity-0"
+          enter-to-class="transform translate-y-0 opacity-100"
           leave-active-class="transition duration-150 ease-in"
-          leave-from-class="transform scale-100 opacity-100"
-          leave-to-class="transform scale-95 opacity-0"
+          leave-from-class="transform translate-y-0 opacity-100"
+          leave-to-class="transform -translate-y-4 opacity-0"
         >
           <div
             v-if="isMobileMenuOpen"
-            class="absolute top-full left-0 right-0 mt-3 bg-white rounded-[32px] shadow-2xl border border-gray-50 p-3 z-[100]"
+            class="absolute top-full left-0 right-0 mt-3 bg-white rounded-3xl shadow-2xl p-4 z-50 border border-gray-50 overflow-hidden"
           >
             <button
-              v-for="(label, key) in categories"
+              v-for="(label, key) in categoriesList"
               :key="key"
-              @click="selectMobileCategory(key)"
-              class="w-full text-left px-6 py-4 rounded-[20px] text-[15px] font-bold transition-all mb-1 last:mb-0"
-              :class="
-                activeCategory === key
-                  ? 'bg-[#f0fdf4] text-[#1a946b]'
-                  : 'text-gray-500 active:bg-gray-50'
-              "
+              @click="selectMobileCategory(key as string)"
+              class="w-full text-left px-6 py-4 rounded-2xl text-[14px] font-bold transition-all"
+              :class="activeCategory === key ? 'bg-green-50 text-[#1a946b]' : 'text-gray-500'"
             >
               {{ label }}
             </button>
           </div>
-        </transition>
+        </Transition>
       </div>
     </div>
 
     <!-- Articles Grid -->
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      <div v-if="!isLoading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
         <router-link
-          v-for="article in filteredArticles"
+          v-for="article in articles"
           :key="article.id"
-          :to="`/article/${article.slug || article.id}`"
-          class="bg-white rounded-[50px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group block"
+          :to="`/article/${article.slug}`"
+          class="group bg-white rounded-[40px] overflow-hidden border border-gray-50 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.08)] transition-all duration-500"
         >
-          <!-- Card Image -->
-          <div class="h-64 overflow-hidden">
+          <div class="relative h-[240px] lg:h-[280px] overflow-hidden">
             <img
               :src="article.image"
-              :alt="article.title"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              alt="Article"
             />
-          </div>
-
-          <!-- Card Content -->
-          <div class="p-8 lg:p-10">
-            <div class="text-[#1a946b] text-[12px] font-black uppercase tracking-widest mb-4">
-              {{ article.category_label }}
+            <div
+              class="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-md rounded-xl text-[10px] font-black uppercase tracking-widest text-gray-900 border border-white/50 shadow-sm"
+            >
+              {{ article.categoryKey.toUpperCase() }}
             </div>
-
+          </div>
+          <div class="p-8 lg:p-10">
             <h3
-              class="text-[22px] lg:text-[24px] font-black text-gray-900 mb-4 leading-tight group-hover:text-[#1a946b] transition-colors"
+              class="text-[20px] lg:text-[24px] font-black text-gray-900 mb-4 group-hover:text-[#1a946b] transition-colors leading-tight"
             >
               {{ article.title }}
             </h3>
-
-            <p class="text-gray-500 text-[15px] lg:text-[16px] leading-relaxed mb-8 line-clamp-2">
-              {{ article.desc }}
+            <p class="text-[14px] lg:text-[15px] text-gray-500 leading-relaxed line-clamp-3 mb-8">
+              {{ article.content.substring(0, 150) }}...
             </p>
-
-            <!-- Bottom Row: Author & Date -->
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-full overflow-hidden bg-gray-100 flex-shrink-0">
-                <img
-                  :src="`https://ui-avatars.com/api/?name=${article.author}&background=f3f1f0&color=0f4634&bold=true`"
-                  alt="Author"
-                  class="w-full h-full object-cover"
-                />
-              </div>
+            <div class="flex items-center gap-3 pt-6 border-t border-gray-50">
               <div>
-                <div class="text-gray-900 font-bold text-[14px]">{{ article.author }}</div>
-                <div class="text-gray-400 text-[12px] font-medium">{{ article.date }}</div>
+                <div class="text-gray-900 font-bold text-[14px]">Author #{{ article.authorId }}</div>
+                <div class="text-gray-400 text-[12px] font-medium">{{ article.createdAt }}</div>
               </div>
             </div>
           </div>
         </router-link>
+      </div>
+      <div v-else class="flex flex-col items-center justify-center py-24 lg:py-32">
+        <div class="w-12 h-12 border-4 border-[#1a946b] border-t-transparent rounded-full animate-spin mb-4"></div>
+        <p class="text-gray-400 font-bold uppercase tracking-widest text-[12px]">Maqolalar yuklanmoqda...</p>
       </div>
     </div>
 
@@ -296,26 +280,37 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { useI18n } from "vue-i18n";
+import { articleService } from "../services/articleService";
+import type { Article } from "../types/Article";
 
-interface ArticleItem {
-  id: number;
-  slug: string;
-  category: string;
-  category_label: string;
-  title: string;
-  desc: string;
-  author: string;
-  date: string;
-  image: string;
-}
-
-const { tm } = useI18n();
+const { tm, t, locale } = useI18n();
 const activeCategory = ref("all");
 const isMobileMenuOpen = ref(false);
 const categoryButtons = ref<HTMLButtonElement[]>([]);
 const windowWidth = ref(window.innerWidth);
+
+const articles = ref<Article[]>([]);
+const isLoading = ref(true);
+
+const fetchArticles = async () => {
+  isLoading.value = true;
+  try {
+    let result = await articleService.getAll();
+    if (activeCategory.value !== 'all') {
+      result = result.filter(a => a.categoryKey === activeCategory.value);
+    }
+    articles.value = result;
+  } catch (error) {
+    console.error('Failed to fetch articles:', error);
+  } finally {
+    isLoading.value = false;
+  }
+};
+
+onMounted(fetchArticles);
+watch([activeCategory, locale], fetchArticles);
 
 const selectMobileCategory = (key: string) => {
   activeCategory.value = key;
@@ -334,12 +329,13 @@ onUnmounted(() => {
   window.removeEventListener("resize", updateWidth);
 });
 
-const categories = computed(() => {
+const categoriesList = computed(() => {
   return tm("articles.categories") as Record<string, string>;
 });
 
 const pillStyle = computed(() => {
-  const keys = Object.keys(categories.value);
+  if (!categoriesList.value) return {};
+  const keys = Object.keys(categoriesList.value);
   const index = keys.indexOf(activeCategory.value);
   const btn = categoryButtons.value[index];
 
@@ -351,15 +347,6 @@ const pillStyle = computed(() => {
     left: `${btn.offsetLeft}px`,
     top: `${btn.offsetTop}px`,
   };
-});
-
-const allArticles = computed(() => {
-  return tm("articles.list") as ArticleItem[];
-});
-
-const filteredArticles = computed(() => {
-  if (activeCategory.value === "all") return allArticles.value;
-  return allArticles.value.filter((article) => article.category === activeCategory.value);
 });
 </script>
 

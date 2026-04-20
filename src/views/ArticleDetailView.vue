@@ -130,7 +130,7 @@
             </p>
 
             <ul class="space-y-4 mb-12">
-              <li v-for="(item, idx) in (tm(`${slug}.list1`) as any[])" :key="idx" class="flex gap-4 items-start">
+              <li v-for="(item, idx) in list1" :key="idx" class="flex gap-4 items-start">
                 <div class="w-2 h-2 rounded-full bg-[#1a946b] mt-3 flex-shrink-0"></div>
                 <p class="text-[18px] lg:text-[20px] text-gray-700 leading-[1.6] font-medium">
                   <span class="font-black text-gray-900">{{ item.bold }}:</span> {{ item.text }}
@@ -174,7 +174,7 @@
               <!-- Comments List -->
               <div class="space-y-12">
                 <div 
-                  v-for="(comment, idx) in (tm(`${slug}.discussion.comments`) as any[])" 
+                  v-for="(comment, idx) in comments" 
                   :key="idx"
                   class="flex gap-6 items-start"
                 >
@@ -234,7 +234,7 @@
               </div>
               <ul class="space-y-6">
                 <li 
-                  v-for="(section, idx) in (tm(`${slug}.sidebar.sections`) as string[])" 
+                  v-for="(section, idx) in sidebarSections" 
                   :key="idx"
                   class="flex items-center gap-4 group cursor-pointer"
                 >
@@ -308,7 +308,7 @@
         <!-- Articles Grid (Matched to ArticlesView.vue) -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div 
-            v-for="(article, idx) in (tm(`${slug}.keep_reading.articles`) as any[])" 
+            v-for="(article, idx) in keepReading" 
             :key="idx"
             class="group bg-white rounded-[60px] overflow-hidden border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
           >
@@ -367,6 +367,11 @@ const slug = computed(() => {
   // Ensure we match the keys in i18n.ts (they use underscores)
   return s.replace(/-/g, '_'); 
 });
+
+const list1 = computed(() => tm(`${slug.value}.list1`) as any[]);
+const comments = computed(() => tm(`${slug.value}.discussion.comments`) as any[]);
+const sidebarSections = computed(() => tm(`${slug.value}.sidebar.sections`) as string[]);
+const keepReading = computed(() => tm(`${slug.value}.keep_reading.articles`) as any[]);
 </script>
 
 <style scoped>

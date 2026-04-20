@@ -216,7 +216,7 @@
           class="flex items-center gap-6 lg:gap-12 border-b border-gray-100 mb-8 lg:mb-12 overflow-x-auto no-scrollbar"
         >
           <button
-            v-for="(tab, idx) in $tm('project_view.tabs')"
+            v-for="(tab, idx) in tm('project_view.tabs')"
             :key="idx"
             @click="activeTab = Number(idx)"
             :class="
@@ -313,7 +313,7 @@
               </h3>
               <ul class="space-y-4">
                 <li
-                  v-for="(benefit, bidx) in $tm('project_view.benefits')"
+                  v-for="(benefit, bidx) in tm('project_view.benefits')"
                   :key="bidx"
                   class="flex items-start gap-4"
                 >
@@ -364,17 +364,17 @@
               >
                 <div class="flex justify-between items-start mb-4 lg:mb-6">
                   <div class="text-[#0f5238] font-black text-lg lg:text-xl">
-                    {{ $tm(`project_view.reward_${rIdx}_price`) }}
+                    {{ tm(`project_view.reward_${rIdx}_price`) }}
                   </div>
                   <div class="text-[10px] font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded">
                     {{ rIdx === 1 ? "45" : rIdx === 2 ? "28" : "5" }} ta olindi
                   </div>
                 </div>
                 <h4 class="text-gray-900 font-bold text-base lg:text-lg mb-3 lg:mb-4">
-                  {{ $tm(`project_view.reward_${rIdx}_title`) }}
+                  {{ tm(`project_view.reward_${rIdx}_title`) }}
                 </h4>
                 <p class="text-gray-400 text-[13px] lg:text-sm leading-relaxed mb-6 lg:mb-8">
-                  {{ $tm(`project_view.reward_${rIdx}_desc`) }}
+                  {{ tm(`project_view.reward_${rIdx}_desc`) }}
                 </p>
 
                 <div
@@ -445,7 +445,9 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
 
+const { t, tm } = useI18n();
 const activeTab = ref(0);
 </script>
 

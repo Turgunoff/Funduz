@@ -69,7 +69,7 @@
       </div>
 
       <!-- Projects Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 mb-12 lg:mb-16">
+      <div v-if="!isLoading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 mb-12 lg:mb-16">
         <div 
           v-for="project in projects" 
           :key="project.id"
@@ -77,18 +77,18 @@
         >
           <!-- Project Image -->
           <div class="relative rounded-[24px] lg:rounded-[32px] overflow-hidden aspect-[4/3] mb-5 lg:mb-6 bg-gray-50 border border-gray-50 shadow-sm">
-            <img :src="project.img" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <img :src="project.mainImage" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
             <div class="absolute top-3 left-3 lg:top-4 lg:left-4 px-3 lg:px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] lg:text-[11px] font-black uppercase tracking-wider text-gray-800">
-              {{ project.category }}
+              {{ $t(`explore.categories.${project.categoryKey}`) }}
             </div>
           </div>
 
           <!-- Content Meta -->
           <div class="flex items-center gap-2 mb-4">
             <div class="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-orange-100 flex items-center justify-center text-[10px] lg:text-[11px] font-bold text-orange-600">
-              {{ project.author.charAt(0) }}
+              U
             </div>
-            <span class="text-[11px] lg:text-xs font-semibold text-gray-400">{{ project.author }}</span>
+            <span class="text-[11px] lg:text-xs font-semibold text-gray-400">User #{{ project.authorId }}</span>
           </div>
 
           <!-- Title -->
@@ -100,24 +100,30 @@
           <div class="mt-auto">
             <div class="flex justify-between items-end mb-2.5 lg:mb-3">
               <div class="text-[16px] lg:text-[17px] font-black text-gray-900">
-                {{ project.raised }} <span class="text-[11px] lg:text-[13px] font-bold text-gray-400 uppercase">so'm</span>
+                {{ formatCurrency(project.raised) }} <span class="text-[11px] lg:text-[13px] font-bold text-gray-400 uppercase">so'm</span>
               </div>
               <div class="text-[13px] lg:text-[14px] font-black text-[#1a946b]">
-                {{ project.progress }}%
+                {{ getProgress(project) }}%
               </div>
             </div>
             <div class="w-full h-2 bg-gray-50 rounded-full mb-4 overflow-hidden">
-              <div class="h-full bg-[#1a946b] rounded-full transition-all duration-1000" :style="{ width: project.progress + '%' }"></div>
+              <div class="h-full bg-[#1a946b] rounded-full transition-all duration-1000" :style="{ width: getProgress(project) + '%' }"></div>
             </div>
             <div class="flex justify-between items-center text-[11px] lg:text-[12px] font-bold text-gray-400 mb-6 lg:mb-8">
-              <span>{{ $t('projects.goal') }}: {{ project.goal }}</span>
-              <span>{{ project.donors }} donor</span>
+              <span>{{ $t('projects.goal') }}: {{ formatCurrency(project.goal) }}</span>
+              <span>{{ project.donorsCount }} donor</span>
             </div>
-            <router-link to="/project/1" class="block w-full py-3.5 lg:py-4 bg-[#f0fdf4] text-[#1a946b] font-black text-center rounded-xl lg:rounded-2xl hover:bg-[#1a946b] hover:text-white transition-all duration-300">
+            <router-link :to="`/project/${project.id}`" class="block w-full py-3.5 lg:py-4 bg-[#f0fdf4] text-[#1a946b] font-black text-center rounded-xl lg:rounded-2xl hover:bg-[#1a946b] hover:text-white transition-all duration-300">
               {{ $t('projects.more') }}
             </router-link>
           </div>
         </div>
+      </div>
+      
+      <!-- Loading State -->
+      <div v-else class="flex flex-col items-center justify-center py-24 lg:py-32">
+        <div class="w-12 h-12 border-4 border-[#1a946b] border-t-transparent rounded-full animate-spin mb-4"></div>
+        <p class="text-gray-400 font-bold uppercase tracking-widest text-[12px]">{{ $t('explore.loading') || 'Yuklanmoqda...' }}</p>
       </div>
 
       <!-- Load More -->
@@ -132,28 +138,49 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, onMounted, watch, nextTick } from 'vue'
-import { useRouter } from 'vue-router'
-import { useI18n } from 'vue-i18n'
+import { ref, onMounted, watch, nextTick } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useRouter } from 'vue-router';
+import { projectService } from '../services/projectService';
+import type { Project } from '../types/Project';
 
-interface ExploreProject {
-  id: number
-  title: string
-  author: string
-  category: string
-  raised: string
-  goal: string
-  progress: number
-  days: number
-  donors: number
-  img: string
-}
+const { t, locale } = useI18n();
+const router = useRouter();
 
-const { tm, t, locale } = useI18n()
-const router = useRouter()
-const activeCategory = ref("all");
-const activeSort = ref("newest");
-const searchQuery = ref("");
+const activeCategory = ref('all');
+const activeSort = ref('newest');
+const searchQuery = ref('');
+const projects = ref<Project[]>([]);
+const isLoading = ref(true);
+
+const formatCurrency = (val: number) => {
+  return new Intl.NumberFormat('uz-UZ').format(val);
+};
+
+const getProgress = (p: Project) => {
+  return Math.round((p.raised / p.goal) * 100);
+};
+
+const fetchProjects = async () => {
+  isLoading.value = true;
+  try {
+    let result = await projectService.getAll();
+    
+    if (activeCategory.value !== 'all') {
+      result = result.filter(p => p.categoryKey === activeCategory.value);
+    }
+    
+    result = await projectService.sort(result, activeSort.value);
+    projects.value = result;
+  } catch (error) {
+    console.error('Failed to fetch projects:', error);
+  } finally {
+    isLoading.value = false;
+  }
+};
+
+onMounted(fetchProjects);
+watch([activeCategory, activeSort, locale], fetchProjects);
 
 const pillButtons = ref<HTMLElement[]>([]);
 const pillStyle = ref({
@@ -183,26 +210,6 @@ const handleLocalSearch = () => {
     router.push({ path: '/search', query: { q: searchQuery.value.trim() } });
   }
 };
-const allProjects = computed(() => tm('explore.projects_list') as unknown as ExploreProject[])
-
-const projects = computed(() => {
-  let result = [...allProjects.value]
-
-  if (activeCategory.value !== 'all') {
-    const targetCategoryLabel = t(`explore.categories.${activeCategory.value}`)
-    result = result.filter(p => p.category === targetCategoryLabel)
-  }
-
-  if (activeSort.value === 'newest') {
-    result.sort((a, b) => b.id - a.id)
-  } else if (activeSort.value === 'popular') {
-    result.sort((a, b) => b.donors - a.donors)
-  } else if (activeSort.value === 'ending') {
-    result.sort((a, b) => a.days - b.days)
-  }
-
-  return result
-})
 </script>
 
 <style scoped>

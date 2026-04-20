@@ -1,73 +1,58 @@
-# funduz
+# Funduz — Crowdfunding Platform
 
-This template should help get you started developing with Vue 3 in Vite.
+[![Website](https://img.shields.io/badge/website-funduz.uz-1a946b)](https://funduz.uz)
+[![Framework](https://img.shields.io/badge/framework-Vue%203-42b883)](https://vuejs.org/)
+[![Tooling](https://img.shields.io/badge/tooling-Vite-646cff)](https://vite.dev/)
 
-## Recommended IDE Setup
+**Funduz** — это современная краудфандинговая платформа, созданная для поддержки инновационных идей, социальных инициатив и творческих проектов в Узбекистане. Наша миссия — объединить создателей контента, предпринимателей и благотворителей для совместного созидания будущего.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## ✨ Основные возможности
 
-## Recommended Browser Setup
+- **Исследование проектов**: Удобный поиск и фильтрация проектов по категориям (технологии, искусство, экология и др.).
+- **Истории успеха**: Раздел с вдохновляющими результатами завершенных кампаний.
+- **Мультиязычность**: Полная поддержка узбекского и русского языков (Vue I18n).
+- **Адаптивный дизайн**: Современный, премиальный интерфейс, оптимизированный для всех типов устройств.
+- **Безопасность**: Прозрачный процесс сбора средств и верификации авторов.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## 🛠 Технологический стек
 
-## Type Support for `.vue` Imports in TS
+- **Core**: [Vue 3](https://vuejs.org/) (Composition API + Script Setup)
+- **Build Tool**: [Vite](https://vite.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Localization**: [Vue I18n](https://vue-i18n.intlify.dev/)
+- **Routing**: [Vue Router](https://router.vuejs.org/)
+- **State Management**: [Pinia](https://pinia.vuejs.org/)
+- **Testing**: [Vitest](https://vitest.dev/) & [Playwright](https://playwright.dev/)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 🗺 Дорожная карта проекта
 
-## Customize configuration
+Для детального ознакомления с планом разработки и текущим прогрессом используйте следующие файлы:
+- [Roadmap (O'zbek)](./docs/frontend-roadmap.md)
+- [Roadmap (Русский)](./docs-ru/frontend-roadmap.md)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🚀 Настройка и запуск
 
-## Project Setup
-
+### Установка зависимостей
 ```sh
-pnpm install
+npm install
 ```
 
-### Compile and Hot-Reload for Development
-
+### Запуск в режиме разработки
 ```sh
-pnpm dev
+npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
+### Сборка для продакшена
 ```sh
-pnpm build
+npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
+### Тестирование
 ```sh
-pnpm test:unit
+npm run test:unit  # Юнит-тесты Vitest
+npm run test:e2e   # E2E-тесты Playwright
 ```
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
+---
 
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-pnpm build
-
-# Runs the end-to-end tests
-pnpm test:e2e
-# Runs the tests only on Chromium
-pnpm test:e2e --project=chromium
-# Runs the tests of a specific file
-pnpm test:e2e tests/example.spec.ts
-# Runs the tests in debug mode
-pnpm test:e2e --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+© 2024 Funduz Team. Все права защищены.

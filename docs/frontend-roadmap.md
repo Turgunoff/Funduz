@@ -13,21 +13,21 @@
   - `<title>Funduz — Crowdfunding platformasi</title>`
   - `<meta name="description">`, `og:title`, `og:image`, `twitter:card`
 - [x] `public/robots.txt` va `public/sitemap.xml` qo'shish.
-- [ ] `README.md` ni loyiha haqida ma'lumot bilan yangilash.
-- [ ] `package.json`: `playwright` ni `devDependencies` ga ko'chirish, versiyani `0.1.0` qilish.
+- [x] `README.md` ni loyiha haqida ma'lumot bilan yangilash.
+- [x] `package.json`: `playwright` ni `devDependencies` ga ko'chirish, versiyani `0.1.0` qilish.
 
 ## Bosqich 1 — Ma'lumot modeli va mock qatlami (1-2 kun)
 
 **Maqsad:** UI ni matn (i18n) dan ma'lumot (data) dan ajratish.
 
-- [ ] `src/types/` papkasi yaratish: `Project.ts`, `Article.ts`, `Story.ts`, `User.ts`, `Category.ts`, `Reward.ts`, `Donation.ts`.
-- [ ] `src/mocks/` papkasi:
+- [x] `src/types/` papkasi yaratish: `Project.ts`, `Article.ts`, `Story.ts`, `User.ts`, `Category.ts`, `Reward.ts`, `Donation.ts`.
+- [x] `src/mocks/` papkasi:
   - `projects.mock.ts` — 15-20 ta loyiha (id, categoryKey, authorId, images, rewards, progress, donors, createdAt, endsAt).
   - `articles.mock.ts` — slug, category, author, content (UZ/RU).
   - `stories.mock.ts` — muvaffaqiyat hikoyalari.
   - `users.mock.ts` — demo foydalanuvchilar.
   - `categories.mock.ts` — `{ key: 'tech', labels: { uz, ru } }`.
-- [ ] `src/services/` papkasi — kelajakda API ga almashtirish oson:
+- [x] `src/services/` papkasi — kelajakda API ga almashtirish oson:
   - `projectService.ts` (`getAll`, `getById`, `search`, `filterByCategory`, `sort`)
   - `articleService.ts`
   - `storyService.ts`

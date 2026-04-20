@@ -1,10 +1,32 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, watch, nextTick } from 'vue';
+import { ref, onMounted, watch, nextTick, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { storyService } from '../services/storyService';
+import type { Story } from '../types/Story';
 
 const { t, tm, locale } = useI18n();
 
 const activeFilter = ref('all');
+const storiesData = ref<Story[]>([]);
+const isLoading = ref(true);
+
+const fetchStories = async () => {
+  isLoading.value = true;
+  try {
+    let result = await storyService.getAll();
+    if (activeFilter.value !== 'all') {
+      result = result.filter(s => s.categoryKey === activeFilter.value);
+    }
+    storiesData.value = result;
+  } catch (error) {
+    console.error('Failed to fetch stories:', error);
+  } finally {
+    isLoading.value = false;
+  }
+};
+
+onMounted(fetchStories);
+watch([activeFilter, locale], fetchStories);
 
 // Pill animation logic (identical to ExploreView)
 const pillButtons = ref<HTMLElement[]>([]);
@@ -30,28 +52,14 @@ const updatePill = async () => {
 onMounted(updatePill);
 watch([activeFilter, locale], updatePill);
 
-interface Story {
-  id: number;
-  title: string;
-  quote: string;
-  author: string;
-  raised: string;
-  cat: string;
-}
-
-const storiesData = computed(() => tm('success_stories.items') as unknown as Story[]);
-const filteredStories = computed(() => {
-  if (activeFilter.value === 'all') return storiesData.value;
-  return storiesData.value.filter(s => s.cat === activeFilter.value);
-});
-
 // Stats data mapped from i18n
-const stats = computed(() => [
+const stats = ref([
   { value: "250+", label: t('success_stories.stats.projects') },
   { value: "15B UZS", label: t('success_stories.stats.raised') },
   { value: "12,500+", label: t('success_stories.stats.backers') }
 ]);
 
+const testimonials = computed(() => tm('success_stories.testimonials') as any[]);
 </script>
 
 <template>
@@ -161,42 +169,72 @@ const stats = computed(() => [
         </div>
 
         <!-- Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-24">
-          <div 
-            v-for="story in filteredStories" 
-            :key="story.id"
-            class="bg-white rounded-[40px] overflow-hidden group hover:shadow-2xl transition-all duration-500 border border-gray-50 flex flex-col h-full animate-fadeIn"
-          >
-            <!-- Image with Success Badge -->
-            <div class="relative h-[240px] lg:h-[280px] overflow-hidden">
-              <img 
-                :src="story.cat === 'eco' ? '/eco_story.png' : (story.cat === 'tech' ? 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800' : 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800')" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                alt="Story"
-              >
-              <!-- Success Badge (Brown) -->
-              <div class="absolute top-5 left-5 px-4 py-2 bg-[#78350f] text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-lg">
-                100% {{ t('success_stories.read_more').toUpperCase().split(' ')[0] }}...
-              </div>
-            </div>
-            <div class="p-8 lg:p-10 flex flex-col flex-grow">
-              <h3 class="text-[22px] lg:text-[26px] font-bold text-[#064e3b] mb-6 group-hover:text-[#1a946b] transition-colors leading-tight">
-                {{ story.title }}
-              </h3>
-              <p class="text-[14px] lg:text-[15px] text-gray-400 leading-relaxed italic mb-10 flex-grow font-medium">
-                "{{ story.quote }}"
-              </p>
-              
-              <!-- Read Story Link -->
-              <div class="mt-auto">
-                <router-link to="/story/1" class="inline-flex items-center gap-2 text-[#059669] font-bold text-[14px] hover:gap-3 transition-all duration-300">
+        <div class="grid grid-cols-1 gap-8 lg:gap-10 mb-24">
+          <!-- Stories List -->
+          <div v-if="!isLoading" class="space-y-12 lg:space-y-20">
+            <div 
+              v-for="story in storiesData" 
+              :key="story.id"
+              class="group bg-white rounded-[40px] lg:rounded-[56px] p-8 lg:p-12 border border-gray-100 hover:border-[#1a946b]/30 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.05)] transition-all duration-700 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center"
+            >
+              <!-- Story Content -->
+              <div class="lg:w-1/2 order-2 lg:order-1">
+                <div class="flex items-center gap-3 mb-8">
+                  <span class="px-5 py-2 bg-green-50 text-[#1a946b] rounded-full text-[12px] font-black uppercase tracking-widest border border-green-100/50">
+                    {{ story.category }}
+                  </span>
+                </div>
+                
+                <h3 class="text-[32px] lg:text-[44px] font-bold text-gray-900 leading-[1.15] tracking-tight mb-10 group-hover:text-[#1a946b] transition-colors duration-500">
+                  {{ story.title }}
+                </h3>
+                
+                <p class="text-[20px] lg:text-[24px] font-bold text-gray-800 leading-relaxed mb-12 italic">
+                  "{{ story.subtitle }}"
+                </p>
+                
+                <!-- Result Stats -->
+                <div class="grid grid-cols-2 gap-10 mb-16 px-1">
+                  <div>
+                    <div class="text-[28px] lg:text-[32px] font-black text-[#1a946b] mb-1">
+                      {{ story.raised }} <span class="text-[12px] lg:text-[14px]">sum</span>
+                    </div>
+                    <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ t('success_stories.stats.raised') }}</div>
+                  </div>
+                  <div>
+                    <div class="text-[28px] lg:text-[32px] font-black text-gray-900 mb-1">
+                      {{ story.donors }}
+                    </div>
+                    <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ t('success_stories.stats.backers') }}</div>
+                  </div>
+                </div>
+                
+                <router-link :to="`/story/${story.id}`" class="inline-flex items-center gap-3 text-[16px] font-bold text-[#1a946b] border-b-2 border-transparent hover:border-[#1a946b] pb-1 transition-all">
                   {{ t('success_stories.read_more') }}
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </router-link>
               </div>
+
+              <!-- Story Image -->
+              <div class="lg:w-1/2 order-1 lg:order-2 self-stretch min-h-[300px] lg:min-h-0">
+                <div class="relative w-full h-full rounded-[32px] lg:rounded-[44px] overflow-hidden">
+                  <img 
+                    :src="story.image" 
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                    :alt="story.title"
+                  >
+                  <!-- Overlay gradient -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                </div>
+              </div>
             </div>
+          </div>
+          <!-- Loader -->
+          <div v-else class="flex flex-col items-center justify-center py-24 lg:py-32">
+            <div class="w-12 h-12 border-4 border-[#1a946b] border-t-transparent rounded-full animate-spin mb-4"></div>
+            <p class="text-gray-400 font-bold uppercase tracking-widest text-[12px]">Hikoyalar yuklanmoqda...</p>
           </div>
         </div>
       </div>
@@ -268,7 +306,7 @@ const stats = computed(() => [
         </h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           <div 
-            v-for="(item, idx) in (tm('success_stories.testimonials') as any[])" 
+            v-for="(item, idx) in testimonials" 
             :key="idx"
             class="bg-[#f9f9f9] rounded-[48px] p-10 lg:p-14 flex flex-col h-full border border-gray-100/50"
           >

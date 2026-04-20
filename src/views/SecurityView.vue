@@ -148,7 +148,7 @@
                 <div class="w-6 h-6 rounded-full bg-[#0f4a36] flex items-center justify-center flex-shrink-0">
                   <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </div>
-                <span class="text-[16px] text-gray-700 font-semibold">{{ t(feat) }}</span>
+                <span class="text-[16px] text-gray-700 font-semibold">{{ feat }}</span>
               </div>
             </div>
           </div>
@@ -216,7 +216,7 @@
                   <svg v-else-if="check.icon === 'phone'" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                   <svg v-else-if="check.icon === 'search'" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-                <span class="text-[14px] lg:text-[15px] font-bold text-gray-800 tracking-tight">{{ t(check.key) }}</span>
+                <span class="text-[14px] lg:text-[15px] font-bold text-gray-800 tracking-tight">{{ check.label }}</span>
               </div>
             </div>
           </div>
@@ -335,7 +335,7 @@
               <svg v-else-if="item.icon === 'hosting'" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
             </div>
             <span class="text-[12px] lg:text-[13px] font-black text-gray-900 tracking-wider leading-tight">
-              {{ t(item.key) }}
+              {{ item.label }}
             </span>
           </div>
         </div>
@@ -351,7 +351,7 @@
 
         <div class="max-w-[900px] mx-auto space-y-4">
           <div 
-            v-for="(item, i) in 4" 
+            v-for="(item, i) in faqItems" 
             :key="i"
             class="bg-[#f6f3f2] rounded-[32px] overflow-hidden border border-gray-100/50 shadow-sm transition-all duration-300"
           >
@@ -360,7 +360,7 @@
               class="w-full flex items-center justify-between px-8 lg:px-10 py-7 lg:py-8 text-left group"
             >
               <span class="text-[18px] lg:text-[20px] font-bold text-gray-900 group-hover:text-[#1a946b] transition-colors pr-8">
-                {{ t(`security.faq.items[${i}].q`) }}
+                {{ item.q }}
               </span>
               <div 
                 class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500 shadow-sm"
@@ -374,7 +374,7 @@
               v-show="activeFaq === i"
               class="px-8 lg:px-10 pb-8 text-[15px] lg:text-[16px] text-gray-500 leading-relaxed font-medium animate-fade-in-down"
             >
-              {{ t(`security.faq.items[${i}].a`) }}
+              {{ item.a }}
             </div>
           </div>
         </div>
@@ -408,10 +408,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-const { t } = useI18n();
+const { t, tm } = useI18n();
 const activeFaq = ref<number | null>(null);
 
 const features = [
@@ -434,18 +434,12 @@ const escrowSteps = [
   { titleKey: 'security.escrow_process.step4_title', descKey: 'security.escrow_process.step4_desc' }
 ];
 
-const aonFeatures = [
-  'security.all_or_nothing.features[0]',
-  'security.all_or_nothing.features[1]',
-  'security.all_or_nothing.features[2]'
-];
-
-const verificationChecks = [
-  { key: 'security.creator_verification.checks[0]', icon: 'id' },
-  { key: 'security.creator_verification.checks[1]', icon: 'bank' },
-  { key: 'security.creator_verification.checks[2]', icon: 'phone' },
-  { key: 'security.creator_verification.checks[3]', icon: 'search' }
-];
+const aonFeatures = computed(() => tm('security.all_or_nothing.features') as string[]);
+const verificationChecks = computed(() => {
+  const labels = tm('security.creator_verification.checks') as string[];
+  const icons = ['id', 'bank', 'phone', 'search'];
+  return labels.map((label, i) => ({ label, icon: icons[i] || 'search' }));
+});
 
 const refundCards = [
   { titleKey: 'security.refund_scenarios.card1.title', descKey: 'security.refund_scenarios.card1.desc', timeKey: 'security.refund_scenarios.card1.time' },
@@ -453,14 +447,13 @@ const refundCards = [
   { titleKey: 'security.refund_scenarios.card3.title', descKey: 'security.refund_scenarios.card3.desc', timeKey: 'security.refund_scenarios.card3.time' }
 ];
 
-const enterpriseItems = [
-  { key: 'security.enterprise.items[0]', icon: 'ssl' },
-  { key: 'security.enterprise.items[1]', icon: 'pci' },
-  { key: 'security.enterprise.items[2]', icon: '2fa' },
-  { key: 'security.enterprise.items[3]', icon: 'ai' },
-  { key: 'security.enterprise.items[4]', icon: 'audit' },
-  { key: 'security.enterprise.items[5]', icon: 'hosting' }
-];
+const enterpriseItems = computed(() => {
+  const labels = tm('security.enterprise.items') as string[];
+  const icons = ['ssl', 'pci', '2fa', 'ai', 'audit', 'hosting'];
+  return labels.map((label, i) => ({ label, icon: icons[i] || 'shield' }));
+});
+
+const faqItems = computed(() => tm('security.faq.items') as any[]);
 </script>
 
 <style scoped>

@@ -112,18 +112,18 @@
             >
               <!-- Project Image -->
               <div class="relative rounded-[24px] lg:rounded-[32px] overflow-hidden aspect-[4/3] mb-5 lg:mb-6 bg-gray-50 border border-gray-50 shadow-sm">
-                <img :src="project.img" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                <img :src="project.mainImage" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                 <div class="absolute top-3 left-3 lg:top-4 lg:left-4 px-3 lg:px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] lg:text-[11px] font-black uppercase tracking-wider text-gray-800">
-                  {{ project.category }}
+                  {{ $t('explore.categories.' + project.categoryKey) }}
                 </div>
               </div>
 
               <!-- Content Meta -->
               <div class="flex items-center gap-2 mb-4">
                 <div class="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-orange-100 flex items-center justify-center text-[10px] lg:text-[11px] font-bold text-orange-600">
-                  {{ project.author.charAt(0) }}
+                  U
                 </div>
-                <span class="text-[11px] lg:text-xs font-semibold text-gray-400">{{ project.author }}</span>
+                <span class="text-[11px] lg:text-xs font-semibold text-gray-400">User #{{ project.authorId }}</span>
               </div>
 
               <!-- Title -->
@@ -135,18 +135,18 @@
               <div class="mt-auto">
                 <div class="flex justify-between items-end mb-2.5 lg:mb-3">
                   <div class="text-[16px] lg:text-[17px] font-black text-gray-900">
-                    {{ project.raised }} <span class="text-[11px] lg:text-[13px] font-bold text-gray-400 uppercase">so'm</span>
+                    {{ formatCurrency(project.raised) }} <span class="text-[11px] lg:text-[13px] font-bold text-gray-400 uppercase">so'm</span>
                   </div>
                   <div class="text-[13px] lg:text-[14px] font-black text-[#1a946b]">
-                    {{ project.progress }}%
+                    {{ getProgress(project) }}%
                   </div>
                 </div>
                 <div class="w-full h-2 bg-gray-50 rounded-full mb-4 overflow-hidden">
-                  <div class="h-full bg-[#1a946b] rounded-full transition-all duration-1000" :style="{ width: project.progress + '%' }"></div>
+                  <div class="h-full bg-[#1a946b] rounded-full transition-all duration-1000" :style="{ width: getProgress(project) + '%' }"></div>
                 </div>
-                <div class="flex justify-between items-center text-[11px] lg:text-[12px] font-bold text-gray-400 mb-6 lg:mb-8">
-                  <span>{{ $t('projects.goal') }}: {{ project.goal }}</span>
-                  <span>{{ project.donors }} donor</span>
+                <div class="flex justify-between items-center text-[10px] lg:text-[11px] font-bold text-gray-400 mt-2">
+                  <span>{{ $t('projects.goal') }}: {{ formatCurrency(project.goal) }}</span>
+                  <span>{{ project.donorsCount }} donor</span>
                 </div>
                 <router-link to="/project/1" class="block w-full py-3.5 lg:py-4 bg-[#f0fdf4] text-[#1a946b] font-black text-center rounded-xl lg:rounded-2xl hover:bg-[#1a946b] hover:text-white transition-all duration-300">
                   {{ $t('projects.more') }}
@@ -351,11 +351,33 @@ interface ExploreProject {
   img: string
 }
 
+import { projectService } from '../services/projectService';
+import type { Project } from '../types/Project';
+
 const route = useRoute()
 const router = useRouter()
 const { tm, t, locale } = useI18n()
 
-const allProjects = computed(() => tm('explore.projects_list') as unknown as ExploreProject[])
+const allProjects = ref<Project[]>([])
+const isLoading = ref(true)
+
+const formatCurrency = (val: number) => {
+  return new Intl.NumberFormat('uz-UZ').format(val);
+};
+
+const getProgress = (p: Project) => {
+  return Math.min(Math.round((p.raised / p.goal) * 100), 100);
+};
+
+onMounted(async () => {
+  try {
+    allProjects.value = await projectService.getAll();
+  } catch (err) {
+    console.error(err);
+  } finally {
+    isLoading.value = false;
+  }
+})
 
 const activeTab = ref('all')
 const activeCat = ref('all')
@@ -424,19 +446,16 @@ const filteredProjects = computed(() => {
   const q = (route.query.q as string || '').toLowerCase()
   if (q) {
     result = result.filter(p => 
-      p.title.toLowerCase().includes(q) || 
-      p.author.toLowerCase().includes(q) ||
-      p.category.toLowerCase().includes(q)
+      p.title.toLowerCase().includes(q)
     )
   }
 
   if (activeCat.value !== 'all') {
-    const targetCat = t(`search.cats.${activeCat.value}`)
-    result = result.filter(p => p.category === targetCat)
+    result = result.filter(p => p.categoryKey === activeCat.value)
   }
 
   if (activeSort.value === 'newest') result.sort((a, b) => b.id - a.id)
-  else if (activeSort.value === 'popular') result.sort((a, b) => b.donors - a.donors)
+  else if (activeSort.value === 'popular') result.sort((a, b) => b.donorsCount - a.donorsCount)
 
   return result
 })

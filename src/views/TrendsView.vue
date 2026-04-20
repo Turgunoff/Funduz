@@ -34,7 +34,7 @@
           <!-- Chips Area -->
           <div class="flex flex-wrap gap-3 lg:gap-4">
             <div 
-              v-for="(chip, i) in $tm('trends.chips')" 
+              v-for="(chip, i) in tm('trends.chips')" 
               :key="i"
               class="px-5 py-2.5 bg-[#f0f0f0] rounded-full text-[13px] lg:text-[14px] font-bold text-gray-900 transition-colors hover:bg-gray-200 cursor-default"
             >

@@ -86,11 +86,11 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="(story, idx) in ($tm('community.stories.items') as any[])" :key="idx" class="bg-white rounded-[40px] overflow-hidden group hover:shadow-xl transition-all duration-500">
+          <div v-for="story in stories" :key="story.id" class="bg-white rounded-[40px] overflow-hidden group hover:shadow-xl transition-all duration-500">
             <!-- Story Image -->
             <div class="relative h-[240px] lg:h-[280px] overflow-hidden">
               <img 
-                :src="idx === 0 ? 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&q=80&w=800' : (idx === 1 ? 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800' : 'https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&q=80&w=800')" 
+                :src="story.image" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 alt="Story"
               >
@@ -102,14 +102,14 @@
 
             <!-- Content -->
             <div class="p-8 lg:p-10">
-              <h3 class="text-[20px] lg:text-[24px] font-bold text-gray-900 mb-6 group-hover:text-[#1e5c43] transition-colors">
-                {{ (story as any).title }}
+              <h3 class="text-[20px] lg:text-[24px] font-bold text-gray-900 mb-6 group-hover:text-[#1a946b] transition-colors">
+                {{ story.title }}
               </h3>
               <p class="text-[14px] lg:text-[15px] text-gray-500 leading-relaxed italic mb-10">
-                "{{ (story as any).desc }}"
+                "{{ story.subtitle }}"
               </p>
               
-              <router-link to="/story/1" class="inline-flex items-center gap-2 text-[13px] lg:text-[14px] font-bold text-[#1e5c43] hover:gap-3 transition-all">
+              <router-link :to="`/story/${story.id}`" class="inline-flex items-center gap-2 text-[13px] lg:text-[14px] font-bold text-[#1a946b] hover:gap-3 transition-all">
                 {{ $t('community.stories.read_story') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -127,7 +127,7 @@
         </h2>
         
         <div class="flex flex-wrap justify-center gap-8 lg:gap-12">
-          <div v-for="(name, idx) in ($tm('community.sponsors_section.items') as string[])" :key="idx" class="flex flex-col items-center">
+          <div v-for="(name, idx) in (tm('community.sponsors_section.items') as string[])" :key="idx" class="flex flex-col items-center">
             <div class="relative w-24 h-24 lg:w-32 lg:h-32 mb-6">
               <div class="absolute inset-0 rounded-full border-2 border-[#1e5c43] p-1">
                 <img 
@@ -175,7 +175,17 @@
 </template>
 
 <script setup lang="ts">
-/* Minimal setup with i18n support */
+import { ref, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { storyService } from '../services/storyService';
+import type { Story } from '../types/Story';
+
+const { tm } = useI18n();
+const stories = ref<Story[]>([]);
+
+onMounted(async () => {
+  stories.value = (await storyService.getAll()).slice(0, 3);
+});
 </script>
 
 <style scoped>

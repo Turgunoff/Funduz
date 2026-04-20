@@ -13,27 +13,27 @@
   - `<title>Funduz — краудфандинговая платформа</title>`
   - `<meta name="description">`, `og:title`, `og:image`, `twitter:card`
 - [x] Добавить `public/robots.txt` и `public/sitemap.xml`.
-- [ ] Обновить `README.md` реальной информацией о проекте.
-- [ ] В `package.json`: перенести `playwright` в `devDependencies`, поставить версию `0.1.0`.
+- [x] Обновить `README.md` реальной информацией о проекте.
+- [x] В `package.json`: перенести `playwright` в `devDependencies`, поставить версию `0.1.0`.
 
 ## Этап 1 — Модель данных и mock-слой (1–2 дня)
 
 **Цель:** отделить UI-текст (i18n) от данных.
 
-- [ ] Создать папку `src/types/`: `Project.ts`, `Article.ts`, `Story.ts`, `User.ts`, `Category.ts`, `Reward.ts`, `Donation.ts`.
-- [ ] Папка `src/mocks/`:
+- [x] Создать папку `src/types/`: `Project.ts`, `Article.ts`, `Story.ts`, `User.ts`, `Category.ts`, `Reward.ts`, `Donation.ts`.
+- [x] Папка `src/mocks/`:
   - `projects.mock.ts` — 15–20 проектов (id, categoryKey, authorId, images, rewards, progress, donors, createdAt, endsAt).
   - `articles.mock.ts` — slug, category, author, content (UZ/RU).
   - `stories.mock.ts` — истории успеха.
   - `users.mock.ts` — демо-пользователи.
   - `categories.mock.ts` — `{ key: 'tech', labels: { uz, ru } }`.
-- [ ] Папка `src/services/` — чтобы позже легко заменить на API:
+- [x] Папка `src/services/` — чтобы позже легко заменить на API:
   - `projectService.ts` (`getAll`, `getById`, `search`, `filterByCategory`, `sort`)
   - `articleService.ts`
   - `storyService.ts`
   - `authService.ts` (mock login/register через `localStorage`)
   - `donationService.ts` (mock оплата)
-- [ ] Удалить из i18n ключи `projects_list`, `articles_list`, `stories_list` — оставить только UI-тексты.
+- [x] Удалить из i18n ключи `projects_list`, `articles_list`, `stories_list` — оставить только UI-тексты.
 
 ## Этап 2 — Pinia store (1 день)
 
