@@ -77,7 +77,7 @@
               {{ $t('community.stories.subtitle') }}
             </p>
           </div>
-          <router-link to="/explore" class="hidden md:flex items-center gap-2 text-[14px] lg:text-[15px] font-bold text-[#1e5c43] hover:translate-x-1 transition-transform">
+          <router-link to="/success-stories" class="hidden md:flex items-center gap-2 text-[14px] lg:text-[15px] font-bold text-[#1e5c43] hover:translate-x-1 transition-transform">
             {{ $t('community.stories.view_all') }}
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
