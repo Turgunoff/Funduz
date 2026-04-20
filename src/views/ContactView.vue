@@ -169,19 +169,23 @@ const handleSubmit = () => {
 
       <!-- Quick Answers / FAQ CTA Section -->
       <div class="mt-20 lg:mt-32">
-        <div class="bg-[#c6f6d5]/50 rounded-[28px] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 border border-[#c6f6d5]">
-          <div class="flex items-center gap-5">
-            <div class="w-12 h-12 shrink-0 rounded-full bg-white flex items-center justify-center text-[#1a946b] shadow-sm">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <div class="bg-[#1a946b] rounded-[48px] p-10 lg:p-14 flex flex-col sm:flex-row items-center justify-between gap-8 relative overflow-hidden group shadow-2xl shadow-green-900/10">
+          <!-- Decoration Circles -->
+          <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+          <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+
+          <div class="flex items-center gap-6 relative z-10">
+            <div class="w-16 h-16 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center text-white backdrop-blur-md border border-white/20">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             </div>
             <div>
-              <h3 class="text-[18px] sm:text-[20px] font-bold text-gray-900 mb-1 leading-tight">Looking for quick answers?</h3>
-              <p class="text-[14px] sm:text-[15px] text-gray-600 font-medium">Our comprehensive help center might already have what you need.</p>
+              <h3 class="text-[22px] sm:text-[24px] font-bold text-white mb-2 leading-tight tracking-tight">Looking for quick answers?</h3>
+              <p class="text-[15px] lg:text-[17px] text-white/70 font-medium">Our comprehensive help center might already have what you need.</p>
             </div>
           </div>
           <router-link 
             to="/faq" 
-            class="px-8 py-3.5 bg-white hover:bg-gray-50 text-gray-900 font-bold rounded-full text-[15px] shadow-sm transition-all duration-300 active:scale-95 whitespace-nowrap"
+            class="relative z-10 px-10 py-5 bg-[#0d5c42] text-white font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1 active:scale-95 whitespace-nowrap"
           >
             Visit FAQ
           </router-link>
