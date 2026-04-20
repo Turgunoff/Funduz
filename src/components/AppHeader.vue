@@ -29,8 +29,8 @@
                 {{ $t("nav.about") }}
               </router-link>
               <router-link
-                to="/community"
-                :class="isCommunityPage ? 'text-[#1a946b]' : 'hover:text-[#1a946b]'"
+                to="/success-stories"
+                :class="isSuccessStoriesPage ? 'text-[#1a946b]' : 'hover:text-[#1a946b]'"
                 class="transition-colors"
               >
                 {{ $t("nav.cooperation") }}
@@ -208,9 +208,9 @@
           </router-link>
           <router-link
             @click="isMenuOpen = false"
-            to="/community"
+            to="/success-stories"
             class="text-[20px] font-black border-b border-gray-50 pb-5 flex justify-between items-center"
-            :class="isCommunityPage ? 'text-[#1a946b]' : 'text-gray-900'"
+            :class="isSuccessStoriesPage ? 'text-[#1a946b]' : 'text-gray-900'"
           >
             {{ $t("nav.cooperation") }}
             <svg
@@ -332,7 +332,7 @@ const performSearch = () => {
 
 const isExplorePage = computed(() => route.path === "/explore");
 const isHowItWorksPage = computed(() => route.path === "/how-it-works");
-const isCommunityPage = computed(() => route.path === "/community");
+const isSuccessStoriesPage = computed(() => route.path === "/success-stories");
 const isTrendsPage = computed(() => route.path === "/trends");
 
 const setLocale = (lang: string) => {

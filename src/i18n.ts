@@ -5,7 +5,7 @@ const messages = {
     nav: {
       projects: "Loyihalarni ko'rish",
       about: "Qanday ishlaydi?",
-      cooperation: "Jamiyat",
+      cooperation: "Muvaffaqiyat hikoyalari",
       trends: "Texnologik tendensiyalar",
       projects_short: "Loyihalar",
       about_short: "Biz haqimizda",
@@ -1433,7 +1433,7 @@ const messages = {
     nav: {
       projects: "Просмотр проектов",
       about: "Как это работает?",
-      cooperation: "Сообщество",
+      cooperation: "Истории успеха",
       trends: "Технологические тенденции",
       projects_short: "Проекты",
       about_short: "О нас",
