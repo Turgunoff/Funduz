@@ -437,6 +437,27 @@ const messages = {
           visitors: "4.2M FAOL TASHRIF BUYURUVCHILAR",
           creators: "3.5K FAOL MUALLIFLAR"
         }
+      },
+      testimonials_title: "Mualliflar nima deydi?",
+      testimonials: [
+        {
+          quote: "Biz nafaqat moliyaviy yordam, balki maslahatlarni ham oldik, bu haqiqiy o'zgarishga sabab bo'ldi. Funduz — shunchaki platforma emas, u hamkor.",
+          author: "Madina Rahimova",
+          role: "EcoThreads Tashkent asoschisi",
+          image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200"
+        },
+        {
+          quote: "Mahalliy loyihamiz bunchalik katta e'tibor qozonishini hech qachon o'ylamagandik. Funduz bizni butun O'zbekistondagi homiylar bilan bog'ladi.",
+          author: "Otabek Ismoilov",
+          role: "CodeAcademy UZ yaratuvchisi",
+          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"
+        }
+      ],
+      final_banner: {
+        title: "O'zingizning g'oyangiz keyingisi bo'lishi mumkin",
+        desc: "Funduzda muvaffaqiyat qozongan 250 dan ortiq mualliflarga qo'shiling. Biz sizga kerakli vositalarni, auditoriyani va ishonchni taqdim etamiz.",
+        start: "Loyihangizni boshlang",
+        guide: "Muallif qo'llanmasini o'qing"
       }
     },
     articles: {
@@ -1844,6 +1865,27 @@ const messages = {
           visitors: "4.2М АКТИВНЫХ ПОСЕТИТЕЛЕЙ",
           creators: "3.5К АКТИВНЫХ СОЗДАТЕЛЕЙ"
         }
+      },
+      testimonials_title: "Что говорят авторы",
+      testimonials: [
+        {
+          quote: "Менторство, которое мы получили вместе с финансированием, — это то, что действительно имело значение. Funduz — это партнер, а не просто платформа.",
+          author: "Мадина Рахимова",
+          role: "Основатель EcoThreads Tashkent",
+          image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200"
+        },
+        {
+          quote: "Никогда не думал, что наш локальный проект сможет привлечь столько внимания. Funduz связал нас с донорами со всего Узбекистана.",
+          author: "Отабек Исмоилов",
+          role: "Создатель CodeAcademy UZ",
+          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"
+        }
+      ],
+      final_banner: {
+        title: "Ваша идея может стать следующей",
+        desc: "Присоединяйтесь к 250+ авторам, которые добились успеха на Funduz. Мы предоставляем инструменты, аудиторию и доверие, которые вам необходимы.",
+        start: "Запустить проект",
+        guide: "Руководство автора"
       }
     },
     articles: {

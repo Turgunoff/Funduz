@@ -202,7 +202,7 @@ const stats = computed(() => [
       </div>
 
       <!-- Section 4: National Reach (Premium CTA) -->
-      <div class="mt-20 lg:mt-32 pb-24 lg:pb-32">
+      <div class="mt-20 lg:mt-32">
         <div class="bg-[#0f4a35] rounded-[48px] p-8 lg:p-20 relative overflow-hidden group shadow-2xl flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <!-- Background Decoration (Map-like Pattern) -->
           <div class="absolute inset-0 opacity-10 pointer-events-none">
@@ -222,7 +222,7 @@ const stats = computed(() => [
             <p class="text-[18px] lg:text-[20px] text-green-100/80 mb-12 font-medium max-w-xl leading-relaxed">
               {{ t('success_stories.reach_section.desc') }}
             </p>
-            <router-link to="/community" class="inline-flex items-center px-10 py-4 bg-white text-[#0f4a35] font-bold rounded-full text-[16px] hover:bg-[#1a946b] hover:text-white transition-all duration-300 shadow-xl hover:shadow-green-500/20">
+            <router-link to="/community" class="inline-flex items-center px-10 py-4 bg-[#1a946b] text-white font-bold rounded-full text-[16px] border-2 border-transparent hover:bg-white hover:text-[#064e3b] transition-all duration-300 shadow-xl hover:shadow-green-500/20">
               {{ t('success_stories.reach_section.btn') }}
             </router-link>
           </div>
@@ -256,6 +256,68 @@ const stats = computed(() => [
               <div class="text-[12px] font-black text-gray-400 uppercase tracking-widest">
                 {{ t('success_stories.reach_section.stats.creators') }}
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5: What Creators Say (Testimonials) -->
+      <div class="mt-24 lg:mt-32 pb-24 lg:pb-32">
+        <h2 class="text-[32px] lg:text-[44px] font-bold text-gray-900 mb-12 lg:mb-16 tracking-tight">
+          {{ t('success_stories.testimonials_title') }}
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          <div 
+            v-for="(item, idx) in (tm('success_stories.testimonials') as any[])" 
+            :key="idx"
+            class="bg-[#f9f9f9] rounded-[48px] p-10 lg:p-14 flex flex-col h-full border border-gray-100/50"
+          >
+            <!-- Quote Icon -->
+            <div class="mb-8">
+              <svg class="w-12 h-12 text-[#1a946b]/20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V15M3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.017 16H8.017C8.56928 16 9.017 15.5523 9.017 15V9C9.017 8.44772 8.56928 8 8.017 8H4.017C3.46472 8 3.017 8.44772 3.017 9V15" />
+              </svg>
+            </div>
+            <!-- Quote Text -->
+            <p class="text-[20px] lg:text-[24px] font-bold text-gray-800 leading-relaxed mb-12 flex-grow">
+              "{{ item.quote }}"
+            </p>
+            <!-- Author -->
+            <div class="flex items-center gap-4">
+              <img :src="item.image" class="w-14 h-14 rounded-2xl object-cover shadow-sm" :alt="item.author">
+              <div>
+                <div class="font-bold text-gray-900 text-[18px]">{{ item.author }}</div>
+                <div class="text-gray-500 text-[14px]">{{ item.role }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6: Final CTA Banner (Your idea could be next) -->
+      <div class="mt-20 lg:mt-32 pb-24 lg:pb-32">
+        <div class="bg-[#1a946b] rounded-[48px] p-12 lg:p-24 text-center shadow-2xl relative overflow-hidden group">
+          <!-- Subtle Glow Decorations -->
+          <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-110"></div>
+          <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-110"></div>
+
+          <div class="relative z-10 max-w-4xl mx-auto">
+            <h2 class="text-[36px] md:text-[54px] lg:text-[72px] font-bold text-white mb-8 tracking-tight leading-[1.1]">
+              {{ t('success_stories.final_banner.title') }}
+            </h2>
+            <p class="text-[18px] lg:text-[22px] text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+              {{ t('success_stories.final_banner.desc') }}
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
+              <!-- Dark Green Button -->
+              <router-link to="/create-project" class="px-12 py-5 bg-[#064e3b] text-white font-bold rounded-2xl text-[18px] border-2 border-transparent hover:bg-white hover:text-[#064e3b] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1">
+                {{ t('success_stories.final_banner.start') }}
+              </router-link>
+              <!-- White Button (Now Green with White Hover) -->
+              <router-link to="/how-it-works" class="px-12 py-5 bg-[#0d5c42] text-white font-bold rounded-2xl text-[18px] border-2 border-white/20 hover:bg-white hover:text-[#064e3b] transition-all duration-300 shadow-xl transform hover:-translate-y-1">
+                {{ t('success_stories.final_banner.guide') }}
+              </router-link>
             </div>
           </div>
         </div>
