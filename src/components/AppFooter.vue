@@ -20,24 +20,21 @@
           </h4>
           <ul class="space-y-4">
             <li>
-              <a href="#" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{
-                $t("footer.p_tech")
-              }}</a>
+              <router-link to="/trends" class="text-gray-500 hover:text-[#1a946b] transition-colors">
+                {{ $t("footer.p_tech") }}
+              </router-link>
             </li>
             <li>
-              <a href="#" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{
-                $t("footer.p_art")
-              }}</a>
-            </li>
-            <li>
-              <a href="#" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{
-                $t("footer.p_social")
-              }}</a>
-            </li>
-            <li>
-              <router-link to="/articles" class="text-gray-500 hover:text-[#0f5238] transition-colors">{{
+              <router-link to="/articles" class="text-gray-500 hover:text-[#1a946b] transition-colors">{{
                 $t("footer.p_articles")
               }}</router-link>
+            </li>
+            <li>
+              <router-link
+                to="/security"
+                class="text-gray-500 hover:text-[#1a946b] transition-colors"
+                >{{ $t("footer.l_security") }}</router-link
+              >
             </li>
           </ul>
         </div>
@@ -49,28 +46,28 @@
             <li>
               <router-link
                 to="/about"
-                class="text-gray-500 hover:text-[#0f5238] transition-colors"
+                class="text-gray-500 hover:text-[#1a946b] transition-colors"
                 >{{ $t("footer.c_about") }}</router-link
               >
             </li>
             <li>
               <router-link
                 to="/community"
-                class="text-gray-500 hover:text-[#0f5238] transition-colors"
+                class="text-gray-500 hover:text-[#1a946b] transition-colors"
                 >{{ $t("nav.cooperation") }}</router-link
               >
             </li>
             <li>
               <router-link
                 to="/contact"
-                class="text-gray-500 hover:text-[#0f5238] transition-colors"
+                class="text-gray-500 hover:text-[#1a946b] transition-colors"
                 >{{ $t("footer.c_contact") }}</router-link
               >
             </li>
             <li>
               <router-link
                 to="/faq"
-                class="text-gray-500 hover:text-[#0f5238] transition-colors"
+                class="text-gray-500 hover:text-[#1a946b] transition-colors"
                 >{{ $t("footer.c_faq") }}</router-link
               >
             </li>
@@ -84,22 +81,15 @@
             <li>
               <router-link
                 to="/terms"
-                class="text-gray-500 hover:text-[#0f5238] transition-colors"
+                class="text-gray-500 hover:text-[#1a946b] transition-colors"
                 >{{ $t("footer.l_terms") }}</router-link
               >
             </li>
             <li>
               <router-link
                 to="/privacy"
-                class="text-gray-500 hover:text-[#0f5238] transition-colors"
+                class="text-gray-500 hover:text-[#1a946b] transition-colors"
                 >{{ $t("footer.l_privacy") }}</router-link
-              >
-            </li>
-            <li>
-              <router-link
-                to="/security"
-                class="text-gray-500 hover:text-[#0f5238] transition-colors"
-                >{{ $t("footer.l_security") }}</router-link
               >
             </li>
           </ul>

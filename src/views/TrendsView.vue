@@ -239,10 +239,11 @@
     <!-- Final CTA Section -->
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pb-32">
       <div 
-        class="bg-[#1a946b] rounded-[40px] lg:rounded-[60px] p-10 lg:p-24 text-center relative overflow-hidden shadow-[0_40px_100px_-20px_rgba(26,148,107,0.3)]"
+        class="bg-[#1a946b] rounded-[48px] p-10 lg:p-24 text-center relative overflow-hidden shadow-2xl shadow-green-900/10 group"
       >
-        <!-- Subtle background pattern or glow -->
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 to-transparent pointer-events-none"></div>
+        <!-- Decoration Circles -->
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
         
         <h2 class="relative z-10 text-[28px] md:text-[40px] lg:text-[56px] font-black text-white leading-tight mb-6 lg:mb-8 tracking-tight">
           {{ $t('trends.cta.title') }}
@@ -253,7 +254,7 @@
         </p>
         
         <button 
-          class="relative z-10 px-10 lg:px-14 py-4 lg:py-5 bg-[#0d5c42] text-white font-black rounded-full hover:bg-white hover:text-[#0d5c42] border-2 border-transparent hover:border-white transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1"
+          class="relative z-10 px-12 py-5 bg-[#0d5c42] text-white font-black rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1"
         >
           {{ $t('trends.cta.btn') }}
         </button>

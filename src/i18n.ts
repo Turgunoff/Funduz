@@ -1203,6 +1203,80 @@ const messages = {
           desc: "Mablag'larning 100% homiylarga avtomatik ravishda qaytariladi.",
         },
       },
+      creator_verification: {
+        title: "Mualliflarni verifikatsiya qilish",
+        desc: "Biz har kimga loyiha boshlashga ruxsat bermaymiz. Har bir muallif loyihani ishga tushirishdan oldin bizning ko'p bosqichli tekshiruv protokolidan o'tishi kerak.",
+        badge_search: "Tasdiqlangan belgisini qidiring",
+        delivered_count: "3 ta loyiha muvaffaqiyatli amalga oshirilgan",
+        disclaimer: "Tasdiqlangan belgisi shuni bildiradiki, biz ushbu muallifning shaxsini va moliyaviy holatini qat'iy tekshirish jarayoni orqali tasdiqlaganmiz.",
+        checks: [
+          "Davlat identifikatsiya tekshiruvi",
+          "Bank hisobini ulash",
+          "Telefon raqamini tasdiqlash",
+          "Biografiyani tekshirish",
+        ],
+      },
+      refund_scenarios: {
+        title: "Qaytarish ssenariylari",
+        card1: {
+          title: "Loyiha yetarlicha moliyalashtirilmagan",
+          desc: "Agar loyiha belgilangan vaqt ichida o'z maqsadining 100 foiziga erisha olmasa.",
+          time: "2–3 ish kuni ichida qaytarish",
+        },
+        card2: {
+          title: "Muallif tomonidan loyihani bekor qilinishi",
+          desc: "Agar muallif mablag'lar eskroudan chiqarilgunga qadar o'z loyihasini bekor qilsa.",
+          time: "3–5 ish kuni ichida qaytarish",
+        },
+        card3: {
+          title: "Verifikatsiya xatosi",
+          desc: "Agar loyiha yakunlangandan keyin muallif yakuniy muvofiqlik tekshiruvidan o'ta olmasa.",
+          time: "5–7 ish kuni ichida qaytarish",
+        },
+      },
+      suspicious: {
+        title: "Shubhali biror narsa ko'rdingizmi?",
+        desc: "Jamiyatimizning hushyorligi - bizning eng katta kuchimizdir. Shartlarimizni buzadigan yoki chalg'ituvchi deb hisoblagan har qanday loyiha haqida xabar bering.",
+        report_btn: "Loyiha haqida xabar berish",
+        contact_btn: "Ishonch jamoasi bilan bog'lanish",
+      },
+      enterprise: {
+        title: "Korporativ darajadagi xavfsizlik",
+        items: [
+          "SSL SHIFRLASH",
+          "PCI-DSS 1-DARAJA",
+          "2FA HIMOYASI",
+          "AI FRAUD MONITORINGI",
+          "HAR YILLIK AUDIT",
+          "MAHALLIY XOSTING",
+        ],
+      },
+      faq: {
+        title: "Ko'p beriladigan savollar",
+        items: [
+          {
+            q: "Agar loyiha mablag' to'play olmasa nima bo'ladi?",
+            a: "Agar loyiha o'z moliyalashtirish maqsadiga erisha olmasa, barcha kiritilgan mablag'lar homiylarga to'liq hajmda avtomatik ravishda qaytariladi."
+          },
+          {
+            q: "Karta ma'lumotlarim saqlanadimi?",
+            a: "Yo'q, biz sizning karta ma'lumotlaringizni saqlamaymiz. Barcha tranzaksiyalar PCI-DSS 1-darajali sertifikatiga ega xavfsiz to'lov shlyuzlari orqali amalga oshiriladi."
+          },
+          {
+            q: "Verifikatsiya qancha davom etadi?",
+            a: "Odatda muallifni tekshirish 24 soatdan 48 soatgacha davom etadi. Biz shaxsni, bank rekvizitlarini va faoliyat tarixini tekshiramiz."
+          },
+          {
+            q: "Men o'z hissam miqdorini o'zgartira olamanmi?",
+            a: "Ha, mablag' to'plash kampaniyasi davom etayotgan vaqtda siz istalgan vaqtda o'z hissangizni o'zgartirishingiz yoki bekor qilishingiz mumkin."
+          }
+        ]
+      },
+      final_contact: {
+        title: "Xavfsizlik bo'yicha savollaringiz bormi?",
+        desc: "Bizning ishonch va xavfsizlik jamoamiz loyihalarni qo'llab-quvvatlash bo'yicha har qanday savollaringizga javob berish uchun 24/7 ishlaydi.",
+        btn: "Jamoa bilan bog'lanish",
+      },
       features: {
         feat1: { label: "Escrow himoyasi" },
         feat2: { label: "Tasdiqlangan mualliflar" },
@@ -2363,6 +2437,80 @@ const messages = {
           title: "Не достигнута",
           desc: "100% средств возвращаются спонсорам автоматически.",
         },
+      },
+      creator_verification: {
+        title: "Верификация авторов",
+        desc: "Мы не позволяем запускать проекты кому угодно. Каждый автор должен пройти наш многоуровневый протокол верификации перед запуском.",
+        badge_search: "Ищите значок верификации",
+        delivered_count: "3 проекта успешно реализовано",
+        disclaimer: "Значок верификации означает, что мы подтвердили личность и финансовое положение этого автора в ходе нашего строгого процесса проверки.",
+        checks: [
+          "Проверка гос. удостоверения",
+          "Привязка банковского счета",
+          "Верификация телефона",
+          "Проверка биографии",
+        ],
+      },
+      refund_scenarios: {
+        title: "Сценарии возврата",
+        card1: {
+          title: "Проект не дофинсирован",
+          desc: "Если проект не набирает 100% цели в установленный срок.",
+          time: "Возврат в течение 2–3 рабочих дней",
+        },
+        card2: {
+          title: "Отмена проекта автором",
+          desc: "Если автор отменяет проект до того, как средства будут выведены из эскроу.",
+          time: "Возврат в течение 3–5 рабочих дней",
+        },
+        card3: {
+          title: "Ошибка верификации",
+          desc: "Если автор не проходит финальную проверку на соответствие требованиям после завершения проекта.",
+          time: "Возврат в течение 5–7 рабочих дней",
+        },
+      },
+      suspicious: {
+        title: "Заметили что-то подозрительное?",
+        desc: "Бдительность нашего сообщества — наша величайшая сила. Сообщите о любом проекте, который, по вашему мнению, нарушает наши условия или кажется вводящим в заблуждение.",
+        report_btn: "Пожаловаться на проект",
+        contact_btn: "Связаться с командой доверия",
+      },
+      enterprise: {
+        title: "Безопасность корпоративного уровня",
+        items: [
+          "SSL ШИФРОВАНИЕ",
+          "PCI-DSS УРОВЕНЬ 1",
+          "2FA ЗАЩИТА",
+          "ИИ-МОНИТОРИНГ ФРОДА",
+          "ЕЖЕГОДНЫЙ АУДИТ",
+          "ЛОКАЛЬНЫЙ ХОСТИНГ",
+        ],
+      },
+      faq: {
+        title: "Часто задаваемые вопросы",
+        items: [
+          {
+            q: "Что произойдет, если проект не соберет средства?",
+            a: "Если проект не достигает своей цели по финансированию, все вложенные средства автоматически возвращаются спонсорам в полном объеме."
+          },
+          {
+            q: "Хранятся ли данные моей карты?",
+            a: "Нет, мы не храним данные ваших карт. Все транзакции обрабатываются через защищенные платежные шлюзы, сертифицированные по стандарту PCI-DSS Level 1."
+          },
+          {
+            q: "Сколько времени занимает верификация?",
+            a: "Обычно проверка автора занимает от 24 до 48 часов. Мы проверяем личность, банковские реквизиты и историю деятельности."
+          },
+          {
+            q: "Могу ли я изменить сумму своего взноса?",
+            a: "Да, вы можете изменить или отменить свой взнос в любое время, пока идет кампания по сбору средств."
+          }
+        ]
+      },
+      final_contact: {
+        title: "Есть вопросы по безопасности?",
+        desc: "Наша специальная команда по доверию и безопасности работает круглосуточно, чтобы ответить на любые ваши вопросы о поддержке проектов.",
+        btn: "Связаться с командой",
       },
       features: {
         feat1: { label: "Защита Escrow" },

@@ -189,13 +189,230 @@
         </div>
       </div>
     </div>
+
+    <!-- Creator Verification Section -->
+    <div class="bg-white py-24 lg:py-32 overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+        <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
+          
+          <!-- Left: Content -->
+          <div class="flex-1 max-w-[640px]">
+            <h2 class="text-[32px] lg:text-[48px] font-bold text-gray-900 mb-8 tracking-tight">
+              {{ t('security.creator_verification.title') }}
+            </h2>
+            <p class="text-[16px] lg:text-[18px] text-gray-500 leading-relaxed mb-12 font-medium">
+              {{ t('security.creator_verification.desc') }}
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div 
+                v-for="(check, i) in verificationChecks" 
+                :key="i"
+                class="flex items-center gap-4 p-4 bg-[#f6f3f2] rounded-2xl border border-transparent hover:border-[#0f4a36]/20 transition-all duration-300"
+              >
+                <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-[#0f4a36] shadow-sm">
+                  <svg v-if="check.icon === 'id'" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2"/></svg>
+                  <svg v-else-if="check.icon === 'bank'" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m4 0h1m-5 4h1m4 0h1m-5 14z"/></svg>
+                  <svg v-else-if="check.icon === 'phone'" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  <svg v-else-if="check.icon === 'search'" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <span class="text-[14px] lg:text-[15px] font-bold text-gray-800 tracking-tight">{{ t(check.key) }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Profile Card -->
+          <div class="flex-1 w-full lg:w-auto">
+            <div class="bg-[#f6f3f2] rounded-[40px] p-8 lg:p-14 relative">
+              <!-- Verified Badge Indicator -->
+              <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#0f4a36] text-white rounded-full text-[12px] font-bold mb-8 shadow-md">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                {{ t('security.creator_verification.badge_search') }}
+              </div>
+
+              <!-- Profile Box -->
+              <div class="bg-white rounded-3xl p-6 shadow-xl flex items-center gap-6 mb-10 group hover:scale-[1.02] transition-all duration-500">
+                <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-200">
+                   <img src="https://ui-avatars.com/api/?name=Artur+Rahim&background=0f4a36&color=fff" alt="Artur Rahim" class="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <h4 class="text-[18px] font-bold text-gray-900">Artur Rahim</h4>
+                    <svg class="w-5 h-5 text-[#0f4a36]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  </div>
+                  <p class="text-[14px] text-gray-400 font-medium">{{ t('security.creator_verification.delivered_count') }}</p>
+                </div>
+              </div>
+
+              <p class="text-[14px] lg:text-[15px] text-gray-500 leading-relaxed font-medium">
+                {{ t('security.creator_verification.disclaimer') }}
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Refund Scenarios Section -->
+    <div class="bg-[#111827] py-24 lg:py-32 overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+        <h2 class="text-[32px] lg:text-[48px] font-bold text-white text-center mb-24 tracking-tight">
+          {{ t('security.refund_scenarios.title') }}
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div 
+            v-for="(card, i) in refundCards" 
+            :key="i"
+            class="bg-[#1f2937] p-10 lg:p-12 rounded-[40px] border border-gray-800 hover:border-[#10b981]/30 transition-all duration-500 group"
+          >
+            <h3 class="text-[22px] lg:text-[26px] font-bold text-white mb-6 tracking-tight group-hover:text-[#10b981] transition-colors">
+              {{ t(card.titleKey) }}
+            </h3>
+            <p class="text-[15px] lg:text-[16px] text-gray-400 leading-relaxed mb-10 font-medium h-24">
+              {{ t(card.descKey) }}
+            </p>
+            <div class="pt-8 border-t border-gray-800">
+              <span class="text-[15px] lg:text-[16px] text-[#10b981] font-bold tracking-tight">
+                {{ t(card.timeKey) }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Suspicious Activity Section -->
+    <div class="bg-white py-24 lg:py-32 relative overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+        <div class="bg-white rounded-[40px] p-8 lg:p-14 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] border border-gray-50 flex flex-col lg:flex-row items-center justify-between gap-10">
+          
+          <div class="flex-1 max-w-[700px]">
+            <h2 class="text-[28px] lg:text-[36px] font-bold text-gray-900 mb-4 tracking-tight">
+              {{ t('security.suspicious.title') }}
+            </h2>
+            <p class="text-[15px] lg:text-[17px] text-gray-500 leading-relaxed font-medium">
+              {{ t('security.suspicious.desc') }}
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <button class="px-8 py-4 bg-white border-2 border-gray-100 text-gray-900 rounded-2xl text-[15px] font-bold hover:bg-[#b91c1c] hover:text-white hover:border-[#b91c1c] hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-gray-200/50">
+              {{ t('security.suspicious.report_btn') }}
+            </button>
+            <router-link to="/contact" class="px-8 py-4 bg-white border-2 border-gray-100 text-gray-900 rounded-2xl text-[15px] font-bold hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-gray-200/50">
+              {{ t('security.suspicious.contact_btn') }}
+            </router-link>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Decorative Elements -->
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#dcfce7]/40 rounded-full blur-[120px] pointer-events-none"></div>
+    </div>
+
+    <!-- Enterprise Security Section -->
+    <div class="bg-[#f6f3f2] py-24 lg:py-32">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+        <h2 class="text-[32px] lg:text-[48px] font-bold text-gray-900 text-center mb-24 tracking-tight">
+          {{ t('security.enterprise.title') }}
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
+          <div 
+            v-for="(item, i) in enterpriseItems" 
+            :key="i"
+            class="bg-white p-6 lg:p-10 rounded-[32px] flex flex-col items-center text-center shadow-sm hover:shadow-lg transition-all duration-300 group"
+          >
+            <div class="w-12 h-12 bg-[#eef7f4] rounded-xl flex items-center justify-center text-[#1a946b] mb-8 group-hover:bg-[#1a946b] group-hover:text-white transition-colors duration-500">
+              <svg v-if="item.icon === 'ssl'" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              <svg v-else-if="item.icon === 'pci'" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+              <svg v-else-if="item.icon === '2fa'" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <svg v-else-if="item.icon === 'ai'" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.811 11.21A2 2 0 0110 21h4a2 2 0 012-2M12 3a9 9 0 00-9 9 9 9 0 005.12 8.174l-.067-.134c.15.063.303.116.46.158A4.981 4.981 0 0012 21a4.981 4.981 0 003.487-1.428c.157-.042.311-.095.46-.158l-.067.134A9 9 0 0012 3z"/></svg>
+              <svg v-else-if="item.icon === 'audit'" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <svg v-else-if="item.icon === 'hosting'" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+            </div>
+            <span class="text-[12px] lg:text-[13px] font-black text-gray-900 tracking-wider leading-tight">
+              {{ t(item.key) }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="bg-white py-24 lg:py-32">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+        <h2 class="text-[32px] lg:text-[48px] font-bold text-gray-900 text-center mb-16 lg:mb-24 tracking-tight">
+          {{ t('security.faq.title') }}
+        </h2>
+
+        <div class="max-w-[900px] mx-auto space-y-4">
+          <div 
+            v-for="(item, i) in 4" 
+            :key="i"
+            class="bg-[#f6f3f2] rounded-[32px] overflow-hidden border border-gray-100/50 shadow-sm transition-all duration-300"
+          >
+            <button 
+              @click="activeFaq = activeFaq === i ? null : i"
+              class="w-full flex items-center justify-between px-8 lg:px-10 py-7 lg:py-8 text-left group"
+            >
+              <span class="text-[18px] lg:text-[20px] font-bold text-gray-900 group-hover:text-[#1a946b] transition-colors pr-8">
+                {{ t(`security.faq.items[${i}].q`) }}
+              </span>
+              <div 
+                class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500 shadow-sm"
+                :class="activeFaq === i ? 'bg-[#1a946b] text-white rotate-180' : 'bg-white text-gray-400'"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </button>
+            
+            <div 
+              v-show="activeFaq === i"
+              class="px-8 lg:px-10 pb-8 text-[15px] lg:text-[16px] text-gray-500 leading-relaxed font-medium animate-fade-in-down"
+            >
+              {{ t(`security.faq.items[${i}].a`) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Contact Section -->
+    <div class="bg-white pb-24 lg:pb-32">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+        <div class="bg-[#1a946b] rounded-[48px] p-12 lg:p-20 text-center relative overflow-hidden shadow-2xl shadow-green-900/10">
+          <!-- Decoration Circles -->
+          <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-y-10 group-hover:translate-y-0 transition-transform duration-700"></div>
+          <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl -translate-y-10 group-hover:translate-y-0 transition-transform duration-700"></div>
+          
+          <div class="relative z-10 max-w-[800px] mx-auto">
+            <h2 class="text-white text-[32px] lg:text-[48px] font-bold mb-6 tracking-tight">
+              {{ t('security.final_contact.title') }}
+            </h2>
+            <p class="text-white/80 text-[16px] lg:text-[18px] leading-relaxed font-bold mb-12">
+              {{ t('security.final_contact.desc') }}
+            </p>
+            
+            <router-link to="/contact" class="inline-flex items-center px-12 py-5 bg-[#0d5c42] text-white rounded-2xl text-[16px] font-bold border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1">
+              {{ t('security.final_contact.btn') }}
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
+const activeFaq = ref<number | null>(null);
 
 const features = [
   { key: 'feat1', icon: 'shield' },
@@ -222,10 +439,39 @@ const aonFeatures = [
   'security.all_or_nothing.features[1]',
   'security.all_or_nothing.features[2]'
 ];
+
+const verificationChecks = [
+  { key: 'security.creator_verification.checks[0]', icon: 'id' },
+  { key: 'security.creator_verification.checks[1]', icon: 'bank' },
+  { key: 'security.creator_verification.checks[2]', icon: 'phone' },
+  { key: 'security.creator_verification.checks[3]', icon: 'search' }
+];
+
+const refundCards = [
+  { titleKey: 'security.refund_scenarios.card1.title', descKey: 'security.refund_scenarios.card1.desc', timeKey: 'security.refund_scenarios.card1.time' },
+  { titleKey: 'security.refund_scenarios.card2.title', descKey: 'security.refund_scenarios.card2.desc', timeKey: 'security.refund_scenarios.card2.time' },
+  { titleKey: 'security.refund_scenarios.card3.title', descKey: 'security.refund_scenarios.card3.desc', timeKey: 'security.refund_scenarios.card3.time' }
+];
+
+const enterpriseItems = [
+  { key: 'security.enterprise.items[0]', icon: 'ssl' },
+  { key: 'security.enterprise.items[1]', icon: 'pci' },
+  { key: 'security.enterprise.items[2]', icon: '2fa' },
+  { key: 'security.enterprise.items[3]', icon: 'ai' },
+  { key: 'security.enterprise.items[4]', icon: 'audit' },
+  { key: 'security.enterprise.items[5]', icon: 'hosting' }
+];
 </script>
 
 <style scoped>
 h1 {
   letter-spacing: -0.04em;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-down {
+  animation: fadeInDown 0.4s ease-out forwards;
 }
 </style>

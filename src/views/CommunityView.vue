@@ -146,19 +146,23 @@
       </div>
 
       <!-- Telegram Section -->
-      <div class="mt-24 lg:mt-32">
-        <div class="bg-[#1e5c43] rounded-[50px] lg:rounded-[60px] p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-10">
-          <div class="max-w-2xl text-center lg:text-left">
-            <h2 class="text-[28px] lg:text-[40px] font-bold text-white mb-6 leading-tight">
+      <div class="mt-24 lg:mt-32 pb-12">
+        <div class="bg-[#1a946b] rounded-[48px] p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 relative overflow-hidden group shadow-2xl shadow-green-900/10">
+          <!-- Decoration Circles -->
+          <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+          <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+
+          <div class="max-w-2xl text-center lg:text-left relative z-10">
+            <h2 class="text-[28px] lg:text-[40px] font-bold text-white mb-6 leading-tight tracking-tight">
               {{ $t('community.telegram.title') }}
             </h2>
-            <p class="text-[16px] lg:text-[18px] text-white/70 font-medium">
+            <p class="text-[16px] lg:text-[18px] text-white/80 font-medium leading-relaxed">
               {{ $t('community.telegram.desc') }}
             </p>
           </div>
           
-          <a href="#" class="px-10 py-5 bg-white rounded-full flex items-center gap-3 text-[15px] lg:text-[16px] font-bold text-gray-900 hover:bg-gray-50 hover:translate-y-[-4px] transition-all shadow-xl shadow-black/10">
-            <svg class="w-6 h-6 text-[#24A1DE]" fill="currentColor" viewBox="0 0 24 24">
+          <a href="#" class="relative z-10 px-10 py-5 bg-[#0d5c42] border-2 border-transparent rounded-2xl flex items-center gap-3 text-[16px] font-bold text-white hover:bg-white hover:text-[#0d5c42] hover:border-white hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-black/10">
+            <svg class="w-6 h-6 text-current" fill="currentColor" viewBox="0 0 24 24">
               <path d="M11.944 0C5.347 0 0 5.347 0 11.944c0 6.594 5.347 11.944 11.944 11.944 6.594 0 11.944-5.35 11.944-11.944C23.888 5.347 18.538 0 11.944 0zm5.54 8.017l-1.92 9.043c-.144.643-.523.801-.1.066l-2.924-2.155-1.41 1.358c-.156.156-.287.287-.588.287l.21-2.977 5.418-4.895c.235-.21-.052-.326-.364-.12l-6.696 4.215-2.883-.9c-.626-.196-.64-.626.13-.923l11.266-4.346c.523-.196.98.117.784.793z"/>
             </svg>
             {{ $t('community.telegram.btn') }}

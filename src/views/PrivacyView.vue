@@ -105,25 +105,26 @@
             </div>
           </div>
 
-          <!-- Bottom CTA (Dark Version as per screenshot) -->
-          <div class="mt-20 p-10 lg:p-16 bg-[#171c1a] rounded-[48px] relative overflow-hidden text-white shadow-2xl">
-            <!-- Decoration -->
-            <div class="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-[100px]"></div>
+          <!-- Bottom CTA (Standardized Green) -->
+          <div class="mt-20 p-10 lg:p-16 bg-[#1a946b] rounded-[48px] relative overflow-hidden text-white shadow-2xl shadow-green-900/10 group">
+            <!-- Decoration Circles -->
+            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
             
             <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div class="max-w-[450px]">
                 <h3 class="text-[28px] lg:text-[36px] font-bold mb-4 tracking-tight leading-tight">
                   {{ t('privacy.footer_title') }}
                 </h3>
-                <p class="text-gray-400 text-[16px] lg:text-[18px]">
+                <p class="text-white/70 text-[16px] lg:text-[18px] leading-relaxed">
                   {{ t('privacy.footer_desc') }}
                 </p>
               </div>
-              <div class="flex flex-col gap-6">
-                <div class="text-[20px] font-medium text-gray-300 italic opacity-80">
+              <div class="flex flex-col gap-6 relative z-10">
+                <div class="text-[20px] font-medium text-white/50 italic">
                   privacy@funduz.com
                 </div>
-                <button class="bg-[#9df3c4] hover:bg-[#86e0b1] text-[#0f1412] px-10 py-5 rounded-2xl font-bold transition-all text-[17px] shadow-lg shadow-green-400/10">
+                <button class="bg-[#0d5c42] text-white px-10 py-5 rounded-2xl font-bold border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl transform hover:-translate-y-1 text-[17px]">
                   {{ t('privacy.footer_link') }}
                 </button>
               </div>

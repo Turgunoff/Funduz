@@ -259,15 +259,11 @@
     <!-- Newsletter Section -->
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mb-20 lg:mb-32">
       <div
-        class="bg-gradient-to-br from-[#0f4634] to-[#1a946b] rounded-[60px] p-10 lg:p-20 flex flex-col lg:flex-row items-center justify-between gap-12 shadow-2xl relative overflow-hidden group"
+        class="bg-[#1a946b] rounded-[48px] p-10 lg:p-20 flex flex-col lg:flex-row items-center justify-between gap-12 shadow-2xl relative overflow-hidden group"
       >
         <!-- Decorative background circles -->
-        <div
-          class="absolute -top-24 -right-24 w-96 h-96 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors duration-700"
-        ></div>
-        <div
-          class="absolute -bottom-24 -left-24 w-96 h-96 bg-black/10 rounded-full blur-3xl group-hover:bg-black/20 transition-colors duration-700"
-        ></div>
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
 
         <div class="relative z-10 max-w-2xl text-center lg:text-left">
           <h2
@@ -286,10 +282,10 @@
           <input
             type="email"
             :placeholder="$t('newsletter.placeholder')"
-            class="w-full sm:w-[350px] bg-white rounded-full py-5 px-8 text-[15px] font-medium border-none shadow-sm focus:ring-2 focus:ring-white transition-all outline-none"
+            class="w-full sm:w-[350px] bg-white rounded-full py-5 px-8 text-[15px] font-medium border-none shadow-sm focus:ring-2 focus:ring-[#1a946b] transition-all outline-none"
           />
           <button
-            class="w-full sm:w-auto px-12 py-5 bg-[#1a946b] border-2 border-white text-white rounded-full font-black text-[15px] transition-all duration-300 hover:bg-white hover:text-[#0f4634] hover:-translate-y-1 shadow-xl active:scale-95"
+            class="w-full sm:w-auto px-12 py-5 bg-[#0d5c42] text-white rounded-full font-black text-[15px] transition-all duration-300 hover:bg-white hover:text-[#0d5c42] hover:-translate-y-1 shadow-xl active:scale-95 whitespace-nowrap"
           >
             {{ $t("newsletter.btn") }}
           </button>

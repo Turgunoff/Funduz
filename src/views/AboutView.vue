@@ -209,10 +209,10 @@
 
     <!-- CTA Section -->
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pb-32">
-      <div class="bg-gradient-to-br from-[#0f4634] to-[#1a946b] rounded-[60px] p-12 lg:p-24 text-center shadow-2xl relative overflow-hidden group">
-        <!-- Decorative background circle -->
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors duration-700"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-black/10 rounded-full blur-3xl group-hover:bg-black/20 transition-colors duration-700"></div>
+      <div class="bg-[#1a946b] rounded-[48px] p-12 lg:p-24 text-center shadow-2xl relative overflow-hidden group">
+        <!-- Decorative background circles -->
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
 
         <h2 class="relative z-10 text-[32px] md:text-[44px] lg:text-[64px] font-black text-white leading-tight mb-12 tracking-tight max-w-[900px] mx-auto">
           {{ $t('about.cta_title') }}
@@ -220,14 +220,14 @@
 
         <div class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6">
           <router-link 
-            to="/start" 
-            class="w-full sm:w-auto px-12 py-5 bg-[#1a946b] text-white rounded-full font-black text-[18px] transition-all duration-300 shadow-xl border-2 border-white hover:bg-white hover:text-[#0f4634] hover:-translate-y-1"
+            to="/login" 
+            class="px-12 py-5 bg-[#0d5c42] text-white rounded-2xl font-black text-[18px] transition-all duration-300 shadow-xl border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] hover:-translate-y-1 transform active:scale-95"
           >
             {{ $t('about.cta_btn_start') }}
           </router-link>
           <router-link 
             to="/explore" 
-            class="w-full sm:w-auto px-12 py-5 bg-[#1a946b] border-2 border-white text-white rounded-full font-black text-[18px] transition-all duration-300 hover:bg-white hover:text-[#0f4634] hover:-translate-y-1"
+            class="px-12 py-5 bg-[#0d5c42] border-2 border-transparent text-white rounded-2xl font-black text-[18px] transition-all duration-300 shadow-xl hover:border-white hover:bg-white hover:text-[#0d5c42] hover:-translate-y-1 transform active:scale-95"
           >
             {{ $t('about.cta_btn_explore') }}
           </router-link>

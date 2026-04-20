@@ -272,15 +272,11 @@
     <div class="bg-[#f6f3f2] pb-32 pt-10">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          class="relative bg-[#0f4a36] rounded-[40px] p-12 lg:p-24 overflow-hidden text-center shadow-2xl shadow-green-900/20"
+          class="relative bg-[#1a946b] rounded-[48px] p-12 lg:p-24 overflow-hidden text-center shadow-2xl shadow-green-900/20"
         >
-          <div
-            class="absolute inset-0 opacity-10 pointer-events-none"
-            style="
-              background-image: radial-gradient(#fff 1px, transparent 1px);
-              background-size: 24px 24px;
-            "
-          ></div>
+          <!-- Decoration Circles -->
+          <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+          <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
 
           <div class="relative z-10">
             <h2
@@ -291,13 +287,13 @@
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
               <button
                 @click="router.push('/create')"
-                class="border-2 border-white/30 text-white px-10 py-5 rounded-3xl font-black text-lg transition-all duration-500 backdrop-blur-sm hover:bg-white hover:text-[#0f4a36] hover:border-white hover:scale-105 active:scale-95"
+                class="px-10 py-5 bg-[#0d5c42] text-white font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1"
               >
                 {{ $t("how_it_works.cta.btn_create") }}
               </button>
               <button
                 @click="router.push('/projects')"
-                class="border-2 border-white/30 text-white px-10 py-5 rounded-3xl font-black text-lg transition-all duration-500 backdrop-blur-sm hover:bg-white hover:text-[#0f4a36] hover:border-white hover:scale-105 active:scale-95"
+                class="px-10 py-5 bg-[#0d5c42] text-white font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1"
               >
                 {{ $t("how_it_works.cta.btn_projects") }}
               </button>

@@ -93,19 +93,19 @@
           </div>
 
           <!-- Accept Section/CTA -->
-          <div class="mt-20 p-10 lg:p-14 bg-[#1e5c43] rounded-[48px] text-center shadow-2xl shadow-green-900/20 relative overflow-hidden">
+          <div class="mt-20 p-10 lg:p-14 bg-[#1a946b] rounded-[48px] text-center shadow-2xl shadow-green-900/10 relative overflow-hidden group">
             <!-- Decoration Circles -->
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-            <div class="absolute -bottom-20 -left-20 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
 
             <div class="relative z-10">
-              <h3 class="text-[28px] lg:text-[32px] font-bold text-white mb-4">{{ t('terms.footer_title') }}</h3>
+              <h3 class="text-[28px] lg:text-[32px] font-bold text-white mb-4 tracking-tight">{{ t('terms.footer_title') }}</h3>
               <p class="text-white/70 mb-10 max-w-[500px] mx-auto text-[17px] lg:text-[18px] leading-relaxed">
                 {{ t('terms.footer_desc') }}
               </p>
-              <router-link to="/contact" class="inline-flex items-center gap-3 bg-white text-[#1e5c43] px-10 py-5 rounded-2xl font-bold hover:gap-5 transition-all text-[17px] shadow-xl">
+              <router-link to="/contact" class="inline-flex items-center gap-3 bg-[#0d5c42] text-white px-10 py-5 rounded-2xl font-bold border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl transform hover:-translate-y-1 text-[17px]">
                 {{ t('terms.footer_link') }}
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </router-link>
             </div>
           </div>
