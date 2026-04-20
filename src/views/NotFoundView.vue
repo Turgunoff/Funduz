@@ -65,111 +65,43 @@
           </router-link>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Card 1 -->
-          <div class="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] flex flex-col h-full group">
-            <router-link to="/project/1" class="relative h-[220px] sm:h-[260px] overflow-hidden block">
-              <img src="/choyxona.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Choyxona" />
+        <div v-if="trendingProjects.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div v-for="project in trendingProjects" :key="project.id" class="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] flex flex-col h-full group transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:-translate-y-1">
+            <router-link :to="`/project/${project.id}`" class="relative h-[220px] sm:h-[260px] overflow-hidden block">
+              <img :src="project.mainImage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" :alt="project.title" />
               <div class="absolute top-5 left-5 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[13px] font-bold text-gray-800">
-                Culture
+                {{ $t(`explore.categories.${project.categoryKey}`) }}
               </div>
             </router-link>
             <div class="p-6 sm:p-8 flex-grow flex flex-col">
               <div class="flex items-center gap-3 mb-5">
-                <div class="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-                  <img src="https://ui-avatars.com/api/?name=Bekzod+Alimov&background=random" class="w-full h-full object-cover" />
+                <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-[11px] font-black text-orange-600 border border-orange-200 overflow-hidden">
+                  {{ project.authorId }}
                 </div>
-                <span class="text-[14px] font-medium text-gray-500">Bekzod Alimov</span>
+                <span class="text-[14px] font-medium text-gray-500">User #{{ project.authorId }}</span>
               </div>
-              <router-link to="/project/1">
+              <router-link :to="`/project/${project.id}`">
                 <h3 class="text-[18px] sm:text-[20px] font-bold text-gray-900 mb-6 leading-snug min-h-[56px] line-clamp-2 group-hover:text-[#1a946b] transition-colors">
-                  Choyxona 2.0: Traditional Tea House Refurbishment
+                  {{ project.title }}
                 </h3>
               </router-link>
               <div class="mt-auto">
                 <div class="flex justify-between items-end mb-3">
-                  <span class="text-[17px] sm:text-[18px] font-bold text-gray-800">45,280,000 so'm</span>
-                  <span class="text-[14px] font-bold text-[#1a946b]">75%</span>
+                  <span class="text-[17px] sm:text-[18px] font-bold text-gray-800">{{ formatCurrency(project.raised) }} so'm</span>
+                  <span class="text-[14px] font-bold text-[#1a946b]">{{ getProgress(project) }}%</span>
                 </div>
                 <div class="w-full h-2 bg-gray-100 rounded-full mb-4 overflow-hidden">
-                  <div class="h-full bg-[#1a946b] rounded-full" style="width: 75%"></div>
+                  <div class="h-full bg-[#1a946b] rounded-full transition-all duration-1000" :style="{ width: getProgress(project) + '%' }"></div>
                 </div>
               </div>
-              <router-link to="/project/1" class="mt-8 w-full py-4 bg-[#f0fdf4] text-[#1a946b] font-bold rounded-xl hover:bg-[#1a946b] hover:text-white transition-all text-center">
+              <router-link :to="`/project/${project.id}`" class="mt-8 w-full py-4 bg-[#f0fdf4] text-[#1a946b] font-bold rounded-xl hover:bg-[#1a946b] hover:text-white transition-all text-center">
                 {{ t('error404.explore') }}
               </router-link>
             </div>
           </div>
-
-          <!-- Card 2 -->
-          <div class="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] flex flex-col h-full group">
-            <router-link to="/project/2" class="relative h-[220px] sm:h-[260px] overflow-hidden block">
-              <img src="/project_library.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Education" />
-              <div class="absolute top-5 left-5 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[13px] font-bold text-gray-800">
-                Education
-              </div>
-            </router-link>
-            <div class="p-6 sm:p-8 flex-grow flex flex-col">
-              <div class="flex items-center gap-3 mb-5">
-                <div class="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-                  <img src="https://ui-avatars.com/api/?name=Nigora+Umarova&background=random" class="w-full h-full object-cover" />
-                </div>
-                <span class="text-[14px] font-medium text-gray-500">Nigora Umarova</span>
-              </div>
-              <router-link to="/project/2">
-                <h3 class="text-[18px] sm:text-[20px] font-bold text-gray-900 mb-6 leading-snug min-h-[56px] line-clamp-2 group-hover:text-[#1a946b] transition-colors">
-                  Smart Ziyo: Digital Library for Rural Schools
-                </h3>
-              </router-link>
-              <div class="mt-auto">
-                <div class="flex justify-between items-end mb-3">
-                  <span class="text-[17px] sm:text-[18px] font-bold text-gray-800">12,800,000 so'm</span>
-                  <span class="text-[14px] font-bold text-[#1a946b]">30%</span>
-                </div>
-                <div class="w-full h-2 bg-gray-100 rounded-full mb-4 overflow-hidden">
-                  <div class="h-full bg-[#1a946b] rounded-full" style="width: 30%"></div>
-                </div>
-              </div>
-              <router-link to="/project/2" class="mt-8 w-full py-4 bg-[#f0fdf4] text-[#1a946b] font-bold rounded-xl hover:bg-[#1a946b] hover:text-white transition-all text-center">
-                {{ t('error404.explore') }}
-              </router-link>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] flex flex-col h-full group">
-            <router-link to="/project/3" class="relative h-[220px] sm:h-[260px] overflow-hidden block">
-              <img src="/project_it.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Technology" />
-              <div class="absolute top-5 left-5 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[13px] font-bold text-gray-800">
-                Tech
-              </div>
-            </router-link>
-            <div class="p-6 sm:p-8 flex-grow flex flex-col">
-              <div class="flex items-center gap-3 mb-5">
-                <div class="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-                   <img src="https://ui-avatars.com/api/?name=Lola+Saidova&background=random" class="w-full h-full object-cover" />
-                </div>
-                <span class="text-[14px] font-medium text-gray-500">Lola Saidova</span>
-              </div>
-              <router-link to="/project/3">
-                <h3 class="text-[18px] sm:text-[20px] font-bold text-gray-900 mb-6 leading-snug min-h-[56px] line-clamp-2 group-hover:text-[#1a946b] transition-colors">
-                  AgroTech: Smart Drip Irrigation for Fergana Valley
-                </h3>
-              </router-link>
-              <div class="mt-auto">
-                <div class="flex justify-between items-end mb-3">
-                  <span class="text-[17px] sm:text-[18px] font-bold text-gray-800">22,500,000 so'm</span>
-                  <span class="text-[14px] font-bold text-[#1a946b]">90%</span>
-                </div>
-                <div class="w-full h-2 bg-gray-100 rounded-full mb-4 overflow-hidden">
-                  <div class="h-full bg-[#1a946b] rounded-full" style="width: 90%"></div>
-                </div>
-              </div>
-              <router-link to="/project/3" class="mt-8 w-full py-4 bg-[#f0fdf4] text-[#1a946b] font-bold rounded-xl hover:bg-[#1a946b] hover:text-white transition-all text-center">
-                {{ t('error404.explore') }}
-              </router-link>
-            </div>
-          </div>
+        </div>
+        <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div v-for="i in 3" :key="i" class="h-[450px] bg-gray-50 animate-pulse rounded-[32px]"></div>
         </div>
       </div>
     </div>
@@ -177,9 +109,23 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useProjectStore } from '../stores/projects';
+import type { Project } from '../types/Project';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
+const projectStore = useProjectStore();
+
+const trendingProjects = computed(() => projectStore.allItems.slice(0, 3));
+
+const formatCurrency = (val: number) => {
+  return new Intl.NumberFormat('uz-UZ').format(val);
+};
+
+const getProgress = (project: Project) => {
+  return Math.min(100, Math.round((project.raised / project.goal) * 100));
+};
 </script>
 
 <style scoped>

@@ -148,7 +148,7 @@
                   <span>{{ $t('projects.goal') }}: {{ formatCurrency(project.goal) }}</span>
                   <span>{{ project.donorsCount }} donor</span>
                 </div>
-                <router-link to="/project/1" class="block w-full py-3.5 lg:py-4 bg-[#f0fdf4] text-[#1a946b] font-black text-center rounded-xl lg:rounded-2xl hover:bg-[#1a946b] hover:text-white transition-all duration-300">
+                <router-link :to="`/project/${project.id}`" class="block w-full py-3.5 lg:py-4 bg-[#f0fdf4] text-[#1a946b] font-black text-center rounded-xl lg:rounded-2xl hover:bg-[#1a946b] hover:text-white transition-all duration-300">
                   {{ $t('projects.more') }}
                 </router-link>
               </div>
@@ -338,25 +338,12 @@ import { ref, computed, watch, onMounted, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
-interface ExploreProject {
-  id: number
-  title: string
-  author: string
-  category: string
-  raised: string
-  goal: string
-  progress: number
-  days: number
-  donors: number
-  img: string
-}
-
 import { projectService } from '../services/projectService';
 import type { Project } from '../types/Project';
 
 const route = useRoute()
 const router = useRouter()
-const { tm, t, locale } = useI18n()
+const { locale } = useI18n()
 
 const allProjects = ref<Project[]>([])
 const isLoading = ref(true)

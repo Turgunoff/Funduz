@@ -49,6 +49,7 @@ const router = createRouter({
       path: "/create-project",
       name: "create-project",
       component: CreateProjectView,
+      meta: { requiresAuth: true },
     },
     {
       path: "/story/:id",
@@ -116,6 +117,22 @@ const router = createRouter({
       component: () => import("../views/NotFoundView.vue"),
     },
   ],
+});
+
+import { useAuthStore } from "../stores/auth";
+
+router.beforeEach((to, from, next) => {
+  const authStore = useAuthStore();
+  
+  if (to.meta.requiresAuth && !authStore.isLoggedIn) {
+    // Redirect to login if trying to access auth-only page
+    next({ name: "login", query: { redirect: to.fullPath } });
+  } else if (to.name === "login" && authStore.isLoggedIn) {
+    // Redirect to home if already logged in and trying to access login page
+    next({ name: "home" });
+  } else {
+    next();
+  }
 });
 
 export default router;

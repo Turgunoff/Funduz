@@ -59,7 +59,7 @@
               <router-link
                 to="/community"
                 class="text-gray-500 hover:text-[#1a946b] transition-colors"
-                >{{ $t("nav.cooperation") }}</router-link
+                >{{ $t("nav.community") }}</router-link
               >
             </li>
             <li>

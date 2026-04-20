@@ -20,9 +20,9 @@
             <router-link to="/login" class="px-10 py-[18px] bg-[#0d5c42] text-white font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 cursor-pointer shadow-xl shadow-black/10 flex items-center justify-center transform hover:-translate-y-1">
               {{ $t('cta.btn_start') }}
             </router-link>
-            <a href="#" class="px-10 py-[18px] bg-[#0d5c42] text-white font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 cursor-pointer shadow-xl shadow-black/10 flex items-center justify-center transform hover:-translate-y-1">
+            <router-link to="/contact" class="px-10 py-[18px] bg-[#0d5c42] text-white font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 cursor-pointer shadow-xl shadow-black/10 flex items-center justify-center transform hover:-translate-y-1">
               {{ $t('cta.btn_expert') }}
-            </a>
+            </router-link>
           </div>
         </div>
 

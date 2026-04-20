@@ -202,7 +202,7 @@
               <span>{{ $t('projects.goal') }}: {{ formatCurrency(project.goal) }}</span>
               <span>{{ project.donorsCount }} {{ $t('projects.donors') }}</span>
             </div>
-            <router-link to="/project/1" class="block w-full py-3.5 lg:py-4 bg-[#f0fdf4] text-[#1a946b] font-black text-center rounded-xl lg:rounded-2xl hover:bg-[#1a946b] hover:text-white transition-all duration-300">
+            <router-link :to="`/project/${project.id}`" class="block w-full py-3.5 lg:py-4 bg-[#f0fdf4] text-[#1a946b] font-black text-center rounded-xl lg:rounded-2xl hover:bg-[#1a946b] hover:text-white transition-all duration-300">
               {{ $t('projects.more') }}
             </router-link>
           </div>

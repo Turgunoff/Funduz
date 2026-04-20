@@ -161,7 +161,7 @@
             </p>
           </div>
           
-          <a href="#" class="relative z-10 px-10 py-5 bg-[#0d5c42] border-2 border-transparent rounded-2xl flex items-center gap-3 text-[16px] font-bold text-white hover:bg-white hover:text-[#0d5c42] hover:border-white hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-black/10">
+          <a href="https://t.me/funduz" target="_blank" rel="noopener noreferrer" class="relative z-10 px-10 py-5 bg-[#0d5c42] border-2 border-transparent rounded-2xl flex items-center gap-3 text-[16px] font-bold text-white hover:bg-white hover:text-[#0d5c42] hover:border-white hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-black/10">
             <svg class="w-6 h-6 text-current" fill="currentColor" viewBox="0 0 24 24">
               <path d="M11.944 0C5.347 0 0 5.347 0 11.944c0 6.594 5.347 11.944 11.944 11.944 6.594 0 11.944-5.35 11.944-11.944C23.888 5.347 18.538 0 11.944 0zm5.54 8.017l-1.92 9.043c-.144.643-.523.801-.1.066l-2.924-2.155-1.41 1.358c-.156.156-.287.287-.588.287l.21-2.977 5.418-4.895c.235-.21-.052-.326-.364-.12l-6.696 4.215-2.883-.9c-.626-.196-.64-.626.13-.923l11.266-4.346c.523-.196.98.117.784.793z"/>
             </svg>

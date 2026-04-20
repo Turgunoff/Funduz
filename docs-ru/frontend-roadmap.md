@@ -45,9 +45,9 @@
 
 ## Этап 3 — Router и guards (0.5 дня)
 
-- [ ] Исправить все динамические ссылки: вместо `/project/1` использовать `\`/project/${project.id}\``.
-- [ ] В `FeaturedProjects.vue`, `ExploreView.vue`, `SearchView.vue`, `TrendsView.vue`, `CommunityView.vue`, `SuccessStoriesView.vue` — заменить `<a href>` на `<router-link>`.
-- [ ] `router.beforeEach` guard для `meta: { requiresAuth: true }`.
+- [x] Исправить все динамические ссылки: вместо `/project/1` использовать `\`/project/${project.id}\``.
+- [x] В `FeaturedProjects.vue`, `ExploreView.vue`, `SearchView.vue`, `TrendsView.vue`, `CommunityView.vue`, `SuccessStoriesView.vue` — заменить `<a href>` на `<router-link>`.
+- [x] `router.beforeEach` guard для `meta: { requiresAuth: true }`.
 - [ ] Новые маршруты:
   - `/profile` — профиль пользователя
   - `/dashboard` — для авторов

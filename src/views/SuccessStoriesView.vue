@@ -169,68 +169,60 @@ const testimonials = computed(() => tm('success_stories.testimonials') as any[])
         </div>
 
         <!-- Grid -->
-        <div class="grid grid-cols-1 gap-8 lg:gap-10 mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-24">
           <!-- Stories List -->
-          <div v-if="!isLoading" class="space-y-12 lg:space-y-20">
+          <template v-if="!isLoading">
             <div 
               v-for="story in storiesData" 
               :key="story.id"
-              class="group bg-white rounded-[40px] lg:rounded-[56px] p-8 lg:p-12 border border-gray-100 hover:border-[#1a946b]/30 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.05)] transition-all duration-700 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center"
+              class="bg-white rounded-[40px] overflow-hidden group hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
             >
-              <!-- Story Content -->
-              <div class="lg:w-1/2 order-2 lg:order-1">
-                <div class="flex items-center gap-3 mb-8">
-                  <span class="px-5 py-2 bg-green-50 text-[#1a946b] rounded-full text-[12px] font-black uppercase tracking-widest border border-green-100/50">
-                    {{ story.category }}
-                  </span>
+              <!-- Story Image -->
+              <div class="relative h-[240px] lg:h-[280px] overflow-hidden">
+                <img 
+                  :src="story.image" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  alt="Story"
+                >
+                <!-- Category Badge -->
+                <div class="absolute top-6 left-6 px-4 py-2 rounded-xl bg-[#1e5c43]/90 backdrop-blur-md text-[10px] lg:text-[11px] font-black text-white uppercase tracking-widest whitespace-nowrap border border-white/20">
+                  {{ story.category }}
                 </div>
-                
-                <h3 class="text-[32px] lg:text-[44px] font-bold text-gray-900 leading-[1.15] tracking-tight mb-10 group-hover:text-[#1a946b] transition-colors duration-500">
+              </div>
+
+              <!-- Content -->
+              <div class="p-8 lg:p-10 flex flex-col flex-grow">
+                <h3 class="text-[20px] lg:text-[24px] font-bold text-gray-900 mb-6 group-hover:text-[#1a946b] transition-colors leading-tight">
                   {{ story.title }}
                 </h3>
-                
-                <p class="text-[20px] lg:text-[24px] font-bold text-gray-800 leading-relaxed mb-12 italic">
+                <p class="text-[14px] lg:text-[15px] text-gray-500 leading-relaxed mb-8 flex-grow italic">
                   "{{ story.subtitle }}"
                 </p>
                 
-                <!-- Result Stats -->
-                <div class="grid grid-cols-2 gap-10 mb-16 px-1">
+                <!-- Metrics -->
+                <div class="flex items-center justify-between pt-6 border-t border-gray-50 mt-auto">
                   <div>
-                    <div class="text-[28px] lg:text-[32px] font-black text-[#1a946b] mb-1">
-                      {{ story.raised }} <span class="text-[12px] lg:text-[14px]">sum</span>
+                    <div class="text-[16px] lg:text-[18px] font-bold text-[#1a946b]">
+                      {{ story.raised }} <span class="text-[11px] font-medium text-gray-400">sum</span>
                     </div>
-                    <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ t('success_stories.stats.raised') }}</div>
                   </div>
-                  <div>
-                    <div class="text-[28px] lg:text-[32px] font-black text-gray-900 mb-1">
+                  <div class="text-right">
+                    <div class="text-[16px] lg:text-[18px] font-bold text-gray-900">
                       {{ story.donors }}
                     </div>
-                    <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ t('success_stories.stats.backers') }}</div>
+                    <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest">{{ t('success_stories.stats.backers') }}</div>
                   </div>
                 </div>
-                
-                <router-link :to="`/story/${story.id}`" class="inline-flex items-center gap-3 text-[16px] font-bold text-[#1a946b] border-b-2 border-transparent hover:border-[#1a946b] pb-1 transition-all">
+
+                <router-link :to="`/story/${story.id}`" class="mt-8 inline-flex items-center gap-2 text-[13px] lg:text-[14px] font-bold text-[#1a946b] group/link">
                   {{ t('success_stories.read_more') }}
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </router-link>
               </div>
-
-              <!-- Story Image -->
-              <div class="lg:w-1/2 order-1 lg:order-2 self-stretch min-h-[300px] lg:min-h-0">
-                <div class="relative w-full h-full rounded-[32px] lg:rounded-[44px] overflow-hidden">
-                  <img 
-                    :src="story.image" 
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                    :alt="story.title"
-                  >
-                  <!-- Overlay gradient -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                </div>
-              </div>
             </div>
-          </div>
+          </template>
           <!-- Loader -->
           <div v-else class="flex flex-col items-center justify-center py-24 lg:py-32">
             <div class="w-12 h-12 border-4 border-[#1a946b] border-t-transparent rounded-full animate-spin mb-4"></div>

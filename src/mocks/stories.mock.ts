@@ -22,7 +22,7 @@ export const stories: Story[] = [
     category: 'Ekologiya',
     categoryKey: 'eco',
     author: 'Said Akhmedov',
-    image: '/eco_innovation_story.png',
+    image: '/eco_story.png',
     raised: '45 000 000',
     goal: '40 000 000',
     progress: 112,
