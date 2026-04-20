@@ -9,12 +9,12 @@
       <div class="relative z-10 w-full max-w-[800px] mx-auto px-4 sm:px-6 text-center">
         <!-- Subtitle -->
         <div class="text-[11px] sm:text-[12px] font-black text-[#1e5c43] uppercase tracking-[0.2em] mb-4">
-          {{ t('contact.badge') }}
+          {{ $t('contact.badge') }}
         </div>
         
         <!-- Main Title -->
         <h1 class="text-[36px] sm:text-[48px] lg:text-[56px] font-bold text-gray-900 leading-[1.1] tracking-tight mb-10 lg:mb-12">
-          {{ t('contact.title') }}
+          {{ $t('contact.title') }}
         </h1>
 
         <!-- Search Input -->
@@ -28,7 +28,7 @@
             </div>
             <input 
               type="text" 
-              :placeholder="t('contact.search_placeholder')" 
+              :placeholder="$t('contact.search_placeholder')" 
               class="w-full py-5 pr-8 bg-transparent text-[16px] text-gray-900 placeholder:text-gray-400 outline-none rounded-r-full"
             >
           </div>
@@ -113,7 +113,7 @@
 import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-const { t, tm, rt } = useI18n();
+const { tm, rt } = useI18n();
 
 const activeCategory = ref('all');
 const expandedIdx = ref<number | null>(2); // Start with third item open as per screenshot

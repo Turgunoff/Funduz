@@ -5,14 +5,14 @@
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
         <div class="max-w-[600px]">
           <h1 class="text-[48px] lg:text-[72px] font-bold text-gray-900 leading-[1.1] tracking-tight mb-6">
-            {{ t('privacy.title') }}
+            {{ $t('privacy.title') }}
           </h1>
           <p class="text-gray-500 text-[18px] lg:text-[20px] leading-relaxed">
-            {{ t('privacy.desc') }}
+            {{ $t('privacy.desc') }}
           </p>
         </div>
         <div class="bg-gray-100 px-4 py-2 rounded-lg text-[13px] font-bold text-gray-500 uppercase tracking-wider">
-          {{ t('privacy.last_updated') }}: {{ t('privacy.last_updated_date') }}
+          {{ $t('privacy.last_updated') }}: {{ $t('privacy.last_updated_date') }}
         </div>
       </div>
 
@@ -43,7 +43,7 @@
         <!-- Sidebar Navigation (Minimal version as per screenshot) -->
         <div class="lg:w-[240px] lg:sticky lg:top-32 hidden lg:block">
           <div class="text-[11px] font-black text-gray-300 uppercase tracking-[0.2em] mb-6">
-            {{ t('privacy.toc') }}
+            {{ $t('privacy.toc') }}
           </div>
           <nav class="flex flex-col gap-4">
             <button 
@@ -114,10 +114,10 @@
             <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div class="max-w-[450px]">
                 <h3 class="text-[28px] lg:text-[36px] font-bold mb-4 tracking-tight leading-tight">
-                  {{ t('privacy.footer_title') }}
+                  {{ $t('privacy.footer_title') }}
                 </h3>
                 <p class="text-white/70 text-[16px] lg:text-[18px] leading-relaxed">
-                  {{ t('privacy.footer_desc') }}
+                  {{ $t('privacy.footer_desc') }}
                 </p>
               </div>
               <div class="flex flex-col gap-6 relative z-10">
@@ -125,7 +125,7 @@
                   privacy@funduz.com
                 </div>
                 <button class="bg-[#0d5c42] text-white px-10 py-5 rounded-2xl font-bold border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl transform hover:-translate-y-1 text-[17px]">
-                  {{ t('privacy.footer_link') }}
+                  {{ $t('privacy.footer_link') }}
                 </button>
               </div>
             </div>
@@ -141,7 +141,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-const { t, tm, rt } = useI18n();
+const { tm, rt } = useI18n();
 
 interface PrivacySection {
   title: string;

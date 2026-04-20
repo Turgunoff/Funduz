@@ -6,13 +6,13 @@
 
 **Цель:** привести структуру проекта в порядок.
 
-- [ ] Удалить `src/stores/counter.ts` (остаток шаблона Vite).
-- [ ] Убрать неиспользуемые импорты (`useRouter`, `t` в `ExploreView.vue` и др.).
-- [ ] Обновить `index.html`:
+- [x] Удалить `src/stores/counter.ts` (остаток шаблона Vite).
+- [x] Убрать неиспользуемые импорты (`useRouter`, `t` в `ExploreView.vue` и др.).
+- [x] Обновить `index.html`:
   - `<html lang="ru">` (или динамически)
   - `<title>Funduz — краудфандинговая платформа</title>`
   - `<meta name="description">`, `og:title`, `og:image`, `twitter:card`
-- [ ] Добавить `public/robots.txt` и `public/sitemap.xml`.
+- [x] Добавить `public/robots.txt` и `public/sitemap.xml`.
 - [ ] Обновить `README.md` реальной информацией о проекте.
 - [ ] В `package.json`: перенести `playwright` в `devDependencies`, поставить версию `0.1.0`.
 

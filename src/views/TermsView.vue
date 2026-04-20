@@ -4,13 +4,13 @@
     <div class="bg-white border-b border-gray-100 py-16 lg:py-24">
       <div class="max-w-[800px] mx-auto px-4 sm:px-6 text-center">
         <div class="text-[12px] font-black text-[#1e5c43] uppercase tracking-[0.2em] mb-4">
-          {{ t('terms.badge') }}
+          {{ $t('terms.badge') }}
         </div>
         <h1 class="text-[40px] lg:text-[56px] font-bold text-gray-900 leading-tight tracking-tight">
-          {{ t('terms.title') }}
+          {{ $t('terms.title') }}
         </h1>
         <p class="mt-6 text-gray-500 text-[16px] lg:text-[18px]">
-          {{ t('terms.last_updated') }}: 14.04.2024
+          {{ $t('terms.last_updated') }}: 14.04.2024
         </p>
       </div>
     </div>
@@ -23,7 +23,7 @@
         <div class="lg:w-[320px] lg:sticky lg:top-32 space-y-6">
           <div class="bg-gray-50 rounded-[32px] p-8 border border-gray-100">
             <div class="text-[11px] font-black text-[#1e5c43] uppercase tracking-[0.2em] mb-8">
-              {{ t('terms.toc') }}
+              {{ $t('terms.toc') }}
             </div>
             <nav class="space-y-4">
               <div 
@@ -57,7 +57,7 @@
           <!-- Download PDF Button -->
           <button class="w-full bg-[#e8e8e6] hover:bg-[#dfdfdd] text-gray-900 font-bold py-5 rounded-full text-[15px] transition-all flex items-center justify-center gap-3">
             <svg class="w-5 h-5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-            {{ t('terms.download_pdf') }}
+            {{ $t('terms.download_pdf') }}
           </button>
         </div>
 
@@ -81,7 +81,7 @@
                 v-if="idx === 0"
                 class="mb-10 p-6 lg:p-8 bg-[#f0f9f4] border-l-4 border-l-[#1e5c43] rounded-r-[24px] text-[#1e5c43] text-[15px] lg:text-[16px] leading-relaxed font-semibold italic"
               >
-                {{ t('terms.important_note') }}
+                {{ $t('terms.important_note') }}
               </div>
 
               <div class="text-gray-600 leading-relaxed text-[17px] lg:text-[18px] space-y-5 font-medium">
@@ -99,12 +99,12 @@
             <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
 
             <div class="relative z-10">
-              <h3 class="text-[28px] lg:text-[32px] font-bold text-white mb-4 tracking-tight">{{ t('terms.footer_title') }}</h3>
+              <h3 class="text-[28px] lg:text-[32px] font-bold text-white mb-4 tracking-tight">{{ $t('terms.footer_title') }}</h3>
               <p class="text-white/70 mb-10 max-w-[500px] mx-auto text-[17px] lg:text-[18px] leading-relaxed">
-                {{ t('terms.footer_desc') }}
+                {{ $t('terms.footer_desc') }}
               </p>
               <router-link to="/contact" class="inline-flex items-center gap-3 bg-[#0d5c42] text-white px-10 py-5 rounded-2xl font-bold border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl transform hover:-translate-y-1 text-[17px]">
-                {{ t('terms.footer_link') }}
+                {{ $t('terms.footer_link') }}
                 <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </router-link>
             </div>
@@ -120,7 +120,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-const { t, tm, rt } = useI18n();
+const { tm, rt } = useI18n();
 
 interface TermSection {
   title: string;

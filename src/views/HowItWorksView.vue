@@ -286,13 +286,13 @@
             </h2>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
               <button
-                @click="router.push('/create')"
+                @click="$router.push('/login')"
                 class="px-10 py-5 bg-[#0d5c42] text-white font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1"
               >
                 {{ $t("how_it_works.cta.btn_create") }}
               </button>
               <button
-                @click="router.push('/projects')"
+                @click="$router.push('/explore')"
                 class="px-10 py-5 bg-[#0d5c42] text-white font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1"
               >
                 {{ $t("how_it_works.cta.btn_projects") }}
@@ -308,10 +308,8 @@
 <script setup lang="ts">
 import { ref, onMounted, watch, nextTick, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useRouter } from "vue-router";
 
 const { locale, tm } = useI18n()
-const router = useRouter()
 const userType = ref('author')
 
 const pillButtons = ref<HTMLElement[]>([])

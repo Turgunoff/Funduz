@@ -6,13 +6,13 @@
 
 **Maqsad:** Loyiha strukturasini tartibga solish.
 
-- [ ] `src/stores/counter.ts` faylini o'chirish (default Vite qoldig'i).
-- [ ] Ishlatilmagan importlarni tozalash (`ExploreView.vue` da `useRouter`, `t` va h.k.).
-- [ ] `index.html` ni yangilash:
+- [x] `src/stores/counter.ts` faylini o'chirish (default Vite qoldig'i).
+- [x] Ishlatilmagan importlarni tozalash (`ExploreView.vue` da `useRouter`, `t` va h.k.).
+- [x] `index.html` ni yangilash:
   - `<html lang="uz">`
   - `<title>Funduz — Crowdfunding platformasi</title>`
   - `<meta name="description">`, `og:title`, `og:image`, `twitter:card`
-- [ ] `public/robots.txt` va `public/sitemap.xml` qo'shish.
+- [x] `public/robots.txt` va `public/sitemap.xml` qo'shish.
 - [ ] `README.md` ni loyiha haqida ma'lumot bilan yangilash.
 - [ ] `package.json`: `playwright` ni `devDependencies` ga ko'chirish, versiyani `0.1.0` qilish.
 
