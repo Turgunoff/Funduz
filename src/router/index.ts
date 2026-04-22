@@ -112,6 +112,12 @@ const router = createRouter({
       component: () => import("../views/ArticleDetailView.vue"),
     },
     {
+      path: "/profile",
+      name: "profile",
+      component: () => import("../views/ProfileView.vue"),
+      meta: { requiresAuth: true },
+    },
+    {
       path: "/:pathMatch(.*)*",
       name: "not-found",
       component: () => import("../views/NotFoundView.vue"),

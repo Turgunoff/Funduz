@@ -100,14 +100,19 @@
           </div>
 
           <!-- Login/Register Form Items -->
-          <form @submit.prevent class="space-y-6">
+          <form @submit.prevent="handleSubmit" class="space-y-6">
+            <div v-if="errorMessage" class="p-4 bg-red-50 text-red-600 rounded-2xl text-[14px] font-bold text-center border border-red-100">
+              {{ errorMessage }}
+            </div>
             <!-- Name (Only in Register mode) -->
             <div v-if="authMode === 'register'">
               <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_name') }}</label>
               <input 
                 type="text" 
+                v-model="name"
                 :placeholder="$t('login.placeholder_name')"
                 class="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:border-[#1e5c43] focus:ring-4 focus:ring-green-500/5 outline-none transition-all font-medium"
+                required
               >
             </div>
 
@@ -115,8 +120,10 @@
               <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_email') }}</label>
               <input 
                 type="email" 
+                v-model="email"
                 placeholder="example@mail.com"
                 class="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:border-[#1e5c43] focus:ring-4 focus:ring-green-500/5 outline-none transition-all font-medium"
+                required
               >
             </div>
 
@@ -128,8 +135,10 @@
               <div class="relative">
                 <input 
                   :type="showPassword ? 'text' : 'password'" 
+                  v-model="password"
                   placeholder="••••••••"
                   class="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:border-[#1e5c43] focus:ring-4 focus:ring-green-500/5 outline-none transition-all font-medium"
+                  required
                 >
                 <button 
                   type="button"
@@ -142,9 +151,11 @@
               </div>
             </div>
 
-            <button class="w-full py-5 bg-[#1e5c43] text-white rounded-3xl font-black flex items-center justify-center gap-3 hover:bg-[#144230] hover:translate-y-[-4px] transition-all shadow-xl shadow-green-900/10">
-              {{ authMode === 'login' ? $t('login.btn_submit') : $t('login.btn_register') }}
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <button :disabled="isLoading" class="w-full py-5 bg-[#1e5c43] text-white rounded-3xl font-black flex items-center justify-center gap-3 hover:bg-[#144230] hover:translate-y-[-4px] transition-all shadow-xl shadow-green-900/10 disabled:opacity-70 disabled:hover:translate-y-0">
+              <span v-if="!isLoading">{{ authMode === 'login' ? $t('login.btn_submit') : $t('login.btn_register') }}</span>
+              <span v-else>Yuklanmoqda...</span>
+              <svg v-if="!isLoading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              <div v-else class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
             </button>
           </form>
         </div>
@@ -179,13 +190,52 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter, useRoute } from 'vue-router'
+import { useAuthStore } from '../stores/auth'
 
 const { locale } = useI18n()
+const router = useRouter()
+const route = useRoute()
+const authStore = useAuthStore()
+
 const authMode = ref('login')
 const showPassword = ref(false)
+const isLoading = ref(false)
+const errorMessage = ref('')
+
+const name = ref('')
+const email = ref('')
+const password = ref('')
 
 const setLocale = (lang: string) => {
   locale.value = lang
+}
+
+const handleSubmit = async () => {
+  isLoading.value = true
+  errorMessage.value = ''
+  
+  let success = false
+  if (authMode.value === 'login') {
+    success = await authStore.login(email.value, password.value)
+  } else {
+    // Basic validation
+    if (!name.value || !email.value || !password.value) {
+      errorMessage.value = 'Maydonlarni to\'ldiring'
+      isLoading.value = false
+      return
+    }
+    success = await authStore.register(name.value, email.value, password.value)
+  }
+  
+  isLoading.value = false
+  
+  if (success) {
+    const redirectPath = route.query.redirect as string || '/'
+    router.push(redirectPath)
+  } else {
+    errorMessage.value = authMode.value === 'login' ? 'Xato login yoki parol.' : 'Ro\'yxatdan o\'tishda xatolik yuz berdi.'
+  }
 }
 </script>
 

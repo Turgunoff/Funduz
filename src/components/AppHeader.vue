@@ -74,29 +74,51 @@
               </div>
             </div>
 
+            <!-- CTA Button -->
+            <router-link
+              to="/create-project"
+              class="hidden sm:flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm"
+            >
+              {{ $t("nav.start_project") }}
+            </router-link>
+
             <!-- User Auth Profile -->
-            <div v-if="authStore.isLoggedIn" class="flex items-center gap-2 pr-2">
-              <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-[11px] font-black text-orange-600 border border-orange-200 overflow-hidden">
-                <img v-if="authStore.user?.avatar" :src="authStore.user.avatar" class="w-full h-full object-cover" />
-                <span v-else>{{ authStore.user?.name?.charAt(0) || 'U' }}</span>
+            <div v-if="authStore.isLoggedIn" class="relative group" @click="isProfileMenuOpen = !isProfileMenuOpen" @mouseleave="isProfileMenuOpen = false">
+              <div class="flex items-center gap-2 pr-2 cursor-pointer hover:opacity-80 transition-opacity lg:pr-4">
+                <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-[11px] font-black text-orange-600 border border-orange-200 overflow-hidden shadow-sm">
+                  <img v-if="authStore.user?.avatar" :src="authStore.user.avatar" class="w-full h-full object-cover" />
+                  <span v-else>{{ authStore.user?.name?.charAt(0) || 'U' }}</span>
+                </div>
+                <span class="hidden lg:block text-[14px] font-bold text-gray-800">{{ authStore.user?.name }}</span>
+                <svg class="hidden lg:block w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
               </div>
-              <span class="hidden lg:block text-[14px] font-bold text-gray-800">{{ authStore.user?.name }}</span>
+
+              <!-- Dropdown Menu -->
+              <div v-show="isProfileMenuOpen" class="absolute right-0 top-full mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50 animate-fade-in">
+                <div class="px-4 py-3 border-b border-gray-50 mb-2">
+                  <div class="text-[13px] font-bold text-gray-900 truncate">{{ authStore.user?.name }}</div>
+                  <div class="text-[11px] text-gray-400 font-medium truncate">{{ authStore.user?.role === 'creator' ? 'Muallif' : 'Homiy' }}</div>
+                </div>
+                <router-link to="/profile" class="flex items-center gap-3 px-4 py-2.5 text-[14px] font-bold text-gray-700 hover:bg-[#f0f9f6] hover:text-[#1a946b] transition-colors">
+                  <svg class="w-5 h-5 text-current opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                  Mening profilim
+                </router-link>
+                <!-- the other links will be added here later -->
+                <div class="h-px bg-gray-50 my-2"></div>
+                <button @click="handleLogout" class="w-full flex items-center gap-3 px-4 py-2.5 text-[14px] font-bold text-red-600 hover:bg-red-50 transition-colors text-left">
+                  <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+                  Tizimdan chiqish
+                </button>
+              </div>
             </div>
 
-            <!-- Auth & CTA Buttons -->
+            <!-- Auth/Login Button -->
             <router-link
               v-if="!authStore.isLoggedIn"
               to="/login"
               class="hidden md:flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm"
             >
               {{ $t("nav.login") }}
-            </router-link>
-            
-            <router-link
-              to="/login"
-              class="hidden sm:flex px-6 py-2.5 border border-gray-200 rounded-xl text-[14px] font-bold text-gray-800 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm"
-            >
-              {{ $t("nav.start_project") }}
             </router-link>
 
             <!-- Language Switcher -->
@@ -321,6 +343,12 @@ const authStore = useAuthStore();
 // i18n is used in template via global $t, mutations go through localeStore
 
 const isMenuOpen = ref(false);
+const isProfileMenuOpen = ref(false);
+
+const handleLogout = () => {
+  authStore.logout();
+  router.push('/');
+};
 
 const isSearchExpanded = ref(false);
 const searchQuery = ref("");
