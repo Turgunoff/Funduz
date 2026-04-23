@@ -83,7 +83,7 @@
             </router-link>
 
             <!-- User Auth Profile -->
-            <div v-if="authStore.isLoggedIn" class="relative group" @click="isProfileMenuOpen = !isProfileMenuOpen" @mouseleave="isProfileMenuOpen = false">
+            <div v-if="authStore.isLoggedIn" class="hidden lg:block relative group" @click="isProfileMenuOpen = !isProfileMenuOpen">
               <div class="flex items-center gap-2 pr-2 cursor-pointer hover:opacity-80 transition-opacity lg:pr-4">
                 <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-[11px] font-black text-orange-600 border border-orange-200 overflow-hidden shadow-sm">
                   <img v-if="authStore.user?.avatar" :src="authStore.user.avatar" class="w-full h-full object-cover" />
@@ -94,22 +94,63 @@
               </div>
 
               <!-- Dropdown Menu -->
-              <div v-show="isProfileMenuOpen" class="absolute right-0 top-full mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50 animate-fade-in">
-                <div class="px-4 py-3 border-b border-gray-50 mb-2">
-                  <div class="text-[13px] font-bold text-gray-900 truncate">{{ authStore.user?.name }}</div>
-                  <div class="text-[11px] text-gray-400 font-medium truncate">{{ authStore.user?.role === 'creator' ? 'Muallif' : 'Homiy' }}</div>
+              <transition name="dropdown">
+                <div v-show="isProfileMenuOpen" class="absolute right-0 top-full mt-3 w-[300px] bg-white rounded-[28px] shadow-2xl shadow-gray-200/50 border border-gray-100 py-3 z-50">
+                
+                <!-- Profile Header -->
+                <div class="px-6 py-4 border-b border-gray-50 mb-3 flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center text-[16px] font-black text-orange-600 border border-orange-200 overflow-hidden shrink-0 shadow-inner">
+                    <img v-if="authStore.user?.avatar" :src="authStore.user.avatar" class="w-full h-full object-cover" />
+                    <span v-else>{{ authStore.user?.name?.charAt(0) || 'U' }}</span>
+                  </div>
+                  <div class="flex-grow min-w-0">
+                    <div class="text-[16px] font-bold text-gray-900 truncate leading-tight">{{ authStore.user?.name }}</div>
+                    <div class="text-[12px] font-black text-[#1a946b] uppercase tracking-wider mt-1 truncate">{{ authStore.user?.role === 'creator' ? $t('nav.role_author') : $t('nav.role_sponsor') }}</div>
+                  </div>
                 </div>
-                <router-link to="/profile" class="flex items-center gap-3 px-4 py-2.5 text-[14px] font-bold text-gray-700 hover:bg-[#f0f9f6] hover:text-[#1a946b] transition-colors">
-                  <svg class="w-5 h-5 text-current opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                  Mening profilim
-                </router-link>
-                <!-- the other links will be added here later -->
-                <div class="h-px bg-gray-50 my-2"></div>
-                <button @click="handleLogout" class="w-full flex items-center gap-3 px-4 py-2.5 text-[14px] font-bold text-red-600 hover:bg-red-50 transition-colors text-left">
-                  <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
-                  Tizimdan chiqish
-                </button>
+
+                <!-- Menu Items -->
+                <div class="px-3 space-y-1">
+                  <router-link to="/profile" class="flex items-center gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-700 hover:bg-[#f0f9f6] hover:text-[#1a946b] rounded-2xl transition-all">
+                    <svg class="w-5 h-5 text-current opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                    {{ $t('nav.menu_profile') }}
+                  </router-link>
+
+                  <router-link to="/dashboard" class="flex items-center justify-between gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-400 hover:bg-gray-50 rounded-2xl transition-all cursor-not-allowed">
+                    <div class="flex items-center gap-4">
+                      <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+                      {{ $t('nav.menu_dashboard') }}
+                    </div>
+                    <span class="text-[10px] uppercase font-black tracking-widest text-[#1a946b] bg-[#f0f9f6] px-2 py-1 rounded-full">{{ $t('nav.coming_soon') }}</span>
+                  </router-link>
+
+                  <router-link to="/favorites" class="flex items-center justify-between gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-400 hover:bg-gray-50 rounded-2xl transition-all cursor-not-allowed">
+                    <div class="flex items-center gap-4">
+                      <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                      {{ $t('nav.menu_favorites') }}
+                    </div>
+                  </router-link>
+
+                  <router-link to="/settings" class="flex items-center justify-between gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-400 hover:bg-gray-50 rounded-2xl transition-all cursor-not-allowed">
+                    <div class="flex items-center gap-4">
+                      <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                      {{ $t('nav.menu_settings') }}
+                    </div>
+                  </router-link>
+                </div>
+
+                <div class="h-px bg-gray-50 my-3 mx-4"></div>
+                
+                <div class="px-3">
+                  <button @click="handleLogout" class="w-full flex items-center justify-between px-4 py-3.5 text-[15px] font-bold text-red-600 hover:bg-red-50 rounded-2xl transition-all text-left group">
+                    <div class="flex items-center gap-4">
+                      <svg class="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+                      {{ $t('nav.menu_logout') }}
+                    </div>
+                  </button>
+                </div>
               </div>
+              </transition>
             </div>
 
             <!-- Auth/Login Button -->
@@ -140,9 +181,13 @@
               </button>
             </div>
 
-            <!-- Mobile Menu Toggle -->
-            <button @click="isMenuOpen = !isMenuOpen" class="lg:hidden text-gray-800 p-2">
-              <svg
+            <!-- Mobile Menu Toggle / Avatar -->
+            <button @click="isMenuOpen = !isMenuOpen" class="lg:hidden p-2 text-gray-800">
+              <div v-if="authStore.isLoggedIn" class="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center text-[12px] font-black text-orange-600 border border-orange-200 overflow-hidden shadow-sm">
+                <img v-if="authStore.user?.avatar" :src="authStore.user.avatar" class="w-full h-full object-cover" />
+                <span v-else>{{ authStore.user?.name?.charAt(0) || 'U' }}</span>
+              </div>
+              <svg v-else
                 class="w-6 h-6 sm:w-7 sm:h-7"
                 fill="none"
                 stroke="currentColor"
@@ -285,15 +330,50 @@
 
         <div class="flex flex-col gap-5">
           <router-link
+            v-if="!authStore.isLoggedIn"
             @click="isMenuOpen = false"
             to="/login"
             class="w-full py-4 border-2 border-gray-100 rounded-xl font-black text-gray-900 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm flex justify-center"
             >{{ $t("nav.start_project") }}</router-link>
+            
           <router-link
+            v-else
+            @click="isMenuOpen = false"
+            to="/create-project"
+            class="w-full py-4 border-2 border-[#1a946b] rounded-xl font-black text-white bg-[#1a946b] hover:bg-[#147a55] transition-all shadow-sm flex justify-center"
+            >{{ $t("nav.start_project") }}</router-link>
+
+          <router-link
+            v-if="!authStore.isLoggedIn"
             @click="isMenuOpen = false"
             to="/login"
             class="w-full py-4 border-2 border-gray-100 rounded-xl font-black text-gray-900 bg-white hover:bg-[#1a946b] hover:text-white hover:border-[#1a946b] transition-all shadow-sm flex justify-center"
             >{{ $t("nav.login") }}</router-link>
+
+          <!-- Authenticated Mobile Profile Menu Items -->
+          <div v-if="authStore.isLoggedIn" class="bg-gray-50 rounded-2xl p-4 border border-gray-100 space-y-2 mt-2">
+            <div class="px-2 pb-4 pt-2 border-b border-gray-200 mb-2">
+              <div class="text-[16px] font-bold text-gray-900 leading-tight">{{ authStore.user?.name }}</div>
+              <div class="text-[11px] font-black text-[#1a946b] uppercase tracking-wider mt-1">{{ authStore.user?.role === 'creator' ? $t('nav.role_author') : $t('nav.role_sponsor') }}</div>
+            </div>
+            
+            <router-link @click="isMenuOpen = false" to="/profile" class="flex items-center gap-4 px-3 py-3.5 text-[15px] font-bold text-gray-700 hover:bg-[#f0f9f6] hover:text-[#1a946b] rounded-xl transition-all">
+              <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+              {{ $t('nav.menu_profile') }}
+            </router-link>
+            
+            <router-link @click="isMenuOpen = false" to="/dashboard" class="flex items-center justify-between gap-4 px-3 py-3.5 text-[15px] font-bold text-gray-400 rounded-xl cursor-not-allowed">
+              <div class="flex items-center gap-4"><svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6z" /></svg>{{ $t('nav.menu_dashboard') }}</div>
+              <span class="text-[9px] uppercase font-black tracking-widest text-[#1a946b] bg-[#f0f9f6] px-2 py-1 rounded-full">{{ $t('nav.coming_soon') }}</span>
+            </router-link>
+            
+            <button @click="handleLogout(); isMenuOpen = false;" class="w-full flex items-center justify-between px-3 py-3.5 text-[15px] font-bold text-red-600 hover:bg-red-50 rounded-xl text-left mt-2 border-t border-gray-200">
+              <div class="flex items-center gap-4">
+                <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+                {{ $t('nav.menu_logout') }}
+              </div>
+            </button>
+          </div>
 
           <div class="bg-gray-50 p-6 rounded-[24px] border border-gray-100 text-center mt-2">
             <p class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-4">
@@ -398,6 +478,16 @@ watch(isMenuOpen, (val) => {
 <style scoped>
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: top right;
+}
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+  transform: scale(0.95) translateY(-10px);
 }
 @keyframes fadeIn {
   from { opacity: 0; width: 0; }
