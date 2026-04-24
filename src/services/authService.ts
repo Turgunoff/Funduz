@@ -41,6 +41,22 @@ export const authService = {
     localStorage.removeItem('auth_user');
   },
   
+  updateProfile: async (data: Partial<User>): Promise<User> => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const userStr = localStorage.getItem('auth_user');
+        if (!userStr) {
+          reject('User not logged in');
+          return;
+        }
+        const user: User = JSON.parse(userStr);
+        const updatedUser = { ...user, ...data };
+        localStorage.setItem('auth_user', JSON.stringify(updatedUser));
+        resolve(updatedUser);
+      }, 600);
+    });
+  },
+  
   getCurrentUser: (): User | null => {
     const userStr = localStorage.getItem('auth_user');
     return userStr ? JSON.parse(userStr) : null;

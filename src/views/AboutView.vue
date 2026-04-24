@@ -226,7 +226,7 @@
             {{ $t('about.cta_btn_start') }}
           </router-link>
           <router-link 
-            to="/explore" 
+            to="/dashboard" 
             class="px-12 py-5 bg-[#0d5c42] border-2 border-transparent text-white rounded-2xl font-black text-[18px] transition-all duration-300 shadow-xl hover:border-white hover:bg-white hover:text-[#0d5c42] hover:-translate-y-1 transform active:scale-95"
           >
             {{ $t('about.cta_btn_explore') }}

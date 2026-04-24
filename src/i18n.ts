@@ -25,6 +25,28 @@ const messages = {
       menu_logout: "Tizimdan chiqish",
       coming_soon: "Tez orada",
     },
+    profile: {
+      default_name: "Foydalanuvchi",
+      location: "O'zbekiston, Toshkent",
+      stats: {
+        supported: "Qo'llab-quvvatlandi",
+        my_projects: "Mening loyihalarim",
+        comments: "Fikrlar",
+        points: "Ballar",
+      },
+      empty: {
+        title: "Hozircha hech narsa yo'q",
+        desc: "Siz hali birorta loyihani boshlamadingiz yoki qo'llab-quvvatlamadingiz.",
+      },
+      edit: {
+        title: "Profilni tahrirlash",
+        name: "Ism",
+        phone: "Telefon raqami",
+        email: "Elektron pochta",
+        save: "Saqlash",
+        cancel: "Bekor qilish"
+      }
+    },
     how_it_works: {
       badge: "PLATFORMA BO'YICHA QO'LLANMA",
       title_start: "Funduz qanday",
@@ -1324,6 +1346,28 @@ const messages = {
       menu_settings: "Настройки",
       menu_logout: "Выйти",
       coming_soon: "Скоро",
+    },
+    profile: {
+      default_name: "Пользователь",
+      location: "Узбекистан, Ташкент",
+      stats: {
+        supported: "Поддержано",
+        my_projects: "Мои проекты",
+        comments: "Комментарии",
+        points: "Баллы",
+      },
+      empty: {
+        title: "Пока ничего нет",
+        desc: "Вы еще не начали и не поддержали ни одного проекта.",
+      },
+      edit: {
+        title: "Редактировать профиль",
+        name: "Имя",
+        phone: "Номер телефона",
+        email: "Электронная почта",
+        save: "Сохранить",
+        cancel: "Отмена"
+      }
     },
     how_it_works: {
       badge: "ПУТЕВОДИТЕЛЬ ПО ПЛАТФОРМЕ",

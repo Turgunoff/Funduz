@@ -43,6 +43,20 @@ export const useAuthStore = defineStore('auth', () => {
     }
   };
 
+  const updateProfile = async (data: Partial<User>) => {
+    try {
+      const updatedUser = await authService.updateProfile(data);
+      if (updatedUser) {
+        user.value = updatedUser;
+        return true;
+      }
+      return false;
+    } catch (error) {
+      console.error('Profile update failed:', error);
+      return false;
+    }
+  };
+
   const logout = () => {
     authService.logout();
     user.value = null;
@@ -55,6 +69,7 @@ export const useAuthStore = defineStore('auth', () => {
     isLoggedIn,
     login,
     register,
+    updateProfile,
     logout
   };
 });

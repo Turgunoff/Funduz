@@ -15,7 +15,7 @@
 
             <nav class="hidden lg:flex items-center space-x-6 text-[16px] font-bold text-gray-800">
               <router-link
-                to="/explore"
+                to="/dashboard"
                 :class="isExplorePage ? 'text-[#1a946b]' : 'hover:text-[#1a946b]'"
                 class="transition-colors"
               >
@@ -244,7 +244,7 @@
         <nav class="flex flex-col gap-6">
           <router-link
             @click="isMenuOpen = false"
-            to="/explore"
+            to="/dashboard"
             class="text-[20px] font-black border-b border-gray-50 pb-5 flex justify-between items-center"
             :class="isExplorePage ? 'text-[#1a946b]' : 'text-gray-900'"
           >
@@ -453,7 +453,7 @@ const performSearch = () => {
   }
 };
 
-const isExplorePage = computed(() => route.path === "/explore");
+const isExplorePage = computed(() => route.path === "/dashboard");
 const isHowItWorksPage = computed(() => route.path === "/how-it-works");
 const isSuccessStoriesPage = computed(() => route.path === "/success-stories");
 const isTrendsPage = computed(() => route.path === "/trends");

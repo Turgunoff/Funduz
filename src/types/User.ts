@@ -3,6 +3,8 @@ export interface User {
   name: string;
   avatar?: string;
   bio?: string;
+  email?: string;
+  phone?: string;
   role: 'admin' | 'creator' | 'backer';
   deliveredCount?: number;
 }

@@ -30,7 +30,7 @@ onMounted(() => {
           <h2 class="text-[32px] lg:text-[40px] font-bold text-gray-900 mb-4">{{ $t('projects.title') }}</h2>
           <p class="text-gray-500 text-[16px] lg:text-[18px] max-w-[600px] mx-auto md:mx-0">{{ $t('projects.subtitle') }}</p>
         </div>
-        <router-link to="/explore" class="mt-8 md:mt-0 flex items-center justify-center md:justify-start gap-2 text-[16px] font-bold text-gray-800 hover:text-[#1a946b] transition-colors group">
+        <router-link to="/dashboard" class="mt-8 md:mt-0 flex items-center justify-center md:justify-start gap-2 text-[16px] font-bold text-gray-800 hover:text-[#1a946b] transition-colors group">
           {{ $t('projects.view_all') }}
           <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

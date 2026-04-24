@@ -292,7 +292,7 @@
                 {{ $t("how_it_works.cta.btn_create") }}
               </button>
               <button
-                @click="$router.push('/explore')"
+                @click="$router.push('/dashboard')"
                 class="px-10 py-5 bg-[#0d5c42] text-white font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1"
               >
                 {{ $t("how_it_works.cta.btn_projects") }}

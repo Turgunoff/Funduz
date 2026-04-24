@@ -23,7 +23,7 @@
             <router-link to="/" class="w-full sm:w-auto px-10 py-5 border border-gray-100 bg-white text-gray-900 hover:!bg-[#1a946b] hover:!text-white hover:!border-[#1a946b] rounded-2xl font-bold transition-all text-[17px] shadow-sm flex items-center justify-center">
               {{ t('error404.back_home') }}
             </router-link>
-            <router-link to="/explore" class="w-full sm:w-auto px-10 py-5 border border-gray-100 bg-white text-gray-900 hover:!bg-[#1a946b] hover:!text-white hover:!border-[#1a946b] rounded-2xl font-bold transition-all text-[17px] flex items-center justify-center gap-2 shadow-sm group">
+            <router-link to="/dashboard" class="w-full sm:w-auto px-10 py-5 border border-gray-100 bg-white text-gray-900 hover:!bg-[#1a946b] hover:!text-white hover:!border-[#1a946b] rounded-2xl font-bold transition-all text-[17px] flex items-center justify-center gap-2 shadow-sm group">
               {{ t('error404.explore') }}
               <svg class="w-5 h-5 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </router-link>
@@ -59,7 +59,7 @@
               {{ t('error404.trending_title') }}
             </h2>
           </div>
-          <router-link to="/explore" class="mt-8 md:mt-0 flex items-center gap-2 text-[16px] font-bold text-gray-800 hover:text-[#1a946b] transition-colors group">
+          <router-link to="/dashboard" class="mt-8 md:mt-0 flex items-center gap-2 text-[16px] font-bold text-gray-800 hover:text-[#1a946b] transition-colors group">
             {{ t('error404.view_all') }}
             <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </router-link>

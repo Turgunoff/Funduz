@@ -155,7 +155,7 @@
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pb-20 lg:pb-32">
       <div class="flex items-center justify-between mb-8 lg:mb-10">
         <h2 class="text-2xl lg:text-3xl font-bold text-gray-900">{{ $t('trends.upcoming_title') }}</h2>
-        <router-link to="/explore" class="text-[#1a946b] font-black text-sm lg:text-base hover:underline">{{ $t('error404.view_all') }}</router-link>
+        <router-link to="/dashboard" class="text-[#1a946b] font-black text-sm lg:text-base hover:underline">{{ $t('error404.view_all') }}</router-link>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
