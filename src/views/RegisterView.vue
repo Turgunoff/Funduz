@@ -15,10 +15,12 @@
       
       <div class="relative z-10 max-w-lg">
         <div class="mb-12">
-          <div class="text-white text-[40px] font-black tracking-tight flex flex-col items-center">
-            FUNDUZ
-            <div class="w-12 h-1 bg-[#f0fdf4]/30 mt-1 rounded-full"></div>
-          </div>
+          <router-link to="/">
+            <div class="text-white text-[40px] font-black tracking-tight flex flex-col items-center hover:opacity-90 transition-opacity">
+              FUNDUZ
+              <div class="w-12 h-1 bg-[#f0fdf4]/30 mt-1 rounded-full"></div>
+            </div>
+          </router-link>
         </div>
         
         <h1 class="text-[44px] lg:text-[56px] font-bold text-white leading-[1.1] mb-8 tracking-tight">
@@ -26,7 +28,7 @@
         </h1>
         
         <p class="text-white/70 text-lg leading-relaxed mb-16">
-          {{ $t('login.hero_subtitle') }}
+          Присоединяйтесь к нашему глобальному сообществу инвесторов и новаторов. Создавайте проекты и поддерживайте лучшие идеи!
         </p>
 
         <!-- Bottom Graphic Card -->
@@ -42,21 +44,19 @@
       </div>
     </div>
 
-    <!-- Right Side: Login Form -->
-    <div class="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 lg:p-20 bg-gray-50 lg:bg-white">
+    <!-- Right Side: Register Form -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 lg:p-20 bg-gray-50 lg:bg-white relative">
       <div class="w-full max-w-[480px]">
         
         <!-- Mobile Logo -->
         <div class="lg:hidden text-center mb-8">
-          <div class="text-[#1e5c43] text-3xl font-black tracking-tight">FUNDUZ</div>
+          <router-link to="/" class="text-[#1e5c43] text-3xl font-black tracking-tight">FUNDUZ</router-link>
         </div>
 
         <div class="text-center mb-10">
-          <h2 class="text-[32px] font-bold text-gray-900 mb-3">{{ $t('login.title') }}</h2>
-          <p class="text-gray-500 font-medium">{{ $t('login.subtitle') }}</p>
+          <h2 class="text-[32px] font-bold text-gray-900 mb-3">Регистрация</h2>
+          <p class="text-gray-500 font-medium">Создайте аккаунт, чтобы начать</p>
         </div>
-
-
 
         <!-- Main Form Card -->
         <div class="bg-white rounded-[40px] p-8 lg:p-10 shadow-xl shadow-gray-200/50 border border-gray-100">
@@ -83,13 +83,25 @@
             <span class="relative bg-white px-4 text-[11px] font-black text-gray-300 uppercase tracking-[0.2em]">{{ $t('login.or') }}</span>
           </div>
 
-          <!-- Login/Register Form Items -->
+          <!-- Register Form Items -->
           <form @submit.prevent="handleSubmit" class="space-y-6">
             <div v-if="errorMessage" class="p-4 bg-red-50 text-red-600 rounded-2xl text-[14px] font-bold text-center border border-red-100">
               {{ errorMessage }}
             </div>
+            
+            <!-- Name -->
+            <div>
+              <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_name') }}</label>
+              <input 
+                type="text" 
+                v-model="name"
+                :placeholder="$t('login.placeholder_name')"
+                class="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:border-[#1e5c43] focus:ring-4 focus:ring-green-500/5 outline-none transition-all font-medium"
+                required
+              >
+            </div>
 
-
+            <!-- Email -->
             <div>
               <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_email') }}</label>
               <input 
@@ -101,10 +113,10 @@
               >
             </div>
 
+            <!-- Password -->
             <div>
               <div class="flex justify-between items-center mb-3 px-1">
-                <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ $t('login.label_password') }}</label>
-                <router-link to="/forgot-password" class="text-[11px] font-black text-[#1e5c43] hover:underline">{{ $t('login.forgot_password') }}</router-link>
+                <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ $t('login.label_password_reg') }}</label>
               </div>
               <div class="relative">
                 <input 
@@ -126,39 +138,26 @@
             </div>
 
             <button :disabled="isLoading" class="w-full py-5 bg-white text-[#1a946b] border-2 border-[#1a946b] rounded-3xl font-black flex items-center justify-center gap-3 hover:bg-[#1a946b] hover:text-white hover:translate-y-[-4px] transition-all shadow-xl shadow-[#1a946b]/20 disabled:opacity-70 disabled:hover:translate-y-0 text-lg">
-              <span v-if="!isLoading">{{ $t('login.btn_submit') || 'Войти' }}</span>
+              <span v-if="!isLoading">{{ $t('login.btn_register') || 'Зарегистрироваться' }}</span>
               <span v-else>Yuklanmoqda...</span>
               <svg v-if="!isLoading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               <div v-else class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
             </button>
             
             <div class="mt-6 text-center text-[14px] font-medium text-gray-500">
-              Нет аккаунта? 
-              <router-link to="/register" class="text-[#1e5c43] font-bold hover:underline">Зарегистрироваться</router-link>
+              Уже есть аккаунт? 
+              <router-link to="/login" class="text-[#1e5c43] font-bold hover:underline">Войти в систему</router-link>
             </div>
           </form>
         </div>
 
         <!-- Extra Info Footer -->
         <p class="mt-8 text-center text-[12px] text-gray-400 leading-relaxed px-4">
-          {{ $t('login.footer_text_start') }}
-          <a href="#" class="font-bold text-gray-500 hover:text-[#1e5c43]">Foydalanish shartlari</a>
-          {{ $t('login.footer_text_and') }}
-          <a href="#" class="font-bold text-gray-500 hover:text-[#1e5c43]">Maxfiylik siyosati</a>
-          {{ $t('login.footer_text_end') }}
+          Нажимая "Зарегистрироваться", вы соглашаетесь с нашими
+          <a href="#" class="font-bold text-gray-500 hover:text-[#1e5c43]">Условиями пользования</a>
+          и
+          <a href="#" class="font-bold text-gray-500 hover:text-[#1e5c43]">Политикой конфиденциальности</a>
         </p>
-
-        <!-- Help Links -->
-        <div class="mt-12 flex justify-center gap-8">
-           <a href="#" class="flex items-center gap-2 text-[12px] font-bold text-gray-400 hover:text-gray-900 transition-colors">
-             <div class="w-1.5 h-1.5 rounded-full bg-gray-200"></div>
-             Yordam markazi
-           </a>
-           <a href="#" class="flex items-center gap-2 text-[12px] font-bold text-gray-400 hover:text-gray-900 transition-colors">
-             <div class="w-1.5 h-1.5 rounded-full bg-gray-200"></div>
-             Xavfsiz to'lovlar
-           </a>
-        </div>
 
       </div>
     </div>
@@ -181,6 +180,7 @@ const showPassword = ref(false)
 const isLoading = ref(false)
 const errorMessage = ref('')
 
+const name = ref('')
 const email = ref('')
 const password = ref('')
 
@@ -192,13 +192,13 @@ const handleSubmit = async () => {
   isLoading.value = true
   errorMessage.value = ''
   
-  if (!email.value || !password.value) {
+  if (!name.value || !email.value || !password.value) {
     errorMessage.value = 'Maydonlarni to\'ldiring'
     isLoading.value = false
     return
   }
 
-  const success = await authStore.login(email.value, password.value)
+  const success = await authStore.register(name.value, email.value, password.value)
   
   isLoading.value = false
   
@@ -206,7 +206,7 @@ const handleSubmit = async () => {
     const redirectPath = route.query.redirect as string || '/'
     router.push(redirectPath)
   } else {
-    errorMessage.value = 'Xato login yoki parol.'
+    errorMessage.value = 'Ro\'yxatdan o\'tishda xatolik yuz berdi.'
   }
 }
 </script>
