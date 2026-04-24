@@ -114,7 +114,7 @@ import { useI18n } from 'vue-i18n';
 import { useProjectStore } from '../stores/projects';
 import type { Project } from '../types/Project';
 
-const { t, locale } = useI18n();
+const { t } = useI18n();
 const projectStore = useProjectStore();
 
 const trendingProjects = computed(() => projectStore.allItems.slice(0, 3));

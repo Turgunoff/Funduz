@@ -186,12 +186,12 @@
                     </router-link>
 
                     <router-link
-                      to="/dashboard"
-                      class="flex items-center justify-between gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-400 hover:bg-gray-50 rounded-2xl transition-all cursor-not-allowed"
+                      to="/my-projects"
+                      class="flex items-center justify-between gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-700 hover:bg-[#f0f9f6] hover:text-[#1a946b] rounded-2xl transition-all"
                     >
                       <div class="flex items-center gap-4">
                         <svg
-                          class="w-5 h-5 opacity-70"
+                          class="w-5 h-5 text-current opacity-70"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -205,19 +205,15 @@
                         </svg>
                         {{ $t("nav.menu_dashboard") }}
                       </div>
-                      <span
-                        class="text-[10px] uppercase font-black tracking-widest text-[#1a946b] bg-[#f0f9f6] px-2 py-1 rounded-full"
-                        >{{ $t("nav.coming_soon") }}</span
-                      >
                     </router-link>
 
                     <router-link
                       to="/favorites"
-                      class="flex items-center justify-between gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-400 hover:bg-gray-50 rounded-2xl transition-all cursor-not-allowed"
+                      class="flex items-center justify-between gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-700 hover:bg-[#f0f9f6] hover:text-[#1a946b] rounded-2xl transition-all"
                     >
                       <div class="flex items-center gap-4">
                         <svg
-                          class="w-5 h-5 opacity-70"
+                          class="w-5 h-5 text-current opacity-70"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -235,11 +231,11 @@
 
                     <router-link
                       to="/settings"
-                      class="flex items-center justify-between gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-400 hover:bg-gray-50 rounded-2xl transition-all cursor-not-allowed"
+                      class="flex items-center justify-between gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-700 hover:bg-[#f0f9f6] hover:text-[#1a946b] rounded-2xl transition-all"
                     >
                       <div class="flex items-center gap-4">
                         <svg
-                          class="w-5 h-5 opacity-70"
+                          class="w-5 h-5 text-current opacity-70"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -624,10 +620,8 @@ const performSearch = () => {
   }
 };
 
-const isExplorePage = computed(() => route.path === "/dashboard");
 const isHowItWorksPage = computed(() => route.path === "/how-it-works");
 const isSuccessStoriesPage = computed(() => route.path === "/success-stories");
-const isTrendsPage = computed(() => route.path === "/trends");
 
 const setLocale = (lang: "uz" | "ru") => {
   localeStore.setLocale(lang);

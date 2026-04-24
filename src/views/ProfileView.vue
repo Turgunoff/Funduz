@@ -30,11 +30,12 @@
               {{ authStore.user?.role === 'creator' ? $t('nav.role_author') : $t('nav.role_sponsor') }}
             </div>
             
-            <button @click="openEditModal" class="p-2 text-gray-300 hover:text-[#1a946b] hover:bg-[#f0f9f6] rounded-full transition-all group" :title="$t('profile.edit.title')">
-              <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            <router-link to="/settings" class="p-2 text-gray-300 hover:text-[#1a946b] hover:bg-[#f0f9f6] rounded-full transition-all group" :title="$t('nav.menu_settings') || 'Настройки'">
+              <svg class="w-5 h-5 transition-transform group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-            </button>
+            </router-link>
           </div>
           
           <h1 class="text-[32px] lg:text-[40px] font-bold text-gray-900 mb-2 leading-tight">{{ authStore.user?.name || $t('profile.default_name') }}</h1>
@@ -92,83 +93,16 @@
         </router-link>
       </div>
 
-      <!-- Edit Profile Modal -->
-      <transition name="modal">
-        <div v-if="isEditModalOpen" class="fixed inset-0 z-[200] flex items-center justify-center px-4">
-          <div class="absolute inset-0 bg-gray-900/40 backdrop-blur-sm transition-opacity" @click="isEditModalOpen = false"></div>
-          
-          <div class="relative bg-white w-full max-w-[500px] rounded-[32px] shadow-2xl p-8 lg:p-10 transition-transform duration-300">
-            <h2 class="text-[28px] font-black text-gray-900 mb-8">{{ $t('profile.edit.title') }}</h2>
-            
-            <form @submit.prevent="saveProfile" class="space-y-6">
-              <div>
-                <label class="block text-[14px] font-bold text-gray-700 mb-2">{{ $t('profile.edit.name') }}</label>
-                <input v-model="editForm.name" type="text" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-4 text-[16px] font-medium text-gray-900 outline-none focus:border-[#1a946b] focus:ring-1 focus:ring-[#1a946b] transition-all" required />
-              </div>
-              
-              <div>
-                <label class="block text-[14px] font-bold text-gray-700 mb-2">{{ $t('profile.edit.phone') }}</label>
-                <input v-model="editForm.phone" type="tel" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-4 text-[16px] font-medium text-gray-900 outline-none focus:border-[#1a946b] focus:ring-1 focus:ring-[#1a946b] transition-all" />
-              </div>
 
-              <div>
-                <label class="block text-[14px] font-bold text-gray-700 mb-2">{{ $t('profile.edit.email') }}</label>
-                <input v-model="editForm.email" type="email" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-4 text-[16px] font-medium text-gray-900 outline-none focus:border-[#1a946b] focus:ring-1 focus:ring-[#1a946b] transition-all" />
-              </div>
-
-              <div class="flex gap-4 pt-4">
-                <button type="button" @click="isEditModalOpen = false" class="flex-1 py-4 bg-gray-100 text-gray-700 rounded-2xl font-black hover:bg-gray-200 transition-all">
-                  {{ $t('profile.edit.cancel') }}
-                </button>
-                <button type="submit" :disabled="isSaving" class="flex-1 py-4 bg-[#1a946b] text-white rounded-2xl font-black hover:bg-[#157a58] transition-all shadow-lg shadow-green-900/20 disabled:opacity-50 disabled:cursor-not-allowed">
-                  {{ isSaving ? '...' : $t('profile.edit.save') }}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </transition>
 
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import { useAuthStore } from '../stores/auth';
 
 const authStore = useAuthStore();
-
-const isEditModalOpen = ref(false);
-const isSaving = ref(false);
-
-const editForm = ref({
-  name: '',
-  phone: '',
-  email: ''
-});
-
-const openEditModal = () => {
-  if (authStore.user) {
-    editForm.value = {
-      name: authStore.user.name || '',
-      phone: authStore.user.phone || '',
-      email: authStore.user.email || ''
-    };
-  }
-  isEditModalOpen.value = true;
-};
-
-const saveProfile = async () => {
-  isSaving.value = true;
-  await authStore.updateProfile({
-    name: editForm.value.name,
-    phone: editForm.value.phone,
-    email: editForm.value.email
-  });
-  isSaving.value = false;
-  isEditModalOpen.value = false;
-};
 </script>
 
 <style scoped>
@@ -176,23 +110,5 @@ h1 {
   letter-spacing: -0.03em;
 }
 
-/* Modal Transitions */
-.modal-enter-active,
-.modal-leave-active {
-  transition: opacity 0.3s ease;
-}
-.modal-enter-active .relative.bg-white,
-.modal-leave-active .relative.bg-white {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-}
 
-.modal-enter-from,
-.modal-leave-to {
-  opacity: 0;
-}
-.modal-enter-from .relative.bg-white,
-.modal-leave-to .relative.bg-white {
-  transform: scale(0.95) translateY(10px);
-  opacity: 0;
-}
 </style>

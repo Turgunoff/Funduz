@@ -216,17 +216,17 @@
           class="flex items-center gap-6 lg:gap-12 border-b border-gray-100 mb-8 lg:mb-12 overflow-x-auto no-scrollbar"
         >
           <button
-            v-for="(tab, idx) in tm('project_view.tabs')"
+            v-for="(tab, idx) in projectTabs"
             :key="idx"
-            @click="activeTab = Number(idx)"
+            @click="activeTab = idx"
             :class="
-              activeTab === Number(idx)
+              activeTab === idx
                 ? 'border-[#326b4d] text-gray-900 font-bold'
                 : 'border-transparent text-gray-400 font-medium'
             "
             class="pb-4 border-b-2 text-[15px] lg:text-[17px] transition-all cursor-pointer flex items-center gap-2.5 whitespace-nowrap"
           >
-            <span v-if="Number(idx) === 0">
+            <span v-if="idx === 0">
               <svg
                 class="w-4 h-4 lg:w-5 lg:h-5"
                 fill="none"
@@ -241,7 +241,7 @@
                 />
               </svg>
             </span>
-            <span v-if="Number(idx) === 1" class="flex items-center gap-2">
+            <span v-if="idx === 1" class="flex items-center gap-2">
               <svg
                 class="w-4 h-4 lg:w-5 lg:h-5"
                 fill="none"
@@ -260,7 +260,7 @@
                 >3</span
               >
             </span>
-            <span v-if="Number(idx) === 2">
+            <span v-if="idx === 2">
               <svg
                 class="w-4 h-4 lg:w-5 lg:h-5"
                 fill="none"
@@ -313,7 +313,7 @@
               </h3>
               <ul class="space-y-4">
                 <li
-                  v-for="(benefit, bidx) in tm('project_view.benefits')"
+                  v-for="(benefit, bidx) in projectBenefits"
                   :key="bidx"
                   class="flex items-start gap-4"
                 >
@@ -364,17 +364,17 @@
               >
                 <div class="flex justify-between items-start mb-4 lg:mb-6">
                   <div class="text-[#0f5238] font-black text-lg lg:text-xl">
-                    {{ tm(`project_view.reward_${rIdx}_price`) }}
+                    {{ getRewardText(rIdx, 'price') }}
                   </div>
                   <div class="text-[10px] font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded">
                     {{ rIdx === 1 ? "45" : rIdx === 2 ? "28" : "5" }} ta olindi
                   </div>
                 </div>
                 <h4 class="text-gray-900 font-bold text-base lg:text-lg mb-3 lg:mb-4">
-                  {{ tm(`project_view.reward_${rIdx}_title`) }}
+                  {{ getRewardText(rIdx, 'title') }}
                 </h4>
                 <p class="text-gray-400 text-[13px] lg:text-sm leading-relaxed mb-6 lg:mb-8">
-                  {{ tm(`project_view.reward_${rIdx}_desc`) }}
+                  {{ getRewardText(rIdx, 'desc') }}
                 </p>
 
                 <div
@@ -444,11 +444,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t, tm } = useI18n();
 const activeTab = ref(0);
+
+const projectTabs = computed(() => tm('project_view.tabs') as string[]);
+const projectBenefits = computed(() => tm('project_view.benefits') as string[]);
+
+const getRewardText = (idx: number, type: string) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return t(`project_view.reward_${idx}_${type}` as any);
+};
 </script>
 
 <style scoped>

@@ -11,6 +11,9 @@ import FaqView from "../views/FaqView.vue";
 import ContactView from "../views/ContactView.vue";
 import SearchView from "../views/SearchView.vue";
 import TrendsView from "../views/TrendsView.vue";
+import MyProjectsView from "../views/MyProjectsView.vue";
+import FavoritesView from "../views/FavoritesView.vue";
+import SettingsView from "../views/SettingsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +22,21 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+    },
+    {
+      path: "/my-projects",
+      name: "my-projects",
+      component: MyProjectsView,
+    },
+    {
+      path: "/favorites",
+      name: "favorites",
+      component: FavoritesView,
+    },
+    {
+      path: "/settings",
+      name: "settings",
+      component: SettingsView,
     },
     {
       path: "/project/:id",
