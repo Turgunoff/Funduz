@@ -1,5 +1,31 @@
 <template>
-  <div class="pt-16 lg:pt-20 bg-[#fcfcfc] min-h-screen">
+  <div class="pt-28 lg:pt-32 bg-[#fcfcfc] min-h-screen relative overflow-hidden">
+    
+    <!-- Secondary Sub-Navbar (Page Specific) -->
+    <div class="fixed top-16 lg:top-20 left-0 right-0 z-[90] bg-[#f0f9f6] border-b border-[#e1ece8] w-full shadow-sm overflow-x-auto no-scrollbar">
+      <div class="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-8 h-12 flex items-center">
+        <nav class="flex items-center space-x-8 text-[14px] font-bold text-gray-800 shrink-0">
+          <router-link
+            to="/dashboard"
+            class="transition-colors h-12 flex items-center border-b-2 border-[#1a946b] text-[#1a946b] whitespace-nowrap"
+          >
+            {{ $t("nav.projects") }}
+          </router-link>
+          <router-link
+            to="/trends"
+            class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
+          >
+            {{ $t("nav.technologies") }}
+          </router-link>
+          <router-link
+            to="/security"
+            class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
+          >
+            {{ $t("nav.security") }}
+          </router-link>
+        </nav>
+      </div>
+    </div>
     
     <!-- Hero Section -->
     <div class="pt-12 pb-10 lg:pt-20 lg:pb-16 bg-white border-b border-gray-50">

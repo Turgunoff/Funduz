@@ -24,6 +24,8 @@ const messages = {
       menu_settings: "Sozlamalar",
       menu_logout: "Tizimdan chiqish",
       coming_soon: "Tez orada",
+      technologies: "Texnologiyalar",
+      security: "Xavfsizlik",
     },
     profile: {
       default_name: "Foydalanuvchi",
@@ -1346,6 +1348,8 @@ const messages = {
       menu_settings: "Настройки",
       menu_logout: "Выйти",
       coming_soon: "Скоро",
+      technologies: "Технологии",
+      security: "Безопасность",
     },
     profile: {
       default_name: "Пользователь",

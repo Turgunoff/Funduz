@@ -1,9 +1,36 @@
 <template>
   <div class="min-h-screen relative overflow-hidden">
+
+    <!-- Secondary Sub-Navbar (Page Specific) -->
+    <div class="fixed top-16 lg:top-20 left-0 right-0 z-[90] bg-[#f0f9f6] border-b border-[#e1ece8] w-full shadow-sm overflow-x-auto no-scrollbar">
+      <div class="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-8 h-12 flex items-center">
+        <nav class="flex items-center space-x-8 text-[14px] font-bold text-gray-800 shrink-0">
+          <router-link
+            to="/dashboard"
+            class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
+          >
+            {{ $t("nav.projects") }}
+          </router-link>
+          <router-link
+            to="/trends"
+            class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
+          >
+            {{ $t("nav.technologies") }}
+          </router-link>
+          <router-link
+            to="/security"
+            class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
+          >
+            {{ $t("nav.security") }}
+          </router-link>
+        </nav>
+      </div>
+    </div>
+
     <!-- TOP SECTION: Hero & Steps -->
     <div class="bg-[#f8f6f5] pb-[100px] lg:pb-[180px]">
       <!-- Hero Section -->
-      <div class="relative z-10 pt-16 lg:pt-20">
+      <div class="relative z-10 pt-32 lg:pt-36">
         <div
           class="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-28 flex flex-col items-center text-center"
         >
@@ -32,7 +59,7 @@
             class="relative bg-gray-200/50 backdrop-blur-sm p-1 rounded-full flex items-center shadow-inner"
           >
             <!-- Animated Background Pill -->
-            <div 
+            <div
               class="absolute bg-[#1a946b] rounded-full transition-all duration-300 ease-out shadow-lg"
               :style="pillStyle"
             ></div>
@@ -45,7 +72,7 @@
               :class="userType === type ? 'text-white' : 'text-[#4b4b4b] hover:text-black'"
               class="relative z-10 px-8 lg:px-12 py-3 lg:py-4 rounded-full text-[14px] lg:text-[16px] font-black transition-all duration-300"
             >
-              {{ $t(type === 'author' ? "how_it_works.btn_authors" : "how_it_works.btn_sponsors") }}
+              {{ $t(type === "author" ? "how_it_works.btn_authors" : "how_it_works.btn_sponsors") }}
             </button>
           </div>
         </div>
@@ -65,41 +92,129 @@
             >
               <!-- Icon 1 -->
               <template v-if="Number(idx) === 0">
-                <svg v-if="userType === 'author'" class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                <svg
+                  v-if="userType === 'author'"
+                  class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                  />
                 </svg>
-                <svg v-else class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <svg
+                  v-else
+                  class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
                 </svg>
               </template>
 
               <!-- Icon 2 -->
               <template v-else-if="Number(idx) === 1">
-                <svg v-if="userType === 'author'" class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                <svg
+                  v-if="userType === 'author'"
+                  class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+                  />
                 </svg>
-                <svg v-else class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                <svg
+                  v-else
+                  class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.921-.755 1.688-1.54 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.784.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  />
                 </svg>
               </template>
 
               <!-- Icon 3 -->
               <template v-else-if="Number(idx) === 2">
-                <svg v-if="userType === 'author'" class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                <svg
+                  v-if="userType === 'author'"
+                  class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
                 </svg>
-                <svg v-else class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                <svg
+                  v-else
+                  class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                  />
                 </svg>
               </template>
 
               <!-- Icon 4 -->
               <template v-else-if="Number(idx) === 3">
-                <svg v-if="userType === 'author'" class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <svg
+                  v-if="userType === 'author'"
+                  class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
                 </svg>
-                <svg v-else class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                <svg
+                  v-else
+                  class="w-7 h-7 text-[#0f4a36] group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
                 </svg>
               </template>
             </div>
@@ -275,7 +390,9 @@
           class="relative bg-[#1a946b] rounded-[48px] p-12 lg:p-24 overflow-hidden text-center shadow-2xl shadow-green-900/20"
         >
           <!-- Decoration Circles -->
-          <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+          <div
+            class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+          ></div>
           <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
 
           <div class="relative z-10">
@@ -306,34 +423,34 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch, nextTick, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { ref, onMounted, watch, nextTick, computed } from "vue";
+import { useI18n } from "vue-i18n";
 
-const { locale, tm } = useI18n()
-const userType = ref('author')
+const { locale, tm } = useI18n();
+const userType = ref("author");
 
-const pillButtons = ref<HTMLElement[]>([])
+const pillButtons = ref<HTMLElement[]>([]);
 const pillStyle = ref({
-  left: '0px',
-  width: '0px',
-  height: '0px'
-})
+  left: "0px",
+  width: "0px",
+  height: "0px",
+});
 
 const updatePill = async () => {
-  await nextTick()
-  const index = userType.value === 'author' ? 0 : 1
-  const activeBtn = pillButtons.value[index]
+  await nextTick();
+  const index = userType.value === "author" ? 0 : 1;
+  const activeBtn = pillButtons.value[index];
   if (activeBtn) {
     pillStyle.value = {
       left: `${activeBtn.offsetLeft}px`,
       width: `${activeBtn.offsetWidth}px`,
-      height: `${activeBtn.offsetHeight}px`
-    }
+      height: `${activeBtn.offsetHeight}px`,
+    };
   }
-}
+};
 
-onMounted(updatePill)
-watch([userType, locale], updatePill)
+onMounted(updatePill);
+watch([userType, locale], updatePill);
 
 // Defined interfaces to satisfy the linter without changing logic
 interface Step {
