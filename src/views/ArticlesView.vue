@@ -285,7 +285,7 @@ import { useI18n } from "vue-i18n";
 import { articleService } from "../services/articleService";
 import type { Article } from "../types/Article";
 
-const { tm, t, locale } = useI18n();
+const { tm, locale } = useI18n();
 const activeCategory = ref("all");
 const isMobileMenuOpen = ref(false);
 const categoryButtons = ref<HTMLButtonElement[]>([]);

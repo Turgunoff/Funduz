@@ -360,6 +360,25 @@ import { computed } from 'vue';
 const { tm, t } = useI18n();
 const route = useRoute();
 
+interface List1Item {
+  bold: string;
+  text: string;
+}
+
+interface CommentItem {
+  author: string;
+  date: string;
+  text: string;
+}
+
+interface KeepReadingArticle {
+  title: string;
+  category: string;
+  image: string;
+  desc?: string;
+  author: string;
+}
+
 // Get the slug from route which corresponds to the i18n key (e.g., 'campaign_story', 'pitch_video')
 const slug = computed(() => {
   const s = route.params.slug as string;
@@ -368,10 +387,10 @@ const slug = computed(() => {
   return s.replace(/-/g, '_'); 
 });
 
-const list1 = computed(() => tm(`${slug.value}.list1`) as any[]);
-const comments = computed(() => tm(`${slug.value}.discussion.comments`) as any[]);
+const list1 = computed(() => tm(`${slug.value}.list1`) as List1Item[]);
+const comments = computed(() => tm(`${slug.value}.discussion.comments`) as CommentItem[]);
 const sidebarSections = computed(() => tm(`${slug.value}.sidebar.sections`) as string[]);
-const keepReading = computed(() => tm(`${slug.value}.keep_reading.articles`) as any[]);
+const keepReading = computed(() => tm(`${slug.value}.keep_reading.articles`) as KeepReadingArticle[]);
 </script>
 
 <style scoped>
