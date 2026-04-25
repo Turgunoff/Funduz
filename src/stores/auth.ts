@@ -27,10 +27,9 @@ export const useAuthStore = defineStore('auth', () => {
     }
   };
 
-  const register = async (name: string, _email: string, _pass: string) => {
+  const register = async (name: string, email: string, _pass: string) => {
     try {
-      // Mock service currently only uses name
-      const res = await authService.register({ name });
+      const res = await authService.register({ name, email });
       if (res) {
         user.value = res.user;
         token.value = res.token;

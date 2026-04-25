@@ -432,10 +432,8 @@
 <script setup lang="ts">
 import { ref, onMounted, watch, nextTick, computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { useAuthStore } from "../stores/auth";
 
 const { locale, tm } = useI18n();
-const authStore = useAuthStore();
 const userType = ref("author");
 
 const pillButtons = ref<HTMLElement[]>([]);

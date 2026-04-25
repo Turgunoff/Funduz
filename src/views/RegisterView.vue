@@ -97,8 +97,12 @@
                 v-model="name"
                 :placeholder="$t('login.placeholder_name')"
                 class="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:border-[#1e5c43] focus:ring-4 focus:ring-green-500/5 outline-none transition-all font-medium"
-                required
+                :class="{'border-red-400 bg-red-50/30': errors.name}"
               >
+              <p v-if="errors.name" class="mt-2 ml-1 text-[12px] font-bold text-red-500 flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>
+                {{ errors.name }}
+              </p>
             </div>
 
             <!-- Email -->
@@ -109,8 +113,12 @@
                 v-model="email"
                 placeholder="example@mail.com"
                 class="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:border-[#1e5c43] focus:ring-4 focus:ring-green-500/5 outline-none transition-all font-medium"
-                required
+                :class="{'border-red-400 bg-red-50/30': errors.email}"
               >
+              <p v-if="errors.email" class="mt-2 ml-1 text-[12px] font-bold text-red-500 flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-149a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>
+                {{ errors.email }}
+              </p>
             </div>
 
             <!-- Password -->
@@ -124,7 +132,7 @@
                   v-model="password"
                   placeholder="••••••••"
                   class="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:border-[#1e5c43] focus:ring-4 focus:ring-green-500/5 outline-none transition-all font-medium"
-                  required
+                  :class="{'border-red-400 bg-red-50/30': errors.password}"
                 >
                 <button 
                   type="button"
@@ -135,6 +143,10 @@
                   <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7 1.274-4.057 5.064-7 9.542-7 1.274 0 2.457.228 3.558.641M9 9l6 6M21 21L3 3" /></svg>
                 </button>
               </div>
+              <p v-if="errors.password" class="mt-2 ml-1 text-[12px] font-bold text-red-500 flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>
+                {{ errors.password }}
+              </p>
             </div>
 
             <button :disabled="isLoading" class="w-full py-5 bg-white text-[#1a946b] border-2 border-[#1a946b] rounded-3xl font-black flex items-center justify-center gap-3 hover:bg-[#1a946b] hover:text-white hover:translate-y-[-4px] transition-all shadow-xl shadow-[#1a946b]/20 disabled:opacity-70 disabled:hover:translate-y-0 text-lg">
@@ -183,21 +195,53 @@ const errorMessage = ref('')
 const name = ref('')
 const email = ref('')
 const password = ref('')
+const errors = ref({
+  name: '',
+  email: '',
+  password: ''
+})
 
 const setLocale = (lang: string) => {
   locale.value = lang
 }
 
-const handleSubmit = async () => {
-  isLoading.value = true
-  errorMessage.value = ''
-  
-  if (!name.value || !email.value || !password.value) {
-    errorMessage.value = 'Maydonlarni to\'ldiring'
-    isLoading.value = false
-    return
+const validate = () => {
+  let isValid = true
+  errors.value = { name: '', email: '', password: '' }
+
+  if (!name.value.trim()) {
+    errors.value.name = 'Ismingizni kiriting'
+    isValid = false
+  } else if (name.value.length < 2) {
+    errors.value.name = 'Ism juda qisqa'
+    isValid = false
   }
 
+  if (!email.value) {
+    errors.value.email = 'Email manzilini kiriting'
+    isValid = false
+  } else if (!/^\S+@\S+\.\S+$/.test(email.value)) {
+    errors.value.email = 'Email formati noto\'g\'ri'
+    isValid = false
+  }
+
+  if (!password.value) {
+    errors.value.password = 'Parolni kiriting'
+    isValid = false
+  } else if (password.value.length < 6) {
+    errors.value.password = 'Parol kamida 6 ta belgidan iborat bo\'lishi kerak'
+    isValid = false
+  }
+
+  return isValid
+}
+
+const handleSubmit = async () => {
+  errorMessage.value = ''
+  
+  if (!validate()) return
+
+  isLoading.value = true
   const success = await authStore.register(name.value, email.value, password.value)
   
   isLoading.value = false
@@ -206,7 +250,7 @@ const handleSubmit = async () => {
     const redirectPath = route.query.redirect as string || '/'
     router.push(redirectPath)
   } else {
-    errorMessage.value = 'Ro\'yxatdan o\'tishda xatolik yuz berdi.'
+    errorMessage.value = 'Ro\'yxatdan o\'tishda xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.'
   }
 }
 </script>

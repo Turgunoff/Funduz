@@ -48,7 +48,7 @@
 - [x] Исправить все динамические ссылки: вместо `/project/1` использовать `\`/project/${project.id}\``.
 - [x] В `FeaturedProjects.vue`, `ExploreView.vue`, `SearchView.vue`, `TrendsView.vue`, `CommunityView.vue`, `SuccessStoriesView.vue` — заменить `<a href>` на `<router-link>`.
 - [x] `router.beforeEach` guard для `meta: { requiresAuth: true }`.
-- [ ] Новые маршруты:
+- [x] Новые маршруты:
   - `/profile` — профиль пользователя
   - `/dashboard` — для авторов
   - `/my-projects` — проекты пользователя
@@ -62,12 +62,12 @@
 
 ## Этап 4 — Аутентификация (1–2 дня)
 
-- [ ] В `LoginView.vue` добавить валидацию формы (`vee-validate` или руками).
-- [ ] Mock-логин: `authService.login(email, password)` → `{ token, user }`, сохранение в `localStorage`.
-- [ ] Полная работа формы регистрации.
-- [ ] Создать `ForgotPasswordView.vue`.
-- [ ] В `AppHeader.vue` — для авторизованного пользователя: аватар + выпадающее меню (профиль, выход).
-- [ ] Функция logout.
+- [x] В `LoginView.vue` добавить валидацию формы (`vee-validate` или руками).
+- [x] Mock-логин: `authService.login(email, password)` → `{ token, user }`, сохранение в `localStorage`.
+- [x] Полная работа формы регистрации.
+- [x] Создать `ForgotPasswordView.vue`.
+- [x] В `AppHeader.vue` — для авторизованного пользователя: аватар + выпадающее меню (профиль, выход).
+- [x] Функция logout.
 
 ## Этап 5 — Страницы проектов (2–3 дня)
 
