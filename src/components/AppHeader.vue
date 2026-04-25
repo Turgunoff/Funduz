@@ -28,6 +28,13 @@
               >
                 {{ $t("nav.cooperation") }}
               </router-link>
+              <router-link
+                to="/donate/1"
+                class="hover:text-[#1a946b] transition-colors"
+                :class="$route.path.startsWith('/donate') ? 'text-[#1a946b]' : ''"
+              >
+                Оплата
+              </router-link>
             </nav>
           </div>
 
@@ -226,6 +233,28 @@
                           />
                         </svg>
                         {{ $t("nav.menu_favorites") }}
+                      </div>
+                    </router-link>
+
+                    <router-link
+                      to="/notifications"
+                      class="flex items-center justify-between gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-700 hover:bg-[#f0f9f6] hover:text-[#1a946b] rounded-2xl transition-all"
+                    >
+                      <div class="flex items-center gap-4">
+                        <svg
+                          class="w-5 h-5 text-current opacity-70"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                          />
+                        </svg>
+                        Уведомления
                       </div>
                     </router-link>
 
@@ -492,6 +521,22 @@
 
             <router-link
               @click="isMenuOpen = false"
+              to="/notifications"
+              class="flex items-center gap-4 px-3 py-3.5 text-[15px] font-bold text-gray-700 hover:bg-[#f0f9f6] hover:text-[#1a946b] rounded-xl transition-all"
+            >
+              <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                />
+              </svg>
+              Уведомления
+            </router-link>
+
+            <router-link
+              @click="isMenuOpen = false"
               to="/dashboard"
               class="flex items-center justify-between gap-4 px-3 py-3.5 text-[15px] font-bold text-gray-400 rounded-xl cursor-not-allowed"
             >
@@ -622,6 +667,7 @@ const performSearch = () => {
 
 const isHowItWorksPage = computed(() => route.path === "/how-it-works");
 const isSuccessStoriesPage = computed(() => route.path === "/success-stories");
+const isCommunityPage = computed(() => route.path === "/community");
 
 const setLocale = (lang: "uz" | "ru") => {
   localeStore.setLocale(lang);

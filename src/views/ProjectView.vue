@@ -160,12 +160,12 @@
 
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-3 lg:gap-4">
-              <a
-                href="#"
+              <router-link
+                :to="`/donate/${route.params.id}`"
                 class="flex-grow py-4 lg:py-5 bg-[#326b4d] text-white font-bold rounded-2xl hover:bg-[#25523a] transition-all cursor-pointer shadow-lg shadow-green-900/10 flex items-center justify-center order-1"
               >
                 {{ $t("project_view.btn_support") }}
-              </a>
+              </router-link>
               <div class="flex gap-3 order-2 sm:order-2">
                 <button
                   class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border border-gray-100 rounded-2xl text-gray-400 hover:text-gray-900 transition-all cursor-pointer"
@@ -430,11 +430,12 @@
               <p class="text-gray-500 text-[13px] lg:text-sm leading-relaxed mb-6">
                 {{ $t("project_view.special_desc") }}
               </p>
-              <button
-                class="w-full py-4 bg-[#e67e22] text-white font-bold rounded-2xl hover:bg-[#d35400] transition-all cursor-pointer shadow-md"
+              <router-link
+                :to="`/donate/${route.params.id}`"
+                class="block w-full py-4 text-center bg-[#e67e22] text-white font-bold rounded-2xl hover:bg-[#d35400] transition-all cursor-pointer shadow-md"
               >
                 {{ $t("project_view.special_btn") }}
-              </button>
+              </router-link>
             </div>
           </div>
         </div>
@@ -446,8 +447,10 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
+import { useRoute } from "vue-router";
 
 const { t, tm } = useI18n();
+const route = useRoute();
 const activeTab = ref(0);
 
 const projectTabs = computed(() => tm('project_view.tabs') as string[]);

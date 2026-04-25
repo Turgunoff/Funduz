@@ -46,20 +46,20 @@
           </button>
 
           <router-link :to="`/project/${project.id}`" class="block relative w-full aspect-[4/3] bg-gray-100">
-            <img :src="project.image" :alt="project.title" class="w-full h-full object-cover"/>
+            <img :src="project.mainImage" :alt="project.title" class="w-full h-full object-cover"/>
             <div class="absolute top-4 left-4">
               <span class="px-3 py-1.5 rounded-full text-[11px] font-black uppercase text-white shadow-sm backdrop-blur-md bg-[#1a946b]/90">
-                {{ project.category }}
+                {{ $t(`explore.categories.${project.categoryKey}`) || project.categoryKey }}
               </span>
             </div>
           </router-link>
 
           <div class="p-6 flex-1 flex flex-col">
             <div class="flex items-center gap-2 mb-3">
-              <div class="w-6 h-6 rounded-full overflow-hidden flex-shrink-0 bg-gray-200">
-                <img :src="project.authorAvatar" alt="Author" />
+              <div class="w-6 h-6 rounded-full overflow-hidden flex-shrink-0 bg-orange-100 flex items-center justify-center text-[10px] font-bold text-orange-600">
+                U
               </div>
-              <span class="text-[13px] font-medium text-gray-500">{{ project.authorName }}</span>
+              <span class="text-[13px] font-medium text-gray-500">User #{{ project.authorId }}</span>
             </div>
 
             <router-link :to="`/project/${project.id}`" class="block mb-4">

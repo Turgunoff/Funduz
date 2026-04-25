@@ -8,7 +8,7 @@ import LoginView from "../views/LoginView.vue";
 import CreateProjectView from "../views/CreateProjectView.vue";
 import StoryView from "../views/StoryView.vue";
 import FaqView from "../views/FaqView.vue";
-import ContactView from "../views/ContactView.vue";
+import ContactView from "../views/HelpView.vue";
 import SearchView from "../views/SearchView.vue";
 import TrendsView from "../views/TrendsView.vue";
 import MyProjectsView from "../views/MyProjectsView.vue";
@@ -17,6 +17,8 @@ import SettingsView from "../views/SettingsView.vue";
 import ForgotPasswordView from "../views/ForgotPasswordView.vue";
 import ResetPasswordView from "../views/ResetPasswordView.vue";
 import RegisterView from "../views/RegisterView.vue";
+import DonateView from "../views/DonateView.vue";
+import NotificationsView from "../views/NotificationsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +47,11 @@ const router = createRouter({
       path: "/project/:id",
       name: "project",
       component: ProjectView,
+    },
+    {
+      path: "/donate/:projectId",
+      name: "donate",
+      component: DonateView,
     },
     {
       path: "/dashboard",
@@ -93,8 +100,8 @@ const router = createRouter({
       component: StoryView,
     },
     {
-      path: "/contact",
-      name: "contact",
+      path: "/help",
+      name: "help",
       component: ContactView,
     },
     {
@@ -133,6 +140,11 @@ const router = createRouter({
       component: () => import("../views/SecurityView.vue"),
     },
     {
+      path: "/notifications",
+      name: "notifications",
+      component: NotificationsView,
+    },
+    {
       path: "/articles",
       name: "articles",
       component: () => import("../views/ArticlesView.vue"),
@@ -165,7 +177,7 @@ import { useAuthStore } from "../stores/auth";
 
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore();
-  
+
   if (to.meta.requiresAuth && !authStore.isLoggedIn) {
     // Redirect to login if trying to access auth-only page
     next({ name: "login", query: { redirect: to.fullPath } });
