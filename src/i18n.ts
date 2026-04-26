@@ -148,8 +148,9 @@ const messages = {
       sort_by: "Saralash:",
       sort: {
         relevant: "Eng moslari",
-        newest: "Eng yangi",
-        popular: "Mashhur",
+        newest: "Yangilari",
+        ending: "Tugayotganlar",
+        popular: "Mashhurlar",
       },
       cat_all: "Barcha toifalar",
       cats: {
@@ -177,6 +178,27 @@ const messages = {
         ai: "Sun'iy intellekt",
         digital_art: "Raqamli san'at",
         micro_finance: "Mikromoliya",
+      },
+    },
+    donate: {
+      back: "Loyiha sahifasiga qaytish",
+      title: "Loyihani qo'llab-quvvatlash",
+      subtitle: "Sizning hissangiz loyiha maqsadi amalga oshishiga yordam beradi.",
+      amount_label: "Qo'llab-quvvatlash summasi (UZS)",
+      other_amount: "Boshqa summa",
+      method_label: "To'lov usuli",
+      submit_btn: "{amount} UZS bilan qo'llab-quvvatlash",
+      processing: "Jarayonda...",
+      footer_notice: "Tugmani bosish orqali siz foydalanish shartlari va qaytarish siyosatiga rozilik bildirasiz.",
+      success: {
+        title: "Rahmat!",
+        desc: "Sizning {amount} UZS miqdoridagi hissangiz muvaffaqiyatli qabul qilindi. Birgalikda katta ishlarni amalga oshiramiz!",
+        back_btn: "Loyihaga qaytish",
+      },
+      rewards: {
+        title: "Mukofotni tanlash",
+        no_reward: "Mukofotsiz qo'llab-quvvatlash",
+        select: "Tanlash",
       },
     },
     explore: {
@@ -1323,6 +1345,60 @@ const messages = {
           ],
         },
       ],
+      community: {
+        title: "Kraudfanding hamjamiyati",
+        subtitle: "O'zbekistondagi eng yirik innovatsion tashabbuskorlar va ularning homiylari markazi. Biz birgalikda kelajakni quramiz.",
+        stats: {
+          collected_val: "15B UZS",
+          collected_label: "JAMI TO'PLANDI",
+          sponsors_val: "45K",
+          sponsors_label: "FAOL HOMIYLAR",
+          projects_val: "420",
+          projects_label: "MUVAFFAQIYATLI LOYIHALAR"
+        },
+        stories: {
+          title: "Hamjamiyat yutuqlari",
+          subtitle: "Loyiha mualliflarining real muvaffaqiyat hikoyalari va ular sizning ko'magingiz bilan nimaga erishganliklari haqida.",
+          view_all: "Barcha hikoyalar",
+          badge: "MUVAFFAQIYAT",
+          read_story: "Hikoyani o'qish"
+        },
+        telegram: {
+          title: "Hamjamiyatga qo'shiling",
+          desc: "Eksklyuziv yangiliklar, yangi loyihalar anonslari va kroudfanding bo'yicha maslahatlar bizning rasmiy Telegram kanalimizda.",
+          btn: "Telegram kanalga o'tish"
+        },
+        sponsors_section: {
+          title: "Funduz Super-Homiylari",
+          label: "SUPER HOMIY",
+          items: ["Abdulla Azizov", "Sardor Umurzakov", "Malika Rahmonova", "Jasur Abdullayev", "Nigora Aliyeva", "Azizbek Qodirov"]
+        }
+      },
+      project_view: {
+        author_label: "Muallif",
+        author_success: "muvaffaqiyatli loyiha",
+        goal: "Maqsad",
+        raised: "to'plandi",
+        donors_count: "homiy",
+        stat_donors: "HOMIYLAR",
+        stat_days: "KUN QOLDI",
+        stat_done: "TO'PLANDI",
+        btn_support: "Loyihani qo'llab-quvvatlash",
+        detail_title: "Loyiha haqida",
+        detail_text_1: "Ushbu loyiha O'zbekistonning innovatsion salohiyatini oshirishga qaratilgan.",
+        detail_text_2: "Sizning har bir hissangiz biz uchun juda muhim.",
+        dynamic_eco_text: "Ekologik barqarorlikni ta'minlash bizning ustuvor vazifamizdir.",
+        dynamic_edu_text: "Kelajak ta'limda va biz uni hozir qurishimiz kerak.",
+        image_caption: "Loyihani amalga oshirish jarayonidan lavha",
+        benefits_title: "Nima uchun ushbu loyihani qo'llab-quvvatlash kerak?",
+        benefits: ["Mahalliy ishlab chiqarish", "Yangi ish o'rinlari", "Innovatsion yondashuv", "Hamjamiyatga foyda"],
+        tabs: ["Tavsif", "Yangiliklar", "Sharhlar"],
+        reward_title: "Mukofotni tanlang",
+        reward_count: "ta mavjud"
+      },
+      month: {
+        september: "Sentabr",
+      }
     },
   },
   ru: {
@@ -1501,6 +1577,27 @@ const messages = {
         ai: "Искусственный интеллект",
         digital_art: "Цифровое искусство",
         micro_finance: "Микрофинансирование",
+      },
+    },
+    donate: {
+      back: "Вернуться к проекту",
+      title: "Поддержка проекта",
+      subtitle: "Ваш вклад поможет проекту быстрее достичь цели.",
+      amount_label: "Сумма поддержки (UZS)",
+      other_amount: "Другая сумма",
+      method_label: "Способ оплаты",
+      submit_btn: "Поддержать на {amount} UZS",
+      processing: "Обработка...",
+      footer_notice: "Нажимая на кнопку, вы соглашаетесь с условиями пользовательского соглашения и политикой возврата средств.",
+      success: {
+        title: "Спасибо!",
+        desc: "Ваш вклад в размере {amount} успешно переведен. Вместе мы делаем великие дела!",
+        back_btn: "Вернуться к проекту",
+      },
+      rewards: {
+        title: "Выбор награды",
+        no_reward: "Поддержать без награды",
+        select: "Выбрать",
       },
     },
     explore: {
@@ -2539,6 +2636,60 @@ const messages = {
           ],
         },
       ],
+      community: {
+        title: "Краудфандинг сообщество",
+        subtitle: "Центр крупнейших инновационных инициаторов Узбекистана и их спонсоров. Вместе мы строим будущее.",
+        stats: {
+          collected_val: "15 млрд UZS",
+          collected_label: "ВСЕГО СОБРАНО",
+          sponsors_val: "45K",
+          sponsors_label: "АКТИВНЫХ СПОНСОРОВ",
+          projects_val: "420",
+          projects_label: "УСПЕШНЫХ ПРОЕКТОВ"
+        },
+        stories: {
+          title: "Достижения сообщества",
+          subtitle: "Реальные истории успеха авторов проектов и то, чего они достигли с вашей поддержкой.",
+          view_all: "Все истории",
+          badge: "УСПЕХ",
+          read_story: "Читать историю"
+        },
+        telegram: {
+          title: "Присоединяйтесь к сообществу",
+          desc: "Эксклюзивные новости, анонсы новых проектов и советы по краудфандингу в нашем официальном Telegram-канале.",
+          btn: "Перейти в Telegram-канал"
+        },
+        sponsors_section: {
+          title: "Супер-спонсоры Funduz",
+          label: "СУПЕР СПОНСОР",
+          items: ["Абдулла Азизов", "Сардор Умурзаков", "Малика Рахмонова", "Жасур Абдуллаев", "Нигора Алиева", "Азизбек Кадыров"]
+        }
+      },
+      project_view: {
+        author_label: "Автор",
+        author_success: "успешных проектов",
+        goal: "Цель",
+        raised: "собрано",
+        donors_count: "спонсоров",
+        stat_donors: "СПОНСОРОВ",
+        stat_days: "ДНЕЙ ОСТАЛОСЬ",
+        stat_done: "ЗАВЕРШЕНО",
+        btn_support: "Поддержать проект",
+        detail_title: "О проекте",
+        detail_text_1: "Этот проект направлен на повышение инновационного потенциала Узбекистана.",
+        detail_text_2: "Каждый ваш вклад очень важен для нас.",
+        dynamic_eco_text: "Обеспечение экологической устойчивости — наш приоритет.",
+        dynamic_edu_text: "Будущее в образовании, и мы должны строить его сейчас.",
+        image_caption: "Кадр из процесса реализации проекта",
+        benefits_title: "Почему стоит поддержать этот проект?",
+        benefits: ["Местное производство", "Новые рабочие места", "Инновационный подход", "Польза для общества"],
+        tabs: ["Описание", "Новости", "Комментарии"],
+        reward_title: "Выберите награду",
+        reward_count: "доступно"
+      },
+      month: {
+        september: "Сентябрь",
+      }
     },
   },
 };

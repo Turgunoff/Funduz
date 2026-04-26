@@ -88,22 +88,20 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { useProjectStore } from '../stores/projects';
+import { useFavoriteStore } from '../stores/favorites';
 import type { Project } from '../types/Project';
 
 const projectStore = useProjectStore();
-
-// For demonstration, let's treat the first 3 projects in the store as favorites
-// In a real app, this would be computed based on a user's favorite IDs or fetched from an API
-const favoriteIds = ref([1, 2, 4]);
+const favoriteStore = useFavoriteStore();
 
 const favoriteProjects = computed(() => {
-  return projectStore.allItems.filter(p => favoriteIds.value.includes(p.id));
+  return projectStore.allItems.filter(p => favoriteStore.projectIds.includes(p.id));
 });
 
 const removeFavorite = (id: number) => {
-  favoriteIds.value = favoriteIds.value.filter(fid => fid !== id);
+  favoriteStore.removeFavorite(id);
 };
 
 const formatCurrency = (val: number) => {

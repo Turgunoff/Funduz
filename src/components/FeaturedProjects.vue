@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { onMounted, computed } from 'vue';
 import { useProjectStore } from '../stores/projects';
+import { useFavoriteStore } from '../stores/favorites';
 import type { Project } from '../types/Project';
 
 const projectStore = useProjectStore();
+const favoriteStore = useFavoriteStore();
 
 const projects = computed(() => projectStore.allItems.slice(0, 3));
 const isLoading = computed(() => projectStore.isLoading);
@@ -51,6 +53,22 @@ onMounted(() => {
             <div class="absolute top-5 left-5 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[12px] font-black tracking-widest text-gray-800 uppercase">
               {{ $t(`explore.categories.${project.categoryKey}`) }}
             </div>
+            <!-- Favorite Heart Button -->
+            <button 
+              @click.stop.prevent="favoriteStore.toggleFavorite(project.id)"
+              class="absolute top-5 right-5 w-9 h-9 rounded-full backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-sm z-20"
+              :class="favoriteStore.isFavorite(project.id) ? 'bg-red-500 text-white shadow-red-500/20' : 'bg-white/80 text-gray-400 hover:text-red-500 hover:bg-white'"
+            >
+              <svg 
+                class="w-5 h-5" 
+                :class="{ 'fill-current': favoriteStore.isFavorite(project.id) }"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
           </div>
           
           <!-- Content -->

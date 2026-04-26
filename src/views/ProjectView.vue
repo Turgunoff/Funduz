@@ -39,9 +39,9 @@
                   <span class="text-gray-500 text-[13px] lg:text-sm font-medium"
                     >{{ $t("project_view.author_label") }}:</span
                   >
-                  <span class="text-[#326b4d] font-bold text-[13px] lg:text-sm"
-                    >{{ author?.name }}</span
-                  >
+                  <span class="text-[#326b4d] font-bold text-[13px] lg:text-sm">{{
+                    author?.name
+                  }}</span>
                 </div>
                 <p class="text-gray-400 text-[11px] lg:text-xs font-medium">
                   {{ author?.deliveredCount || 0 }} {{ $t("project_view.author_success") }}
@@ -77,7 +77,9 @@
 
               <div class="flex justify-between text-[13px] lg:text-sm font-bold mb-8 lg:mb-10">
                 <span class="text-[#326b4d]">{{ progress }}% {{ $t("project_view.raised") }}</span>
-                <span class="text-gray-400">{{ project.donorsCount }} {{ $t("project_view.donors_count") }}</span>
+                <span class="text-gray-400"
+                  >{{ project.donorsCount }} {{ $t("project_view.donors_count") }}</span
+                >
               </div>
 
               <!-- Stats Row -->
@@ -286,66 +288,14 @@
         <div class="grid lg:grid-cols-3 gap-12 lg:gap-20">
           <!-- Left Content Area -->
           <div class="lg:col-span-2">
-            <h2
-              class="text-[24px] lg:text-[32px] font-bold text-gray-900 mb-6 lg:mb-8 leading-snug"
-            >
-              {{ $t("project_view.detail_title") }}
-            </h2>
-            <div
-              class="prose prose-sm md:prose-lg max-w-none text-gray-600 leading-relaxed space-y-6"
-            >
-              <p>{{ project.description }}</p>
-              
-              <p v-if="project.categoryKey === 'eco'">{{ $t('project_view.dynamic_eco_text') }}</p>
-              <p v-else-if="project.categoryKey === 'edu'">{{ $t('project_view.dynamic_edu_text') }}</p>
-              <p v-else>{{ $t("project_view.detail_text_1") }}</p>
-
-              <figure class="my-8 lg:my-12">
-                <div
-                  class="rounded-[24px] lg:rounded-[32px] overflow-hidden bg-gray-50 aspect-video flex items-center justify-center shadow-lg shadow-gray-200/50"
-                >
-                  <img
-                    :src="project.mainImage"
-                    class="w-full h-full object-cover"
-                    alt="Project environment"
-                  />
-                </div>
-                <figcaption class="text-center text-[12px] lg:text-sm text-gray-400 mt-4 italic font-medium">
-                  {{ $t("project_view.image_caption") }}
-                </figcaption>
-              </figure>
-
-              <h3 class="text-[22px] lg:text-[28px] font-bold text-gray-900">
-                {{ $t("project_view.benefits_title") }}
-              </h3>
-              <ul class="space-y-4">
-                <li
-                  v-for="(benefit, bidx) in projectBenefits"
-                  :key="bidx"
-                  class="flex items-start gap-4"
-                >
-                  <div
-                    class="w-6 h-6 rounded-full bg-[#f0fdf4] flex items-center justify-center flex-shrink-0 mt-1"
-                  >
-                    <svg
-                      class="w-3.5 h-3.5 text-[#14532d]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <span class="text-[15px] lg:text-[16px] text-gray-600 leading-relaxed font-medium">{{ benefit }}</span>
-                </li>
-              </ul>
-
-              <p>{{ $t("project_view.detail_text_2") }}</p>
+            <div v-if="activeTab === 0">
+              <DescriptionTab :project="project" :benefits="projectBenefits" />
+            </div>
+            <div v-else-if="activeTab === 1">
+              <UpdatesTab />
+            </div>
+            <div v-else-if="activeTab === 2">
+              <CommentsTab />
             </div>
           </div>
 
@@ -379,7 +329,9 @@
                 <h4 class="text-gray-900 font-bold text-lg lg:text-xl mb-3 lg:mb-4">
                   {{ reward.title }}
                 </h4>
-                <p class="text-gray-500 text-[14px] lg:text-[15px] leading-relaxed mb-6 lg:mb-8 font-medium">
+                <p
+                  class="text-gray-500 text-[14px] lg:text-[15px] leading-relaxed mb-6 lg:mb-8 font-medium"
+                >
                   {{ reward.description }}
                 </p>
 
@@ -400,7 +352,7 @@
                     />
                   </svg>
                   <span class="text-[11px] lg:text-xs font-bold text-gray-500">
-                    {{ $t("project_view.delivery_label") }}: {{ $t('month.september') }} 2024
+                    {{ $t("project_view.delivery_label") }}: {{ $t("month.september") }} 2024
                   </span>
                 </div>
 
@@ -424,7 +376,7 @@
                 </div>
               </div>
             </div>
-            
+
             <!-- Partial help/donation box if no rewards or general -->
             <div
               class="bg-[#f0fdf4] rounded-[24px] lg:rounded-[32px] p-6 lg:p-8 border border-[#dcfce7] shadow-sm relative group cursor-pointer overflow-hidden transition-all hover:shadow-md"
@@ -433,7 +385,9 @@
                 <h4 class="text-[#14532d] font-black text-lg lg:text-xl mb-3 lg:mb-4">
                   {{ $t("project_view.special_title") }}
                 </h4>
-                <p class="text-[#065f46] text-[13px] lg:text-sm leading-relaxed mb-6 font-medium opacity-80">
+                <p
+                  class="text-[#065f46] text-[13px] lg:text-sm leading-relaxed mb-6 font-medium opacity-80"
+                >
                   {{ $t("project_view.special_desc") }}
                 </p>
                 <router-link
@@ -443,7 +397,9 @@
                   {{ $t("project_view.btn_support") }}
                 </router-link>
               </div>
-              <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-green-200/20 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
+              <div
+                class="absolute -right-4 -bottom-4 w-32 h-32 bg-green-200/20 rounded-full blur-2xl group-hover:scale-150 transition-transform"
+              ></div>
             </div>
           </div>
         </div>
@@ -451,17 +407,38 @@
     </div>
   </div>
   <div v-else class="min-h-screen flex items-center justify-center bg-gray-50 p-6">
-     <div class="text-center max-w-md">
-        <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 text-gray-400">
-          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-        </div>
-        <h2 class="text-2xl font-black text-gray-900 mb-4">Loyiha topilmadi</h2>
-        <p class="text-gray-500 mb-8 font-medium">Kechirasiz, siz qidirayotgan loyiha topilmadi yoki u o'chirib tashlangan bo'lishi mumkin.</p>
-        <router-link to="/explore" class="inline-flex items-center gap-2 px-8 py-4 bg-[#326b4d] text-white font-bold rounded-2xl hover:bg-[#25523a] transition-all">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-          Loyihalarni ko'rish
-        </router-link>
-     </div>
+    <div class="text-center max-w-md">
+      <div
+        class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 text-gray-400"
+      >
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      </div>
+      <h2 class="text-2xl font-black text-gray-900 mb-4">Loyiha topilmadi</h2>
+      <p class="text-gray-500 mb-8 font-medium">
+        Kechirasiz, siz qidirayotgan loyiha topilmadi yoki u o'chirib tashlangan bo'lishi mumkin.
+      </p>
+      <router-link
+        to="/explore"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-[#326b4d] text-white font-bold rounded-2xl hover:bg-[#25523a] transition-all"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+        Loyihalarni ko'rish
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -471,6 +448,9 @@ import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { projects } from "../mocks/projects.mock";
 import { users } from "../mocks/users.mock";
+import DescriptionTab from '../components/project/DescriptionTab.vue';
+import UpdatesTab from '../components/project/UpdatesTab.vue';
+import CommentsTab from '../components/project/CommentsTab.vue';
 
 const { t, tm } = useI18n();
 const route = useRoute();
@@ -479,13 +459,13 @@ const activeTab = ref(0);
 // Find project by ID
 const project = computed(() => {
   const idNum = parseInt(route.params.id as string);
-  return projects.find(p => p.id === idNum) || null;
+  return projects.find((p) => p.id === idNum) || null;
 });
 
 // Find author
 const author = computed(() => {
   if (!project.value) return null;
-  return users.find(u => u.id === project.value?.authorId) || null;
+  return users.find((u) => u.id === project.value?.authorId) || null;
 });
 
 // Calculate progress and days left
@@ -502,17 +482,17 @@ const daysLeft = computed(() => {
   return Math.max(0, Math.ceil(diff / (1000 * 3600 * 24)));
 });
 
-const projectTabs = computed(() => tm('project_view.tabs') as string[]);
-const projectBenefits = computed(() => tm('project_view.benefits') as string[]);
+const projectTabs = computed(() => tm("project_view.tabs") as string[]);
+const projectBenefits = computed(() => tm("project_view.benefits") as string[]);
 
 const formatNumber = (num: number) => {
-  return new Intl.NumberFormat('uz-UZ').format(num);
+  return new Intl.NumberFormat("uz-UZ").format(num);
 };
 
 const copyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    alert('Havola nusxalandi!');
-}
+  navigator.clipboard.writeText(window.location.href);
+  alert("Havola nusxalandi!");
+};
 </script>
 
 <style scoped>
@@ -524,7 +504,6 @@ const copyLink = () => {
   scrollbar-width: none;
 }
 .prose p {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 </style>
-

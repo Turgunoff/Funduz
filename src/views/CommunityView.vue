@@ -30,7 +30,8 @@
 
     <div class="pt-32 lg:pt-44 pb-20">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-      
+
+
       <!-- Hero Section Card -->
       <div class="bg-[#1e5c43] rounded-[60px] lg:rounded-[80px] p-10 lg:p-20 relative overflow-hidden mb-12 lg:mb-16">
         <div class="relative z-10 max-w-3xl">
@@ -47,7 +48,7 @@
 
       <!-- Stats Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-        
+
         <!-- Stat Card 1 -->
         <div class="bg-white rounded-[40px] p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow duration-300 group">
           <div class="w-12 h-12 rounded-xl bg-[#f0f9f6] flex items-center justify-center mb-10 group-hover:bg-[#1e5c43] transition-colors duration-300">
@@ -118,8 +119,8 @@
           <div v-for="story in stories" :key="story.id" class="bg-white rounded-[40px] overflow-hidden group hover:shadow-xl transition-all duration-500">
             <!-- Story Image -->
             <div class="relative h-[240px] lg:h-[280px] overflow-hidden">
-              <img 
-                :src="story.image" 
+              <img
+                :src="story.image"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 alt="Story"
               >
@@ -137,7 +138,7 @@
               <p class="text-[14px] lg:text-[15px] text-gray-500 leading-relaxed italic mb-10">
                 "{{ story.subtitle }}"
               </p>
-              
+
               <router-link :to="`/story/${story.id}`" class="inline-flex items-center gap-2 text-[13px] lg:text-[14px] font-bold text-[#1a946b] hover:gap-3 transition-all">
                 {{ $t('community.stories.read_story') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,13 +155,13 @@
         <h2 class="text-[28px] lg:text-[36px] font-bold text-gray-900 mb-12">
           {{ $t('community.sponsors_section.title') }}
         </h2>
-        
+
         <div class="flex flex-wrap justify-center gap-8 lg:gap-12">
-          <div v-for="(name, idx) in (tm('community.sponsors_section.items') as string[])" :key="idx" class="flex flex-col items-center">
+          <div v-for="(name, idx) in ($tm('community.sponsors_section.items') as string[])" :key="idx" class="flex flex-col items-center">
             <div class="relative w-24 h-24 lg:w-32 lg:h-32 mb-6">
               <div class="absolute inset-0 rounded-full border-2 border-[#1e5c43] p-1">
-                <img 
-                  :src="`https://i.pravatar.cc/150?u=${idx + 10}`" 
+                <img
+                  :src="`https://i.pravatar.cc/150?u=${idx + 10}`"
                   class="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   alt="Sponsor"
                 >
@@ -189,7 +190,7 @@
               {{ $t('community.telegram.desc') }}
             </p>
           </div>
-          
+
           <a href="https://t.me/funduz" target="_blank" rel="noopener noreferrer" class="relative z-10 px-10 py-5 bg-[#0d5c42] border-2 border-transparent rounded-2xl flex items-center gap-3 text-[16px] font-bold text-white hover:bg-white hover:text-[#0d5c42] hover:border-white hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-black/10">
             <svg class="w-6 h-6 text-current" fill="currentColor" viewBox="0 0 24 24">
               <path d="M11.944 0C5.347 0 0 5.347 0 11.944c0 6.594 5.347 11.944 11.944 11.944 6.594 0 11.944-5.35 11.944-11.944C23.888 5.347 18.538 0 11.944 0zm5.54 8.017l-1.92 9.043c-.144.643-.523.801-.1.066l-2.924-2.155-1.41 1.358c-.156.156-.287.287-.588.287l.21-2.977 5.418-4.895c.235-.21-.052-.326-.364-.12l-6.696 4.215-2.883-.9c-.626-.196-.64-.626.13-.923l11.266-4.346c.523-.196.98.117.784.793z"/>
@@ -198,8 +199,8 @@
           </a>
         </div>
       </div>
-
       </div>
+
     </div>
   </div>
 </template>
@@ -210,7 +211,6 @@ import { useI18n } from 'vue-i18n';
 import { storyService } from '../services/storyService';
 import type { Story } from '../types/Story';
 
-const { tm } = useI18n();
 const stories = ref<Story[]>([]);
 
 onMounted(async () => {

@@ -84,6 +84,14 @@ export const useProjectStore = defineStore('projects', () => {
     currentPage.value++;
   };
 
+  const addDonation = (projectId: number, amount: number) => {
+    const project = allItems.value.find(p => p.id === projectId);
+    if (project) {
+      project.raised += amount;
+      project.donorsCount += 1;
+    }
+  };
+
   // Reset pagination when filter/sort/search changes
   watch([filterCategory, sortBy, searchQuery], () => {
     currentPage.value = 1;
@@ -102,6 +110,7 @@ export const useProjectStore = defineStore('projects', () => {
     fetchAll,
     setFilter,
     setSort,
-    loadMore
+    loadMore,
+    addDonation
   };
 });

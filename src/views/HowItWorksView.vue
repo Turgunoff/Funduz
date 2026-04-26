@@ -24,12 +24,6 @@
           >
             {{ $t("nav.security") }}
           </router-link>
-          <router-link
-            to="/donate/1"
-            class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
-          >
-            Оплата
-          </router-link>
         </nav>
       </div>
     </div>
