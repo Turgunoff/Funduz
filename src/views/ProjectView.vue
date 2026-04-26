@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white min-h-screen">
+  <div v-if="project" class="bg-white min-h-screen">
     <!-- Section 1: Main Project Info (Top) -->
     <div class="py-8 lg:py-16 border-b border-gray-100">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,11 +8,11 @@
           <div
             class="relative rounded-[24px] lg:rounded-[32px] overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-[540px] shadow-sm"
           >
-            <img src="/project_trees.png" class="w-full h-full object-cover" alt="Project Image" />
+            <img :src="project.mainImage" class="w-full h-full object-cover" :alt="project.title" />
             <div
               class="absolute top-4 left-4 lg:top-6 lg:left-6 px-3 py-1 lg:px-4 lg:py-1.5 bg-[#14532d] text-white text-[11px] lg:text-[13px] font-bold rounded-full uppercase"
             >
-              {{ $t("projects.cat_ecology") }}
+              {{ $t(`projects.cat_${project.categoryKey}`) }}
             </div>
           </div>
 
@@ -21,7 +21,7 @@
             <h1
               class="text-[26px] md:text-[32px] lg:text-[44px] font-bold text-gray-900 leading-[1.2] lg:leading-[1.1] mb-6 lg:mb-8"
             >
-              {{ $t("project_view.title") }}
+              {{ project.title }}
             </h1>
 
             <!-- Author Info -->
@@ -30,8 +30,8 @@
                 class="w-10 h-10 lg:w-12 lg:h-12 rounded-full overflow-hidden flex-shrink-0 bg-gray-100"
               >
                 <img
-                  src="https://ui-avatars.com/api/?name=Alisher+Usmonov&background=random"
-                  alt="Author"
+                  :src="author?.avatar || 'https://ui-avatars.com/api/?name=User'"
+                  :alt="author?.name"
                 />
               </div>
               <div>
@@ -40,26 +40,28 @@
                     >{{ $t("project_view.author_label") }}:</span
                   >
                   <span class="text-[#326b4d] font-bold text-[13px] lg:text-sm"
-                    >Alisher Usmonov</span
+                    >{{ author?.name }}</span
                   >
                 </div>
                 <p class="text-gray-400 text-[11px] lg:text-xs font-medium">
-                  {{ $t("project_view.author_success") }}
+                  {{ author?.deliveredCount || 0 }} {{ $t("project_view.author_success") }}
                 </p>
               </div>
             </div>
 
             <!-- Stats Card -->
             <div
-              class="bg-[#f0fdf4] border border-[#dcfce7] rounded-[32px] lg:rounded-[40px] p-6 lg:p-10 mb-8"
+              class="bg-[#f0fdf4] border border-[#dcfce7] rounded-[32px] lg:rounded-[40px] p-6 lg:p-10 mb-8 shadow-sm"
             >
               <div
                 class="flex flex-col sm:flex-row justify-between items-start lg:items-center mb-6 gap-2"
               >
-                <h2 class="text-[24px] lg:text-[32px] font-black text-[#14532d]">25,000,000 UZS</h2>
+                <h2 class="text-[24px] lg:text-[32px] font-extrabold text-[#14532d]">
+                  {{ formatNumber(project.raised) }} UZS
+                </h2>
                 <span
                   class="text-gray-400 text-[10px] lg:text-xs font-bold uppercase tracking-wider"
-                  >{{ $t("project_view.goal") }}: 100,000,000 UZS</span
+                  >{{ $t("project_view.goal") }}: {{ formatNumber(project.goal) }} UZS</span
                 >
               </div>
 
@@ -69,13 +71,13 @@
               >
                 <div
                   class="h-full bg-[#326b4d] rounded-full transition-all duration-1000"
-                  style="width: 25%"
+                  :style="{ width: `${progress}%` }"
                 ></div>
               </div>
 
               <div class="flex justify-between text-[13px] lg:text-sm font-bold mb-8 lg:mb-10">
-                <span class="text-[#326b4d]">25% {{ $t("project_view.raised") }}</span>
-                <span class="text-gray-400">124 {{ $t("project_view.donors_count") }}</span>
+                <span class="text-[#326b4d]">{{ progress }}% {{ $t("project_view.raised") }}</span>
+                <span class="text-gray-400">{{ project.donorsCount }} {{ $t("project_view.donors_count") }}</span>
               </div>
 
               <!-- Stats Row -->
@@ -97,7 +99,7 @@
                     </svg>
                   </div>
                   <div class="text-[15px] lg:text-[18px] font-bold text-gray-900 leading-none mb-1">
-                    124
+                    {{ project.donorsCount }}
                   </div>
                   <div
                     class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none"
@@ -122,7 +124,7 @@
                     </svg>
                   </div>
                   <div class="text-[15px] lg:text-[18px] font-bold text-gray-900 leading-none mb-1">
-                    15
+                    {{ daysLeft }}
                   </div>
                   <div
                     class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none"
@@ -147,7 +149,7 @@
                     </svg>
                   </div>
                   <div class="text-[15px] lg:text-[18px] font-bold text-gray-900 leading-none mb-1">
-                    25%
+                    {{ progress }}%
                   </div>
                   <div
                     class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none"
@@ -161,14 +163,15 @@
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-3 lg:gap-4">
               <router-link
-                :to="`/donate/${route.params.id}`"
-                class="flex-grow py-4 lg:py-5 bg-[#326b4d] text-white font-bold rounded-2xl hover:bg-[#25523a] transition-all cursor-pointer shadow-lg shadow-green-900/10 flex items-center justify-center order-1"
+                :to="`/donate/${project.id}`"
+                class="flex-grow py-4 lg:py-5 bg-[#326b4d] text-white font-bold rounded-2xl hover:bg-[#25523a] transition-all cursor-pointer shadow-lg shadow-green-900/10 flex items-center justify-center order-1 text-lg"
               >
                 {{ $t("project_view.btn_support") }}
               </router-link>
               <div class="flex gap-3 order-2 sm:order-2">
                 <button
-                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border border-gray-100 rounded-2xl text-gray-400 hover:text-gray-900 transition-all cursor-pointer"
+                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border border-gray-100 rounded-2xl text-gray-400 hover:text-gray-900 transition-all cursor-pointer bg-gray-50/50"
+                  @click="copyLink"
                 >
                   <svg
                     class="w-5 h-5 lg:w-6 lg:h-6"
@@ -185,7 +188,7 @@
                   </svg>
                 </button>
                 <button
-                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border border-gray-100 rounded-2xl text-gray-400 hover:text-red-500 transition-all cursor-pointer"
+                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border border-gray-100 rounded-2xl text-gray-400 hover:text-red-500 transition-all cursor-pointer bg-gray-50/50"
                 >
                   <svg
                     class="w-5 h-5 lg:w-6 lg:h-6"
@@ -257,7 +260,7 @@
               </svg>
               <span
                 class="bg-[#0f5238] text-white text-[9px] lg:text-[10px] px-1.5 py-0.5 rounded-full"
-                >3</span
+                >{{ project.rewards?.length || 0 }}</span
               >
             </span>
             <span v-if="idx === 2">
@@ -280,7 +283,7 @@
         </div>
 
         <!-- Content Grid -->
-        <div class="grid lg:grid-cols-3 gap-12 lg:gap-24">
+        <div class="grid lg:grid-cols-3 gap-12 lg:gap-20">
           <!-- Left Content Area -->
           <div class="lg:col-span-2">
             <h2
@@ -289,26 +292,30 @@
               {{ $t("project_view.detail_title") }}
             </h2>
             <div
-              class="prose prose-sm md:prose-lg max-w-none text-gray-500 leading-relaxed space-y-6"
+              class="prose prose-sm md:prose-lg max-w-none text-gray-600 leading-relaxed space-y-6"
             >
-              <p>{{ $t("project_view.detail_text_1") }}</p>
+              <p>{{ project.description }}</p>
+              
+              <p v-if="project.categoryKey === 'eco'">{{ $t('project_view.dynamic_eco_text') }}</p>
+              <p v-else-if="project.categoryKey === 'edu'">{{ $t('project_view.dynamic_edu_text') }}</p>
+              <p v-else>{{ $t("project_view.detail_text_1") }}</p>
 
               <figure class="my-8 lg:my-12">
                 <div
-                  class="rounded-[24px] lg:rounded-[32px] overflow-hidden bg-gray-50 aspect-video flex items-center justify-center shadow-sm"
+                  class="rounded-[24px] lg:rounded-[32px] overflow-hidden bg-gray-50 aspect-video flex items-center justify-center shadow-lg shadow-gray-200/50"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?auto=format&fit=crop&q=80&w=1200"
+                    :src="project.mainImage"
                     class="w-full h-full object-cover"
-                    alt="Eco package"
+                    alt="Project environment"
                   />
                 </div>
-                <figcaption class="text-center text-[12px] lg:text-sm text-gray-400 mt-4 italic">
+                <figcaption class="text-center text-[12px] lg:text-sm text-gray-400 mt-4 italic font-medium">
                   {{ $t("project_view.image_caption") }}
                 </figcaption>
               </figure>
 
-              <h3 class="text-[20px] lg:text-[24px] font-bold text-gray-900">
+              <h3 class="text-[22px] lg:text-[28px] font-bold text-gray-900">
                 {{ $t("project_view.benefits_title") }}
               </h3>
               <ul class="space-y-4">
@@ -318,10 +325,10 @@
                   class="flex items-start gap-4"
                 >
                   <div
-                    class="w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 mt-1"
+                    class="w-6 h-6 rounded-full bg-[#f0fdf4] flex items-center justify-center flex-shrink-0 mt-1"
                   >
                     <svg
-                      class="w-3.5 h-3.5 lg:w-4 lg:h-4 text-green-600"
+                      class="w-3.5 h-3.5 text-[#14532d]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -334,7 +341,7 @@
                       />
                     </svg>
                   </div>
-                  <span class="text-[14px] lg:text-gray-600 leading-relaxed">{{ benefit }}</span>
+                  <span class="text-[15px] lg:text-[16px] text-gray-600 leading-relaxed font-medium">{{ benefit }}</span>
                 </li>
               </ul>
 
@@ -349,39 +356,38 @@
                 {{ $t("project_view.reward_title") }}
               </h3>
               <span
-                class="text-[10px] lg:text-xs font-bold text-gray-400 bg-gray-50 px-3 py-1.5 rounded-full uppercase"
-                >{{ $t("project_view.reward_count") }}</span
+                class="text-[10px] lg:text-xs font-bold text-gray-400 bg-gray-50 px-3 py-1.5 rounded-full uppercase tracking-wider"
+                >{{ project.rewards?.length || 0 }} {{ $t("project_view.reward_count") }}</span
               >
             </div>
 
             <!-- Rewards Loop -->
-            <div class="space-y-6">
-              <!-- Reward Card Generator (using first as template, in logic same as before) -->
+            <div v-if="project.rewards && project.rewards.length > 0" class="space-y-6">
               <div
-                v-for="rIdx in [1, 2, 3]"
-                :key="rIdx"
-                class="group bg-white border border-gray-100 rounded-[24px] lg:rounded-[32px] p-6 lg:p-8 hover:border-[#0f5238] hover:shadow-xl transition-all cursor-pointer"
+                v-for="reward in project.rewards"
+                :key="reward.id"
+                class="group bg-white border border-gray-100 rounded-[24px] lg:rounded-[32px] p-6 lg:p-8 hover:border-[#0f5238] hover:shadow-xl hover:shadow-gray-200/50 transition-all cursor-pointer relative overflow-hidden"
               >
                 <div class="flex justify-between items-start mb-4 lg:mb-6">
-                  <div class="text-[#0f5238] font-black text-lg lg:text-xl">
-                    {{ getRewardText(rIdx, 'price') }}
+                  <div class="text-[#0f5238] font-black text-xl lg:text-2xl">
+                    {{ formatNumber(reward.minAmount) }} UZS
                   </div>
                   <div class="text-[10px] font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded">
-                    {{ rIdx === 1 ? "45" : rIdx === 2 ? "28" : "5" }} ta olindi
+                    {{ Math.floor(Math.random() * 20) + 5 }} ta olindi
                   </div>
                 </div>
-                <h4 class="text-gray-900 font-bold text-base lg:text-lg mb-3 lg:mb-4">
-                  {{ getRewardText(rIdx, 'title') }}
+                <h4 class="text-gray-900 font-bold text-lg lg:text-xl mb-3 lg:mb-4">
+                  {{ reward.title }}
                 </h4>
-                <p class="text-gray-400 text-[13px] lg:text-sm leading-relaxed mb-6 lg:mb-8">
-                  {{ getRewardText(rIdx, 'desc') }}
+                <p class="text-gray-500 text-[14px] lg:text-[15px] leading-relaxed mb-6 lg:mb-8 font-medium">
+                  {{ reward.description }}
                 </p>
 
                 <div
-                  class="flex items-center gap-3 mb-6 lg:mb-8 bg-gray-50 p-2.5 lg:p-3 rounded-xl border border-gray-100/50"
+                  class="flex items-center gap-3 mb-6 lg:mb-8 bg-gray-50 p-3 lg:p-4 rounded-xl border border-gray-100/50"
                 >
                   <svg
-                    class="w-3.5 h-3.5 lg:w-4 lg:h-4 text-gray-400"
+                    class="w-4 h-4 text-gray-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -393,14 +399,13 @@
                       d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 00-2 2z"
                     />
                   </svg>
-                  <span class="text-[10px] lg:text-[11px] font-bold text-gray-500">
-                    {{ $t("project_view.delivery_label") }}
-                    {{ $t(`project_view.reward_${rIdx}_delivery`) }}
+                  <span class="text-[11px] lg:text-xs font-bold text-gray-500">
+                    {{ $t("project_view.delivery_label") }}: {{ $t('month.september') }} 2024
                   </span>
                 </div>
 
                 <div
-                  class="flex items-center justify-between text-[#0f5238] font-bold text-[13px] lg:text-sm"
+                  class="flex items-center justify-between text-[#0f5238] font-black text-[14px] lg:text-[15px]"
                 >
                   {{ $t("project_view.reward_select") }}
                   <svg
@@ -419,28 +424,44 @@
                 </div>
               </div>
             </div>
-
-            <!-- Special Help Box -->
+            
+            <!-- Partial help/donation box if no rewards or general -->
             <div
-              class="bg-[#fdf2f2] rounded-[24px] lg:rounded-[32px] p-6 lg:p-8 border border-[#feeded] shadow-sm"
+              class="bg-[#f0fdf4] rounded-[24px] lg:rounded-[32px] p-6 lg:p-8 border border-[#dcfce7] shadow-sm relative group cursor-pointer overflow-hidden transition-all hover:shadow-md"
             >
-              <h4 class="text-gray-900 font-bold text-base lg:text-lg mb-3 lg:mb-4">
-                {{ $t("project_view.special_title") }}
-              </h4>
-              <p class="text-gray-500 text-[13px] lg:text-sm leading-relaxed mb-6">
-                {{ $t("project_view.special_desc") }}
-              </p>
-              <router-link
-                :to="`/donate/${route.params.id}`"
-                class="block w-full py-4 text-center bg-[#e67e22] text-white font-bold rounded-2xl hover:bg-[#d35400] transition-all cursor-pointer shadow-md"
-              >
-                {{ $t("project_view.special_btn") }}
-              </router-link>
+              <div class="relative z-10">
+                <h4 class="text-[#14532d] font-black text-lg lg:text-xl mb-3 lg:mb-4">
+                  {{ $t("project_view.special_title") }}
+                </h4>
+                <p class="text-[#065f46] text-[13px] lg:text-sm leading-relaxed mb-6 font-medium opacity-80">
+                  {{ $t("project_view.special_desc") }}
+                </p>
+                <router-link
+                  :to="`/donate/${project.id}`"
+                  class="block w-full py-4 text-center bg-[#326b4d] text-white font-bold rounded-2xl hover:bg-[#25523a] transition-all cursor-pointer shadow-lg shadow-green-900/10"
+                >
+                  {{ $t("project_view.btn_support") }}
+                </router-link>
+              </div>
+              <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-green-200/20 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div v-else class="min-h-screen flex items-center justify-center bg-gray-50 p-6">
+     <div class="text-center max-w-md">
+        <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 text-gray-400">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        </div>
+        <h2 class="text-2xl font-black text-gray-900 mb-4">Loyiha topilmadi</h2>
+        <p class="text-gray-500 mb-8 font-medium">Kechirasiz, siz qidirayotgan loyiha topilmadi yoki u o'chirib tashlangan bo'lishi mumkin.</p>
+        <router-link to="/explore" class="inline-flex items-center gap-2 px-8 py-4 bg-[#326b4d] text-white font-bold rounded-2xl hover:bg-[#25523a] transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+          Loyihalarni ko'rish
+        </router-link>
+     </div>
   </div>
 </template>
 
@@ -448,18 +469,50 @@
 import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
+import { projects } from "../mocks/projects.mock";
+import { users } from "../mocks/users.mock";
 
 const { t, tm } = useI18n();
 const route = useRoute();
 const activeTab = ref(0);
 
+// Find project by ID
+const project = computed(() => {
+  const idNum = parseInt(route.params.id as string);
+  return projects.find(p => p.id === idNum) || null;
+});
+
+// Find author
+const author = computed(() => {
+  if (!project.value) return null;
+  return users.find(u => u.id === project.value?.authorId) || null;
+});
+
+// Calculate progress and days left
+const progress = computed(() => {
+  if (!project.value) return 0;
+  return Math.min(100, Math.round((project.value.raised / project.value.goal) * 100));
+});
+
+const daysLeft = computed(() => {
+  if (!project.value || !project.value.endsAt) return 0;
+  const end = new Date(project.value.endsAt);
+  const now = new Date();
+  const diff = end.getTime() - now.getTime();
+  return Math.max(0, Math.ceil(diff / (1000 * 3600 * 24)));
+});
+
 const projectTabs = computed(() => tm('project_view.tabs') as string[]);
 const projectBenefits = computed(() => tm('project_view.benefits') as string[]);
 
-const getRewardText = (idx: number, type: string) => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return t(`project_view.reward_${idx}_${type}` as any);
+const formatNumber = (num: number) => {
+  return new Intl.NumberFormat('uz-UZ').format(num);
 };
+
+const copyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    alert('Havola nusxalandi!');
+}
 </script>
 
 <style scoped>
@@ -470,9 +523,8 @@ const getRewardText = (idx: number, type: string) => {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-/* Custom transitions */
-.transition-all {
-  transition: all 0.3s ease;
+.prose p {
+    margin-bottom: 1.5rem;
 }
 </style>
+

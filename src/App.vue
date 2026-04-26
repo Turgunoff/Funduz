@@ -11,7 +11,7 @@ const isAuthPage = computed(() => ['/login', '/register', '/forgot-password', '/
 <template>
   <div class="min-h-screen bg-gray-50 flex flex-col font-sans">
     <AppHeader v-if="!isAuthPage" />
-    <main class="flex-grow">
+    <main :class="!isAuthPage ? 'pt-16 lg:pt-20' : ''" class="flex-grow">
       <RouterView />
     </main>
     <AppFooter v-if="!isAuthPage" />

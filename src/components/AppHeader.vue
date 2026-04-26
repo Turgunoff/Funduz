@@ -22,18 +22,11 @@
                 {{ $t("nav.about") }}
               </router-link>
               <router-link
-                to="/success-stories"
-                :class="isSuccessStoriesPage ? 'text-[#1a946b]' : 'hover:text-[#1a946b]'"
+                to="/community"
+                :class="isCommunityPage ? 'text-[#1a946b]' : 'hover:text-[#1a946b]'"
                 class="transition-colors"
               >
-                {{ $t("nav.cooperation") }}
-              </router-link>
-              <router-link
-                to="/donate/1"
-                class="hover:text-[#1a946b] transition-colors"
-                :class="$route.path.startsWith('/donate') ? 'text-[#1a946b]' : ''"
-              >
-                Оплата
+                {{ $t("nav.community") }}
               </router-link>
             </nav>
           </div>
@@ -439,11 +432,11 @@
           </router-link>
           <router-link
             @click="isMenuOpen = false"
-            to="/success-stories"
+            to="/community"
             class="text-[20px] font-black border-b border-gray-50 pb-5 flex justify-between items-center"
-            :class="isSuccessStoriesPage ? 'text-[#1a946b]' : 'text-gray-900'"
+            :class="isCommunityPage ? 'text-[#1a946b]' : 'text-gray-900'"
           >
-            {{ $t("nav.cooperation") }}
+            {{ $t("nav.community") }}
             <svg
               class="w-4 h-4 text-[#1a946b]"
               fill="none"
