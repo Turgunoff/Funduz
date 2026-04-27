@@ -74,7 +74,7 @@
                 </svg>
                 <input
                   ref="searchInput"
-                  v-model="searchQuery"
+                  v-model="projectStore.searchQuery"
                   @keyup.enter="performSearch"
                   @blur="collapseSearch"
                   type="text"
@@ -387,7 +387,7 @@
         <!-- Mobile Search Field -->
         <div class="relative">
           <input
-            v-model="searchQuery"
+            v-model="projectStore.searchQuery"
             @keyup.enter="performSearch"
             type="text"
             :placeholder="$t('explore.search_placeholder')"
@@ -616,16 +616,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, nextTick } from "vue";
+import { ref, computed, watch, nextTick, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useLocaleStore } from "../stores/locale";
 import { useAuthStore } from "../stores/auth";
+import { useProjectStore } from "../stores/projects";
 
 const route = useRoute();
 const router = useRouter();
 const localeStore = useLocaleStore();
 const authStore = useAuthStore();
-// i18n is used in template via global $t, mutations go through localeStore
+const projectStore = useProjectStore();
 
 const isMenuOpen = ref(false);
 const isProfileMenuOpen = ref(false);
@@ -636,8 +637,13 @@ const handleLogout = () => {
 };
 
 const isSearchExpanded = ref(false);
-const searchQuery = ref("");
 const searchInput = ref<HTMLInputElement | null>(null);
+
+onMounted(() => {
+  if (projectStore.searchQuery || route.path === '/search') {
+    isSearchExpanded.value = true;
+  }
+});
 
 const expandSearch = async () => {
   isSearchExpanded.value = true;
@@ -646,20 +652,22 @@ const expandSearch = async () => {
 };
 
 const collapseSearch = () => {
-  if (!searchQuery.value) {
+  // Only collapse if not on search page and query is empty
+  if (!projectStore.searchQuery && route.path !== '/search') {
     isSearchExpanded.value = false;
   }
 };
 
 const performSearch = () => {
-  if (searchQuery.value.trim()) {
-    router.push({ path: "/search", query: { q: searchQuery.value } });
+  if (projectStore.searchQuery.trim()) {
+    if (route.path !== '/search') {
+      router.push({ path: "/search", query: { q: projectStore.searchQuery } });
+    }
     isMenuOpen.value = false;
   }
 };
 
 const isHowItWorksPage = computed(() => route.path === "/how-it-works");
-const isSuccessStoriesPage = computed(() => route.path === "/success-stories");
 const isCommunityPage = computed(() => route.path === "/community");
 
 const setLocale = (lang: "uz" | "ru") => {

@@ -6,6 +6,7 @@ export interface Project {
   description: string;
   categoryKey: string;
   authorId: number;
+  authorName?: string;
   mainImage: string;
   images?: string[];
   goal: number;

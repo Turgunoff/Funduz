@@ -28,8 +28,8 @@
     <main class="flex-grow py-12 lg:py-20">
       <div class="max-w-[800px] mx-auto px-4">
         
-        <!-- Step Info -->
-        <div class="mb-12">
+        <!-- Step Info (Hidden on Preview) -->
+        <div v-if="currentStep < 4" class="mb-12">
           <div class="text-[11px] font-black text-[#1a946b] uppercase tracking-[0.2em] mb-4">
             {{ $t('create.step_prefix') }} {{ currentStep }}/3
           </div>
@@ -260,6 +260,66 @@
           </div>
         </div>
 
+        <!-- Step 4: Preview -->
+        <div v-if="currentStep === 4" class="animate-in fade-in slide-in-from-bottom-4 duration-500">
+           <div class="mb-10 flex items-center justify-between">
+              <div>
+                <h2 class="text-[28px] font-bold text-gray-900 mb-2">Предпросмотр</h2>
+                <p class="text-gray-400">Проверьте, как ваша страница будет выглядеть для спонсоров.</p>
+              </div>
+              <div class="px-4 py-2 bg-yellow-50 text-yellow-700 text-[12px] font-bold rounded-full uppercase tracking-wider">Черновик</div>
+           </div>
+
+           <!-- Mock Project Page -->
+           <div class="bg-white rounded-[48px] overflow-hidden shadow-2xl shadow-gray-200/50 border border-gray-100">
+              <div class="aspect-video w-full bg-gray-100 relative">
+                 <img v-if="imagePreview" :src="imagePreview" class="w-full h-full object-cover" />
+                 <div v-else class="w-full h-full flex items-center justify-center text-gray-300">
+                    <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                 </div>
+              </div>
+              
+              <div class="p-10 lg:p-14">
+                 <div class="flex items-center gap-3 mb-6">
+                    <span class="px-4 py-1.5 bg-green-50 text-[#1a946b] text-[12px] font-black rounded-full uppercase tracking-wider">{{ $t(`explore.categories.${formData.category}`) }}</span>
+                    <span class="text-gray-300">•</span>
+                    <span class="text-[13px] font-bold text-gray-500">{{ formData.duration }} дней осталось</span>
+                 </div>
+
+                 <h1 class="text-[36px] font-bold text-gray-900 mb-8 leading-tight">{{ formData.title || 'Название вашего проекта' }}</h1>
+
+                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-2">
+                       <h3 class="text-[18px] font-bold text-gray-900 mb-6 border-b border-gray-100 pb-4">О проекте</h3>
+                       <p class="text-gray-600 leading-relaxed whitespace-pre-wrap text-lg">{{ formData.story || 'Здесь будет ваша история...' }}</p>
+                    </div>
+
+                    <div class="space-y-8">
+                       <div class="bg-gray-50 rounded-[32px] p-8">
+                          <div class="text-[32px] font-bold text-gray-900 mb-2">0 UZS</div>
+                          <div class="text-gray-400 text-sm mb-6">собрано из {{ formData.goal.toLocaleString() }} UZS</div>
+                          <div class="h-2 w-full bg-gray-200 rounded-full mb-6">
+                             <div class="h-full bg-[#1a946b] rounded-full" style="width: 0%"></div>
+                          </div>
+                          <div class="flex justify-between text-sm font-bold">
+                             <span class="text-gray-900">0%</span>
+                             <span class="text-gray-400">0 спонсоров</span>
+                          </div>
+                       </div>
+
+                       <div class="space-y-4">
+                          <h4 class="font-bold text-gray-900 px-2">Вознаграждения</h4>
+                          <div v-for="reward in formData.rewards" :key="reward.title" class="p-6 border border-gray-100 rounded-[24px] bg-white">
+                             <div class="font-bold text-[#1a946b] mb-1">{{ reward.minAmount.toLocaleString() }} UZS</div>
+                             <div class="font-bold text-gray-900 mb-2">{{ reward.title }}</div>
+                             <p class="text-[13px] text-gray-500 leading-relaxed">{{ reward.description }}</p>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
 
       </div>
     </main>
@@ -282,8 +342,8 @@
           class="px-10 py-5 bg-[#1a946b] text-white rounded-3xl font-black flex items-center gap-3 hover:bg-[#147a58] shadow-xl shadow-green-900/10 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
           :disabled="!isStepValid"
         >
-          {{ currentStep === 3 ? $t('create.finish') : $t('create.next') }}
-          <svg v-if="currentStep < 3" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          {{ currentStep === 4 ? 'Опубликовать проект' : (currentStep === 3 ? 'Перейти к предпросмотру' : $t('create.next')) }}
+          <svg v-if="currentStep < 4" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
         </button>
       </div>
@@ -365,7 +425,7 @@ const removeReward = (index: number) => {
 }
 
 const nextStep = async () => {
-  if (currentStep.value < 3) {
+  if (currentStep.value < 4) {
     currentStep.value++
     window.scrollTo({ top: 0, behavior: 'smooth' })
   } else {

@@ -25,7 +25,8 @@ export const useProjectStore = defineStore('projects', () => {
       const q = searchQuery.value.toLowerCase();
       result = result.filter(p => 
         p.title.toLowerCase().includes(q) || 
-        p.description.toLowerCase().includes(q)
+        p.description.toLowerCase().includes(q) ||
+        (p.authorName && p.authorName.toLowerCase().includes(q))
       );
     }
     
