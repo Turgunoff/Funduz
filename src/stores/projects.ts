@@ -92,6 +92,10 @@ export const useProjectStore = defineStore('projects', () => {
     }
   };
 
+  const addProject = (project: Project) => {
+    allItems.value.unshift(project);
+  };
+
   // Reset pagination when filter/sort/search changes
   watch([filterCategory, sortBy, searchQuery], () => {
     currentPage.value = 1;
@@ -111,6 +115,7 @@ export const useProjectStore = defineStore('projects', () => {
     setFilter,
     setSort,
     loadMore,
-    addDonation
+    addDonation,
+    addProject
   };
 });

@@ -3,6 +3,7 @@ import { ref, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useProjectStore } from '../stores/projects';
 import { useAuthStore } from '../stores/auth';
+import type { Reward } from '../types/Reward';
 
 const route = useRoute();
 const projectStore = useProjectStore();
@@ -36,7 +37,7 @@ const formatCurrency = (val: number) => {
   return new Intl.NumberFormat('uz-UZ').format(val);
 };
 
-const selectReward = (reward: any) => {
+const selectReward = (reward: Reward) => {
   selectedRewardId.value = reward.id;
   amount.value = reward.minAmount.toString();
 };
