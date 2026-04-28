@@ -12,7 +12,7 @@
             <div
               class="absolute top-4 left-4 lg:top-6 lg:left-6 px-3 py-1 lg:px-4 lg:py-1.5 bg-[#14532d] text-white text-[11px] lg:text-[13px] font-bold rounded-full uppercase"
             >
-              {{ $t(`projects.cat_${project.categoryKey}`) }}
+              {{ $t(`explore.categories.${project.categoryKey}`) }}
             </div>
           </div>
 
@@ -190,10 +190,13 @@
                   </svg>
                 </button>
                 <button
-                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border border-gray-100 rounded-2xl text-gray-400 hover:text-red-500 transition-all cursor-pointer bg-gray-50/50"
+                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border border-gray-100 rounded-2xl transition-all cursor-pointer bg-gray-50/50"
+                  :class="favoriteStore.isFavorite(project.id) ? 'text-red-500' : 'text-gray-400 hover:text-red-500'"
+                  @click="favoriteStore.toggleFavorite(project.id)"
                 >
                   <svg
                     class="w-5 h-5 lg:w-6 lg:h-6"
+                    :class="{ 'fill-current': favoriteStore.isFavorite(project.id) }"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -443,23 +446,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
-import { projects } from "../mocks/projects.mock";
+import { useProjectStore } from "../stores/projects";
+import { useFavoriteStore } from "../stores/favorites";
 import { users } from "../mocks/users.mock";
 import DescriptionTab from '../components/project/DescriptionTab.vue';
 import UpdatesTab from '../components/project/UpdatesTab.vue';
 import CommentsTab from '../components/project/CommentsTab.vue';
 
-const { t, tm } = useI18n();
+const { locale, tm } = useI18n();
 const route = useRoute();
+const projectStore = useProjectStore();
+const favoriteStore = useFavoriteStore();
 const activeTab = ref(0);
+
+onMounted(() => {
+  projectStore.fetchAll();
+});
 
 // Find project by ID
 const project = computed(() => {
   const idNum = parseInt(route.params.id as string);
-  return projects.find((p) => p.id === idNum) || null;
+  return projectStore.allItems.find((p) => p.id === idNum) || null;
 });
 
 // Find author

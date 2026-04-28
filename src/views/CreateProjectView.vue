@@ -6,7 +6,7 @@
         <div class="flex items-center gap-6">
           <router-link to="/" class="text-[22px] lg:text-[26px] font-bold text-[#1a946b] tracking-wide">FUNDUZ</router-link>
           <div class="h-6 w-[1px] bg-gray-200"></div>
-          <span class="text-[15px] font-bold text-gray-500">{{ $t('create.header_title') }}</span>
+          <span class="text-[15px] font-bold text-gray-500">{{ isEditMode ? 'Редактирование проекта' : $t('create.header_title') }}</span>
         </div>
         
         <div class="flex items-center gap-8">
@@ -34,7 +34,7 @@
             {{ $t('create.step_prefix') }} {{ currentStep }}/3
           </div>
           <h1 class="text-[32px] lg:text-[40px] font-bold text-gray-900 mb-8 tracking-tight">
-            {{ $t(`create.step${currentStep}_title`) }}
+            {{ isEditMode && currentStep === 1 ? 'Обновите информацию о проекте' : $t(`create.step${currentStep}_title`) }}
           </h1>
           
           <!-- Progress Bar -->
@@ -342,7 +342,7 @@
           class="px-10 py-5 bg-[#1a946b] text-white rounded-3xl font-black flex items-center gap-3 hover:bg-[#147a58] shadow-xl shadow-green-900/10 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
           :disabled="!isStepValid"
         >
-          {{ currentStep === 4 ? 'Опубликовать проект' : (currentStep === 3 ? 'Перейти к предпросмотру' : $t('create.next')) }}
+          {{ currentStep === 4 ? (isEditMode ? 'Сохранить изменения' : 'Опубликовать проект') : (currentStep === 3 ? 'Перейти к предпросмотру' : $t('create.next')) }}
           <svg v-if="currentStep < 4" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
         </button>
@@ -353,19 +353,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useProjectStore } from '../stores/projects'
 import { useAuthStore } from '../stores/auth'
 import type { Project } from '../types/Project'
 
 const { locale } = useI18n()
 const router = useRouter()
+const route = useRoute()
 const projectStore = useProjectStore()
 const authStore = useAuthStore()
 
 const currentStep = ref(1)
+const isEditMode = ref(false)
+const editProjectId = ref<number | null>(null)
 
 interface RewardEntry {
   title: string;
@@ -382,6 +385,29 @@ const formData = reactive({
   videoUrl: '',
   story: '',
   rewards: [] as RewardEntry[]
+})
+
+onMounted(() => {
+  const editId = route.query.edit;
+  if (editId) {
+    const id = parseInt(editId as string);
+    const project = projectStore.allItems.find(p => p.id === id);
+    if (project) {
+      isEditMode.value = true;
+      editProjectId.value = id;
+      
+      formData.title = project.title;
+      formData.category = project.categoryKey;
+      formData.goal = project.goal;
+      formData.story = project.description;
+      formData.rewards = project.rewards.map(r => ({
+        title: r.title,
+        minAmount: r.minAmount,
+        description: r.description
+      }));
+      imagePreview.value = project.mainImage;
+    }
+  }
 })
 
 const imagePreview = ref('')
@@ -428,35 +454,51 @@ const nextStep = async () => {
   if (currentStep.value < 4) {
     currentStep.value++
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  } else {
-    // Construct new project object
-    const newProject: Project = {
-      id: Date.now(), // Mock ID
-      title: formData.title,
-      description: formData.story,
-      categoryKey: formData.category,
-      authorId: authStore.user?.id || 999, // Fallback to a mock ID
-      mainImage: imagePreview.value || 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80',
-      goal: formData.goal,
-      raised: 0,
-      donorsCount: 0,
-      createdAt: new Date().toISOString(),
-      endsAt: new Date(Date.now() + formData.duration * 24 * 60 * 60 * 1000).toISOString(),
-      rewards: formData.rewards.map((r, idx) => ({
-        id: Date.now() + idx,
-        title: r.title,
-        description: r.description,
-        minAmount: r.minAmount
-      })),
-      status: 'active'
-    };
+    if (isEditMode.value && editProjectId.value !== null) {
+      // Update existing
+      projectStore.updateProject(editProjectId.value, {
+        title: formData.title,
+        description: formData.story,
+        categoryKey: formData.category,
+        goal: formData.goal,
+        mainImage: imagePreview.value,
+        rewards: formData.rewards.map((r, idx) => ({
+          id: Date.now() + idx,
+          title: r.title,
+          description: r.description,
+          minAmount: r.minAmount
+        }))
+      });
+      alert('Проект успешно обновлен!');
+    } else {
+      // Construct new project object
+      const newProject: Project = {
+        id: Date.now(), // Mock ID
+        title: formData.title,
+        description: formData.story,
+        categoryKey: formData.category,
+        authorId: authStore.user?.id || 999, // Fallback to a mock ID
+        mainImage: imagePreview.value || 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80',
+        goal: formData.goal,
+        raised: 0,
+        donorsCount: 0,
+        createdAt: new Date().toISOString(),
+        endsAt: new Date(Date.now() + formData.duration * 24 * 60 * 60 * 1000).toISOString(),
+        rewards: formData.rewards.map((r, idx) => ({
+          id: Date.now() + idx,
+          title: r.title,
+          description: r.description,
+          minAmount: r.minAmount
+        })),
+        status: 'active'
+      };
 
-    // Add to store
-    projectStore.addProject(newProject);
+      // Add to store
+      projectStore.addProject(newProject);
+      alert('Проект успешно создан!');
+    }
 
-    // Finish - Simulation
-    alert('Loyiha muvaffaqiyatli yaratildi! / Проект успешно создан!');
-    router.push('/');
+    router.push('/dashboard');
   }
 }
 </script>

@@ -5,10 +5,10 @@
       <!-- Header Section -->
       <div class="bg-white rounded-[32px] p-8 lg:p-12 shadow-sm border border-gray-100 mb-10">
         <h1 class="text-[32px] lg:text-[40px] font-black text-gray-900 mb-2">
-          {{ $t('nav.menu_settings') || 'Настройки' }}
+          {{ $t('nav.menu_settings') }}
         </h1>
         <p class="text-[15px] lg:text-[16px] font-medium text-gray-500">
-          Управляйте вашим профилем, безопасностью и уведомлениями.
+          {{ $t('settings.header_desc') || 'Управляйте вашим профилем, безопасностью и уведомлениями.' }}
         </p>
       </div>
 
@@ -17,7 +17,7 @@
         <aside class="w-full lg:w-72 flex-shrink-0">
           <nav class="bg-white rounded-[24px] border border-gray-100 p-4 space-y-2 sticky top-28 shadow-sm">
             <button 
-              v-for="tab in tabs" 
+              v-for="tab in settingsTabs" 
               :key="tab.id"
               @click="activeTab = tab.id"
               class="w-full flex items-center gap-4 px-4 py-3.5 rounded-xl font-bold text-[14px] transition-all text-left"
@@ -36,7 +36,7 @@
           
           <!-- Tab 1: Profile -->
           <div v-if="activeTab === 'profile'" class="animate-fade-in">
-            <h2 class="text-[24px] lg:text-[28px] font-bold text-gray-900 mb-8">Личные данные</h2>
+            <h2 class="text-[24px] lg:text-[28px] font-bold text-gray-900 mb-8">{{ $t('settings.profile_title') || 'Личные данные' }}</h2>
             
             <div class="flex items-center gap-6 mb-10">
               <div class="relative w-24 h-24 rounded-full bg-gray-100 overflow-hidden group border border-gray-200 shadow-inner">
@@ -57,25 +57,34 @@
             <form @submit.prevent="saveProfile">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div>
-                  <label class="block text-[13px] font-bold text-gray-700 mb-2">Имя и фамилия</label>
+                  <label class="block text-[13px] font-bold text-gray-700 mb-2">{{ $t('settings.name_label') || 'Имя и фамилия' }}</label>
                   <input v-model="editForm.name" type="text" class="w-full h-12 bg-gray-50 border border-gray-200 rounded-xl px-4 text-gray-900 font-medium focus:ring-2 focus:ring-[#1a946b] focus:border-transparent outline-none transition-all" required />
                 </div>
                 <div>
-                  <label class="block text-[13px] font-bold text-gray-700 mb-2">Номер телефона</label>
+                  <label class="block text-[13px] font-bold text-gray-700 mb-2">{{ $t('settings.phone_label') || 'Номер телефона' }}</label>
                   <input v-model="editForm.phone" type="tel" class="w-full h-12 bg-gray-50 border border-gray-200 rounded-xl px-4 text-gray-900 font-medium focus:ring-2 focus:ring-[#1a946b] focus:border-transparent outline-none transition-all" />
                 </div>
                 <div class="md:col-span-2">
                   <label class="block text-[13px] font-bold text-gray-700 mb-2">E-mail</label>
                   <input v-model="editForm.email" type="email" class="w-full h-12 bg-gray-50 border border-gray-200 rounded-xl px-4 text-gray-900 font-medium focus:ring-2 focus:ring-[#1a946b] focus:border-transparent outline-none transition-all" />
                 </div>
+                <div class="md:col-span-2">
+                  <label class="block text-[13px] font-bold text-gray-700 mb-2">{{ $t('profile.edit.bio_label') }}</label>
+                  <textarea 
+                    v-model="editForm.bio" 
+                    rows="4" 
+                    class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 font-medium focus:ring-2 focus:ring-[#1a946b] focus:border-transparent outline-none transition-all resize-none"
+                    :placeholder="$t('profile.edit.bio_placeholder')"
+                  ></textarea>
+                </div>
               </div>
 
               <div class="flex items-center gap-4">
                 <button type="submit" :disabled="isSaving" class="px-8 py-3.5 bg-[#1a946b] text-white rounded-xl font-bold text-[15px] hover:bg-[#147a57] transition-all shadow-md shadow-[#1a946b]/20 disabled:opacity-50 disabled:cursor-not-allowed">
-                  {{ isSaving ? 'Сохранение...' : 'Сохранить изменения' }}
+                  {{ isSaving ? $t('settings.saving') : $t('settings.save_btn') }}
                 </button>
                 <span v-if="saveSuccess" class="text-[13px] font-bold text-[#1a946b] animate-fade-in">
-                  Изменения сохранены!
+                  {{ $t('settings.save_success') }}
                 </span>
               </div>
             </form>
@@ -105,25 +114,13 @@
 
           <!-- Tab 3: Notifications -->
           <div v-if="activeTab === 'notifications'" class="animate-fade-in">
-            <h2 class="text-[24px] lg:text-[28px] font-bold text-gray-900 mb-8">Уведомления</h2>
+            <h2 class="text-[24px] lg:text-[28px] font-bold text-gray-900 mb-8">{{ $t('settings.notifications_title') }}</h2>
             
             <div class="space-y-4">
               <div class="flex items-center justify-between p-5 bg-gray-50 rounded-2xl border border-gray-100">
                 <div>
-                  <h4 class="font-bold text-gray-900 text-[15px]">Новые проекты</h4>
-                  <p class="text-gray-500 text-[13px] mt-1">Оповещения о новых проектах в ваших любимых категориях</p>
-                </div>
-                <!-- Toggle -->
-                <label class="relative inline-flex items-center cursor-pointer">
-                  <input type="checkbox" checked class="sr-only peer">
-                  <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#1a946b]"></div>
-                </label>
-              </div>
-
-              <div class="flex items-center justify-between p-5 bg-gray-50 rounded-2xl border border-gray-100">
-                <div>
-                  <h4 class="font-bold text-gray-900 text-[15px]">Успешные сборы</h4>
-                  <p class="text-gray-500 text-[13px] mt-1">Оповещения, когда проект, который вы поддержали, собирает нужную сумму</p>
+                  <h4 class="font-bold text-gray-900 text-[15px]">{{ $t('settings.notif_new_projects') }}</h4>
+                  <p class="text-gray-500 text-[13px] mt-1">{{ $t('settings.notif_new_projects_desc') }}</p>
                 </div>
                 <label class="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" checked class="sr-only peer">
@@ -133,11 +130,11 @@
 
               <div class="flex items-center justify-between p-5 bg-gray-50 rounded-2xl border border-gray-100">
                 <div>
-                  <h4 class="font-bold text-gray-900 text-[15px]">Маркетинговые рассылки</h4>
-                  <p class="text-gray-500 text-[13px] mt-1">Получать новости платформы и специальные предложения</p>
+                  <h4 class="font-bold text-gray-900 text-[15px]">{{ $t('settings.notif_success_fund') }}</h4>
+                  <p class="text-gray-500 text-[13px] mt-1">{{ $t('settings.notif_success_fund_desc') }}</p>
                 </div>
                 <label class="relative inline-flex items-center cursor-pointer">
-                  <input type="checkbox" class="sr-only peer">
+                  <input type="checkbox" checked class="sr-only peer">
                   <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#1a946b]"></div>
                 </label>
               </div>
@@ -151,7 +148,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { useAuthStore } from '../stores/auth';
 
 const authStore = useAuthStore();
@@ -163,15 +161,19 @@ const saveSuccess = ref(false);
 const editForm = ref({
   name: '',
   phone: '',
-  email: ''
+  email: '',
+  bio: ''
 });
+
+const { t } = useI18n();
 
 watch(() => authStore.user, (user) => {
   if (user) {
     editForm.value = {
       name: user.name || '',
       phone: user.phone || '',
-      email: user.email || ''
+      email: user.email || '',
+      bio: user.bio || ''
     };
   }
 }, { immediate: true });
@@ -183,7 +185,8 @@ const saveProfile = async () => {
   await authStore.updateProfile({
     name: editForm.value.name,
     phone: editForm.value.phone,
-    email: editForm.value.email
+    email: editForm.value.email,
+    bio: editForm.value.bio
   });
   
   isSaving.value = false;
@@ -194,11 +197,11 @@ const saveProfile = async () => {
   }, 3000);
 };
 
-const tabs = [
-  { id: 'profile', name: 'Профиль', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
-  { id: 'security', name: 'Безопасность', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z' },
-  { id: 'notifications', name: 'Уведомления', icon: 'M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9' }
-];
+const settingsTabs = computed(() => [
+  { id: 'profile', name: t('settings.tabs.profile'), icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
+  { id: 'security', name: t('settings.tabs.security'), icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z' },
+  { id: 'notifications', name: t('settings.tabs.notifications'), icon: 'M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9' }
+]);
 
 </script>
 

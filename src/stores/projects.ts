@@ -26,7 +26,7 @@ export const useProjectStore = defineStore('projects', () => {
       result = result.filter(p => 
         p.title.toLowerCase().includes(q) || 
         p.description.toLowerCase().includes(q) ||
-        (p.authorName && p.authorName.toLowerCase().includes(q))
+        (p.authorName?.toLowerCase().includes(q) ?? false)
       );
     }
     
@@ -86,15 +86,29 @@ export const useProjectStore = defineStore('projects', () => {
   };
 
   const addDonation = (projectId: number, amount: number) => {
-    const project = allItems.value.find(p => p.id === projectId);
-    if (project) {
-      project.raised += amount;
-      project.donorsCount += 1;
+    const index = allItems.value.findIndex(p => p.id === projectId);
+    if (index !== -1) {
+      allItems.value[index] = { 
+        ...allItems.value[index], 
+        raised: allItems.value[index].raised + amount,
+        donorsCount: allItems.value[index].donorsCount + 1
+      };
     }
   };
 
   const addProject = (project: Project) => {
     allItems.value.unshift(project);
+  };
+
+  const updateProject = (id: number, data: Partial<Project>) => {
+    const index = allItems.value.findIndex(p => p.id === id);
+    if (index !== -1) {
+      allItems.value[index] = { ...allItems.value[index], ...data };
+    }
+  };
+
+  const deleteProject = (id: number) => {
+    allItems.value = allItems.value.filter(p => p.id !== id);
   };
 
   // Reset pagination when filter/sort/search changes
@@ -117,6 +131,8 @@ export const useProjectStore = defineStore('projects', () => {
     setSort,
     loadMore,
     addDonation,
-    addProject
+    addProject,
+    updateProject,
+    deleteProject
   };
 });

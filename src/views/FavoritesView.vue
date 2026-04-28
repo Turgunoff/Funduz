@@ -88,13 +88,17 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useProjectStore } from '../stores/projects';
 import { useFavoriteStore } from '../stores/favorites';
 import type { Project } from '../types/Project';
 
 const projectStore = useProjectStore();
 const favoriteStore = useFavoriteStore();
+
+onMounted(() => {
+  projectStore.fetchAll();
+});
 
 const favoriteProjects = computed(() => {
   return projectStore.allItems.filter(p => favoriteStore.projectIds.includes(p.id));

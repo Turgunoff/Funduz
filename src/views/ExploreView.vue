@@ -102,12 +102,29 @@
           class="group bg-white rounded-[32px] lg:rounded-[40px] p-5 lg:p-6 border border-gray-100/50 hover:border-[#1a946b]/30 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 flex flex-col h-full"
         >
           <!-- Project Image -->
-          <div class="relative rounded-[24px] lg:rounded-[32px] overflow-hidden aspect-[4/3] mb-5 lg:mb-6 bg-gray-50 border border-gray-50 shadow-sm">
+          <router-link :to="`/project/${project.id}`" class="relative block rounded-[24px] lg:rounded-[32px] overflow-hidden aspect-[4/3] mb-5 lg:mb-6 bg-gray-50 border border-gray-50 shadow-sm">
             <img :src="project.mainImage" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
             <div class="absolute top-3 left-3 lg:top-4 lg:left-4 px-3 lg:px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] lg:text-[11px] font-black uppercase tracking-wider text-gray-800">
               {{ $t(`explore.categories.${project.categoryKey}`) }}
             </div>
-          </div>
+
+            <!-- Favorite Button -->
+            <button 
+              @click.stop.prevent="favoriteStore.toggleFavorite(project.id)"
+              class="absolute top-3 right-3 lg:top-4 lg:right-4 w-10 h-10 lg:w-12 lg:h-12 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-sm transition-all duration-300 hover:scale-110 active:scale-95"
+              :class="favoriteStore.isFavorite(project.id) ? 'text-red-500' : 'text-gray-400'"
+            >
+              <svg 
+                class="w-5 h-5 lg:w-6 lg:h-6" 
+                :class="{ 'fill-current': favoriteStore.isFavorite(project.id) }" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+          </router-link>
 
           <!-- Content Meta -->
           <div class="flex items-center gap-2 mb-4">
@@ -118,9 +135,11 @@
           </div>
 
           <!-- Title -->
-          <h3 class="text-[18px] lg:text-[20px] font-bold text-gray-900 leading-[1.3] mb-5 lg:mb-6 min-h-[48px] lg:min-h-[52px]">
-            {{ project.title }}
-          </h3>
+          <router-link :to="`/project/${project.id}`" class="block group/title">
+            <h3 class="text-[18px] lg:text-[20px] font-bold text-gray-900 leading-[1.3] mb-5 lg:mb-6 min-h-[48px] lg:min-h-[52px] group-hover/title:text-[#1a946b] transition-colors">
+              {{ project.title }}
+            </h3>
+          </router-link>
 
           <!-- Progress Block -->
           <div class="mt-auto">
@@ -171,11 +190,13 @@ import { ref, onMounted, watch, nextTick } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 import { useProjectStore } from '../stores/projects';
+import { useFavoriteStore } from '../stores/favorites';
 import type { Project } from '../types/Project';
 
 const { locale } = useI18n();
 const router = useRouter();
 const projectStore = useProjectStore();
+const favoriteStore = useFavoriteStore();
 
 const formatCurrency = (val: number) => {
   return new Intl.NumberFormat('uz-UZ').format(val);
