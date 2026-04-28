@@ -27,6 +27,16 @@ const messages = {
       technologies: "Texnologiyalar",
       security: "Xavfsizlik",
     },
+    dashboard: {
+      welcome: "Boshqaruv paneliga xush kelibsiz",
+      total_raised: "Barcha to'plangan",
+      total_donated: "Barcha homiylik qilingan",
+      active_projects: "Sizning loyihalaringiz",
+      tabs: {
+        projects: "Loyihalarim",
+        donations: "Homiyliklarim",
+      }
+    },
     profile: {
       default_name: "Foydalanuvchi",
       location: "O'zbekiston, Toshkent",
@@ -46,8 +56,8 @@ const messages = {
         phone: "Telefon raqami",
         email: "Elektron pochta",
         save: "Saqlash",
-        cancel: "Bekor qilish"
-      }
+        cancel: "Bekor qilish",
+      },
     },
     how_it_works: {
       badge: "PLATFORMA BO'YICHA QO'LLANMA",
@@ -136,7 +146,8 @@ const messages = {
       results_overline: "QIDIRUV NATIJALARI",
       results_count: "natija",
       for_query: "so'rovi bo'yicha",
-      hero_subtitle: "Sizni qiziqtirgan loyihalarni topish uchun yuqoridagi qidiruv panelidan foydalaning.",
+      hero_subtitle:
+        "Sizni qiziqtirgan loyihalarni topish uchun yuqoridagi qidiruv panelidan foydalaning.",
       featured_projects: "Aralash loyihalar",
       recent_searches: "Oxirgi qidiruvlar",
       popular_tags: "Mashhur teglar",
@@ -190,7 +201,8 @@ const messages = {
       method_label: "To'lov usuli",
       submit_btn: "{amount} UZS bilan qo'llab-quvvatlash",
       processing: "Jarayonda...",
-      footer_notice: "Tugmani bosish orqali siz foydalanish shartlari va qaytarish siyosatiga rozilik bildirasiz.",
+      footer_notice:
+        "Tugmani bosish orqali siz foydalanish shartlari va qaytarish siyosatiga rozilik bildirasiz.",
       success: {
         title: "Rahmat!",
         desc: "Sizning {amount} UZS miqdoridagi hissangiz muvaffaqiyatli qabul qilindi. Birgalikda katta ishlarni amalga oshiramiz!",
@@ -359,18 +371,19 @@ const messages = {
     },
     success_stories: {
       title: "Muvaffaqiyatga aylangan g'oyalar",
-      subtitle: "Funduz-da o'z orzularini amalga oshirgan o'zbekistonlik mualliflar bilan tanishing.",
+      subtitle:
+        "Funduz-da o'z orzularini amalga oshirgan o'zbekistonlik mualliflar bilan tanishing.",
       stats: {
         projects: "MOLIYALASHTIRILGAN LOYIHALAR",
         raised: "TO'PLANGAN MABLAG'",
-        backers: "BAXTLI HOMIYLAR"
+        backers: "BAXTLI HOMIYLAR",
       },
       featured: {
         badge: "ASOSIY HIKOYA",
         title: "Samarqand ipak qog'ozi an'anasini qayta tiklash",
         desc: "Anora Karimov 450 ta mahalliy homiy ko'magi bilan qadimiy hunarmandchilikni qanday qilib barqaror global brendga aylantirgani haqida.",
         metrics: "14 kunda maqsadning 180 foizi to'plandi",
-        cta: "To'liq o'qish"
+        cta: "To'liq o'qish",
       },
       milestones_title: "Yana ko'p yutuqlarni kashf eting",
       milestones_desc: "O'zbekistonning turli burchaklaridagi hamjamiyatimizning real hikoyalari.",
@@ -380,7 +393,7 @@ const messages = {
         tech: "TEXNO",
         eco: "EKO",
         art: "ART",
-        social: "IJTIMOIY"
+        social: "IJTIMOIY",
       },
       items: [],
       reach_section: {
@@ -391,30 +404,34 @@ const messages = {
           regions: "12 VILOYAT QAMROVI",
           success: "94% LOYIHA MUVAFFAQIYATI",
           visitors: "4.2M FAOL TASHRIF BUYURUVCHILAR",
-          creators: "3.5K FAOL MUALLIFLAR"
-        }
+          creators: "3.5K FAOL MUALLIFLAR",
+        },
       },
       testimonials_title: "Mualliflar nima deydi?",
       testimonials: [
         {
-          quote: "Biz nafaqat moliyaviy yordam, balki maslahatlarni ham oldik, bu haqiqiy o'zgarishga sabab bo'ldi. Funduz — shunchaki platforma emas, u hamkor.",
+          quote:
+            "Biz nafaqat moliyaviy yordam, balki maslahatlarni ham oldik, bu haqiqiy o'zgarishga sabab bo'ldi. Funduz — shunchaki platforma emas, u hamkor.",
           author: "Madina Rahimova",
           role: "EcoThreads Tashkent asoschisi",
-          image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200"
+          image:
+            "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200",
         },
         {
-          quote: "Mahalliy loyihamiz bunchalik katta e'tibor qozonishini hech qachon o'ylamagandik. Funduz bizni butun O'zbekistondagi homiylar bilan bog'ladi.",
+          quote:
+            "Mahalliy loyihamiz bunchalik katta e'tibor qozonishini hech qachon o'ylamagandik. Funduz bizni butun O'zbekistondagi homiylar bilan bog'ladi.",
           author: "Otabek Ismoilov",
           role: "CodeAcademy UZ yaratuvchisi",
-          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"
-        }
+          image:
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
+        },
       ],
       final_banner: {
         title: "O'zingizning g'oyangiz keyingisi bo'lishi mumkin",
         desc: "Funduzda muvaffaqiyat qozongan 250 dan ortiq mualliflarga qo'shiling. Biz sizga kerakli vositalarni, auditoriyani va ishonchni taqdim etamiz.",
         start: "Loyihangizni boshlang",
-        guide: "Muallif qo'llanmasini o'qing"
-      }
+        guide: "Muallif qo'llanmasini o'qing",
+      },
     },
     articles: {
       title: "Funduz hamjamiyatidan hikoyalar, maslahatlar va yangiliklar",
@@ -633,24 +650,27 @@ const messages = {
             title: "Kampaniya arxitekturasi: Millionlik strategiya",
             desc: "Qanday qilib noldan boshlab loyihani yirik moliyalashtirishga tayyorlash mumkin.",
             author: "Julian Thorne",
-            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+            image:
+              "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
           },
           {
             category: "DIZAYN",
             title: "Mijozlarni hayratga soladigan UI/UX sirlari",
             desc: "Mahsulotingiz dizayni kraudfanding muvaffaqiyatiga qanday ta'sir qiladi.",
             author: "Sardor Umidov",
-            image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=800"
+            image:
+              "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=800",
           },
           {
             category: "PSIXOLOGIYA",
             title: "Donolar nega sarmoya kiritadilar?",
             desc: "Kraudfanding ishtirokchilarining qaror qabul qilish jarayoni tahlili.",
             author: "Elena Rodriguez",
-            image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800"
-          }
-        ]
-      }
+            image:
+              "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800",
+          },
+        ],
+      },
     },
     project_view: {
       title:
@@ -808,7 +828,7 @@ const messages = {
       validate_goal: "Maqsad 0 dan katta bo'lishi kerak",
       validate_story: "Hikoya kamida 20 ta belgidan iborat bo'lishi kerak",
       validate_media: "Rasm yuklang yoki video havolasini kiriting",
-      validate_rewards: "Kamida bitta mukofot qo'shing"
+      validate_rewards: "Kamida bitta mukofot qo'shing",
     },
     story: {
       back: "Orqaga qaytish",
@@ -1202,7 +1222,8 @@ const messages = {
     security: {
       badge: "TRUST & SAFETY",
       hero_title: "Pullaringiz Funduz bilan xavfsiz bo'lsin",
-      hero_desc: "Biz 'hamma narsa yoki hech narsa' modeli asosida ishlaymiz. Agar loyiha maqsadiga erishmasa, har bir so'mingizni qaytarib olasiz. Istisnolarsiz.",
+      hero_desc:
+        "Biz 'hamma narsa yoki hech narsa' modeli asosida ishlaymiz. Agar loyiha maqsadiga erishmasa, har bir so'mingizni qaytarib olasiz. Istisnolarsiz.",
       escrow_process: {
         title: "Eskrou jarayoni",
         step1_title: "Hissa qo'shish",
@@ -1237,7 +1258,8 @@ const messages = {
         desc: "Biz har kimga loyiha boshlashga ruxsat bermaymiz. Har bir muallif loyihani ishga tushirishdan oldin bizning ko'p bosqichli tekshiruv protokolidan o'tishi kerak.",
         badge_search: "Tasdiqlangan belgisini qidiring",
         delivered_count: "3 ta loyiha muvaffaqiyatli amalga oshirilgan",
-        disclaimer: "Tasdiqlangan belgisi shuni bildiradiki, biz ushbu muallifning shaxsini va moliyaviy holatini qat'iy tekshirish jarayoni orqali tasdiqlaganmiz.",
+        disclaimer:
+          "Tasdiqlangan belgisi shuni bildiradiki, biz ushbu muallifning shaxsini va moliyaviy holatini qat'iy tekshirish jarayoni orqali tasdiqlaganmiz.",
         checks: [
           "Davlat identifikatsiya tekshiruvi",
           "Bank hisobini ulash",
@@ -1285,21 +1307,21 @@ const messages = {
         items: [
           {
             q: "Agar loyiha mablag' to'play olmasa nima bo'ladi?",
-            a: "Agar loyiha o'z moliyalashtirish maqsadiga erisha olmasa, barcha kiritilgan mablag'lar homiylarga to'liq hajmda avtomatik ravishda qaytariladi."
+            a: "Agar loyiha o'z moliyalashtirish maqsadiga erisha olmasa, barcha kiritilgan mablag'lar homiylarga to'liq hajmda avtomatik ravishda qaytariladi.",
           },
           {
             q: "Karta ma'lumotlarim saqlanadimi?",
-            a: "Yo'q, biz sizning karta ma'lumotlaringizni saqlamaymiz. Barcha tranzaksiyalar PCI-DSS 1-darajali sertifikatiga ega xavfsiz to'lov shlyuzlari orqali amalga oshiriladi."
+            a: "Yo'q, biz sizning karta ma'lumotlaringizni saqlamaymiz. Barcha tranzaksiyalar PCI-DSS 1-darajali sertifikatiga ega xavfsiz to'lov shlyuzlari orqali amalga oshiriladi.",
           },
           {
             q: "Verifikatsiya qancha davom etadi?",
-            a: "Odatda muallifni tekshirish 24 soatdan 48 soatgacha davom etadi. Biz shaxsni, bank rekvizitlarini va faoliyat tarixini tekshiramiz."
+            a: "Odatda muallifni tekshirish 24 soatdan 48 soatgacha davom etadi. Biz shaxsni, bank rekvizitlarini va faoliyat tarixini tekshiramiz.",
           },
           {
             q: "Men o'z hissam miqdorini o'zgartira olamanmi?",
-            a: "Ha, mablag' to'plash kampaniyasi davom etayotgan vaqtda siz istalgan vaqtda o'z hissangizni o'zgartirishingiz yoki bekor qilishingiz mumkin."
-          }
-        ]
+            a: "Ha, mablag' to'plash kampaniyasi davom etayotgan vaqtda siz istalgan vaqtda o'z hissangizni o'zgartirishingiz yoki bekor qilishingiz mumkin.",
+          },
+        ],
       },
       final_contact: {
         title: "Xavfsizlik bo'yicha savollaringiz bormi?",
@@ -1335,7 +1357,8 @@ const messages = {
       last_updated_date: "19-Aprel, 2024",
       toc: "Mundarija",
       footer_title: "Xavfsizlik bo'yicha savollaringiz bormi?",
-      footer_desc: "Bizning xavfsizlik jamoamiz platformadamizda o'zingizni xavfsiz his qilishingizni ta'minlash uchun tunu-kun ishlaydi.",
+      footer_desc:
+        "Bizning xavfsizlik jamoamiz platformadamizda o'zingizni xavfsiz his qilishingizni ta'minlash uchun tunu-kun ishlaydi.",
       footer_link: "Xavfsizlik markazi bilan bog'lanish",
       cards: [
         { title: "256-bitli shifrlash", icon: "lock" },
@@ -1370,32 +1393,41 @@ const messages = {
       ],
       community: {
         title: "Kraudfanding hamjamiyati",
-        subtitle: "O'zbekistondagi eng yirik innovatsion tashabbuskorlar va ularning homiylari markazi. Biz birgalikda kelajakni quramiz.",
+        subtitle:
+          "O'zbekistondagi eng yirik innovatsion tashabbuskorlar va ularning homiylari markazi. Biz birgalikda kelajakni quramiz.",
         stats: {
           collected_val: "15B UZS",
           collected_label: "JAMI TO'PLANDI",
           sponsors_val: "45K",
           sponsors_label: "FAOL HOMIYLAR",
           projects_val: "420",
-          projects_label: "MUVAFFAQIYATLI LOYIHALAR"
+          projects_label: "MUVAFFAQIYATLI LOYIHALAR",
         },
         stories: {
           title: "Hamjamiyat yutuqlari",
-          subtitle: "Loyiha mualliflarining real muvaffaqiyat hikoyalari va ular sizning ko'magingiz bilan nimaga erishganliklari haqida.",
+          subtitle:
+            "Loyiha mualliflarining real muvaffaqiyat hikoyalari va ular sizning ko'magingiz bilan nimaga erishganliklari haqida.",
           view_all: "Barcha hikoyalar",
           badge: "MUVAFFAQIYAT",
-          read_story: "Hikoyani o'qish"
+          read_story: "Hikoyani o'qish",
         },
         telegram: {
           title: "Hamjamiyatga qo'shiling",
           desc: "Eksklyuziv yangiliklar, yangi loyihalar anonslari va kroudfanding bo'yicha maslahatlar bizning rasmiy Telegram kanalimizda.",
-          btn: "Telegram kanalga o'tish"
+          btn: "Telegram kanalga o'tish",
         },
         sponsors_section: {
           title: "Funduz Super-Homiylari",
           label: "SUPER HOMIY",
-          items: ["Abdulla Azizov", "Sardor Umurzakov", "Malika Rahmonova", "Jasur Abdullayev", "Nigora Aliyeva", "Azizbek Qodirov"]
-        }
+          items: [
+            "Abdulla Azizov",
+            "Sardor Umurzakov",
+            "Malika Rahmonova",
+            "Jasur Abdullayev",
+            "Nigora Aliyeva",
+            "Azizbek Qodirov",
+          ],
+        },
       },
       project_view: {
         author_label: "Muallif",
@@ -1408,20 +1440,26 @@ const messages = {
         stat_done: "TO'PLANDI",
         btn_support: "Loyihani qo'llab-quvvatlash",
         detail_title: "Loyiha haqida",
-        detail_text_1: "Ushbu loyiha O'zbekistonning innovatsion salohiyatini oshirishga qaratilgan.",
+        detail_text_1:
+          "Ushbu loyiha O'zbekistonning innovatsion salohiyatini oshirishga qaratilgan.",
         detail_text_2: "Sizning har bir hissangiz biz uchun juda muhim.",
         dynamic_eco_text: "Ekologik barqarorlikni ta'minlash bizning ustuvor vazifamizdir.",
         dynamic_edu_text: "Kelajak ta'limda va biz uni hozir qurishimiz kerak.",
         image_caption: "Loyihani amalga oshirish jarayonidan lavha",
         benefits_title: "Nima uchun ushbu loyihani qo'llab-quvvatlash kerak?",
-        benefits: ["Mahalliy ishlab chiqarish", "Yangi ish o'rinlari", "Innovatsion yondashuv", "Hamjamiyatga foyda"],
+        benefits: [
+          "Mahalliy ishlab chiqarish",
+          "Yangi ish o'rinlari",
+          "Innovatsion yondashuv",
+          "Hamjamiyatga foyda",
+        ],
         tabs: ["Tavsif", "Yangiliklar", "Sharhlar"],
         reward_title: "Mukofotni tanlang",
-        reward_count: "ta mavjud"
+        reward_count: "ta mavjud",
       },
       month: {
         september: "Sentabr",
-      }
+      },
     },
   },
   ru: {
@@ -1450,6 +1488,16 @@ const messages = {
       technologies: "Технологии",
       security: "Безопасность",
     },
+    dashboard: {
+      welcome: "Добро пожаловать в панель управления",
+      total_raised: "Всего собрано",
+      total_donated: "Всего пожертвовано",
+      active_projects: "Ваши проекты",
+      tabs: {
+        projects: "Мои проекты",
+        donations: "Мои пожертвования",
+      }
+    },
     profile: {
       default_name: "Пользователь",
       location: "Узбекистан, Ташкент",
@@ -1469,8 +1517,8 @@ const messages = {
         phone: "Номер телефона",
         email: "Электронная почта",
         save: "Сохранить",
-        cancel: "Отмена"
-      }
+        cancel: "Отмена",
+      },
     },
     how_it_works: {
       badge: "ПУТЕВОДИТЕЛЬ ПО ПЛАТФОРМЕ",
@@ -1612,7 +1660,8 @@ const messages = {
       method_label: "Способ оплаты",
       submit_btn: "Поддержать на {amount} UZS",
       processing: "Обработка...",
-      footer_notice: "Нажимая на кнопку, вы соглашаетесь с условиями пользовательского соглашения и политикой возврата средств.",
+      footer_notice:
+        "Нажимая на кнопку, вы соглашаетесь с условиями пользовательского соглашения и политикой возврата средств.",
       success: {
         title: "Спасибо!",
         desc: "Ваш вклад в размере {amount} успешно переведен. Вместе мы делаем великие дела!",
@@ -1781,18 +1830,19 @@ const messages = {
     },
     success_stories: {
       title: "Идеи, ставшие реальностью",
-      subtitle: "Познакомьтесь с узбекскими создателями, которые превратили свои мечты в финансируемые проекты на Funduz.",
+      subtitle:
+        "Познакомьтесь с узбекскими создателями, которые превратили свои мечты в финансируемые проекты на Funduz.",
       stats: {
         projects: "ПРОФИНАНСИРОВАНО",
         raised: "СОБРАНО",
-        backers: "СЧАСТЛИВЫХ ДОНОРОВ"
+        backers: "СЧАСТЛИВЫХ ДОНОРОВ",
       },
       featured: {
         badge: "ГЛАВНАЯ ИСТОРИЯ",
         title: "Возрождение традиционной самаркандской шелковой бумаги",
         desc: "Как Анора Каримова превратила древнее ремесло в устойчивый глобальный бренд при поддержке 450 местных доноров.",
         metrics: "Собрано 180% цели за 14 дней",
-        cta: "Читать историю"
+        cta: "Читать историю",
       },
       milestones_title: "Откройте для себя больше достижений",
       milestones_desc: "Реальные истории нашего разнообразного сообщества по всему Узбекистану.",
@@ -1802,7 +1852,7 @@ const messages = {
         tech: "ТЕХНО",
         eco: "ЭКО",
         art: "АРТ",
-        social: "СОЦ"
+        social: "СОЦ",
       },
       items: [],
       reach_section: {
@@ -1813,30 +1863,34 @@ const messages = {
           regions: "ОХВАТ 12 РЕГИОНОВ",
           success: "94% УСПЕШНОСТЬ ПРОЕКТОВ",
           visitors: "4.2М АКТИВНЫХ ПОСЕТИТЕЛЕЙ",
-          creators: "3.5К АКТИВНЫХ СОЗДАТЕЛЕЙ"
-        }
+          creators: "3.5К АКТИВНЫХ СОЗДАТЕЛЕЙ",
+        },
       },
       testimonials_title: "Что говорят авторы",
       testimonials: [
         {
-          quote: "Менторство, которое мы получили вместе с финансированием, — это то, что действительно имело значение. Funduz — это партнер, а не просто платформа.",
+          quote:
+            "Менторство, которое мы получили вместе с финансированием, — это то, что действительно имело значение. Funduz — это партнер, а не просто платформа.",
           author: "Мадина Рахимова",
           role: "Основатель EcoThreads Tashkent",
-          image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200"
+          image:
+            "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200",
         },
         {
-          quote: "Никогда не думал, что наш локальный проект сможет привлечь столько внимания. Funduz связал нас с донорами со всего Узбекистана.",
+          quote:
+            "Никогда не думал, что наш локальный проект сможет привлечь столько внимания. Funduz связал нас с донорами со всего Узбекистана.",
           author: "Отабек Исмоилов",
           role: "Создатель CodeAcademy UZ",
-          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"
-        }
+          image:
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
+        },
       ],
       final_banner: {
         title: "Ваша идея может стать следующей",
         desc: "Присоединяйтесь к 250+ авторам, которые добились успеха на Funduz. Мы предоставляем инструменты, аудиторию и доверие, которые вам необходимы.",
         start: "Запустить проект",
-        guide: "Руководство автора"
-      }
+        guide: "Руководство автора",
+      },
     },
     articles: {
       title: "Истории, советы и новости от сообщества Funduz",
@@ -1951,24 +2005,27 @@ const messages = {
             title: "Архитектура кампании: Стратегия на миллион",
             desc: "Как подготовить проект к крупному финансированию с нуля.",
             author: "Julian Thorne",
-            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+            image:
+              "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
           },
           {
             category: "ДИЗАЙН",
             title: "Секреты UI/UX, которые восхищают клиентов",
             desc: "Как дизайн вашего продукта влияет на успех краудфандинга.",
             author: "Сардор Умидов",
-            image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=800"
+            image:
+              "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=800",
           },
           {
             category: "ПСИХОЛОГИЯ",
             title: "Почему доноры инвестируют?",
             desc: "Анализ процесса принятия решений участниками краудфандинга.",
             author: "Elena Rodriguez",
-            image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800"
-          }
-        ]
-      }
+            image:
+              "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800",
+          },
+        ],
+      },
     },
     project_view: {
       title: "Eco-Paket: Производство первой биоразлагаемой упаковки в Узбекистане",
@@ -2101,7 +2158,8 @@ const messages = {
       tax_info: "Не забывайте о комиссии платформы и налогах.",
       media_title: "Медиа и История",
       media_label: "Главное изображение",
-      media_help: "Загрузите качественное изображение, которое будет отображаться на карточке проекта.",
+      media_help:
+        "Загрузите качественное изображение, которое будет отображаться на карточке проекта.",
       video_label: "Ссылка на видео (опционально)",
       video_placeholder: "Ссылка на YouTube или Vimeo",
       story_label: "История проекта",
@@ -2125,7 +2183,7 @@ const messages = {
       validate_goal: "Цель должна быть больше 0",
       validate_story: "История должна быть не менее 20 символов",
       validate_media: "Загрузите фото или укажите ссылку на видео",
-      validate_rewards: "Добавьте хотя бы одну награду"
+      validate_rewards: "Добавьте хотя бы одну награду",
     },
     story: {
       back: "Назад",
@@ -2516,7 +2574,8 @@ const messages = {
     security: {
       badge: "TRUST & SAFETY",
       hero_title: "Пусть ваши деньги будут в безопасности с Funduz",
-      hero_desc: "Мы работаем по модели эскроу «все или ничего». Если проект не достигает цели финансирования, вы получаете каждый сум обратно. Без исключений.",
+      hero_desc:
+        "Мы работаем по модели эскроу «все или ничего». Если проект не достигает цели финансирования, вы получаете каждый сум обратно. Без исключений.",
       escrow_process: {
         title: "Процесс эскроу",
         step1_title: "Вклад",
@@ -2551,7 +2610,8 @@ const messages = {
         desc: "Мы не позволяем запускать проекты кому угодно. Каждый автор должен пройти наш многоуровневый протокол верификации перед запуском.",
         badge_search: "Ищите значок верификации",
         delivered_count: "3 проекта успешно реализовано",
-        disclaimer: "Значок верификации означает, что мы подтвердили личность и финансовое положение этого автора в ходе нашего строгого процесса проверки.",
+        disclaimer:
+          "Значок верификации означает, что мы подтвердили личность и финансовое положение этого автора в ходе нашего строгого процесса проверки.",
         checks: [
           "Проверка гос. удостоверения",
           "Привязка банковского счета",
@@ -2599,21 +2659,21 @@ const messages = {
         items: [
           {
             q: "Что произойдет, если проект не соберет средства?",
-            a: "Если проект не достигает своей цели по финансированию, все вложенные средства автоматически возвращаются спонсорам в полном объеме."
+            a: "Если проект не достигает своей цели по финансированию, все вложенные средства автоматически возвращаются спонсорам в полном объеме.",
           },
           {
             q: "Хранятся ли данные моей карты?",
-            a: "Нет, мы не храним данные ваших карт. Все транзакции обрабатываются через защищенные платежные шлюзы, сертифицированные по стандарту PCI-DSS Level 1."
+            a: "Нет, мы не храним данные ваших карт. Все транзакции обрабатываются через защищенные платежные шлюзы, сертифицированные по стандарту PCI-DSS Level 1.",
           },
           {
             q: "Сколько времени занимает верификация?",
-            a: "Обычно проверка автора занимает от 24 до 48 часов. Мы проверяем личность, банковские реквизиты и историю деятельности."
+            a: "Обычно проверка автора занимает от 24 до 48 часов. Мы проверяем личность, банковские реквизиты и историю деятельности.",
           },
           {
             q: "Могу ли я изменить сумму своего взноса?",
-            a: "Да, вы можете изменить или отменить свой взнос в любое время, пока идет кампания по сбору средств."
-          }
-        ]
+            a: "Да, вы можете изменить или отменить свой взнос в любое время, пока идет кампания по сбору средств.",
+          },
+        ],
       },
       final_contact: {
         title: "Есть вопросы по безопасности?",
@@ -2649,7 +2709,8 @@ const messages = {
       last_updated_date: "19 Апреля, 2024",
       toc: "Содержание",
       footer_title: "Вопросы по безопасности?",
-      footer_desc: "Наша команда безопасности работает круглосуточно, чтобы вы чувствовали себя защищенно на нашей платформе.",
+      footer_desc:
+        "Наша команда безопасности работает круглосуточно, чтобы вы чувствовали себя защищенно на нашей платформе.",
       footer_link: "Связаться с отделом безопасности",
       cards: [
         { title: "256-битное шифрование", icon: "lock" },
@@ -2684,32 +2745,41 @@ const messages = {
       ],
       community: {
         title: "Краудфандинг сообщество",
-        subtitle: "Центр крупнейших инновационных инициаторов Узбекистана и их спонсоров. Вместе мы строим будущее.",
+        subtitle:
+          "Центр крупнейших инновационных инициаторов Узбекистана и их спонсоров. Вместе мы строим будущее.",
         stats: {
           collected_val: "15 млрд UZS",
           collected_label: "ВСЕГО СОБРАНО",
           sponsors_val: "45K",
           sponsors_label: "АКТИВНЫХ СПОНСОРОВ",
           projects_val: "420",
-          projects_label: "УСПЕШНЫХ ПРОЕКТОВ"
+          projects_label: "УСПЕШНЫХ ПРОЕКТОВ",
         },
         stories: {
           title: "Достижения сообщества",
-          subtitle: "Реальные истории успеха авторов проектов и то, чего они достигли с вашей поддержкой.",
+          subtitle:
+            "Реальные истории успеха авторов проектов и то, чего они достигли с вашей поддержкой.",
           view_all: "Все истории",
           badge: "УСПЕХ",
-          read_story: "Читать историю"
+          read_story: "Читать историю",
         },
         telegram: {
           title: "Присоединяйтесь к сообществу",
           desc: "Эксклюзивные новости, анонсы новых проектов и советы по краудфандингу в нашем официальном Telegram-канале.",
-          btn: "Перейти в Telegram-канал"
+          btn: "Перейти в Telegram-канал",
         },
         sponsors_section: {
           title: "Супер-спонсоры Funduz",
           label: "СУПЕР СПОНСОР",
-          items: ["Абдулла Азизов", "Сардор Умурзаков", "Малика Рахмонова", "Жасур Абдуллаев", "Нигора Алиева", "Азизбек Кадыров"]
-        }
+          items: [
+            "Абдулла Азизов",
+            "Сардор Умурзаков",
+            "Малика Рахмонова",
+            "Жасур Абдуллаев",
+            "Нигора Алиева",
+            "Азизбек Кадыров",
+          ],
+        },
       },
       project_view: {
         author_label: "Автор",
@@ -2728,14 +2798,19 @@ const messages = {
         dynamic_edu_text: "Будущее в образовании, и мы должны строить его сейчас.",
         image_caption: "Кадр из процесса реализации проекта",
         benefits_title: "Почему стоит поддержать этот проект?",
-        benefits: ["Местное производство", "Новые рабочие места", "Инновационный подход", "Польза для общества"],
+        benefits: [
+          "Местное производство",
+          "Новые рабочие места",
+          "Инновационный подход",
+          "Польза для общества",
+        ],
         tabs: ["Описание", "Новости", "Комментарии"],
         reward_title: "Выберите награду",
-        reward_count: "доступно"
+        reward_count: "доступно",
       },
       month: {
         september: "Сентябрь",
-      }
+      },
     },
   },
 };

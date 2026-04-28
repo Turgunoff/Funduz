@@ -186,7 +186,7 @@
                     </router-link>
 
                     <router-link
-                      to="/my-projects"
+                      to="/dashboard"
                       class="flex items-center justify-between gap-4 px-4 py-3.5 text-[15px] font-bold text-gray-700 hover:bg-[#f0f9f6] hover:text-[#1a946b] rounded-2xl transition-all"
                     >
                       <div class="flex items-center gap-4">
@@ -531,7 +531,7 @@
             <router-link
               @click="isMenuOpen = false"
               to="/dashboard"
-              class="flex items-center justify-between gap-4 px-3 py-3.5 text-[15px] font-bold text-gray-400 rounded-xl cursor-not-allowed"
+              class="flex items-center justify-between gap-4 px-3 py-3.5 text-[15px] font-bold text-gray-800 hover:bg-[#f0f9f6] hover:text-[#1a946b] rounded-xl transition-all"
             >
               <div class="flex items-center gap-4">
                 <svg

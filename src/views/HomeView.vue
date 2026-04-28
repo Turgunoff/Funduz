@@ -33,10 +33,10 @@ import CTASection from '@/components/CTASection.vue';
 
             <!-- Buttons -->
             <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-5">
-              <router-link to="/dashboard" class="w-full sm:w-auto px-11 py-5 border-2 border-[#1a946b] rounded-[20px] font-bold text-[15px] text-[#1a946b] bg-white hover:bg-[#1a946b] hover:text-white transition-all shadow-xl shadow-green-900/10 cursor-pointer flex items-center justify-center transform hover:-translate-y-1">
+              <router-link to="/explore" class="w-full sm:w-auto px-11 py-5 border-2 border-[#1a946b] rounded-[20px] font-bold text-[15px] text-[#1a946b] bg-white hover:bg-[#1a946b] hover:text-white transition-all shadow-xl shadow-green-900/10 cursor-pointer flex items-center justify-center transform hover:-translate-y-1">
                 {{ $t('hero.btn_contribute') }}
               </router-link>
-              <router-link to="/dashboard" class="w-full sm:w-auto px-11 py-5 border-2 border-[#1a946b] rounded-[20px] font-bold text-[15px] text-[#1a946b] bg-white hover:bg-[#1a946b] hover:text-white transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm transform hover:-translate-y-1 group">
+              <router-link to="/explore" class="w-full sm:w-auto px-11 py-5 border-2 border-[#1a946b] rounded-[20px] font-bold text-[15px] text-[#1a946b] bg-white hover:bg-[#1a946b] hover:text-white transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm transform hover:-translate-y-1 group">
                 {{ $t('hero.btn_create') }}
                 <svg class="w-4 h-4 stroke-current transition-colors" fill="none" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>

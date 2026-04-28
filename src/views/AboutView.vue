@@ -226,10 +226,10 @@
             {{ $t('about.cta_btn_start') }}
           </router-link>
           <router-link 
-            to="/dashboard" 
-            class="px-12 py-5 bg-[#0d5c42] border-2 border-transparent text-white rounded-2xl font-black text-[18px] transition-all duration-300 shadow-xl hover:border-white hover:bg-white hover:text-[#0d5c42] hover:-translate-y-1 transform active:scale-95"
+            to="/explore" 
+            class="w-full sm:w-auto px-10 py-5 bg-white text-[#1a946b] font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-[#1a946b] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1 text-center"
           >
-            {{ $t('about.cta_btn_explore') }}
+            {{ $t("about.cta_btn_explore") }}
           </router-link>
         </div>
       </div>

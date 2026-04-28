@@ -1,165 +1,160 @@
 <template>
-  <div class="pt-28 lg:pt-32 bg-[#fcfcfc] min-h-screen relative overflow-hidden">
-    
-    <!-- Secondary Sub-Navbar (Page Specific) -->
-    <div class="fixed top-16 lg:top-20 left-0 right-0 z-[90] bg-[#f0f9f6] border-b border-[#e1ece8] w-full shadow-sm overflow-x-auto no-scrollbar">
-      <div class="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-8 h-12 flex items-center">
-        <nav class="flex items-center space-x-8 text-[14px] font-bold text-gray-800 shrink-0">
-          <router-link
-            to="/dashboard"
-            class="transition-colors h-12 flex items-center border-b-2 border-[#1a946b] text-[#1a946b] whitespace-nowrap"
-          >
-            {{ $t("nav.projects") }}
-          </router-link>
-          <router-link
-            to="/trends"
-            class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
-          >
-            {{ $t("nav.technologies") }}
-          </router-link>
-          <router-link
-            to="/security"
-            class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
-          >
-            {{ $t("nav.security") }}
-          </router-link>
-        </nav>
-      </div>
-    </div>
-    
-    <!-- Hero Section -->
-    <div class="pt-12 pb-10 lg:pt-20 lg:pb-16 bg-white border-b border-gray-50">
-      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-[28px] md:text-[44px] lg:text-[56px] font-black text-gray-900 leading-[1.2] lg:leading-[1.1] max-w-4xl mx-auto tracking-tight mb-10 lg:mb-12">
-          {{ $t('explore.hero_title') }}
-        </h1>
+  <div class="min-h-screen bg-[#fcfcfc] pt-24 lg:pt-32 pb-20">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Dashboard Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <h1 class="text-[32px] lg:text-[44px] font-black text-gray-900 leading-tight mb-2 italic tracking-tight">
+            {{ $t('nav.menu_dashboard') || 'Dashboard' }}
+          </h1>
+          <p class="text-gray-500 font-medium text-[16px] lg:text-[18px]">
+            {{ $t('dashboard.welcome') || 'Добро пожаловать в ваш личный кабинет' }}
+          </p>
+        </div>
         
-        <!-- Local Search Input -->
-        <div class="relative max-w-xl mx-auto px-4 sm:px-0">
-          <input 
-            v-model="projectStore.searchQuery"
-            @keyup.enter="handleLocalSearch"
-            type="text" 
-            :placeholder="$t('explore.search_placeholder')"
-            class="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 lg:py-5 pl-14 pr-6 text-[15px] lg:text-[16px] font-bold text-gray-900 shadow-sm focus:ring-2 focus:ring-[#1a946b]/20 focus:border-[#1a946b] transition-all outline-none"
-          />
-          <div class="absolute left-9 sm:left-5 top-1/2 -translate-y-1/2 text-gray-400">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-          </div>
+        <!-- Quick Actions -->
+        <div class="flex gap-4">
+          <router-link 
+            to="/create-project" 
+            class="px-8 py-4 bg-[#1a946b] text-white font-bold rounded-2xl hover:bg-[#157a58] transition-all shadow-xl shadow-green-900/10 flex items-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" /></svg>
+            {{ $t('nav.start_project') }}
+          </router-link>
         </div>
       </div>
-    </div>
 
-    <!-- Main Content -->
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
-      
-      <!-- Filter & Sort Bar -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 lg:mb-12 gap-4 lg:gap-6 bg-white p-1.5 lg:p-2 rounded-[24px] lg:rounded-full border border-gray-50 shadow-sm">
-        <!-- Horizontal Scrollable Categories -->
-        <div class="relative flex items-center overflow-x-auto no-scrollbar px-2 py-1 lg:py-0" ref="pillContainer">
-          <!-- Animated Background Pill -->
-          <div 
-            class="absolute bg-[#1a946b] rounded-full transition-all duration-300 ease-out shadow-md"
-            :style="pillStyle"
-          ></div>
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+          </div>
+          <div class="text-[32px] font-black text-gray-900 mb-1">12.5M <span class="text-[14px] text-gray-400 font-bold uppercase">uzs</span></div>
+          <div class="text-[13px] font-black text-gray-400 uppercase tracking-widest">{{ $t('dashboard.total_raised') || 'Собрано' }}</div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-green-50 rounded-2xl flex items-center justify-center text-[#1a946b] mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <div class="text-[32px] font-black text-gray-900 mb-1">4.2M <span class="text-[14px] text-gray-400 font-bold uppercase">uzs</span></div>
+          <div class="text-[13px] font-black text-gray-400 uppercase tracking-widest">{{ $t('dashboard.total_donated') || 'Пожертвовано' }}</div>
+        </div>
 
+        <div class="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+          </div>
+          <div class="text-[32px] font-black text-gray-900 mb-1">{{ userProjects.length }}</div>
+          <div class="text-[13px] font-black text-gray-400 uppercase tracking-widest">{{ $t('dashboard.active_projects') || 'Ваши проекты' }}</div>
+        </div>
+      </div>
+
+      <!-- Main Dashboard Content -->
+      <div class="bg-white rounded-[40px] border border-gray-100 shadow-sm overflow-hidden">
+        <!-- Tabs -->
+        <div class="flex border-b border-gray-50 px-8 pt-6">
           <button 
-            v-for="cat in ['all', 'tech', 'art', 'social', 'edu', 'eco']" 
-            :key="cat"
-            ref="pillButtons"
-            @click="projectStore.setFilter(cat)"
+            v-for="tab in ['projects', 'donations']" 
+            :key="tab"
+            @click="activeTab = tab"
             :class="[
-              'relative z-10 px-5 lg:px-6 py-2.5 lg:py-3 rounded-full font-bold text-[13px] lg:text-[14px] whitespace-nowrap transition-all duration-300',
-              projectStore.filterCategory === cat 
-                ? 'text-white' 
-                : 'text-gray-500 hover:text-gray-900'
+              'px-8 pb-6 text-[15px] font-black uppercase tracking-widest transition-all relative',
+              activeTab === tab ? 'text-[#1a946b]' : 'text-gray-400 hover:text-gray-600'
             ]"
           >
-            {{ $t(`explore.categories.${cat}`) }}
+            {{ $t(`dashboard.tabs.${tab}`) || tab }}
+            <div v-if="activeTab === tab" class="absolute bottom-0 left-0 right-0 h-1 bg-[#1a946b] rounded-t-full"></div>
           </button>
         </div>
 
-        <!-- Sort Select -->
-        <div class="px-2 lg:px-4 mb-1 lg:mb-0">
-          <div class="relative w-full md:min-w-[160px]">
-            <select v-model="projectStore.sortBy" class="appearance-none w-full bg-gray-50 lg:bg-gray-100 border-none rounded-full px-5 lg:px-6 py-2.5 lg:py-3 pr-10 text-[13px] lg:text-[14px] font-bold text-gray-700 focus:ring-2 focus:ring-[#1a946b]/20 cursor-pointer">
-              <option value="newest">{{ $t('explore.sort.newest') }}</option>
-              <option value="popular">{{ $t('explore.sort.popular') }}</option>
-              <option value="ending">{{ $t('explore.sort.ending') }}</option>
-            </select>
-            <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-              <svg class="w-3.5 h-3.5 lg:w-4 lg:h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+        <div class="p-8 lg:p-12">
+          <!-- Projects Tab -->
+          <div v-if="activeTab === 'projects'">
+            <div v-if="userProjects.length > 0" class="space-y-6">
+              <div v-for="project in userProjects" :key="project.id" class="flex flex-col lg:flex-row lg:items-center gap-8 p-6 rounded-[32px] border border-gray-50 hover:border-green-100 hover:bg-green-50/10 transition-all group">
+                <div class="w-full lg:w-48 h-32 rounded-2xl overflow-hidden shrink-0 shadow-sm">
+                  <img :src="project.mainImage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="">
+                </div>
+                <div class="flex-grow">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="px-3 py-1 bg-green-100 text-[#1a946b] text-[10px] font-black uppercase tracking-wider rounded-full">Active</span>
+                    <span class="text-[12px] font-bold text-gray-400 uppercase tracking-widest">{{ project.categoryKey }}</span>
+                  </div>
+                  <h3 class="text-[18px] lg:text-[20px] font-bold text-gray-900 mb-4">{{ project.title }}</h3>
+                  
+                  <!-- Progress Mini -->
+                  <div class="max-w-md">
+                    <div class="flex justify-between text-[12px] font-bold mb-2">
+                      <span class="text-gray-900">{{ formatCurrency(project.raised) }} UZS</span>
+                      <span class="text-[#1a946b]">{{ Math.round((project.raised / project.goal) * 100) }}%</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                      <div class="h-full bg-[#1a946b]" :style="{ width: Math.round((project.raised / project.goal) * 100) + '%' }"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="shrink-0 flex gap-3">
+                  <router-link :to="`/project/${project.id}`" class="p-4 bg-gray-50 text-gray-400 hover:text-[#1a946b] hover:bg-green-50 rounded-2xl transition-all">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                  </router-link>
+                  <button class="p-4 bg-gray-50 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-2xl transition-all">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div v-else class="text-center py-16">
+              <div class="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-gray-200 mx-auto mb-6">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+              </div>
+              <h3 class="text-[20px] font-bold text-gray-900 mb-2">У вас пока нет проектов</h3>
+              <p class="text-gray-400 mb-8 max-w-xs mx-auto">Создайте свой первый проект и начните собирать средства на мечту!</p>
+              <router-link to="/create-project" class="text-[#1a946b] font-black uppercase tracking-widest text-[14px] hover:underline">Начать проект</router-link>
+            </div>
+          </div>
+
+          <!-- Donations Tab -->
+          <div v-else>
+            <div class="overflow-x-auto no-scrollbar">
+              <table class="w-full text-left border-separate border-spacing-y-4">
+                <thead>
+                  <tr class="text-[12px] font-black text-gray-400 uppercase tracking-widest">
+                    <th class="px-6 pb-2">Проект</th>
+                    <th class="px-6 pb-2">Дата</th>
+                    <th class="px-6 pb-2">Сумма</th>
+                    <th class="px-6 pb-2">Статус</th>
+                  </tr>
+                </thead>
+                <tbody class="text-[15px] font-bold">
+                  <tr v-for="i in 3" :key="i" class="bg-gray-50/50 hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-6 rounded-l-3xl border-y border-l border-gray-50">
+                      <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-orange-100 shrink-0 overflow-hidden">
+                          <img src="https://images.unsplash.com/photo-1559027615-cd7607c1f3cf?q=80&w=200&h=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="">
+                        </div>
+                        <span class="text-gray-900 truncate max-w-[200px]">Эко-сад "Чиланзар"</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-6 border-y border-gray-50 text-gray-500">12.04.2024</td>
+                    <td class="px-6 py-6 border-y border-gray-50 text-gray-900">500,000 UZS</td>
+                    <td class="px-6 py-6 rounded-r-3xl border-y border-r border-gray-50">
+                      <span class="px-3 py-1 bg-blue-100 text-blue-600 text-[11px] font-black uppercase rounded-lg">Выполнено</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-8 p-6 bg-blue-50/50 rounded-3xl border border-blue-100 flex items-center gap-4">
+               <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shrink-0">
+                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+               </div>
+               <p class="text-[14px] text-blue-800 font-medium leading-snug">Ваша поддержка помогает авторам реализовывать инновационные идеи в Узбекистане.</p>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Projects Grid -->
-      <div v-if="!projectStore.isLoading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 mb-12 lg:mb-16">
-        <div 
-          v-for="project in projectStore.paginatedItems" 
-          :key="project.id"
-          class="group bg-white rounded-[32px] lg:rounded-[40px] p-5 lg:p-6 border border-gray-100/50 hover:border-[#1a946b]/30 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 flex flex-col h-full"
-        >
-          <!-- Project Image -->
-          <div class="relative rounded-[24px] lg:rounded-[32px] overflow-hidden aspect-[4/3] mb-5 lg:mb-6 bg-gray-50 border border-gray-50 shadow-sm">
-            <img :src="project.mainImage" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-            <div class="absolute top-3 left-3 lg:top-4 lg:left-4 px-3 lg:px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] lg:text-[11px] font-black uppercase tracking-wider text-gray-800">
-              {{ $t(`explore.categories.${project.categoryKey}`) }}
-            </div>
-          </div>
-
-          <!-- Content Meta -->
-          <div class="flex items-center gap-2 mb-4">
-            <div class="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-orange-100 flex items-center justify-center text-[10px] lg:text-[11px] font-bold text-orange-600">
-              U
-            </div>
-            <span class="text-[11px] lg:text-xs font-semibold text-gray-400">User #{{ project.authorId }}</span>
-          </div>
-
-          <!-- Title -->
-          <h3 class="text-[18px] lg:text-[20px] font-bold text-gray-900 leading-[1.3] mb-5 lg:mb-6 min-h-[48px] lg:min-h-[52px]">
-            {{ project.title }}
-          </h3>
-
-          <!-- Progress Block -->
-          <div class="mt-auto">
-            <div class="flex justify-between items-end mb-2.5 lg:mb-3">
-              <div class="text-[16px] lg:text-[17px] font-black text-gray-900">
-                {{ formatCurrency(project.raised) }} <span class="text-[11px] lg:text-[13px] font-bold text-gray-400 uppercase">so'm</span>
-              </div>
-              <div class="text-[13px] lg:text-[14px] font-black text-[#1a946b]">
-                {{ getProgress(project) }}%
-              </div>
-            </div>
-            <div class="w-full h-2 bg-gray-50 rounded-full mb-4 overflow-hidden">
-              <div class="h-full bg-[#1a946b] rounded-full transition-all duration-1000" :style="{ width: getProgress(project) + '%' }"></div>
-            </div>
-            <div class="flex justify-between items-center text-[11px] lg:text-[12px] font-bold text-gray-400 mb-6 lg:mb-8">
-              <span>{{ $t('projects.goal') }}: {{ formatCurrency(project.goal) }}</span>
-              <span>{{ project.donorsCount }} donor</span>
-            </div>
-            <router-link :to="`/project/${project.id}`" class="block w-full py-3.5 lg:py-4 bg-[#f0fdf4] text-[#1a946b] font-black text-center rounded-xl lg:rounded-2xl hover:bg-[#1a946b] hover:text-white transition-all duration-300">
-              {{ $t('projects.more') }}
-            </router-link>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Loading State -->
-      <div v-else class="flex flex-col items-center justify-center py-24 lg:py-32">
-        <div class="w-12 h-12 border-4 border-[#1a946b] border-t-transparent rounded-full animate-spin mb-4"></div>
-        <p class="text-gray-400 font-bold uppercase tracking-widest text-[12px]">{{ $t('explore.loading') || 'Yuklanmoqda...' }}</p>
-      </div>
-
-      <!-- Load More -->
-      <div v-if="projectStore.hasMore" class="flex justify-center pt-4 pb-10 lg:pt-8 lg:pb-12">
-        <button 
-          @click="projectStore.loadMore"
-          class="w-full sm:w-auto px-8 lg:px-14 py-4 bg-white border-2 border-[#0f5238] text-[#0f5238] rounded-full font-black text-[14px] lg:text-[15px] hover:bg-[#0f5238] hover:text-white transition-all duration-300 shadow-sm uppercase tracking-wide"
-        >
-          {{ $t('explore.load_more') }}
-        </button>
       </div>
 
     </div>
@@ -167,56 +162,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch, nextTick } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { useRouter } from 'vue-router';
+import { ref, computed } from 'vue';
+import { useAuthStore } from '../stores/auth';
 import { useProjectStore } from '../stores/projects';
-import type { Project } from '../types/Project';
 
-const { locale } = useI18n();
-const router = useRouter();
+const authStore = useAuthStore();
 const projectStore = useProjectStore();
+
+const activeTab = ref('projects');
+
+const userProjects = computed(() => {
+  if (!authStore.user) return [];
+  return projectStore.allItems.filter(p => p.authorId === authStore.user?.id);
+});
 
 const formatCurrency = (val: number) => {
   return new Intl.NumberFormat('uz-UZ').format(val);
-};
-
-const getProgress = (p: Project) => {
-  return Math.round((p.raised / p.goal) * 100);
-};
-
-onMounted(() => {
-  projectStore.fetchAll();
-});
-
-const pillButtons = ref<HTMLElement[]>([]);
-const pillStyle = ref({
-  left: '0px',
-  width: '0px',
-  height: '0px'
-});
-
-const updatePill = async () => {
-  await nextTick();
-  const index = ['all', 'tech', 'art', 'social', 'edu', 'eco'].indexOf(projectStore.filterCategory);
-  const activeBtn = pillButtons.value[index];
-  if (activeBtn) {
-    pillStyle.value = {
-      left: `${activeBtn.offsetLeft}px`,
-      width: `${activeBtn.offsetWidth}px`,
-      height: `${activeBtn.offsetHeight}px`
-    };
-  }
-};
-
-onMounted(updatePill);
-watch(() => projectStore.filterCategory, updatePill);
-watch(locale, updatePill);
-
-const handleLocalSearch = () => {
-  if (projectStore.searchQuery.trim()) {
-    router.push({ path: '/search', query: { q: projectStore.searchQuery.trim() } });
-  }
 };
 </script>
 

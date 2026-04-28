@@ -24,7 +24,7 @@
         <h3 class="text-[24px] lg:text-[28px] font-bold text-gray-900 mb-4">У вас пока нет сохраненных проектов</h3>
         <p class="text-[16px] text-gray-500 max-w-md mx-auto mb-10">Добавляйте понравившиеся инициативы в избранное, чтобы не потерять их и поддержать в будущем.</p>
         <router-link
-          to="/dashboard"
+          to="/explore"
           class="inline-flex items-center justify-center px-8 py-3.5 bg-white border-2 border-[#1a946b] text-[#1a946b] rounded-xl font-bold text-[15px] hover:bg-[#1a946b] hover:text-white transition-all"
         >
           {{ $t('nav.projects') || 'Смотреть проекты' }}

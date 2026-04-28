@@ -7,7 +7,7 @@
       <div class="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-8 h-12 flex items-center">
         <nav class="flex items-center space-x-8 text-[14px] font-bold text-gray-800 shrink-0">
           <router-link
-            to="/dashboard"
+            to="/explore"
             class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
           >
             {{ $t("nav.projects") }}
@@ -410,7 +410,7 @@
                 {{ $t("how_it_works.cta.btn_create") }}
               </button>
               <button
-                @click="$router.push('/dashboard')"
+                @click="$router.push('/explore')"
                 class="px-10 py-5 bg-[#0d5c42] text-white font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1"
               >
                 {{ $t("how_it_works.cta.btn_projects") }}

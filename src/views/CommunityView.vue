@@ -7,7 +7,7 @@
       <div class="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-8 h-12 flex items-center">
         <nav class="flex items-center space-x-8 text-[14px] font-bold text-gray-800 shrink-0">
           <router-link
-            to="/dashboard"
+            to="/explore"
             class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
           >
             {{ $t("nav.projects") }}

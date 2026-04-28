@@ -57,22 +57,28 @@
               {{ authStore.user.phone }}
             </div>
           </div>
+
+          <!-- Bio Section -->
+          <div v-if="authStore.user?.bio" class="mb-8 p-6 bg-gray-50 rounded-3xl border border-gray-100 italic text-gray-600 leading-relaxed relative">
+            <svg class="absolute top-4 left-4 w-8 h-8 text-gray-100" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 7.55228 14.017 7V4H21.017C21.5693 4 22.017 4.44772 22.017 5V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.017 16H8.017C8.56928 16 9.017 15.5523 9.017 15V9C9.017 8.44772 8.56928 8 8.017 8H4.017C3.46472 8 3.017 7.55228 3.017 7V4H10.017C10.5693 4 11.017 4.44772 11.017 5V15C11.017 18.3137 8.33072 21 5.017 21H3.017Z" /></svg>
+            <p class="relative z-10 pl-6 text-[15px]">{{ authStore.user.bio }}</p>
+          </div>
           
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
             <div class="bg-gray-50 rounded-[20px] p-5 text-center border border-gray-100 hover:border-[#1a946b]/30 transition-colors">
-              <div class="text-[24px] lg:text-[28px] font-bold text-[#1a946b] mb-1 leading-none">12</div>
+              <div class="text-[24px] lg:text-[28px] font-bold text-[#1a946b] mb-1 leading-none">0</div>
               <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest">{{ $t('profile.stats.supported') }}</div>
             </div>
             <div class="bg-gray-50 rounded-[20px] p-5 text-center border border-gray-100 hover:border-[#1a946b]/30 transition-colors">
-              <div class="text-[24px] lg:text-[28px] font-bold text-[#1a946b] mb-1 leading-none">3</div>
+              <div class="text-[24px] lg:text-[28px] font-bold text-[#1a946b] mb-1 leading-none">{{ userProjectsCount }}</div>
               <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest">{{ $t('profile.stats.my_projects') }}</div>
             </div>
             <div class="bg-gray-50 rounded-[20px] p-5 text-center border border-gray-100 hover:border-[#1a946b]/30 transition-colors">
-              <div class="text-[24px] lg:text-[28px] font-bold text-[#1a946b] mb-1 leading-none">8</div>
+              <div class="text-[24px] lg:text-[28px] font-bold text-[#1a946b] mb-1 leading-none">0</div>
               <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest">{{ $t('profile.stats.comments') }}</div>
             </div>
             <div class="bg-gray-50 rounded-[20px] p-5 text-center border border-gray-100 hover:border-[#1a946b]/30 transition-colors">
-              <div class="text-[24px] lg:text-[28px] font-bold text-[#1a946b] mb-1 leading-none">1.2M</div>
+              <div class="text-[24px] lg:text-[28px] font-bold text-[#1a946b] mb-1 leading-none">100</div>
               <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest">{{ $t('profile.stats.points') }}</div>
             </div>
           </div>
@@ -88,7 +94,7 @@
         </div>
         <h2 class="text-[24px] font-bold text-gray-900 mb-2">{{ $t('profile.empty.title') }}</h2>
         <p class="text-gray-500 font-medium">{{ $t('profile.empty.desc') }}</p>
-        <router-link to="/dashboard" class="inline-flex items-center px-8 py-4 mt-8 bg-[#1a946b] text-white font-bold rounded-2xl hover:bg-[#157a58] transition-all shadow-xl shadow-green-900/10">
+        <router-link to="/explore" class="inline-flex items-center px-8 py-4 mt-8 bg-[#1a946b] text-white font-bold rounded-2xl hover:bg-[#157a58] transition-all shadow-xl shadow-green-900/10">
           {{ $t('nav.view_projects') }}
         </router-link>
       </div>
@@ -100,9 +106,17 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { useAuthStore } from '../stores/auth';
+import { useProjectStore } from '../stores/projects';
 
 const authStore = useAuthStore();
+const projectStore = useProjectStore();
+
+const userProjectsCount = computed(() => {
+  if (!authStore.user) return 0;
+  return projectStore.allItems.filter(p => p.authorId === authStore.user?.id).length;
+});
 </script>
 
 <style scoped>

@@ -92,10 +92,11 @@
       </div>
 
       <!-- Real Results -->
-      <div v-else-if="projectStore.filteredItems.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
-        <div 
-          v-for="(project, idx) in projectStore.filteredItems" 
-          :key="project.id"
+      <div v-else-if="projectStore.paginatedItems.length > 0">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+          <div 
+            v-for="(project, idx) in projectStore.paginatedItems" 
+            :key="project.id"
           class="group flex flex-col h-full animate-in fade-in slide-in-from-bottom-8"
           :style="{ animationDelay: (idx * 50) + 'ms' }"
         >
@@ -163,6 +164,18 @@
             </div>
           </div>
         </div>
+
+        <!-- Load More Button -->
+        <div v-if="projectStore.hasMore" class="mt-20 flex justify-center">
+          <button 
+            @click="projectStore.loadMore"
+            class="group relative px-12 py-4 bg-white border-2 border-[#1a946b] text-[#1a946b] font-black text-[15px] rounded-2xl hover:bg-[#1a946b] hover:text-white transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-green-900/10 active:scale-95 overflow-hidden"
+          >
+            <span class="relative z-10 uppercase tracking-widest">{{ $t('explore.load_more') }}</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-600 to-[#1a946b] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </button>
+        </div>
+      </div>
       </div>
 
       <!-- High-End Empty State -->
