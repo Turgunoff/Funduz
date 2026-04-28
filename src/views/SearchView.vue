@@ -24,7 +24,7 @@
             <span v-else>{{ $t('explore.title') }}</span>
           </h1>
           <p class="text-gray-400 text-lg font-medium animate-in fade-in slide-in-from-bottom-6 duration-1000">
-            Используйте поиск в верхней панели, чтобы найти интересующие вас проекты.
+            {{ $t('search.hero_subtitle') }}
           </p>
         </div>
       </div>
@@ -223,22 +223,43 @@ const getProgress = (p: Project) => {
 
 onMounted(async () => {
   await projectStore.fetchAll();
+  
+  // Sync from URL to Store
   if (route.query.q) {
     projectStore.searchQuery = route.query.q as string;
   }
+  if (route.query.cat) {
+    projectStore.filterCategory = route.query.cat as string;
+  }
+  if (route.query.sort) {
+    projectStore.sortBy = route.query.sort as string;
+  }
 })
 
-// Sync store search query with URL query param
-watch(() => projectStore.searchQuery, (newVal) => {
-  router.replace({ query: { ...route.query, q: newVal || undefined } });
+// Sync store state to URL query params
+watch([() => projectStore.searchQuery, () => projectStore.filterCategory, () => projectStore.sortBy], () => {
+  router.replace({ 
+    query: { 
+      ...route.query, 
+      q: projectStore.searchQuery || undefined,
+      cat: projectStore.filterCategory !== 'all' ? projectStore.filterCategory : undefined,
+      sort: projectStore.sortBy !== 'newest' ? projectStore.sortBy : undefined
+    } 
+  });
 });
 
-// Watch URL query param to update store (for back/forward navigation or manual URL edits)
-watch(() => route.query.q, (newQ) => {
-  if (newQ !== projectStore.searchQuery) {
-    projectStore.searchQuery = (newQ as string) || '';
+// Watch URL changes to update store (for back/forward navigation)
+watch(() => route.query, (newQuery) => {
+  if (newQuery.q !== projectStore.searchQuery) {
+    projectStore.searchQuery = (newQuery.q as string) || '';
   }
-});
+  if (newQuery.cat !== projectStore.filterCategory) {
+    projectStore.filterCategory = (newQuery.cat as string) || 'all';
+  }
+  if (newQuery.sort !== projectStore.sortBy) {
+    projectStore.sortBy = (newQuery.sort as string) || 'newest';
+  }
+}, { deep: true });
 
 const highlightText = (text: string) => {
   const q = projectStore.searchQuery
