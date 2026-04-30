@@ -166,13 +166,13 @@
             <div class="flex flex-col sm:flex-row gap-3 lg:gap-4">
               <router-link
                 :to="`/donate/${project.id}`"
-                class="flex-grow py-4 lg:py-5 bg-[#326b4d] text-white font-bold rounded-2xl hover:bg-[#25523a] transition-all cursor-pointer shadow-lg shadow-green-900/10 flex items-center justify-center order-1 text-lg"
+                class="flex-grow py-4 lg:py-5 bg-[#1a946b] text-white font-bold rounded-[20px] border-2 border-[#1a946b] hover:bg-white hover:text-[#1a946b] transition-all duration-300 transform hover:-translate-y-1 shadow-xl shadow-green-900/10 flex items-center justify-center order-1 text-lg"
               >
                 {{ $t("project_view.btn_support") }}
               </router-link>
               <div class="flex gap-3 order-2 sm:order-2">
                 <button
-                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border border-gray-100 rounded-2xl text-gray-400 hover:text-gray-900 transition-all cursor-pointer bg-gray-50/50"
+                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border-2 border-gray-100 rounded-[20px] text-gray-400 hover:text-[#1a946b] hover:border-[#1a946b] bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm cursor-pointer"
                   @click="copyLink"
                 >
                   <svg
@@ -190,8 +190,8 @@
                   </svg>
                 </button>
                 <button
-                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border border-gray-100 rounded-2xl transition-all cursor-pointer bg-gray-50/50"
-                  :class="favoriteStore.isFavorite(project.id) ? 'text-red-500' : 'text-gray-400 hover:text-red-500'"
+                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border-2 rounded-[20px] bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm cursor-pointer"
+                  :class="favoriteStore.isFavorite(project.id) ? 'text-red-500 border-red-200' : 'border-gray-100 text-gray-400 hover:text-red-500 hover:border-red-200'"
                   @click="favoriteStore.toggleFavorite(project.id)"
                 >
                   <svg
@@ -229,8 +229,8 @@
             @click="activeTab = idx"
             :class="
               activeTab === idx
-                ? 'border-[#326b4d] text-gray-900 font-bold'
-                : 'border-transparent text-gray-400 font-medium'
+                ? 'border-[#1a946b] text-[#1a946b] font-bold'
+                : 'border-transparent text-gray-400 font-medium hover:text-gray-600'
             "
             class="pb-4 border-b-2 text-[15px] lg:text-[17px] transition-all cursor-pointer flex items-center gap-2.5 whitespace-nowrap"
           >
@@ -341,12 +341,6 @@
                 <div
                   class="flex items-center gap-3 mb-6 lg:mb-8 bg-gray-50 p-3 lg:p-4 rounded-xl border border-gray-100/50"
                 >
-                  <img
-                    v-if="project.authorAvatar"
-                    :src="project.authorAvatar"
-                    :alt="project.authorName || 'Project creator avatar'"
-                    class="w-full h-full object-cover"
-                  />
                   <svg
                     class="w-4 h-4 text-gray-400"
                     fill="none"
@@ -401,7 +395,7 @@
                 </p>
                 <router-link
                   :to="`/donate/${project.id}`"
-                  class="block w-full py-4 text-center bg-[#326b4d] text-white font-bold rounded-2xl hover:bg-[#25523a] transition-all cursor-pointer shadow-lg shadow-green-900/10"
+                  class="block w-full py-4 text-center bg-[#1a946b] text-white font-bold rounded-[20px] border-2 border-[#1a946b] hover:bg-white hover:text-[#1a946b] transition-all duration-300 transform hover:-translate-y-1 shadow-xl shadow-green-900/10 cursor-pointer"
                 >
                   {{ $t("project_view.btn_support") }}
                 </router-link>
@@ -435,7 +429,7 @@
       </p>
       <router-link
         to="/explore"
-        class="inline-flex items-center gap-2 px-8 py-4 bg-[#326b4d] text-white font-bold rounded-2xl hover:bg-[#25523a] transition-all"
+        class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1a946b] text-white font-bold rounded-[20px] border-2 border-[#1a946b] hover:bg-white hover:text-[#1a946b] transition-all duration-300 transform hover:-translate-y-1 shadow-xl shadow-green-900/10"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path

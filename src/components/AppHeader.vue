@@ -384,6 +384,7 @@
     <!-- Mobile Drawer -->
     <div
       v-show="isMenuOpen"
+      ref="drawerRef"
       class="fixed inset-0 top-16 lg:top-20 bg-white z-[90] lg:hidden overflow-y-auto"
     >
       <div class="p-6 pt-10 flex flex-col gap-10">
@@ -623,7 +624,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, nextTick, onMounted } from "vue";
+import { ref, computed, watch, nextTick, onMounted, onUnmounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useLocaleStore } from "../stores/locale";
 import { useAuthStore } from "../stores/auth";
@@ -688,9 +689,61 @@ watch(
   },
 );
 
+const drawerRef = ref<HTMLElement | null>(null);
+
+const handleKeydown = (e: KeyboardEvent) => {
+  if (!isMenuOpen.value) return;
+
+  // Закрытие по Escape
+  if (e.key === "Escape") {
+    isMenuOpen.value = false;
+    return;
+  }
+
+  // Захват фокуса по Tab
+  if (e.key === "Tab" && drawerRef.value) {
+    const focusableElements = drawerRef.value.querySelectorAll<HTMLElement>(
+      'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusableElements.length === 0) return;
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (!firstElement || !lastElement) return;
+
+    if (e.shiftKey) {
+      if (document.activeElement === firstElement || !drawerRef.value.contains(document.activeElement)) {
+        e.preventDefault();
+        lastElement.focus();
+      }
+    } else {
+      if (document.activeElement === lastElement || !drawerRef.value.contains(document.activeElement)) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    }
+  }
+};
+
 watch(isMenuOpen, (val) => {
-  if (val) document.body.style.overflow = "hidden";
-  else document.body.style.overflow = "";
+  if (val) {
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", handleKeydown);
+    // Автофокус на поле ввода поиска или первую кнопку при открытии
+    nextTick(() => {
+      const firstInput = drawerRef.value?.querySelector<HTMLElement>('input');
+      firstInput?.focus();
+    });
+  } else {
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", handleKeydown);
+  }
+});
+
+onUnmounted(() => {
+  document.body.style.overflow = "";
+  document.removeEventListener("keydown", handleKeydown);
 });
 </script>
 

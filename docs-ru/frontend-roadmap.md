@@ -135,7 +135,7 @@
 - [x] У всех `<input>` — `<label for>` или `aria-label`.
 - [x] Осмысленный `alt` у изображений.
 - [x] Focus-состояния у кнопок.
-- [ ] Focus trap и закрытие по Escape для мобильного drawer.
+- [x] Focus trap и закрытие по Escape для мобильного drawer.
 - [ ] Проверить навигацию с клавиатуры.
 - [ ] Проверить контраст (WCAG AA).
 - [ ] Поддержка `prefers-reduced-motion`.
