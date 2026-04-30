@@ -90,7 +90,7 @@ const handleSubmit = () => {
             <div class="space-y-6">
               <label class="flex items-center gap-3 cursor-pointer group">
                 <input type="checkbox" class="w-5 h-5 rounded border-gray-200 text-[#0b422a] focus:ring-[#0b422a]">
-                <span class="text-[13px] text-gray-500 font-medium">I agree to the <router-link to="/privacy" class="text-[#1a946b] underline hover:text-[#0b422a]">Privacy Policy</router-link></span>
+                <span class="text-[13px] text-gray-500 font-medium">{{ t('contact.form.extra.agree_policy') }} <router-link to="/privacy" class="text-[#1a946b] underline hover:text-[#0b422a]">{{ t('contact.form.extra.privacy_policy') }}</router-link></span>
               </label>
 
               <button 
@@ -144,14 +144,14 @@ const handleSubmit = () => {
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
             </div>
             <div>
-              <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Telegram</div>
-              <div class="text-[16px] font-bold text-gray-900">@funduz_uz</div>
+              <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.form.extra.telegram_label') }}</div>
+              <div class="text-[16px] font-bold text-gray-900">{{ t('contact.form.extra.telegram_val') }}</div>
             </div>
           </div>
 
           <!-- Social Connect -->
           <div class="pt-10 flex items-center justify-between">
-            <span class="text-[13px] font-bold text-gray-900 uppercase tracking-widest">Connect with us</span>
+            <span class="text-[13px] font-bold text-gray-900 uppercase tracking-widest">{{ t('contact.form.extra.connect_with_us') }}</span>
             <div class="flex gap-3">
               <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#0b422a] hover:text-white transition-all duration-300">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
@@ -179,15 +179,15 @@ const handleSubmit = () => {
               <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             </div>
             <div>
-              <h3 class="text-[22px] sm:text-[24px] font-bold text-white mb-2 leading-tight tracking-tight">Looking for quick answers?</h3>
-              <p class="text-[15px] lg:text-[17px] text-white/70 font-medium">Our comprehensive help center might already have what you need.</p>
+              <h3 class="text-[22px] sm:text-[24px] font-bold text-white mb-2 leading-tight tracking-tight">{{ t('contact.form.extra.quick_answers') }}</h3>
+              <p class="text-[15px] lg:text-[17px] text-white/70 font-medium">{{ t('contact.form.extra.quick_answers_desc') }}</p>
             </div>
           </div>
           <router-link 
             to="/faq" 
             class="relative z-10 px-10 py-5 bg-[#0d5c42] text-white font-bold rounded-2xl text-[16px] border-2 border-transparent hover:border-white hover:bg-white hover:text-[#0d5c42] transition-all duration-300 shadow-xl shadow-black/10 transform hover:-translate-y-1 active:scale-95 whitespace-nowrap"
           >
-            Visit FAQ
+            {{ t('contact.form.extra.visit_faq') }}
           </router-link>
         </div>
       </div>
@@ -208,7 +208,7 @@ const handleSubmit = () => {
               <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
             </div>
             <div class="px-6 py-2 bg-white rounded-full shadow-xl shadow-black/10 border border-gray-50 transition-transform hover:scale-105">
-              <span class="text-[13px] font-black text-gray-900 tracking-tight whitespace-nowrap">Funduz HQ - Tashkent</span>
+              <span class="text-[13px] font-black text-gray-900 tracking-tight whitespace-nowrap">{{ t('contact.form.extra.hq') }}</span>
             </div>
           </div>
 

@@ -115,14 +115,14 @@
 - [x] `MyProjectsView.vue` — созданные проекты (редактирование, удаление).
 - [x] `FavoritesView.vue` — избранные проекты.
 - [x] `SettingsView.vue` — язык, уведомления, смена пароля.
-- [ ] `NotificationsView.vue` — mock-уведомления.
+- [x] `NotificationsView.vue` — mock-уведомления.
 
 ## Этап 10 — Дополнительные страницы (0.5 дня)
 
-- [ ] `HelpView.vue` — центр помощи.
-- [ ] `ForgotPasswordView.vue`, `ResetPasswordView.vue`.
-- [ ] `ArticleDetailView.vue` — получение статьи по slug из mock.
-- [ ] `StoryView.vue` — получение истории по ID из mock.
+- [x] `HelpView.vue` — центр помощи.
+- [x] `ForgotPasswordView.vue`, `ResetPasswordView.vue`.
+- [x] `ArticleDetailView.vue` — получение статьи по slug из mock.
+- [x] `StoryView.vue` — получение истории по ID из mock.
 
 ## Этап 11 — Формы и обратная связь (0.5 дня)
 

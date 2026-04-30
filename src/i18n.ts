@@ -26,6 +26,43 @@ const messages = {
       coming_soon: "Tez orada",
       technologies: "Texnologiyalar",
       security: "Xavfsizlik",
+      menu_notifications: "Bildirishnomalar",
+      articles: "Maqolalar",
+      success_stories: "Muvaffaqiyat hikoyalari",
+    },
+    notifications: {
+      title: "Bildirishnomalar",
+      subtitle: "Loyihalaringiz yangilanishlari va faollikni kuzatib boring",
+      mark_all: "Hammasini o'qilgan deb belgilash",
+      empty_title: "Bildirishnomalar hozircha yo'q",
+      empty_desc: "Muhim voqea sodir bo'lganda sizga xabar beramiz.",
+      tabs: {
+        all: "Barchasi",
+        unread: "O'qilmagan"
+      },
+      types: {
+        payment: {
+          title: "To'lov muvaffaqiyatli qabul qilindi",
+          message: "\"{project}\" loyihasini {amount} UZS miqdorida qo'llab-quvvatlaganingiz muvaffaqiyatli o'tdi. Rahmat!"
+        },
+        update: {
+          title: "Loyihada yangilanish",
+          message: "\"{project}\" loyihasi muallifi yangi fotosuratlar va yangiliklar qo'shdi."
+        },
+        goal: {
+          title: "Maqsadga erishildi!",
+          message: "\"{project}\" loyihasi kerakli summani yig'di. Tabriklaymiz!"
+        },
+        alert: {
+          title: "Loyiha yakunlanmoqda",
+          message: "\"{project}\" loyihasi mablag' yig'ish muddati tugashiga 24 soat qoldi."
+        }
+      },
+      times: {
+        now: "Hozir",
+        hour: "{n} soat oldin",
+        day: "{n} kun oldin"
+      }
     },
     dashboard: {
       welcome: "Boshqaruv paneliga xush kelibsiz",
@@ -965,6 +1002,17 @@ const messages = {
           partnership: "Hamkorlik",
           legal: "Huquqiy masalalar",
         },
+        extra: {
+          agree_policy: "Men qoidalarga roziman:",
+          privacy_policy: "Maxfiylik siyosati",
+          telegram_label: "Telegram",
+          telegram_val: "@funduz_uz",
+          connect_with_us: "Biz bilan bog'laning",
+          quick_answers: "Tezkor javoblar kerakmi?",
+          quick_answers_desc: "Bizning yordam markazimizda sizga kerakli narsa allaqachon bo'lishi mumkin.",
+          visit_faq: "FAQ'ni ko'rish",
+          hq: "Funduz HQ - Toshkent"
+        }
       },
       info: {
         title: "Aloqa ma'lumotlari",
@@ -1510,6 +1558,43 @@ const messages = {
       coming_soon: "Скоро",
       technologies: "Технологии",
       security: "Безопасность",
+      menu_notifications: "Уведомления",
+      articles: "Статьи",
+      success_stories: "Истории успеха",
+    },
+    notifications: {
+      title: "Уведомления",
+      subtitle: "Следите за обновлениями ваших проектов и активностью",
+      mark_all: "Прочитать все",
+      empty_title: "Уведомлений пока нет",
+      empty_desc: "Мы сообщим вам, когда произойдет что-то важное.",
+      tabs: {
+        all: "Все",
+        unread: "Непрочитанные"
+      },
+      types: {
+        payment: {
+          title: "Платеж успешно принят",
+          message: "Ваша поддержка проекта \"{project}\" в размере {amount} UZS прошла успешно. Спасибо!"
+        },
+        update: {
+          title: "Обновление в проекте",
+          message: "Автор проекта \"{project}\" добавил новые фотографии и новости."
+        },
+        goal: {
+          title: "Цель достигнута!",
+          message: "Проект \"{project}\" собрал нужную сумму. Поздравляем!"
+        },
+        alert: {
+          title: "Проект завершается",
+          message: "До окончания сбора средств для проекта \"{project}\" осталось 24 часа."
+        }
+      },
+      times: {
+        now: "Только что",
+        hour: "{n} ч. назад",
+        day: "{n} д. назад"
+      }
     },
     dashboard: {
       welcome: "Добро пожаловать в панель управления",
@@ -2342,6 +2427,17 @@ const messages = {
           partnership: "Сотрудничество",
           legal: "Юридические вопросы",
         },
+        extra: {
+          agree_policy: "Я согласен с",
+          privacy_policy: "Политикой конфиденциальности",
+          telegram_label: "Telegram",
+          telegram_val: "@funduz_uz",
+          connect_with_us: "Свяжитесь с нами",
+          quick_answers: "Ищете быстрые ответы?",
+          quick_answers_desc: "В нашем центре помощи уже может быть то, что вам нужно.",
+          visit_faq: "Посетить FAQ",
+          hq: "Funduz HQ - Ташкент"
+        }
       },
       info: {
         title: "Контактная информация",

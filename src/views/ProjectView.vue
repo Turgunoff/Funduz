@@ -456,7 +456,7 @@ import DescriptionTab from '../components/project/DescriptionTab.vue';
 import UpdatesTab from '../components/project/UpdatesTab.vue';
 import CommentsTab from '../components/project/CommentsTab.vue';
 
-const { locale, tm } = useI18n();
+const { tm } = useI18n();
 const route = useRoute();
 const projectStore = useProjectStore();
 const favoriteStore = useFavoriteStore();

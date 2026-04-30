@@ -7,28 +7,26 @@
       <div class="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-8 h-12 flex items-center">
         <nav class="flex items-center space-x-8 text-[14px] font-bold text-gray-800 shrink-0">
           <router-link
-            to="/explore"
+            to="/about"
             class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
           >
-            {{ $t("nav.projects") }}
+            {{ $t("nav.about_short") }}
           </router-link>
           <router-link
-            to="/trends"
+            to="/articles"
             class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
           >
-            {{ $t("nav.technologies") }}
+            {{ $t("nav.articles") }}
           </router-link>
           <router-link
-            to="/security"
+            to="/success-stories"
             class="transition-colors h-12 flex items-center border-b-2 border-transparent hover:text-[#1a946b] whitespace-nowrap"
           >
-            {{ $t("nav.security") }}
+            {{ $t("nav.success_stories") }}
           </router-link>
         </nav>
       </div>
-    </div>
-
-    <div class="pt-32 lg:pt-44 pb-20">
+    </div>    <div class="pt-32 lg:pt-44 pb-20">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
 
