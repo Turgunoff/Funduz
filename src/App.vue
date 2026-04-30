@@ -3,6 +3,7 @@ import { RouterView, useRoute } from 'vue-router'
 import { computed } from 'vue'
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
+import AppToast from './components/ui/AppToast.vue'
 
 const route = useRoute()
 const isAuthPage = computed(() => ['/login', '/register', '/forgot-password', '/reset-password', '/create-project'].includes(route.path))
@@ -15,6 +16,7 @@ const isAuthPage = computed(() => ['/login', '/register', '/forgot-password', '/
       <RouterView />
     </main>
     <AppFooter v-if="!isAuthPage" />
+    <AppToast />
   </div>
 </template>
 

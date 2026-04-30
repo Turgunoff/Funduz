@@ -126,9 +126,9 @@
 
 ## Этап 11 — Формы и обратная связь (0.5 дня)
 
-- [ ] В `ContactView.vue` при отправке показывать success-баннер `v-if="submitted"`.
-- [ ] Компонент `Toast`/`Notification` для всех форм (`src/components/ui/Toast.vue`).
-- [ ] Глобальные компоненты `Loader`, `Modal`, `ConfirmDialog`.
+- [x] В `ContactView.vue` при отправке показывать success-баннер `v-if="submitted"`.
+- [x] Компонент `Toast`/`Notification` для всех форм (`src/components/ui/Toast.vue`).
+- [x] Глобальные компоненты `Loader`, `Modal`, `ConfirmDialog`.
 
 ## Этап 12 — Доступность и UX (1 день)
 

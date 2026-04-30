@@ -36,6 +36,27 @@ const handleSubmit = () => {
         <div class="lg:col-span-7 bg-white rounded-[32px] p-8 lg:p-12 shadow-[0_32px_80px_-16px_rgba(0,0,0,0.06)] border border-gray-50">
           <h2 class="text-[24px] font-bold text-gray-900 mb-10">{{ t('contact.form.title') }}</h2>
           
+          <!-- Success Banner -->
+          <transition 
+            enter-active-class="transition duration-300 ease-out" 
+            enter-from-class="transform -translate-y-4 opacity-0" 
+            enter-to-class="transform translate-y-0 opacity-100" 
+            leave-active-class="transition duration-200 ease-in" 
+            leave-from-class="transform translate-y-0 opacity-100" 
+            leave-to-class="transform -translate-y-4 opacity-0"
+          >
+            <div v-if="submitted" class="mb-8 bg-[#f0fdf4] border border-[#dcfce7] rounded-2xl p-5 flex items-center gap-4 shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-[#1a946b] flex items-center justify-center flex-shrink-0 text-white">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <p class="text-[#14532d] text-[15px] font-bold leading-snug">
+                {{ t('contact.form.success') }}
+              </p>
+            </div>
+          </transition>
+
           <form @submit.prevent="handleSubmit" class="space-y-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <!-- Full Name Field -->
@@ -95,7 +116,7 @@ const handleSubmit = () => {
 
               <button 
                 type="submit" 
-                class="w-full py-5 bg-[#0b422a] hover:bg-[#072a1b] text-white font-bold rounded-full text-[16px] transition-all duration-300 transform active:scale-[0.98]"
+                class="w-full py-5 border-2 border-[#1a946b] rounded-[20px] font-bold text-[16px] text-[#1a946b] bg-white hover:bg-[#1a946b] hover:text-white transition-all duration-300 transform active:scale-[0.98] shadow-lg shadow-green-900/10"
               >
                 {{ t('contact.form.send') }}
               </button>

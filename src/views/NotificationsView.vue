@@ -23,22 +23,22 @@
       </div>
 
       <!-- Filters/Tabs -->
-      <div class="flex items-center gap-2 mb-8 bg-white/50 p-1.5 rounded-2xl border border-gray-100 w-fit">
+      <div class="flex border-b border-gray-100 mb-8 overflow-x-auto no-scrollbar">
         <button 
           @click="activeFilter = 'all'"
-          class="px-6 py-2.5 rounded-xl text-[14px] font-bold transition-all"
-          :class="activeFilter === 'all' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'"
+          class="px-6 sm:px-8 py-4 font-bold text-[15px] border-b-[3px] transition-colors relative whitespace-nowrap"
+          :class="activeFilter === 'all' ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-400 border-transparent hover:text-gray-600'"
         >
           {{ $t('notifications.tabs.all') }}
-          <span class="ml-1.5 opacity-50">{{ notifications.length }}</span>
+          <span class="ml-1.5 text-[13px] opacity-60">{{ notifications.length }}</span>
         </button>
         <button 
           @click="activeFilter = 'unread'"
-          class="px-6 py-2.5 rounded-xl text-[14px] font-bold transition-all"
-          :class="activeFilter === 'unread' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'"
+          class="px-6 sm:px-8 py-4 font-bold text-[15px] border-b-[3px] transition-colors relative whitespace-nowrap"
+          :class="activeFilter === 'unread' ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-400 border-transparent hover:text-gray-600'"
         >
           {{ $t('notifications.tabs.unread') }}
-          <span v-if="unreadCount > 0" class="ml-1.5 px-2 py-0.5 bg-[#1a946b] text-white rounded-full text-[10px]">
+          <span v-if="unreadCount > 0" class="ml-1.5 px-2 py-0.5 bg-[#1a946b] text-white rounded-full text-[11px] align-middle">
             {{ unreadCount }}
           </span>
         </button>

@@ -14,7 +14,7 @@
         </div>
         
         <!-- Quick Actions -->
-        <div class="flex gap-4">
+        <div class="flex flex-wrap gap-4">
           <router-link 
             to="/create-project" 
             class="px-8 py-4 bg-[#1a946b] text-white font-bold rounded-2xl hover:bg-[#157a58] transition-all shadow-xl shadow-green-900/10 flex items-center gap-2"
