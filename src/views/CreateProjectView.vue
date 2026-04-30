@@ -133,9 +133,10 @@
             <label class="block text-[14px] font-bold text-gray-900 mb-2">{{ $t('create.media_label') }}</label>
             <p class="text-[13px] text-gray-400 mb-6">{{ $t('create.media_help') }}</p>
             
-            <div 
+            <button 
+              type="button"
               @click="fileInput?.click()"
-              class="relative w-full aspect-video border-2 border-dashed border-gray-200 rounded-[40px] flex flex-col items-center justify-center bg-white hover:border-[#1a946b] transition-all cursor-pointer overflow-hidden group"
+              class="relative w-full aspect-video border-2 border-dashed border-gray-200 rounded-[40px] flex flex-col items-center justify-center bg-white hover:border-[#1a946b] transition-all cursor-pointer overflow-hidden group focus-visible:outline-none focus-visible:border-[#1a946b] focus-visible:ring-2 focus-visible:ring-[#1a946b] focus-visible:ring-offset-2"
               :class="{'border-red-200 bg-red-50/5': !formData.mainImage && !formData.videoUrl}"
             >
               <img v-if="imagePreview" :src="imagePreview" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project preview" />
@@ -151,7 +152,7 @@
               <div v-else class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <span class="px-6 py-3 bg-white rounded-full text-[13px] font-bold text-gray-900 shadow-xl">{{ $t('create.tab_media') }}</span>
               </div>
-            </div>
+            </button>
             <p v-if="!formData.mainImage && !formData.videoUrl" class="mt-3 text-[12px] text-red-400 flex items-center gap-1.5 px-2">
                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
                {{ $t('create.validate_media') }}

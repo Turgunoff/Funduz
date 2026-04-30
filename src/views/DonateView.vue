@@ -199,27 +199,29 @@ const handleDonate = () => {
           <div class="space-y-4">
             <h3 class="text-[14px] font-bold text-gray-900 uppercase tracking-widest pl-2">{{ $t('donate.rewards.title') }}</h3>
             
-            <div 
+            <button 
+              type="button"
               @click="selectNoReward"
               :class="!selectedRewardId ? 'border-[#1a946b] bg-[#f0f9f6]' : 'border-gray-100 bg-white'"
-              class="p-5 rounded-[24px] border-2 cursor-pointer transition-all hover:border-[#1a946b]/30"
+              class="w-full text-left p-5 rounded-[24px] border-2 cursor-pointer transition-all hover:border-[#1a946b]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a946b] focus-visible:ring-offset-2"
             >
               <h4 class="font-bold text-[15px] text-gray-900">{{ $t('donate.rewards.no_reward') }}</h4>
-            </div>
+            </button>
 
-            <div 
+            <button 
               v-for="reward in project.rewards" 
               :key="reward.id"
+              type="button"
               @click="selectReward(reward)"
               :class="selectedRewardId === reward.id ? 'border-[#1a946b] bg-[#f0f9f6]' : 'border-gray-100 bg-white'"
-              class="p-5 rounded-[24px] border-2 cursor-pointer transition-all hover:border-[#1a946b]/30 group"
+              class="w-full text-left p-5 rounded-[24px] border-2 cursor-pointer transition-all hover:border-[#1a946b]/30 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a946b] focus-visible:ring-offset-2"
             >
               <div class="flex justify-between items-start mb-2">
                 <span class="text-[#1a946b] font-black text-[16px]">{{ formatCurrency(reward.minAmount) }} UZS</span>
               </div>
               <h4 class="font-bold text-[15px] text-gray-900 mb-2 group-hover:text-[#1a946b] transition-colors">{{ reward.title }}</h4>
               <p class="text-[13px] text-gray-500 leading-relaxed line-clamp-2">{{ reward.description }}</p>
-            </div>
+            </button>
           </div>
         </div>
 
