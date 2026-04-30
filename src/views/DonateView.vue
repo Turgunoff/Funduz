@@ -87,8 +87,9 @@ const handleDonate = () => {
               <!-- Personal Info -->
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label class="block text-[14px] font-bold text-gray-900 mb-4 uppercase tracking-widest">{{ $t('login.label_name') }}</label>
+                  <label for="don-name" class="block text-[14px] font-bold text-gray-900 mb-4 uppercase tracking-widest">{{ $t('login.label_name') }}</label>
                   <input 
+                    id="don-name"
                     type="text" 
                     v-model="personalInfo.name"
                     required
@@ -96,8 +97,9 @@ const handleDonate = () => {
                   />
                 </div>
                 <div>
-                  <label class="block text-[14px] font-bold text-gray-900 mb-4 uppercase tracking-widest">{{ $t('login.label_email') }}</label>
+                  <label for="don-email" class="block text-[14px] font-bold text-gray-900 mb-4 uppercase tracking-widest">{{ $t('login.label_email') }}</label>
                   <input 
+                    id="don-email"
                     type="email" 
                     v-model="personalInfo.email"
                     required
@@ -108,7 +110,7 @@ const handleDonate = () => {
 
               <!-- Amount Selection -->
               <div>
-                <label class="block text-[14px] font-bold text-gray-900 mb-4 uppercase tracking-widest">{{ $t('donate.amount_label') }}</label>
+                <label for="don-amount" class="block text-[14px] font-bold text-gray-900 mb-4 uppercase tracking-widest">{{ $t('donate.amount_label') }}</label>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                   <button 
                     v-for="amt in [50000, 100000, 250000, 500000]" 
@@ -123,6 +125,7 @@ const handleDonate = () => {
                 </div>
                 <div class="relative">
                   <input 
+                    id="don-amount"
                     type="number" 
                     v-model="amount"
                     :placeholder="$t('donate.other_amount')"

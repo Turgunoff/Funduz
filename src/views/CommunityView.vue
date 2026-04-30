@@ -120,7 +120,7 @@
               <img
                 :src="story.image"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                alt="Story"
+                :alt="story.title"
               >
               <!-- Success Badge -->
               <div class="absolute top-6 left-6 px-4 py-2 rounded-xl bg-[#7c2d12]/90 backdrop-blur-md text-[10px] lg:text-[11px] font-black text-white uppercase tracking-widest whitespace-nowrap">
@@ -161,7 +161,7 @@
                 <img
                   :src="`https://i.pravatar.cc/150?u=${idx + 10}`"
                   class="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                  alt="Sponsor"
+                  :alt="name"
                 >
               </div>
             </div>

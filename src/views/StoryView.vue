@@ -15,8 +15,8 @@
         
         <!-- Main Cover Background -->
         <img 
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1600" 
-          alt="Cover" 
+          :src="story.image" 
+          :alt="story.title" 
           class="absolute inset-0 w-full h-full object-cover object-center"
         >
         

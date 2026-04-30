@@ -40,6 +40,7 @@
             v-model="projectStore.searchQuery"
             @keyup.enter="handleLocalSearch"
             type="text" 
+            :aria-label="$t('explore.search_placeholder')"
             :placeholder="$t('explore.search_placeholder')"
             class="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 lg:py-5 pl-14 pr-6 text-[15px] lg:text-[16px] font-bold text-gray-900 shadow-sm focus:ring-2 focus:ring-[#1a946b]/20 focus:border-[#1a946b] transition-all outline-none"
           />

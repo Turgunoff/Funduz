@@ -91,8 +91,9 @@
 
 
             <div>
-              <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_email') }}</label>
+              <label for="login-email" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_email') }}</label>
               <input 
+                id="login-email"
                 type="email" 
                 v-model="email"
                 placeholder="example@mail.com"
@@ -107,11 +108,12 @@
 
             <div>
               <div class="flex justify-between items-center mb-3 px-1">
-                <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ $t('login.label_password') }}</label>
+                <label for="login-password" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ $t('login.label_password') }}</label>
                 <router-link to="/forgot-password" class="text-[11px] font-black text-[#1e5c43] hover:underline">{{ $t('login.forgot_password') }}</router-link>
               </div>
               <div class="relative">
                 <input 
+                  id="login-password"
                   :type="showPassword ? 'text' : 'password'" 
                   v-model="password"
                   placeholder="••••••••"

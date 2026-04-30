@@ -40,7 +40,7 @@
             
             <div class="flex items-center gap-6 mb-10">
               <div class="relative w-24 h-24 rounded-full bg-gray-100 overflow-hidden group border border-gray-200 shadow-inner">
-                <img v-if="authStore.user?.avatar" :src="authStore.user.avatar" alt="Avatar" class="w-full h-full object-cover" />
+                <img v-if="authStore.user?.avatar" :src="authStore.user.avatar" :alt="authStore.user?.name || 'User avatar'" class="w-full h-full object-cover" />
                 <div v-else class="w-full h-full flex items-center justify-center bg-orange-100 text-orange-600 font-black text-3xl">
                   {{ authStore.user?.name?.charAt(0) || 'U' }}
                 </div>
@@ -57,20 +57,21 @@
             <form @submit.prevent="saveProfile">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div>
-                  <label class="block text-[13px] font-bold text-gray-700 mb-2">{{ $t('settings.name_label') || 'Имя и фамилия' }}</label>
-                  <input v-model="editForm.name" type="text" class="w-full h-12 bg-gray-50 border border-gray-200 rounded-xl px-4 text-gray-900 font-medium focus:ring-2 focus:ring-[#1a946b] focus:border-transparent outline-none transition-all" required />
+                  <label for="set-name" class="block text-[13px] font-bold text-gray-700 mb-2">{{ $t('settings.name_label') || 'Имя и фамилия' }}</label>
+                  <input id="set-name" v-model="editForm.name" type="text" class="w-full h-12 bg-gray-50 border border-gray-200 rounded-xl px-4 text-gray-900 font-medium focus:ring-2 focus:ring-[#1a946b] focus:border-transparent outline-none transition-all" required />
                 </div>
                 <div>
-                  <label class="block text-[13px] font-bold text-gray-700 mb-2">{{ $t('settings.phone_label') || 'Номер телефона' }}</label>
-                  <input v-model="editForm.phone" type="tel" class="w-full h-12 bg-gray-50 border border-gray-200 rounded-xl px-4 text-gray-900 font-medium focus:ring-2 focus:ring-[#1a946b] focus:border-transparent outline-none transition-all" />
+                  <label for="set-phone" class="block text-[13px] font-bold text-gray-700 mb-2">{{ $t('settings.phone_label') || 'Номер телефона' }}</label>
+                  <input id="set-phone" v-model="editForm.phone" type="tel" class="w-full h-12 bg-gray-50 border border-gray-200 rounded-xl px-4 text-gray-900 font-medium focus:ring-2 focus:ring-[#1a946b] focus:border-transparent outline-none transition-all" />
                 </div>
                 <div class="md:col-span-2">
-                  <label class="block text-[13px] font-bold text-gray-700 mb-2">E-mail</label>
-                  <input v-model="editForm.email" type="email" class="w-full h-12 bg-gray-50 border border-gray-200 rounded-xl px-4 text-gray-900 font-medium focus:ring-2 focus:ring-[#1a946b] focus:border-transparent outline-none transition-all" />
+                  <label for="set-email" class="block text-[13px] font-bold text-gray-700 mb-2">E-mail</label>
+                  <input id="set-email" v-model="editForm.email" type="email" class="w-full h-12 bg-gray-50 border border-gray-200 rounded-xl px-4 text-gray-900 font-medium focus:ring-2 focus:ring-[#1a946b] focus:border-transparent outline-none transition-all" />
                 </div>
                 <div class="md:col-span-2">
-                  <label class="block text-[13px] font-bold text-gray-700 mb-2">{{ $t('profile.edit.bio_label') }}</label>
+                  <label for="set-bio" class="block text-[13px] font-bold text-gray-700 mb-2">{{ $t('profile.edit.bio_label') }}</label>
                   <textarea 
+                    id="set-bio"
                     v-model="editForm.bio" 
                     rows="4" 
                     class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 font-medium focus:ring-2 focus:ring-[#1a946b] focus:border-transparent outline-none transition-all resize-none"

@@ -91,8 +91,9 @@
             
             <!-- Name -->
             <div>
-              <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_name') }}</label>
+              <label for="reg-name" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_name') }}</label>
               <input 
+                id="reg-name"
                 type="text" 
                 v-model="name"
                 :placeholder="$t('login.placeholder_name')"
@@ -107,8 +108,9 @@
 
             <!-- Email -->
             <div>
-              <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_email') }}</label>
+              <label for="reg-email" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_email') }}</label>
               <input 
+                id="reg-email"
                 type="email" 
                 v-model="email"
                 placeholder="example@mail.com"
@@ -124,10 +126,11 @@
             <!-- Password -->
             <div>
               <div class="flex justify-between items-center mb-3 px-1">
-                <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ $t('login.label_password_reg') }}</label>
+                <label for="reg-password" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ $t('login.label_password_reg') }}</label>
               </div>
               <div class="relative">
                 <input 
+                  id="reg-password"
                   :type="showPassword ? 'text' : 'password'" 
                   v-model="password"
                   placeholder="••••••••"

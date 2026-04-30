@@ -18,6 +18,7 @@
         <div class="relative w-full lg:w-[400px]">
           <input
             type="text"
+            :aria-label="$t('articles.search_placeholder')"
             :placeholder="$t('articles.search_placeholder')"
             class="w-full bg-white rounded-full py-5 px-8 pl-14 text-[15px] font-medium border-none shadow-[0_15px_40px_rgba(0,0,0,0.05)] focus:ring-2 focus:ring-[#1a946b] transition-all outline-none"
           />
@@ -208,7 +209,7 @@
             <img
               :src="article.image"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              alt="Article"
+              :alt="article.title"
             />
             <div
               class="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-md rounded-xl text-[10px] font-black uppercase tracking-widest text-gray-900 border border-white/50 shadow-sm"
@@ -265,6 +266,7 @@
         >
           <input
             type="email"
+            :aria-label="$t('newsletter.placeholder')"
             :placeholder="$t('newsletter.placeholder')"
             class="w-full sm:w-[350px] bg-white rounded-full py-5 px-8 text-[15px] font-medium border-none shadow-sm focus:ring-2 focus:ring-[#1a946b] transition-all outline-none"
           />

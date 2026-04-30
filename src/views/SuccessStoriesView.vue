@@ -189,7 +189,7 @@ const testimonials = computed(() => tm('success_stories.testimonials') as unknow
                 <img 
                   :src="story.image" 
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  alt="Story"
+                  :alt="story.title"
                 >
                 <!-- Category Badge -->
                 <div class="absolute top-6 left-6 px-4 py-2 rounded-xl bg-[#1e5c43]/90 backdrop-blur-md text-[10px] lg:text-[11px] font-black text-white uppercase tracking-widest whitespace-nowrap border border-white/20">

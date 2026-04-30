@@ -61,8 +61,9 @@ const handleSubmit = () => {
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <!-- Full Name Field -->
               <div class="space-y-3">
-                <label class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.name') }}</label>
+                <label for="help-name" class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.name') }}</label>
                 <input 
+                  id="help-name"
                   type="text" 
                   placeholder="John Doe"
                   class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all placeholder:text-gray-400 font-medium"
@@ -70,8 +71,9 @@ const handleSubmit = () => {
               </div>
               <!-- Email Address Field -->
               <div class="space-y-3">
-                <label class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.email') }}</label>
+                <label for="help-email" class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.email') }}</label>
                 <input 
+                  id="help-email"
                   type="email" 
                   placeholder="john@example.com"
                   class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all placeholder:text-gray-400 font-medium"
@@ -99,8 +101,9 @@ const handleSubmit = () => {
 
             <!-- Message Textarea -->
             <div class="space-y-3">
-              <label class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.message') }}</label>
+              <label for="help-message" class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.message') }}</label>
               <textarea 
+                id="help-message"
                 rows="6"
                 placeholder="..."
                 class="w-full p-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all resize-none placeholder:text-gray-400 font-medium"
@@ -109,8 +112,8 @@ const handleSubmit = () => {
 
             <!-- Policy & Submit -->
             <div class="space-y-6">
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input type="checkbox" class="w-5 h-5 rounded border-gray-200 text-[#0b422a] focus:ring-[#0b422a]">
+              <label for="help-policy" class="flex items-center gap-3 cursor-pointer group">
+                <input id="help-policy" type="checkbox" class="w-5 h-5 rounded border-gray-200 text-[#0b422a] focus:ring-[#0b422a]">
                 <span class="text-[13px] text-gray-500 font-medium">{{ t('contact.form.extra.agree_policy') }} <router-link to="/privacy" class="text-[#1a946b] underline hover:text-[#0b422a]">{{ t('contact.form.extra.privacy_policy') }}</router-link></span>
               </label>
 

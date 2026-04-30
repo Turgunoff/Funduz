@@ -8,3 +8,17 @@
 
   --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
+
+@layer base {
+  /* Глобальные стили фокуса для доступности (Accessibility) */
+  :focus-visible {
+    outline: 3px solid #1a946b !important;
+    outline-offset: 2px !important;
+    border-radius: inherit;
+  }
+  
+  /* Отключаем дефолтный outline при клике мышью (оставляем только для фокуса с клавиатуры) */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}

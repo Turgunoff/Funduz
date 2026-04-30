@@ -266,6 +266,7 @@
               <div class="space-y-4">
                 <input 
                   type="email" 
+                  aria-label="Your email"
                   placeholder="Your email"
                   class="w-full bg-white/10 border border-white/20 rounded-2xl py-4 px-6 text-white placeholder:text-white/40 focus:ring-2 focus:ring-white outline-none transition-all font-medium"
                 />

@@ -28,6 +28,7 @@
             </div>
             <input 
               type="text" 
+              :aria-label="$t('contact.search_placeholder')"
               :placeholder="$t('contact.search_placeholder')" 
               class="w-full py-5 pr-8 bg-transparent text-[16px] text-gray-900 placeholder:text-gray-400 outline-none rounded-r-full"
             >

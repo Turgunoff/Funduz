@@ -76,9 +76,10 @@
 
           <form @submit.prevent="handleSubmit" class="space-y-6 relative z-0">
             <div>
-              <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">Новый пароль</label>
+              <label for="reset-password" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">Новый пароль</label>
               <div class="relative">
                 <input 
+                  id="reset-password"
                   :type="showPassword ? 'text' : 'password'" 
                   v-model="password"
                   placeholder="••••••••"
@@ -97,9 +98,10 @@
             </div>
 
             <div>
-              <label class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">Подтвердите пароль</label>
+              <label for="reset-confirm" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">Подтвердите пароль</label>
               <div class="relative">
                 <input 
+                  id="reset-confirm"
                   :type="showPasswordConfirm ? 'text' : 'password'" 
                   v-model="passwordConfirm"
                   placeholder="••••••••"

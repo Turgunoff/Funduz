@@ -341,6 +341,12 @@
                 <div
                   class="flex items-center gap-3 mb-6 lg:mb-8 bg-gray-50 p-3 lg:p-4 rounded-xl border border-gray-100/50"
                 >
+                  <img
+                    v-if="project.authorAvatar"
+                    :src="project.authorAvatar"
+                    :alt="project.authorName || 'Project creator avatar'"
+                    class="w-full h-full object-cover"
+                  />
                   <svg
                     class="w-4 h-4 text-gray-400"
                     fill="none"

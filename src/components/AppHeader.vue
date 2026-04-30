@@ -78,6 +78,7 @@
                   @keyup.enter="performSearch"
                   @blur="collapseSearch"
                   type="text"
+                  :aria-label="$t('explore.search_placeholder')"
                   :placeholder="$t('explore.search_placeholder')"
                   class="bg-transparent border-none outline-none w-full text-[14px] text-gray-800 placeholder-gray-400"
                 />
@@ -107,6 +108,7 @@
                   <img
                     v-if="authStore.user?.avatar"
                     :src="authStore.user.avatar"
+                    :alt="authStore.user?.name || 'User avatar'"
                     class="w-full h-full object-cover"
                   />
                   <span v-else>{{ authStore.user?.name?.charAt(0) || "U" }}</span>
@@ -391,6 +393,7 @@
             v-model="projectStore.searchQuery"
             @keyup.enter="performSearch"
             type="text"
+            :aria-label="$t('explore.search_placeholder')"
             :placeholder="$t('explore.search_placeholder')"
             class="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-3.5 text-[15px] font-medium text-gray-800 outline-none focus:border-[#1a946b] focus:ring-1 focus:ring-[#1a946b] transition-all"
           />

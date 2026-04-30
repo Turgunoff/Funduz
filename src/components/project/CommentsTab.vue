@@ -74,7 +74,7 @@ const addComment = () => {
     <div class="space-y-8">
       <div v-for="comment in comments" :key="comment.id" class="flex gap-4 lg:gap-6">
         <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full overflow-hidden flex-shrink-0 bg-gray-100">
-          <img :src="comment.avatar" class="w-full h-full object-cover" alt="Avatar" />
+          <img :src="comment.avatar" class="w-full h-full object-cover" :alt="comment.author" />
         </div>
         <div class="flex-grow">
           <div class="flex items-center justify-between mb-2">
