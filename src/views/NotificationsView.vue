@@ -27,7 +27,7 @@
         <button 
           @click="activeFilter = 'all'"
           class="px-6 sm:px-8 py-4 font-bold text-[15px] border-b-[3px] transition-colors relative whitespace-nowrap"
-          :class="activeFilter === 'all' ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-400 border-transparent hover:text-gray-600'"
+          :class="activeFilter === 'all' ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-500 border-transparent hover:text-gray-600'"
         >
           {{ $t('notifications.tabs.all') }}
           <span class="ml-1.5 text-[13px] opacity-60">{{ notifications.length }}</span>
@@ -35,7 +35,7 @@
         <button 
           @click="activeFilter = 'unread'"
           class="px-6 sm:px-8 py-4 font-bold text-[15px] border-b-[3px] transition-colors relative whitespace-nowrap"
-          :class="activeFilter === 'unread' ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-400 border-transparent hover:text-gray-600'"
+          :class="activeFilter === 'unread' ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-500 border-transparent hover:text-gray-600'"
         >
           {{ $t('notifications.tabs.unread') }}
           <span v-if="unreadCount > 0" class="ml-1.5 px-2 py-0.5 bg-[#1a946b] text-white rounded-full text-[11px] align-middle">
@@ -75,12 +75,12 @@
                 {{ $t(`notifications.types.${note.type}.title`) }}
               </h3>
               <div class="flex items-center gap-3">
-                <span class="text-[11px] font-black text-gray-400 whitespace-nowrap uppercase tracking-wider">
+                <span class="text-[11px] font-black text-gray-500 whitespace-nowrap uppercase tracking-wider">
                   {{ formatTime(note) }}
                 </span>
                 <button 
                   @click.stop="deleteNote(note.id)"
-                  class="p-1.5 text-gray-300 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+                  class="p-1.5 text-gray-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
                 >
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
                 </button>

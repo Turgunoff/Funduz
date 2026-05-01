@@ -31,16 +31,16 @@
           <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
           </div>
-          <div class="text-[32px] font-black text-gray-900 mb-1">12.5M <span class="text-[14px] text-gray-400 font-bold uppercase">uzs</span></div>
-          <div class="text-[13px] font-black text-gray-400 uppercase tracking-widest">{{ $t('dashboard.total_raised') || 'Собрано' }}</div>
+          <div class="text-[32px] font-black text-gray-900 mb-1">12.5M <span class="text-[14px] text-gray-500 font-bold uppercase">uzs</span></div>
+          <div class="text-[13px] font-black text-gray-500 uppercase tracking-widest">{{ $t('dashboard.total_raised') || 'Собрано' }}</div>
         </div>
         
         <div class="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
           <div class="w-12 h-12 bg-green-50 rounded-2xl flex items-center justify-center text-[#1a946b] mb-6">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           </div>
-          <div class="text-[32px] font-black text-gray-900 mb-1">4.2M <span class="text-[14px] text-gray-400 font-bold uppercase">uzs</span></div>
-          <div class="text-[13px] font-black text-gray-400 uppercase tracking-widest">{{ $t('dashboard.total_donated') || 'Пожертвовано' }}</div>
+          <div class="text-[32px] font-black text-gray-900 mb-1">4.2M <span class="text-[14px] text-gray-500 font-bold uppercase">uzs</span></div>
+          <div class="text-[13px] font-black text-gray-500 uppercase tracking-widest">{{ $t('dashboard.total_donated') || 'Пожертвовано' }}</div>
         </div>
 
         <div class="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
@@ -48,7 +48,7 @@
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
           </div>
           <div class="text-[32px] font-black text-gray-900 mb-1">{{ userProjects.length }}</div>
-          <div class="text-[13px] font-black text-gray-400 uppercase tracking-widest">{{ $t('dashboard.active_projects') || 'Ваши проекты' }}</div>
+          <div class="text-[13px] font-black text-gray-500 uppercase tracking-widest">{{ $t('dashboard.active_projects') || 'Ваши проекты' }}</div>
         </div>
       </div>
 
@@ -62,7 +62,7 @@
             @click="activeTab = tab"
             :class="[
               'px-8 pb-6 text-[15px] font-black uppercase tracking-widest transition-all relative',
-              activeTab === tab ? 'text-[#1a946b]' : 'text-gray-400 hover:text-gray-600'
+              activeTab === tab ? 'text-[#1a946b]' : 'text-gray-500 hover:text-gray-600'
             ]"
           >
             {{ $t(`dashboard.tabs.${tab}`) || tab }}
@@ -81,7 +81,7 @@
                 <div class="flex-grow">
                   <div class="flex items-center gap-3 mb-2">
                     <span class="px-3 py-1 bg-green-100 text-[#1a946b] text-[10px] font-black uppercase tracking-wider rounded-full">Active</span>
-                    <span class="text-[12px] font-bold text-gray-400 uppercase tracking-widest">{{ project.categoryKey }}</span>
+                    <span class="text-[12px] font-bold text-gray-500 uppercase tracking-widest">{{ project.categoryKey }}</span>
                   </div>
                   <h3 class="text-[18px] lg:text-[20px] font-bold text-gray-900 mb-4">{{ project.title }}</h3>
                   
@@ -97,10 +97,10 @@
                   </div>
                 </div>
                 <div class="shrink-0 flex gap-3">
-                  <router-link :to="`/project/${project.id}`" class="p-4 bg-gray-50 text-gray-400 hover:text-[#1a946b] hover:bg-green-50 rounded-2xl transition-all">
+                  <router-link :to="`/project/${project.id}`" class="p-4 bg-gray-50 text-gray-500 hover:text-[#1a946b] hover:bg-green-50 rounded-2xl transition-all">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
                   </router-link>
-                  <button class="p-4 bg-gray-50 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-2xl transition-all">
+                  <button class="p-4 bg-gray-50 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-2xl transition-all">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
                   </button>
                 </div>
@@ -111,7 +111,7 @@
                 <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
               </div>
               <h3 class="text-[20px] font-bold text-gray-900 mb-2">У вас пока нет проектов</h3>
-              <p class="text-gray-400 mb-8 max-w-xs mx-auto">Создайте свой первый проект и начните собирать средства на мечту!</p>
+              <p class="text-gray-500 mb-8 max-w-xs mx-auto">Создайте свой первый проект и начните собирать средства на мечту!</p>
               <router-link to="/create-project" class="text-[#1a946b] font-black uppercase tracking-widest text-[14px] hover:underline">Начать проект</router-link>
             </div>
           </div>
@@ -121,7 +121,7 @@
             <div class="overflow-x-auto no-scrollbar">
               <table class="w-full text-left border-separate border-spacing-y-4">
                 <thead>
-                  <tr class="text-[12px] font-black text-gray-400 uppercase tracking-widest">
+                  <tr class="text-[12px] font-black text-gray-500 uppercase tracking-widest">
                     <th class="px-6 pb-2">Проект</th>
                     <th class="px-6 pb-2">Дата</th>
                     <th class="px-6 pb-2">Сумма</th>

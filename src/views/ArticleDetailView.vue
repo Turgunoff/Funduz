@@ -35,7 +35,7 @@
               <div class="text-[16px] font-black text-gray-900 leading-tight">
                 {{ $t(`${slug}.author.name`) }}
               </div>
-              <div class="text-[14px] text-gray-400 font-medium">
+              <div class="text-[14px] text-gray-500 font-medium">
                 {{ $t(`${slug}.author.role`) }} • {{ $t(`${slug}.author.read_time`) }} • {{ $t(`${slug}.author.date`) }}
               </div>
             </div>
@@ -43,12 +43,12 @@
 
           <!-- Action Buttons -->
           <div class="flex items-center gap-3">
-            <button class="w-11 h-11 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#cfeedb] hover:text-[#1a946b] transition-all active:scale-95 shadow-sm">
+            <button class="w-11 h-11 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-[#cfeedb] hover:text-[#1a946b] transition-all active:scale-95 shadow-sm">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
               </svg>
             </button>
-            <button class="w-11 h-11 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#cfeedb] hover:text-[#1a946b] transition-all active:scale-95 shadow-sm">
+            <button class="w-11 h-11 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-[#cfeedb] hover:text-[#1a946b] transition-all active:scale-95 shadow-sm">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
               </svg>
@@ -191,7 +191,7 @@
                   <div class="flex-1">
                     <div class="flex items-center gap-3 mb-2">
                       <span class="font-black text-gray-900 text-[16px]">{{ comment.author }}</span>
-                      <span class="text-gray-400 text-[14px] font-bold">{{ comment.date }}</span>
+                      <span class="text-gray-500 text-[14px] font-bold">{{ comment.date }}</span>
                     </div>
                     <p class="text-gray-600 font-medium leading-[1.6] mb-4 text-[16px]">
                       {{ comment.text }}
@@ -212,7 +212,7 @@
           <div class="lg:col-span-4 space-y-12">
             <!-- About Author Card -->
             <div class="bg-gray-50/50 border border-gray-100/50 rounded-[40px] p-8 lg:p-10 shadow-sm">
-              <div class="text-[12px] font-black text-gray-400 uppercase tracking-widest mb-8">
+              <div class="text-[12px] font-black text-gray-500 uppercase tracking-widest mb-8">
                 {{ $t(`${slug}.sidebar.about`) }}
               </div>
               <div class="w-20 h-20 rounded-[24px] overflow-hidden mb-6 shadow-lg rotate-3 border border-gray-100 bg-[#f0fdf4] flex items-center justify-center text-[#1a946b] font-black text-[24px] uppercase">
@@ -229,7 +229,7 @@
 
             <!-- In this Article -->
             <div class="px-4">
-              <div class="text-[12px] font-black text-gray-400 uppercase tracking-widest mb-8">
+              <div class="text-[12px] font-black text-gray-500 uppercase tracking-widest mb-8">
                 {{ $t(`${slug}.sidebar.in_article`) }}
               </div>
               <ul class="space-y-6">
@@ -331,7 +331,7 @@
                 {{ article.title }}
               </h3>
               
-              <p v-if="article.desc" class="text-gray-400 font-medium text-[16px] leading-relaxed mb-10 line-clamp-3">
+              <p v-if="article.desc" class="text-gray-500 font-medium text-[16px] leading-relaxed mb-10 line-clamp-3">
                 {{ article.desc }}
               </p>
               
@@ -342,7 +342,7 @@
                 </div>
                 <div>
                   <div class="text-[17px] font-black text-gray-900 leading-tight mb-1">{{ article.author }}</div>
-                  <div class="text-[14px] text-gray-400 font-bold">12 Октября, 2024</div>
+                  <div class="text-[14px] text-gray-500 font-bold">12 Октября, 2024</div>
                 </div>
               </div>
             </div>

@@ -57,7 +57,7 @@ onMounted(() => {
             <button 
               @click.stop.prevent="favoriteStore.toggleFavorite(project.id)"
               class="absolute top-5 right-5 w-9 h-9 rounded-full backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-sm z-20"
-              :class="favoriteStore.isFavorite(project.id) ? 'bg-red-500 text-white shadow-red-500/20' : 'bg-white/80 text-gray-400 hover:text-red-500 hover:bg-white'"
+              :class="favoriteStore.isFavorite(project.id) ? 'bg-red-500 text-white shadow-red-500/20' : 'bg-white/80 text-gray-500 hover:text-red-500 hover:bg-white'"
             >
               <svg 
                 class="w-5 h-5" 
@@ -93,7 +93,7 @@ onMounted(() => {
               <div class="w-full h-2 bg-gray-100 rounded-full mb-4 overflow-hidden">
                 <div class="h-full bg-[#1a946b] rounded-full transition-all duration-1000" :style="{ width: getProgress(project) + '%' }"></div>
               </div>
-              <div class="flex flex-wrap justify-between gap-1 text-[13px] font-medium text-gray-400">
+              <div class="flex flex-wrap justify-between gap-1 text-[13px] font-medium text-gray-500">
                 <span>{{ $t('projects.goal') }}: {{ formatCurrency(project.goal) }}</span>
                 <span>{{ project.donorsCount }} {{ $t('projects.donors') }}</span>
               </div>

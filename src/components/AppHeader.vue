@@ -60,7 +60,7 @@
                 class="flex items-center bg-gray-50 border border-gray-200 rounded-full px-4 h-full w-[200px] lg:w-[240px] animate-fade-in"
               >
                 <svg
-                  class="w-4 h-4 text-gray-400 mr-2 shrink-0"
+                  class="w-4 h-4 text-gray-500 mr-2 shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -325,7 +325,7 @@
             <div class="hidden lg:flex items-center pl-4 border-l border-gray-100 h-6 gap-3">
               <button
                 @click="setLocale('uz')"
-                :class="localeStore.currentLocale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'"
+                :class="localeStore.currentLocale === 'uz' ? 'text-[#1a946b]' : 'text-gray-500'"
                 class="text-[13px] font-bold uppercase transition-colors cursor-pointer"
               >
                 Uz
@@ -333,7 +333,7 @@
               <span class="text-gray-200">|</span>
               <button
                 @click="setLocale('ru')"
-                :class="localeStore.currentLocale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'"
+                :class="localeStore.currentLocale === 'ru' ? 'text-[#1a946b]' : 'text-gray-500'"
                 class="text-[13px] font-bold uppercase transition-colors cursor-pointer"
               >
                 Ru
@@ -400,7 +400,7 @@
           />
           <button
             @click="performSearch"
-            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#1a946b]"
+            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-[#1a946b]"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -589,7 +589,7 @@
           </div>
 
           <div class="bg-gray-50 p-6 rounded-[24px] border border-gray-100 text-center mt-2">
-            <p class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-4">
+            <p class="text-[11px] font-black text-gray-500 uppercase tracking-widest mb-4">
               {{ localeStore.currentLocale === "uz" ? "TILNI TANLASH" : "ВЫБОР ЯЗЫКА" }}
             </p>
             <div class="grid grid-cols-2 gap-3">
@@ -598,7 +598,7 @@
                 :class="
                   localeStore.currentLocale === 'uz'
                     ? 'bg-[#1a946b] text-white shadow-lg shadow-green-900/10'
-                    : 'bg-white text-gray-400'
+                    : 'bg-white text-gray-500'
                 "
                 class="py-3.5 rounded-xl font-black transition-all"
               >
@@ -609,7 +609,7 @@
                 :class="
                   localeStore.currentLocale === 'ru'
                     ? 'bg-[#1a946b] text-white shadow-lg shadow-green-900/10'
-                    : 'bg-white text-gray-400'
+                    : 'bg-white text-gray-500'
                 "
                 class="py-3.5 rounded-xl font-black transition-all"
               >

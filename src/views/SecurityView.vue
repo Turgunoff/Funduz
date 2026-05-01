@@ -191,7 +191,7 @@
                     </div>
                   </div>
                   <h3 class="text-[18px] font-bold text-gray-900 mb-3">{{ t('security.all_or_nothing.goal_reached.title') }}</h3>
-                  <p class="text-[12px] lg:text-[14px] text-gray-400 leading-tight">{{ t('security.all_or_nothing.goal_reached.desc') }}</p>
+                  <p class="text-[12px] lg:text-[14px] text-gray-500 leading-tight">{{ t('security.all_or_nothing.goal_reached.desc') }}</p>
                 </div>
 
                 <!-- Not Reached -->
@@ -202,7 +202,7 @@
                     </div>
                   </div>
                   <h3 class="text-[18px] font-bold text-gray-900 mb-3">{{ t('security.all_or_nothing.not_reached.title') }}</h3>
-                  <p class="text-[12px] lg:text-[14px] text-gray-400 leading-tight">{{ t('security.all_or_nothing.not_reached.desc') }}</p>
+                  <p class="text-[12px] lg:text-[14px] text-gray-500 leading-tight">{{ t('security.all_or_nothing.not_reached.desc') }}</p>
                 </div>
               </div>
 
@@ -266,7 +266,7 @@
                     <h4 class="text-[18px] font-bold text-gray-900">Artur Rahim</h4>
                     <svg class="w-5 h-5 text-[#0f4a36]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                   </div>
-                  <p class="text-[14px] text-gray-400 font-medium">{{ t('security.creator_verification.delivered_count') }}</p>
+                  <p class="text-[14px] text-gray-500 font-medium">{{ t('security.creator_verification.delivered_count') }}</p>
                 </div>
               </div>
 
@@ -296,7 +296,7 @@
             <h3 class="text-[22px] lg:text-[26px] font-bold text-white mb-6 tracking-tight group-hover:text-[#10b981] transition-colors">
               {{ t(card.titleKey) }}
             </h3>
-            <p class="text-[15px] lg:text-[16px] text-gray-400 leading-relaxed mb-10 font-medium h-24">
+            <p class="text-[15px] lg:text-[16px] text-gray-500 leading-relaxed mb-10 font-medium h-24">
               {{ t(card.descKey) }}
             </p>
             <div class="pt-8 border-t border-gray-800">
@@ -390,7 +390,7 @@
               </span>
               <div 
                 class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500 shadow-sm"
-                :class="activeFaq === i ? 'bg-[#1a946b] text-white rotate-180' : 'bg-white text-gray-400'"
+                :class="activeFaq === i ? 'bg-[#1a946b] text-white rotate-180' : 'bg-white text-gray-500'"
               >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
               </div>

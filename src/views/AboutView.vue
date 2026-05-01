@@ -58,7 +58,7 @@
             <span class="text-[32px] md:text-[44px] lg:text-[56px] font-black text-white leading-none mb-4">
               {{ stat.value }}
             </span>
-            <span class="text-[10px] lg:text-[11px] font-black text-gray-400 uppercase tracking-[0.2em]">
+            <span class="text-[10px] lg:text-[11px] font-black text-gray-500 uppercase tracking-[0.2em]">
               {{ stat.label }}
             </span>
           </div>
@@ -179,7 +179,7 @@
           <h4 class="text-[20px] lg:text-[22px] font-black text-gray-900 mb-2 tracking-tight">
             {{ member.name }}
           </h4>
-          <p class="text-[14px] lg:text-[15px] text-gray-400 font-bold uppercase tracking-widest">
+          <p class="text-[14px] lg:text-[15px] text-gray-500 font-bold uppercase tracking-widest">
             {{ member.role }}
           </p>
         </div>

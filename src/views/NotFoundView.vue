@@ -28,7 +28,7 @@
               <svg class="w-5 h-5 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </router-link>
           </div>
-          <router-link to="/contact" class="text-gray-400 hover:text-[#1e5c43] font-bold text-[15px] underline underline-offset-4 transition-colors">
+          <router-link to="/contact" class="text-gray-500 hover:text-[#1e5c43] font-bold text-[15px] underline underline-offset-4 transition-colors">
             {{ t('error404.contact') }}
           </router-link>
         </div>

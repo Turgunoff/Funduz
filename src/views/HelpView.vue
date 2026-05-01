@@ -61,29 +61,29 @@ const handleSubmit = () => {
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <!-- Full Name Field -->
               <div class="space-y-3">
-                <label for="help-name" class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.name') }}</label>
+                <label for="help-name" class="text-[11px] font-bold text-gray-500 uppercase tracking-widest ml-1">{{ t('contact.form.name') }}</label>
                 <input 
                   id="help-name"
                   type="text" 
                   placeholder="John Doe"
-                  class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all placeholder:text-gray-400 font-medium"
+                  class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all placeholder:text-gray-500 font-medium"
                 >
               </div>
               <!-- Email Address Field -->
               <div class="space-y-3">
-                <label for="help-email" class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.email') }}</label>
+                <label for="help-email" class="text-[11px] font-bold text-gray-500 uppercase tracking-widest ml-1">{{ t('contact.form.email') }}</label>
                 <input 
                   id="help-email"
                   type="email" 
                   placeholder="john@example.com"
-                  class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all placeholder:text-gray-400 font-medium"
+                  class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all placeholder:text-gray-500 font-medium"
                 >
               </div>
             </div>
 
             <!-- Subject Selection -->
             <div class="space-y-3">
-              <label class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.subject') }}</label>
+              <label class="text-[11px] font-bold text-gray-500 uppercase tracking-widest ml-1">{{ t('contact.form.subject') }}</label>
               <div class="relative">
                 <select 
                   class="w-full h-[56px] px-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all appearance-none cursor-pointer font-medium"
@@ -101,12 +101,12 @@ const handleSubmit = () => {
 
             <!-- Message Textarea -->
             <div class="space-y-3">
-              <label for="help-message" class="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{{ t('contact.form.message') }}</label>
+              <label for="help-message" class="text-[11px] font-bold text-gray-500 uppercase tracking-widest ml-1">{{ t('contact.form.message') }}</label>
               <textarea 
                 id="help-message"
                 rows="6"
                 placeholder="..."
-                class="w-full p-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all resize-none placeholder:text-gray-400 font-medium"
+                class="w-full p-6 bg-[#f3f4f6] border-none rounded-2xl text-[15px] focus:ring-2 focus:ring-[#0b422a] outline-none transition-all resize-none placeholder:text-gray-500 font-medium"
               ></textarea>
             </div>
 
@@ -135,7 +135,7 @@ const handleSubmit = () => {
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
             </div>
             <div>
-              <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.email_label') }}</div>
+              <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-0.5">{{ t('contact.info.email_label') }}</div>
               <div class="text-[16px] font-bold text-gray-900">{{ t('contact.info.email_val') }}</div>
             </div>
           </div>
@@ -146,7 +146,7 @@ const handleSubmit = () => {
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.87 4.87l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-1C7.82 18 2 12.18 2 5V3z" /></svg>
             </div>
             <div>
-              <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.phone_label') }}</div>
+              <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-0.5">{{ t('contact.info.phone_label') }}</div>
               <div class="text-[16px] font-bold text-gray-900">{{ t('contact.info.phone_val') }}</div>
             </div>
           </div>
@@ -157,7 +157,7 @@ const handleSubmit = () => {
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
             </div>
             <div>
-              <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.info.address_label') }}</div>
+              <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-0.5">{{ t('contact.info.address_label') }}</div>
               <div class="text-[16px] font-bold text-gray-900">{{ t('contact.info.address_val') }}</div>
             </div>
           </div>
@@ -168,7 +168,7 @@ const handleSubmit = () => {
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
             </div>
             <div>
-              <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">{{ t('contact.form.extra.telegram_label') }}</div>
+              <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-0.5">{{ t('contact.form.extra.telegram_label') }}</div>
               <div class="text-[16px] font-bold text-gray-900">{{ t('contact.form.extra.telegram_val') }}</div>
             </div>
           </div>

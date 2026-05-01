@@ -43,7 +43,7 @@
                     author?.name
                   }}</span>
                 </div>
-                <p class="text-gray-400 text-[11px] lg:text-xs font-medium">
+                <p class="text-gray-500 text-[11px] lg:text-xs font-medium">
                   {{ author?.deliveredCount || 0 }} {{ $t("project_view.author_success") }}
                 </p>
               </div>
@@ -60,7 +60,7 @@
                   {{ formatNumber(project.raised) }} UZS
                 </h2>
                 <span
-                  class="text-gray-400 text-[10px] lg:text-xs font-bold uppercase tracking-wider"
+                  class="text-gray-500 text-[10px] lg:text-xs font-bold uppercase tracking-wider"
                   >{{ $t("project_view.goal") }}: {{ formatNumber(project.goal) }} UZS</span
                 >
               </div>
@@ -77,7 +77,7 @@
 
               <div class="flex justify-between text-[13px] lg:text-sm font-bold mb-8 lg:mb-10">
                 <span class="text-[#326b4d]">{{ progress }}% {{ $t("project_view.raised") }}</span>
-                <span class="text-gray-400"
+                <span class="text-gray-500"
                   >{{ project.donorsCount }} {{ $t("project_view.donors_count") }}</span
                 >
               </div>
@@ -104,7 +104,7 @@
                     {{ project.donorsCount }}
                   </div>
                   <div
-                    class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none"
+                    class="text-[9px] lg:text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-none"
                   >
                     {{ $t("project_view.stat_donors") }}
                   </div>
@@ -129,7 +129,7 @@
                     {{ daysLeft }}
                   </div>
                   <div
-                    class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none"
+                    class="text-[9px] lg:text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-none"
                   >
                     {{ $t("project_view.stat_days") }}
                   </div>
@@ -154,7 +154,7 @@
                     {{ progress }}%
                   </div>
                   <div
-                    class="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none"
+                    class="text-[9px] lg:text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-none"
                   >
                     {{ $t("project_view.stat_done") }}
                   </div>
@@ -172,7 +172,7 @@
               </router-link>
               <div class="flex gap-3 order-2 sm:order-2">
                 <button
-                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border-2 border-gray-100 rounded-[20px] text-gray-400 hover:text-[#1a946b] hover:border-[#1a946b] bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm cursor-pointer"
+                  class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border-2 border-gray-100 rounded-[20px] text-gray-500 hover:text-[#1a946b] hover:border-[#1a946b] bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm cursor-pointer"
                   @click="copyLink"
                 >
                   <svg
@@ -191,7 +191,7 @@
                 </button>
                 <button
                   class="flex-1 sm:w-16 sm:h-16 h-14 flex items-center justify-center border-2 rounded-[20px] bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm cursor-pointer"
-                  :class="favoriteStore.isFavorite(project.id) ? 'text-red-500 border-red-200' : 'border-gray-100 text-gray-400 hover:text-red-500 hover:border-red-200'"
+                  :class="favoriteStore.isFavorite(project.id) ? 'text-red-500 border-red-200' : 'border-gray-100 text-gray-500 hover:text-red-500 hover:border-red-200'"
                   @click="favoriteStore.toggleFavorite(project.id)"
                 >
                   <svg
@@ -230,7 +230,7 @@
             :class="
               activeTab === idx
                 ? 'border-[#1a946b] text-[#1a946b] font-bold'
-                : 'border-transparent text-gray-400 font-medium hover:text-gray-600'
+                : 'border-transparent text-gray-500 font-medium hover:text-gray-600'
             "
             class="pb-4 border-b-2 text-[15px] lg:text-[17px] transition-all cursor-pointer flex items-center gap-2.5 whitespace-nowrap"
           >
@@ -309,7 +309,7 @@
                 {{ $t("project_view.reward_title") }}
               </h3>
               <span
-                class="text-[10px] lg:text-xs font-bold text-gray-400 bg-gray-50 px-3 py-1.5 rounded-full uppercase tracking-wider"
+                class="text-[10px] lg:text-xs font-bold text-gray-500 bg-gray-50 px-3 py-1.5 rounded-full uppercase tracking-wider"
                 >{{ project.rewards?.length || 0 }} {{ $t("project_view.reward_count") }}</span
               >
             </div>
@@ -325,7 +325,7 @@
                   <div class="text-[#0f5238] font-black text-xl lg:text-2xl">
                     {{ formatNumber(reward.minAmount) }} UZS
                   </div>
-                  <div class="text-[10px] font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded">
+                  <div class="text-[10px] font-bold text-gray-500 bg-gray-50 px-2 py-1 rounded">
                     {{ Math.floor(Math.random() * 20) + 5 }} ta olindi
                   </div>
                 </div>
@@ -342,7 +342,7 @@
                   class="flex items-center gap-3 mb-6 lg:mb-8 bg-gray-50 p-3 lg:p-4 rounded-xl border border-gray-100/50"
                 >
                   <svg
-                    class="w-4 h-4 text-gray-400"
+                    class="w-4 h-4 text-gray-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -412,7 +412,7 @@
   <div v-else class="min-h-screen flex items-center justify-center bg-gray-50 p-6">
     <div class="text-center max-w-md">
       <div
-        class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 text-gray-400"
+        class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 text-gray-500"
       >
         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path

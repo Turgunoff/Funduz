@@ -76,7 +76,7 @@
 
           <form @submit.prevent="handleSubmit" class="space-y-6 relative z-0">
             <div>
-              <label for="reset-password" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">Новый пароль</label>
+              <label for="reset-password" class="block text-[11px] font-black text-gray-500 uppercase tracking-widest mb-3 ml-1">Новый пароль</label>
               <div class="relative">
                 <input 
                   id="reset-password"
@@ -89,7 +89,7 @@
                 <button 
                   type="button"
                   @click="showPassword = !showPassword"
-                  class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-900"
+                  class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-900"
                 >
                   <svg v-if="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
                   <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7 1.274-4.057 5.064-7 9.542-7 1.274 0 2.457.228 3.558.641M9 9l6 6M21 21L3 3" /></svg>
@@ -98,7 +98,7 @@
             </div>
 
             <div>
-              <label for="reset-confirm" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">Подтвердите пароль</label>
+              <label for="reset-confirm" class="block text-[11px] font-black text-gray-500 uppercase tracking-widest mb-3 ml-1">Подтвердите пароль</label>
               <div class="relative">
                 <input 
                   id="reset-confirm"
@@ -111,7 +111,7 @@
                 <button 
                   type="button"
                   @click="showPasswordConfirm = !showPasswordConfirm"
-                  class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-900"
+                  class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-900"
                 >
                   <svg v-if="!showPasswordConfirm" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
                   <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7 1.274-4.057 5.064-7 9.542-7 1.274 0 2.457.228 3.558.641M9 9l6 6M21 21L3 3" /></svg>

@@ -57,7 +57,7 @@
           <div class="text-[28px] lg:text-[34px] font-black text-gray-900 mb-2">
             {{ $t('community.stats.collected_val') }}
           </div>
-          <div class="text-[11px] lg:text-[12px] font-bold text-gray-400 uppercase tracking-widest">
+          <div class="text-[11px] lg:text-[12px] font-bold text-gray-500 uppercase tracking-widest">
             {{ $t('community.stats.collected_label') }}
           </div>
         </div>
@@ -72,7 +72,7 @@
           <div class="text-[28px] lg:text-[34px] font-black text-gray-900 mb-2">
             {{ $t('community.stats.sponsors_val') }}
           </div>
-          <div class="text-[11px] lg:text-[12px] font-bold text-gray-400 uppercase tracking-widest">
+          <div class="text-[11px] lg:text-[12px] font-bold text-gray-500 uppercase tracking-widest">
             {{ $t('community.stats.sponsors_label') }}
           </div>
         </div>
@@ -87,7 +87,7 @@
           <div class="text-[28px] lg:text-[34px] font-black text-gray-900 mb-2">
             {{ $t('community.stats.projects_val') }}
           </div>
-          <div class="text-[11px] lg:text-[12px] font-bold text-gray-400 uppercase tracking-widest">
+          <div class="text-[11px] lg:text-[12px] font-bold text-gray-500 uppercase tracking-widest">
             {{ $t('community.stats.projects_label') }}
           </div>
         </div>

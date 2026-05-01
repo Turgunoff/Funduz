@@ -31,7 +31,7 @@ const updates = [
     </div>
     
     <div v-if="updates.length === 0" class="py-20 text-center bg-gray-50 rounded-[40px] border border-dashed border-gray-200">
-        <p class="text-gray-400 font-bold">Пока новостей нет</p>
+        <p class="text-gray-500 font-bold">Пока новостей нет</p>
     </div>
   </div>
 </template>

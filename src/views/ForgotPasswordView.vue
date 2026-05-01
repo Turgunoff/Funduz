@@ -85,7 +85,7 @@
 
           <form @submit.prevent="handleSubmit" class="space-y-6 relative z-0">
             <div>
-              <label for="forgot-email" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_email') || 'E-mail' }}</label>
+              <label for="forgot-email" class="block text-[11px] font-black text-gray-500 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_email') || 'E-mail' }}</label>
               <input 
                 id="forgot-email"
                 type="email" 

@@ -79,7 +79,7 @@ const addComment = () => {
         <div class="flex-grow">
           <div class="flex items-center justify-between mb-2">
             <h4 class="text-[16px] lg:text-[17px] font-bold text-gray-900">{{ comment.author }}</h4>
-            <span class="text-[13px] font-medium text-gray-400">{{ comment.date }}</span>
+            <span class="text-[13px] font-medium text-gray-500">{{ comment.date }}</span>
           </div>
           <p class="text-gray-600 leading-relaxed text-[15px] lg:text-[16px] font-medium">
             {{ comment.text }}

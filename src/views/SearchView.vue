@@ -18,12 +18,12 @@
           <h1 class="text-[40px] md:text-[56px] lg:text-[72px] font-bold text-gray-900 leading-[1.05] mb-4 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-700">
             <span v-if="projectStore.searchQuery" class="flex flex-wrap items-center gap-x-4">
               <span>{{ projectStore.filteredItems.length }} {{ $t('search.results_count') }}</span>
-              <span class="text-gray-300 font-light italic text-[32px] md:text-[48px] lg:text-[64px]">{{ $t('search.for_query') }}</span>
+              <span class="text-gray-400 font-light italic text-[32px] md:text-[48px] lg:text-[64px]">{{ $t('search.for_query') }}</span>
               <span class="text-[#1a946b] underline decoration-4 decoration-green-100 underline-offset-8">"{{ projectStore.searchQuery }}"</span>
             </span>
             <span v-else>{{ $t('explore.title') }}</span>
           </h1>
-          <p class="text-gray-400 text-lg font-medium animate-in fade-in slide-in-from-bottom-6 duration-1000">
+          <p class="text-gray-500 text-lg font-medium animate-in fade-in slide-in-from-bottom-6 duration-1000">
             {{ $t('search.hero_subtitle') }}
           </p>
         </div>
@@ -58,7 +58,7 @@
         <div class="flex items-center gap-6">
           <div class="h-8 w-px bg-gray-100 hidden md:block"></div>
           <div class="flex items-center gap-3">
-            <span class="text-[12px] font-black text-gray-400 uppercase tracking-widest">{{ $t('search.sort_by') }}</span>
+            <span class="text-[12px] font-black text-gray-500 uppercase tracking-widest">{{ $t('search.sort_by') }}</span>
             <div class="relative group">
               <select 
                 v-model="projectStore.sortBy" 
@@ -68,7 +68,7 @@
                 <option value="newest">{{ $t('search.sort.newest') }}</option>
                 <option value="popular">{{ $t('search.sort.popular') }}</option>
               </select>
-              <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-400 group-hover:text-[#1a946b]">
+              <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-500 group-hover:text-[#1a946b]">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
               </div>
             </div>
@@ -126,10 +126,10 @@
           <div class="flex-grow flex flex-col">
             <!-- Author -->
             <div class="flex items-center gap-3 mb-4">
-              <div class="w-8 h-8 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-[11px] font-bold text-gray-400 group-hover:border-[#1a946b]/30 transition-colors">
+              <div class="w-8 h-8 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-[11px] font-bold text-gray-500 group-hover:border-[#1a946b]/30 transition-colors">
                 {{ project.authorName ? project.authorName[0] : 'U' }}
               </div>
-              <span class="text-[12px] font-bold text-gray-400 uppercase tracking-widest group-hover:text-gray-900 transition-colors">
+              <span class="text-[12px] font-bold text-gray-500 uppercase tracking-widest group-hover:text-gray-900 transition-colors">
                  {{ project.authorName || `User #${project.authorId}` }}
               </span>
             </div>
@@ -145,7 +145,7 @@
             <div class="mt-auto pt-6 border-t border-gray-100/50">
               <div class="flex justify-between items-end mb-4">
                 <div class="text-[20px] font-bold text-gray-900">
-                  {{ formatCurrency(project.raised) }} <span class="text-[12px] font-medium text-gray-400">UZS</span>
+                  {{ formatCurrency(project.raised) }} <span class="text-[12px] font-medium text-gray-500">UZS</span>
                 </div>
                 <div class="text-[14px] font-black text-[#1a946b] bg-green-50 px-3 py-1 rounded-full">
                   {{ getProgress(project) }}%
@@ -157,7 +157,7 @@
                 <div class="absolute h-full bg-[#1a946b] rounded-full transition-all duration-1000 ease-out" :style="{ width: getProgress(project) + '%' }"></div>
               </div>
 
-              <div class="flex justify-between items-center text-[11px] font-black uppercase tracking-widest text-gray-300">
+              <div class="flex justify-between items-center text-[11px] font-black uppercase tracking-widest text-gray-400">
                 <span>{{ $t('projects.goal') }}: {{ formatCurrency(project.goal) }}</span>
                 <span>{{ project.donorsCount }} {{ $t('search.stats.backers') }}</span>
               </div>
@@ -188,11 +188,11 @@
         </div>
         
         <h2 class="text-[32px] font-bold text-gray-900 mb-4 tracking-tight">{{ $t('search.empty_filter_title') }}</h2>
-        <p class="text-gray-400 text-lg mb-12 font-medium leading-relaxed">{{ $t('search.empty_filter_desc') }}</p>
+        <p class="text-gray-500 text-lg mb-12 font-medium leading-relaxed">{{ $t('search.empty_filter_desc') }}</p>
 
         <!-- Elegant Suggestions -->
         <div class="space-y-6">
-           <p class="text-[11px] font-black text-gray-300 uppercase tracking-[0.2em]">{{ $t('search.popular_tags') }}</p>
+           <p class="text-[11px] font-black text-gray-400 uppercase tracking-[0.2em]">{{ $t('search.popular_tags') }}</p>
            <div class="flex flex-wrap justify-center gap-3">
               <button 
                 v-for="cat in ['tech', 'eco', 'social']" 

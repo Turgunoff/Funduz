@@ -118,7 +118,7 @@
             <button class="p-2 bg-white rounded shadow-sm text-gray-900">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
             </button>
-            <button class="p-2 text-gray-400 hover:text-gray-900">
+            <button class="p-2 text-gray-500 hover:text-gray-900">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
             </button>
           </div>
@@ -203,7 +203,7 @@
             <div class="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-orange-100 flex items-center justify-center text-[10px] font-bold text-orange-600">
               U
             </div>
-            <span class="text-[11px] lg:text-xs font-semibold text-gray-400">User #{{ project.authorId }}</span>
+            <span class="text-[11px] lg:text-xs font-semibold text-gray-500">User #{{ project.authorId }}</span>
           </div>
 
           <!-- Title -->
@@ -215,7 +215,7 @@
           <div class="mt-auto">
             <div class="flex justify-between items-end mb-2.5 lg:mb-3">
               <div class="text-[16px] lg:text-[17px] font-black text-gray-900">
-                {{ formatCurrency(project.raised) }} <span class="text-[11px] lg:text-[13px] font-bold text-gray-400 uppercase">so'm</span>
+                {{ formatCurrency(project.raised) }} <span class="text-[11px] lg:text-[13px] font-bold text-gray-500 uppercase">so'm</span>
               </div>
               <div class="text-[13px] lg:text-[14px] font-black text-[#1a946b]">
                 {{ getProgress(project) }}%
@@ -224,7 +224,7 @@
             <div class="w-full h-2 bg-gray-50 rounded-full mb-4 overflow-hidden">
               <div class="h-full bg-[#1a946b] rounded-full transition-all duration-1000" :style="{ width: getProgress(project) + '%' }"></div>
             </div>
-            <div class="flex justify-between items-center text-[11px] lg:text-[12px] font-bold text-gray-400 mb-6 lg:mb-8">
+            <div class="flex justify-between items-center text-[11px] lg:text-[12px] font-bold text-gray-500 mb-6 lg:mb-8">
               <span>{{ $t('projects.goal') }}: {{ formatCurrency(project.goal) }}</span>
               <span>{{ project.donorsCount }} {{ $t('projects.donors') }}</span>
             </div>
@@ -255,7 +255,7 @@
           <h4 class="text-[18px] lg:text-[20px] font-black text-gray-900 mb-2 tracking-tight">
             {{ $t(`projects.cat_${world.key}`) }}
           </h4>
-          <p class="text-[13px] lg:text-[14px] font-bold text-gray-400">
+          <p class="text-[13px] lg:text-[14px] font-bold text-gray-500">
             {{ $t('projects.project_count', { count: world.count }) }}
           </p>
         </div>

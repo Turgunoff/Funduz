@@ -12,12 +12,12 @@
         <div class="flex items-center gap-8">
           <!-- Language Switcher -->
           <div class="hidden sm:flex items-center gap-3 pr-8 border-r border-gray-100">
-            <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase transition-colors">Uz</button>
+            <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-500'" class="text-[13px] font-bold uppercase transition-colors">Uz</button>
             <div class="w-[1px] h-3 bg-gray-200"></div>
-            <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-400'" class="text-[13px] font-bold uppercase transition-colors">Ru</button>
+            <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-500'" class="text-[13px] font-bold uppercase transition-colors">Ru</button>
           </div>
 
-          <router-link to="/" class="text-[14px] font-bold text-gray-400 hover:text-red-500 transition-colors">
+          <router-link to="/" class="text-[14px] font-bold text-gray-500 hover:text-red-500 transition-colors">
             {{ $t('create.cancel') }}
           </router-link>
         </div>
@@ -47,9 +47,9 @@
 
           <!-- Step Tabs -->
           <div class="flex items-center gap-12 border-b border-gray-100 pb-4">
-             <span :class="currentStep === 1 ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-300 border-transparent'" class="text-[11px] font-black uppercase tracking-widest border-b-2 py-4 -mb-5 transition-all">{{ $t('create.tab_info') }}</span>
-             <span :class="currentStep === 2 ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-300 border-transparent'" class="text-[11px] font-black uppercase tracking-widest border-b-2 py-4 -mb-5 transition-all">{{ $t('create.tab_media') }}</span>
-             <span :class="currentStep === 3 ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-300 border-transparent'" class="text-[11px] font-black uppercase tracking-widest border-b-2 py-4 -mb-5 transition-all">{{ $t('create.tab_rewards') }}</span>
+             <span :class="currentStep === 1 ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-400 border-transparent'" class="text-[11px] font-black uppercase tracking-widest border-b-2 py-4 -mb-5 transition-all">{{ $t('create.tab_info') }}</span>
+             <span :class="currentStep === 2 ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-400 border-transparent'" class="text-[11px] font-black uppercase tracking-widest border-b-2 py-4 -mb-5 transition-all">{{ $t('create.tab_media') }}</span>
+             <span :class="currentStep === 3 ? 'text-[#1a946b] border-[#1a946b]' : 'text-gray-400 border-transparent'" class="text-[11px] font-black uppercase tracking-widest border-b-2 py-4 -mb-5 transition-all">{{ $t('create.tab_rewards') }}</span>
           </div>
         </div>
 
@@ -57,7 +57,7 @@
         <div v-if="currentStep === 1" class="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div class="group">
             <label for="proj-title" class="block text-[14px] font-bold text-gray-900 mb-2">{{ $t('create.name_label') }}</label>
-            <p class="text-[13px] text-gray-400 mb-4">{{ $t('create.name_help') }}</p>
+            <p class="text-[13px] text-gray-500 mb-4">{{ $t('create.name_help') }}</p>
             <input 
               id="proj-title"
               v-model="formData.title"
@@ -87,7 +87,7 @@
                   <option value="edu">{{ $t('explore.categories.edu') }}</option>
                   <option value="eco">{{ $t('explore.categories.eco') }}</option>
                 </select>
-                <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                 </div>
               </div>
@@ -114,7 +114,7 @@
                 class="w-full px-6 py-5 bg-white border border-gray-200 rounded-[24px] focus:border-[#1a946b] outline-none transition-all font-medium pr-16"
                 :class="{'border-red-200 bg-red-50/10': formData.goal <= 0}"
               >
-              <span class="absolute right-6 top-1/2 -translate-y-1/2 font-bold text-gray-400">UZS</span>
+              <span class="absolute right-6 top-1/2 -translate-y-1/2 font-bold text-gray-500">UZS</span>
             </div>
             <p v-if="formData.goal <= 0" class="mt-3 text-[12px] text-red-400 flex items-center gap-1.5 px-2">
                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
@@ -131,7 +131,7 @@
         <div v-if="currentStep === 2" class="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div>
             <label class="block text-[14px] font-bold text-gray-900 mb-2">{{ $t('create.media_label') }}</label>
-            <p class="text-[13px] text-gray-400 mb-6">{{ $t('create.media_help') }}</p>
+            <p class="text-[13px] text-gray-500 mb-6">{{ $t('create.media_help') }}</p>
             
             <button 
               type="button"
@@ -143,9 +143,9 @@
               
               <div v-if="!imagePreview" class="flex flex-col items-center">
                 <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-50 transition-colors">
-                  <svg class="w-8 h-8 text-gray-400 group-hover:text-[#1a946b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                  <svg class="w-8 h-8 text-gray-500 group-hover:text-[#1a946b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                 </div>
-                <p class="text-[15px] font-bold text-gray-400 group-hover:text-gray-900 transition-colors">{{ $t('create.media_placeholder') }}</p>
+                <p class="text-[15px] font-bold text-gray-500 group-hover:text-gray-900 transition-colors">{{ $t('create.media_placeholder') }}</p>
               </div>
 
               <!-- Overlay for change -->
@@ -208,7 +208,7 @@
               <!-- Delete Button -->
               <button 
                 @click="removeReward(index)"
-                class="absolute -top-3 -right-3 w-10 h-10 bg-white border border-gray-100 rounded-full flex items-center justify-center text-gray-300 hover:text-red-500 hover:border-red-100 shadow-sm transition-all"
+                class="absolute -top-3 -right-3 w-10 h-10 bg-white border border-gray-100 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-100 shadow-sm transition-all"
               >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
@@ -216,7 +216,7 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="space-y-6">
                   <div>
-                    <label class="block text-[12px] font-black text-gray-400 uppercase tracking-widest mb-3">{{ $t('create.reward_name') }}</label>
+                    <label class="block text-[12px] font-black text-gray-500 uppercase tracking-widest mb-3">{{ $t('create.reward_name') }}</label>
                     <input 
                       v-model="reward.title"
                       type="text" 
@@ -226,21 +226,21 @@
                     >
                   </div>
                   <div>
-                    <label class="block text-[12px] font-black text-gray-400 uppercase tracking-widest mb-3">{{ $t('create.reward_price') }}</label>
+                    <label class="block text-[12px] font-black text-gray-500 uppercase tracking-widest mb-3">{{ $t('create.reward_price') }}</label>
                     <div class="relative">
                       <input 
                         v-model="reward.minAmount"
                         type="number" 
                         class="w-full px-5 py-4 bg-gray-50 border-transparent rounded-[20px] focus:bg-white focus:border-[#1a946b] outline-none transition-all font-medium pr-12"
                       >
-                      <span class="absolute right-4 top-1/2 -translate-y-1/2 font-bold text-gray-300 text-sm">UZS</span>
+                      <span class="absolute right-4 top-1/2 -translate-y-1/2 font-bold text-gray-400 text-sm">UZS</span>
                     </div>
                   </div>
                 </div>
 
                 <div class="space-y-6">
                   <div>
-                    <label class="block text-[12px] font-black text-gray-400 uppercase tracking-widest mb-3">{{ $t('create.reward_desc') }}</label>
+                    <label class="block text-[12px] font-black text-gray-500 uppercase tracking-widest mb-3">{{ $t('create.reward_desc') }}</label>
                     <textarea 
                       v-model="reward.description"
                       rows="4"
@@ -256,7 +256,7 @@
                <div class="w-20 h-20 bg-gray-50 rounded-3xl flex items-center justify-center mb-6">
                   <svg class="w-10 h-10 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
                </div>
-               <p class="text-gray-400 font-medium">{{ $t('create.reward_empty') }}</p>
+               <p class="text-gray-500 font-medium">{{ $t('create.reward_empty') }}</p>
                <p class="mt-4 text-[12px] text-red-400 flex items-center gap-1.5">
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
                   {{ $t('create.validate_rewards') }}
@@ -270,7 +270,7 @@
            <div class="mb-10 flex items-center justify-between">
               <div>
                 <h2 class="text-[28px] font-bold text-gray-900 mb-2">Предпросмотр</h2>
-                <p class="text-gray-400">Проверьте, как ваша страница будет выглядеть для спонсоров.</p>
+                <p class="text-gray-500">Проверьте, как ваша страница будет выглядеть для спонсоров.</p>
               </div>
               <div class="px-4 py-2 bg-yellow-50 text-yellow-700 text-[12px] font-bold rounded-full uppercase tracking-wider">Черновик</div>
            </div>
@@ -279,7 +279,7 @@
            <div class="bg-white rounded-[48px] overflow-hidden shadow-2xl shadow-gray-200/50 border border-gray-100">
               <div class="aspect-video w-full bg-gray-100 relative">
                  <img v-if="imagePreview" :src="imagePreview" class="w-full h-full object-cover" alt="Project preview" />
-                 <div v-else class="w-full h-full flex items-center justify-center text-gray-300">
+                 <div v-else class="w-full h-full flex items-center justify-center text-gray-400">
                     <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                  </div>
               </div>
@@ -287,7 +287,7 @@
               <div class="p-10 lg:p-14">
                  <div class="flex items-center gap-3 mb-6">
                     <span class="px-4 py-1.5 bg-green-50 text-[#1a946b] text-[12px] font-black rounded-full uppercase tracking-wider">{{ $t(`explore.categories.${formData.category}`) }}</span>
-                    <span class="text-gray-300">•</span>
+                    <span class="text-gray-400">•</span>
                     <span class="text-[13px] font-bold text-gray-500">{{ formData.duration }} дней осталось</span>
                  </div>
 
@@ -302,13 +302,13 @@
                     <div class="space-y-8">
                        <div class="bg-gray-50 rounded-[32px] p-8">
                           <div class="text-[32px] font-bold text-gray-900 mb-2">0 UZS</div>
-                          <div class="text-gray-400 text-sm mb-6">собрано из {{ formData.goal.toLocaleString() }} UZS</div>
+                          <div class="text-gray-500 text-sm mb-6">собрано из {{ formData.goal.toLocaleString() }} UZS</div>
                           <div class="h-2 w-full bg-gray-200 rounded-full mb-6">
                              <div class="h-full bg-[#1a946b] rounded-full" style="width: 0%"></div>
                           </div>
                           <div class="flex justify-between text-sm font-bold">
                              <span class="text-gray-900">0%</span>
-                             <span class="text-gray-400">0 спонсоров</span>
+                             <span class="text-gray-500">0 спонсоров</span>
                           </div>
                        </div>
 
@@ -335,7 +335,7 @@
         <button 
           v-if="currentStep > 1"
           @click="currentStep--"
-          class="flex items-center gap-3 text-[14px] font-black text-gray-400 hover:text-gray-900 transition-colors uppercase tracking-[0.1em]"
+          class="flex items-center gap-3 text-[14px] font-black text-gray-500 hover:text-gray-900 transition-colors uppercase tracking-[0.1em]"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
           {{ $t('create.back') }}

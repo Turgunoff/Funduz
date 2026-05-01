@@ -37,7 +37,7 @@
                     'w-full text-left text-[14px] font-bold transition-all duration-300 pl-4 border-l-2',
                     activeIdx === idx 
                       ? 'text-[#1e5c43] border-[#1e5c43]' 
-                      : 'text-gray-400 border-transparent hover:text-gray-600'
+                      : 'text-gray-500 border-transparent hover:text-gray-600'
                   ]"
                 >
                   {{ String(idx + 1).padStart(2, '0') }}. {{ section.title }}

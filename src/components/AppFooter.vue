@@ -106,7 +106,7 @@
 
       <!-- Bottom Section: Copyright & Socials -->
       <div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center">
-        <p class="text-gray-400 text-[14px] order-2 md:order-1">
+        <p class="text-gray-500 text-[14px] order-2 md:order-1">
           {{ $t("footer.copyright") }}
         </p>
         <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-8 order-1 md:order-2">

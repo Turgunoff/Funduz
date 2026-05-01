@@ -42,7 +42,7 @@
         
         <!-- Sidebar Navigation (Minimal version as per screenshot) -->
         <div class="lg:w-[240px] lg:sticky lg:top-32 hidden lg:block">
-          <div class="text-[11px] font-black text-gray-300 uppercase tracking-[0.2em] mb-6">
+          <div class="text-[11px] font-black text-gray-400 uppercase tracking-[0.2em] mb-6">
             {{ $t('privacy.toc') }}
           </div>
           <nav class="flex flex-col gap-4">
@@ -52,7 +52,7 @@
               @click="scrollToSection(idx)"
               :class="[
                 'text-left text-[14px] font-bold transition-all duration-300 hover:text-gray-900',
-                activeIdx === idx ? 'text-[#1e5c43]' : 'text-gray-400'
+                activeIdx === idx ? 'text-[#1e5c43]' : 'text-gray-500'
               ]"
             >
               {{ section.title }}

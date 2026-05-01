@@ -23,7 +23,7 @@
             class="w-full bg-white rounded-full py-5 px-8 pl-14 text-[15px] font-medium border-none shadow-[0_15px_40px_rgba(0,0,0,0.05)] focus:ring-2 focus:ring-[#1a946b] transition-all outline-none"
           />
           <svg
-            class="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+            class="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -93,7 +93,7 @@
                 <div class="text-gray-900 font-bold text-[15px]">
                   {{ $t("articles.featured.author") }}
                 </div>
-                <div class="text-gray-400 text-[13px] font-medium">
+                <div class="text-gray-500 text-[13px] font-medium">
                   {{ $t("articles.featured.read_time") }}
                 </div>
               </div>
@@ -229,7 +229,7 @@
             <div class="flex items-center gap-3 pt-6 border-t border-gray-50">
               <div>
                 <div class="text-gray-900 font-bold text-[14px]">Author #{{ article.authorId }}</div>
-                <div class="text-gray-400 text-[12px] font-medium">{{ article.createdAt }}</div>
+                <div class="text-gray-500 text-[12px] font-medium">{{ article.createdAt }}</div>
               </div>
             </div>
           </div>
@@ -237,7 +237,7 @@
       </div>
       <div v-else class="flex flex-col items-center justify-center py-24 lg:py-32">
         <div class="w-12 h-12 border-4 border-[#1a946b] border-t-transparent rounded-full animate-spin mb-4"></div>
-        <p class="text-gray-400 font-bold uppercase tracking-widest text-[12px]">Maqolalar yuklanmoqda...</p>
+        <p class="text-gray-500 font-bold uppercase tracking-widest text-[12px]">Maqolalar yuklanmoqda...</p>
       </div>
     </div>
 

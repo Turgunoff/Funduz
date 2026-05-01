@@ -23,14 +23,14 @@
           <div class="absolute inset-0 bg-black/5 rounded-full blur-xl transform translate-y-3 pointer-events-none"></div>
           
           <div class="relative bg-white rounded-full flex items-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-300">
-            <div class="pl-6 pr-3 text-gray-400">
+            <div class="pl-6 pr-3 text-gray-500">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
             </div>
             <input 
               type="text" 
               :aria-label="$t('contact.search_placeholder')"
               :placeholder="$t('contact.search_placeholder')" 
-              class="w-full py-5 pr-8 bg-transparent text-[16px] text-gray-900 placeholder:text-gray-400 outline-none rounded-r-full"
+              class="w-full py-5 pr-8 bg-transparent text-[16px] text-gray-900 placeholder:text-gray-500 outline-none rounded-r-full"
             >
           </div>
         </div>
@@ -85,7 +85,7 @@
               <div 
                 :class="[
                   'transition-transform duration-300',
-                  expandedIdx === idx ? 'rotate-180 text-[#1e5c43]' : 'text-gray-400'
+                  expandedIdx === idx ? 'rotate-180 text-[#1e5c43]' : 'text-gray-500'
                 ]"
               >
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

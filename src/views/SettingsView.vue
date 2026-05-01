@@ -50,7 +50,7 @@
               </div>
               <div>
                 <button class="px-5 py-2.5 bg-gray-50 text-gray-700 font-bold text-[13px] rounded-xl hover:bg-gray-100 transition-colors mb-2">Изменить фото</button>
-                <p class="text-[12px] text-gray-400">JPG, GIF или PNG. Макс размер: 5МБ</p>
+                <p class="text-[12px] text-gray-500">JPG, GIF или PNG. Макс размер: 5МБ</p>
               </div>
             </div>
 

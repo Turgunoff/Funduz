@@ -80,7 +80,7 @@
             <div class="absolute inset-0 flex items-center">
               <div class="w-full border-t border-gray-100"></div>
             </div>
-            <span class="relative bg-white px-4 text-[11px] font-black text-gray-300 uppercase tracking-[0.2em]">{{ $t('login.or') }}</span>
+            <span class="relative bg-white px-4 text-[11px] font-black text-gray-400 uppercase tracking-[0.2em]">{{ $t('login.or') }}</span>
           </div>
 
           <!-- Login/Register Form Items -->
@@ -91,7 +91,7 @@
 
 
             <div>
-              <label for="login-email" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_email') }}</label>
+              <label for="login-email" class="block text-[11px] font-black text-gray-500 uppercase tracking-widest mb-3 ml-1">{{ $t('login.label_email') }}</label>
               <input 
                 id="login-email"
                 type="email" 
@@ -108,7 +108,7 @@
 
             <div>
               <div class="flex justify-between items-center mb-3 px-1">
-                <label for="login-password" class="block text-[11px] font-black text-gray-400 uppercase tracking-widest">{{ $t('login.label_password') }}</label>
+                <label for="login-password" class="block text-[11px] font-black text-gray-500 uppercase tracking-widest">{{ $t('login.label_password') }}</label>
                 <router-link to="/forgot-password" class="text-[11px] font-black text-[#1e5c43] hover:underline">{{ $t('login.forgot_password') }}</router-link>
               </div>
               <div class="relative">
@@ -123,7 +123,7 @@
                 <button 
                   type="button"
                   @click="showPassword = !showPassword"
-                  class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-900"
+                  class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-900"
                 >
                   <svg v-if="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
                   <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7 1.274-4.057 5.064-7 9.542-7 1.274 0 2.457.228 3.558.641M9 9l6 6M21 21L3 3" /></svg>
@@ -150,7 +150,7 @@
         </div>
 
         <!-- Extra Info Footer -->
-        <p class="mt-8 text-center text-[12px] text-gray-400 leading-relaxed px-4">
+        <p class="mt-8 text-center text-[12px] text-gray-500 leading-relaxed px-4">
           {{ $t('login.footer_text_start') }}
           <a href="#" class="font-bold text-gray-500 hover:text-[#1e5c43]">Foydalanish shartlari</a>
           {{ $t('login.footer_text_and') }}
@@ -160,11 +160,11 @@
 
         <!-- Help Links -->
         <div class="mt-12 flex justify-center gap-8">
-           <a href="#" class="flex items-center gap-2 text-[12px] font-bold text-gray-400 hover:text-gray-900 transition-colors">
+           <a href="#" class="flex items-center gap-2 text-[12px] font-bold text-gray-500 hover:text-gray-900 transition-colors">
              <div class="w-1.5 h-1.5 rounded-full bg-gray-200"></div>
              Yordam markazi
            </a>
-           <a href="#" class="flex items-center gap-2 text-[12px] font-bold text-gray-400 hover:text-gray-900 transition-colors">
+           <a href="#" class="flex items-center gap-2 text-[12px] font-bold text-gray-500 hover:text-gray-900 transition-colors">
              <div class="w-1.5 h-1.5 rounded-full bg-gray-200"></div>
              Xavfsiz to'lovlar
            </a>

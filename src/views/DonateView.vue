@@ -133,7 +133,7 @@ const handleDonate = () => {
                     required
                     class="w-full h-14 bg-gray-50 border-2 border-gray-100 rounded-2xl px-6 text-gray-900 font-bold text-lg focus:bg-white focus:ring-4 focus:ring-[#1a946b]/10 focus:border-[#1a946b] outline-none transition-all"
                   />
-                  <div class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 font-bold">UZS</div>
+                  <div class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-500 font-bold">UZS</div>
                 </div>
               </div>
 
@@ -173,7 +173,7 @@ const handleDonate = () => {
                 <div v-if="isProcessing" class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               </button>
 
-              <p class="text-center text-[12px] text-gray-400 font-medium leading-relaxed">
+              <p class="text-center text-[12px] text-gray-500 font-medium leading-relaxed">
                 {{ $t('donate.footer_notice') }}
               </p>
             </form>
@@ -188,7 +188,7 @@ const handleDonate = () => {
                 <img :src="project.mainImage" class="w-full h-full object-cover" :alt="project.title" />
              </div>
              <h3 class="font-bold text-[16px] text-gray-900 leading-tight mb-2">{{ project.title }}</h3>
-             <div class="flex items-center gap-2 text-gray-400 text-[13px] font-bold">
+             <div class="flex items-center gap-2 text-gray-500 text-[13px] font-bold">
                 <span>{{ project.donorsCount }} {{ $t('projects.donors') }}</span>
                 <span class="w-1 h-1 rounded-full bg-gray-300"></span>
                 <span>{{ Math.round((project.raised / project.goal) * 100) }}%</span>

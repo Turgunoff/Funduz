@@ -44,7 +44,7 @@
             :placeholder="$t('explore.search_placeholder')"
             class="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 lg:py-5 pl-14 pr-6 text-[15px] lg:text-[16px] font-bold text-gray-900 shadow-sm focus:ring-2 focus:ring-[#1a946b]/20 focus:border-[#1a946b] transition-all outline-none"
           />
-          <div class="absolute left-9 sm:left-5 top-1/2 -translate-y-1/2 text-gray-400">
+          <div class="absolute left-9 sm:left-5 top-1/2 -translate-y-1/2 text-gray-500">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
           </div>
         </div>
@@ -89,7 +89,7 @@
               <option value="ending">{{ $t('explore.sort.ending') }}</option>
             </select>
             <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-              <svg class="w-3.5 h-3.5 lg:w-4 lg:h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+              <svg class="w-3.5 h-3.5 lg:w-4 lg:h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@
             <button 
               @click.stop.prevent="favoriteStore.toggleFavorite(project.id)"
               class="absolute top-3 right-3 lg:top-4 lg:right-4 w-10 h-10 lg:w-12 lg:h-12 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-sm transition-all duration-300 hover:scale-110 active:scale-95"
-              :class="favoriteStore.isFavorite(project.id) ? 'text-red-500' : 'text-gray-400'"
+              :class="favoriteStore.isFavorite(project.id) ? 'text-red-500' : 'text-gray-500'"
             >
               <svg 
                 class="w-5 h-5 lg:w-6 lg:h-6" 
@@ -132,7 +132,7 @@
             <div class="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-orange-100 flex items-center justify-center text-[10px] lg:text-[11px] font-bold text-orange-600">
               U
             </div>
-            <span class="text-[11px] lg:text-xs font-semibold text-gray-400">User #{{ project.authorId }}</span>
+            <span class="text-[11px] lg:text-xs font-semibold text-gray-500">User #{{ project.authorId }}</span>
           </div>
 
           <!-- Title -->
@@ -146,7 +146,7 @@
           <div class="mt-auto">
             <div class="flex justify-between items-end mb-2.5 lg:mb-3">
               <div class="text-[16px] lg:text-[17px] font-black text-gray-900">
-                {{ formatCurrency(project.raised) }} <span class="text-[11px] lg:text-[13px] font-bold text-gray-400 uppercase">so'm</span>
+                {{ formatCurrency(project.raised) }} <span class="text-[11px] lg:text-[13px] font-bold text-gray-500 uppercase">so'm</span>
               </div>
               <div class="text-[13px] lg:text-[14px] font-black text-[#1a946b]">
                 {{ getProgress(project) }}%
@@ -155,7 +155,7 @@
             <div class="w-full h-2 bg-gray-50 rounded-full mb-4 overflow-hidden">
               <div class="h-full bg-[#1a946b] rounded-full transition-all duration-1000" :style="{ width: getProgress(project) + '%' }"></div>
             </div>
-            <div class="flex justify-between items-center text-[11px] lg:text-[12px] font-bold text-gray-400 mb-6 lg:mb-8">
+            <div class="flex justify-between items-center text-[11px] lg:text-[12px] font-bold text-gray-500 mb-6 lg:mb-8">
               <span>{{ $t('projects.goal') }}: {{ formatCurrency(project.goal) }}</span>
               <span>{{ project.donorsCount }} donor</span>
             </div>
@@ -169,7 +169,7 @@
       <!-- Loading State -->
       <div v-else class="flex flex-col items-center justify-center py-24 lg:py-32">
         <div class="w-12 h-12 border-4 border-[#1a946b] border-t-transparent rounded-full animate-spin mb-4"></div>
-        <p class="text-gray-400 font-bold uppercase tracking-widest text-[12px]">{{ $t('explore.loading') || 'Yuklanmoqda...' }}</p>
+        <p class="text-gray-500 font-bold uppercase tracking-widest text-[12px]">{{ $t('explore.loading') || 'Yuklanmoqda...' }}</p>
       </div>
 
       <!-- Load More -->

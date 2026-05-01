@@ -357,7 +357,7 @@
                 :class="
                   activeFaq === Number(idx)
                     ? 'rotate-180 bg-[#0f4a36] text-white'
-                    : 'bg-gray-100 text-gray-400'
+                    : 'bg-gray-100 text-gray-500'
                 "
                 class="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
               >

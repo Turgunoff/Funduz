@@ -96,7 +96,7 @@ const testimonials = computed(() => tm('success_stories.testimonials') as unknow
           <div class="text-[36px] lg:text-[44px] font-bold text-[#1a946b] leading-none tracking-tight">
             {{ stat.value }}
           </div>
-          <div class="text-[12px] lg:text-[13px] font-black text-gray-400 uppercase tracking-[0.15em]">
+          <div class="text-[12px] lg:text-[13px] font-black text-gray-500 uppercase tracking-[0.15em]">
             {{ stat.label }}
           </div>
         </div>
@@ -167,7 +167,7 @@ const testimonials = computed(() => tm('success_stories.testimonials') as unknow
               @click="activeFilter = cat"
               :class="[
                 'relative z-10 px-6 py-2.5 rounded-full font-bold text-[14px] whitespace-nowrap transition-all duration-300',
-                activeFilter === cat ? 'text-white' : 'text-gray-400 hover:text-gray-600'
+                activeFilter === cat ? 'text-white' : 'text-gray-500 hover:text-gray-600'
               ]"
             >
               {{ t(`success_stories.filters.${cat}`) }}
@@ -210,14 +210,14 @@ const testimonials = computed(() => tm('success_stories.testimonials') as unknow
                 <div class="flex items-center justify-between pt-6 border-t border-gray-50 mt-auto">
                   <div>
                     <div class="text-[16px] lg:text-[18px] font-bold text-[#1a946b]">
-                      {{ story.raised }} <span class="text-[11px] font-medium text-gray-400">sum</span>
+                      {{ story.raised }} <span class="text-[11px] font-medium text-gray-500">sum</span>
                     </div>
                   </div>
                   <div class="text-right">
                     <div class="text-[16px] lg:text-[18px] font-bold text-gray-900">
                       {{ story.donors }}
                     </div>
-                    <div class="text-[10px] font-black text-gray-400 uppercase tracking-widest">{{ t('success_stories.stats.backers') }}</div>
+                    <div class="text-[10px] font-black text-gray-500 uppercase tracking-widest">{{ t('success_stories.stats.backers') }}</div>
                   </div>
                 </div>
 
@@ -233,7 +233,7 @@ const testimonials = computed(() => tm('success_stories.testimonials') as unknow
           <!-- Loader -->
           <div v-else class="flex flex-col items-center justify-center py-24 lg:py-32">
             <div class="w-12 h-12 border-4 border-[#1a946b] border-t-transparent rounded-full animate-spin mb-4"></div>
-            <p class="text-gray-400 font-bold uppercase tracking-widest text-[12px]">Hikoyalar yuklanmoqda...</p>
+            <p class="text-gray-500 font-bold uppercase tracking-widest text-[12px]">Hikoyalar yuklanmoqda...</p>
           </div>
         </div>
       </div>
@@ -269,28 +269,28 @@ const testimonials = computed(() => tm('success_stories.testimonials') as unknow
             <!-- Card 1 -->
             <div class="bg-white rounded-[32px] p-8 lg:p-10 shadow-lg transform transition-transform hover:-translate-y-2 duration-300">
               <div class="text-[32px] lg:text-[40px] font-bold text-[#0f4a35] mb-2">12</div>
-              <div class="text-[12px] font-black text-gray-400 uppercase tracking-widest">
+              <div class="text-[12px] font-black text-gray-500 uppercase tracking-widest">
                 {{ t('success_stories.reach_section.stats.regions') }}
               </div>
             </div>
             <!-- Card 2 -->
             <div class="bg-white rounded-[32px] p-8 lg:p-10 shadow-lg transform transition-transform hover:-translate-y-2 duration-300">
               <div class="text-[32px] lg:text-[40px] font-bold text-[#0f4a35] mb-2">94%</div>
-              <div class="text-[12px] font-black text-gray-400 uppercase tracking-widest">
+              <div class="text-[12px] font-black text-gray-500 uppercase tracking-widest">
                 {{ t('success_stories.reach_section.stats.success') }}
               </div>
             </div>
             <!-- Card 3 -->
             <div class="bg-white rounded-[32px] p-8 lg:p-10 shadow-lg transform transition-transform hover:-translate-y-2 duration-300">
               <div class="text-[32px] lg:text-[40px] font-bold text-[#0f4a35] mb-2">4.2M</div>
-              <div class="text-[12px] font-black text-gray-400 uppercase tracking-widest">
+              <div class="text-[12px] font-black text-gray-500 uppercase tracking-widest">
                 {{ t('success_stories.reach_section.stats.visitors') }}
               </div>
             </div>
             <!-- Card 4 -->
             <div class="bg-white rounded-[32px] p-8 lg:p-10 shadow-lg transform transition-transform hover:-translate-y-2 duration-300">
               <div class="text-[32px] lg:text-[40px] font-bold text-[#0f4a35] mb-2">3.5k</div>
-              <div class="text-[12px] font-black text-gray-400 uppercase tracking-widest">
+              <div class="text-[12px] font-black text-gray-500 uppercase tracking-widest">
                 {{ t('success_stories.reach_section.stats.creators') }}
               </div>
             </div>
