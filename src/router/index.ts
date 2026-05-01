@@ -153,6 +153,11 @@ const router = createRouter({
       meta: { requiresAuth: true },
     },
     {
+      path: "/500",
+      name: "server-error",
+      component: () => import("../views/Error500View.vue"),
+    },
+    {
       path: "/:pathMatch(.*)*",
       name: "not-found",
       component: () => import("../views/NotFoundView.vue"),

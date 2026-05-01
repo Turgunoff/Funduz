@@ -978,7 +978,14 @@ export default {
     "explore": "View projects",
     "contact": "Help Desk",
     "trending_title": "Check out these trending designs instead.",
-    "view_all": "See all"
+    "view_all": "View all"
+  },
+  "error500": {
+    "badge": "Error 500",
+    "title": "We're having some technical issues",
+    "desc": "The server is temporarily unable to process your request. Our engineers have been notified and are working on it. Please try refreshing the page in a few moments.",
+    "retry": "Retry connection",
+    "back_home": "Back to home"
   },
   "trends": {
     "title": "Technologies",

@@ -1079,6 +1079,13 @@ export default {
     "trending_title": "Buning o'rniga ushbu trenddagi loyihalarni ko'ring",
     "view_all": "Barchasini ko'rish"
   },
+  "error500": {
+    "badge": "Xatolik 500",
+    "title": "Texnik nosozlik yuz berdi",
+    "desc": "Server vaqtincha so'rovingizni qayta ishlay olmaydi. Muhandislarimiz allaqachon xabardor qilingan va muammo ustida ishlamoqda. Iltimos, birozdan keyin sahifani yangilab ko'ring.",
+    "retry": "Qayta urinish",
+    "back_home": "Bosh sahifaga"
+  },
   "trends": {
     "title": "Texnologiya",
     "desc": "Ertangi kun me'morlarini qo'llab-quvvatlash. Yashil energiya yutuqlaridan innovatsion dasturiy ta'minotgacha — raqamli va jismoniy kelajagimizni shakllantiradigan loyihalarni o'rganing.",

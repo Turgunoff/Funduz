@@ -167,11 +167,11 @@
 
 ## Этап 16 — Подготовка к выпуску (0.5 дня)
 
-- [ ] `vite.config.ts` — оптимизация сборки, chunk splitting.
-- [ ] Error boundary (`onErrorCaptured` во Vue).
-- [ ] Страницы `404` и `500`.
-- [ ] Проверка production-сборки.
-- [ ] Деплой на Vercel/Netlify.
+- [x] `vite.config.ts` — оптимизация сборки, chunk splitting.
+- [x] Error boundary (`onErrorCaptured` во Vue).
+- [x] Страницы `404` и `500`.
+- [x] Проверка production-сборки.
+- [x] Деплой на Vercel/Netlify.
 
 ---
 

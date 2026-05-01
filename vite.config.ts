@@ -19,4 +19,26 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('vue') || id.includes('pinia') || id.includes('vue-router')) {
+              return 'vendor';
+            }
+            return 'libs';
+          }
+          if (id.includes('src/locales')) {
+            return 'locales';
+          }
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+    cssCodeSplit: true,
+  },
+  esbuild: {
+    pure: ['console.log', 'debugger'],
+  },
 })

@@ -5,6 +5,7 @@ import { useHead } from '@vueuse/head'
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
 import AppToast from './components/ui/AppToast.vue'
+import ErrorBoundary from './components/ui/ErrorBoundary.vue'
 
 const route = useRoute()
 const isAuthPage = computed(() => ['/login', '/register', '/forgot-password', '/reset-password', '/create-project'].includes(route.path))
@@ -24,7 +25,9 @@ useHead({
   <div class="min-h-screen bg-gray-50 flex flex-col font-sans">
     <AppHeader v-if="!isAuthPage" />
     <main :class="!isAuthPage ? 'pt-16 lg:pt-20' : ''" class="flex-grow">
-      <RouterView />
+      <ErrorBoundary>
+        <RouterView />
+      </ErrorBoundary>
     </main>
     <AppFooter v-if="!isAuthPage" />
     <AppToast />
