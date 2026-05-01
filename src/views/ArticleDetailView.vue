@@ -60,7 +60,7 @@
       <!-- Main Image (Full Grid Width) -->
       <div class="relative w-full aspect-[16/9] md:aspect-[21/10] rounded-[40px] lg:rounded-[60px] overflow-hidden mb-20 shadow-2xl group">
         <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
-        <img 
+        <img loading="lazy" 
           :src="slug === 'pitch_video' ? 'https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?auto=format&fit=crop&q=80&w=1600' : 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1600'" 
           :alt="$t(`${slug}.title`)"
           class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -118,7 +118,7 @@
 
             <!-- Secondary Image -->
             <div class="rounded-[40px] overflow-hidden shadow-xl mb-12">
-              <img :src="slug === 'pitch_video' ? 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200' : 'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=1200'" alt="Article Context" class="w-full h-auto" />
+              <img loading="lazy" :src="slug === 'pitch_video' ? 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200' : 'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=1200'" alt="Article Context" class="w-full h-auto" />
             </div>
 
             <h2 class="text-[32px] lg:text-[42px] font-black text-[#0f4634] mb-8 leading-tight">
@@ -180,7 +180,7 @@
                 >
                   <!-- Avatar -->
                   <div class="w-12 h-12 rounded-full overflow-hidden shadow-md flex-shrink-0">
-                    <img 
+                    <img loading="lazy" 
                       :src="`https://i.pravatar.cc/150?u=${comment.author}`" 
                       :alt="comment.author" 
                       class="w-full h-full object-cover"
@@ -315,7 +315,7 @@
           >
             <!-- Image -->
             <div class="relative aspect-[1.1/0.8] overflow-hidden">
-              <img 
+              <img loading="lazy" 
                 :src="article.image" 
                 :alt="article.title" 
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

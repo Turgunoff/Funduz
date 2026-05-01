@@ -22,7 +22,7 @@ const updates = [
       <h3 class="text-[20px] lg:text-[24px] font-bold text-gray-900 mb-4">{{ update.title }}</h3>
       
       <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm mb-6 max-w-2xl">
-        <img :src="update.image" class="w-full h-auto" :alt="update.title" />
+        <img loading="lazy" :src="update.image" class="w-full h-auto" :alt="update.title" />
       </div>
       
       <p class="text-gray-600 leading-relaxed text-[15px] lg:text-[16px] max-w-2xl font-medium">

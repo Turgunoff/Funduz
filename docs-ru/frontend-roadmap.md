@@ -142,18 +142,18 @@
 
 ## Этап 13 — SEO и производительность (0.5 дня)
 
-- [ ] Meta-теги для каждой страницы через `@vueuse/head` или `unhead`.
-- [ ] Оптимизация изображений (WebP, `loading="lazy"`).
-- [ ] Route-based code splitting (lazy import) для всех view.
-- [ ] Lighthouse-аудит (цель: 90+).
+- [x] Meta-теги для каждой страницы через `@vueuse/head` или `unhead`.
+- [x] Оптимизация изображений (WebP, `loading="lazy"`).
+- [x] Route-based code splitting (lazy import) для всех view.
+- [x] Lighthouse-аудит (цель: 90+).
 
 ## Этап 14 — Третий язык и реструктуризация i18n (0.5 дня)
 
-- [ ] Разбить `src/i18n.ts`:
+- [x] Разбить `src/i18n.ts`:
   - `src/locales/uz/common.ts`, `uz/nav.ts`, `uz/views.ts` ...
   - `src/locales/ru/...`
   - `src/locales/en/...` (английский)
-- [ ] Добавить переключатель третьего языка в `AppHeader`.
+- [x] Добавить переключатель третьего языка в `AppHeader`.
 
 ## Этап 15 — Тесты и CI (1 день)
 

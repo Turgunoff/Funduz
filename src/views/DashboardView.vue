@@ -76,7 +76,7 @@
             <div v-if="userProjects.length > 0" class="space-y-6">
               <div v-for="project in userProjects" :key="project.id" class="flex flex-col lg:flex-row lg:items-center gap-8 p-6 rounded-[32px] border border-gray-50 hover:border-green-100 hover:bg-green-50/10 transition-all group">
                 <div class="w-full lg:w-48 h-32 rounded-2xl overflow-hidden shrink-0 shadow-sm">
-                  <img :src="project.mainImage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" :alt="project.title">
+                  <img loading="lazy" :src="project.mainImage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" :alt="project.title">
                 </div>
                 <div class="flex-grow">
                   <div class="flex items-center gap-3 mb-2">
@@ -133,7 +133,7 @@
                     <td class="px-6 py-6 rounded-l-3xl border-y border-l border-gray-50">
                       <div class="flex items-center gap-4">
                         <div class="w-10 h-10 rounded-xl bg-orange-100 shrink-0 overflow-hidden">
-                          <img src="https://images.unsplash.com/photo-1559027615-cd7607c1f3cf?q=80&w=200&h=200&auto=format&fit=crop" class="w-full h-full object-cover" :alt="authStore.user?.name || 'User avatar'">
+                          <img loading="lazy" src="https://images.unsplash.com/photo-1559027615-cd7607c1f3cf?q=80&w=200&h=200&auto=format&fit=crop" class="w-full h-full object-cover" :alt="authStore.user?.name || 'User avatar'">
                         </div>
                         <span class="text-gray-900 truncate max-w-[200px]">Эко-сад "Чиланзар"</span>
                       </div>

@@ -259,7 +259,7 @@
               <!-- Profile Box -->
               <div class="bg-white rounded-3xl p-6 shadow-xl flex items-center gap-6 mb-10 group hover:scale-[1.02] transition-all duration-500">
                 <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-200">
-                   <img src="https://ui-avatars.com/api/?name=Artur+Rahim&background=0f4a36&color=fff" alt="Artur Rahim" class="w-full h-full object-cover" />
+                   <img loading="lazy" src="https://ui-avatars.com/api/?name=Artur+Rahim&background=0f4a36&color=fff" alt="Artur Rahim" class="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div class="flex items-center gap-2 mb-1">

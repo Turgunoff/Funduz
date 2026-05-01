@@ -106,7 +106,7 @@ const testimonials = computed(() => tm('success_stories.testimonials') as unknow
       <div class="mt-20 lg:mt-32">
         <div class="bg-[#f8f7f6] rounded-[48px] overflow-hidden lg:flex items-stretch min-h-[600px] border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl">
           <div class="lg:w-1/2 relative min-h-[400px] lg:min-h-0">
-            <img 
+            <img loading="lazy" 
               src="/artisan_success.png" 
               class="absolute inset-0 w-full h-full object-cover rounded-t-[48px] lg:rounded-l-[48px] lg:rounded-tr-none" 
               alt="Artisan Story"
@@ -186,7 +186,7 @@ const testimonials = computed(() => tm('success_stories.testimonials') as unknow
             >
               <!-- Story Image -->
               <div class="relative h-[240px] lg:h-[280px] overflow-hidden">
-                <img 
+                <img loading="lazy" 
                   :src="story.image" 
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   :alt="story.title"
@@ -321,7 +321,7 @@ const testimonials = computed(() => tm('success_stories.testimonials') as unknow
             </p>
             <!-- Author -->
             <div class="flex items-center gap-4">
-              <img :src="item.image" class="w-14 h-14 rounded-2xl object-cover shadow-sm" :alt="item.author">
+              <img loading="lazy" :src="item.image" class="w-14 h-14 rounded-2xl object-cover shadow-sm" :alt="item.author">
               <div>
                 <div class="font-bold text-gray-900 text-[18px]">{{ item.author }}</div>
                 <div class="text-gray-500 text-[14px]">{{ item.role }}</div>

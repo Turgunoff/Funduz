@@ -185,7 +185,7 @@ const handleDonate = () => {
           <!-- Project Mini Card -->
           <div class="bg-white rounded-[32px] p-6 shadow-sm border border-gray-100">
              <div class="rounded-2xl overflow-hidden aspect-video mb-4">
-                <img :src="project.mainImage" class="w-full h-full object-cover" :alt="project.title" />
+                <img loading="lazy" :src="project.mainImage" class="w-full h-full object-cover" :alt="project.title" />
              </div>
              <h3 class="font-bold text-[16px] text-gray-900 leading-tight mb-2">{{ project.title }}</h3>
              <div class="flex items-center gap-2 text-gray-500 text-[13px] font-bold">

@@ -49,7 +49,7 @@ onMounted(() => {
         >
           <!-- Image Container -->
           <div class="relative h-[220px] sm:h-[260px] overflow-hidden">
-            <img :src="project.mainImage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" :alt="project.title" />
+            <img loading="lazy" :src="project.mainImage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" :alt="project.title" />
             <div class="absolute top-5 left-5 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[12px] font-black tracking-widest text-gray-800 uppercase">
               {{ $t(`explore.categories.${project.categoryKey}`) }}
             </div>

@@ -64,7 +64,7 @@
           <!-- Social Login Buttons -->
           <div class="grid grid-cols-2 gap-4 mb-8">
             <button class="flex items-center justify-center gap-3 py-4 border border-gray-100 rounded-2xl hover:bg-gray-50 transition-all group">
-              <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
+              <img loading="lazy" src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
               <span class="text-[14px] font-bold text-gray-700">{{ $t('login.social_google') }}</span>
             </button>
             <button class="flex items-center justify-center gap-3 py-4 border border-gray-100 rounded-2xl hover:bg-gray-50 transition-all">

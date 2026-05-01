@@ -11,7 +11,7 @@
         <!-- Avatar -->
         <div class="relative group shrink-0">
           <div class="w-32 h-32 lg:w-40 lg:h-40 rounded-[32px] overflow-hidden border-4 border-[#f0f9f6] shadow-md bg-orange-100 flex items-center justify-center text-4xl font-black text-orange-600">
-            <img v-if="authStore.user?.avatar" :src="authStore.user.avatar" :alt="authStore.user?.name || 'User avatar'" class="w-full h-full object-cover">
+            <img loading="lazy" v-if="authStore.user?.avatar" :src="authStore.user.avatar" :alt="authStore.user?.name || 'User avatar'" class="w-full h-full object-cover">
             <span v-else>{{ authStore.user?.name?.charAt(0) || 'U' }}</span>
           </div>
           <!-- Update Avatar Button -->

@@ -40,7 +40,7 @@
             
             <div class="flex items-center gap-6 mb-10">
               <div class="relative w-24 h-24 rounded-full bg-gray-100 overflow-hidden group border border-gray-200 shadow-inner">
-                <img v-if="authStore.user?.avatar" :src="authStore.user.avatar" :alt="authStore.user?.name || 'User avatar'" class="w-full h-full object-cover" />
+                <img loading="lazy" v-if="authStore.user?.avatar" :src="authStore.user.avatar" :alt="authStore.user?.name || 'User avatar'" class="w-full h-full object-cover" />
                 <div v-else class="w-full h-full flex items-center justify-center bg-orange-100 text-orange-600 font-black text-3xl">
                   {{ authStore.user?.name?.charAt(0) || 'U' }}
                 </div>

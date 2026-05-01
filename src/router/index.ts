@@ -1,25 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import ProjectView from "../views/ProjectView.vue";
-import ExploreView from "../views/ExploreView.vue";
-import HowItWorksView from "../views/HowItWorksView.vue";
-import CommunityView from "../views/CommunityView.vue";
-import LoginView from "../views/LoginView.vue";
-import CreateProjectView from "../views/CreateProjectView.vue";
-import StoryView from "../views/StoryView.vue";
-import FaqView from "../views/FaqView.vue";
-import ContactView from "../views/HelpView.vue";
-import SearchView from "../views/SearchView.vue";
-import TrendsView from "../views/TrendsView.vue";
-import MyProjectsView from "../views/MyProjectsView.vue";
-import FavoritesView from "../views/FavoritesView.vue";
-import SettingsView from "../views/SettingsView.vue";
-import ForgotPasswordView from "../views/ForgotPasswordView.vue";
-import ResetPasswordView from "../views/ResetPasswordView.vue";
-import RegisterView from "../views/RegisterView.vue";
-import DonateView from "../views/DonateView.vue";
-import NotificationsView from "../views/NotificationsView.vue";
-import DashboardView from "../views/DashboardView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,99 +12,99 @@ const router = createRouter({
     {
       path: "/my-projects",
       name: "my-projects",
-      component: MyProjectsView,
+      component: () => import("../views/MyProjectsView.vue"),
     },
     {
       path: "/favorites",
       name: "favorites",
-      component: FavoritesView,
+      component: () => import("../views/FavoritesView.vue"),
     },
     {
       path: "/settings",
       name: "settings",
-      component: SettingsView,
+      component: () => import("../views/SettingsView.vue"),
     },
     {
       path: "/project/:id",
       name: "project",
-      component: ProjectView,
+      component: () => import("../views/ProjectView.vue"),
     },
     {
       path: "/donate/:projectId",
       name: "donate",
-      component: DonateView,
+      component: () => import("../views/DonateView.vue"),
     },
     {
       path: "/explore",
       name: "explore",
-      component: ExploreView,
+      component: () => import("../views/ExploreView.vue"),
     },
     {
       path: "/dashboard",
       name: "dashboard",
-      component: DashboardView,
+      component: () => import("../views/DashboardView.vue"),
       meta: { requiresAuth: true },
     },
     {
       path: "/how-it-works",
       name: "how-it-works",
-      component: HowItWorksView,
+      component: () => import("../views/HowItWorksView.vue"),
     },
     {
       path: "/community",
       name: "community",
-      component: CommunityView,
+      component: () => import("../views/CommunityView.vue"),
     },
     {
       path: "/login",
       name: "login",
-      component: LoginView,
+      component: () => import("../views/LoginView.vue"),
     },
     {
       path: "/register",
       name: "register",
-      component: RegisterView,
+      component: () => import("../views/RegisterView.vue"),
     },
     {
       path: "/forgot-password",
       name: "forgot-password",
-      component: ForgotPasswordView,
+      component: () => import("../views/ForgotPasswordView.vue"),
     },
     {
       path: "/reset-password",
       name: "reset-password",
-      component: ResetPasswordView,
+      component: () => import("../views/ResetPasswordView.vue"),
     },
     {
       path: "/create-project",
       name: "create-project",
-      component: CreateProjectView,
+      component: () => import("../views/CreateProjectView.vue"),
       meta: { requiresAuth: true },
     },
     {
       path: "/story/:id",
       name: "story",
-      component: StoryView,
+      component: () => import("../views/StoryView.vue"),
     },
     {
       path: "/help",
       name: "help",
-      component: ContactView,
+      component: () => import("../views/HelpView.vue"),
     },
     {
       path: "/faq",
       name: "faq",
-      component: FaqView,
+      component: () => import("../views/FaqView.vue"),
     },
     {
       path: "/search",
       name: "search",
-      component: SearchView,
+      component: () => import("../views/SearchView.vue"),
     },
     {
       path: "/trends",
       name: "trends",
-      component: TrendsView,
+      component: () => import("../views/TrendsView.vue"),
     },
     {
       path: "/about",
@@ -149,7 +129,7 @@ const router = createRouter({
     {
       path: "/notifications",
       name: "notifications",
-      component: NotificationsView,
+      component: () => import("../views/NotificationsView.vue"),
     },
     {
       path: "/articles",

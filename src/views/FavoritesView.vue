@@ -46,7 +46,7 @@
           </button>
 
           <router-link :to="`/project/${project.id}`" class="block relative w-full aspect-[4/3] bg-gray-100">
-            <img :src="project.mainImage" :alt="project.title" class="w-full h-full object-cover"/>
+            <img loading="lazy" :src="project.mainImage" :alt="project.title" class="w-full h-full object-cover"/>
             <div class="absolute top-4 left-4">
               <span class="px-3 py-1.5 rounded-full text-[11px] font-black uppercase text-white shadow-sm backdrop-blur-md bg-[#1a946b]/90">
                 {{ $t(`explore.categories.${project.categoryKey}`) || project.categoryKey }}

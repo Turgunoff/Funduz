@@ -68,7 +68,7 @@
         <div v-if="trendingProjects.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="project in trendingProjects" :key="project.id" class="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] flex flex-col h-full group transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:-translate-y-1">
             <router-link :to="`/project/${project.id}`" class="relative h-[220px] sm:h-[260px] overflow-hidden block">
-              <img :src="project.mainImage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" :alt="project.title" />
+              <img loading="lazy" :src="project.mainImage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" :alt="project.title" />
               <div class="absolute top-5 left-5 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[13px] font-bold text-gray-800">
                 {{ $t(`explore.categories.${project.categoryKey}`) }}
               </div>

@@ -17,6 +17,7 @@
     "format": "oxfmt src/"
   },
   "dependencies": {
+    "@vueuse/head": "^2.0.0",
     "pinia": "^3.0.4",
     "vue": "^3.5.31",
     "vue-i18n": "^9.14.5",

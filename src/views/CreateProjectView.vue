@@ -139,7 +139,7 @@
               class="relative w-full aspect-video border-2 border-dashed border-gray-200 rounded-[40px] flex flex-col items-center justify-center bg-white hover:border-[#1a946b] transition-all cursor-pointer overflow-hidden group focus-visible:outline-none focus-visible:border-[#1a946b] focus-visible:ring-2 focus-visible:ring-[#1a946b] focus-visible:ring-offset-2"
               :class="{'border-red-200 bg-red-50/5': !formData.mainImage && !formData.videoUrl}"
             >
-              <img v-if="imagePreview" :src="imagePreview" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project preview" />
+              <img loading="lazy" v-if="imagePreview" :src="imagePreview" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project preview" />
               
               <div v-if="!imagePreview" class="flex flex-col items-center">
                 <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-50 transition-colors">
@@ -278,7 +278,7 @@
            <!-- Mock Project Page -->
            <div class="bg-white rounded-[48px] overflow-hidden shadow-2xl shadow-gray-200/50 border border-gray-100">
               <div class="aspect-video w-full bg-gray-100 relative">
-                 <img v-if="imagePreview" :src="imagePreview" class="w-full h-full object-cover" alt="Project preview" />
+                 <img loading="lazy" v-if="imagePreview" :src="imagePreview" class="w-full h-full object-cover" alt="Project preview" />
                  <div v-else class="w-full h-full flex items-center justify-center text-gray-400">
                     <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                  </div>

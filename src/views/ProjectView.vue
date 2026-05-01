@@ -8,7 +8,7 @@
           <div
             class="relative rounded-[24px] lg:rounded-[32px] overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-[540px] shadow-sm"
           >
-            <img :src="project.mainImage" class="w-full h-full object-cover" :alt="project.title" />
+            <img loading="lazy" :src="project.mainImage" class="w-full h-full object-cover" :alt="project.title" />
             <div
               class="absolute top-4 left-4 lg:top-6 lg:left-6 px-3 py-1 lg:px-4 lg:py-1.5 bg-[#14532d] text-white text-[11px] lg:text-[13px] font-bold rounded-full uppercase"
             >
@@ -447,6 +447,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
+import { useHead } from "@vueuse/head";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { useProjectStore } from "../stores/projects";
@@ -498,6 +499,17 @@ const projectBenefits = computed(() => tm("project_view.benefits") as string[]);
 const formatNumber = (num: number) => {
   return new Intl.NumberFormat("uz-UZ").format(num);
 };
+
+useHead({
+  title: computed(() => project.value?.title || 'Проект'),
+  meta: [
+    { name: 'description', content: computed(() => project.value?.description || project.value?.categoryKey || 'Проект на Funduz') },
+    { property: 'og:title', content: computed(() => project.value?.title || 'Проект') },
+    { property: 'og:description', content: computed(() => project.value?.description || 'Проект на Funduz') },
+    { property: 'og:image', content: computed(() => project.value?.mainImage || '') },
+    { property: 'og:type', content: 'article' }
+  ]
+});
 
 const copyLink = () => {
   navigator.clipboard.writeText(window.location.href);

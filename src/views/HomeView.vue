@@ -1,7 +1,19 @@
 <script setup lang="ts">
+import { computed } from 'vue';
+import { useHead } from '@vueuse/head';
+import { useI18n } from 'vue-i18n';
 import StatsSection from '@/components/StatsSection.vue';
 import FeaturedProjects from '@/components/FeaturedProjects.vue';
 import CTASection from '@/components/CTASection.vue';
+
+const { t } = useI18n();
+
+useHead({
+  title: computed(() => t('nav.home') || 'Главная'),
+  meta: [
+    { name: 'description', content: computed(() => t('hero.description') || 'Funduz platform') }
+  ]
+});
 </script>
 
 <template>
@@ -48,7 +60,7 @@ import CTASection from '@/components/CTASection.vue';
           <!-- Right Image Section -->
           <div class="order-1 lg:order-2 relative">
             <div class="rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] group">
-              <img 
+              <img loading="lazy" 
                 src="/celebration_hero.png" 
                 alt="Crowdfunding success celebration" 
                 class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"

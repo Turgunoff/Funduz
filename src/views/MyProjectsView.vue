@@ -48,7 +48,7 @@
           class="bg-white rounded-[24px] border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg transition-transform hover:-translate-y-1 duration-300 flex flex-col"
         >
           <div class="relative w-full aspect-[4/3] bg-gray-100">
-            <img :src="project.mainImage" :alt="project.title" class="w-full h-full object-cover"/>
+            <img loading="lazy" :src="project.mainImage" :alt="project.title" class="w-full h-full object-cover"/>
             <div class="absolute top-4 left-4">
               <span 
                 class="px-3 py-1.5 rounded-full text-[11px] font-black uppercase text-white shadow-sm backdrop-blur-md"

@@ -1,12 +1,23 @@
 <script setup lang="ts">
 import { RouterView, useRoute } from 'vue-router'
 import { computed } from 'vue'
+import { useHead } from '@vueuse/head'
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
 import AppToast from './components/ui/AppToast.vue'
 
 const route = useRoute()
 const isAuthPage = computed(() => ['/login', '/register', '/forgot-password', '/reset-password', '/create-project'].includes(route.path))
+
+useHead({
+  titleTemplate: (title) => title ? `${title} | Funduz` : 'Funduz - Crowdfunding Platform',
+  meta: [
+    { name: 'description', content: 'Funduz — инновационная краудфандинговая платформа для реализации творческих, социальных и технологических проектов.' },
+    { property: 'og:site_name', content: 'Funduz' },
+    { property: 'og:type', content: 'website' },
+    { name: 'theme-color', content: '#1a946b' }
+  ]
+})
 </script>
 
 <template>

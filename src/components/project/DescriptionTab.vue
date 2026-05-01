@@ -21,7 +21,7 @@ defineProps<{
 
       <figure class="my-8 lg:my-12">
         <div class="rounded-[24px] lg:rounded-[32px] overflow-hidden bg-gray-50 aspect-video flex items-center justify-center shadow-lg shadow-gray-200/50">
-          <img :src="project.mainImage" class="w-full h-full object-cover" :alt="project.title" />
+          <img loading="lazy" :src="project.mainImage" class="w-full h-full object-cover" :alt="project.title" />
         </div>
         <figcaption class="text-center text-[12px] lg:text-sm text-gray-500 mt-4 italic font-medium">
           {{ $t("project_view.image_caption") }}

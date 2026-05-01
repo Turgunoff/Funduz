@@ -4,16 +4,16 @@ import { i18n } from '../i18n';
 
 export const useLocaleStore = defineStore('locale', () => {
   // Initialize locale from localStorage or default to 'uz'
-  const getSavedLocale = (): 'uz' | 'ru' => {
+  const getSavedLocale = (): 'uz' | 'ru' | 'en' => {
     const saved = localStorage.getItem('user_locale');
-    if (saved === 'uz' || saved === 'ru') return saved;
+    if (saved === 'uz' || saved === 'ru' || saved === 'en') return saved as 'uz' | 'ru' | 'en';
     return 'uz';
   };
 
-  const currentLocale = ref<'uz' | 'ru'>(getSavedLocale());
+  const currentLocale = ref<'uz' | 'ru' | 'en'>(getSavedLocale());
 
   // Method to change locale
-  const setLocale = (lang: 'uz' | 'ru') => {
+  const setLocale = (lang: 'uz' | 'ru' | 'en') => {
     currentLocale.value = lang;
     
     // Update vue-i18n instance safely

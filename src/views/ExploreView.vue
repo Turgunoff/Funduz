@@ -187,14 +187,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch, nextTick } from 'vue';
+import { ref, onMounted, watch, nextTick, computed } from 'vue';
+import { useHead } from '@vueuse/head';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 import { useProjectStore } from '../stores/projects';
 import { useFavoriteStore } from '../stores/favorites';
 import type { Project } from '../types/Project';
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 const router = useRouter();
 const projectStore = useProjectStore();
 const favoriteStore = useFavoriteStore();
@@ -240,6 +241,13 @@ const handleLocalSearch = () => {
     router.push({ path: '/search', query: { q: projectStore.searchQuery.trim() } });
   }
 };
+
+useHead({
+  title: computed(() => t('nav.explore') || 'Все проекты'),
+  meta: [
+    { name: 'description', content: computed(() => t('explore.title') || 'Каталог проектов') }
+  ]
+});
 </script>
 
 <style scoped>

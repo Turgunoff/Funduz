@@ -102,7 +102,7 @@
         >
           <!-- Project Card Media -->
           <router-link :to="`/project/${project.id}`" class="block relative rounded-[40px] overflow-hidden aspect-[4/3] mb-8 bg-white border border-gray-100/50 shadow-sm group-hover:shadow-2xl group-hover:shadow-green-900/10 transition-all duration-700">
-            <img 
+            <img loading="lazy" 
               :src="project.mainImage" 
               :alt="project.title" 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 

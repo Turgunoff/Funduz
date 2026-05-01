@@ -14,7 +14,7 @@
       <div class="relative w-full min-h-[400px] lg:min-h-[500px] rounded-[32px] lg:rounded-[48px] overflow-hidden shadow-2xl flex flex-col justify-end">
         
         <!-- Main Cover Background -->
-        <img 
+        <img loading="lazy" 
           :src="story.image" 
           :alt="story.title" 
           class="absolute inset-0 w-full h-full object-cover object-center"
@@ -39,7 +39,7 @@
 
           <!-- Author Info -->
           <div class="flex items-center gap-4">
-            <img 
+            <img loading="lazy" 
               src="https://i.pravatar.cc/150?u=12" 
               alt="Азиз Каримов" 
               class="w-12 h-12 lg:w-14 lg:h-14 rounded-full object-cover border-2 border-white/10 shadow-lg"
@@ -121,16 +121,16 @@
             <h2 class="text-[24px] lg:text-[28px] font-bold text-[#1e5c43] mb-8 tracking-tight">{{ t('story.gallery') }}</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div class="aspect-square rounded-[32px] overflow-hidden group shadow-md">
-                <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery">
               </div>
               <div class="aspect-square rounded-[32px] overflow-hidden group shadow-md">
-                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery">
               </div>
               <div class="aspect-square rounded-[32px] overflow-hidden group shadow-md">
-                <img src="https://images.unsplash.com/photo-1444459094717-a39f1e3e0903?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1444459094717-a39f1e3e0903?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery">
               </div>
               <div class="aspect-square rounded-[32px] overflow-hidden group shadow-md">
-                <img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gallery">
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@
               <!-- Story Link 1 -->
               <a href="#" class="flex items-center gap-4 group">
                 <div class="w-20 h-20 rounded-[20px] overflow-hidden flex-shrink-0 shadow-sm border border-gray-100">
-                  <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=200" alt="Чистая вода Памира" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                  <img loading="lazy" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=200" alt="Чистая вода Памира" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
                 <div>
                   <h4 class="text-[14px] font-bold text-gray-900 mb-1 leading-tight group-hover:text-[#1e5c43] transition-colors">Чистая вода Памира</h4>
@@ -215,7 +215,7 @@
               <!-- Story Link 2 -->
               <a href="#" class="flex items-center gap-4 group">
                 <div class="w-20 h-20 rounded-[20px] overflow-hidden flex-shrink-0 shadow-sm border border-gray-100">
-                  <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&q=80&w=200" alt="Арт-пространство Куб" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                  <img loading="lazy" src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&q=80&w=200" alt="Арт-пространство Куб" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
                 <div>
                   <h4 class="text-[14px] font-bold text-gray-900 mb-1 leading-tight group-hover:text-[#1e5c43] transition-colors">Арт-пространство "Куб"</h4>
@@ -240,6 +240,11 @@
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
+
+const story = {
+  title: 'EcoThreads',
+  image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1200'
+};
 </script>
 
 <style scoped>
