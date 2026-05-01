@@ -323,21 +323,7 @@
 
             <!-- Language Switcher Dropdown -->
             <div class="relative pl-1 lg:pl-4 lg:border-l border-gray-100 flex items-center">
-              <button
-                @click="isLangMenuOpen = !isLangMenuOpen"
-                class="flex items-center gap-1 text-[13px] font-bold text-gray-800 uppercase px-2 py-1.5 rounded-lg hover:bg-gray-50 transition-colors"
-              >
-                {{ localeStore.currentLocale }}
-                <svg :class="isLangMenuOpen ? 'rotate-180' : ''" class="w-4 h-4 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-              </button>
-              
-              <transition name="dropdown">
-                <div v-show="isLangMenuOpen" class="absolute right-0 top-full mt-4 w-24 bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 py-2 z-[100]">
-                  <button @click="setLocale('uz'); isLangMenuOpen = false" class="w-full text-left px-4 py-2.5 text-[14px] font-bold hover:bg-[#f0f9f6] hover:text-[#1a946b] transition-colors" :class="localeStore.currentLocale === 'uz' ? 'text-[#1a946b] bg-[#f0f9f6]' : 'text-gray-700'">UZ</button>
-                  <button @click="setLocale('ru'); isLangMenuOpen = false" class="w-full text-left px-4 py-2.5 text-[14px] font-bold hover:bg-[#f0f9f6] hover:text-[#1a946b] transition-colors" :class="localeStore.currentLocale === 'ru' ? 'text-[#1a946b] bg-[#f0f9f6]' : 'text-gray-700'">RU</button>
-                  <button @click="setLocale('en'); isLangMenuOpen = false" class="w-full text-left px-4 py-2.5 text-[14px] font-bold hover:bg-[#f0f9f6] hover:text-[#1a946b] transition-colors" :class="localeStore.currentLocale === 'en' ? 'text-[#1a946b] bg-[#f0f9f6]' : 'text-gray-700'">EN</button>
-                </div>
-              </transition>
+              <LanguageSwitcher variant="default" align="right" />
             </div>
 
             <!-- Mobile Menu Toggle / Avatar -->
@@ -598,19 +584,17 @@
 <script setup lang="ts">
 import { ref, computed, watch, nextTick, onMounted, onUnmounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { useLocaleStore } from "../stores/locale";
 import { useAuthStore } from "../stores/auth";
 import { useProjectStore } from "../stores/projects";
+import LanguageSwitcher from "./ui/LanguageSwitcher.vue";
 
 const route = useRoute();
 const router = useRouter();
-const localeStore = useLocaleStore();
 const authStore = useAuthStore();
 const projectStore = useProjectStore();
 
 const isMenuOpen = ref(false);
 const isProfileMenuOpen = ref(false);
-const isLangMenuOpen = ref(false);
 
 const handleLogout = () => {
   authStore.logout();
@@ -650,10 +634,6 @@ const performSearch = () => {
 
 const isHowItWorksPage = computed(() => route.path === "/how-it-works");
 const isCommunityPage = computed(() => route.path === "/community");
-
-const setLocale = (lang: "uz" | "ru" | "en") => {
-  localeStore.setLocale(lang);
-};
 
 watch(
   () => route.path,

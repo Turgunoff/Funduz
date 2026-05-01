@@ -4,10 +4,8 @@
     <!-- Left Side: Branding & Info -->
     <div class="hidden lg:flex lg:w-1/2 bg-[#1e5c43] relative overflow-hidden flex-col items-center justify-center p-12 text-center">
       <!-- Language Switcher at the top -->
-      <div class="absolute top-8 left-12 z-20 flex items-center gap-4 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/10">
-        <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-white' : 'text-white/40'" class="text-[13px] font-black uppercase transition-colors">Uz</button>
-        <div class="w-[1px] h-3 bg-white/20"></div>
-        <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-white' : 'text-white/40'" class="text-[13px] font-black uppercase transition-colors">Ru</button>
+      <div class="absolute top-8 left-12 z-20">
+        <LanguageSwitcher variant="glass" align="left" />
       </div>
 
       <!-- Grid Pattern -->
@@ -181,8 +179,9 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter, useRoute } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
+import LanguageSwitcher from '../components/ui/LanguageSwitcher.vue'
 
-const { locale } = useI18n()
+useI18n()
 const router = useRouter()
 const route = useRoute()
 const authStore = useAuthStore()
@@ -197,10 +196,6 @@ const errors = ref({
   email: '',
   password: ''
 })
-
-const setLocale = (lang: string) => {
-  locale.value = lang
-}
 
 const validate = () => {
   let isValid = true

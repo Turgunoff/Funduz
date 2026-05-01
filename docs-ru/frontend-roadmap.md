@@ -157,13 +157,13 @@
 
 ## Этап 15 — Тесты и CI (1 день)
 
-- [ ] Unit-тесты Vitest для ключевых компонентов (`AppHeader`, `AppFooter`, `projectService`).
-- [ ] Playwright E2E-сценарии:
-  - Открытие главной
-  - Работа поиска
-  - Login → Dashboard
-  - Пожертвование проекту
-- [ ] GitHub Actions CI.
+- [x] Unit-тесты Vitest для ключевых компонентов (`AppHeader`, `AppFooter`, `projectService`).
+- [x] Playwright E2E-сценарии:
+  - [x] Открытие главной
+  - [x] Работа поиска
+  - [x] Login → Dashboard
+  - [x] Пожертвование проекту
+- [x] GitHub Actions CI.
 
 ## Этап 16 — Подготовка к выпуску (0.5 дня)
 

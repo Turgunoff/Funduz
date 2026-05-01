@@ -11,10 +11,8 @@
         
         <div class="flex items-center gap-8">
           <!-- Language Switcher -->
-          <div class="hidden sm:flex items-center gap-3 pr-8 border-r border-gray-100">
-            <button @click="setLocale('uz')" :class="locale === 'uz' ? 'text-[#1a946b]' : 'text-gray-500'" class="text-[13px] font-bold uppercase transition-colors">Uz</button>
-            <div class="w-[1px] h-3 bg-gray-200"></div>
-            <button @click="setLocale('ru')" :class="locale === 'ru' ? 'text-[#1a946b]' : 'text-gray-500'" class="text-[13px] font-bold uppercase transition-colors">Ru</button>
+          <div class="hidden sm:flex items-center pr-8 border-r border-gray-100">
+            <LanguageSwitcher variant="default" align="right" />
           </div>
 
           <router-link to="/" class="text-[14px] font-bold text-gray-500 hover:text-red-500 transition-colors">
@@ -359,13 +357,14 @@
 
 <script setup lang="ts">
 import { ref, reactive, computed, onMounted } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { useRouter, useRoute } from 'vue-router'
-import { useProjectStore } from '../stores/projects'
+import { useRouter, useRoute } from 'vue-router';
+import { useProjectStore } from '../stores/projects';
+import LanguageSwitcher from '../components/ui/LanguageSwitcher.vue';
 import { useAuthStore } from '../stores/auth'
 import type { Project } from '../types/Project'
+import { useI18n } from 'vue-i18n'
 
-const { locale } = useI18n()
+useI18n()
 const router = useRouter()
 const route = useRoute()
 const projectStore = useProjectStore()
@@ -431,9 +430,7 @@ const isStepValid = computed(() => {
   return true;
 })
 
-const setLocale = (lang: string) => {
-  locale.value = lang
-}
+
 
 const handleImageUpload = (event: Event) => {
   const file = (event.target as HTMLInputElement).files?.[0]
