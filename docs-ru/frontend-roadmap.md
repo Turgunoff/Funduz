@@ -198,3 +198,8 @@ export const getProjects = async () => (await fetch('/api/projects')).json();
 ```
 
 Store и view не меняются. Поэтому **сервисный слой обязателен**.
+
+
+
+
+test
