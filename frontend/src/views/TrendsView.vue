@@ -74,7 +74,7 @@
           <!-- Main Image Component with Offset Background -->
           <div class="relative z-10 w-full aspect-[16/10] overflow-hidden rounded-[40px] lg:rounded-[60px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
             <img loading="lazy" 
-              src="/C:/Users/danii/.gemini/antigravity/brain/9ea4e46a-c996-4d4c-8cae-7710ad6a21be/tech_hero_cyber_avatar_1776363061846.png" 
+              src="/tech_hero_cyber_avatar_1776363061846.png" 
               alt="Cyber Hero Avatar" 
               class="w-full h-full object-cover"
             />
@@ -131,7 +131,7 @@
           <!-- Image Side -->
           <div class="aspect-[4/3] lg:aspect-auto relative bg-[#0a0a0a] group overflow-hidden">
             <img loading="lazy" 
-              src="/C:/Users/danii/.gemini/antigravity/brain/9ea4e46a-c996-4d4c-8cae-7710ad6a21be/trends_featured_neural_link_1776363877127.png" 
+              src="/trends_featured_neural_link_1776363877127.png" 
               alt="NeuralLink Project" 
               class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000"
             />
