@@ -456,9 +456,10 @@ const nextStep = async () => {
   if (currentStep.value < 4) {
     currentStep.value++
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  } else {
     if (isEditMode.value && editProjectId.value !== null) {
       // Update existing
-      projectStore.updateProject(editProjectId.value, {
+      await projectStore.updateProject(editProjectId.value, {
         title: formData.title,
         description: formData.story,
         categoryKey: formData.category,
@@ -484,8 +485,8 @@ const nextStep = async () => {
         goal: formData.goal,
         raised: 0,
         donorsCount: 0,
-        createdAt: new Date().toISOString(),
-        endsAt: new Date(Date.now() + formData.duration * 24 * 60 * 60 * 1000).toISOString(),
+        createdAt: new Date().toISOString().split('T')[0] || '',
+        endsAt: new Date(Date.now() + formData.duration * 24 * 60 * 60 * 1000).toISOString().split('T')[0] || '',
         rewards: formData.rewards.map((r, idx) => ({
           id: Date.now() + idx,
           title: r.title,
@@ -496,7 +497,7 @@ const nextStep = async () => {
       };
 
       // Add to store
-      projectStore.addProject(newProject);
+      await projectStore.addProject(newProject);
       alert('Проект успешно создан!');
     }
 

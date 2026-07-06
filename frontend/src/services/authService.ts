@@ -31,18 +31,27 @@ export const authService = {
 
         // 1. Try to find user in our "Fake DB"
         const storedUsers = getStoredUsers();
-        let user = storedUsers.find(u => u.email === email);
+        const foundUser = storedUsers.find(u => u.email === email);
+        let user: User;
 
         // 2. If not found, use a default template but set the name based on email
-        if (!user) {
+        if (!foundUser) {
           const template = users.find(u => u.role === 'creator') || users[0];
-          const nameFromEmail = email.split('@')[0].charAt(0).toUpperCase() + email.split('@')[0].slice(1);
+          const parts = email.split('@');
+          const firstPart = parts[0] || 'User';
+          const nameFromEmail = firstPart.charAt(0).toUpperCase() + firstPart.slice(1);
           user = { 
-            ...template, 
             id: Math.floor(Math.random() * 1000),
             name: nameFromEmail,
-            email 
+            email,
+            role: template?.role || 'creator',
+            avatar: template?.avatar,
+            bio: template?.bio,
+            phone: template?.phone,
+            deliveredCount: template?.deliveredCount
           };
+        } else {
+          user = foundUser;
         }
 
         const token = 'mock-jwt-auth-token-' + Math.random().toString(36).substring(7);

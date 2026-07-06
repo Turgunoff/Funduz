@@ -13,7 +13,8 @@ describe('projectService', () => {
   it('getAll returns all projects', async () => {
     const result = await projectService.getAll();
     expect(result).toHaveLength(2);
-    expect(result[0].title).toBe('Project One');
+    expect(result[0]).toBeDefined();
+    expect(result[0]!.title).toBe('Project One');
   });
 
   it('getById returns correct project', async () => {
@@ -29,13 +30,15 @@ describe('projectService', () => {
   it('search returns filtered projects', async () => {
     const result = await projectService.search('Two');
     expect(result).toHaveLength(1);
-    expect(result[0].title).toBe('Project Two');
+    expect(result[0]).toBeDefined();
+    expect(result[0]!.title).toBe('Project Two');
   });
 
   it('filterByCategory returns correct projects', async () => {
     const result = await projectService.filterByCategory('tech');
     expect(result).toHaveLength(1);
-    expect(result[0].categoryKey).toBe('tech');
+    expect(result[0]).toBeDefined();
+    expect(result[0]!.categoryKey).toBe('tech');
   });
 
   it('filterByCategory returns all projects when key is "all"', async () => {

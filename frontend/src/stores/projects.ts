@@ -85,25 +85,36 @@ export const useProjectStore = defineStore('projects', () => {
     currentPage.value++;
   };
 
-  const addDonation = (projectId: number, amount: number) => {
-    const index = allItems.value.findIndex(p => p.id === projectId);
-    if (index !== -1) {
-      allItems.value[index] = { 
-        ...allItems.value[index], 
-        raised: allItems.value[index].raised + amount,
-        donorsCount: allItems.value[index].donorsCount + 1
-      };
+  const addDonation = async (projectId: number, amount: number) => {
+    try {
+      const updatedProject = await projectService.addDonation(projectId, amount);
+      const index = allItems.value.findIndex(p => p.id === projectId);
+      if (index !== -1) {
+        allItems.value[index] = updatedProject;
+      }
+    } catch (e) {
+      console.error('Failed to add donation:', e);
     }
   };
 
-  const addProject = (project: Project) => {
-    allItems.value.unshift(project);
+  const addProject = async (project: Project) => {
+    try {
+      const newProj = await projectService.create(project);
+      allItems.value.unshift(newProj);
+    } catch (e) {
+      console.error('Failed to add project:', e);
+    }
   };
 
-  const updateProject = (id: number, data: Partial<Project>) => {
-    const index = allItems.value.findIndex(p => p.id === id);
-    if (index !== -1) {
-      allItems.value[index] = { ...allItems.value[index], ...data };
+  const updateProject = async (id: number, data: Partial<Project>) => {
+    try {
+      const updatedProject = await projectService.update(id, data);
+      const index = allItems.value.findIndex(p => p.id === id);
+      if (index !== -1) {
+        allItems.value[index] = updatedProject;
+      }
+    } catch (e) {
+      console.error('Failed to update project:', e);
     }
   };
 

@@ -3,6 +3,7 @@ import { mount } from '@vue/test-utils';
 import { createTestingPinia } from '@pinia/testing';
 import AppHeader from '../AppHeader.vue';
 import { createRouter, createWebHistory } from 'vue-router';
+import { i18n } from '../../i18n';
 
 // Mock vue-i18n
 const t = (key: string) => key;
@@ -16,6 +17,7 @@ const router = createRouter({
     { path: '/how-it-works', component: { template: '<div>How it works</div>' } },
     { path: '/community', component: { template: '<div>Community</div>' } },
     { path: '/login', component: { template: '<div>Login</div>' } },
+    { path: '/create-project', component: { template: '<div>Create Project</div>' } },
   ],
 });
 
@@ -23,7 +25,7 @@ describe('AppHeader.vue', () => {
   it('renders logo with correct text', async () => {
     const wrapper = mount(AppHeader, {
       global: {
-        plugins: [createTestingPinia({ createSpy: vi.fn }), router],
+        plugins: [createTestingPinia({ createSpy: vi.fn }), router, i18n],
         mocks: {
           $t
         }
@@ -36,7 +38,7 @@ describe('AppHeader.vue', () => {
   it('renders navigation links', () => {
     const wrapper = mount(AppHeader, {
       global: {
-        plugins: [createTestingPinia({ createSpy: vi.fn }), router],
+        plugins: [createTestingPinia({ createSpy: vi.fn }), router, i18n],
         mocks: {
           $t
         }
@@ -58,7 +60,8 @@ describe('AppHeader.vue', () => {
             },
             createSpy: vi.fn
           }),
-          router
+          router,
+          i18n
         ],
         mocks: {
           $t

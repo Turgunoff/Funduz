@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import { useAuthStore } from '../../stores/auth';
 
 const route = useRoute();
 const projectId = route.params.id as string;
+const authStore = useAuthStore();
 
 const comments = ref([
   {
@@ -41,10 +43,10 @@ const addComment = () => {
     if(!newComment.value.trim()) return;
     comments.value.unshift({
         id: Date.now(),
-        author: 'Вы',
+        author: authStore.user?.name || 'Вы',
         date: 'Только что',
         text: newComment.value,
-        avatar: 'https://i.pravatar.cc/150?u=me'
+        avatar: authStore.user?.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(authStore.user?.name || 'User')}&background=0f4a36&color=fff`
     });
     newComment.value = '';
 }

@@ -40,5 +40,5 @@ export default defineConfig({
   },
   esbuild: {
     pure: ['console.log', 'debugger'],
-  },
+  } as unknown as import('vite').ESBuildOptions,
 })
